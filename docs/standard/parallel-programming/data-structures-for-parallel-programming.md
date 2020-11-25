@@ -4,18 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data structures, multi-threading
 ms.assetid: bdc82f2f-4754-45a1-a81e-fe2e9c30cef9
-ms.openlocfilehash: c7f974c5626cf1efc6bf62c423043089d5c32e7c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 4e0214afe4dba7f838f420907374f1472d6d3911
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829534"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699017"
 ---
 # <a name="data-structures-for-parallel-programming"></a>Struktury danych dla Programowania równoległego
 
 Platforma .NET udostępnia kilka typów, które są przydatne w programowaniu równoległym, w tym zestaw klas kolekcji współbieżnych, uproszczonych synchronizacji i typów dla inicjowania z opóźnieniem. Można używać tych typów z dowolnym kodem aplikacji wielowątkowych, w tym biblioteką równoległą zadań i PLINQ.  
   
 ## <a name="concurrent-collection-classes"></a>Klasy kolekcji współbieżnych  
+
  Klasy kolekcji w <xref:System.Collections.Concurrent?displayProperty=nameWithType> przestrzeni nazw zapewniają bezpieczne wątkowo operacje dodawania i usuwania, które nie pozwalają na zablokowanie, gdy jest to możliwe, oraz użycie blokowania szczegółowego, w którym blokady są wymagane. Klasa kolekcji współbieżnej nie wymaga, aby kod użytkownika mógł korzystać z blokad podczas uzyskiwania dostępu do elementów. Klasy kolekcji współbieżnych mogą znacząco poprawić wydajność nad typami, takimi jak <xref:System.Collections.ArrayList?displayProperty=nameWithType> i <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> (z blokowaniem zaimplementowanym przez użytkownika) w scenariuszach, w których wiele wątków dodaje i usuwa elementy z kolekcji.  
   
  Poniższa tabela zawiera listę klas kolekcji współbieżnych:  
@@ -31,6 +32,7 @@ Platforma .NET udostępnia kilka typów, które są przydatne w programowaniu r�
  Aby uzyskać więcej informacji, zobacz [kolekcje bezpieczne dla wątków](../collections/thread-safe/index.md).  
   
 ## <a name="synchronization-primitives"></a>Elementy pierwotne synchronizacji  
+
  Elementy pierwotne synchronizacji w <xref:System.Threading?displayProperty=nameWithType> przestrzeni nazw umożliwiają precyzyjne i szybsze osiąganie wydajności dzięki unikaniu kosztownych mechanizmów blokowania znalezionych w starszym kodzie wielowątkowości.
   
  W poniższej tabeli wymieniono typy synchronizacji:  
@@ -51,6 +53,7 @@ Platforma .NET udostępnia kilka typów, które są przydatne w programowaniu r�
 - [Instrukcje: synchronizowanie operacji współbieżnych z barierą](../threading/how-to-synchronize-concurrent-operations-with-a-barrier.md).  
   
 ## <a name="lazy-initialization-classes"></a>Klasy inicjacji z opóźnieniem  
+
  Po zainicjowaniu z opóźnieniem pamięć dla obiektu nie jest przypisana do momentu, gdy jest to konieczne. Inicjalizacja z opóźnieniem może zwiększyć wydajność dzięki rozproszeniu alokacji obiektów równomiernie przez okres istnienia programu. Możesz włączyć inicjalizację z opóźnieniem dla dowolnego typu niestandardowego, zawijając typ <xref:System.Lazy%601> .  
   
  Poniższa tabela zawiera listę typów inicjalizacji z opóźnieniem:  
@@ -64,6 +67,7 @@ Platforma .NET udostępnia kilka typów, które są przydatne w programowaniu r�
  Aby uzyskać więcej informacji, zobacz [Inicjalizacja z opóźnieniem](../../framework/performance/lazy-initialization.md).  
   
 ## <a name="aggregate-exceptions"></a>Wyjątki agregujące  
+
  <xref:System.AggregateException?displayProperty=nameWithType>Typ może służyć do przechwytywania wielu wyjątków, które są zgłaszane współbieżnie w oddzielnych wątkach i zwracają je do wątku przyłączania jako pojedynczy wyjątek. W <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> tym celu typy i PLINQ są używane <xref:System.AggregateException> w szerokim zakresie. Aby uzyskać więcej informacji, zobacz [Obsługa wyjątków](exception-handling-task-parallel-library.md) i [instrukcje: obsługa wyjątków w zapytaniu PLINQ](how-to-handle-exceptions-in-a-plinq-query.md).  
   
 ## <a name="see-also"></a>Zobacz także

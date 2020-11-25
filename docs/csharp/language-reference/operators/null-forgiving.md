@@ -1,27 +1,24 @@
 ---
 description: '! operator (null-łagodniejszej) — odwołanie w C#'
 title: '! operator (null-łagodniejszej) — odwołanie w C#'
-ms.date: 10/11/2019
+ms.date: 11/13/2020
 f1_keywords:
 - nullForgiving_CSharpKeyword
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: f2eb57bba462d471a041c17024fa7031c2c7f87d
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 5489c77fa7290bdd1c03e04d8cc777ab772fdce7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830587"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699633"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! (null-łagodniejszej) — operator (odwołanie w C#)
 
 Dostępne w języku C# 8,0 i nowszych, jednoargumentowy operator przyrostkowy `!` jest operatorem łagodniejszej o wartości null. W włączonym [kontekście dopuszczającym wartość null](../../nullable-references.md#nullable-annotation-context)należy użyć operatora null-łagodniejszej, aby zadeklarować wyrażenie `x` typu referencyjnego nie jest `null` : `x!` . Jednoargumentowy `!` operator prefiksu jest [logicznym operatorem negacji](boolean-logical-operators.md#logical-negation-operator-).
 
 Operator null-łagodniejszej nie ma wpływu w czasie wykonywania. Ma wpływ tylko na analizę przepływu statycznego kompilatora przez zmianę stanu null wyrażenia. W czasie wykonywania wyrażenie `x!` oblicza wynik wyrażenia bazowego `x` .
-
-> [!NOTE]
-> W języku C# 8 operator łagodniejszej o wartości null kończy listę poprzednich operacji [warunkowych o wartości null](member-access-operators.md#null-conditional-operators--and-) . Na przykład wyrażenie `x?.y!.z` jest analizowane jako `(x?.y)!.z` . Ze względu na tę interpretację, `z` jest oceniane, nawet jeśli `x` jest `null` , co może skutkować <xref:System.NullReferenceException> .
 
 Aby uzyskać więcej informacji na temat funkcji typów referencyjnych dopuszczających wartość null, zobacz [typy referencyjne dopuszczające wartość null](../builtin-types/nullable-reference-types.md).
 

@@ -2,14 +2,15 @@
 title: 'ICorDebugSymbolProvider:: GetStaticFieldSymbols, Metoda'
 ms.date: 03/30/2017
 ms.assetid: b178367f-a6e4-413c-b06f-daf3804b456b
-ms.openlocfilehash: 2428521b9b08060fd147a7c9b9054239bf957f69
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 09e68c751da6500c5580f4945e8dd1c486a09217
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379374"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698666"
 ---
 # <a name="icordebugsymbolprovidergetstaticfieldsymbols-method"></a>ICorDebugSymbolProvider:: GetStaticFieldSymbols, Metoda
+
 Pobiera symbole pól statycznych, które odpowiadają sygnaturze elementu TypeSpec.  
   
 ## <a name="syntax"></a>Składnia  
@@ -25,6 +26,7 @@ HRESULT GetStaticFieldSymbols(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cbSignature`  
  podczas Liczba bajtów w `typeSig` tablicy.  
   
@@ -46,6 +48,7 @@ HRESULT GetStaticFieldSymbols(
 > Ta metoda jest dostępna tylko z .NET Native.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -54,7 +57,7 @@ HRESULT GetStaticFieldSymbols(
   
  **.NET Framework wersje:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [GetInstanceFieldSymbols, metoda](icordebugsymbolprovider-getinstancefieldsymbols-method.md)
 - [ICorDebugSymbolProvider, interfejs](icordebugsymbolprovider-interface.md)

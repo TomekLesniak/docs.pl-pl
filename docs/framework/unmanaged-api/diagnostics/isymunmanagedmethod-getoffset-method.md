@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8bf3cb62-89bf-4159-ad53-de606aba89e8
 topic_type:
 - apiref
-ms.openlocfilehash: 358f3d3d7c231a2baa9d2c467935ba3a5867e36b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 14d4211b208482a399aa00430791b3efffda851e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614477"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699550"
 ---
 # <a name="isymunmanagedmethodgetoffset-method"></a>ISymUnmanagedMethod::GetOffset — Metoda
+
 Zwraca przesunięcie w ramach tej metody, które odnosi się do danej pozycji w dokumencie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT GetOffset(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `document`  
  podczas Wskaźnik do dokumentu, dla którego zażądano przesunięcia.  
   
@@ -49,9 +51,11 @@ HRESULT GetOffset(
  określoną Wskaźnik do elementu `ULONG32` , który odbiera przesunięcia.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

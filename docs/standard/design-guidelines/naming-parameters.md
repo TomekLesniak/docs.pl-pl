@@ -6,14 +6,15 @@ helpviewer_keywords:
 - parameters, names
 - names [.NET Framework], parameters
 ms.assetid: ca3c956e-725a-441b-b4e3-eab5d472f41c
-ms.openlocfilehash: b62cfbd58f671745054c557041e5d60af345c8d3
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9f03eda511c2ef0c9565d270c52fd72bf54692d8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820842"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698354"
 ---
 # <a name="naming-parameters"></a>Nazewnictwo parametrów
+
 Poza oczywistym powodem czytelności należy postępować zgodnie z wytycznymi dotyczącymi nazw parametrów, ponieważ parametry są wyświetlane w dokumentacji i w projektancie, gdy narzędzia projektowania wizualnego zapewniają funkcje IntelliSense i przeglądanie klas.
 
  ✔️ używać camelCasing w nazwach parametrów.
@@ -23,6 +24,7 @@ Poza oczywistym powodem czytelności należy postępować zgodnie z wytycznymi d
  ✔️ ROZWAŻYĆ użycie nazw na podstawie znaczenia parametru, a nie typu parametru.
 
 ### <a name="naming-operator-overload-parameters"></a>Parametry przeciążenia operatora nazewnictwa
+
  ✔️ Użyj `left` i `right` dla nazw parametrów przeciążenia operatora binarnego, jeśli nie ma znaczenia dla parametrów.
 
  ✔️ używać `value` dla jednoargumentowych nazw parametrów przeciążenia, jeśli nie ma znaczenia dla parametrów.

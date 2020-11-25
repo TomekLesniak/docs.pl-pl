@@ -3,16 +3,16 @@ title: Odrzuty — Przewodnik C#
 description: Opisuje obsługę odrzutów języka C#, które są nieprzypisanymi, zmiennymi odrzuconymi i sposobami, w których można używać odrzutów.
 ms.technology: csharp-fundamentals
 ms.date: 09/22/2020
-ms.openlocfilehash: 4de48aebaeb896b198b2e9f2431c6a38ba11469e
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: baa7c559095460cf747cb5c8f7ad581270893bd7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90869327"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698809"
 ---
 # <a name="discards---c-guide"></a>Odrzuty — Przewodnik C#
 
-Począwszy od języka C# 7,0, C# obsługuje odrzucanie, które są tymczasowymi, fikcyjnymi zmienne, które są celowo nieużywane w kodzie aplikacji. Odrzucenia są równoważne z nieprzypisanymi zmiennymi; nie mają wartości. Ponieważ istnieje tylko jedna zmienna odrzucona, a ta zmienna nie może nawet być przydzielone magazynem, odrzucanie może zmniejszyć alokacje pamięci. Ponieważ sprawiają, że zamierzenie kodu jest jasne, zwiększa czytelność i łatwość utrzymania.
+Począwszy od języka C# 7,0, C# obsługuje odrzucanie, które są zmiennymi symbolami zastępczymi, które są celowo nieużywane w kodzie aplikacji. Odrzucenia są równoważne z nieprzypisanymi zmiennymi; nie mają wartości. Ponieważ istnieje tylko jedna zmienna odrzucona, a ta zmienna nie może nawet być przydzielone magazynem, odrzucanie może zmniejszyć alokacje pamięci. Ponieważ sprawiają, że zamierzenie kodu jest jasne, zwiększa czytelność i łatwość utrzymania.
 
 Wskazujesz, że zmienna jest odrzucana przez przypisanie do niej znaku podkreślenia ( `_` ) jako nazwy. Na przykład następujące wywołanie metody zwraca 3-krotkę, w której pierwsze i drugie wartości są odrzucane, a *obszar* jest wcześniej zadeklarowaną zmienną, która ma być ustawiona na odpowiedni trzeci składnik zwrócony przez *GetCityInformation*:
 
@@ -69,19 +69,19 @@ Możesz użyć odrzucania autonomicznego, aby wskazać dowolną zmienną, która
 
 Należy pamiętać, że `_` jest również prawidłowym identyfikatorem. Gdy jest używana poza obsługiwanym kontekstem, `_` jest traktowana jako odrzucona, ale jako prawidłowa zmienna. Jeśli identyfikator o nazwie `_` znajduje się już w zakresie, użycie `_` jako odrzucanie autonomiczne może skutkować:
 
-- Przypadkowe modyfikacje wartości zmiennej w zakresie `_` przez przypisanie jej wartości zamierzonego odrzucenia. Przykład:
+- Przypadkowe modyfikacje wartości zmiennej w zakresie `_` przez przypisanie jej wartości zamierzonego odrzucenia. Na przykład:
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#1)]
 
-- Błąd kompilatora dotyczący naruszania bezpieczeństwa typów. Przykład:
+- Błąd kompilatora dotyczący naruszania bezpieczeństwa typów. Na przykład:
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#2)]
 
-- Błąd kompilatora CS0136, "lokalny lub parametr o nazwie" \_ "nie może zostać zadeklarowany w tym zakresie, ponieważ ta nazwa jest używana w otaczającym zakresie lokalnym w celu zdefiniowania lokalnego lub parametru". Przykład:
+- Błąd kompilatora CS0136, "lokalny lub parametr o nazwie" \_ "nie może zostać zadeklarowany w tym zakresie, ponieważ ta nazwa jest używana w otaczającym zakresie lokalnym w celu zdefiniowania lokalnego lub parametru". Na przykład:
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#3)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dekonstrukcja krotek i innych typów](deconstruct.md)
 - [`is` kodu](language-reference/keywords/is.md)

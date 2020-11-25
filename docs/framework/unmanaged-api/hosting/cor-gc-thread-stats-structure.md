@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 01f9a59b-7679-4d42-9ced-4a8981625c3d
 topic_type:
 - apiref
-ms.openlocfilehash: 88e81779fc9c20c506f3b0aa11ac2da3958dfe86
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 25a90965dc5466b7cf1a07140705424cf2ba4cd9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616700"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699238"
 ---
 # <a name="cor_gc_thread_stats-structure"></a>COR_GC_THREAD_STATS — Struktura
+
 Zawiera statystyki poszczególnych wątków dotyczące wyrzucania elementów bezużytecznych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,18 +42,20 @@ typedef struct _COR_GC_THREAD_STATS {
 |`Flags`|Liczba bajtów, które mają zostać podwyższone do wyższej generacji przy ostatnim wyrzucaniu elementów bezużytecznych.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  [ICLRTask:: GetMemStats —](iclrtask-getmemstats-method.md) pobiera parametr wyjściowy typu `COR_GC_THREAD_STATS` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** GCHost. idl  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Hosting, struktury](hosting-structures.md)
-- [IHostTask, interfejs](ihosttask-interface.md)
+- [Hosting — Struktury](hosting-structures.md)
+- [IHostTask — Interfejs](ihosttask-interface.md)

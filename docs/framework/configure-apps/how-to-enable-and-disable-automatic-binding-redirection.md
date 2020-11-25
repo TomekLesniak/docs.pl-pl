@@ -1,17 +1,17 @@
 ---
 title: Włączanie lub wyłączanie przekierowań automatycznie generowanych powiązań
-description: Przeczytaj, jak włączyć lub wyłączyć automatyczne przekierowywanie powiązań. Ta funkcja dotyczy aplikacji klasycznych i aplikacji sieci Web przeznaczonych dla platformy .NET 4.5.1 lub nowszej.
+description: Przeczytaj, jak włączyć lub wyłączyć automatyczne przekierowywanie powiązań. Ta funkcja dotyczy aplikacji klasycznych i aplikacji sieci Web przeznaczonych dla .NET Framework 4.5.1 lub nowszych.
 ms.date: 10/30/2018
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
-ms.openlocfilehash: edee95f6c3b2c2d74c4f1b68e0a65e5cb0e85f54
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: b099ab4958b1cf41b76884243e252e19a7a951b7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105395"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698835"
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>Instrukcje: Włączanie i wyłączanie automatycznego przekierowania powiązań
 
@@ -36,7 +36,7 @@ Jeśli masz program Visual Studio 2017 w wersji 15,7 lub nowszej, możesz łatwo
 1. Otwórz plik projektu do edycji przy użyciu jednej z następujących metod:
 
    - W programie Visual Studio wybierz projekt w **Eksplorator rozwiązań**, a następnie wybierz polecenie **Otwórz folder w Eksploratorze plików** z menu skrótów. W Eksploratorze plików Znajdź plik projektu (. csproj lub. vbproj) i otwórz go w Notatniku.
-   - W programie Visual Studio w **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Zwolnij projekt**. Ponownie kliknij prawym przyciskiem myszy niezaładowanego projektu, a następnie wybierz polecenie **Edytuj [ProjectName. csproj]**.
+   - W programie Visual Studio w **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Zwolnij projekt**. Ponownie kliknij prawym przyciskiem myszy niezaładowanego projektu, a następnie wybierz polecenie **Edytuj [ProjectName. csproj]**.
 
 2. W pliku projektu znajdź następujący wpis właściwości:
 
@@ -57,7 +57,7 @@ Automatyczne przekierowania powiązań można włączyć w istniejących aplikac
 1. Otwórz plik projektu do edycji przy użyciu jednej z następujących metod:
 
    - W programie Visual Studio wybierz projekt w **Eksplorator rozwiązań**, a następnie wybierz polecenie **Otwórz folder w Eksploratorze plików** z menu skrótów. W Eksploratorze plików Znajdź plik projektu (. csproj lub. vbproj) i otwórz go w Notatniku.
-   - W programie Visual Studio w **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Zwolnij projekt**. Ponownie kliknij prawym przyciskiem myszy niezaładowanego projektu, a następnie wybierz polecenie **Edytuj [ProjectName. csproj]**.
+   - W programie Visual Studio w **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Zwolnij projekt**. Ponownie kliknij prawym przyciskiem myszy niezaładowanego projektu, a następnie wybierz polecenie **Edytuj [ProjectName. csproj]**.
 
 2. Dodaj następujący element do pierwszej grupy właściwości konfiguracji (pod \<PropertyGroup> tagiem):
 
@@ -100,7 +100,7 @@ Aby dodać przekierowania powiązań do pliku **web.config** :
 
    ![Okno dialogowe uprawnień przekierowywania powiązań](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [\<bindingRedirect>Postaci](./file-schema/runtime/bindingredirect-element.md)
+- [\<bindingRedirect> Postaci](./file-schema/runtime/bindingredirect-element.md)
 - [Przekierowywanie wersji zestawu](redirect-assembly-versions.md)

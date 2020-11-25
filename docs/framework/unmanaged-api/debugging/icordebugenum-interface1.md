@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 80be7efe-2c32-4b9f-8c52-40c6f6268219
 topic_type:
 - apiref
-ms.openlocfilehash: 7575be3f5074243b251c80b8dd5bdbb12e5d50fd
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: b208444de3b427329988f27b9d252b54143b7240
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976333"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698796"
 ---
 # <a name="icordebugenum-interface"></a>ICorDebugEnum, interfejs
 
@@ -30,12 +30,13 @@ Służy jako abstrakcyjny interfejs podstawowy dla modułów wyliczających, kt�
 |Metoda|Opis|  
 |------------|-----------------|  
 |[Clone — Metoda](icordebugenum-clone-method.md)|Tworzy kopię tego `ICorDebugEnum` obiektu.|  
-|[GetCount — Metoda](icordebugenum-getcount-method.md)|Pobiera liczbę elementów w wyliczeniu.|  
+|[GetCount, metoda](icordebugenum-getcount-method.md)|Pobiera liczbę elementów w wyliczeniu.|  
 |[Reset — Metoda](icordebugenum-reset-method.md)|Przenosi kursor do początku wyliczenia.|  
 |[Skip — Metoda](icordebugenum-skip-method.md)|Przenosi kursor do przodu w wyliczeniu o określoną liczbę elementów.|  
   
 ## <a name="remarks"></a>Uwagi  
- Następujące moduły wyliczające pochodzą z `ICorDebugEnum`:  
+
+ Następujące moduły wyliczające pochodzą z `ICorDebugEnum` :  
   
 - ICorDebugAppDomainEnum  
   
@@ -83,6 +84,7 @@ Służy jako abstrakcyjny interfejs podstawowy dla modułów wyliczających, kt�
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -91,6 +93,6 @@ Służy jako abstrakcyjny interfejs podstawowy dla modułów wyliczających, kt�
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

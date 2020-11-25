@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 83058790-160b-4703-a5eb-74b66acbdfa9
 topic_type:
 - apiref
-ms.openlocfilehash: b4c521489f38360d45c2cf8ff3780e057299f0b4
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 9d35f6b1928d714216b669704ec28e53895f6549
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008953"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699069"
 ---
 # <a name="corunmanagedcallingconvention-enumeration"></a>CorUnmanagedCallingConvention — Wyliczenie
+
 Określa konwencje wywoływania dla niezarządzanego kodu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -56,15 +57,17 @@ typedef enum CorUnmanagedCallingConvention {
 |`IMAGE_CEE_CS_CALLCONV_FASTCALL`|Nie używany.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR nie obsługuje konwencji wywoływania "Fast" w .NET Framework w wersji 1,0.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 747ee407-ee8c-484d-9583-25089236d2d1
 topic_type:
 - apiref
-ms.openlocfilehash: 841827017262b731fd5e6f6bd0b5862fecaf2744
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 7730c2dddaca98e4cb06cdb381e8a46ff23c97f9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83841727"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699212"
 ---
 # <a name="ihosttaskmanagersetlocale-method"></a>IHostTaskManager::SetLocale — Metoda
+
 Powiadamia hosta, że środowisko uruchomieniowe języka wspólnego (CLR) zmieniło ustawienia regionalne lub kulturę, w aktualnie wykonywanym zadaniu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT SetLocale (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `lcid`  
  podczas Wartość identyfikatora ustawień regionalnych, która jest mapowana na nowo przypisaną kulturę geograficzną i język.  
   
@@ -41,7 +43,7 @@ HRESULT SetLocale (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`SetLocale`pomyślnie zwrócono.|  
+|S_OK|`SetLocale` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -50,21 +52,23 @@ HRESULT SetLocale (
 |E_NOTIMPL|Host nie zezwala na modyfikowanie ustawień regionalnych przez zarządzany kod użytkownika.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wywołania środowiska uruchomieniowego, `SetLocale` gdy wartość <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> właściwości jest zmieniana przez kod zarządzany. Ta metoda zapewnia dla hosta możliwość wykonywania wszelkich mechanizmów, które mogą mieć na celu synchronizację ustawień regionalnych. Jeśli host nie zezwala na zmianę ustawień regionalnych z kodu zarządzanego lub nie implementuje mechanizmu synchronizacji ustawień lokalnych, powinien zwrócić E_NOTIMPL z tej metody.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [ICLRTask — Interfejs](iclrtask-interface.md)
-- [ICLRTaskManager, interfejs](iclrtaskmanager-interface.md)
-- [IHostTask, interfejs](ihosttask-interface.md)
-- [IHostTaskManager, interfejs](ihosttaskmanager-interface.md)
+- [ICLRTaskManager — Interfejs](iclrtaskmanager-interface.md)
+- [IHostTask — Interfejs](ihosttask-interface.md)
+- [IHostTaskManager — Interfejs](ihosttaskmanager-interface.md)
 - [SetUILocale, metoda](ihosttaskmanager-setuilocale-method.md)

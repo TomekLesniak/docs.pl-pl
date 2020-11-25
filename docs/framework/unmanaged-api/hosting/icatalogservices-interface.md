@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: f0d7e49b-2394-4ae0-8820-1b64cae0cfe8
 topic_type:
 - apiref
-ms.openlocfilehash: b3c5fc4731029561129609601b8e0635f6a9516c
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 5198efc14a57bf0a496a9c78569af45595d0b4a6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617038"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698432"
 ---
 # <a name="icatalogservices-interface"></a>ICatalogServices — Interfejs
+
 Dostarcza metody dla usług katalogowych.  
   
  Ten interfejs obsługuje infrastrukturę .NET Framework i nie jest przeznaczony do użycia bezpośrednio w kodzie.  
@@ -35,4 +36,4 @@ Dostarcza metody dla usług katalogowych.
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 03a6facb-f12f-49be-9839-e73b9c791cd5
 topic_type:
 - apiref
-ms.openlocfilehash: d7417e8dc193172c77d23fe3fa72c8298d802b5c
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 4f488741f4233f06c128e0a262ce798ef27af3ff
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894041"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699641"
 ---
 # <a name="icordebugclass-interface"></a>ICorDebugClass, interfejs
 
@@ -31,17 +31,19 @@ Reprezentuje typ, który może być podstawowy lub złożony (to jest zdefiniowa
 |------------|-----------------|  
 |[GetModule — Metoda](icordebugclass-getmodule-method.md)|Pobiera moduł, który definiuje tę klasę.|  
 |[GetStaticFieldValue, metoda](icordebugclass-getstaticfieldvalue-method.md)|Pobiera wartość określonego pola statycznego.|  
-|[GetToken — Metoda](icordebugclass-gettoken-method.md)|Pobiera token `TypeDef` metadanych dla tej klasy.|  
+|[GetToken — Metoda](icordebugclass-gettoken-method.md)|Pobiera `TypeDef` token metadanych dla tej klasy.|  
   
 ## <a name="remarks"></a>Uwagi  
- `ICorDebugClass` Interfejs reprezentuje typ ogólny bez wystąpień. Interfejs ICorDebugType reprezentuje typ ogólny skonkretyzowany. Na przykład `Hashtable<K, V>` byłyby reprezentowane przez `ICorDebugClass`, a `Hashtable<Int32, String>` byłyby reprezentowane przez. `ICorDebugType`  
+
+ `ICorDebugClass`Interfejs reprezentuje typ ogólny bez wystąpień. Interfejs ICorDebugType reprezentuje typ ogólny skonkretyzowany. Na przykład `Hashtable<K, V>` byłyby reprezentowane przez `ICorDebugClass` , a `Hashtable<Int32, String>` byłyby reprezentowane przez `ICorDebugType` .  
   
- Typy inne niż ogólne są reprezentowane przez `ICorDebugClass` i. `ICorDebugType` Ten ostatni interfejs został wprowadzony w .NET Framework w wersji 2,0, aby można było zająć się tworzeniem wystąpienia typu.  
+ Typy inne niż ogólne są reprezentowane przez `ICorDebugClass` i `ICorDebugType` . Ten ostatni interfejs został wprowadzony w .NET Framework w wersji 2,0, aby można było zająć się tworzeniem wystąpienia typu.  
   
 > [!NOTE]
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -50,6 +52,6 @@ Reprezentuje typ, który może być podstawowy lub złożony (to jest zdefiniowa
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1844da85-c031-40bf-bea4-1a3d12a36c8c
 topic_type:
 - apiref
-ms.openlocfilehash: 1726f8929404e0dde979972d7830a6951dd71891
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d504101747995557ba526c88de451ebab7b3c556
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617064"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698562"
 ---
 # <a name="iappdomainsetup-interface"></a>IAppDomainSetup — Interfejs
+
 Udostępnia właściwości, które umożliwiają hostowi skonfigurowanie <xref:System.AppDomain?displayProperty=nameWithType> typu przed wywołaniem metody [ICorRuntimeHost:: CreateDomainEx —](icorruntimehost-createdomainex-method.md) , aby ją utworzyć.  
   
 ## <a name="properties"></a>Właściwości  
@@ -40,16 +41,18 @@ Udostępnia właściwości, które umożliwiają hostowi skonfigurowanie <xref:S
 |<xref:System.AppDomainSetup.ShadowCopyFiles%2A>|Pobiera lub ustawia ciąg, który wskazuje, czy kopiowanie w tle jest włączone czy wyłączone. Prawidłowe wartości to "true" lub "false".|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `IAppDomainSetup`Interfejs odpowiada zarządzanemu <xref:System.IAppDomainSetup> interfejsowi, który <xref:System.AppDomainSetup> implementuje typ. <xref:System.IAppDomainSetup?displayProperty=nameWithType>Szczegółowe opisy jego właściwości można znaleźć w temacie.  
   
- `IAppDomainSetup`reprezentuje informacje o powiązaniu zestawu, które można dodać do <xref:System.AppDomain> wystąpienia przed jego utworzeniem. Na przykład host może ustawić <xref:System.AppDomainSetup.ApplicationBase%2A> Właściwość, aby ustanowić katalog główny, który sond środowiska uruchomieniowego języka wspólnego (CLR) dla zestawów zarządzanych.  
+ `IAppDomainSetup` reprezentuje informacje o powiązaniu zestawu, które można dodać do <xref:System.AppDomain> wystąpienia przed jego utworzeniem. Na przykład host może ustawić <xref:System.AppDomainSetup.ApplicationBase%2A> Właściwość, aby ustanowić katalog główny, który sond środowiska uruchomieniowego języka wspólnego (CLR) dla zestawów zarządzanych.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
@@ -58,4 +61,4 @@ Udostępnia właściwości, które umożliwiają hostowi skonfigurowanie <xref:S
 - <xref:System.AppDomain>
 - <xref:System.AppDomainSetup>
 - <xref:System.IAppDomainSetup>
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)
