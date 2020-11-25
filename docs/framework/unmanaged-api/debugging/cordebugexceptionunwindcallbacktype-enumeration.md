@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 783dce92-8a98-43db-8f78-888d943dd5b2
 topic_type:
 - apiref
-ms.openlocfilehash: 4d2be9960f8935b754791a8badd4ea98b5d54912
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 30de1448a7d1452e1e9049411010e7f43d13eb70
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795914"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712641"
 ---
 # <a name="cordebugexceptionunwindcallbacktype-enumeration"></a>CorDebugExceptionUnwindCallbackType — Wyliczenie
+
 Wskazuje zdarzenie, które jest sygnalizowane przez wywołanie zwrotne w fazie unwind.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,6 +42,7 @@ typedef enum CorDebugExceptionUnwindCallbackType {
 |`DEBUG_EXCEPTION_INTERCEPTED`|Przechwycono wyjątek.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

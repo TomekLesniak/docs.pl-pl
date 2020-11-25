@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6eefb243-a281-41c1-bcdc-7e17513bc446
 topic_type:
 - apiref
-ms.openlocfilehash: 320cfae93f8aae94f9315e8e20ed6cf7f9cced7c
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b92e9ab714e2d8d2c66ed5546deba16352e8e390
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84491319"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711146"
 ---
 # <a name="imetadataimportgetcustomattributeprops-method"></a>IMetaDataImport::GetCustomAttributeProps — Metoda
+
 Pobiera wartość atrybutu niestandardowego z uwzględnieniem jego tokenu metadanych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,6 +39,7 @@ HRESULT GetCustomAttributeProps (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cv`  
  podczas Token metadanych, który reprezentuje atrybut niestandardowy do pobrania.  
   
@@ -54,18 +56,20 @@ HRESULT GetCustomAttributeProps (
  [out, opcjonalne] Rozmiar w bajtach danych zwróconych w * `ppBlob` .  
   
 ## <a name="remarks"></a>Uwagi  
+
  Atrybut niestandardowy jest przechowywany jako tablica danych, format zrozumiały dla aparatu metadanych.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataImport — Interfejs](imetadataimport-interface.md)
-- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)
+- [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)

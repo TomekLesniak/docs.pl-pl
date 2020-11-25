@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 31214d3a-715e-49af-92b3-0fd11e4f218a
 topic_type:
 - apiref
-ms.openlocfilehash: 8ab16ad5b2b2838125e07511ef47be737f40671c
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b79ac7f71ec0551336298a90829e1f37e2e30b20
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501212"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711089"
 ---
 # <a name="imetadatatablesgetcodedtokeninfo-method"></a>IMetaDataTables::GetCodedTokenInfo — Metoda
+
 Pobiera wskaźnik do tablicy tokenów skojarzonych z określonym indeksem wiersza.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT GetCodedTokenInfo (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ixCdTkn`  
  podczas Rodzaj zakodowanego tokenu do zwrócenia.  
   
@@ -50,15 +52,16 @@ HRESULT GetCodedTokenInfo (
  określoną Wskaźnik do wskaźnika do nazwy tokenu w `ixCdTkn` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IMetaDataTables, interfejs](imetadatatables-interface.md)
+- [IMetaDataTables — Interfejs](imetadatatables-interface.md)
 - [IMetaDataTables2 — Interfejs](imetadatatables2-interface.md)

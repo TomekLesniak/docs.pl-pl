@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d5cf5056-da4d-4629-914d-afe42a5393df
 topic_type:
 - apiref
-ms.openlocfilehash: 1f1e42cd929d2d6282d282cf62dce00104b3a925
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 4f34fdf9a0eeb47e027cc874afee5bd04f5bd9bc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210244"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712394"
 ---
 # <a name="icordebugilframe-interface"></a>ICorDebugILFrame, interfejs
 
@@ -40,12 +40,14 @@ Przedstawia ramkę stosu kodu języka pośredniego firmy Microsoft (MSIL). Ten i
 |[SetIP — Metoda](icordebugilframe-setip-method.md)|Ustawia wskaźnik instrukcji na określoną lokalizację przesunięcia w kodzie MSIL.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ICorDebugILFrame`Interfejs jest wyspecjalizowanym interfejsem ICorDebugFrame. Jest używana w przypadku ramek kodu MSIL lub dla ramek skompilowanych w trybie just-in-Time (JIT). Ramki skompilowane JIT implementują `ICorDebugILFrame` interfejs i interfejs ICorDebugNativeFrame.  
   
 > [!NOTE]
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -54,6 +56,6 @@ Przedstawia ramkę stosu kodu języka pośredniego firmy Microsoft (MSIL). Ten i
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

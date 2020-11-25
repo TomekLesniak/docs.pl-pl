@@ -8,14 +8,15 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-ms.openlocfilehash: c383a2e221e61770d3c28a65c561c48f6059b6d6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 23b91a2a58c6e76b31b94e0fa3661dfbc8e18e33
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136564"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712771"
 ---
 # <a name="icorprofilercallback9-interface"></a>ICorProfilerCallback9, interfejs
+
 [Obsługiwane w .NET Framework 4.7.2 i nowszych wersjach]  
 
  Podklasa elementu [ICorProfilerCallback8](icorprofilercallback8-interface.md) , która zapewnia metodę wywołania zwrotnego używaną przez środowisko uruchomieniowe języka wspólnego do powiadomienia profilera, że metoda dynamiczna została odtworzona, a następnie zwolniona z pamięci.  
@@ -27,11 +28,12 @@ ms.locfileid: "73136564"
 |[DynamicMethodUnloaded, metoda](ICorProfilerCallback9-dynamicmethodunloaded-method.md)|Powiadamia program profilujący, że metoda dynamiczna została odtworzona, a następnie zwolniona.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
   
-**Wersje .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+**.NET Framework wersje:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
 
 ## <a name="see-also"></a>Zobacz także
 

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f025c2e5-3f6c-4be8-9ffe-c8b214617dfe
 topic_type:
 - apiref
-ms.openlocfilehash: 75a165e2fd517f36d779a934a5bdd9c41956411a
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: c5d491b66e4ec64dffa4e19dabff876c9c473036
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396769"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711796"
 ---
 # <a name="icordebugvariablehomegetoffset-method"></a>ICorDebugVariableHome:: GetOffset — Metoda
+
 Pobiera przesunięcie z rejestru podstawowego dla zmiennej.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT GetOffset(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pOffset`  
  określoną Przesunięcie od podstawowego rejestru.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Metoda zwraca następujące wartości:  
   
 |Wartość|Opis|  
@@ -46,6 +49,7 @@ HRESULT GetOffset(
 |`E_FAIL`|Zmienna nie znajduje się w lokalizacji pamięci względnej do rejestracji.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

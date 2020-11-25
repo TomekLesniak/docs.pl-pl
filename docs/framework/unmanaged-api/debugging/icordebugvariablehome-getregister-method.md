@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a5eecd7b-b04c-4266-bff2-7c8771d519a8
 topic_type:
 - apiref
-ms.openlocfilehash: 6cf66774209bd07426872c29c15b2225421c2b4d
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 7f912f4b13620b567f5aa097604e98112d85f02d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396830"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711757"
 ---
 # <a name="icordebugvariablehomegetregister-method"></a>ICorDebugVariableHome:: getregister — Metoda
+
 Pobiera rejestr zawierający zmienną z typem lokalizacji `VLT_REGISTER` i rejestr podstawowy dla zmiennej z typem lokalizacji `VLT_REGISTER_RELATIVE` .  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT GetRegister(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pRegister`  
  określoną Wartość wyliczenia CorDebugRegister —, która wskazuje rejestr dla zmiennej z typem lokalizacji `VLT_REGISTER` i rejestr podstawowy dla zmiennej z typem lokalizacji `VLT_REGISTER_RELATIVE` .  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Metoda zwraca następujące wartości:  
   
 |Wartość|Opis|  
@@ -46,6 +49,7 @@ HRESULT GetRegister(
 |`E_FAIL`|Zmienna nie znajduje się w rejestrze ani w lokalizacji względnej do rejestracji.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

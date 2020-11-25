@@ -6,70 +6,74 @@ helpviewer_keywords:
 - fusion interfaces [.NET Framework]
 - unmanaged interfaces [.NET Framework], fusion
 ms.assetid: e2cf98b7-40c1-4f74-86c7-8a76dd9da677
-ms.openlocfilehash: 81c66825e69d9526abddfe06133426a2274ad08f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 59e34a39bada1dcf5e66a0c5b92a7fcbfb41d884
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73108194"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711692"
 ---
 # <a name="fusion-interfaces"></a>Interfejsy łączenia
+
 W tej sekcji opisano niezarządzane interfejsy, które są używane przez interfejs API Fusion do uzyskiwania dostępu do właściwości zasobów aplikacji i lokalizowania odpowiednich wersji tych zasobów dla aplikacji.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
- [IAppIdAuthority, interfejs](iappidauthority-interface.md)  
+
+ [IAppIdAuthority — Interfejs](iappidauthority-interface.md)  
  Dostarcza metody, które generują i porównują klucze dla tożsamości i odwołań aplikacji.  
   
- [IAssemblyCache, interfejs](iassemblycache-interface.md)  
+ [IAssemblyCache — Interfejs](iassemblycache-interface.md)  
  Przedstawia reprezentację globalnej pamięci podręcznej zestawów.  
   
- [IAssemblyCacheItem, interfejs](iassemblycacheitem-interface.md)  
+ [IAssemblyCacheItem — Interfejs](iassemblycacheitem-interface.md)  
  Reprezentuje pojedynczy zestaw w globalnej pamięci podręcznej zestawów.  
   
- [IAssemblyEnum, interfejs](iassemblyenum-interface.md)  
+ [IAssemblyEnum — Interfejs](iassemblyenum-interface.md)  
  Reprezentuje moduł wyliczający dla tablicy `IAssemblyName` obiektów.  
   
- [IAssemblyName, interfejs](iassemblyname-interface.md)  
+ [IAssemblyName — Interfejs](iassemblyname-interface.md)  
  Zapewnia metody opisujące unikatową tożsamość zestawu i pracę z nim.  
   
- [IDefinitionAppId, interfejs](idefinitionappid-interface.md)  
+ [IDefinitionAppId — Interfejs](idefinitionappid-interface.md)  
  Reprezentuje unikatowy identyfikator kodu, który definiuje aplikację w bieżącym zakresie.  
   
- [IDefinitionIdentity, interfejs](idefinitionidentity-interface.md)  
+ [IDefinitionIdentity — Interfejs](idefinitionidentity-interface.md)  
  Reprezentuje unikatowy podpis kodu, który definiuje aplikację w bieżącym zakresie.  
   
- [IEnumDefinitionIdentity, interfejs](ienumdefinitionidentity-interface.md)  
- Służy jako moduł wyliczający dla kolekcji obiektów `IDefinitionIdentity`.  
+ [IEnumDefinitionIdentity — Interfejs](ienumdefinitionidentity-interface.md)  
+ Służy jako moduł wyliczający dla kolekcji `IDefinitionIdentity` obiektów.  
   
- [IEnumIDENTITY_ATTRIBUTE, interfejs](ienumidentity-attribute-interface.md)  
+ [IEnumIDENTITY_ATTRIBUTE — Interfejs](ienumidentity-attribute-interface.md)  
  Służy jako moduł wyliczający dla atrybutów obiektu kodu w bieżącym zakresie.  
   
- [IEnumReferenceIdentity, interfejs](ienumreferenceidentity-interface.md)  
- Służy jako moduł wyliczający dla kolekcji obiektów `IReferenceIdentity`.  
+ [IEnumReferenceIdentity — Interfejs](ienumreferenceidentity-interface.md)  
+ Służy jako moduł wyliczający dla kolekcji `IReferenceIdentity` obiektów.  
   
- [IIdentityAuthority, interfejs](iidentityauthority-interface.md)  
+ [IIdentityAuthority — Interfejs](iidentityauthority-interface.md)  
  Zarządza kluczami tożsamości dla obiektów kodu.  
   
- [IInstallReferenceEnum, interfejs](iinstallreferenceenum-interface.md)  
+ [IInstallReferenceEnum — Interfejs](iinstallreferenceenum-interface.md)  
  Reprezentuje moduł wyliczający dla zestawów, do których istnieją odwołania zainstalowane w globalnej pamięci podręcznej zestawów.  
   
- [IInstallReferenceItem, interfejs](iinstallreferenceitem-interface.md)  
+ [IInstallReferenceItem — Interfejs](iinstallreferenceitem-interface.md)  
  Reprezentuje element zainstalowany w globalnej pamięci podręcznej zestawów.  
   
- [IReferenceAppId, interfejs](ireferenceappid-interface.md)  
+ [IReferenceAppId — Interfejs](ireferenceappid-interface.md)  
  Reprezentuje odwołanie do unikatowego identyfikatora aplikacji w bieżącym zakresie.  
   
- [IReferenceIdentity, interfejs](ireferenceidentity-interface.md)  
+ [IReferenceIdentity — Interfejs](ireferenceidentity-interface.md)  
  Reprezentuje odwołanie do unikatowego podpisu obiektu kodu.  
   
-## <a name="reference"></a>Tematy pomocy  
+## <a name="reference"></a>Dokumentacja  
+
  <xref:System.Reflection>  
   
  <xref:System.Reflection.Emit>  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Łączenie statycznych funkcji globalnych](fusion-global-static-functions.md)  
   
  [Wyliczenia łączenia](fusion-enumerations.md)  
   
- [Łączenie — struktury](fusion-structures.md)
+ [Łączenie — Struktury](fusion-structures.md)

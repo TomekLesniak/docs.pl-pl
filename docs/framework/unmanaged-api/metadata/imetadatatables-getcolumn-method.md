@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1032055b-cabb-45c5-a50e-7e853201b175
 topic_type:
 - apiref
-ms.openlocfilehash: 76d23fe9221ae5a07d79b8c5c1a7ad297922b003
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 270546f0270521e38cfdcae5e4d2137202c13cb1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501251"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711094"
 ---
 # <a name="imetadatatablesgetcolumn-method"></a>IMetaDataTables::GetColumn — Metoda
+
 Pobiera wskaźnik do wartości zawartej w komórce określonej kolumny i wiersza w danej tabeli.  
   
 ## <a name="syntax"></a>Składnia  
@@ -62,25 +63,26 @@ Interpretacja wartości zwracanej przez jest `pVal` zależna od typu kolumny. Ty
 |--------------------------|---------------|-----------------------------------|
 | `0`..`iRidMax`<br>(0.. 63)  | mdToken     | *Pval* będzie zawierać pełny token. Funkcja automatycznie konwertuje identyfikator RID na pełny token. |
 | `iCodedToken`..`iCodedTokenMax`<br>(64.. 95) | mdToken | Po powrocie *Pval* będzie zawierać pełny token. Funkcja automatycznie dekompresuje CodedToken do pełnego tokenu. |
-| `iSHORT`(96)            | Int16         | Automatycznie Podpisz do 32-bitowego.  |
-| `iUSHORT`(97)           | UInt16        | Automatycznie Podpisz do 32-bitowego.  |
-| `iLONG`(98)             | Int32         |                                        |
-| `iULONG`(99)            | UInt32        |                                        |
-| `iBYTE`(100)            | Byte          | Automatycznie Podpisz do 32-bitowego.  |
-| `iSTRING`(101)          | Indeks sterty ciągu | *Pval* jest indeksem do sterty ciągu. Użyj [IMetadataTables:: GetString](imetadatatables-getstring-method.md) , aby uzyskać rzeczywistą wartość ciągu kolumny. |
-| `iGUID`(102)            | Indeks sterty identyfikatora GUID | *Pval* jest indeksem do sterty identyfikatora GUID. Użyj [IMetadataTables:: GetGuid](imetadatatables-getguid-method.md) , aby uzyskać rzeczywistą wartość identyfikatora GUID kolumny. |
-| `iBLOB`(103)            | Indeks sterty obiektu BLOB | *Pval* jest indeksem do sterty obiektu BLOB. Użyj [IMetadataTables:: GetBlob](imetadatatables-getblob-method.md) , aby uzyskać rzeczywistą wartość obiektu BLOB kolumny. |
+| `iSHORT` (96)            | Int16         | Automatycznie Podpisz do 32-bitowego.  |
+| `iUSHORT` (97)           | UInt16        | Automatycznie Podpisz do 32-bitowego.  |
+| `iLONG` (98)             | Int32         |                                        |
+| `iULONG` (99)            | UInt32        |                                        |
+| `iBYTE` (100)            | Byte          | Automatycznie Podpisz do 32-bitowego.  |
+| `iSTRING` (101)          | Indeks sterty ciągu | *Pval* jest indeksem do sterty ciągu. Użyj [IMetadataTables:: GetString](imetadatatables-getstring-method.md) , aby uzyskać rzeczywistą wartość ciągu kolumny. |
+| `iGUID` (102)            | Indeks sterty identyfikatora GUID | *Pval* jest indeksem do sterty identyfikatora GUID. Użyj [IMetadataTables:: GetGuid](imetadatatables-getguid-method.md) , aby uzyskać rzeczywistą wartość identyfikatora GUID kolumny. |
+| `iBLOB` (103)            | Indeks sterty obiektu BLOB | *Pval* jest indeksem do sterty obiektu BLOB. Użyj [IMetadataTables:: GetBlob](imetadatatables-getblob-method.md) , aby uzyskać rzeczywistą wartość obiektu BLOB kolumny. |
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **Wersje .NET Framework**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IMetaDataTables, interfejs](imetadatatables-interface.md)
+- [IMetaDataTables — Interfejs](imetadatatables-interface.md)
 - [IMetaDataTables2 — Interfejs](imetadatatables2-interface.md)

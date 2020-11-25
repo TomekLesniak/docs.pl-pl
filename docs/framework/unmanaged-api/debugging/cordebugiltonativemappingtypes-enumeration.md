@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c35e2919-42c3-4ba0-ae28-443c35f66f93
 topic_type:
 - apiref
-ms.openlocfilehash: 808fc70a308eff1b05aa49ea2bb89fe53377c973
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: ecb88195e3ecc7c540679a683005798247afe57f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795849"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712433"
 ---
 # <a name="cordebugiltonativemappingtypes-enumeration"></a>CorDebugIlToNativeMappingTypes — Wyliczenie
+
 Wskazuje, czy konkretny zakres instrukcji macierzystych, reprezentowany przez wystąpienie struktury COR_DEBUG_IL_TO_NATIVE_MAP, odpowiada specjalnemu regionowi kodu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -43,6 +44,7 @@ typedef enum CorDebugIlToNativeMappingTypes {
 |`EPILOG`|Zakres instrukcji natywnych odpowiada epilogu.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -53,5 +55,5 @@ typedef enum CorDebugIlToNativeMappingTypes {
   
 ## <a name="see-also"></a>Zobacz także
 
-- [GetILToNativeMapping — Metoda](icordebugcode-getiltonativemapping-method.md)
+- [GetILToNativeMapping, metoda](icordebugcode-getiltonativemapping-method.md)
 - [Debugowanie — wyliczenia](debugging-enumerations.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 966da50d-5665-4fff-bf7b-1c72bbadd9a4
 topic_type:
 - apiref
-ms.openlocfilehash: 0bffd2db0a4a061a8629ff50a03a319feec6d836
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 4b071bd8e9d96084848c1553385eec5f8beca624
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396549"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711731"
 ---
 # <a name="icordebugvariablehomegetslotindex-method"></a>ICorDebugVariableHome:: GetSlotIndex, Metoda
+
 Pobiera zarządzany indeks szczeliny zmiennej lokalnej.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT GetSlotIndex(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pSlotIndex`  
  określoną Wskaźnik do indeksu szczeliny zmiennej lokalnej.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Metoda zwraca następujące wartości.  
   
 |Wartość|Opis|  
@@ -46,9 +49,11 @@ HRESULT GetSlotIndex(
 |`E_FAIL`|Bieżące wystąpienie [ICorDebugVariableHome](icordebugvariablehome-interface.md) reprezentuje argument funkcji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Za pomocą indeksu miejsca można pobrać metadane dla tej zmiennej lokalnej.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 94e02e31-67ea-4b00-8148-a46740a4571d
 topic_type:
 - apiref
-ms.openlocfilehash: 5e88652ff75223e30e6abc454f1e1af91494c7b2
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 9407dda7aab337f667cd5043b562d0eac94f0f04
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396700"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711926"
 ---
 # <a name="icordebugtype-interface"></a>ICorDebugType, interfejs
+
 Reprezentuje typ, podstawowy lub złożony (to jest zdefiniowany przez użytkownika). Jeśli typ jest ogólny, `ICorDebugType` reprezentuje typ ogólny wystąpienia.  
   
 ## <a name="methods"></a>Metody  
@@ -37,7 +38,8 @@ Reprezentuje typ, podstawowy lub złożony (to jest zdefiniowany przez użytkown
 |[GetType, metoda](icordebugtype-gettype-method.md)|Pobiera wartość CorElementType —, która opisuje typ natywny środowiska uruchomieniowego języka wspólnego, <xref:System.Type> do którego odwołuje się ten element `ICorDebugType` .|  
   
 ## <a name="remarks"></a>Uwagi  
- Jeśli typ jest ogólny, `ICorDebugClass` reprezentuje typ nieskonkretyzowany. `ICorDebugType`Interfejs reprezentuje typ ogólny skonkretyzowany. Na przykład, obiekt Hashtable \< K,> będzie reprezentowany przez `ICorDebugClass` , natomiast obiekt Hashtable \< Int32, ciąg> być reprezentowany przez `ICorDebugType` .  
+
+ Jeśli typ jest ogólny, `ICorDebugClass` reprezentuje typ nieskonkretyzowany. `ICorDebugType`Interfejs reprezentuje typ ogólny skonkretyzowany. Na przykład, obiekt Hashtable \<K, V> zostałby przedstawiony przez `ICorDebugClass` , a obiekt Hashtable \<Int32, String> zostałby przedstawiony przez `ICorDebugType` .  
   
  Typy inne niż ogólne są reprezentowane przez `ICorDebugClass` i `ICorDebugType` . Ten ostatni interfejs został wprowadzony w .NET Framework w wersji 2,0, aby można było zająć się tworzeniem wystąpienia typu.  
   
@@ -45,6 +47,7 @@ Reprezentuje typ, podstawowy lub złożony (to jest zdefiniowany przez użytkown
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

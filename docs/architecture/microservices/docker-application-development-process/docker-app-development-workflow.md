@@ -2,12 +2,12 @@
 title: Przepływ pracy tworzenia oprogramowania dla aplikacji platformy Docker
 description: Zapoznaj się ze szczegółami przepływu pracy dotyczącymi tworzenia aplikacji opartych na platformie Docker. Rozpocznij krok po kroku i przejdź do szczegółów, aby zoptymalizować wieloetapowe dockerfile i zakończyć pracę z uproszczonym przepływem pracy dostępnym w przypadku korzystania z programu Visual Studio.
 ms.date: 01/30/2020
-ms.openlocfilehash: 1ae4e3cda71676caeab849a92207477652050e25
-ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
+ms.openlocfilehash: 4019eed6b814f4c7e8bc4f32758e8cfd7f4c7ec9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594596"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711185"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Przepływ pracy tworzenia oprogramowania dla aplikacji platformy Docker
 
@@ -77,7 +77,7 @@ Dla każdego niestandardowego obrazu, który chcesz skompilować, potrzebujesz p
 
 Pliku dockerfile jest umieszczany w folderze głównym aplikacji lub usługi. Zawiera polecenia, które informują platformę Docker, jak skonfigurować i uruchomić aplikację lub usługę w kontenerze. Możesz ręcznie utworzyć pliku dockerfile w kodzie i dodać go do projektu wraz z zależnościami programu .NET.
 
-Za pomocą programu Visual Studio i jego narzędzi dla platformy Docker to zadanie wymaga tylko kilku kliknięć myszą. Podczas tworzenia nowego projektu w programie Visual Studio 2019 istnieje opcja o nazwie **enable Docker support** , jak pokazano na rysunku 5-3.
+Za pomocą programu Visual Studio i jego narzędzi dla platformy Docker to zadanie wymaga tylko kilku kliknięć myszą. Podczas tworzenia nowego projektu w programie Visual Studio 2019 istnieje opcja o nazwie **enable Docker support**, jak pokazano na rysunku 5-3.
 
 ![Zrzut ekranu przedstawiający pole wyboru Włącz obsługę platformy Docker.](./media/docker-app-development-workflow/enable-docker-support-check-box.png)
 
@@ -97,14 +97,14 @@ W podobny sposób program Visual Studio może również dodać `docker-compose.y
 
 Zwykle można utworzyć niestandardowy obraz dla kontenera na podstawie obrazu podstawowego, który uzyskuje się z oficjalnego repozytorium, takiego jak rejestr usługi [Docker Hub](https://hub.docker.com/) . To dokładnie, co się dzieje w przypadku włączenia obsługi platformy Docker w programie Visual Studio. Pliku dockerfile będzie używać istniejącego `dotnet/core/aspnet` obrazu.
 
-Wcześniej objaśniono, które obrazy platformy Docker i repozytoria, których można użyć, w zależności od wybranego środowiska i systemu operacyjnego. Na przykład jeśli chcesz używać ASP.NET Core (Linux lub Windows), obraz do użycia to `mcr.microsoft.com/dotnet/core/aspnet:3.1` . W związku z tym wystarczy określić podstawowy obraz platformy Docker, który będzie używany w danym kontenerze. Możesz to zrobić, dodając `FROM mcr.microsoft.com/dotnet/core/aspnet:3.1` do pliku dockerfile. Ta wartość zostanie automatycznie wykonana przez program Visual Studio, ale jeśli zaktualizowano wersję, należy ją zaktualizować.
+Wcześniej objaśniono, które obrazy platformy Docker i repozytoria, których można użyć, w zależności od wybranego środowiska i systemu operacyjnego. Na przykład jeśli chcesz używać ASP.NET Core (Linux lub Windows), obraz do użycia to `mcr.microsoft.com/dotnet/aspnet:3.1` . W związku z tym wystarczy określić podstawowy obraz platformy Docker, który będzie używany w danym kontenerze. Możesz to zrobić, dodając `FROM mcr.microsoft.com/dotnet/aspnet:3.1` do pliku dockerfile. Ta wartość zostanie automatycznie wykonana przez program Visual Studio, ale jeśli zaktualizowano wersję, należy ją zaktualizować.
 
 Korzystanie z oficjalnego repozytorium programu .NET Image z usługi Docker Hub z numerem wersji zapewnia, że te same funkcje językowe są dostępne na wszystkich komputerach (w tym na temat programowania, testowania i produkcji).
 
 W poniższym przykładzie przedstawiono przykładową pliku dockerfile dla kontenera ASP.NET Core.
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+FROM mcr.microsoft.com/dotnet/aspnet:3.1
 ARG source
 WORKDIR /app
 EXPOSE 80
@@ -112,7 +112,7 @@ COPY ${source:-obj/Docker/publish} .
 ENTRYPOINT ["dotnet", " MySingleContainerWebApp.dll "]
 ```
 
-W tym przypadku obraz jest oparty na wersji 3,1 ASP.NET Core oficjalnego obrazu platformy Docker (wiele rozwiązań dla systemów Linux i Windows). To ustawienie `FROM mcr.microsoft.com/dotnet/core/aspnet:3.1` . (Aby uzyskać więcej informacji na temat tego obrazu podstawowego, zobacz stronę [obrazu platformy Docker programu .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) ). W pliku dockerfile należy również nakazać platformie Docker nasłuchiwanie na porcie TCP, który będzie używany w środowisku uruchomieniowym (w tym przypadku port 80, zgodnie z konfiguracją ustawienia UWIDACZNIAnia).
+W tym przypadku obraz jest oparty na wersji 3,1 ASP.NET Core oficjalnego obrazu platformy Docker (wiele rozwiązań dla systemów Linux i Windows). To ustawienie `FROM mcr.microsoft.com/dotnet/aspnet:3.1` . (Aby uzyskać więcej informacji na temat tego obrazu podstawowego, zapoznaj się ze stroną [ASP.NET Core Docker](https://hub.docker.com/_/microsoft-dotnet-aspnet/) ). W pliku dockerfile należy również nakazać platformie Docker nasłuchiwanie na porcie TCP, który będzie używany w środowisku uruchomieniowym (w tym przypadku port 80, zgodnie z konfiguracją ustawienia UWIDACZNIAnia).
 
 Możesz określić dodatkowe ustawienia konfiguracji w pliku dockerfile, w zależności od używanego języka i platformy. Na przykład wiersz punktu wejścia `["dotnet", "MySingleContainerWebApp.dll"]` informuje platformę Docker, aby uruchomić aplikację platformy .NET Core. Jeśli używasz zestawu SDK i interfejs wiersza polecenia platformy .NET Core (interfejs dotnet CLI) do kompilowania i uruchamiania aplikacji .NET, to ustawienie będzie inne. Dolna linia polega na tym, że linia ENTRYPOINT i inne ustawienia będą się różnić w zależności od języka i platformy wybranej dla aplikacji.
 
@@ -132,19 +132,19 @@ Możesz określić dodatkowe ustawienia konfiguracji w pliku dockerfile, w zale�
 
 ### <a name="using-multi-arch-image-repositories"></a>Używanie repozytoriów obrazów wieloskładnikowych
 
-Pojedyncze repozytorium może zawierać warianty platformy, takie jak obraz systemu Linux i obraz Windows. Ta funkcja umożliwia dostawcom, takim jak firma Microsoft (twórcy obrazów podstawowych), tworzenie jednego repozytorium w celu pokrycia wielu platform (z systemem Linux i Windows). Na przykład repozytorium [dotnet/Core](https://hub.docker.com/_/microsoft-dotnet-core/) dostępne w rejestrze usługi Docker Hub zapewnia obsługę systemu Linux i Windows nano Server przy użyciu tej samej nazwy repozytorium.
+Pojedyncze repozytorium może zawierać warianty platformy, takie jak obraz systemu Linux i obraz Windows. Ta funkcja umożliwia dostawcom, takim jak firma Microsoft (twórcy obrazów podstawowych), tworzenie jednego repozytorium w celu pokrycia wielu platform (z systemem Linux i Windows). Na przykład repozytorium [dotnet/Core](https://hub.docker.com/_/microsoft-dotnet/) dostępne w rejestrze usługi Docker Hub zapewnia obsługę systemu Linux i Windows nano Server przy użyciu tej samej nazwy repozytorium.
 
 Jeśli określisz tag, nadajesz platformie, która jest jawna, jak w następujących przypadkach:
 
-- `mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim` \
+- `mcr.microsoft.com/dotnet/aspnet:3.1-buster-slim` \
   Elementy docelowe: środowisko uruchomieniowe programu .NET Core 3,1 — tylko w systemie Linux
 
-- `mcr.microsoft.com/dotnet/core/aspnet:3.1-nanoserver-1909` \
+- `mcr.microsoft.com/dotnet/aspnet:3.1-nanoserver-1909` \
   Targets: środowisko uruchomieniowe programu .NET Core 3,1 — tylko w systemie Windows nano Server
 
 Ale w przypadku określenia tej samej nazwy obrazu, nawet w tym samym tagu, obrazy z obsługą wielodostępności (na przykład `aspnet` obraz) będą używały wersji systemu Linux lub Windows w zależności od wdrażanego systemu operacyjnego hosta platformy Docker, jak pokazano w następującym przykładzie:
 
-- `mcr.microsoft.com/dotnet/core/aspnet:3.1` \
+- `mcr.microsoft.com/dotnet/aspnet:3.1` \
   Wiele arch: środowisko uruchomieniowe programu .NET Core 3,1 — tylko w systemie Linux lub Windows nano Server w zależności od systemu operacyjnego hosta platformy Docker
 
 W ten sposób podczas ściągania obrazu z hosta z systemem Windows zostanie ściągnięty wariant systemu Windows, a pociągnięcie tego samego obrazu z hosta z systemem Linux spowoduje pobranie wariantu z systemem Linux.
@@ -174,11 +174,11 @@ Prawdopodobnie najlepszym sposobem na zrozumienie wieloetapowego jest przechodze
 Początkowy pliku dockerfile może wyglądać następująco:
 
 ```dockerfile
- 1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
+ 1  FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
  4
- 5  FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+ 5  FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
  6  WORKDIR /src
  7  COPY src/Services/Catalog/Catalog.API/Catalog.API.csproj …
  8  COPY src/BuildingBlocks/HealthChecks/src/Microsoft.AspNetCore.HealthChecks …
@@ -264,7 +264,7 @@ Spowoduje to przywrócenie pakietów dla całego rozwiązania, ale następnie po
 
 Jednak program jest `dotnet restore` uruchamiany tylko wtedy, gdy w folderze istnieje pojedynczy plik projektu lub rozwiązania, więc osiągnięcie tego jest nieco bardziej skomplikowane i sposób jego rozwiązania, bez konieczności zbyt wielu szczegółów:
 
-1. Dodaj następujące wiersze do **. dockerignore** :
+1. Dodaj następujące wiersze do **. dockerignore**:
 
    - `*.sln`, aby zignorować wszystkie pliki rozwiązań w głównym drzewie folderów
 
@@ -277,11 +277,11 @@ W przypadku optymalizacji końcowej następuje po prostu, że wiersz 20 jest nad
 Otrzymany plik jest następnie:
 
 ```dockerfile
- 1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
+ 1  FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
  4
- 5  FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS publish
+ 5  FROM mcr.microsoft.com/dotnet/sdk:3.1 AS publish
  6  WORKDIR /src
  7  COPY . .
  8  RUN dotnet restore /ignoreprojectextensions:.dcproj
@@ -336,7 +336,7 @@ Istniejące obrazy można znaleźć w lokalnym repozytorium za pomocą polecenia
 
 ### <a name="creating-docker-images-with-visual-studio"></a>Tworzenie obrazów platformy Docker za pomocą programu Visual Studio
 
-Gdy używasz programu Visual Studio do tworzenia projektu z obsługą platformy Docker, nie utworzysz jawnie obrazu. Zamiast tego obraz jest tworzony po naciśnięciu klawisza **F5** (lub **klawisza CTRL-F5** ), aby uruchomić aplikację lub usługę dockerized. Ten krok jest automatycznie w programie Visual Studio i nie jest wyświetlany, ale ważne jest, aby wiedzieć, co się dzieje poniżej.
+Gdy używasz programu Visual Studio do tworzenia projektu z obsługą platformy Docker, nie utworzysz jawnie obrazu. Zamiast tego obraz jest tworzony po naciśnięciu klawisza **F5** (lub **klawisza CTRL-F5**), aby uruchomić aplikację lub usługę dockerized. Ten krok jest automatycznie w programie Visual Studio i nie jest wyświetlany, ale ważne jest, aby wiedzieć, co się dzieje poniżej.
 
 ![Obraz dla opcjonalnego kroku 4.](./media/docker-app-development-workflow/step-4-define-services-docker-compose-yml.png)
 
@@ -566,7 +566,7 @@ RUN powershell -Command Add-WindowsFeature Web-Server
 CMD [ "ping", "localhost", "-t" ]
 ```
 
-W takim przypadku używany jest podstawowy obraz systemu Windows Server Core (ustawienie od) i Instalowanie usług IIS za pomocą polecenia programu PowerShell (ustawienie URUCHOMIENIOWe). W podobny sposób można również użyć poleceń programu PowerShell, aby skonfigurować dodatkowe składniki, takie jak ASP.NET 4. x, .NET 4,6 lub dowolne inne oprogramowanie systemu Windows. Na przykład następujące polecenie w pliku dockerfile konfiguruje ASP.NET 4,5:
+W takim przypadku używany jest podstawowy obraz systemu Windows Server Core (ustawienie od) i Instalowanie usług IIS za pomocą polecenia programu PowerShell (ustawienie URUCHOMIENIOWe). W podobny sposób można również użyć poleceń programu PowerShell, aby skonfigurować dodatkowe składniki, takie jak ASP.NET 4. x, .NET Framework 4,6 lub inne oprogramowanie systemu Windows. Na przykład następujące polecenie w pliku dockerfile konfiguruje ASP.NET 4,5:
 
 ```dockerfile
 RUN powershell add-windowsfeature web-asp-net45

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 42145e8d-000f-4d0b-ae43-c08201190fa2
 topic_type:
 - apiref
-ms.openlocfilehash: 68261b165847a5c3ee29adbc4908451fb00c5443
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0a254587282dea43a3507fbbeca35bd7aa9604f3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84492268"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711575"
 ---
 # <a name="imetadataimportenumfieldswithname-method"></a>IMetaDataImport::EnumFieldsWithName — Metoda
+
 Wylicza tokeny FieldDef określonego typu o określonej nazwie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ HRESULT EnumFieldsWithName (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `phEnum`  
  [in. out] Wskaźnik do modułu wyliczającego.  
   
@@ -58,25 +60,27 @@ HRESULT EnumFieldsWithName (
  określoną Rzeczywista liczba tokenów FieldDef zwrócona w `rFields` .  
   
 ## <a name="remarks"></a>Uwagi  
+
  W przeciwieństwie do [IMetaDataImport:: EnumFields —](imetadataimport-enumfields-method.md), `EnumFieldsWithName` odrzuca wszystkie tokeny pola, które nie mają określonej nazwy.  
   
 ## <a name="return-value"></a>Wartość zwracana  
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFieldsWithName`pomyślnie zwrócono.|  
+|`S_OK`|`EnumFieldsWithName` pomyślnie zwrócono.|  
 |`S_FALSE`|Brak pól do wyliczenia. W takim przypadku `pcTokens` jest równa zero.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataImport — Interfejs](imetadataimport-interface.md)
-- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)
+- [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)

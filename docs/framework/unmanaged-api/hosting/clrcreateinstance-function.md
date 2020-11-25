@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5de13327-96c6-4697-a89e-b8bf40717855
 topic_type:
 - apiref
-ms.openlocfilehash: 4aeacc718632c133550ed8de6649716c5d8b7423
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 3c7a14f828e55310435a99693c1195f2f0dd40c6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504460"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711679"
 ---
 # <a name="clrcreateinstance-function"></a>CLRCreateInstance — Funkcja
+
 Udostępnia jeden z trzech interfejsów: [ICLRMetaHost](iclrmetahost-interface.md), [ICLRMetaHostPolicy](iclrmetahostpolicy-interface.md)lub [ICLRDebugging](../debugging/iclrdebugging-interface.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT CLRCreateInstance(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `clsid`  
  podczas Jeden z trzech identyfikatorów klasy: CLSID_CLRMetaHost, CLSID_CLRMetaHostPolicy lub CLSID_CLRDebugging.  
   
@@ -46,14 +48,16 @@ HRESULT CLRCreateInstance(
  określoną Jeden z trzech interfejsów: [ICLRMetaHost](iclrmetahost-interface.md), [ICLRMetaHostPolicy](iclrmetahostpolicy-interface.md)lub [ICLRDebugging](../debugging/iclrdebugging-interface.md).  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca następujące określone wartości HRESULT oraz błędy HRESULT wskazujące niepowodzenie metody.  
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
 |S_OK|Metoda została ukończona pomyślnie.|  
-|E_POINTER|`ppInterface`ma wartość null.|  
+|E_POINTER|`ppInterface` ma wartość null.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  W poniższej tabeli przedstawiono obsługiwane kombinacje dla programów `clsid` i `riid` .  
   
 |`clsid`|`riid`|  
@@ -81,11 +85,12 @@ hr = CLRCreateInstance (CLSID_CLRDebugging, IID_ICLRDebugging,
 ```  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Obiekt ServiceHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

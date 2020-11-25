@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 41af93c7-e448-4251-8d4d-413d38c635f2
 topic_type:
 - apiref
-ms.openlocfilehash: 4b2689f04228c9ecbbbb18531a0aefd3c40e3072
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 37bf800f27754d1bf80aece962b7cbb85b1cbedc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83377983"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712186"
 ---
 # <a name="icordebugremotecreateprocessex-method"></a>ICorDebugRemote::CreateProcessEx — Metoda
+
 Uruchamia proces na maszynie zdalnej pod debugerem.  
   
 ## <a name="syntax"></a>Składnia  
@@ -46,6 +47,7 @@ HRESULT CreateProcessEx (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pRemoteTarget`  
  podczas Wskaźnik do [interfejsu ICorDebugRemoteTarget](icordebugremotetarget-interface.md). Służy do określania komputera zdalnego, na którym zostanie uruchomiony proces.  
   
@@ -86,6 +88,7 @@ HRESULT CreateProcessEx (
  określoną Wskaźnik do adresu obiektu "ICorDebugProcess Interface", który reprezentuje proces.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK  
  Pomyślnie uruchomiono proces na maszynie zdalnej i zwróciło "interfejs ICorDebugProcess" do debugowania.  
   
@@ -93,9 +96,11 @@ HRESULT CreateProcessEx (
  Nie można uruchomić procesu na maszynie zdalnej i zwrócić "ICorDebugProcess Interface" w celu debugowania.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Debugowanie w trybie mieszanym nie jest obsługiwane w programie Silverlight.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl  
@@ -104,7 +109,7 @@ HRESULT CreateProcessEx (
   
  **.NET Framework wersje:** 4,5, 4, 3,5 SP1  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugRemote — Interfejs](icordebugremote-interface.md)
 - [ICorDebug — Interfejs](icordebug-interface.md)

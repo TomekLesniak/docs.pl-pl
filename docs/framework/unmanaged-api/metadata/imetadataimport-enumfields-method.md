@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1d23247e-c58c-45db-afd8-83aa89cde18e
 topic_type:
 - apiref
-ms.openlocfilehash: 1ff2dd64dc4797bc485550c30f7204644a3adb47
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 74035e9551cb1d622b326e511c3884e1eadf057f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84492281"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711601"
 ---
 # <a name="imetadataimportenumfields-method"></a>IMetaDataImport::EnumFields — Metoda
+
 Wylicza tokeny FieldDef dla typu, do którego odwołuje się określony token TypeDef.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,6 +39,7 @@ HRESULT EnumFields (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `phEnum`  
  [in. out] Wskaźnik do modułu wyliczającego.  
   
@@ -57,19 +59,20 @@ HRESULT EnumFields (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFields`pomyślnie zwrócono.|  
+|`S_OK`|`EnumFields` pomyślnie zwrócono.|  
 |`S_FALSE`|Brak pól do wyliczenia. W takim przypadku `pcTokens` jest równa zero.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataImport — Interfejs](imetadataimport-interface.md)
-- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)
+- [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)

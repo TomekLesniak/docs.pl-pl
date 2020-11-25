@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ba6e178f-128b-4e47-a13c-b4be73eb106c
 topic_type:
 - apiref
-ms.openlocfilehash: 910c40413075131765a37e00703ac892e3f39641
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0b040a2741a44b9d361dabc38c26b8934659003b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84492229"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95711523"
 ---
 # <a name="imetadataimportenuminterfaceimpls-method"></a>IMetaDataImport::EnumInterfaceImpls — Metoda
+
 Wylicza wszystkie interfejsy zaimplementowane przez określony `TypeDef` .
   
 ## <a name="syntax"></a>Składnia  
@@ -38,6 +39,7 @@ HRESULT EnumInterfaceImpls (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `phEnum`  
  [in. out] Wskaźnik do modułu wyliczającego.  
   
@@ -57,7 +59,7 @@ HRESULT EnumInterfaceImpls (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumInterfaceImpls`pomyślnie zwrócono.|  
+|`S_OK`|`EnumInterfaceImpls` pomyślnie zwrócono.|  
 |`S_FALSE`|Brak tokenów MethodDef do wyliczenia. W takim przypadku `pcImpls` jest ustawiona na zero.|  
 
 ## <a name="remarks"></a>Uwagi
@@ -65,15 +67,16 @@ HRESULT EnumInterfaceImpls (
 Wyliczenie zwraca kolekcję `mdInterfaceImpl` tokenów dla każdego interfejsu zaimplementowanego przez określony `TypeDef` . Tokeny interfejsu są zwracane w kolejności, w jakiej interfejsy zostały określone (za pomocą `DefineTypeDef` lub `SetTypeDefProps` ). Do właściwości zwracanych `mdInterfaceImpl` tokenów można wykonywać zapytania przy użyciu [GetInterfaceImplProps —](imetadataimport-getinterfaceimplprops-method.md).
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataImport — Interfejs](imetadataimport-interface.md)
-- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)
+- [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)

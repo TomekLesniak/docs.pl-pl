@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b22687a8-e9cf-4e65-a1b0-f92a81bc524e
 topic_type:
 - apiref
-ms.openlocfilehash: 45de821dd52f7e153fc79ffde056ed959c654fce
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: a50272bce2e27963a1d684fef40bac30cf44e1f0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795953"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95712719"
 ---
 # <a name="cordebugexceptionflags-enumeration"></a>CorDebugExceptionFlags — Wyliczenie
+
 Zawiera dodatkowe informacje o wyjątku.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,9 +42,11 @@ typedef enum CorDebugExceptionFlags {
 |`DEBUG_EXCEPTION_CAN_BE_INTERCEPTED`|Wyjątek jest przechwytywany.<br /><br /> Czas wyjątku może być nadal taki, aby debuger nie mógł go przechwycić. Na przykład, jeśli nie istnieje kod zarządzany poniżej bieżącego wywołania zwrotnego lub zdarzenie wyjątku spowodowało z załącznika just-in-Time (JIT), nie można przechwycić wyjątku.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Nowe wartości można dodać do tego wyliczenia w nowszych wersjach, dlatego należy przygotować kod, który używa `CorDebugExceptionFlags` dla nieoczekiwanych wartości.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
