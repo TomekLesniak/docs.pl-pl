@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: be3f5985-b1e4-4036-8602-c16e8508d4af
 topic_type:
 - apiref
-ms.openlocfilehash: 1c9d9647084aa729817eeeb17ee3f5cd320c0d29
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e81816ce2194c2c1862cb997ad2c6e5baf301231
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84491251"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704007"
 ---
 # <a name="imetadataimportgetinterfaceimplprops-method"></a>IMetaDataImport::GetInterfaceImplProps — Metoda
+
 Pobiera wskaźnik do tokenów metadanych <xref:System.Type> , który implementuje określoną metodę i dla interfejsu, który deklaruje tę metodę.
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT GetInterfaceImplProps (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `iiImpl`  
  podczas Token metadanych reprezentujący metodę zwracającą tokeny klasy i interfejsu dla.  
   
@@ -70,18 +72,19 @@ Odwołaj, token jest wartością 4-bajtową:
 - Dolne 3 bajty mają numer wiersza lub identyfikator RID.
 - Górny bajt zawiera typ tokenu — 0x09 dla `mdtInterfaceImpl` .
 
-`GetInterfaceImplProps`zwraca informacje przechowywane w wierszu, którego token jest udostępniany w `iImpl` argumencie.
+`GetInterfaceImplProps` zwraca informacje przechowywane w wierszu, którego token jest udostępniany w `iImpl` argumencie.
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataImport — Interfejs](imetadataimport-interface.md)
-- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)
+- [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)

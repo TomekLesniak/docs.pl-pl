@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 166b0761-ed80-4ccd-9973-dc20e61bf8fa
 topic_type:
 - apiref
-ms.openlocfilehash: 4c867a9e263f022fc6f8d90a883562e2560ad1b2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a0777797870a707c0d0f00bc0b4c986448118231
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494660"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702397"
 ---
 # <a name="icorprofilerobjectenumgetcount-method"></a>ICorProfilerObjectEnum::GetCount — Metoda
+
 Pobiera łączną liczbę zablokowanych obiektów w kolekcji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,12 +35,14 @@ HRESULT GetCount (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pcelt`  
  określoną Wskaźnik do liczby zamrożonych obiektów w kolekcji.  
   
  Ta metoda zawsze zwróci zero w .NET Framework wersji 3,5 Service Pack 1 (SP1) i nowszych wersjach.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

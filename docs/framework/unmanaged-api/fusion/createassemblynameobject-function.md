@@ -16,14 +16,15 @@ helpviewer_keywords:
 ms.assetid: 55c8b41e-fbe4-4ae0-aa29-68fbb2311691
 topic_type:
 - apiref
-ms.openlocfilehash: 00345f6c95c67f0494aa721c662f56a9e98cdd7f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 995f1064c2f40005c4a19ef034d7edfd668b5d51
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73108715"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704165"
 ---
 # <a name="createassemblynameobject-function"></a>CreateAssemblyNameObject — Funkcja
+
 Pobiera wskaźnik interfejsu do wystąpienia [IAssemblyName](iassemblyname-interface.md) , które reprezentuje unikatową tożsamość zestawu o określonej nazwie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,11 +39,12 @@ HRESULT CreateAssemblyNameObject (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppAssemblyNameObj`  
- określoną Zwrócony `IAssemblyName`.  
+ określoną Zwracana wartość `IAssemblyName` .  
   
  `szAssemblyName`  
- podczas Nazwa zestawu, dla którego ma zostać utworzone nowe wystąpienie `IAssemblyName`.  
+ podczas Nazwa zestawu, dla którego ma zostać utworzone nowe `IAssemblyName` wystąpienie.  
   
  `dwFlags`  
  podczas Flagi do przekazania do konstruktora obiektów.  
@@ -51,15 +53,16 @@ HRESULT CreateAssemblyNameObject (
  podczas Zarezerwowane do użytku w przyszłości. `pvReserved` musi być odwołaniem o wartości null.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IAssemblyName, interfejs](iassemblyname-interface.md)
+- [IAssemblyName — Interfejs](iassemblyname-interface.md)
 - [Łączenie statycznych funkcji globalnych](fusion-global-static-functions.md)

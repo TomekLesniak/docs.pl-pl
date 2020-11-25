@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: be9cab04-65ec-44d5-a39a-f90709fdd043
 topic_type:
 - apiref
-ms.openlocfilehash: 24c316ea6bab11fb55e8e0fc1dc9832a312dbc6a
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 75341b1af034972c861b75f29a06eaa2c4e33c3a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83397196"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703041"
 ---
 # <a name="icordebugunmanagedcallbackdebugevent-method"></a>ICorDebugUnmanagedCallback::DebugEvent — Metoda
+
 Powiadamia debuger, że zdarzenie natywne zostało wyzwolone.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT DebugEvent (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pDebugEvent`  
  podczas Wskaźnik do zdarzenia natywnego.  
   
@@ -42,6 +44,7 @@ HRESULT DebugEvent (
  [w] `true` , jeśli interakcja z zarządzanym stanem procesu jest niemożliwa po wystąpieniu zdarzenia niezarządzanego, do momentu, gdy debuger wywoła [ICorDebugController:: Continue](icordebugcontroller-continue-method.md); w przeciwnym razie, `false` .  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli debugowany wątek jest wątkiem Win32, nie należy używać żadnych elementów członkowskich interfejsu debugowania Win32. Można wywołać `ICorDebugController::Continue` tylko na wątku Win32 i tylko w przypadku kontynuowania ostatniego zdarzenia poza pasmem.  
   
  `DebugEvent`Wywołanie zwrotne nie jest zgodne ze standardowymi regułami wywołania zwrotnego. Po wywołaniu `DebugEvent` , proces będzie znajdował się w stanie zatrzymania w trybie nieprzetworzonym systemu operacyjnego. Proces nie zostanie zsynchronizowany. Stan zsynchronizowany zostanie automatycznie wprowadzony, gdy będzie to konieczne w celu spełnienia żądań informacji o zarządzanym kodzie, co może spowodować inne zagnieżdżone `DebugEvent` wywołania zwrotne.  
@@ -51,6 +54,7 @@ HRESULT DebugEvent (
  W .NET Framework w wersji 2,0 debuger powinien natychmiast kontynuować poprzednie zdarzenie punktu przerwania poza pasmem. Debuger powinien używać metod [ICorDebugProcess2:: SetUnmanagedBreakpoint —](icordebugprocess2-setunmanagedbreakpoint-method.md) i [ICorDebugProcess2:: ClearUnmanagedBreakpoint —](icordebugprocess2-clearunmanagedbreakpoint-method.md) , aby dodawać i usuwać punkty przerwania. Te metody spowodują automatyczne pomijanie wszystkich punktów przerwania poza pasmem. W związku z tym tylko punkty przerwania poza pasmem, które są wysyłane, powinny być nieprzetworzonymi punktami przerwań, które znajdują się już w strumieniu instrukcji, takich jak wywołanie `DebugBreak` funkcji Win32. Nie należy próbować używać `ICorDebugProcess::ClearCurrentException` , [ICorDebugProcess:: GetThreadContext —](icordebugprocess-getthreadcontext-method.md), [ICorDebugProcess:: SetThreadContext —](icordebugprocess-setthreadcontext-method.md)ani żadnych innych elementów członkowskich [debugowania API](index.md).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

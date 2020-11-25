@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dbb21e67-712b-49e7-a27c-a1e73ffd46c5
 topic_type:
 - apiref
-ms.openlocfilehash: 7e97b2d4ad1fec4675d1484959b115a4d4b87e90
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 16f69d571ffed87a2e848124ce16ac942d319c37
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84490617"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702697"
 ---
 # <a name="imetadataimport2getgenericparamprops-method"></a>IMetaDataImport2::GetGenericParamProps — Metoda
+
 Pobiera metadane skojarzone z parametrem ogólnym reprezentowanym przez określony token.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,6 +42,7 @@ HRESULT GetGenericParamProps (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `gp`  
  podczas Token reprezentujący parametr generyczny, dla którego mają być zwracane metadane.  
   
@@ -66,15 +68,16 @@ HRESULT GetGenericParamProps (
  określoną Zwrócony rozmiar nazwy w znaki dwubajtowe.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)
+- [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)
 - [IMetaDataImport — Interfejs](imetadataimport-interface.md)

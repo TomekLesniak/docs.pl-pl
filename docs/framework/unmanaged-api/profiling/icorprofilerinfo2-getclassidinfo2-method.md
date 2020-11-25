@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0141d582-d066-4d49-8d1f-ae82129a1960
 topic_type:
 - apiref
-ms.openlocfilehash: a33e51969dc0579d976f08470ebc6e2bcca04dd7
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 4b018a329396e0be684c999a33d4ef7c3518cb1c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497169"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703909"
 ---
 # <a name="icorprofilerinfo2getclassidinfo2-method"></a>ICorProfilerInfo2::GetClassIDInfo2 — Metoda
+
 Pobiera moduł nadrzędny i token metadanych dla otwartej definicji ogólnej określonej klasy, `ClassID` klasy nadrzędnej i `ClassID` argumentu dla każdego typu, jeśli istnieje, klasy.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ HRESULT GetClassIDInfo2(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `classId`  
  podczas Identyfikator klasy, dla której będą pobierane informacje.  
   
@@ -61,6 +63,7 @@ HRESULT GetClassIDInfo2(
  określoną Tablica `ClassID` wartości, z których każdy reprezentuje identyfikator argumentu typu klasy. Gdy metoda zwraca, `typeArgs` będzie zawierać niektóre lub wszystkie dostępne `ClassID` wartości.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `GetClassIDInfo2`Metoda jest podobna do metody [ICorProfilerInfo:: GetClassIDInfo —](icorprofilerinfo-getclassidinfo-method.md) , ale `GetClassIDInfo2` uzyskuje dodatkowe informacje o typie ogólnym.  
   
  Kod profilera może wywołać [ICorProfilerInfo:: GetModuleMetaData —](icorprofilerinfo-getmodulemetadata-method.md) w celu uzyskania interfejsu [metadanych](../metadata/index.md) dla danego modułu. Token metadanych, który jest zwracany do lokalizacji, do której się odwołuje się, `pTypeDefToken` może następnie zostać użyty w celu uzyskania dostępu do metadanych dla klasy.  
@@ -70,6 +73,7 @@ HRESULT GetClassIDInfo2(
  Alternatywnie, można najpierw wywołać `GetClassIDInfo2` z buforem o zerowej długości, `typeArgs` Aby uzyskać prawidłowy rozmiar buforu. Następnie można ustawić `typeArgs` rozmiar buforu na wartość zwracaną w `pcNumTypeArgs` i `GetClassIDInfo2` ponownie wywołać.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -80,7 +84,7 @@ HRESULT GetClassIDInfo2(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2, interfejs](icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 — Interfejs](icorprofilerinfo2-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)

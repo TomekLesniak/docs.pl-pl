@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4a11b264-8540-4732-aa35-bc2d95b95b8e
 topic_type:
 - apiref
-ms.openlocfilehash: 70535f8bcee95c2596c43617eb5893e2d92a355b
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 010b2dff27ac17906e16fe58729facc7a217b43f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496784"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703762"
 ---
 # <a name="icorprofilerinfo2getthreadappdomain-method"></a>ICorProfilerInfo2::GetThreadAppDomain — Metoda
+
 Pobiera identyfikator domeny aplikacji, w której określony wątek aktualnie wykonuje kod.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetThreadAppDomain(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `threadId`  
  podczas Identyfikator określający wątek.  
   
@@ -41,6 +43,7 @@ HRESULT GetThreadAppDomain(
  określoną Wskaźnik do identyfikatora domeny aplikacji.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -51,5 +54,5 @@ HRESULT GetThreadAppDomain(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2, interfejs](icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 — Interfejs](icorprofilerinfo2-interface.md)

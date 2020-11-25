@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3f1af8b0-8478-48e0-a7ec-3e90e0b97649
 topic_type:
 - apiref
-ms.openlocfilehash: ddcb8064dfb9be30c66404a8762a9ca73cd6afe4
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: f080d852b190346740a3629f3b5d46a9f3808293
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860663"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703633"
 ---
 # <a name="iclrdataenummemoryregionscallback-interface"></a>ICLRDataEnumMemoryRegionsCallback — Interfejs
+
 Zapewnia metodę wywołania zwrotnego dla [ICLRDataEnumMemoryRegions:: EnumMemoryRegions —](iclrdataenummemoryregions-enummemoryregions-method.md) , aby zgłosić do debugera wynik próby wyliczenia określonego regionu pamięci.  
   
 ## <a name="methods"></a>Metody  
@@ -31,6 +32,7 @@ Zapewnia metodę wywołania zwrotnego dla [ICLRDataEnumMemoryRegions:: EnumMemor
 |[EnumMemoryRegion, metoda](iclrdataenummemoryregionscallback-enummemoryregion-method.md)|Wywołuje `ICLRDataEnumMemoryRegions::EnumMemoryRegions` się, by zgłosić debugerowi wynik próby wyliczenia określonego regionu pamięci.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** ClrData. idl, ClrData. h  
@@ -39,6 +41,6 @@ Zapewnia metodę wywołania zwrotnego dla [ICLRDataEnumMemoryRegions:: EnumMemor
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

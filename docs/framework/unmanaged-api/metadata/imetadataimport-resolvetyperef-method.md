@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 556bccfb-61bc-4761-b1d5-de4b1c18a38f
 topic_type:
 - apiref
-ms.openlocfilehash: f55af87e21b48430807166cb03e1d41271e830a1
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 76c5519a6cd1b8994e2f869281f13d8269e89fde
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503446"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702826"
 ---
 # <a name="imetadataimportresolvetyperef-method"></a>IMetaDataImport::ResolveTypeRef — Metoda
+
 Rozwiązuje <xref:System.Type> odwołanie reprezentowane przez określony token elementu TypeRef.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT ResolveTypeRef (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `tr`  
  podczas Token metadanych elementu TypeRef, który ma zwracać informacje o typie, do którego się odwołuje.  
   
@@ -59,15 +61,16 @@ HRESULT ResolveTypeRef (
  Jeśli odwołanie do typu, które ma zostać rozpoznane, ma zakres rozwiązań elementu AssemblyRef, `ResolveTypeRef` Metoda wyszukuje dopasowanie tylko w zakresach metadanych, które zostały już otwarte z wywołaniami metody [IMetaDataDispenser:: OpenScope —](imetadatadispenser-openscope-method.md) lub [IMetaDataDispenser:: OpenScopeOnMemory —](imetadatadispenser-openscopeonmemory-method.md) . Wynika to z faktu, że program `ResolveTypeRef` nie może ustalić tylko zakresu elementu AssemblyRef, gdzie na dysku lub w pamięci podręcznej zestawów globalnych jest przechowywany zestaw.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataImport — Interfejs](imetadataimport-interface.md)
-- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)
+- [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)

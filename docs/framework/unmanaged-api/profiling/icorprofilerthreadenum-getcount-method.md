@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d6dbdc4a-6115-455d-a3f3-704a81d3646b
 topic_type:
 - apiref
-ms.openlocfilehash: 4bc2ea083d5278afc9278d388f57b048f7682ca6
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a35f2e69515ea520396641effc05371b54ad8afc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494400"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702332"
 ---
 # <a name="icorprofilerthreadenumgetcount-method"></a>ICorProfilerThreadEnum::GetCount — Metoda
+
 Pobiera liczbę wątków, które są używane przez aplikację.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,10 +34,12 @@ HRESULT GetCount (    [out] ULONG * pcelt
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `celt`  
  określoną Liczba wątków używanych przez aplikację.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -47,5 +50,5 @@ HRESULT GetCount (    [out] ULONG * pcelt
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerThreadEnum, interfejs](icorprofilerthreadenum-interface.md)
+- [ICorProfilerThreadEnum — Interfejs](icorprofilerthreadenum-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)

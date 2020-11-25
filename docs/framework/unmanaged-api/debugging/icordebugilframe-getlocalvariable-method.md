@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c8706356-d50b-4f87-a40c-39c3b7f4fd38
 topic_type:
 - apiref
-ms.openlocfilehash: d6ce5a5cc64a5eb805faa5bb17a42a662940affe
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 54ecce830b928ded115233eb99932cc15a471033
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210257"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703138"
 ---
 # <a name="icordebugilframegetlocalvariable-method"></a>ICorDebugILFrame::GetLocalVariable — Metoda
+
 Pobiera wartość określonej zmiennej lokalnej w ramce stosu języka pośredniego (MSIL) firmy Microsoft.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT GetLocalVariable (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `dwIndex`  
  podczas Indeks zmiennej lokalnej w tej ramce stosu MSIL.  
   
@@ -42,9 +44,11 @@ HRESULT GetLocalVariable (
  określoną Wskaźnik do adresu obiektu ICorDebugValue, który reprezentuje pobraną wartość.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `GetLocalVariable`Metoda może być używana w ramce stosu MSIL lub w ramce skompilowanej just-in-Time (JIT).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1a67fa1b-2419-4cd0-aad4-6f46a0719b4b
 topic_type:
 - apiref
-ms.openlocfilehash: ad1a91e42f582ce96906da5cbf00ca89acb18499
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 968ceec53aade3d04c500c8247d397ffb71382c1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210298"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95703203"
 ---
 # <a name="icordebugilframeenumeratelocalvariables-method"></a>ICorDebugILFrame::EnumerateLocalVariables — Metoda
+
 Pobiera moduł wyliczający dla zmiennych lokalnych w tej ramce.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT EnumerateLocalVariables(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppValueEnum`  
  określoną Wskaźnik do adresu obiektu ICorDebugValueEnum, który jest modułem wyliczającym dla zmiennych lokalnych w tej ramce.  
   
 ## <a name="remarks"></a>Uwagi  
- `EnumerateLocalVariables`Pobiera moduł wyliczający, który może wyświetlać listę zmiennych lokalnych dostępnych w ramce wywołania, która jest reprezentowana przez ten obiekt ICorDebugILFrame. Lista nie może zawierać wszystkich zmiennych lokalnych w uruchomionej funkcji, ponieważ niektóre z nich mogą nie być aktywne.  
+
+ `EnumerateLocalVariables` Pobiera moduł wyliczający, który może wyświetlać listę zmiennych lokalnych dostępnych w ramce wywołania, która jest reprezentowana przez ten obiekt ICorDebugILFrame. Lista nie może zawierać wszystkich zmiennych lokalnych w uruchomionej funkcji, ponieważ niektóre z nich mogą nie być aktywne.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
