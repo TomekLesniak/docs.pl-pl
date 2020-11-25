@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 571912bc-3429-4ff8-8eb2-ea993ffbd901
 topic_type:
 - apiref
-ms.openlocfilehash: 293c1764f4c0d857138726b8ed4855b1e3b03116
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: cc5d0d65d213d952c0897a72d8ec38ea6b8b22db
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703919"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95700668"
 ---
 # <a name="iclrruntimehostunloadappdomain-method"></a>ICLRRuntimeHost::UnloadAppDomain — Metoda
+
 Zwalnia zarządzane <xref:System.AppDomain> odnoszące się do określonego identyfikatora liczbowego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT UnloadAppDomain(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `dwAppDomainId`  
  podczas Liczbowy identyfikator domeny aplikacji do zwolnienia.  
   
@@ -45,7 +47,7 @@ HRESULT UnloadAppDomain(
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`UnloadAppDomain`pomyślnie zwrócono.|  
+|S_OK|`UnloadAppDomain` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -53,17 +55,19 @@ HRESULT UnloadAppDomain(
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Jeśli metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Można uzyskać identyfikator liczbowy domeny aplikacji, w której jest wykonywany bieżący wątek przez wywołanie [GetCurrentAppDomainId —](iclrruntimehost-getcurrentappdomainid-method.md). Ten identyfikator odpowiada <xref:System.AppDomain.Id%2A> właściwości <xref:System.AppDomain> typu zarządzanego.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICLRRuntimeHost, interfejs](iclrruntimehost-interface.md)
+- [ICLRRuntimeHost — Interfejs](iclrruntimehost-interface.md)

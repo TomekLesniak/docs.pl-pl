@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 09238b9b-9359-4780-89dc-2f5e4f57920e
 topic_type:
 - apiref
-ms.openlocfilehash: c2c9ed848984d36ddf10d32d120deda76a4d47cc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 273c3cefa2e67a7d8c429982b4da4126168b2830
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500289"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95699966"
 ---
 # <a name="icorprofilercallbackexceptionoshandlerenter-method"></a>ICorProfilerCallback::ExceptionOSHandlerEnter — Metoda
+
 Nie zaimplementowano. Profiler wymagający niezarządzanych informacji o wyjątku musi uzyskać te informacje w inny sposób.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,6 +34,7 @@ HRESULT ExceptionOSHandlerEnter(
 ```  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

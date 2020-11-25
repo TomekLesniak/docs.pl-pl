@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ef2f83c2-127e-4c38-8385-306c03cd2167
 topic_type:
 - apiref
-ms.openlocfilehash: f5469a6f35826bcb06fe821e3748861dbf3682f3
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 58fce616ae05dcc622369a706f010f91d657389f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804540"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95700629"
 ---
 # <a name="ihostmemorymanageracquiredvirtualaddressspace-method"></a>IHostMemoryManager::AcquiredVirtualAddressSpace — Metoda
+
 Powiadamia hosta, że środowisko uruchomieniowe języka wspólnego (CLR) uzyskało określoną ilość pamięci z systemu operacyjnego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT AcquiredVirtualAddressSpace(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `startAddress`  
  podczas Adres początkowy pamięci.  
   
@@ -42,17 +44,19 @@ HRESULT AcquiredVirtualAddressSpace(
  podczas Rozmiar pamięci (w bajtach).  
   
 ## <a name="remarks"></a>Uwagi  
+
  `AcquiredVirtualAddressSpace`Metoda jest metodą wywołania zwrotnego i musi być implementowana przez moduł zapisujący aplikacji hostingowej. Jest wywoływana przez środowisko CLR.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [IHostMemoryManager, interfejs](ihostmemorymanager-interface.md)
+- [IHostMemoryManager — Interfejs](ihostmemorymanager-interface.md)

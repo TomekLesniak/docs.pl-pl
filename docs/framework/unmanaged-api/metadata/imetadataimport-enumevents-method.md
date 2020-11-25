@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e1efedcb-3dd7-42ae-a399-21c24728aec5
 topic_type:
 - apiref
-ms.openlocfilehash: 53b1234a176cade5876d70da0cb4eadc18802c69
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 3a181f1ef29810058c57bdb13338a01aa1fe7dff
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84492307"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95700473"
 ---
 # <a name="imetadataimportenumevents-method"></a>IMetaDataImport::EnumEvents — Metoda
+
 Wylicza tokeny definicji zdarzeń dla określonego tokenu TypeDef.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,6 +39,7 @@ HRESULT EnumEvents (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `phEnum`  
  [in. out] Wskaźnik do modułu wyliczającego.  
   
@@ -57,19 +59,20 @@ HRESULT EnumEvents (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumEvents`pomyślnie zwrócono.|  
+|`S_OK`|`EnumEvents` pomyślnie zwrócono.|  
 |`S_FALSE`|Brak zdarzeń do wyliczenia. W takim przypadku `pcEvents` jest równa zero.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataImport — Interfejs](imetadataimport-interface.md)
-- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)
+- [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)
