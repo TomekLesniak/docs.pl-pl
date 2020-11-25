@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9dcc8b3d-33ee-4c7c-8d6f-322c57b94a0f
 topic_type:
 - apiref
-ms.openlocfilehash: 5ed5afbbf49b6680d00e78b6af3d45c6f0a7229d
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 24a7c5bca1287e55f3eb06d63e1fed8da37eb3b0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004494"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719570"
 ---
 # <a name="imetadataemitdefinemethodimpl-method"></a>IMetaDataEmit::DefineMethodImpl — Metoda
+
 Tworzy definicję dla implementacji metody dziedziczonej z interfejsu i zwraca token do tej definicji implementacji metody.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,25 +37,27 @@ HRESULT DefineMethodImpl (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `td`  
- podczas `mdTypedef`Token klasy implementującej.  
+ podczas `mdTypedef` Token klasy implementującej.  
   
  `tkBody`  
- podczas `mdMethodDef`Token lub `mdMemberRef` treść kodu.  
+ podczas `mdMethodDef` Token lub `mdMemberRef` treść kodu.  
   
  `tkDecl`  
- podczas `mdMethodDef`Token lub `mdMemberRef` metoda interfejsu, która jest implementowana.  
+ podczas `mdMethodDef` Token lub `mdMemberRef` metoda interfejsu, która jest implementowana.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataEmit — Interfejs](imetadataemit-interface.md)
-- [IMetaDataEmit2, interfejs](imetadataemit2-interface.md)
+- [IMetaDataEmit2 — Interfejs](imetadataemit2-interface.md)

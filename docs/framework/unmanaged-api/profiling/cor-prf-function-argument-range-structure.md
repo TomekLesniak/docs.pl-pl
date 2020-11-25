@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 9f469eac-ac66-419b-8668-fe705bc1a51f
 topic_type:
 - apiref
-ms.openlocfilehash: 8b3785955ec138bbf898e84aa4deb5ed2a6e6b53
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 028395b1c8677d07d4a6481740ecdc7ebb48c180
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500952"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718530"
 ---
 # <a name="cor_prf_function_argument_range-structure"></a>COR_PRF_FUNCTION_ARGUMENT_RANGE — Struktura
+
 Reprezentuje blok argumentów funkcji przechowywanych w sposób ciągły w kolejności od lewej do prawej w pamięci.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,6 +42,7 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_RANGE {
 |`length`|Długość bloku ciągłego.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl  
@@ -51,4 +53,4 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_RANGE {
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Profiling — struktury](profiling-structures.md)
+- [Profiling — Struktury](profiling-structures.md)

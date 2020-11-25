@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: d6ece160-26ad-4d39-abd7-05acd6f78c48
 topic_type:
 - apiref
-ms.openlocfilehash: b7a068efcf20b2028e9c193567d15b59e582febf
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 1d7489e997868a9486f77d176580cee18213a99d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500926"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718566"
 ---
 # <a name="cor_prf_gc_generation-enumeration"></a>COR_PRF_GC_GENERATION — Wyliczenie
+
 Identyfikuje Generowanie elementów bezużytecznych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -47,6 +48,7 @@ typedef enum {
 |`COR_PRF_GC_PINNED_OBJECT_HEAP`|Obiekt jest przechowywany w stercie przypiętych obiektów.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Moduł wyrzucania elementów bezużytecznych zwiększa wydajność zarządzania pamięcią, dzieląc obiekty na generacji na podstawie wieku. Moduł wyrzucania elementów bezużytecznych obecnie używa trzech generacji, numerowanych 0, 1 i 2 oraz dwóch specjalnych segmentów sterty, jeden dla dużych obiektów i jeden dla przypiętych obiektów.
   
  Obiekty, których rozmiar przekracza wartość progową, są przechowywane w stercie dużego obiektu. Przypięte obiekty można przydzielić do sterty przypiętych obiektów, aby uniknąć kosztu związanego z przydzieleniem ich do normalnych stert. Inne przydziały, które zaczynają się od wygenerowania 0. Wszystkie obiekty istniejące po wyrzucaniu elementów bezużytecznych w generacji 0 są podwyższane do generacji 1. Obiekty istniejące po wyrzucaniu elementów bezużytecznych odbywają się w generacji 1.  
@@ -56,6 +58,7 @@ typedef enum {
  `COR_PRF_GC_GENERATION`Wyliczenie jest używane przez strukturę [COR_PRF_GC_GENERATION_RANGE](cor-prf-gc-generation-range-structure.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -66,4 +69,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Profilowanie — wyliczenia](profiling-enumerations.md)
+- [Profilowanie — Wyliczenia](profiling-enumerations.md)

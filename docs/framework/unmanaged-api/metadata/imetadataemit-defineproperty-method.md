@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c4c1dc2-d40d-4173-bbe6-7058fb21c98f
 topic_type:
 - apiref
-ms.openlocfilehash: 479cb25ad8e1c263d3539a4203ac5bea781eb931
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: d2a4a15126f34666a58021a59e9e193685b15a49
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009382"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719492"
 ---
 # <a name="imetadataemitdefineproperty-method"></a>IMetaDataEmit::DefineProperty — Metoda
+
 Tworzy definicję właściwości określonego typu, z określonymi `get` `set` metodami dostępu, i pobiera token do tej definicji właściwości.  
   
 ## <a name="syntax"></a>Składnia  
@@ -45,6 +46,7 @@ HRESULT DefineProperty (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `td`  
  podczas Token klasy lub interfejsu, w którym właściwość jest zdefiniowana.  
   
@@ -79,18 +81,19 @@ HRESULT DefineProperty (
  podczas Tablica innych metod skojarzonych z właściwością. Przerwij tablicę przy użyciu `mdTokenNil` .  
   
  `pmdProp`  
- określoną `mdProperty`Przypisany token.  
+ określoną `mdProperty` Przypisany token.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataEmit — Interfejs](imetadataemit-interface.md)
-- [IMetaDataEmit2, interfejs](imetadataemit2-interface.md)
+- [IMetaDataEmit2 — Interfejs](imetadataemit2-interface.md)

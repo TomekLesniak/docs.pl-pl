@@ -14,14 +14,15 @@ helpviewer_keywords:
 - CreateClassEnumWmi function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 1d637479bd140e635ee647a1e30d03343d8b0dcd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5b80954e288f6720c75d0af0b8af083fa4856754
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107531"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719739"
 ---
 # <a name="createclassenumwmi-function"></a>CreateClassEnumWmi, funkcja
+
 Zwraca moduł wyliczający dla wszystkich klas, które spełniają określone kryteria wyboru.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -46,7 +47,7 @@ HRESULT CreateClassEnumWmi (
 ## <a name="parameters"></a>Parametry
 
 `strSuperclass`\
-podczas Jeśli nie `null` lub puste, określa nazwę klasy nadrzędnej; moduł wyliczający zwraca tylko podklasy tej klasy. Jeśli jest `null` lub puste i `lFlags` jest WBEM_FLAG_SHALLOW, zwraca tylko klasy najwyższego poziomu (klasy bez klasy nadrzędnej). Jeśli jest `null` lub puste i `lFlags` jest `WBEM_FLAG_DEEP`, zwraca wszystkie klasy w przestrzeni nazw.
+podczas Jeśli nie `null` lub puste, określa nazwę klasy nadrzędnej; moduł wyliczający zwraca tylko podklasy tej klasy. Jeśli jest to `null` lub puste i `lFlags` jest WBEM_FLAG_SHALLOW, zwraca tylko klasy najwyższego poziomu (klasy bez klasy nadrzędnej). Jeśli jest `null` lub jest pusty i `lFlags` ma `WBEM_FLAG_DEEP` wartość, zwraca wszystkie klasy w przestrzeni nazw.
 
 `lFlags`\
 podczas Kombinacja flag mających wpływ na zachowanie tej funkcji. Poniższe wartości są zdefiniowane w pliku nagłówkowym *WbemCli. h* lub można je definiować jako stałe w kodzie:
@@ -60,10 +61,10 @@ podczas Kombinacja flag mających wpływ na zachowanie tej funkcji. Poniższe wa
 | `WBEM_FLAG_FORWARD_ONLY` | 0x20 | Funkcja zwraca moduł wyliczający tylko do przodu. Zazwyczaj moduły wyliczające tylko do przodu są szybsze i używają mniej pamięci niż konwencjonalne moduły wyliczające, ale nie pozwalają na wywołania [klonowania](clone.md). |
 | `WBEM_FLAG_BIDIRECTIONAL` | 0 | Usługa WMI zachowuje wskaźniki do obiektów w wyliczeniu do momentu ich zwolnienia. |
 
-Zalecane flagi są `WBEM_FLAG_RETURN_IMMEDIATELY` i `WBEM_FLAG_FORWARD_ONLY` w celu uzyskania najlepszej wydajności.
+Zalecane flagi są `WBEM_FLAG_RETURN_IMMEDIATELY` i `WBEM_FLAG_FORWARD_ONLY` zapewniają najlepszą wydajność.
 
 `pCtx`\
-podczas Zazwyczaj ta wartość jest `null`. W przeciwnym razie jest wskaźnikiem do wystąpienia [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , które może być używane przez dostawcę dostarczającego żądane klasy.
+podczas Zazwyczaj ta wartość to `null` . W przeciwnym razie jest wskaźnikiem do wystąpienia [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , które może być używane przez dostawcę dostarczającego żądane klasy.
 
 `ppEnum`\
 określoną Odbiera wskaźnik do modułu wyliczającego.
@@ -113,7 +114,7 @@ Jeśli wywołanie funkcji nie powiedzie się, można uzyskać dodatkowe informac
 
 **Nagłówek:** WMINet_Utils. idl
 
-**Wersje .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**.NET Framework wersje:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Zobacz także
 

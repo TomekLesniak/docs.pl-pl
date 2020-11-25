@@ -1,5 +1,5 @@
 ---
-title: BlessIWbemServicesObject, funkcja (odwołanie do interfejsu API niezarządzanego)
+title: BlessIWbemServicesObject — funkcja (niezarządzana dokumentacja interfejsu API)
 description: Funkcja BlessIWbemServicesObject wskazuje, czy poświadczenia użytkownika zezwalają na dostęp do obiektu IWbemServices
 ms.date: 11/06/2017
 api_name:
@@ -14,15 +14,16 @@ helpviewer_keywords:
 - BlessIWbemServicesObject function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: fd822f78d29ad3a75fb5e57dd7c23b7049d445b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1aab2076f57f938715a3e65481a3540dc52279c6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175034"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719752"
 ---
 # <a name="blessiwbemservicesobject-function"></a>BlessIWbemServicesObject, funkcja
-Wskazuje, czy poświadczenia użytkownika zezwalają na dostęp do określonego obiektu [IWbemServices.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices)
+
+Wskazuje, czy poświadczenia użytkownika zezwalają na dostęp do określonego obiektu [IWbemServices](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) .
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -42,43 +43,43 @@ HRESULT BlessIWbemServicesObject (
 ## <a name="parameters"></a>Parametry
 
 `pIWbemServices`\
-[w] Wskaźnik do obiektu usługi WMI.
+podczas Wskaźnik do obiektu usługi WMI.
 
 `strUser`\
-[w] Nazwa użytkownika.
+podczas Nazwa użytkownika.
 
 `strPassword`\
-[w] Hasło skojarzone `strUser`z programem .
+podczas Hasło skojarzone z `strUser` .
 
 `strAuthority`\
-[w] Nazwa domeny użytkownika. Więcej informacji można znaleźć w funkcji [ConnectServerWmi.](connectserverwmi.md)
+podczas Nazwa domeny użytkownika. Zobacz funkcję [ConnectServerWmi](connectserverwmi.md) , aby uzyskać więcej informacji.
 
 `impLevel`\
-[w] Poziom personifikacji.
+podczas Poziom personifikacji.
 
 `authnLevel`\
-[w] Poziom autoryzacji.
+podczas Poziom autoryzacji.
 
 ## <a name="return-value"></a>Wartość zwracana
 
-Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówka *WinError.h* lub można zdefiniować je jako stałe w kodzie:
+Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówkowym *Winerror. h* lub można je definiować jako stałe w kodzie:
 
-|Stały  |Wartość  |Opis  |
+|Stała  |Wartość  |Opis  |
 |---------|---------|---------|
-| `E_INVALIDARG` | 0x80070057 | Jeden lub więcej argumentów jest nieprawidłowych. |
-| `E_POINTER` | 0x80004003 | Parametr `pIWbemServices` ma wartość `null`. |
+| `E_INVALIDARG` | 0x80070057 | Co najmniej jeden argument jest nieprawidłowy. |
+| `E_POINTER` | 0x80004003 | `pIWbemServices` to `null`. |
 | `E_FAIL` | 0x80000008 | Wystąpił nieokreślony błąd. |
-| `E_OUTOFMEMORY` | 0x80000002 | Niewystarczająca ilość pamięci jest dostępna do wykonania operacji. |
+| `E_OUTOFMEMORY` | 0x80000002 | Za mało dostępnej pamięci, aby wykonać tę operację. |
 | `S_OK` | 0 | Wywołanie funkcji zakończyło się pomyślnie. |
 
 ## <a name="requirements"></a>Wymagania
 
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).
 
- **Nagłówek:** WMINet_Utils.idl
+ **Nagłówek:** WMINet_Utils. idl
 
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+ **.NET Framework wersje:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Liczniki wydajności WMI i (niezarządzane odwołanie interfejsu API)](index.md)
+- [WMI i liczniki wydajności (niezarządzana dokumentacja interfejsu API)](index.md)

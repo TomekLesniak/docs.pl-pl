@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: cc507cb0-df2e-49c2-b32e-0c3271a8df9a
 topic_type:
 - apiref
-ms.openlocfilehash: f9b00d5e34300f1ed16eaddff3bf8e877219f910
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: c796e3782a498c798c9b47f028ef05c2de00f54d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82893799"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717672"
 ---
 # <a name="icordebugcodegetaddress-method"></a>ICorDebugCode::GetAddress — Metoda
+
 Pobiera względny adres wirtualny (RVA) segmentu kodu, który reprezentuje ten interfejs "ICorDebugCode".  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT GetAddress (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pStart`  
  określoną Wskaźnik do adresu RVA segmentu kodu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

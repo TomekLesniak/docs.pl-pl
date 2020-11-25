@@ -14,16 +14,16 @@ helpviewer_keywords:
 ms.assetid: 5416de70-43f2-4cdf-a11f-d570759c9c0c
 topic_type:
 - apiref
-ms.openlocfilehash: ff15297eb479f7474c9f07123a29263fb4da3205
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: ce3f289ae914817071fad5274c45d1e5fae71a06
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82893975"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717984"
 ---
 # <a name="icordebugclass2-interface"></a>ICorDebugClass2, interfejs
 
-Reprezentuje klasę generyczną lub klasę z parametrem metody typu <xref:System.Type>. Ten interfejs rozszerza [ICorDebugClass](icordebugclass-interface.md).  
+Reprezentuje klasę generyczną lub klasę z parametrem metody typu <xref:System.Type> . Ten interfejs rozszerza [ICorDebugClass](icordebugclass-interface.md).  
   
 ## <a name="methods"></a>Metody  
   
@@ -38,6 +38,7 @@ Reprezentuje klasę generyczną lub klasę z parametrem metody typu <xref:System
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -46,7 +47,7 @@ Reprezentuje klasę generyczną lub klasę z parametrem metody typu <xref:System
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugClass, interfejs](icordebugclass-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

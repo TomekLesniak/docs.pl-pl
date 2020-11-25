@@ -1,6 +1,6 @@
 ---
-title: GetObjectText, funkcja (odwołanie do niezarządzanego interfejsu API)
-description: Funkcja GetObjectText zwraca teksturowane renderowanie obiektu w składni MOF.
+title: GetObjectText — funkcja (niezarządzana dokumentacja interfejsu API)
+description: Funkcja GetObjectText zwraca renderowanie tekstu obiektu w składni MOF.
 ms.date: 11/06/2017
 api_name:
 - GetObjectText
@@ -14,15 +14,16 @@ helpviewer_keywords:
 - GetObjectText function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 6881125760e0f1dc38e6b01917d5829edc95e3ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6ad2b29202222d594cc7976a13929002164314a7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176789"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718374"
 ---
 # <a name="getobjecttext-function"></a>GetObjectText, funkcja
-Zwraca teksturowane renderowanie obiektu w składni formatu obiektów zarządzanych (MOF).
+
+Zwraca renderowanie tekstowe obiektu w składni Managed Object Format (MOF).
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -40,47 +41,48 @@ HRESULT GetObjectText (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[w] Ten parametr jest nieużywane.
+podczas Ten parametr jest nieużywany.
 
 `ptr`  
-[w] Wskaźnik do wystąpienia [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
+podczas Wskaźnik do wystąpienia [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `lFlags`  
-[w] Normalnie 0. Jeśli `WBEM_FLAG_NO_FLAVORS` (lub 0x1) jest określony, kwalifikatory są uwzględniane bez propagacji lub informacji o smaku.
+podczas Zwykle 0. Jeśli `WBEM_FLAG_NO_FLAVORS` określono (lub 0x1), kwalifikatory są uwzględniane bez informacji o propagacji lub wersji.
 
-`pstrObjectText`[na zewnątrz] Wskaźnik do `null` wpisu przy wprowadzaniu. Po zwrocie nowo `BSTR` przydzielone, który zawiera renderowania składni MOF obiektu.  
+`pstrObjectText` określoną Wskaźnik do `null` wpisu na wejściu. W przypadku powrotu, nowo przydzielony `BSTR` , który zawiera składnię MOF, renderowanie obiektu.  
 
 ## <a name="return-value"></a>Wartość zwracana
 
-Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówka *WbemCli.h* lub można zdefiniować je jako stałe w kodzie:
+Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówkowym *WbemCli. h* lub można je definiować jako stałe w kodzie:
 
-|Stały  |Wartość  |Opis  |
+|Stała  |Wartość  |Opis  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Wystąpiła ogólna porażka. |
+|`WBEM_E_FAILED` | 0x80041001 | Wystąpił błąd ogólny. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr jest nieprawidłowy. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Za mało pamięci jest dostępna do ukończenia operacji. |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Za mało dostępnej pamięci, aby ukończyć tę operację. |
 |`WBEM_S_NO_ERROR` | 0 | Wywołanie funkcji zakończyło się pomyślnie.  |
   
 ## <a name="remarks"></a>Uwagi
 
-Ta funkcja zawija wywołanie [metody IWbemClassObject::GetObjectText.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getobjecttext)
+Ta funkcja otacza wywołanie metody [IWbemClassObject:: GetObjectText](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getobjecttext) .
 
-Zwrócony tekst MOF nie zawiera wszystkich informacji o obiekcie, ale tylko wystarczającą ilość informacji dla kompilatora MOF, aby móc odtworzyć oryginalny obiekt. Na przykład nie propagowane kwalifikatorów lub właściwości klasy nadrzędnej są uwzględniane.
+Zwrócony tekst MOF nie zawiera wszystkich informacji o obiekcie, ale tylko wystarczające informacje dla kompilatora MOF, aby można było odtworzyć oryginalny obiekt. Na przykład nie są uwzględniane żadne kwalifikatory propagowane ani właściwości klasy nadrzędnej.
 
-Następujący algorytm jest używany do rekonstrukcji tekstu parametrów metody:
+Następujący algorytm służy do rekonstruowania tekstu parametrów metody:
 
 1. Parametry są ponownie sekwencjonowane w kolejności ich wartości identyfikatorów.
-1. Parametry, które `[in]` są `[out]` określone jako i są łączone w jeden parametr.
+1. Parametry, które są określone jako `[in]` i `[out]` są łączone w jeden parametr.
 
-`pstrObjectText`musi być wskaźnikiem `null` do, gdy funkcja jest wywoływana; nie może wskazywać na ciąg, który jest prawidłowy przed wywołaniem metody, ponieważ wskaźnik nie zostanie cofnięty.
+`pstrObjectText` musi być wskaźnikiem do elementu, `null` gdy funkcja jest wywoływana; nie może wskazywać ciągu, który jest prawidłowy przed wywołaniem metody, ponieważ wskaźnik nie zostanie cofnięty.
 
 ## <a name="requirements"></a>Wymagania  
-**Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
-  
- **Nagłówek:** WMINet_Utils.idl  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [Liczniki wydajności WMI i (niezarządzane odwołanie interfejsu API)](index.md)
+**Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
+  
+ **Nagłówek:** WMINet_Utils. idl  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [WMI i liczniki wydajności (niezarządzana dokumentacja interfejsu API)](index.md)

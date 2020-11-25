@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f2833594-d90b-4a71-9a53-34b12470c64a
 topic_type:
 - apiref
-ms.openlocfilehash: efff491d92ac7910f43f76965ef98d1d0e4ba0aa
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 96d24705d80dabcda691edec497a4a30b6d37dc4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004442"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719557"
 ---
 # <a name="imetadataemitdefinemoduleref-method"></a>IMetaDataEmit::DefineModuleRef — Metoda
+
 Tworzy sygnaturę metadanych dla modułu o określonej nazwie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT DefineModuleRef (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `szName`  
  podczas Nazwa innego pliku metadanych (zazwyczaj jest to biblioteka DLL). Jest to tylko nazwa pliku. Nie należy używać pełnej nazwy ścieżki.  
   
@@ -42,15 +44,16 @@ HRESULT DefineModuleRef (
  określoną Przypisany `mdModuleRef` token.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataEmit — Interfejs](imetadataemit-interface.md)
-- [IMetaDataEmit2, interfejs](imetadataemit2-interface.md)
+- [IMetaDataEmit2 — Interfejs](imetadataemit2-interface.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d86a3d14-4796-4909-9591-dfafe3de5ce4
 topic_type:
 - apiref
-ms.openlocfilehash: a58e03875ec021b41479085fa9e27a4321ae965e
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 5b3f89bb14be0d7128682f8702548545b1e50928
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004364"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719531"
 ---
 # <a name="imetadataemitdefineparam-method"></a>IMetaDataEmit::DefineParam — Metoda
+
 Tworzy definicję parametru z określonym podpisem dla metody przywoływanej przez określony token i pobiera token dla tej definicji parametru.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,6 +42,7 @@ HRESULT DefineParam (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `md`  
  podczas Token dla metody, której parametr jest definiowany.  
   
@@ -63,21 +65,23 @@ HRESULT DefineParam (
  podczas Rozmiar, w znakach Unicode, z `pValue` .  
   
  `ppd`  
- określoną `mdParamDef`Przypisany token.  
+ określoną `mdParamDef` Przypisany token.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wartości sekwencji `ulParamSeq` zaczynają się od 1 dla parametrów. Wartość zwracana ma numer sekwencyjny równy 0.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataEmit — Interfejs](imetadataemit-interface.md)
-- [IMetaDataEmit2, interfejs](imetadataemit2-interface.md)
+- [IMetaDataEmit2 — Interfejs](imetadataemit2-interface.md)

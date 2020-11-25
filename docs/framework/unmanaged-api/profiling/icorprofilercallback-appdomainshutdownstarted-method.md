@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d23a3408-b525-4aec-a186-2ac7ca65d7a4
 topic_type:
 - apiref
-ms.openlocfilehash: 1b973cdeaffbec0dad1f2d082c44e8001647fdcc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: cb0b763059c787b8f3e93e6c46b0e7fb2f8f8b2c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500458"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718465"
 ---
 # <a name="icorprofilercallbackappdomainshutdownstarted-method"></a>ICorProfilerCallback::AppDomainShutdownStarted — Metoda
+
 Powiadamia profiler o tym, że domena aplikacji jest zwalniana z procesu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,9 +40,11 @@ HRESULT AppDomainShutdownStarted(
   \[w programie] identyfikuje domenę, w której są przechowywane zestawy aplikacji.
 
 ## <a name="remarks"></a>Uwagi  
+
  Wartość `appDomainId` nie jest prawidłowa dla żadnych żądań informacji po `AppDomainShutdownStarted` powrocie metody — jest to Ostatnia szansa dla profilera, aby uzyskać informacje o tej domenie aplikacji.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

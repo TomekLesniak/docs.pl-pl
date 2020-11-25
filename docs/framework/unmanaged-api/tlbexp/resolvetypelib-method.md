@@ -13,14 +13,15 @@ helpviewer_keywords:
 ms.assetid: 95d2aa0d-8eeb-4a9f-a216-5249f7e2c167
 topic_type:
 - apiref
-ms.openlocfilehash: 65bbae614c8872ab5d78b3855b56ceaf2aad50da
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 84eea78b9c2e73e24238a5ecbc9442f3d63dbd4e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558189"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719791"
 ---
 # <a name="resolvetypelib-method"></a>ResolveTypeLib — Metoda
+
 Rozpoznaje prostą nazwę biblioteki typów przez zwrócenie jej w pełni kwalifikowanej ścieżki.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT ResolveTypeLib(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `bstrSimpleName`  
  podczas [BSTR](/previous-versions/windows/desktop/automat/bstr) , który zawiera prostą nazwę biblioteki typów.  
   
@@ -47,10 +49,10 @@ HRESULT ResolveTypeLib(
  podczas Identyfikator lokalizacji biblioteki typów.  
   
  `wMajorVersion`  
- podczas Numer wersji głównej biblioteki typów. Na przykład w przypadku wersji *x. y*główny numer wersji to *x*.  
+ podczas Numer wersji głównej biblioteki typów. Na przykład w przypadku wersji *x. y* główny numer wersji to *x*.  
   
  `wMinorVersion`  
- podczas Numer wersji pomocniczej biblioteki typów. Na przykład w przypadku wersji *x. y*pomocniczy numer wersji to *y*.  
+ podczas Numer wersji pomocniczej biblioteki typów. Na przykład w przypadku wersji *x. y* pomocniczy numer wersji to *y*.  
   
  `syskind`  
  podczas Flaga [SYSKIND](/windows/win32/api/oaidl/ne-oaidl-syskind) , która identyfikuje środowisko operacyjne. Typowe wartości to SYS_WIN32 i SYS_WIN64.  
@@ -59,11 +61,13 @@ HRESULT ResolveTypeLib(
  określoną Wskaźnik do typu [BSTR](/previous-versions/windows/desktop/automat/bstr) , który zawiera pełną ścieżkę do biblioteki typów o nazwie w `bstrSimpleName` parametrze.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ResolveTypeLib`Metoda jest wywoływana przez [funkcję LoadTypeLibWithResolver —](loadtypelibwithresolver-function.md) podczas przetwarzania [Tlbexp.exe (Eksporter biblioteki typów)](../../tools/tlbexp-exe-type-library-exporter.md) .  
   
  Niestandardowe implementacje tego interfejsu muszą zwracać element [BSTR](/previous-versions/windows/desktop/automat/bstr) , który zawiera pełną ścieżkę biblioteki typów o nazwie w `bstrSimpleName` parametrze.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** TlbRef. idl, TlbRef. h  

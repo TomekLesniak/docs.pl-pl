@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1e48243f-5de6-4bd6-a1d0-e1d248bca4b8
 topic_type:
 - apiref
-ms.openlocfilehash: 55955cd47bd32fb4294b0b8e852dd692702bd74f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: dfe1a530ea009300e7cfbf002053d2e2b6034845
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500549"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719284"
 ---
 # <a name="functiontailcall3-function"></a>FunctionTailcall3 — Funkcja
+
 Powiadamia profiler, że aktualnie wykonywana funkcja ma wykonać wywołanie tail do innej funkcji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);
   \[in) identyfikator aktualnie wykonywanej funkcji, która ma na celu wykonanie wywołania tail.
 
 ## <a name="remarks"></a>Uwagi  
+
  `FunctionTailcall3`Funkcja wywołania zwrotnego powiadamia profiler w miarę wywoływania funkcji. Użyj [metody ICorProfilerInfo3:: SetEnterLeaveFunctionHooks3 —](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) , aby zarejestrować implementację tej funkcji.  
   
  `FunctionTailcall3`Funkcja jest wywołaniem zwrotnym, należy ją zaimplementować. Implementacja musi używać `__declspec(naked)` atrybutu klasy magazynu.  
@@ -52,6 +54,7 @@ void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);
  `FunctionTailcall3`Funkcja nie może wywołać kodu zarządzanego lub spowodować alokacji pamięci zarządzanej w dowolny sposób.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl  

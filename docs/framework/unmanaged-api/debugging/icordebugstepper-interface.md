@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ed8364eb-f01b-46f6-b5e3-5dda9cae2dfe
 topic_type:
 - apiref
-ms.openlocfilehash: 622fdfa37c93e406950e73941775828ae4b112fa
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 8b5bbb65034e5b715532397c9ecc650da9aee912
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379422"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718296"
 ---
 # <a name="icordebugstepper-interface"></a>ICorDebugStepper, interfejs
+
 Reprezentuje krok wykonaniu kodu, który jest realizowany przez debuger; służy jako identyfikator między wydaniem i zakończeniem polecenia i zapewnia sposób anulowania kroku.  
   
 ## <a name="methods"></a>Metody  
@@ -38,6 +39,7 @@ Reprezentuje krok wykonaniu kodu, który jest realizowany przez debuger; służy
 |[StepRange, metoda](icordebugstepper-steprange-method.md)|Powoduje `ICorDebugStepper` , że jest to jeden krok przez zawierający go wątek i zwraca, gdy osiągnie kod poza ostatnim z określonych zakresów.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ICorDebugStepper`Interfejs służy do następujących celów:  
   
 - Pełni rolę identyfikatora między wydanym poleceniem kroku a ukończeniem tego polecenia.  
@@ -54,6 +56,7 @@ Reprezentuje krok wykonaniu kodu, który jest realizowany przez debuger; służy
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -62,6 +65,6 @@ Reprezentuje krok wykonaniu kodu, który jest realizowany przez debuger; służy
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

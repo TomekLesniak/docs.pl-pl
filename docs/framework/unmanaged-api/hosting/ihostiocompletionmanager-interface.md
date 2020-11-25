@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c28d1983-83f7-46e2-990f-dbb9dc07c818
 topic_type:
 - apiref
-ms.openlocfilehash: 095872f8d4bd4f7d3351b8b3e3f8f8445b615cd8
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 75ad8670008242008aa344835143ff9b2add0a6c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501541"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719596"
 ---
 # <a name="ihostiocompletionmanager-interface"></a>IHostIoCompletionManager — Interfejs
+
 Dostarcza metody, które umożliwiają środowisko uruchomieniowe języka wspólnego (CLR) do współdziałania z portami zakończenia we/wy dostarczonymi przez hosta.  
   
 ## <a name="methods"></a>Metody  
@@ -41,17 +42,19 @@ Dostarcza metody, które umożliwiają środowisko uruchomieniowe języka wspól
 |[SetMinThreads, metoda](ihostiocompletionmanager-setminthreads-method.md)|Ustawia minimalną liczbę wątków, które host powinien przydzielić do zakończenia operacji we/wy.|  
   
 ## <a name="remarks"></a>Uwagi  
- `IHostIoCompletionManager`odnosi się do `ICLRIoCompletionManager` interfejsu implementowanego przez środowisko CLR. Środowisko CLR wywołuje metody `IHostIoCompletionManager` w celu powiązania dojść z portami dostarczanymi przez hosta, a host wywołuje metody `ICLRIoCompletionManager` w celu zgłaszania ukończenia żądań we/wy.  
+
+ `IHostIoCompletionManager` odnosi się do `ICLRIoCompletionManager` interfejsu implementowanego przez środowisko CLR. Środowisko CLR wywołuje metody `IHostIoCompletionManager` w celu powiązania dojść z portami dostarczanymi przez hosta, a host wywołuje metody `ICLRIoCompletionManager` w celu zgłaszania ukończenia żądań we/wy.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

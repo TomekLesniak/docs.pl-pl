@@ -2,14 +2,15 @@
 title: Hierarchia modelu DOM (XML Document Object Model)
 ms.date: 03/30/2017
 ms.assetid: 9d187d4f-c76e-4223-a670-cc290783ce47
-ms.openlocfilehash: 2a8bbd4f7cb3feb2a555af9862632a2fa493be32
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 24ef51a18392fe3034e64bd585d879941fca4b95
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819256"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718361"
 ---
 # <a name="xml-document-object-model-dom-hierarchy"></a>Hierarchia modelu DOM (XML Document Object Model)
+
 Na poniższej ilustracji przedstawiono hierarchię klas dla Document Object Model XML (DOM), z nazwą organizacja World Wide Web Consortium (W3C) w nawiasie wraz z nazwą klasy, w której ma zastosowanie.  
   
  ![Hierarchia&#41; Document Object Model XML &#40;DOM](media/dom-class-hierarchy.gif "Dom_class_hierarchy")  

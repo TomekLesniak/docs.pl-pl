@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 69156fbf-7219-43bf-b4b8-b13f1a2fcb86
 topic_type:
 - apiref
-ms.openlocfilehash: 310319e8fefe80017c58706e2beaee5eb1e78422
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: c9b20500a4a9e4649a938e00e3b059d1395da1d3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007913"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718933"
 ---
 # <a name="corcallingconvention-enumeration"></a>CorCallingConvention — Wyliczenie
+
 Zawiera wartości opisujące typy konwencji wywoływania, które są wykonywane w kodzie zarządzanym.  
   
 ## <a name="syntax"></a>Składnia  
@@ -67,12 +68,13 @@ typedef enum CorCallingConvention
 |`IMAGE_CEE_CS_CALLCONV_GENERIC`|Wskazuje sygnaturę metody ogólnej z jawną liczbą argumentów typu. Poprzedza to zwykłą liczbę parametrów.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)

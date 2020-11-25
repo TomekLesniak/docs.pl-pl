@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: bb8db3b6-d81d-49fc-b74c-dbc908a9eab9
 topic_type:
 - apiref
-ms.openlocfilehash: b1a83f07f03ddb17d5c306453cf838101a77ed65
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 615c4ac95ab777e8081e630cafb6671e64dea78a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007939"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719004"
 ---
 # <a name="corassemblyflags-enumeration"></a>CorAssemblyFlags — Wyliczenie
+
 Zawiera wartości opisujące metadane zastosowane do kompilacji zestawu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -77,12 +78,13 @@ typedef enum CorAssemblyFlags {
 |`afContentType_WindowsRuntime`|Wskazuje typ zawartości środowisko wykonawcze systemu Windows.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)

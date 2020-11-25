@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 26cbd27d-12bf-444a-8197-ccd14d37dda3
 topic_type:
 - apiref
-ms.openlocfilehash: dd82709064fe7f7d912d93f4b3f0248769f02b9e
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 8a2a6be0db76f5ee2c7fa67c2038e0a5c845bd0f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894888"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719713"
 ---
 # <a name="icordebugassembly2isfullytrusted-method"></a>ICorDebugAssembly2::IsFullyTrusted — Metoda
+
 Pobiera wartość wskazującą, czy zestaw ma przyznane pełne zaufanie przez system zabezpieczeń środowiska uruchomieniowego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT IsFullyTrusted(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pbFullyTrusted`  
- określoną `true` Jeśli zestaw ma przyznane pełne zaufanie przez system zabezpieczeń środowiska uruchomieniowego; w przeciwnym `false`razie.  
+ [out] `true` Jeśli zestaw ma przyznane pełne zaufanie przez system zabezpieczeń środowiska uruchomieniowego; w przeciwnym razie `false` .  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta metoda zwraca wartość HRESULT CORDBG_E_NOTREADY, jeśli zasady zabezpieczeń dla zestawu nie zostały jeszcze rozwiązane, czyli jeśli żaden kod w zestawie nie został jeszcze uruchomiony.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

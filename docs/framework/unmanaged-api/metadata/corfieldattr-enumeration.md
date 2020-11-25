@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6ae2c4be-212c-4e74-9288-40a11dc26522
 topic_type:
 - apiref
-ms.openlocfilehash: dea69e18fc517eddddc5b99950a6f3b16ee3e426
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 4e40f684cc1578672cb8ff474972ce9cdc39efb2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007406"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718829"
 ---
 # <a name="corfieldattr-enumeration"></a>CorFieldAttr — Wyliczenie
+
 Zawiera wartości opisujące metadane dotyczące pola.  
   
 ## <a name="syntax"></a>Składnia  
@@ -81,12 +82,13 @@ typedef enum CorFieldAttr {
 |`fdHasFieldRVA`|Określa, że pole ma względny adres wirtualny.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c5e6216f-ae3d-4697-9688-66b69c1251ec
 topic_type:
 - apiref
-ms.openlocfilehash: 78c192f10f629a0c1316ae7af7fc774819f4de8f
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 0b9ff2716cc0bc32c81fe6fcdd4e6c367d4d835f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007484"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718180"
 ---
 # <a name="imetadataassemblyimportgetfileprops-method"></a>IMetaDataAssemblyImport::GetFileProps — Metoda
+
 Pobiera właściwości pliku z określonym podpisem metadanych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,8 +41,9 @@ HRESULT GetFileProps (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `mdf`  
- podczas `mdFile`Token metadanych reprezentujący plik, dla którego mają zostać pobrane właściwości.  
+ podczas `mdFile` Token metadanych reprezentujący plik, dla którego mają zostać pobrane właściwości.  
   
  `szName`  
  określoną Prosta nazwa pliku.  
@@ -62,14 +64,15 @@ HRESULT GetFileProps (
  określoną Wskaźnik do flag, które opisują metadane zastosowane do pliku. Wartość flags jest kombinacją co najmniej jednej wartości [CorFileFlags —](corfileflags-enumeration.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platforma:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataAssemblyImport — Interfejs](imetadataassemblyimport-interface.md)

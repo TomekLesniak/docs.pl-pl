@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b3e7d0c2-3baa-4ef8-8e3f-b865cf252940
 topic_type:
 - apiref
-ms.openlocfilehash: 155354b335caf83c466c8d9d6711f36c7efc9298
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: dd915a82551f5bed688a28ab77f5d6cf4e38af0f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894812"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719258"
 ---
 # <a name="icordebugassemblyenumnext-method"></a>ICorDebugAssemblyEnum::Next — Metoda
+
 Pobiera określoną liczbę zestawów z kolekcji, rozpoczynając od bieżącej pozycji kursora.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT Next (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `celt`  
  podczas Liczba zestawów do pobrania.  
   
@@ -44,9 +46,10 @@ HRESULT Next (
  określoną Tablica wskaźników, z których każdy wskazuje obiekt ICorDebugAssembly, który reprezentuje zestaw.  
   
  `pceltFetched`  
- określoną Wskaźnik do liczby faktycznie zwróconych zestawów. Ta wartość może być równa `celt` null, jeśli jest taka.  
+ określoną Wskaźnik do liczby faktycznie zwróconych zestawów. Ta wartość może być równa null, jeśli `celt` jest taka.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

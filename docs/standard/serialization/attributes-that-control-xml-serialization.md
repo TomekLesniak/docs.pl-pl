@@ -10,14 +10,15 @@ helpviewer_keywords:
 - serialization, attributes
 - XML Schema, serializing
 ms.assetid: 414b820f-a696-4206-b576-2711d85490c7
-ms.openlocfilehash: 032843728c74799d7ee78257b21243b31cb4f99c
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 55c36ea6313bfd3000b1d8502d4eda7c552e08cf
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281988"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717932"
 ---
 # <a name="attributes-that-control-xml-serialization"></a>Atrybuty kontrolujące serializację XML
+
 Można zastosować atrybuty w poniższej tabeli do klas i elementów członkowskich klasy, aby kontrolować sposób, w jaki <xref:System.Xml.Serialization.XmlSerializer> Serializacja lub deserializacji wystąpienia klasy. Aby zrozumieć, jak te atrybuty kontrolują serializacji XML, zobacz [Kontrolowanie serializacji XML przy użyciu atrybutów](controlling-xml-serialization-using-attributes.md).  
   
  Te atrybuty mogą również kontrolować wiadomości protokołu SOAP literału stylu generowanych przez usługi sieci Web XML. Aby uzyskać więcej informacji na temat stosowania tych atrybutów do metody usług sieci Web XML, zobacz [serializacji XML z usługami sieci Web XML](xml-serialization-with-xml-web-services.md).  

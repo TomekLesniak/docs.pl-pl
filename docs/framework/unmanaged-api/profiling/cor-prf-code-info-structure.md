@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: cf30e27c-1f7e-43a2-ba1e-01e4137301db
 topic_type:
 - apiref
-ms.openlocfilehash: 9dbe0219f5932a9d212edaf5181b96335c47db0e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b64e58a79f3dbe0c91b0c0cefc4a9d918c700cf9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501017"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718634"
 ---
 # <a name="cor_prf_code_info-structure"></a>COR_PRF_CODE_INFO — Struktura
+
 Reprezentuje jeden ciągły blok kodu natywnego przechowywanego w pamięci.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,6 +42,7 @@ typedef struct _COR_PRF_CODE_INFO {
 |`size`|Rozmiar bloku.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl  
@@ -51,4 +53,4 @@ typedef struct _COR_PRF_CODE_INFO {
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Profiling — struktury](profiling-structures.md)
+- [Profiling — Struktury](profiling-structures.md)

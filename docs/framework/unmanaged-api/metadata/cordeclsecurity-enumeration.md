@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 864f1267-d267-4696-8df7-1f83f8444d6f
 topic_type:
 - apiref
-ms.openlocfilehash: ffbc9a10ff48b3dfd59b95c0f6b9ecab80b6a49c
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: dd599ce8c63fa94e1a18b4e2d18fa334238728bd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007887"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95718881"
 ---
 # <a name="cordeclsecurity-enumeration"></a>CorDeclSecurity — Wyliczenie
+
 Określa akcje zabezpieczeń, które mogą być wykonywane przy użyciu zabezpieczeń deklaratywnych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -81,12 +82,13 @@ typedef enum CorDeclSecurity {
 |`dclMaximumValue`|Zarezerwowany.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)
