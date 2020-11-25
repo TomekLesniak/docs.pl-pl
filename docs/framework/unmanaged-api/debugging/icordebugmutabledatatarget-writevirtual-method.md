@@ -2,14 +2,15 @@
 title: 'ICorDebugMutableDataTarget:: WriteVirtual —, Metoda'
 ms.date: 03/30/2017
 ms.assetid: 80833648-58a7-491a-8dc8-9a48e9bb3adc
-ms.openlocfilehash: 6325dba99fba0ab5e2f752a0635fdd428d3065eb
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 453ab23e292c5eab4a8300c32bf76743b787750d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83206740"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709339"
 ---
 # <a name="icordebugmutabledatatargetwritevirtual-method"></a>ICorDebugMutableDataTarget:: WriteVirtual —, Metoda
+
 Zapisuje pamięć w przestrzeni adresowej procesu docelowego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -22,6 +23,7 @@ HRESULT WriteVirtual(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `address`  
  podczas Adres, pod którym należy napisać zawartość `pBuffer` .  
   
@@ -32,12 +34,15 @@ HRESULT WriteVirtual(
  podczas Liczba bajtów w `pBuffer` .  
   
 ## <a name="return-value"></a>Wartość zwracana  
- `S_OK`po powodzeniu lub w dowolnym innym przypadku `HRESULT` awarii.  
+
+ `S_OK` po powodzeniu lub w dowolnym innym przypadku `HRESULT` awarii.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli nie można zapisać żadnych bajtów, wywołanie metody zakończy się niepowodzeniem bez zmiany jakichkolwiek bajtów w docelowej przestrzeni adresowej. (W przeciwnym razie element docelowy będzie w stanie niespójnym, co sprawia, że dalsze debugowanie jest niezawodne).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -46,7 +51,7 @@ HRESULT WriteVirtual(
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugMutableDataTarget, interfejs](icordebugmutabledatatarget-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

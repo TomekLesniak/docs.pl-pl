@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 29746b24-3766-4255-8813-0426c45e73e5
 topic_type:
 - apiref
-ms.openlocfilehash: 219aa27296dffa525bf3e2b836825437a8ce77b0
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 9a088c7e4e9c72c8247ccdd384bc724587210c37
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207653"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710873"
 ---
 # <a name="icordebugmdagetxml-method"></a>ICorDebugMDA::GetXML — Metoda
+
 Pobiera pełny strumień XML skojarzony z zarządzanym asystentem debugowania (MDA) reprezentowany przez [ICorDebugMDA](icordebugmda-interface.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT GetXML (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cchName`  
  podczas Rozmiar `szName` tablicy.  
   
@@ -47,9 +49,11 @@ HRESULT GetXML (
  określoną Tablica, w której ma być przechowywany strumień XML. Tablica może być pusta.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `GetXML`Metoda może potencjalnie wpłynąć na wydajność, w zależności od rozmiaru skojarzonego strumienia XML.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -58,7 +62,7 @@ HRESULT GetXML (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugMDA — Interfejs](icordebugmda-interface.md)
 - [Diagnozowanie błędów przy użyciu asystentów zarządzanego debugowania](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

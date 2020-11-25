@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5e13446c-0271-446c-924a-9072c0e6eeae
 topic_type:
 - apiref
-ms.openlocfilehash: c10c45c4450e02d633ebeeca15da95b7c95ff0b4
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 8f4b9e73e0d716561dd64bc0df702d835e0eee06
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212532"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709963"
 ---
 # <a name="icordebugmodulegetprocess-method"></a>ICorDebugModule::GetProcess — Metoda
+
 Pobiera proces zawierający tego modułu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT GetProcess (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppProcess`  
  określoną Wskaźnik do adresu obiektu ICorDebugProcess, który reprezentuje proces zawierający ten moduł.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

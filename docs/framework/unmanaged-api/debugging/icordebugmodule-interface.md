@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 32e4d6fa-e5a3-413e-9166-d5e2871d3114
 topic_type:
 - apiref
-ms.openlocfilehash: 105e56f2508eabbb6876a09d35e6abfbfc08950b
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 86e17b48bc491c45f8b46be23ab626dc1f2a6962
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212246"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709846"
 ---
 # <a name="icordebugmodule-interface"></a>ICorDebugModule, interfejs
 
@@ -34,10 +34,10 @@ Reprezentuje moduł środowiska uruchomieniowego języka wspólnego (CLR), któr
 |[EnableJITDebugging, metoda](icordebugmodule-enablejitdebugging-method.md)|Określa, czy kompilator just in Time (JIT) zachowuje informacje debugowania dla metod w ramach tego modułu.|  
 |[GetAssembly, metoda](icordebugmodule-getassembly-method.md)|Pobiera zawierający go zestaw dla tego modułu.|  
 |[GetBaseAddress — Metoda](icordebugmodule-getbaseaddress-method.md)|Pobiera adres podstawowy modułu.|  
-|[GetClassFromToken — Metoda](icordebugmodule-getclassfromtoken-method.md)|Pobiera ICorDebugClass z metadanych.|  
+|[GetClassFromToken, metoda](icordebugmodule-getclassfromtoken-method.md)|Pobiera ICorDebugClass z metadanych.|  
 |[GetEditAndContinueSnapshot, metoda](icordebugmodule-geteditandcontinuesnapshot-method.md)|Przestarzałe.|  
 |[GetFunctionFromRVA, metoda](icordebugmodule-getfunctionfromrva-method.md)|Nie zaimplementowano.|  
-|[GetFunctionFromToken — Metoda](icordebugmodule-getfunctionfromtoken-method.md)|Pobiera funkcję określoną przez token metadanych.|  
+|[GetFunctionFromToken, metoda](icordebugmodule-getfunctionfromtoken-method.md)|Pobiera funkcję określoną przez token metadanych.|  
 |[GetGlobalVariableValue, metoda](icordebugmodule-getglobalvariablevalue-method.md)|Pobiera obiekt wartości dla określonej zmiennej globalnej.|  
 |[GetMetaDataInterface, metoda](icordebugmodule-getmetadatainterface-method.md)|Pobiera wskaźnik interfejsu metadanych, którego można użyć do sprawdzenia metadanych dla modułu.|  
 |[GetName — Metoda](icordebugmodule-getname-method.md)|Pobiera nazwę pliku modułu.|  
@@ -53,6 +53,7 @@ Reprezentuje moduł środowiska uruchomieniowego języka wspólnego (CLR), któr
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -61,7 +62,7 @@ Reprezentuje moduł środowiska uruchomieniowego języka wspólnego (CLR), któr
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebug — Interfejs](icordebug-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

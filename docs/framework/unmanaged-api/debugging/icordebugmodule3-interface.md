@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 0b69f945-263a-4e11-8512-89d27f6ea296
 topic_type:
 - apiref
-ms.openlocfilehash: 69fd3e2df4a4eafe91cc025f28e1387cc443ea04
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 543a1a3c79b6cf3eb799da5844f35286dfa91940
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212311"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709560"
 ---
 # <a name="icordebugmodule3-interface"></a>ICorDebugModule3 — Interfejs
+
 Tworzy czytnik symbolu dla modułu dynamicznego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -44,12 +45,14 @@ interface ICorDebugModule3 : IUnknown
 |[ICorDebugModule3::CreateReaderForInMemorySymbols — Metoda](icordebugmodule3-createreaderforinmemorysymbols-method.md)|Tworzy czytnik symboli (zazwyczaj [interfejs ISymUnmanagedReader](../diagnostics/isymunmanagedreader-interface.md)) dla modułu dynamicznego.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten interfejs logicznie rozszerza interfejsy "ICorDebugModule" i "ICorDebugModule2".  
   
 > [!NOTE]
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -58,7 +61,7 @@ interface ICorDebugModule3 : IUnknown
   
  **.NET Framework wersje:** 4,5, 4, 3,5 SP1
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugRemoteTarget — Interfejs](icordebugremotetarget-interface.md)
 - [ICorDebug — Interfejs](icordebug-interface.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 96fa3406-6a6f-41a1-88c6-d9bc5d1a16d1
 topic_type:
 - apiref
-ms.openlocfilehash: 99824e9a7fd759fb30bfa377156fc28eb934a2b4
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: a6b1a7c9be821890a3f15d8c3297273607f5bedd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212220"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709703"
 ---
 # <a name="icordebugmodule2applychanges-method"></a>ICorDebugModule2::ApplyChanges — Metoda
+
 Stosuje zmiany w metadanych i zmiany w kodzie języka pośredniego firmy Microsoft (MSIL) do uruchomionego procesu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT ApplyChanges (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cbMetadata`  
  podczas Rozmiar metadanych różnicowych w bajtach.  
   
@@ -52,7 +54,8 @@ HRESULT ApplyChanges (
  podczas Bufor zawierający zaktualizowany kod MSIL.  
   
 ## <a name="remarks"></a>Uwagi  
- `pbMetadata`Parametr jest w specjalnym formacie metadanych różnicowych (jako dane wyjściowe przez [IMetaDataEmit2:: SaveDeltaToMemory —](../metadata/imetadataemit2-savedeltatomemory-method.md)). `pbMetadata`Pobiera poprzednie metadane jako podstawowe i opisuje indywidualne zmiany, które mają zastosowanie do tej bazy.  
+
+ `pbMetadata`Parametr jest w specjalnym formacie metadanych różnicowych (jako dane wyjściowe przez [IMetaDataEmit2:: SaveDeltaToMemory —](../metadata/imetadataemit2-savedeltatomemory-method.md)). `pbMetadata` Pobiera poprzednie metadane jako podstawowe i opisuje indywidualne zmiany, które mają zastosowanie do tej bazy.  
   
  Z kolei `pbIL[` parametr] zawiera nowe MSIL dla zaktualizowanej metody i ma na celu całkowite zamienienie poprzedniego MSIL dla tej metody  
   
@@ -63,6 +66,7 @@ HRESULT ApplyChanges (
  Jeśli `ApplyChanges` Metoda zakończy się niepowodzeniem, sesja debugowania jest w nieprawidłowym stanie i musi zostać uruchomiona ponownie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

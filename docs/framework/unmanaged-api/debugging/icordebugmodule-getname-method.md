@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: db499637-7ba9-421e-b8b1-35856995e80b
 topic_type:
 - apiref
-ms.openlocfilehash: 55342c803756aa10c2e7c835d9e1d58b439bb36c
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: c2aecadf8688e763a69bd40ca877e44bc0ce5c29
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212545"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95710045"
 ---
 # <a name="icordebugmodulegetname-method"></a>ICorDebugModule::GetName — Metoda
+
 Pobiera nazwę pliku modułu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT GetName(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cchname`  
  podczas Rozmiar `szName` tablicy.  
   
@@ -46,9 +48,11 @@ HRESULT GetName(
  określoną Tablica przechowująca zwróconą nazwę.  
   
 ## <a name="remarks"></a>Uwagi  
- `GetName`Metoda zwraca S_OK HRESULT, jeśli nazwa pliku modułu jest zgodna z nazwą na dysku. `GetName`Zwraca S_FALSE HRESULT, jeśli nazwa jest wypełniania, na przykład w module dynamicznym lub w pamięci.  
+
+ `GetName`Metoda zwraca S_OK HRESULT, jeśli nazwa pliku modułu jest zgodna z nazwą na dysku. `GetName` Zwraca S_FALSE HRESULT, jeśli nazwa jest wypełniania, na przykład w module dynamicznym lub w pamięci.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -57,4 +61,4 @@ HRESULT GetName(
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także

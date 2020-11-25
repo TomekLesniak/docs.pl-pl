@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c68375d-145d-46ef-a7c8-2dc4257472de
 topic_type:
 - apiref
-ms.openlocfilehash: 4f9818137016dc3e0522ed516c52df2550ffdfca
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 0cfc31839b263c2e8cf44d15439b44ffacccf5bf
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212519"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709911"
 ---
 # <a name="icordebugmodulegetsize-method"></a>ICorDebugModule::GetSize — Metoda
+
 Pobiera rozmiar (w bajtach) modułu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,12 +35,14 @@ HRESULT GetSize(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pcBytes`  
  określoną Rozmiar modułu w bajtach.  
   
- Jeśli moduł został wyprodukowany z generatora obrazu natywnego (NGen. exe), rozmiar modułu będzie równy zero.  
+ Jeśli moduł został wyprodukowany z generatora obrazów natywnych (NGen.exe), rozmiar modułu będzie równy zero.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

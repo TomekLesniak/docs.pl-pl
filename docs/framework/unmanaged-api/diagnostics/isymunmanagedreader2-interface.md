@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a01a881b-82a3-4b3e-a3a9-9dc305c2e5f7
 topic_type:
 - apiref
-ms.openlocfilehash: d4c5ff46d37b1292059b18920abd8042c18bbf31
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 3f34be833d3ccb5c636d2c5f18ccb6e216ef2c49
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615400"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709079"
 ---
 # <a name="isymunmanagedreader2-interface"></a>ISymUnmanagedReader2 — Interfejs
+
 Reprezentuje czytnik symboli, który zapewnia dostęp do dokumentów, metod i zmiennych w magazynie symboli. Ten interfejs rozszerza interfejs [ISymUnmanagedReader](isymunmanagedreader-interface.md) .  
   
 ## <a name="methods"></a>Metody  
@@ -33,6 +34,7 @@ Reprezentuje czytnik symboli, który zapewnia dostęp do dokumentów, metod i zm
 |[GetSymAttributePreRemap, metoda](isymunmanagedreader2-getsymattributepreremap-method.md)|Pobiera atrybut niestandardowy na podstawie jego nazwy.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

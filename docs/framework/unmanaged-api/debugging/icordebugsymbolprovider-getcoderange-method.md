@@ -2,14 +2,15 @@
 title: 'ICorDebugSymbolProvider:: GetCodeRange, Metoda'
 ms.date: 03/30/2017
 ms.assetid: 49a2451f-d250-4e73-aa96-9ff49d9f11c6
-ms.openlocfilehash: a9c1a4a625196d7430e365916cc7c2b67bf94127
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: f61a98dbd5a65207a46e033d54f9d5f60adac201
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83376091"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709131"
 ---
 # <a name="icordebugsymbolprovidergetcoderange-method"></a>ICorDebugSymbolProvider:: GetCodeRange, Metoda
+
 Pobiera adres początkowy i rozmiar metody z przyznanym adresem wirtualnym (RVA) w metodzie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -23,6 +24,7 @@ HRESULT GetCodeRange(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `codeRva`  
  podczas Względny adres wirtualny (RVA) w metodzie.  
   
@@ -38,6 +40,7 @@ HRESULT GetCodeRange(
 > Ta metoda jest dostępna tylko z .NET Native.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -46,7 +49,7 @@ HRESULT GetCodeRange(
   
  **.NET Framework wersje:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugSymbolProvider, interfejs](icordebugsymbolprovider-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

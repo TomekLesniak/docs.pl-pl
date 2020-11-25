@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: af317171-d66d-4114-89eb-063554c74940
 topic_type:
 - apiref
-ms.openlocfilehash: 2a8200f942405395429db182b7501a07fc1f930a
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 44f4c59f95c28f9982d67875584e2f9803c0ed3b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212324"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95709573"
 ---
 # <a name="icordebugmodule3createreaderforinmemorysymbols-method"></a>ICorDebugModule3::CreateReaderForInMemorySymbols — Metoda
+
 Tworzy czytnik symboli debugowania dla modułu dynamicznego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT CreateReaderForInMemorySymbols (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  riid  
  podczas Identyfikator IID interfejsu COM do zwrócenia. Zwykle jest to [interfejs ISymUnmanagedReader](../diagnostics/isymunmanagedreader-interface.md).  
   
@@ -41,6 +43,7 @@ HRESULT CreateReaderForInMemorySymbols (
  określoną Wskaźnik na wskaźnik do zwracanego interfejsu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK  
  Pomyślnie utworzono czytnik.  
   
@@ -54,6 +57,7 @@ HRESULT CreateReaderForInMemorySymbols (
  Nie można utworzyć czytnika.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta metoda może również służyć do tworzenia obiektu czytnika symboli dla modułów w pamięci (niedynamicznych), ale tylko po pierwszym udostępnieniu symboli (wskazywanym przez wywołanie zwrotne [metody UpdateModuleSymbols —](icordebugmanagedcallback-updatemodulesymbols-method.md) ).  
   
  Ta metoda zwraca nowe wystąpienie czytnika za każdym razem, gdy jest wywoływana (na przykład [CComPtrBase:: CoCreateInstance](/cpp/atl/reference/ccomptrbase-class#cocreateinstance)). W związku z tym debuger powinien buforować wynik i żądać nowego wystąpienia tylko wtedy, gdy dane bazowe mogły ulec zmianie (to oznacza, gdy odbierane jest wywołanie zwrotne [metody LoadClass —](icordebugmanagedcallback-loadclass-method.md) ).  
@@ -61,6 +65,7 @@ HRESULT CreateReaderForInMemorySymbols (
  Moduły dynamiczne nie mają żadnych symboli dostępnych do momentu załadowania pierwszego typu (wskazanego przez wywołanie zwrotne [metody LoadClass —](icordebugmanagedcallback-loadclass-method.md) ).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -69,7 +74,7 @@ HRESULT CreateReaderForInMemorySymbols (
   
  **.NET Framework wersje:** 4,5, 4, 3,5 SP1  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugRemoteTarget — Interfejs](icordebugremotetarget-interface.md)
 - [ICorDebug — Interfejs](icordebug-interface.md)
