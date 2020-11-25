@@ -2,14 +2,15 @@
 title: Tworzenie nowych węzłów w modelu DOM
 ms.date: 03/30/2017
 ms.assetid: 6c2b9789-b61a-49f9-b33f-db01a945edf2
-ms.openlocfilehash: 835d92b972341e67bc163563ec62c24db610a65a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: dea7add100fbdbb9e761fe39d0d824d27975757f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822753"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704750"
 ---
 # <a name="create-new-nodes-in-the-dom"></a>Tworzenie nowych węzłów w modelu DOM
+
 <xref:System.Xml.XmlDocument>Ma metodę Create dla wszystkich typów węzłów. Podaj metodę o nazwie, gdy jest to wymagane, oraz zawartość lub inne parametry dla tych węzłów, które mają zawartość (na przykład węzeł tekstowy) i węzeł jest tworzony. Poniższe metody to te, które wymagają nazwy i kilku innych parametrów wypełnionych w celu utworzenia odpowiedniego węzła.  
   
 - <xref:System.Xml.XmlDocument.CreateCDataSection%2A>  
@@ -43,7 +44,7 @@ ms.locfileid: "94822753"
 |Metoda|Położenie węzła|  
 |------------|--------------------|  
 |<xref:System.Xml.XmlNode.InsertBefore%2A>|Wstawiono przed węzłem referencyjnym. Na przykład, aby wstawić nowy węzeł w pozycji 5:<br /><br /> `Dim refChild As XmlNode = node.ChildNodes(4) 'The reference is zero-based.node.InsertBefore(newChild, refChild);`<br /><br /> `XmlNode refChild = node.ChildNodes[4]; //The reference is zero-based. node.InsertBefore(newChild, refChild);`<br /><br /> Aby uzyskać więcej informacji, zobacz <xref:System.Xml.XmlNode.InsertBefore%2A> metodę.|  
-|<xref:System.Xml.XmlNode.InsertAfter%2A>|Wstawiono po węźle odwołania. Przykład:<br /><br /> `node.InsertAfter(newChild, refChild)`<br /><br /> `node.InsertAfter(newChild, refChild);`<br /><br /> Aby uzyskać więcej informacji, zobacz <xref:System.Xml.XmlNode.InsertAfter%2A> metodę.|  
+|<xref:System.Xml.XmlNode.InsertAfter%2A>|Wstawiono po węźle odwołania. Na przykład:<br /><br /> `node.InsertAfter(newChild, refChild)`<br /><br /> `node.InsertAfter(newChild, refChild);`<br /><br /> Aby uzyskać więcej informacji, zobacz <xref:System.Xml.XmlNode.InsertAfter%2A> metodę.|  
 |<xref:System.Xml.XmlNode.AppendChild%2A>|Dodaje węzeł na końcu listy węzłów podrzędnych dla danego węzła. Jeśli dodawany węzeł to <xref:System.Xml.XmlDocumentFragment> , cała zawartość fragmentu dokumentu zostanie przeniesiona na listę podrzędną tego węzła. Aby uzyskać więcej informacji, zobacz <xref:System.Xml.XmlNode.AppendChild%2A> metodę.|  
 |<xref:System.Xml.XmlNode.PrependChild%2A>|Dodaje węzeł na początku listy węzłów podrzędnych danego węzła. Jeśli dodawany węzeł to <xref:System.Xml.XmlDocumentFragment> , cała zawartość fragmentu dokumentu zostanie przeniesiona na listę podrzędną tego węzła. Aby uzyskać więcej informacji, zobacz <xref:System.Xml.XmlNode.PrependChild%2A> metodę.|  
 |<xref:System.Xml.XmlAttributeCollection.Append%2A>|Dołącza <xref:System.Xml.XmlAttribute> węzeł do końca kolekcji atrybutów skojarzonej z elementem. Aby uzyskać więcej informacji, zobacz <xref:System.Xml.XmlAttributeCollection.Append%2A> metodę.|  

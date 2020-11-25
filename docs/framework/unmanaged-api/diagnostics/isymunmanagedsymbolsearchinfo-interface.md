@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 30817373-0a21-49c1-a0c4-8e8daeecb8db
 topic_type:
 - apiref
-ms.openlocfilehash: 308c501e17446719067d2dc0580d698c1770bf53
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 95ad3cbea4269173f22e662d15772ff97f7ee900
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610668"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705452"
 ---
 # <a name="isymunmanagedsymbolsearchinfo-interface"></a>ISymUnmanagedSymbolSearchInfo — Interfejs
+
 Dostarcza metody, które pobierają informacje o ścieżce wyszukiwania. Uzyskaj ten interfejs, wywołując `QueryInterface` obiekt, który implementuje interfejs [ISymUnmanagedReader](isymunmanagedreader-interface.md) .  
   
 ## <a name="methods"></a>Metody  
@@ -33,6 +34,7 @@ Dostarcza metody, które pobierają informacje o ścieżce wyszukiwania. Uzyskaj
 |[GetSearchPathLength, metoda](isymunmanagedsymbolsearchinfo-getsearchpathlength-method.md)|Pobiera długość ścieżki wyszukiwania.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

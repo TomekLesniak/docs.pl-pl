@@ -2,24 +2,20 @@
 title: Modernizacja istniejących aplikacji .NET za pomocą chmury platformy Azure i kontenerów systemu Windows (wersja 2)
 description: Dowiedz się, jak Podnieś i przenieść istniejące aplikacje do chmury platformy Azure i kontenerów z tą książką elektroniczną.
 ms.date: 04/28/2018
-ms.openlocfilehash: 74359b526bead85788a6ddc8039ef05b4c475d5e
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: f4ae4e2d24d343b55811955fb43e929c0db6f01b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91172269"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705335"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Modernizacja istniejących aplikacji .NET za pomocą chmury platformy Azure i kontenerów systemu Windows (wersja 2)
 
 ![Obraz okładki przewodnika dotyczącego modernizacji aplikacji .NET.](./media/index/web-application-guide-cover-image.png)
 
-OPUBLIKOWANA PRZEZ  
-Microsoft Press i Microsoft DevDiv  
-Działy firmy Microsoft Corporation  
-One Microsoft Way  
-Redmond, Waszyngton 98052-6399  
+OPUBLIKOWANE przez firmę Microsoft Press i Microsoft DevDive działy firmy Microsoft Corporation one Microsoft Way Redmond, Waszyngton 98052-6399
 
-Prawa autorskie © 2020 przez firmę Microsoft Corporation  
+Prawa autorskie © 2020 przez firmę Microsoft Corporation
 
 All rights reserved. Żadna część zawartości tej księgi nie może zostać odgotowana w żadnej formie ani za pomocą jakichkolwiek środków bez zgody na wydawcę.
 
@@ -37,12 +33,7 @@ Autor:
 > **Cesar de La Torre**, SR. PM, zespół produktu .NET, Microsoft Corp.
 
 Uczestnicy i recenzenci:
-> **Scott myśliwy**, dyrektor ds. partnerów, .NET Team, Microsoft  
-> **Paul Yuknewicz**, dyrektor ds. firmy PM, zespół Visual Studio Tools, Microsoft  
-> **Lisa Guthrie**, SR. PM, Visual Studio Tools zespół, Microsoft  
-> **Autor Ankit Asthana**, kierownik ds. platformy PM, zespół .NET, Microsoft  
-> **Unai Zorrilla**, lider deweloperów, zwykłe pojęcia  
-> **Javier Valero**, dyrektor ds. operacyjnych w Grupo Solutio  
+> **Scott myśliwy**, dyrektor partnera PM, .NET Team, **Microsoft Paul Yuknewicz**, główny menedżer PM, Visual Studio Tools zespół, Microsoft **Lisa Guthrie**, SR. PM, Visual Studio Tools zespół, Microsoft **autor Ankit Asthana**, główny menedżer PM, .NET Team, Microsoft **Unai Zorrilla**, lider deweloperów, zwykłe koncepcje **Javier Valero**, dyrektor ds. operacyjnych w Grupo Solutio
 
 ## <a name="introduction"></a>Wprowadzenie
 
@@ -70,7 +61,7 @@ W przypadku nowoczesnych aplikacji z najlepszą długoterminową elastyczność 
 
 Na rysunku 1-1 przedstawiono możliwe ścieżki, które można wykonać po przeniesieniu istniejących aplikacji .NET do chmury w fazach przyrostowych.
 
- ![Ścieżki modernizacji istniejących aplikacji i usług platformy .NET](./media/image1-1.png)
+ ![Ścieżki modernizacji istniejących aplikacji i usług platformy .NET](./media/image1-1.png)
 
 **Rysunek 1-1**. Ścieżki modernizacji istniejących aplikacji i usług platformy .NET
 
@@ -103,7 +94,7 @@ W tabeli 1-1 opisano główne zalety i przyczyny wyboru każdej metody migracji 
 
 ### <a name="key-technologies-and-architectures-by-maturity-level"></a>Najważniejsze technologie i architektury według poziomu dojrzałości
 
-.NET Framework aplikacje początkowo uruchamiane z .NET Framework wersji 1,0, która została wydana w późnej 2001. Następnie firmy przeniesiono do nowszej wersji (np. 2,0, 3,5 i .NET 4. x). Większość z tych aplikacji działa w systemach Windows Server i Internet Information Server (IIS) oraz korzysta z relacyjnej bazy danych, takiej jak SQL Server, Oracle, MySQL lub inne RDBMS.
+.NET Framework aplikacje początkowo uruchamiane z .NET Framework wersji 1,0, która została wydana w późnej 2001. Następnie firmy przeniesiono do nowszej wersji (np. 2,0, 3,5 i .NET Framework 4. x). Większość z tych aplikacji działa w systemach Windows Server i Internet Information Server (IIS) oraz korzysta z relacyjnej bazy danych, takiej jak SQL Server, Oracle, MySQL lub inne RDBMS.
 
 Większość istniejących aplikacji .NET może obecnie być oparta na .NET Framework 4. x, a nawet na .NET Framework 3,5 i używać platform sieci Web, takich jak ASP.NET MVC, ASP.NET Web Forms, ASP.NET Web API, Windows Communication Foundation (WCF), ASP.NET sygnalizujący i ASP.NET Web Pages. Te ustanowione .NET Framework technologie zależą od systemu Windows. Ta zależność jest ważna, jeśli po prostu migrujesz starsze aplikacje i chcesz wprowadzić minimalne zmiany infrastruktury aplikacji.
 
@@ -142,33 +133,33 @@ W celu przeprowadzenia migracji i przesunięcia należy pamiętać, że można u
 
 ## <a name="modernization-scenarios"></a>Scenariusze modernizacji
 
-W przypadku scenariuszy modernizacji może istnieć czysta Aplikacja zoptymalizowana pod kątem chmury, która używa elementów tylko z tego poziomu. Możesz też mieć aplikację o stanie pośrednią z niektórymi elementami z infrastruktury chmurowej — gotowe i inne elementy z poziomu chmury ("Wybieranie i wybieranie" lub model mieszany), jak na rysunku 1-5.
+W przypadku scenariuszy modernizacji może istnieć czysta aplikacja Cloud-Optimized, która korzysta z elementów tylko od tego poziomu terminu ważności. Możesz również mieć aplikację o stanie pośrednią z niektórymi elementami Infrastructure-Ready w chmurze i innych elementów z Cloud-Optimized ("Wybierz i wybierz" lub model mieszany), jak na rysunku 1-5.
 
 ![Przykład scenariusza "Wybieranie i wybieranie" z bazą danych w zasobach IaaS, DevOps i kontenerach](./media/image1-5.png)
 
 **Rysunek 1-5.** Przykład scenariusza "Wybieranie i wybieranie" z bazą danych w zasobach IaaS, DevOps i kontenerach
 
-Następnie, jako idealny scenariusz dla wielu istniejących aplikacji .NET Framework do migracji, można przeprowadzić migrację do aplikacji zoptymalizowanej pod kątem chmury, aby uzyskać znaczne korzyści z małego nakładu pracy. Takie podejście umożliwia również skonfigurowanie natywnej chmury jako możliwej do przyszłej ewolucji. Na rysunku 1-6 przedstawiono przykład.
+Następnie, jako idealny scenariusz dla wielu istniejących aplikacji .NET Framework do migracji, można przeprowadzić migrację do aplikacji Cloud-Optimized, aby uzyskać znaczące korzyści z małego nakładu pracy. To podejście ustawia również dla Cloud-Native jako możliwej przyszłej ewolucji. Na rysunku 1-6 przedstawiono przykład.
 
-![Przykładowy scenariusz aplikacji zoptymalizowanych pod kątem chmury, z kontenerami systemu Windows i usługami zarządzanymi](./media/image1-6.png)
+![Przykładowy scenariusz Cloud-Optimized aplikacji z kontenerami systemu Windows i usługami zarządzanymi](./media/image1-6.png)
 
-**Rysunek 1-6.** Przykładowy scenariusz aplikacji zoptymalizowanych pod kątem chmury, z kontenerami systemu Windows i usługami zarządzanymi
+**Rysunek 1-6.** Przykładowy scenariusz Cloud-Optimized aplikacji z kontenerami systemu Windows i usługami zarządzanymi
 
-Jeszcze więcej, możesz rozszerzyć istniejącą aplikację zoptymalizowaną pod kątem chmury, dodając kilka mikrousług dla konkretnych scenariuszy. Spowoduje to przełączenie go częściowo do poziomu modelu natywnego w chmurze, który nie jest głównym fokusem niniejszych wskazówek.
+Jeszcze więcej, możesz rozszerzyć istniejącą aplikację Cloud-Optimized, dodając kilka mikrousług dla konkretnych scenariuszy. Spowoduje to przełączenie go częściowo do poziomu modelu Cloud-Native, który nie jest głównym fokusem niniejszych wskazówek.
 
 ## <a name="what-this-guide-does-not-cover"></a>Czym nie obejmuje ten przewodnik
 
-Ten przewodnik obejmuje określony podzestaw przykładowych scenariuszy, jak pokazano na rysunku 1-7. Ten przewodnik koncentruje się tylko na scenariuszach podnoszenia i przesunięcia, a ostatecznie w modelu zoptymalizowanym pod kątem chmury. W modelu zoptymalizowanym pod kątem chmury aplikacja .NET Framework jest nowoczesny przy użyciu kontenerów systemu Windows oraz dodatkowych składników, takich jak monitorowanie i potoki ciągłej integracji/ciągłego wdrażania. Każdy składnik ma podstawowe znaczenie dla wdrażania aplikacji w chmurze, szybszej i elastyczności.
+Ten przewodnik obejmuje określony podzestaw przykładowych scenariuszy, jak pokazano na rysunku 1-7. Ten przewodnik koncentruje się tylko na scenariuszach podnoszenia i przesunięcia, a ostatecznie na modelu Cloud-Optimized. W modelu Cloud-Optimized aplikacja .NET Framework jest nowoczesny przy użyciu kontenerów systemu Windows oraz dodatkowych składników, takich jak monitorowanie i potoki ciągłej integracji/ciągłego wdrażania. Każdy składnik ma podstawowe znaczenie dla wdrażania aplikacji w chmurze, szybszej i elastyczności.
 
-![Chmura w chmurze nie została omówiona w tym przewodniku](./media/image1-7.png)
+![Cloud-Native nie jest uwzględniony w tym przewodniku](./media/image1-7.png)
 
-**Rysunek 1-7.** Chmura w chmurze nie została omówiona w tym przewodniku
+**Rysunek 1-7.** Cloud-Native nie jest uwzględniony w tym przewodniku
 
 Fokus tego przewodnika jest określony. Pokazuje ścieżkę, którą można wykonać w celu osiągnięcia przełączenia i przesunięcia istniejących aplikacji .NET, bez konieczności ich tworzenia i wprowadzania zmian w kodzie. W końcu przedstawiono sposób, w jaki aplikacja jest zoptymalizowana pod kątem chmury.
 
-Ten przewodnik nie pokazuje, jak tworzyć aplikacje natywne w chmurze, takie jak sposób ewolucji do architektury mikrousług. Aby przetworzyć platformę aplikacji lub utworzyć nowe aplikacje, które są oparte na mikrousługach, zapoznaj się z tematem obsługa mikrousług w sieci e-Book [: architektura dla kontenerów aplikacji .NET](https://aka.ms/microservicesebook).
+Ten przewodnik nie pokazuje, jak tworzyć Cloud-Native aplikacje, takie jak sposób ewolucji do architektury mikrousług. Aby przetworzyć platformę aplikacji lub utworzyć nowe aplikacje, które są oparte na mikrousługach, zapoznaj się z tematem obsługa mikrousług w sieci e-Book [: architektura dla kontenerów aplikacji .NET](https://aka.ms/microservicesebook).
 
-### <a name="additional-resources"></a>Zasoby dodatkowe
+### <a name="additional-resources"></a>Dodatkowe zasoby
 
 - **Cykl życia aplikacji platformy Docker w kontenerze z platformą i narzędziami firmy Microsoft (do** pobrania książek elektronicznych) \
   <https://aka.ms/dockerlifecycleebook>

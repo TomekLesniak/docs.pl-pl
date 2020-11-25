@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 51625fd0-7399-49c7-b22b-5dfb05451fe6
 topic_type:
 - apiref
-ms.openlocfilehash: 3d4e44eefaf99a40b9c4f1c45e7dd81192f8b607
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 6398fa2962b347a260e23e4fed8cf272a2916a9e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904276"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704620"
 ---
 # <a name="icordebugheapsegmentenumnext-method"></a>ICorDebugHeapSegmentEnum::Next — Metoda
+
 Pobiera określoną liczbę wystąpień [COR_SEGMENT](cor-segment-structure.md) zawierających informacje o regionach pamięci zarządzanej sterty.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT Next(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  celt  
  podczas Liczba segmentów, które mają zostać pobrane.  
   
@@ -47,6 +49,7 @@ HRESULT Next(
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -55,7 +58,7 @@ HRESULT Next(
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugHeapSegmentEnum — Interfejs](icordebugheapsegmentenum-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

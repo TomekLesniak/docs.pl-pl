@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 524c7fd3-9b5c-46e7-99ba-555fd2fe33f0
 topic_type:
 - apiref
-ms.openlocfilehash: c0f7e1fd6bf4c9386300b11477df85e87899fc67
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 7fc431861ac8f5c0e47e12e688f4ca004313c062
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803323"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704451"
 ---
 # <a name="ihostsyncmanagercreatemonitorevent-method"></a>IHostSyncManager::CreateMonitorEvent — Metoda
+
 Tworzy monitorowany obiekt zdarzenia autoresetowania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT CreateMonitorEvent (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cookie`  
  podczas Plik cookie do skojarzenia z obiektem zdarzenia.  
   
@@ -45,7 +47,7 @@ HRESULT CreateMonitorEvent (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`CreateMonitorEvent`pomyślnie zwrócono.|  
+|S_OK|`CreateMonitorEvent` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -54,22 +56,24 @@ HRESULT CreateMonitorEvent (
 |E_OUTOFMEMORY|Za mało dostępnej pamięci, aby utworzyć żądany obiekt zdarzenia.|  
   
 ## <a name="remarks"></a>Uwagi  
- `CreateMonitorEvent`Zwraca wartość `IHostAutoEvent` , która jest wykorzystywana przez środowisko CLR w jej implementacji <xref:System.Threading.Monitor?displayProperty=nameWithType> typu zarządzanego. Ta metoda odzwierciedla funkcję Win32 `CreateEvent` z wartością `false` określoną dla `bManualReset` parametru.  
+
+ `CreateMonitorEvent` Zwraca wartość `IHostAutoEvent` , która jest wykorzystywana przez środowisko CLR w jej implementacji <xref:System.Threading.Monitor?displayProperty=nameWithType> typu zarządzanego. Ta metoda odzwierciedla funkcję Win32 `CreateEvent` z wartością `false` określoną dla `bManualReset` parametru.  
   
  Host może użyć pliku cookie, aby określić, które zadanie oczekuje na monitor, wywołując metodę [ICLRSyncManager:: GetMonitorOwner —](iclrsyncmanager-getmonitorowner-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRSyncManager — Interfejs](iclrsyncmanager-interface.md)
 - [IHostAutoEvent — Interfejs](ihostautoevent-interface.md)
-- [IHostSyncManager, interfejs](ihostsyncmanager-interface.md)
+- [IHostSyncManager — Interfejs](ihostsyncmanager-interface.md)
 - <xref:System.Threading.Monitor>

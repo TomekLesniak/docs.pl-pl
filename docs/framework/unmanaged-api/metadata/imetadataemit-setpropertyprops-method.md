@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e2501fc8-b2bc-4dcc-9205-e3acd5a53ffe
 topic_type:
 - apiref
-ms.openlocfilehash: b5af877c26c20bf64a27618bf24a7bce5b410419
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 553a82475f241fac3a56c1fb009e3ed56b2c14f8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007783"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704256"
 ---
 # <a name="imetadataemitsetpropertyprops-method"></a>IMetaDataEmit::SetPropertyProps — Metoda
+
 Ustawia funkcje przechowywane w metadanych dla właściwości zdefiniowanej przez poprzednie wywołanie [metody DefineProperty —](imetadataemit-defineproperty-method.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,6 +42,7 @@ HRESULT SetPropertyProps (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pr`  
  podczas Token dla właściwości, która ma zostać zmieniona.  
   
@@ -66,15 +68,16 @@ HRESULT SetPropertyProps (
  podczas Tablica innych metod skojarzonych z właściwością. Przerwij tę tablicę przy użyciu `mdTokenNil` tokenu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataEmit — Interfejs](imetadataemit-interface.md)
-- [IMetaDataEmit2, interfejs](imetadataemit2-interface.md)
+- [IMetaDataEmit2 — Interfejs](imetadataemit2-interface.md)

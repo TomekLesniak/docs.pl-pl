@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0dfd7cdc-c116-4e25-b56a-ac7b0378c942
 topic_type:
 - apiref
-ms.openlocfilehash: 0efda458d51677fcd16140cd0f0a835b76c20173
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b120b854e1787824808dd64d95b0fa78ba6c9fa2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617181"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705491"
 ---
 # <a name="getrequestedruntimeinfo-function"></a>GetRequestedRuntimeInfo — Funkcja
+
 Pobiera informacje o wersji i katalogu dotyczące środowiska uruchomieniowego języka wspólnego (CLR) żądanego przez aplikację.  
   
  Ta funkcja jest przestarzała w .NET Framework 4.  
@@ -46,6 +47,7 @@ HRESULT GetRequestedRuntimeInfo (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pExe`  
  podczas Nazwa aplikacji.  
   
@@ -80,6 +82,7 @@ HRESULT GetRequestedRuntimeInfo (
  określoną Wskaźnik do długości ciągu wersji.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca kody błędów standardowego Component Object Model (COM), jak zdefiniowano w WinError. h, oprócz następujących wartości.  
   
 |Kod powrotu|Opis|  
@@ -88,6 +91,7 @@ HRESULT GetRequestedRuntimeInfo (
 |ERROR_INSUFFICIENT_BUFFER|Bufor katalogów nie jest wystarczająco duży, aby można było przechowywać ścieżkę do katalogu.<br /><br /> — lub —<br /><br /> Bufor wersji nie jest wystarczająco duży, aby można było przechowywać ciąg wersji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `GetRequestedRuntimeInfo`Metoda zwraca informacje w czasie wykonywania dotyczące wersji załadowanej do procesu, która nie musi być zainstalowana na komputerze.  
   
  W .NET Framework w wersji 2,0 można uzyskać informacje o najnowszej zainstalowanej wersji za pomocą `GetRequestedRuntimeInfo` metody w następujący sposób:  
@@ -113,16 +117,17 @@ HRESULT GetRequestedRuntimeInfo (
 - RUNTIME_INFO_REQUEST_X86  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [GetRequestedRuntimeVersion — Funkcja](getrequestedruntimeversion-function.md)
-- [GetVersionFromProcess, funkcja](getversionfromprocess-function.md)
+- [GetVersionFromProcess — Funkcja](getversionfromprocess-function.md)
 - [Przestarzałe funkcje hostingu środowiska CLR](deprecated-clr-hosting-functions.md)

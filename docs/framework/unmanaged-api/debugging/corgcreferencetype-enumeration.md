@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: d9f16439-5a36-4474-8ffd-4f0b2c2bb686
 topic_type:
 - apiref
-ms.openlocfilehash: d156f103c3812c91da380e722a1c6c95d621df4c
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: e2903637faa11a3c0a62080cc6fafcf1fc668a56
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860919"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704997"
 ---
 # <a name="corgcreferencetype-enumeration"></a>CorGCReferenceType — Wyliczenie
+
 Określa źródło obiektu, które ma zostać pobrane jako elementy bezużyteczne.  
   
 ## <a name="syntax"></a>Składnia  
@@ -65,13 +66,15 @@ typedef enum {
 |`CorHandleAll`|Zwróć wszystkie odwołania z tabeli uchwytów. Ta wartość jest używana tylko przez metodę [ICorDebugProcess5:: EnumerateHandles —](icordebugprocess5-enumeratehandles-method.md) .|  
   
 ## <a name="remarks"></a>Uwagi  
- `CorGCReferenceType` Wyliczenie jest używane w następujący sposób:  
+
+ `CorGCReferenceType`Wyliczenie jest używane w następujący sposób:  
   
 - Jako wartość `type` pola struktury [COR_GC_REFERENCE](cor-gc-reference-structure.md) wskazuje Źródło odwołania lub dojścia.  
   
 - Jako `types` argument metody [ICorDebugProcess5:: EnumerateHandles —](icordebugprocess5-enumeratehandles-method.md) określa typy dojść do uwzględnienia w wyliczeniu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -80,6 +83,6 @@ typedef enum {
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — wyliczenia](debugging-enumerations.md)

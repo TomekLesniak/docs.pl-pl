@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 701281dd-2936-45c8-a1f0-3bf7332b093b
 topic_type:
 - apiref
-ms.openlocfilehash: a7a450e85f7eaa765766ffa985d7c01538e2669c
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 0e7afa386af1bd2eebc2b58592d01b764660248f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795797"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704698"
 ---
 # <a name="cordebugmappingresult-enumeration"></a>CorDebugMappingResult — Wyliczenie
+
 Zawiera szczegółowe informacje o sposobie uzyskiwania wartości wskaźnika instrukcji (IP).  
   
 ## <a name="syntax"></a>Składnia  
@@ -49,9 +50,11 @@ typedef enum CorDebugMappingResult {
 |`MAPPING_APPROXIMATE`|Metoda została pomyślnie zmapowana, ale wartość adresu IP może być przybliżona.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby uzyskać wartość wskaźnika instrukcji, można użyć metody [ICorDebugILFrame:: GetIP —](icordebugilframe-getip-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

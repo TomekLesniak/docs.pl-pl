@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1318ee37-c43b-40eb-bbe8-88fc46453d74
 topic_type:
 - apiref
-ms.openlocfilehash: 09bcebfdcfea3d5728d404cdb6b5fb170a5432c3
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 2ff08ec8f194ccc9e968b3a7ee017afe788f4b03
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008498"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704945"
 ---
 # <a name="lockclrversion-function"></a>LockClrVersion — Funkcja
+
 Umożliwia hostowi określenie, która wersja środowiska uruchomieniowego języka wspólnego (CLR) zostanie użyta w procesie przed jawnym inicjalizacją środowiska CLR.  
   
  Ta funkcja jest przestarzała w .NET Framework 4.  
@@ -38,6 +39,7 @@ HRESULT LockClrVersion (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `hostCallback`  
  podczas Funkcja, która ma zostać wywołana przez środowisko CLR po inicjacji.  
   
@@ -48,6 +50,7 @@ HRESULT LockClrVersion (
  podczas Funkcja, która ma zostać wywołana przez hosta w celu poinformowania środowiska CLR o ukończeniu inicjalizacji.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca standardowe kody błędów COM, jak zdefiniowano w WinError. h, oprócz następujących wartości.  
   
 |Kod powrotu|Opis|  
@@ -56,7 +59,8 @@ HRESULT LockClrVersion (
 |E_INVALIDARG|Co najmniej jeden argument ma wartość null.|  
   
 ## <a name="remarks"></a>Uwagi  
- Host wywołuje `LockClrVersion` przed zainicjowaniem środowiska CLR. `LockClrVersion`Pobiera trzy parametry, z których wszystkie są wywołaniami zwrotnymi typu [FLockClrVersionCallback —](flockclrversioncallback-function-pointer.md). Ten typ jest definiowany w następujący sposób.  
+
+ Host wywołuje `LockClrVersion` przed zainicjowaniem środowiska CLR. `LockClrVersion` Pobiera trzy parametry, z których wszystkie są wywołaniami zwrotnymi typu [FLockClrVersionCallback —](flockclrversioncallback-function-pointer.md). Ten typ jest definiowany w następujący sposób.  
   
 ```cpp  
 typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();  
@@ -72,7 +76,7 @@ typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();
   
     - Funkcja określona przez `pBeginHostSetup` parametr.  
   
-    - `CorBindToRuntimeEx`(lub inna funkcja inicjacji środowiska uruchomieniowego).  
+    - `CorBindToRuntimeEx` (lub inna funkcja inicjacji środowiska uruchomieniowego).  
   
     - [ICLRRuntimeHost:: SetHostControl —](iclrruntimehost-sethostcontrol-method.md).  
   
@@ -83,14 +87,15 @@ typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();
  Wszystkie wywołania z `pBeginHostSetup` programu `pEndHostSetup` muszą odbywać się w pojedynczym wątku lub włókna przy użyciu tego samego stosu logicznego. Ten wątek może się różnić od wątku, w którym `hostCallback` jest wywoływana.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przestarzałe funkcje hostingu środowiska CLR](deprecated-clr-hosting-functions.md)

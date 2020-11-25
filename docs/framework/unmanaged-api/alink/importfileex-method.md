@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ad276f3f-b303-46ac-97e0-66a377adaa4f
 topic_type:
 - apiref
-ms.openlocfilehash: bee7db61beb9ed8c00cf584924be690a67d92eac
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9e373f133830a5bc1f3cf7bdc8034cb67725d797
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446952"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705205"
 ---
 # <a name="importfileex-method"></a>ImportFileEx — Metoda
+
 Importuje wskazany zestaw lub niezwiązany moduł.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ HRESULT ImportFileEx(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pszFilename`  
  W pełni kwalifikowana nazwa pliku, z którego ma zostać zaimportowana.  
   
@@ -60,14 +62,16 @@ HRESULT ImportFileEx(
  `pdwCountOfScopes`  
  Odbiera liczbę zaimportowanych plików i/lub zakresów.  
   
-## <a name="return-value"></a>Wartość zwrócona  
+## <a name="return-value"></a>Wartość zwracana  
+
  Zwraca S_OK, jeśli metoda zakończy się pomyślnie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  Wymaga Alink. h.  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IALink2, interfejs](ialink2-interface.md)
-- [IALink, interfejs](ialink-interface.md)
-- [ALink, interfejs API](index.md)
+- [IALink2 — Interfejs](ialink2-interface.md)
+- [IALink — Interfejs](ialink-interface.md)
+- [ALink — interfejs API](index.md)

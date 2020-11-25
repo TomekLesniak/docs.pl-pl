@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b95739fe-d2fa-4776-ae0d-31d9707ef799
 topic_type:
 - apiref
-ms.openlocfilehash: d3e25f271fc434785e25e7b226ad98f86b5f8dfc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ab2f30c485a755d4788926c13c2608e55a716c5c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84492788"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704269"
 ---
 # <a name="imetadataemit2savedelta-method"></a>IMetaDataEmit2::SaveDelta — Metoda
+
 Zapisuje zmiany z bieżącej sesji Edit-and-Continue do określonego pliku.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT SaveDelta (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `szFile`  
  podczas Nazwa pliku, w którym mają zostać zapisane zmiany.  
   
@@ -42,15 +44,16 @@ HRESULT SaveDelta (
  podczas Rezerwacj. Musi być równa zero.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IMetaDataEmit2, interfejs](imetadataemit2-interface.md)
+- [IMetaDataEmit2 — Interfejs](imetadataemit2-interface.md)
 - [IMetaDataEmit — Interfejs](imetadataemit-interface.md)

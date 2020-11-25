@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: c99f7c0778b1160c926d5ed62a6a2d295f5c50c5
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: 3421afee304125413f4fcade6b20df990e922f58
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557249"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704802"
 ---
 # <a name="whats-new-in-net-framework"></a>Co nowego w .NET Framework
 
@@ -104,7 +104,7 @@ Punkty końcowe kondycji są szeroko używane przez narzędzia aranżacji do zar
 
 Istnieją dwa sposoby uwidocznienia punktu końcowego kondycji i publikowania informacji o kondycji usługi WCF:
 
-- Za poorednictwem kodu. Przykład:
+- Za poorednictwem kodu. Na przykład:
 
   ```csharp
   ServiceHost host = new ServiceHost(typeof(Service1),
@@ -126,7 +126,7 @@ Istnieją dwa sposoby uwidocznienia punktu końcowego kondycji i publikowania in
   host.Description.Behaviors.Add(healthBehavior)
   ```
 
-- Przy użyciu pliku konfiguracji. Przykład:
+- Przy użyciu pliku konfiguracji. Na przykład:
 
   ```xml
   <behaviors>
@@ -138,7 +138,7 @@ Istnieją dwa sposoby uwidocznienia punktu końcowego kondycji i publikowania in
   </behaviors>
   ```
 
-Za pomocą parametrów zapytania, takich jak,,,) można zbadać stan kondycji usługi `OnServiceFailure` `OnDispatcherFailure` `OnListenerFailure` `OnThrottlePercentExceeded` , a dla każdego parametru zapytania można określić kod odpowiedzi HTTP. Jeśli kod odpowiedzi HTTP zostanie pominięty dla parametru zapytania, domyślnie używany jest kod odpowiedzi HTTP 503. Przykład:
+Za pomocą parametrów zapytania, takich jak,,,) można zbadać stan kondycji usługi `OnServiceFailure` `OnDispatcherFailure` `OnListenerFailure` `OnThrottlePercentExceeded` , a dla każdego parametru zapytania można określić kod odpowiedzi HTTP. Jeśli kod odpowiedzi HTTP zostanie pominięty dla parametru zapytania, domyślnie używany jest kod odpowiedzi HTTP 503. Na przykład:
 
 - OnServiceFailure: `https://contoso:81/Service1?health&OnServiceFailure=450`
 
@@ -255,7 +255,7 @@ Using rsa = RSA.Create(rsaParameters)
 End Using
 ```
 
-<xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType>Metody i <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> pozwalają generować nowe <xref:System.Security.Cryptography.DSA> lub <xref:System.Security.Cryptography.RSA> klucze o określonym rozmiarze klucza. Przykład:
+<xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType>Metody i <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> pozwalają generować nowe <xref:System.Security.Cryptography.DSA> lub <xref:System.Security.Cryptography.RSA> klucze o określonym rozmiarze klucza. Na przykład:
 
 ```csharp
 using (DSA dsa = DSA.Create(2048))
@@ -353,7 +353,7 @@ Obsługa dekompresji przy użyciu interfejsów API systemu Windows jest włączo
 
 **Dodatkowe interfejsy API kolekcji**
 
-.NET Framework 4.7.2 dodaje wiele nowych interfejsów API do <xref:System.Collections.Generic.SortedSet%601> <xref:System.Collections.Generic.HashSet%601> typów i. Należą do nich:
+.NET Framework 4.7.2 dodaje wiele nowych interfejsów API do <xref:System.Collections.Generic.SortedSet%601> <xref:System.Collections.Generic.HashSet%601> typów i. Są one następujące:
 
 - `TryGetValue` metody, które zwiększają wzorzec try użyty w innych typach kolekcji do tych dwóch typów. Dostępne metody:
 
@@ -470,7 +470,7 @@ Program NET Framework 4.7.2 dodaje obsługę dla Always Encrypted opartych na en
 
 - <xref:System.Data.SqlClient.SqlEnclaveAttestationParameters>, która zapewnia parametry zaświadczania używane przez SQL Server do uzyskiwania informacji wymaganych do wykonania określonego protokołu zaświadczania.
 
-Następnie plik konfiguracji aplikacji określa konkretną implementację klasy abstrakcyjnej <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> , która udostępnia funkcje dostawcy enklawy. Przykład:
+Następnie plik konfiguracji aplikacji określa konkretną implementację klasy abstrakcyjnej <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> , która udostępnia funkcje dostawcy enklawy. Na przykład:
 
 ```xml
 <configuration>
@@ -653,7 +653,7 @@ ASP.NET przetwarza żądania we wstępnie zdefiniowanym potoku zawierającym 23 
 
 **Opcje wyznaczania wartości skrótu SHA-2 dla poświadczeń uwierzytelniania ASP.NET Forms**
 
-W .NET Framework 4,7 i wcześniejszych wersjach ASP.NET zezwolenie deweloperom na przechowywanie poświadczeń użytkownika z użyciem skrótów haseł w plikach konfiguracji przy użyciu algorytmu MD5 lub SHA1. Począwszy od .NET Framework 4.7.1, ASP.NET obsługuje również nowe bezpieczne opcje skrótu SHA-2, takie jak SHA256, SHA384 i SHA512. Algorytm SHA1 pozostaje domyślny, a w pliku konfiguracyjnym sieci Web można zdefiniować niedomyślnego algorytmu wyznaczania wartości skrótu. Przykład:
+W .NET Framework 4,7 i wcześniejszych wersjach ASP.NET zezwolenie deweloperom na przechowywanie poświadczeń użytkownika z użyciem skrótów haseł w plikach konfiguracji przy użyciu algorytmu MD5 lub SHA1. Począwszy od .NET Framework 4.7.1, ASP.NET obsługuje również nowe bezpieczne opcje skrótu SHA-2, takie jak SHA256, SHA384 i SHA512. Algorytm SHA1 pozostaje domyślny, a w pliku konfiguracyjnym sieci Web można zdefiniować niedomyślnego algorytmu wyznaczania wartości skrótu. Na przykład:
 
 ```xml
 <system.web>
@@ -744,7 +744,7 @@ Począwszy od .NET Framework 4,7, usługa WCF umożliwia skonfigurowanie protoko
 
 **Zwiększona niezawodność aplikacji WCF i serializacji WCF**
 
-Program WCF zawiera szereg zmian w kodzie, które eliminują sytuacje wyścigu, co poprawia wydajność i niezawodność opcji serializacji. Należą do nich:
+Program WCF zawiera szereg zmian w kodzie, które eliminują sytuacje wyścigu, co poprawia wydajność i niezawodność opcji serializacji. Są one następujące:
 
 - Lepsza obsługa mieszania kodu asynchronicznego i synchronicznego w wywołaniach **SocketConnection. BeginRead** i **SocketConnection. Read**.
 - Zwiększona niezawodność podczas przerywania połączenia z **SharedConnectionListener** i **DuplexChannelBinder**.
@@ -968,7 +968,7 @@ Aby rozwiązać ten wpływ na .NET Framework 4.6.2, do klasy bazowej dodano nast
 
 Biblioteka kryptografii systemu Windows (CNG) dodaliśmy obsługę przechowywania utrwalonych kluczy symetrycznych i używania kluczy symetrycznych przechowywanych sprzętowo, a .NET Framework 4.6.2, że deweloperzy mogą korzystać z tej funkcji.  Ponieważ pojęcie nazw kluczy i dostawców kluczy jest specyficzne dla implementacji, użycie tej funkcji wymaga użycia konstruktora konkretnych typów implementacji zamiast preferowanego podejścia do fabryki (na przykład wywoływanie `Aes.Create` ).
 
-Obsługa szyfrowania symetrycznego klucza istnieje dla algorytmów AES ( <xref:System.Security.Cryptography.AesCng> ) i 3DES ( <xref:System.Security.Cryptography.TripleDESCng> ). Przykład:
+Obsługa szyfrowania symetrycznego klucza istnieje dla algorytmów AES ( <xref:System.Security.Cryptography.AesCng> ) i 3DES ( <xref:System.Security.Cryptography.TripleDESCng> ). Na przykład:
 
 ```csharp
 public static byte[] EncryptDataWithPersistedKey(byte[] data, byte[] iv)
@@ -1346,7 +1346,7 @@ We wcześniejszych wersjach programu WPF Słowniki niestandardowe nie rozpoznaj�
 > [!NOTE]
 > Te nowe formaty plików nie są bezpośrednio obsługiwane przez interfejsy API sprawdzania pisowni WPF, a Słowniki niestandardowe dostarczane do WPF w aplikacjach powinny nadal używać plików. lex.
 
-**Przykłady**
+**Samples**
 
 Istnieje kilka przykładów WPF w repozytorium GitHub [Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples) . Pomóż nam ulepszyć nasze przykłady, wysyłając do nas żądanie ściągnięcia lub otwierając [problem usługi GitHub](https://github.com/Microsoft/WPF-Samples/issues).
 
@@ -1623,7 +1623,7 @@ W programie .NET 2015 wprowadzono .NET Framework 4,6 i .NET Core. Niektóre nowe
 
   - **Udoskonalenia HDPI**
 
-    Obsługa HDPI w programie WPF jest teraz lepsza w .NET Framework 4,6. Wprowadzono zmiany układu zaokrąglania, aby zmniejszyć liczbę wystąpień wycinków w kontrolkach z obramowaniem. Domyślnie ta funkcja jest włączona tylko wtedy, gdy <xref:System.Runtime.Versioning.TargetFrameworkAttribute> jest ustawiony na platformę .net 4,6.  Aplikacje, które są przeznaczone dla wcześniejszych wersji platformy, ale działają na .NET Framework 4,6, mogą zrezygnować z nowego zachowania, dodając następujący wiersz do [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) sekcji pliku app.config:
+    Obsługa HDPI w programie WPF jest teraz lepsza w .NET Framework 4,6. Wprowadzono zmiany układu zaokrąglania, aby zmniejszyć liczbę wystąpień wycinków w kontrolkach z obramowaniem. Domyślnie ta funkcja jest włączona tylko wtedy, gdy <xref:System.Runtime.Versioning.TargetFrameworkAttribute> ustawiono wartość .NET Framework 4,6.  Aplikacje, które są przeznaczone dla wcześniejszych wersji platformy, ale działają na .NET Framework 4,6, mogą zrezygnować z nowego zachowania, dodając następujący wiersz do [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) sekcji pliku app.config:
 
     ```xml
     <AppContextSwitchOverrides
@@ -1843,7 +1843,7 @@ W programie .NET 2015 wprowadzono .NET Framework 4,6 i .NET Core. Niektóre nowe
 
 ## <a name="whats-new-in-net-framework-451"></a>Co nowego w .NET Framework 4.5.1
 
-**Aktualizacje 2014 kwietnia** :
+**Aktualizacje 2014 kwietnia**:
 
 - [Aktualizacja Visual Studio 2013 Update 2](https://go.microsoft.com/fwlink/p/?LinkId=393658) obejmuje aktualizacje szablonów bibliotek klas przenośnych do obsługi następujących scenariuszy:
 
@@ -1967,11 +1967,11 @@ Optymalizacja z przewodnikiem zarządzanym profilem (Mpgo.exe) umożliwia skróc
 
 ### <a name="parallel-computing"></a>Przetwarzanie równoległe
 
-.NET Framework 4,5 oferuje kilka nowych funkcji i ulepszeń obliczeń równoległych. Obejmują one ulepszoną wydajność, zwiększoną kontrolę, ulepszoną obsługę programowania asynchronicznego, nową bibliotekę przepływu danych oraz ulepszoną obsługę debugowania równoległego i wydajności. Zapoznaj się z wpisem nowości [w programie .net 4,5](https://devblogs.microsoft.com/pfxteam/whats-new-for-parallelism-in-net-4-5/) na blogu programowanie równoległe przy użyciu platformy .NET.
+.NET Framework 4,5 oferuje kilka nowych funkcji i ulepszeń obliczeń równoległych. Obejmują one ulepszoną wydajność, zwiększoną kontrolę, ulepszoną obsługę programowania asynchronicznego, nową bibliotekę przepływu danych oraz ulepszoną obsługę debugowania równoległego i wydajności. Zapoznaj się z wpisem [co nowego w zakresie równoległości w .NET Framework 4,5](https://devblogs.microsoft.com/pfxteam/whats-new-for-parallelism-in-net-4-5/) w blogu programowanie równoległe przy użyciu platformy .NET.
 
 <a name="web"></a>
 
-### <a name="web"></a>sieć Web
+### <a name="web"></a>Sieć Web
 
 ASP.NET 4,5 i 4.5.1 Dodawanie powiązania modelu dla formularzy sieci Web, obsługi protokołu WebSocket, obsługi asynchronicznych, ulepszeń wydajności i wielu innych funkcji. Więcej informacji można znaleźć w następujących zasobach:
 
@@ -2127,7 +2127,7 @@ Aplikacje ze sklepu Windows 8. x są przeznaczone do określonych współczynnik
 
 Przenośna biblioteka klas w programie Visual Studio 2012 (i nowszych wersjach) umożliwia pisanie i kompilowanie zestawów zarządzanych, które działają na wielu platformach .NET Framework. Korzystając z projektu biblioteki klas przenośnych, należy wybrać platformy (takie jak Windows Phone i .NET dla systemu Windows 8. x aplikacji do sklepu). Dostępne typy i elementy członkowskie w projekcie są automatycznie ograniczone do wspólnych typów i elementów członkowskich na tych platformach. Aby uzyskać więcej informacji, zobacz [Przenośna biblioteka klas](../cross-platform/portable-class-library.md).
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Program .NET Framework i wydania poza harmonogramem (OOB)](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co nowego w ułatwieniach dostępu w .NET Framework](whats-new-in-accessibility.md)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 32f3ba58-9695-41e9-ba58-fd19e45ed396
 topic_type:
 - apiref
-ms.openlocfilehash: 8dae903ab76ab83ac0818c4bc4a76e81094bdf65
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2ec7708edd86b9f2656d0eee434992c3b73200ca
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445667"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705049"
 ---
 # <a name="importtypes2-method"></a>ImportTypes2 — Metoda
+
 Inicjuje importowanie typów. Wywołaj tę metodę, aby rozpocząć importowanie typów z każdego zakresu zaimportowanego za pomocą [metody ImportFile —](importfile-method.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,6 +39,7 @@ HRESULT ImportTypes2(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `AssemblyID`  
  Identyfikator zestawu do zaimportowania.  
   
@@ -57,13 +59,15 @@ HRESULT ImportTypes2(
  Opcjonalnie otrzymuje liczbę typów w określonym zakresie.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Zwraca S_OK, jeśli metoda zakończy się pomyślnie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  Wymaga Alink. h  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IALink2, interfejs](ialink2-interface.md)
-- [IALink, interfejs](ialink-interface.md)
-- [ALink, interfejs API](index.md)
+- [IALink2 — Interfejs](ialink2-interface.md)
+- [IALink — Interfejs](ialink-interface.md)
+- [ALink — interfejs API](index.md)

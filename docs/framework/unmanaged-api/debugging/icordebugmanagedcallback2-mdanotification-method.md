@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 93f79627-bd31-4f4f-b95d-46a032a52fe4
 topic_type:
 - apiref
-ms.openlocfilehash: f850b3cd35fda8bd554b99e14553100008cb4eca
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 09a410f54ddf07c9a5f6bb7dd34f2aaf266e0734
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83208528"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95704581"
 ---
 # <a name="icordebugmanagedcallback2mdanotification-method"></a>ICorDebugManagedCallback2::MDANotification — Metoda
+
 Zapewnia powiadomienie, że wykonanie kodu napotkało asystenta zarządzanego debugowania (MDA) w debugowanej aplikacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT MDANotification(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pController`  
  podczas Wskaźnik do interfejsu ICorDebugController, który uwidacznia proces lub domenę aplikacji, w której wystąpiło zdarzenie MDA.  
   
@@ -52,6 +54,7 @@ HRESULT MDANotification(
  podczas Wskaźnik do interfejsu [ICorDebugMDA](icordebugmda-interface.md) , który UWIDACZNIA informacje MDA.  
   
 ## <a name="remarks"></a>Uwagi  
+
  MDA jest ostrzeżeniem heurystycznym i nie wymaga żadnej jawnej akcji debugera z wyjątkiem wywołania [ICorDebugController:: Kontynuuj](icordebugcontroller-continue-method.md) , aby wznowić wykonywanie debugowanej aplikacji.  
   
  Środowisko uruchomieniowe języka wspólnego (CLR) może określić, które MDA są wywoływane i które dane znajdują się w dowolnym punkcie. W związku z tym debugery nie powinny kompilować żadnej funkcjonalności wymagającej określonych wzorców MDA.  
@@ -61,6 +64,7 @@ HRESULT MDANotification(
  Debuger powinien zwolnić odwołanie do `ICorDebugMDA` wystąpienia natychmiast po powrocie z `MDANotification` wywołania zwrotnego, aby umożliwić środowisku CLR odtwarzanie pamięci używanej przez zdarzenie MDA. Zwolnienie wystąpienia może zwiększyć wydajność w przypadku uruchamiania wielu MDA.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -69,7 +73,7 @@ HRESULT MDANotification(
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Diagnozowanie błędów przy użyciu asystentów zarządzanego debugowania](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
 - [ICorDebugManagedCallback2 — Interfejs](icordebugmanagedcallback2-interface.md)
