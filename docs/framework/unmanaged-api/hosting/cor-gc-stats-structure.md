@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8d4ff73e-739b-40f6-9349-359fbc99c2f9
 topic_type:
 - apiref
-ms.openlocfilehash: 7a6553de31d4f9627809af7691218c39dc734c6f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 53a70c53a06ac55a2dab7c646018d63189ee0b36
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501667"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726226"
 ---
 # <a name="cor_gc_stats-structure"></a>COR_GC_STATS — Struktura
+
 Zawiera dane statystyczne dotyczące mechanizmu odzyskiwania pamięci środowiska uruchomieniowego języka wspólnego (CLR).  
   
 ## <a name="syntax"></a>Składnia  
@@ -59,6 +60,7 @@ typedef struct _COR_GC_STATS {
 |`KBytesPromotedFromGen1`|Rozmiar (w kilobajtach) obiektów awansowanych od generacji jednej do generacji dwóch.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Metoda [ICLRGCManager::](iclrgcmanager-getstats-method.md) getstatistics wymaga, aby `Flags` pole `COR_GC_STATS` struktury było ustawione na co najmniej jedną wartość wyliczenia [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) , aby określić, które statystyki mają być ustawione.  
   
  Poniższa tabela zawiera mapy statystyk dostarczonych przez tę strukturę do dwóch [COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md) wartości wyliczenia `COR_GC_COUNTS` i `COR_GC_MEMORYUSAGE` .  
@@ -76,16 +78,17 @@ pCLRGCManager->GetStats(&GCStats);
 ```  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** GCHost. idl  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Hosting, struktury](hosting-structures.md)
+- [Hosting — Struktury](hosting-structures.md)
 - [Automatyczne zarządzanie pamięcią](../../../standard/automatic-memory-management.md)
 - [Odzyskiwanie pamięci](../../../standard/garbage-collection/index.md)

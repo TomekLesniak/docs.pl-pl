@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a92fdf95-492b-49ae-a741-2186e5c1d7c5
 topic_type:
 - apiref
-ms.openlocfilehash: efb3d913e1d8ef0c486d7e5e1d9777ae7d88bc71
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 54af02b48dabdf2042763954805f0d454323ac89
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179337"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726369"
 ---
 # <a name="cor_heapobject-structure"></a>COR_HEAPOBJECT — Struktura
+
 Zawiera informacje o obiekcie na zarządzanym stosie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,30 +40,32 @@ typedef struct _COR_HEAPOBJECT {
 |Członek|Opis|  
 |------------|-----------------|  
 |`address`|Adres obiektu w pamięci.|  
-|`size`|Całkowity rozmiar obiektu w bajtach.|  
-|`type`|Token [COR_TYPEID](cor-typeid-structure.md) reprezentujący typ obiektu.|  
+|`size`|Łączny rozmiar obiektu w bajtach.|  
+|`type`|Token [COR_TYPEID](cor-typeid-structure.md) , który reprezentuje typ obiektu.|  
   
 ## <a name="remarks"></a>Uwagi  
- `COR_HEAPOBJECT`instancje można pobrać, wyliczając obiekt interfejsu [ICorDebugHeapEnum,](icordebugheapenum-interface.md) który jest wypełniany przez [wywołanie metody ICorDebugProcess5::EnumerateHeap.](icordebugprocess5-enumerateheap-method.md)  
+
+ `COR_HEAPOBJECT` wystąpienia mogą być pobierane przez Wyliczenie obiektu interfejsu [ICorDebugHeapEnum](icordebugheapenum-interface.md) , który jest wypełniany przez wywołanie metody [ICorDebugProcess5:: EnumerateHeap —](icordebugprocess5-enumerateheap-method.md) .  
   
- Wystąpienie `COR_HEAPOBJECT` zawiera informacje o obiektie na żywo na zarządzanym stercie lub o obiekcie, który nie jest zakorzeniony przez żaden obiekt, ale nie został jeszcze zebrany przez moduł zbierający elementy bezużyteczne.  
+ `COR_HEAPOBJECT`Wystąpienie zawiera informacje dotyczące aktywnego obiektu na zarządzanym stosie lub o obiekcie, który nie jest odblokowany przez żaden obiekt, ale nie został jeszcze zebrany przez moduł wyrzucania elementów bezużytecznych.  
   
- Aby uzyskać lepszą `COR_HEAPOBJECT.address` wydajność, `CORDB_ADDRESS` pole jest wartością, a nie wartością interfejsu ICorDebugValue używaną w większości interfejsu API debugowania. Aby uzyskać ICorDebugValue obiektu dla danego adresu obiektu, można przekazać `CORDB_ADDRESS` wartość do [ICorDebugProcess5::GetObject](icordebugprocess5-getobject-method.md) metody.  
+ W celu uzyskania lepszej wydajności `COR_HEAPOBJECT.address` pole to `CORDB_ADDRESS` wartość, a nie wartość interfejsu ICorDebugValue użyta w większości interfejsu API debugowania. Aby uzyskać obiekt ICorDebugValue dla danego adresu obiektu, można przekazać `CORDB_ADDRESS` wartość do metody [ICorDebugProcess5:: GetObject](icordebugprocess5-getobject-method.md) .  
   
- Aby uzyskać lepszą `COR_HEAPOBJECT.type` wydajność, `COR_TYPEID` pole jest wartością, a nie wartością interfejsu ICorDebugType używaną w większości interfejsu API debugowania. Aby uzyskać obiekt ICorDebugType dla danego identyfikatora typu, można przekazać `COR_TYPEID` wartość do metody [ICorDebugProcess5::GetTypeForTypeID.](icordebugprocess5-gettypefortypeid-method.md)  
+ W celu uzyskania lepszej wydajności `COR_HEAPOBJECT.type` pole to `COR_TYPEID` wartość, a nie wartość interfejsu ICorDebugType użyta w większości interfejsu API debugowania. Aby uzyskać obiekt ICorDebugType dla danego identyfikatora typu, można przekazać `COR_TYPEID` wartość do metody [ICorDebugProcess5:: GetTypeForTypeID —](icordebugprocess5-gettypefortypeid-method.md) .  
   
- Struktura `COR_HEAPOBJECT` zawiera interfejs COM z liczonych odwołaniemi. Jeśli pobierasz `COR_HEAPOBJECT` wystąpienie z wyliczacza, wywołując [metodę ICorDebugHeapEnum::Next,](icordebugheapenum-next-method.md) należy następnie zwolnić odwołanie.  
+ `COR_HEAPOBJECT`Struktura zawiera interfejs com liczony z odwołaniami. Jeśli pobrano `COR_HEAPOBJECT` wystąpienie z modułu wyliczającego, wywołując metodę [ICorDebugHeapEnum:: Next](icordebugheapenum-next-method.md) , należy następnie zwolnić odwołanie.  
   
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
+
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
- **Nagłówek:** CorDebug.idl, CorDebug.h  
+ **Nagłówek:** CorDebug. idl, CorDebug. h  
   
- **Biblioteka:** CorGuids.lib  
+ **Biblioteka:** CorGuids. lib  
   
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Struktury debugowania](debugging-structures.md)
-- [Debugging](index.md)
+- [Debugowanie](index.md)

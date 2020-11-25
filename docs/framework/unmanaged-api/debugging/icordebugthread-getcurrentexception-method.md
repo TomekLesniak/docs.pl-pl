@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 331ed465-a195-4359-8584-b82c6098b29b
 topic_type:
 - apiref
-ms.openlocfilehash: 3a4da6f958407c0b704ffb7372a77b7f022fc824
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: c21be7b062b7e2d4129bafabae004351442ab853
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379768"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728059"
 ---
 # <a name="icordebugthreadgetcurrentexception-method"></a>ICorDebugThread::GetCurrentException — Metoda
+
 Pobiera wskaźnik interfejsu do obiektu ICorDebugValue, który reprezentuje wyjątek, który jest aktualnie generowany przez kod zarządzany.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,17 +35,20 @@ HRESULT GetCurrentException (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppExceptionObject`  
  określoną Wskaźnik do adresu `ICorDebugValue` obiektu, który reprezentuje wyjątek, który jest aktualnie generowany przez kod zarządzany.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Obiekt wyjątku będzie istniał od momentu zgłoszenia wyjątku do końca `catch` bloku. Ocena funkcji, która jest wykonywana przez metody ICorDebugEval, spowoduje wyczyszczenie obiektu wyjątku podczas instalacji i przywrócenie go po zakończeniu.  
   
- Wyjątki mogą być zagnieżdżane (na przykład, jeśli wyjątek jest zgłaszany w filtr lub w ocenie funkcji), więc może istnieć wiele oczekujących wyjątków w pojedynczym wątku. `GetCurrentException`zwraca najnowszy wyjątek.  
+ Wyjątki mogą być zagnieżdżane (na przykład, jeśli wyjątek jest zgłaszany w filtr lub w ocenie funkcji), więc może istnieć wiele oczekujących wyjątków w pojedynczym wątku. `GetCurrentException` zwraca najnowszy wyjątek.  
   
  Obiekt i typ wyjątku mogą ulec zmianie w całym okresie istnienia wyjątku. Na przykład po wystąpieniu wyjątku typu x, środowisko uruchomieniowe języka wspólnego (CLR) może za mało pamięci i podnieść go do wyjątku braku pamięci.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

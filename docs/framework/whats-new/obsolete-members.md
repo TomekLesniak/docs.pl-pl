@@ -1,18 +1,18 @@
 ---
 title: Przestarzałe elementy członkowskie — .NET Framework
-description: Zobacz listę elementów członkowskich typu, które są przestarzałe w programie .NET 4,5 i jego nowszych wersjach. Elementy członkowskie typu są pogrupowane według zestawu. Elementy członkowskie przestarzałych typów są wykluczone w tym miejscu.
+description: Zobacz listę elementów członkowskich typu, które są przestarzałe w .NET Framework 4,5 i nowszych wersjach. Elementy członkowskie typu są pogrupowane według zestawu. Elementy członkowskie przestarzałych typów są wykluczone w tym miejscu.
 ms.date: 10/17/2017
 helpviewer_keywords:
 - .NET Framework, obsolete members
 - members, obsolete in .NET Framework
 - obsolete members [.NET Framework]
 ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
-ms.openlocfilehash: d5981a2ec1e8152e891a4480ea548200be45ecd1
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 35dc67e80a47ba3e61db3d27f44f6c6ee45464ba
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558527"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726460"
 ---
 # <a name="obsolete-members-in-net-framework"></a>Przestarzałe składowe w .NET Framework
 
@@ -134,7 +134,7 @@ W tym artykule nie wymieniono członków przestarzałych typów. Aby zapoznać s
 > |<xref:System.Security.HostSecurityManagerOptions?displayProperty=nameWithType>|<xref:System.Security.HostSecurityManagerOptions.HostPolicyLevel>|Poziomy zasad domeny aplikacji są przestarzałe i zostaną usunięte w przyszłej wersji .NET Framework.|
 > |<xref:System.Security.PermissionSet?displayProperty=nameWithType>|<xref:System.Security.PermissionSet.ConvertPermissionSet%2A>|Ta metoda jest przestarzała i nie powinna już być używana.|
 > |<xref:System.Security.PermissionSet?displayProperty=nameWithType>|<xref:System.Security.PermissionSet.Deny%2A>|<xref:System.Security.PermissionSet.Deny%2A> jest przestarzały i zostanie usunięty w przyszłych wydaniach .NET Framework.|
-> |<xref:System.Security.SecurityCriticalAttribute?displayProperty=nameWithType>|<xref:System.Security.SecurityCriticalAttribute.Scope%2A>|<xref:System.Security.SecurityCriticalScope?displayProperty=nameWithType> jest używana tylko w przypadku zgodności z platformą .NET 2,0.|
+> |<xref:System.Security.SecurityCriticalAttribute?displayProperty=nameWithType>|<xref:System.Security.SecurityCriticalAttribute.Scope%2A>|<xref:System.Security.SecurityCriticalScope?displayProperty=nameWithType> jest używany tylko na potrzeby zgodności przejrzystości .NET Framework 2,0.|
 > |<xref:System.Security.SecurityManager?displayProperty=nameWithType>|<xref:System.Security.SecurityManager.CheckExecutionRights%2A>|Ponieważ sprawdzenia uprawnień wykonywania nie mogą już być wyłączone, <xref:System.Security.SecurityManager.CheckExecutionRights%2A> Właściwość nie ma już żadnego efektu.|
 > |<xref:System.Security.SecurityManager?displayProperty=nameWithType>|<xref:System.Security.SecurityManager.IsGranted%2A>|<xref:System.Security.SecurityManager.IsGranted%2A> jest przestarzały i zostanie usunięty w przyszłych wydaniach .NET Framework. <xref:System.AppDomain.PermissionSet%2A?displayProperty=nameWithType>Zamiast tego użyj właściwości lub <xref:System.Reflection.Assembly.PermissionSet%2A?displayProperty=nameWithType> właściwości.|
 > |<xref:System.Security.SecurityManager?displayProperty=nameWithType>|<xref:System.Security.SecurityManager.LoadPolicyLevelFromFile%2A>|Ta metoda jest przestarzała i zostanie usunięta w przyszłej wersji .NET Framework.|

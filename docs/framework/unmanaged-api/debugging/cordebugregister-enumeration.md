@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 003bb138-7960-4291-ac88-0d87e470ff70
 topic_type:
 - apiref
-ms.openlocfilehash: 19d0dcf8a5633371765861fcc29df4ef8c91ebc4
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 85df98e83396c9439c28dd41a3ffa02b820c9c3e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795719"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726057"
 ---
 # <a name="cordebugregister-enumeration"></a>CorDebugRegister — Wyliczenie
+
 Określa rejestry skojarzone z daną architekturą procesora.  
   
 ## <a name="syntax"></a>Składnia  
@@ -190,15 +191,17 @@ typedef enum CorDebugRegister {
 |`REGISTER_ARM_LR`|Rejestracja linku (R14) na procesorze ARM.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Istnieją 128 rejestrów danych ogólnego przeznaczenia i 128 rejestrów danych zmiennoprzecinkowych na procesorach IA-64, ale tylko wartości `REGISTER_IA64_R0` i `REGISTER_IA64_F0` są dostępne. Inne wartości można określić w następujący sposób:  
   
-- Dodaj numer rejestru do `REGISTER_IA64_R0` wartości `REGISTER_IA64_R1` za pomocą `REGISTER_IA64_R127`, które odpowiadają #1 rejestru danych za pomocą #127 rejestru danych w procesorze IA-64.  
+- Dodaj numer rejestru do `REGISTER_IA64_R0` wartości `REGISTER_IA64_R1` za pomocą `REGISTER_IA64_R127` , które odpowiadają #1 rejestru danych za pomocą #127 rejestru danych w procesorze IA-64.  
   
-- Dodaj numer rejestru do `REGISTER_IA64_F0` wartości `REGISTER_IA64_F1` za pomocą `REGISTER_IA64_F127`, które odpowiadają rejestrowi danych fp #1, za pomocą rejestru #127 fp w ramach procesora IA-64.  
+- Dodaj numer rejestru do `REGISTER_IA64_F0` wartości `REGISTER_IA64_F1` za pomocą `REGISTER_IA64_F127` , które odpowiadają rejestrowi danych FP #1, za pomocą rejestru #127 FP w ramach procesora IA-64.  
   
  Jeśli na przykład chcesz określić #83 rejestru danych w procesorze IA-64, użyj `REGISTER_IA64_R0` + 83.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

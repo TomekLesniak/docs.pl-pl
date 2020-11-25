@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 23a763ea-8348-4244-9f8c-a4280b870b47
-ms.openlocfilehash: ee36845f19ef4a7c3923b1032ab6eb45d2f60733
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c2ab384b6d84a14d5e8f4cfe66281a26b14421f4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830821"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726967"
 ---
 # <a name="how-to-convert-between-net-framework-and-windows-runtime-streams-windows-only"></a>Instrukcje: konwertowanie między strumieniami .NET Framework i środowisko wykonawcze systemu Windows (tylko system Windows)
 
@@ -19,6 +19,7 @@ ms.locfileid: "94830821"
 <xref:System.IO.WindowsRuntimeStreamExtensions?displayProperty=nameWithType>Klasa zawiera metody, które ułatwiają wykonywanie tych konwersji. Jednak podstawowe różnice między strumieniami .NET Framework i środowisko wykonawcze systemu Windows wpływają na wyniki korzystania z tych metod, zgodnie z opisem w poniższych sekcjach:
 
 ## <a name="convert-from-a-windows-runtime-to-a-net-framework-stream"></a>Konwertowanie środowisko wykonawcze systemu Windows na strumień .NET Framework
+
 Aby przekonwertować strumień środowisko wykonawcze systemu Windows do strumienia .NET Framework, użyj jednej z następujących <xref:System.IO.WindowsRuntimeStreamExtensions?displayProperty=nameWithType> metod:
 
 - <xref:System.IO.WindowsRuntimeStreamExtensions.AsStream%2A?displayProperty=nameWithType> Konwertuje strumień dostępu swobodnego w środowisko wykonawcze systemu Windows na zarządzany strumień w programie .NET for platformy UWP Apps.
@@ -32,6 +33,7 @@ Aby przekonwertować strumień środowisko wykonawcze systemu Windows do strumie
 Najlepszym rozwiązaniem jest użycie metody konwersji, która jest zgodna z możliwościami strumienia środowisko wykonawcze systemu Windows, które chcesz skonwertować. Jednak ponieważ <xref:Windows.Storage.Streams.IRandomAccessStream> jest możliwy do odczytu i zapisu (implementuje zarówno <xref:Windows.Storage.Streams.IOutputStream> i <xref:Windows.Storage.Streams.IInputStream> ), metody konwersji zachowują możliwości oryginalnego strumienia. Na przykład użycie <xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead%2A?displayProperty=nameWithType> do konwersji <xref:Windows.Storage.Streams.IRandomAccessStream> nie ogranicza przekonwertowanego strumienia .NET Framework, aby można było go odczytać. Jest również zapisywalny.
 
 ## <a name="example-convert-windows-runtime-random-access-to-net-framework-stream"></a>Przykład: konwertowanie środowisko wykonawcze systemu Windows dostęp losowy do strumienia .NET Framework
+
 Aby przekonwertować strumień środowisko wykonawcze systemu Windows dostęp losowy do strumienia .NET Framework, użyj <xref:System.IO.WindowsRuntimeStreamExtensions.AsStream%2A?displayProperty=nameWithType> metody.
 
 Poniższy przykład kodu wyświetla komunikat, aby wybrać plik, otwiera go z środowisko wykonawcze systemu Windows interfejsów API, a następnie konwertuje go na strumień .NET Framework. Odczytuje strumień i wyprowadza go do bloku tekstu. Zazwyczaj można manipulować strumieniem za pomocą interfejsów API .NET Framework, zanim zostaną one wprowadzone.
@@ -42,6 +44,7 @@ Aby uruchomić ten przykład, należy utworzyć aplikację XAML platformy UWP, k
   [!code-vb[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/vb/mainpage1.xaml.vb)]
 
 ## <a name="convert-from-a-net-framework-to-a-windows-runtime-stream"></a>Konwertowanie .NET Framework na strumień środowisko wykonawcze systemu Windows
+
 Aby przekonwertować strumień .NET Framework do strumienia środowisko wykonawcze systemu Windows, użyj jednej z następujących <xref:System.IO.WindowsRuntimeStreamExtensions?displayProperty=nameWithType> metod:
 
 - <xref:System.IO.WindowsRuntimeStreamExtensions.AsInputStream%2A?displayProperty=nameWithType> Konwertuje zarządzany strumień w programie .NET dla aplikacji platformy UWP na strumień wejściowy w środowisko wykonawcze systemu Windows.

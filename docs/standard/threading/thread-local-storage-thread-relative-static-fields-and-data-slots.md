@@ -7,12 +7,12 @@ helpviewer_keywords:
 - local thread storage
 - TLS
 ms.assetid: c633a4dc-a790-4ed1-96b5-f72bd968b284
-ms.openlocfilehash: c9ea2939dcff321a1d4e24e7a97c056c016e5fdc
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b45c83887d278589cc1704ec1398ec99e27550ad
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819633"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727526"
 ---
 # <a name="thread-local-storage-thread-relative-static-fields-and-data-slots"></a>Pamięć lokalna wątku: Powiązane z wątkiem pola statyczne i gniazda danych
 
@@ -27,6 +27,7 @@ Za pomocą lokalnego magazynu wątków (TLS) można przechowywać dane, które s
 Klasy można użyć <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> do tworzenia obiektów lokalnych wątków, które są inicjowane opóźnieniem, gdy obiekt jest po raz pierwszy zużyty. Aby uzyskać więcej informacji, zobacz [Inicjalizacja z opóźnieniem](../../framework/performance/lazy-initialization.md).  
   
 ## <a name="uniqueness-of-data-in-managed-tls"></a>Unikatowość danych w zarządzanym protokole TLS  
+
  Niezależnie od tego, czy używasz pól statycznych względnych dla wątków czy miejsc danych, dane w zarządzanej protokole TLS są unikatowe dla połączenia wątku i domeny aplikacji.  
   
 - W ramach domeny aplikacji jeden wątek nie może modyfikować danych z innego wątku, nawet jeśli oba wątki używają tego samego pola lub gniazda.  
@@ -38,6 +39,7 @@ Klasy można użyć <xref:System.Threading.ThreadLocal%601?displayProperty=nameW
  Podobnie, gdy wątek pobiera takie samo nazwane miejsce danych w dwóch różnych domenach aplikacji, dane w pierwszej domenie aplikacji pozostają niezależne od danych w drugiej domenie aplikacji.  
   
 ## <a name="thread-relative-static-fields"></a>Thread-Relative pól statycznych  
+
  Jeśli wiesz, że element danych jest zawsze unikatowy dla połączenia wątku i aplikacji, Zastosuj <xref:System.ThreadStaticAttribute> atrybut do pola statycznego. Użyj pola jako użycia dowolnego innego pola statycznego. Dane w polu są unikatowe dla każdego wątku, który go używa.  
   
  Pola statyczne względne dla wątków zapewniają lepszą wydajność niż miejsca na danych i korzystają z sprawdzania typu w czasie kompilacji.  

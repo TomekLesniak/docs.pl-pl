@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9a26547a-9a34-4284-a463-78a7d4b496cf
 topic_type:
 - apiref
-ms.openlocfilehash: 5dbb5dc483bc5a08c59606654d55b5a62266e509
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 13d71a9da2539c45076e5eb92e153e37c1df4b47
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134367"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727916"
 ---
 # <a name="iassemblynamegetdisplayname-method"></a>IAssemblyName::GetDisplayName — Metoda
+
 Pobiera nazwę zestawu, do którego odwołuje się ten obiekt [IAssemblyName](iassemblyname-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,23 +37,25 @@ HRESULT GetDisplayName (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `szDisplayName`  
  określoną Bufor ciągu, który zawiera nazwę przywoływanego zestawu.  
   
  `pccDisplayName`  
- [in. out] Rozmiar `szDisplayName` w postaci znaków dwubajtowych, łącznie z znakiem terminatora o wartości null.  
+ [in. out] Rozmiar znaków dwubajtowych `szDisplayName` , w tym znak końcowy o wartości null.  
   
  `dwDisplayFlags`  
- podczas Bitowa kombinacja wartości [ASM_DISPLAY_FLAGS](asm-display-flags-enumeration.md) , które mają wpływ na funkcje `szDisplayName`.  
+ podczas Bitowa kombinacja [ASM_DISPLAY_FLAGS](asm-display-flags-enumeration.md) wartości, które mają wpływ na funkcje programu `szDisplayName` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IAssemblyName, interfejs](iassemblyname-interface.md)
+- [IAssemblyName — Interfejs](iassemblyname-interface.md)
 - [Wyliczenia łączenia](fusion-enumerations.md)

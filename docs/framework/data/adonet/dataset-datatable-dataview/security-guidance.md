@@ -3,12 +3,12 @@ title: Wskazówki dotyczące zabezpieczeń zestawów danych i DataTable
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: e9973df02ff478eedc932099fb8be0526a97b899
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 8798c4542acc578c8f7f00c9b26cd01a0db20c42
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679458"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726070"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>Wskazówki dotyczące zabezpieczeń zestawów danych i DataTable
 
@@ -18,7 +18,7 @@ Ten artykuł ma zastosowanie do:
 * .NET Core i nowsze
 * .NET 5,0 i nowsze
 
-[Zestaw](/dotnet/api/system.data.dataset) danych i typy [DataTable](/dotnet/api/system.data.datatable) są starszymi składnikami platformy .NET, które umożliwiają reprezentowania zestawów danych jako obiektów zarządzanych. Te składniki zostały wprowadzone w środowisku .NET 1,0 w ramach oryginalnej [infrastruktury ADO.NET](./index.md). Ich celem było zapewnienie widoku zarządzanego na potrzeby relacyjnego zestawu danych, który jest bardziej abstrakcyjny, niezależnie od tego, czy bazowe źródło danych było XML, SQL czy inną technologią.
+[Zestaw](/dotnet/api/system.data.dataset) danych i typy [DataTable](/dotnet/api/system.data.datatable) są starszymi składnikami platformy .NET, które umożliwiają reprezentowania zestawów danych jako obiektów zarządzanych. Te składniki zostały wprowadzone w .NET Framework 1,0 w ramach oryginalnej [infrastruktury ADO.NET](./index.md). Ich celem było zapewnienie widoku zarządzanego na potrzeby relacyjnego zestawu danych, który jest bardziej abstrakcyjny, niezależnie od tego, czy bazowe źródło danych było XML, SQL czy inną technologią.
 
 Aby uzyskać więcej informacji na temat ADO.NET, w tym bardziej nowoczesnych odmian widoku danych, zapoznaj [się z dokumentacją ADO.NET](../index.md).
 
@@ -34,13 +34,9 @@ We wszystkich obsługiwanych wersjach .NET Framework, .NET Core i .NET `DataSet`
 
 Jeśli dane przychodzące XML zawierają obiekt, którego typ nie znajduje się na tej liście:
 
-* Wyjątek jest zgłaszany przy użyciu następującego komunikatu i śladu stosu.  
-Komunikat o błędzie:  
-System. InvalidOperationException: typ " \<Type Name\> , Version = \<n.n.n.n\> , Culture = \<culture\> , PublicKeyToken = \<token value\> " nie jest dozwolony w tym miejscu. [https://go.microsoft.com/fwlink/?linkid=2132227](https://go.microsoft.com/fwlink/?linkid=2132227)Aby uzyskać więcej informacji, zobacz.  
-Ślad stosu:  
-w System. Data. TypeLimiter. EnsureTypeIsAllowed (typ typu, TypeLimiter capturedLimiter)  
-w System. Data. DataColumn. UpdateColumnType (typ typu, StorageType, typeCode)  
-w System. Data. DataColumn. set_DataType (typ wartości)  
+* Wyjątek jest zgłaszany przy użyciu następującego komunikatu i śladu stosu.
+Komunikat o błędzie: System. InvalidOperationException: Type " \<Type Name\> , Version = \<n.n.n.n\> , Culture = \<culture\> , PublicKeyToken = \<token value\> " jest niedozwolony w tym miejscu. [https://go.microsoft.com/fwlink/?linkid=2132227](https://go.microsoft.com/fwlink/?linkid=2132227)Aby uzyskać więcej informacji, zobacz.
+Ślad stosu: w System. Data. TypeLimiter. EnsureTypeIsAllowed (typ typu, TypeLimiter capturedLimiter) w System. Data. DataColumn. UpdateColumnType (typ typu, StorageType) w System.Data.DataColumn.set_DataType (wartość typu)
 
 * Operacja deserializacji kończy się niepowodzeniem.
 
@@ -293,7 +289,7 @@ Aby uzyskać więcej informacji na temat korzystania z rejestru do konfigurowani
 
 ## <a name="safety-with-regard-to-untrusted-input"></a>Bezpieczeństwo w odniesieniu do niezaufanych danych wejściowych
 
-Chociaż `DataSet` i `DataTable` nakładają domyślne ograniczenia dotyczące typów, które mogą być obecne podczas deserializacji ładunków XML __ `DataSet` i `DataTable` są ogólnie niebezpieczne, gdy są wypełniane niezaufanymi danymi wejściowymi.__ Poniżej znajduje się niepełna lista sposobów `DataSet` `DataTable` odczytywania niezaufanych danych wejściowych lub wystąpienia.
+Chociaż `DataSet` i `DataTable` nakładają domyślne ograniczenia dotyczące typów, które mogą być obecne podczas deserializacji ładunków XML __`DataSet` i `DataTable` są ogólnie niebezpieczne, gdy są wypełniane niezaufanymi danymi wejściowymi.__ Poniżej znajduje się niepełna lista sposobów `DataSet` `DataTable` odczytywania niezaufanych danych wejściowych lub wystąpienia.
 
 * Odwołuje się do `DataAdapter` bazy danych, a `DataAdapter.Fill` Metoda jest używana do wypełniania `DataSet` zawartością zapytania bazy danych.
 * `DataSet.ReadXml`Metoda or `DataTable.ReadXml` służy do odczytywania pliku XML zawierającego informacje o kolumnie i wierszu.
@@ -479,9 +475,9 @@ Deserializacja a `DataSet` lub `DataTable` w ten sposób z niezaufanego obiektu 
 
 ## <a name="deserialize-a-dataset-or-datatable-via-binaryformatter"></a>Deserializacja zestawu danych lub DataTable za pośrednictwem BinaryFormatter
 
-Deweloperzy nie muszą używać `BinaryFormatter` , `NetDataContractSerializer` , `SoapFormatter` ani pokrewnych ***niebezpiecznych*** elementów formatujących do deserializacji `DataSet` `DataTable` wystąpienia lub z niezaufanego ładunku:
+Deweloperzy nie muszą używać `BinaryFormatter` , `NetDataContractSerializer` , `SoapFormatter` , ani pokrewnych ***niebezpiecznych** _ programu formatującego do deserializacji `DataSet` `DataTable` wystąpienia lub z niezaufanego ładunku:
 
-* Jest to podatne na pełny atak wykonywania kodu zdalnego.
+Jest to podatne na pełny atak wykonywania kodu zdalnego.
 * Użycie niestandardowych `SerializationBinder` nie jest wystarczające, aby zapobiec takim atakom.
 
 ## <a name="safe-replacements"></a>Bezpieczne zamienniki

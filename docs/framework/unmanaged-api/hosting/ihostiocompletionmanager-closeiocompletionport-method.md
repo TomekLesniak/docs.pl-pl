@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e86ad7be-3758-498a-a972-5522d69dfbb3
 topic_type:
 - apiref
-ms.openlocfilehash: 5e2e49b4c993e127a31b54d40f721e0714198780
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: a45f8ab6372776bece09e408bc9887bfaddb0955
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804780"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727370"
 ---
 # <a name="ihostiocompletionmanagercloseiocompletionport-method"></a>IHostIoCompletionManager::CloseIoCompletionPort — Metoda
+
 Żąda zamknięcia przez hosta portu, który został otwarty za pomocą wcześniejszego wywołania do [CreateIoCompletionPort](ihostiocompletionmanager-createiocompletionport-method.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT CloseIoCompletionPort (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `hPort`  
  podczas Dojście portu do zamknięcia.  
   
@@ -41,7 +43,7 @@ HRESULT CloseIoCompletionPort (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`CloseIoCompletionPort`pomyślnie zwrócono.|  
+|S_OK|`CloseIoCompletionPort` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -50,18 +52,20 @@ HRESULT CloseIoCompletionPort (
 |E_INVALIDARG|Przekazano nieprawidłowe dojście do portu.|  
   
 ## <a name="remarks"></a>Uwagi  
- `hPort`musi być dojściem do portu, który został utworzony przy użyciu wcześniejszego wywołania do `CreateIoCompletionPort` .  
+
+ `hPort` musi być dojściem do portu, który został utworzony przy użyciu wcześniejszego wywołania do `CreateIoCompletionPort` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [ICLRIoCompletionManager, interfejs](iclriocompletionmanager-interface.md)
-- [IHostIoCompletionManager, interfejs](ihostiocompletionmanager-interface.md)
+- [ICLRIoCompletionManager — Interfejs](iclriocompletionmanager-interface.md)
+- [IHostIoCompletionManager — Interfejs](ihostiocompletionmanager-interface.md)

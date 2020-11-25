@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a8c7719a-322b-4133-8566-4c27218dc104
 topic_type:
 - apiref
-ms.openlocfilehash: a0d6f3e109f92ad44eeeb1b1dec05e53015992a6
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 5c108420772be9e6d0932f3759f18da9446f99d6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378362"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727942"
 ---
 # <a name="icordebugthread4-interface"></a>ICorDebugThread4 — Interfejs
+
 Dostarcza informacje o blokowaniu wątku.  
   
 ## <a name="methods"></a>Metody  
@@ -33,12 +34,14 @@ Dostarcza informacje o blokowaniu wątku.
 |[GetCurrentCustomDebuggerNotification, metoda](icordebugthread4-getcurrentcustomdebuggernotification-method.md)|Pobiera bieżący obiekt [ICorDebugManagedCallback3:: CustomNotification —](icordebugmanagedcallback3-customnotification-method.md) w bieżącym wątku.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten interfejs jest logicznym rozszerzeniem interfejsów ICorDebugThread, ICorDebugThread2 i [ICorDebugThread3](icordebugthread3-interface.md) .  
   
 > [!NOTE]
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -47,7 +50,7 @@ Dostarcza informacje o blokowaniu wątku.
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)
 - [Debugowanie](index.md)

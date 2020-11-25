@@ -7,12 +7,12 @@ helpviewer_keywords:
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-ms.openlocfilehash: 188090a968b49bd77279d35dc41f00e808299938
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: e1b90bdc5657c1fd22c6e77e31890ff63c3cc3ea
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819646"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727461"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronizowanie danych na potrzeby wielowątkowości
 
@@ -38,12 +38,15 @@ Platforma .NET udostępnia kilka strategii do synchronizowania dostępu do wyst�
 |Synchronizacja ręczna|Ręcznie|Ręcznie|Ręcznie|Ręcznie|Ręcznie|Ręcznie|  
   
 ## <a name="no-synchronization"></a>Brak synchronizacji  
+
  Jest to wartość domyślna dla obiektów. Dowolny wątek może uzyskać dostęp do dowolnej metody lub pola w dowolnym momencie. Tylko jeden wątek jednocześnie powinien uzyskać dostęp do tych obiektów.  
   
 ## <a name="manual-synchronization"></a>Synchronizacja ręczna  
+
  Biblioteka klas .NET udostępnia wiele klas do synchronizowania wątków. Zobacz [Omówienie elementów pierwotnych synchronizacji](overview-of-synchronization-primitives.md).  
   
 ## <a name="synchronized-code-regions"></a>Zsynchronizowane regiony kodu  
+
  Można użyć <xref:System.Threading.Monitor> klasy lub słowa kluczowego kompilatora do synchronizowania bloków kodu, metod wystąpień i metod statycznych. Nie ma obsługi zsynchronizowanych pól statycznych.  
   
  Zarówno Visual Basic, jak i C# obsługują oznaczenie bloków kodu za pomocą słowa kluczowego określonego języka, `lock` instrukcji w języku C# lub `SyncLock` instrukcji w Visual Basic. Gdy kod jest wykonywany przez wątek, podejmowana jest próba uzyskania blokady. Jeśli blokada została już uzyskana przez inny wątek, bloki wątku do momentu udostępnienia blokady staną się dostępne. Gdy wątek opuszcza zsynchronizowany blok kodu, blokada zostaje wydana, niezależnie od tego, jak wątek opuszcza blok.  
@@ -59,6 +62,7 @@ Platforma .NET udostępnia kilka strategii do synchronizowania dostępu do wyst�
 > Nie blokuj typu — to znaczy, `typeof(MyType)` w języku C#, `GetType(MyType)` w Visual Basic lub `MyType::typeid` w języku C++ — w celu ochrony `static` metod ( `Shared` metod w Visual Basic). Zamiast tego użyj prywatnego obiektu statycznego. Podobnie nie należy używać `this` języka C# ( `Me` w Visual Basic) do blokowania metod wystąpienia. Zamiast tego użyj obiektu prywatnego. Klasę lub wystąpienie można zablokować za pomocą kodu innego niż własny, potencjalnie powodującego zakleszczenie lub problemy z wydajnością.  
   
 ### <a name="compiler-support"></a>Obsługa kompilatora  
+
  Zarówno Visual Basic, jak i C# obsługują słowo kluczowe języka, które używa <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> i <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> do blokowania obiektu. Visual Basic obsługuje instrukcję [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) ; Język C# obsługuje instrukcję [Lock](../../csharp/language-reference/keywords/lock-statement.md) .  
   
  W obu przypadkach, jeśli wyjątek jest zgłaszany w bloku kodu, blokada uzyskana przez **blokadę** lub **SyncLock** jest automatycznie wydawana. Kompilatory C# i Visual Basic emitują blok **try** / **finally** z **monitorem. Wprowadź** na początku try, a **monitor. Exit** w bloku **finally** . Jeśli w bloku **blokady** lub **SyncLock** zostanie zgłoszony wyjątek, program obsługi **finally** zostanie uruchomiony w celu umożliwienia wykonania wszelkich operacji oczyszczania.  

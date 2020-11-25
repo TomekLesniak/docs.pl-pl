@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9c149303-14b1-4138-83d7-e8c3e0fcd332
 topic_type:
 - apiref
-ms.openlocfilehash: 6a378e3579ab9ea8d9534a408d0e456373616cad
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 0f1e6bbdf16c953b0dd22d9dfa44bc3585f1269e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213146"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726252"
 ---
 # <a name="icordebugfunctionbreakpoint-interface"></a>ICorDebugFunctionBreakpoint, interfejs
 
@@ -38,6 +38,7 @@ Rozszerza interfejs ICorDebugBreakpoint w celu obsługi punktów przerwania w fu
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -46,6 +47,6 @@ Rozszerza interfejs ICorDebugBreakpoint w celu obsługi punktów przerwania w fu
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

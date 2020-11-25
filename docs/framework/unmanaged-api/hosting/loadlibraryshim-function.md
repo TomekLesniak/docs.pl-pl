@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 30931874-4d0e-4df1-b3d1-e425b50655d1
 topic_type:
 - apiref
-ms.openlocfilehash: 4b270c36bdbea9c8d81915eba424cae1054ce7d7
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: d5e9ba0023b6516eb6190f32bc65b2b8b6af79f9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008537"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727565"
 ---
 # <a name="loadlibraryshim-function"></a>LoadLibraryShim — Funkcja
+
 Ładuje określoną wersję biblioteki DLL dołączoną do pakietu redystrybucyjnego .NET Framework.  
   
  Ta funkcja jest przestarzała w .NET Framework 4. Zamiast tego użyj metody [ICLRRuntimeInfo:: LoadLibrary](iclrruntimeinfo-loadlibrary-method.md) .  
@@ -39,6 +40,7 @@ HRESULT LoadLibraryShim (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `szDllName`  
  podczas Ciąg zakończony zerem, który reprezentuje nazwę biblioteki DLL, która ma zostać załadowana z biblioteki .NET Framework.  
   
@@ -52,6 +54,7 @@ HRESULT LoadLibraryShim (
  określoną Wskaźnik do uchwytu modułu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca kody błędów standardowego Component Object Model (COM), jak zdefiniowano w WinError. h, oprócz następujących wartości.  
   
 |Kod powrotu|Opis|  
@@ -60,18 +63,20 @@ HRESULT LoadLibraryShim (
 |CLR_E_SHIM_RUNTIMELOAD|Ładowanie `szDllName` wymaga załadowania środowiska uruchomieniowego języka wspólnego (CLR) i niezbędna wersja środowiska CLR nie może zostać załadowana.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta funkcja służy do ładowania bibliotek DLL, które znajdują się w pakiecie redystrybucyjnym .NET Framework. Nie ładuje bibliotek DLL generowanych przez użytkownika.  
   
 > [!NOTE]
-> Począwszy od .NET Framework w wersji 2,0, wczytywanie pliku Fusion. dll powoduje załadowanie środowiska CLR. Jest to spowodowane tym, że funkcje w programie Fusion. dll są teraz otokami, których implementacje są udostępniane przez środowisko uruchomieniowe.  
+> Począwszy od .NET Framework w wersji 2,0, ładowanie Fusion.dll powoduje, że środowisko CLR zostanie załadowane. Jest to spowodowane tym, że funkcje w Fusion.dll są teraz otokami, których implementacje są udostępniane przez środowisko uruchomieniowe.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przestarzałe funkcje hostingu środowiska CLR](deprecated-clr-hosting-functions.md)

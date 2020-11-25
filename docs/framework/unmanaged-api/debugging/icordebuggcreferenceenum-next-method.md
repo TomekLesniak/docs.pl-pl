@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 91b1345c-a94f-4ef8-9696-3823d06c6d05
 topic_type:
 - apiref
-ms.openlocfilehash: 1cf6f9c5fe8777f3333e449a804a3c3a0a64ff19
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: e55c53b9610dcadee92ba9871bf52e3dacb5796b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213091"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726239"
 ---
 # <a name="icordebuggcreferenceenumnext-method"></a>ICorDebugGCReferenceEnum::Next — Metoda
+
 Pobiera określoną liczbę wystąpień [COR_GC_REFERENCE](cor-gc-reference-structure.md) , które zawierają informacje o obiektach, które będą zbierane jako elementy bezużyteczne.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT Next(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  celt  
  podczas Liczba katalogów głównych do pobrania.  
   
@@ -47,6 +49,7 @@ HRESULT Next(
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -55,7 +58,7 @@ HRESULT Next(
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugGCReferenceEnum — Interfejs](icordebuggcreferenceenum-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

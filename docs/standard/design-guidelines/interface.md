@@ -6,14 +6,15 @@ helpviewer_keywords:
 - type design guidelines, interfaces
 - class library design guidelines [.NET Framework], interfaces
 ms.assetid: a016bd18-6710-4358-9438-9f190a295392
-ms.openlocfilehash: 9f8ff38d5825091d4d5d3716ed6025a8d04c592d
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 6f8cbb757ffb42f63903b212fee33cdcbba7ecb2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821011"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727682"
 ---
 # <a name="interface-design"></a>Projekt interfejsu
+
 Chociaż większość interfejsów API jest najlepszym modelem przy użyciu klas i struktur, istnieją przypadki, w których interfejsy są bardziej odpowiednie lub są jedyną opcją.
 
  Środowisko CLR nie obsługuje dziedziczenia wielokrotnego (tj. klasy CLR nie mogą dziedziczyć z więcej niż jednej klasy bazowej), ale w przypadku dziedziczenia z klasy bazowej są dozwolone typy implementujące jeden lub więcej interfejsów. W związku z tym interfejsy są często używane do osiągnięcia efektu wielokrotnego dziedziczenia. Na przykład <xref:System.IDisposable> jest interfejsem, który umożliwia obsługę typów disposability niezależnie od innych hierarchii dziedziczenia, w których chcą uczestniczyć.

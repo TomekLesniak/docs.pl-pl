@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7115e920-aaff-440a-824e-39497139c6f6
 topic_type:
 - apiref
-ms.openlocfilehash: 933edf734a0e02b4ac9c88d9f193277d963adada
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8a7de5a900bc1af219924b6a83f83cf7e2ef6150
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615803"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726148"
 ---
 # <a name="iclrdebugmanagergetdacl-method"></a>ICLRDebugManager::GetDacl — Metoda
+
 Ta metoda nie jest zaimplementowana.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetDacl (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppacl`  
  określoną Wskaźnik interfejsu do listy Access Control (ACL).  
   
@@ -44,17 +46,18 @@ HRESULT GetDacl (
 |E_NOTIMPL|Metoda nie jest zaimplementowana.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [ICLRControl — Interfejs](iclrcontrol-interface.md)
-- [ICLRDebugManager, interfejs](iclrdebugmanager-interface.md)
+- [ICLRDebugManager — Interfejs](iclrdebugmanager-interface.md)
 - [SetDacl, metoda](iclrdebugmanager-setdacl-method.md)
-- [IHostControl, interfejs](ihostcontrol-interface.md)
+- [IHostControl — Interfejs](ihostcontrol-interface.md)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5f6c2bcd-8102-4e3b-abc5-86ab0bd62def
 topic_type:
 - apiref
-ms.openlocfilehash: d502b4098016fb14793bccd6feb641e92e3c2611
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 968874a46279b7eac651d45c3890429a326651b2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795641"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726954"
 ---
 # <a name="cordebuguserstate-enumeration"></a>CorDebugUserState — Wyliczenie
+
 Wskazuje stan użytkownika wątku.  
   
 ## <a name="syntax"></a>Składnia  
@@ -55,11 +56,13 @@ typedef enum CorDebugUserState {
 |`USER_THREADPOOL`|Wątek pochodzi z puli wątków.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Stanem użytkownika wątku jest stan, w którym wątek jest badany przez debuger. Wątek może mieć kombinację Stanów użytkownika.  
   
  Użyj metody [ICorDebugThread:: GetUserState —](icordebugthread-getuserstate-method.md) , aby pobrać stan użytkownika wątku.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

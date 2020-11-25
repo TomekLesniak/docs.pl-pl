@@ -14,15 +14,16 @@ helpviewer_keywords:
 ms.assetid: bfb2cd39-3e0b-4d51-ba0c-f009755c1456
 topic_type:
 - apiref
-ms.openlocfilehash: 37659262695b63a6dd6390c62c4bb7e04fdadca4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5400350e1c489ec4c2ff3cddf83a4f1a8a0c7947
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179310"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726603"
 ---
 # <a name="cor_heapinfo-structure"></a>COR_HEAPINFO — Struktura
-Zawiera ogólne informacje na temat sterty wyrzucania elementów bezużytecznych, w tym, czy jest wyliczalny.  
+
+Zawiera ogólne informacje o stercie wyrzucania elementów bezużytecznych, w tym o tym, czy są wyliczalne  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -40,27 +41,29 @@ typedef struct _COR_HEAPINFO {
   
 |Członek|Opis|  
 |------------|-----------------|  
-|`areGCStructuresValid`|`true`jeśli struktury wyrzucania elementów bezużytecznych są prawidłowe i sterty mogą być wyliczone; w `false`przeciwnym razie , .|  
-|`pointerSize`|Rozmiar w bajtach wskaźników na architekturze docelowej.|  
-|`numHeaps`|Liczba logicznych sterty wyrzucania elementów bezużytecznych w procesie.|  
-|`concurrent`|`TRUE`jeśli równoczesne (tło) wyrzucanie elementów bezużytecznych jest włączone; w `FALSE`przeciwnym razie , .|  
-|`gcType`|Członek wyliczenia [CorDebugGCType,](cordebuggctype-enumeration.md) który wskazuje, czy moduł zbierający elementy bezużyteczne jest uruchomiony na stacji roboczej lub serwera.|  
+|`areGCStructuresValid`|`true` Jeśli struktury wyrzucania elementów bezużytecznych są prawidłowe i sterta może zostać wyliczona; w przeciwnym razie `false` .|  
+|`pointerSize`|Rozmiar (w bajtach) wskaźników na architekturze docelowej.|  
+|`numHeaps`|Liczba sterty logicznego wyrzucania elementów bezużytecznych w procesie.|  
+|`concurrent`|`TRUE` Jeśli włączono współbieżne (w tle) odzyskiwanie pamięci; w przeciwnym razie `FALSE` .|  
+|`gcType`|Element członkowski wyliczenia [CorDebugGCType —](cordebuggctype-enumeration.md) , który wskazuje, czy moduł wyrzucania elementów bezużytecznych jest uruchomiony na stacji roboczej lub na serwerze.|  
   
 ## <a name="remarks"></a>Uwagi  
- Wystąpienie `COR_HEAPINFO` struktury jest zwracany przez wywołanie [ICorDebugProcess5::GetGCHeapInformation](icordebugprocess5-getgcheapinformation-method.md) metody.  
+
+ Wystąpienie `COR_HEAPINFO` struktury jest zwracane przez wywołanie metody [ICorDebugProcess5:: GetGCHeapInformation —](icordebugprocess5-getgcheapinformation-method.md) .  
   
- Przed wyliczeniem obiektów na stercie wyrzucania `areGCStructuresValid` elementów bezużytecznych należy zawsze sprawdzić pole, aby upewnić się, że sterty jest w stanie wyliczalnym. Aby uzyskać więcej informacji, zobacz [ICorDebugProcess5::GetGCHeapInformation](icordebugprocess5-getgcheapinformation-method.md) metody.  
+ Przed wyliczeniem obiektów na stercie wyrzucania elementów bezużytecznych należy zawsze zaznaczyć `areGCStructuresValid` pole, aby upewnić się, że sterta jest w stanie wyliczalnym. Aby uzyskać więcej informacji, zobacz metodę [ICorDebugProcess5:: GetGCHeapInformation —](icordebugprocess5-getgcheapinformation-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
+
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
- **Nagłówek:** CorDebug.idl, CorDebug.h  
+ **Nagłówek:** CorDebug. idl, CorDebug. h  
   
- **Biblioteka:** CorGuids.lib  
+ **Biblioteka:** CorGuids. lib  
   
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Struktury debugowania](debugging-structures.md)
-- [Debugging](index.md)
+- [Debugowanie](index.md)

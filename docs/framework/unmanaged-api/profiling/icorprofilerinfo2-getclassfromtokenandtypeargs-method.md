@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b25c88f0-71b9-443b-8eea-1c94db0a44b9
 topic_type:
 - apiref
-ms.openlocfilehash: 702c5f9f2bc08c824bdc0607741a6afd65a3e89b
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 62aad8339b34a4831211a45bd645906d73393d25
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497260"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727149"
 ---
 # <a name="icorprofilerinfo2getclassfromtokenandtypeargs-method"></a>ICorProfilerInfo2::GetClassFromTokenAndTypeArgs — Metoda
+
 Pobiera `ClassID` Typ przy użyciu określonego tokenu metadanych i `ClassID` wartości dowolnego argumentu typu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,11 +38,12 @@ HRESULT GetClassFromTokenAndTypeArgs(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `moduleID`  
  podczas Identyfikator modułu, w którym znajduje się typ.  
   
  `typeDef`  
- podczas `mdTypeDef`Token metadanych, który odwołuje się do typu.  
+ podczas `mdTypeDef` Token metadanych, który odwołuje się do typu.  
   
  `cTypeArgs`  
  podczas Liczba parametrów typu dla danego typu. Ta wartość musi być równa zero dla typów innych niż ogólne.  
@@ -53,6 +55,7 @@ HRESULT GetClassFromTokenAndTypeArgs(
  określoną Wskaźnik do `ClassID` określonego typu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wywołanie `GetClassFromTokenAndTypeArgs` metody z `mdTypeRef` `mdTypeDef` tokenem instead of metadanych może mieć nieprzewidywalne wyniki; obiekty wywołujące powinny rozpoznać `mdTypeRef` element do `mdTypeDef` podczas jego przekazywania.  
   
  Jeśli typ nie jest już załadowany, wywołanie `GetClassFromTokenAndTypeArgs` wywoła ładowanie, które jest niebezpieczną operacją w wielu kontekstach. Na przykład wywołanie tej metody podczas ładowania modułów lub innych typów może prowadzić do nieskończonej pętli, ponieważ środowisko uruchomieniowe próbuje cyklicznie ładować elementy.  
@@ -60,6 +63,7 @@ HRESULT GetClassFromTokenAndTypeArgs(
  Ogólnie rzecz biorąc, użycie `GetClassFromTokenAndTypeArgs` nie jest zalecane. Jeśli zainteresują Cię zdarzenia dotyczące określonego typu, powinny one przechowywać `ModuleID` i tego `mdTypeDef` typu, a następnie używać [ICorProfilerInfo2:: GetClassIDInfo2 —](icorprofilerinfo2-getclassidinfo2-method.md) , aby sprawdzić, czy dana `ClassID` jest określona dla żądanego typu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -70,5 +74,5 @@ HRESULT GetClassFromTokenAndTypeArgs(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2, interfejs](icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 — Interfejs](icorprofilerinfo2-interface.md)

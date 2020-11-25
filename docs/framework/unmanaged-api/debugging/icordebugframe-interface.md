@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 0c48f764-3c64-4602-b2f4-4ffc60eb2c65
 topic_type:
 - apiref
-ms.openlocfilehash: 9c2771d1338943406921447d96dd9a8748153a36
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: bdc17e2c6c63deae1420fe738eac51153f6b368e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209633"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726343"
 ---
 # <a name="icordebugframe-interface"></a>ICorDebugFrame, interfejs
 
@@ -44,6 +44,7 @@ Reprezentuje ramkę na bieżącym stosie.
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -52,6 +53,6 @@ Reprezentuje ramkę na bieżącym stosie.
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

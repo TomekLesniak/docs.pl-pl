@@ -16,14 +16,15 @@ helpviewer_keywords:
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-ms.openlocfilehash: 4c7051fa45dfc23a09b037b78030ff90af182a7d
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: e3c97f28a05f2e5396872fe808cae0d48d5a4824
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829014"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727006"
 ---
 # <a name="writing-custom-attributes"></a>Wpisywanie atrybutów niestandardowych
+
 Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzenia wzorców wielu nowych koncepcji. Jeśli znasz programowanie zorientowane obiektowo i wiesz, jak projektować klasy, masz już większość koniecznych informacji. Atrybuty niestandardowe są zasadniczo tradycyjnymi klasami, które są wyprowadzane bezpośrednio lub pośrednio z <xref:System.Attribute?displayProperty=nameWithType> . Podobnie jak tradycyjne klasy, atrybuty niestandardowe zawierają metody, które przechowują i pobierają dane.  
   
  Podstawowe kroki w celu prawidłowego projektowania klas atrybutów niestandardowych są następujące:  
@@ -39,6 +40,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
  W tej sekcji opisano wszystkie te kroki i zakończymy z [przykładem atrybutu niestandardowego](#custom-attribute-example).  
   
 ## <a name="applying-the-attributeusageattribute"></a>Stosowanie AttributeUsageAttribute  
+
  Deklaracja atrybutu niestandardowego zaczyna się od <xref:System.AttributeUsageAttribute?displayProperty=nameWithType> , który definiuje niektóre kluczowe cechy klasy atrybutu. Na przykład można określić, czy atrybut może być dziedziczony przez inne klasy, czy też określić, do których elementów można zastosować atrybut. Poniższy fragment kodu pokazuje, jak używać <xref:System.AttributeUsageAttribute> .  
   
  [!code-cpp[Conceptual.Attributes.Usage#5](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#5)]
@@ -48,6 +50,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
  <xref:System.AttributeUsageAttribute>Ma trzy składowe, które są ważne dla tworzenia atrybutów niestandardowych: [AttributeTargets](#attributetargets-member), [Odziedziczone](#inherited-property)i [AllowMultiple](#allowmultiple-property).  
   
 ### <a name="attributetargets-member"></a>AttributeTargets element członkowski  
+
  W poprzednim przykładzie <xref:System.AttributeTargets.All?displayProperty=nameWithType> jest określony, wskazujący, że ten atrybut może być stosowany do wszystkich elementów programu. Alternatywnie można określić <xref:System.AttributeTargets.Class?displayProperty=nameWithType> , że atrybut może być stosowany tylko do klasy lub <xref:System.AttributeTargets.Method?displayProperty=nameWithType> , wskazując, że atrybut może być stosowany tylko do metody. Wszystkie elementy programu mogą być oznaczone do opisu przez atrybut niestandardowy w ten sposób.  
   
  Można również przekazać wiele <xref:System.AttributeTargets> wartości. Poniższy fragment kodu określa, że atrybut niestandardowy można zastosować do dowolnej klasy lub metody.  
@@ -57,6 +60,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
  [!code-vb[Conceptual.Attributes.Usage#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#6)]  
   
 ### <a name="inherited-property"></a>Właściwość dziedziczona  
+
  <xref:System.AttributeUsageAttribute.Inherited%2A?displayProperty=nameWithType>Właściwość wskazuje, czy atrybut może być dziedziczony przez klasy, które pochodzą od klas, do których zastosowano atrybut. Ta właściwość przyjmuje wartość `true` (domyślną) lub `false` flagę. W poniższym przykładzie `MyAttribute` ma <xref:System.AttributeUsageAttribute.Inherited%2A> wartość domyślną `true` , a `YourAttribute` ma <xref:System.AttributeUsageAttribute.Inherited%2A> wartość `false` .  
   
  [!code-cpp[Conceptual.Attributes.Usage#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#7)]
@@ -76,6 +80,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
  [!code-vb[Conceptual.Attributes.Usage#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#10)]  
   
 ### <a name="allowmultiple-property"></a>Właściwość AllowMultiple  
+
  <xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>Właściwość wskazuje, czy wiele wystąpień atrybutu może istnieć w elemencie. Jeśli jest ustawiona na `true` , dozwolone jest wiele wystąpień. Jeśli ustawiono wartość `false` (domyślnie), dozwolone jest tylko jedno wystąpienie.  
   
  W poniższym przykładzie `MyAttribute` ma <xref:System.AttributeUsageAttribute.AllowMultiple%2A> wartość domyślną `false` , a `YourAttribute` ma wartość `true` .  
@@ -93,6 +98,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
  Jeśli <xref:System.AttributeUsageAttribute.AllowMultiple%2A> Właściwość i <xref:System.AttributeUsageAttribute.Inherited%2A> Właściwość są ustawione na `true` , Klasa, która jest dziedziczona z innej klasy, może dziedziczyć atrybut i mieć inne wystąpienie tego samego atrybutu stosowane w tej samej klasie podrzędnej. Jeśli <xref:System.AttributeUsageAttribute.AllowMultiple%2A> jest ustawiona na `false` , wartości wszelkich atrybutów w klasie nadrzędnej zostaną zastąpione przez nowe wystąpienia tego samego atrybutu w klasie podrzędnej.  
   
 ## <a name="declaring-the-attribute-class"></a>Deklarowanie klasy atrybutów  
+
  Po zastosowaniu można <xref:System.AttributeUsageAttribute> rozpocząć Definiowanie określonych elementów atrybutu. Deklaracja klasy atrybutu wygląda podobnie do deklaracji tradycyjnej klasy, jak pokazano w poniższym kodzie.  
   
  [!code-cpp[Conceptual.Attributes.Usage#14](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#14)]
@@ -110,6 +116,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
 - W programie Microsoft Visual Basic wszystkie klasy atrybutów niestandardowych muszą mieć <xref:System.AttributeUsageAttribute?displayProperty=nameWithType> atrybut.  
   
 ## <a name="declaring-constructors"></a>Deklarowanie konstruktorów  
+
  Atrybuty są inicjowane za pomocą konstruktorów w taki sam sposób jak w przypadku tradycyjnych klas. Poniższy fragment kodu ilustruje typowy Konstruktor atrybutu. Ten konstruktor publiczny przyjmuje parametr i ustawia zmienną członkowską równą jej wartości.  
   
  [!code-cpp[Conceptual.Attributes.Usage#15](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#15)]
@@ -125,6 +132,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
  [!code-vb[Conceptual.Attributes.Usage#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#17)]  
   
 ## <a name="declaring-properties"></a>Deklarowanie właściwości  
+
  Jeśli chcesz zdefiniować nazwany parametr lub podać łatwy sposób zwracania wartości przechowywanych przez atrybut, zadeklaruj [Właściwość](/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Właściwości atrybutu należy zadeklarować jako jednostki publiczne z opisem typu danych, które zostaną zwrócone. Zdefiniuj zmienną, która będzie przechowywać wartość właściwości i skojarz ją z metodami **Get** i **Set** . Poniższy przykład kodu demonstruje sposób implementacji prostej właściwości w atrybucie.  
   
  [!code-cpp[Conceptual.Attributes.Usage#16](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#16)]
@@ -132,6 +140,7 @@ Do zaprojektowania własnych atrybutów niestandardowych nie ma potrzeby tworzen
  [!code-vb[Conceptual.Attributes.Usage#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#16)]  
   
 ## <a name="custom-attribute-example"></a>Przykład atrybutu niestandardowego  
+
  Ta sekcja obejmuje poprzednie informacje i pokazuje sposób projektowania prostego atrybutu, który dokumentuje informacje o autorze sekcji kodu. Atrybut w tym przykładzie przechowuje nazwę i poziom programisty oraz czy kod został sprawdzony. Używa trzech prywatnych zmiennych do przechowywania rzeczywistych wartości do zapisania. Każda zmienna jest reprezentowana przez publiczną właściwość, która pobiera i ustawia wartości. Na koniec Konstruktor jest zdefiniowany przy użyciu dwóch wymaganych parametrów.  
   
  [!code-cpp[Conceptual.Attributes.Usage#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#4)]

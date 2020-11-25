@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3ca41592-b8da-475a-8032-a15627730003
 topic_type:
 - apiref
-ms.openlocfilehash: 0ed1579886f1682348a136be3391f6bdc2543d26
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 63e27a62e176a92b03c10b59a55d9da3192918f4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007393"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726120"
 ---
 # <a name="corfilemapping-enumeration"></a>CorFileMapping — Wyliczenie
+
 Zawiera wartości opisujące typ mapowania plików zwracanego z wywołania metody [IMetaDataInfo:: GetFileMapping —](imetadatainfo-getfilemapping-method.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -43,13 +44,14 @@ typedef enum CorFileMapping {
 |`fmExecutableImage`|Plik jest mapowany do wykonania przy użyciu `LoadLibrary` funkcji lub `CreateFileMapping` funkcji z `SEC_IMAGE` flagą.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)
-- [GetFileMapping — Metoda](imetadatainfo-getfilemapping-method.md)
+- [GetFileMapping, metoda](imetadatainfo-getfilemapping-method.md)

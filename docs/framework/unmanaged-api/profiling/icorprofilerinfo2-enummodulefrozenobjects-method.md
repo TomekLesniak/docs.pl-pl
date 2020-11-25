@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 920b6483-7064-4d64-8613-fcc38ccf9b1e
 topic_type:
 - apiref
-ms.openlocfilehash: 1fe44f8f84c079e920c8c82fb9d52d1980d3b852
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: fe4f3a7355339c9b5adbe5de062f0a5688d81c23
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497208"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727188"
 ---
 # <a name="icorprofilerinfo2enummodulefrozenobjects-method"></a>ICorProfilerInfo2::EnumModuleFrozenObjects — Metoda
+
 Pobiera moduł wyliczający, który umożliwia iterację w odniesieniu do zablokowanych obiektów w określonym module. Ta metoda jest przestarzała.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT EnumModuleFrozenObjects(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `moduleID`  
  podczas Identyfikator modułu zawierającego zamrożone obiekty, które mają zostać wyliczone.  
   
@@ -41,6 +43,7 @@ HRESULT EnumModuleFrozenObjects(
  określoną Wskaźnik do adresu interfejsu [ICorProfilerObjectEnum](icorprofilerobjectenum-interface.md) , który wylicza zamrożone obiekty.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -51,5 +54,5 @@ HRESULT EnumModuleFrozenObjects(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2, interfejs](icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 — Interfejs](icorprofilerinfo2-interface.md)

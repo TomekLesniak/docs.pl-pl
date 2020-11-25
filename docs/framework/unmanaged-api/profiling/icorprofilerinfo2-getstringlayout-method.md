@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 43189651-a535-4803-a1d1-f1c427ace2ca
 topic_type:
 - apiref
-ms.openlocfilehash: 257cf24fa476c75d6ec949e17a5b83fc015b8d43
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d141a78a953d4e0ab922535ad2363c79f2e18ecd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496792"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727045"
 ---
 # <a name="icorprofilerinfo2getstringlayout-method"></a>ICorProfilerInfo2::GetStringLayout — Metoda
+
 Pobiera informacje o układzie obiektu ciągu. Ta metoda jest przestarzała w .NET Framework 4 i jest zastępowana przez metodę [ICorProfilerInfo3:: GetStringLayout2 —](icorprofilerinfo3-getstringlayout2-method.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT GetStringLayout(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pBufferLengthOffset`  
  określoną Wskaźnik do przesunięcia lokalizacji względem `ObjectID` wskaźnika, który przechowuje długość ciągu. Długość jest przechowywana jako `DWORD` .  
   
@@ -48,6 +50,7 @@ HRESULT GetStringLayout(
  określoną Wskaźnik do przesunięcia buforu względem `ObjectID` wskaźnika, który przechowuje ciąg znaków dwubajtowych.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `GetStringLayout`Metoda pobiera przesunięcia, względem `ObjectID` wskaźnika, lokalizacji, w których są przechowywane następujące elementy:  
   
 - Długość buforu ciągu.  
@@ -59,6 +62,7 @@ HRESULT GetStringLayout(
  Ciągi mogą być zakończone wartością null.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -69,5 +73,5 @@ HRESULT GetStringLayout(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2, interfejs](icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 — Interfejs](icorprofilerinfo2-interface.md)

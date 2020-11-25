@@ -1,6 +1,6 @@
 ---
-title: InheritsFrom, funkcja (odwołanie do interfejsu API niezarządzanego)
-description: InheritsFrom Funkcja określa, czy klasa lub wystąpienie pochodzi z określonej klasy nadrzędnej.
+title: InheritsFrom — funkcja (niezarządzana dokumentacja interfejsu API)
+description: Funkcja InheritsFrom określa, czy Klasa lub wystąpienie pochodzi od określonej klasy nadrzędnej.
 ms.date: 11/06/2017
 api_name:
 - InheritsFrom
@@ -14,15 +14,16 @@ helpviewer_keywords:
 - InheritsFrom function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: c735c01c45beda8a1ba988a5c580e6b04ae46312
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3cfe3388dc808335e6d3daaf7ec949108e95f52e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174943"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726798"
 ---
 # <a name="inheritsfrom-function"></a>InheritsFrom, funkcja
-Określa, czy bieżąca klasa lub wystąpienie pochodzi od określonej klasy nadrzędnej.
+
+Określa, czy bieżąca Klasa lub wystąpienie pochodzi z określonej klasy nadrzędnej.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -39,35 +40,36 @@ HRESULT InheritsFrom (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[w] Ten parametr jest nieużywane.
+podczas Ten parametr jest nieużywany.
 
 `ptr`  
-[w] Wskaźnik do wystąpienia [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
+podczas Wskaźnik do wystąpienia [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszAncestor`  
-[w] Nazwa klasy. `wszAncestor`musi wskazywać prawidłowe `LPCWSTR`.
+podczas Nazwa klasy. `wszAncestor` musi wskazywać prawidłowy `LPCWSTR` .
 
 ## <a name="return-value"></a>Wartość zwracana
 
-Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówka *WbemCli.h* lub można zdefiniować je jako stałe w kodzie:
+Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówkowym *WbemCli. h* lub można je definiować jako stałe w kodzie:
 
-|Stały  |Wartość  |Opis  |
+|Stała  |Wartość  |Opis  |
 |---------|---------|---------|
-| `WBEM_S_NO_ERROR` | 0 | Bieżący obiekt dziedziczy z pliku `wszAncestor`.  |
-| `WBEM_S_FALSE` | 1 | Bieżący obiekt nie `wszAncestor`dziedziczy po pliku . |
-|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr `wszAncestor` ma wartość `null`. |
+| `WBEM_S_NO_ERROR` | 0 | Bieżący obiekt dziedziczy z `wszAncestor` .  |
+| `WBEM_S_FALSE` | 1 | Bieżący obiekt nie dziedziczy po elemencie `wszAncestor` . |
+|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `wszAncestor` to `null`. |
   
 ## <a name="remarks"></a>Uwagi
 
-Ta funkcja zawija wywołanie [metody IWbemClassObject::InheritsFrom.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-inheritsfrom)
+Ta funkcja otacza wywołanie metody [IWbemClassObject:: InheritsFrom](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-inheritsfrom) .
 
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
-  
- **Nagłówek:** WMINet_Utils.idl  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [Liczniki wydajności WMI i (niezarządzane odwołanie interfejsu API)](index.md)
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
+  
+ **Nagłówek:** WMINet_Utils. idl  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [WMI i liczniki wydajności (niezarządzana dokumentacja interfejsu API)](index.md)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b22fbe19-b30f-4696-8175-e6b91da9edab
 topic_type:
 - apiref
-ms.openlocfilehash: f4f925282d65cd9cbc8eb1c8825f358602de68ed
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 554e59484f00626726f7f024c69e93a5e6647130
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441698"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727383"
 ---
 # <a name="isymunmanagedbinder-interface"></a>ISymUnmanagedBinder — Interfejs
+
 Reprezentuje spinacz symboliczny dla niezarządzanego kodu.  
   
 > [!IMPORTANT]
@@ -35,10 +36,11 @@ Reprezentuje spinacz symboliczny dla niezarządzanego kodu.
 |[GetReaderFromStream, metoda](isymunmanagedbinder-getreaderfromstream-method.md)|Podano interfejs metadanych i strumień zawierający magazyn symboli, zwracając poprawną strukturę [ISymUnmanagedReader](isymunmanagedreader-interface.md) , która odczyta symbole debugowania z danego magazynu symboli.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [Interfejsy magazynu symboli diagnostycznych](diagnostics-symbol-store-interfaces.md)
-- [ISymUnmanagedBinder2, interfejs](isymunmanagedbinder2-interface.md)
+- [ISymUnmanagedBinder2 — Interfejs](isymunmanagedbinder2-interface.md)
 - [ISymUnmanagedBinder3 — Interfejs](isymunmanagedbinder3-interface.md)

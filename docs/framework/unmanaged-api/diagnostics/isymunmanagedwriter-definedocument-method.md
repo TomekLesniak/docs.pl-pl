@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c3bf15b0-3250-4bbe-b9b5-c5d695289b6f
 topic_type:
 - apiref
-ms.openlocfilehash: fdcfb0c4f9c21eb516f4196d0c8f682669468219
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 6413935df86b85a959fa4f354c6233d18baf99d3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615231"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727578"
 ---
 # <a name="isymunmanagedwriterdefinedocument-method"></a>ISymUnmanagedWriter::DefineDocument — Metoda
+
 Definiuje dokument źródłowy. Identyfikatory GUID są udostępniane dla znanych języków, dostawców i typów dokumentów.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT DefineDocument(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `url`  
  podczas Wskaźnik do obiektu `WCHAR` , który definiuje adres URL (Uniform Resource Locator) identyfikujący dokument.  
   
@@ -53,9 +55,11 @@ HRESULT DefineDocument(
  określoną Wskaźnik do zwracanego interfejsu [ISymUnmanagedWriter](isymunmanagedwriter-interface.md) .  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

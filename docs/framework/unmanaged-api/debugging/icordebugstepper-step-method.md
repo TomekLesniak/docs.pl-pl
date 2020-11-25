@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 38c1940b-ada1-40ba-8295-4c0833744e1e
 topic_type:
 - apiref
-ms.openlocfilehash: 39d2fd0163b0e61295187461d5dbdf5742450306
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 234705e4495a1a582f3801ad1e645f923cd6f4b2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379516"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727695"
 ---
 # <a name="icordebugstepperstep-method"></a>ICorDebugStepper::Step — Metoda
+
 Powoduje, że ICorDebugStepper to jeden krok za pomocą zawartego w nim wątku i opcjonalnie, aby kontynuować wykonywanie jednostopniowe za pomocą funkcji, które są wywoływane w wątku.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT Step (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `bStepIn`  
  podczas Ustaw, aby `true` wkroczyć do funkcji, która jest wywoływana w wątku. Ustaw, aby przekroczyć `false` funkcję.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Krok zostaje zakończony, gdy środowisko uruchomieniowe języka wspólnego wykonuje następną zarządzaną instrukcję w tej stepper. Jeśli `Step` jest wywoływana na stepper, który nie jest w kodzie zarządzanym, krok zostanie ukończony, gdy Następna instrukcja kodu zarządzanego zostanie wykonana przez wątek.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

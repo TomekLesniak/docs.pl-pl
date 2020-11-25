@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: aa26df07-e0a6-4608-bdef-d4afafec89aa
 topic_type:
 - apiref
-ms.openlocfilehash: e6e8eb91bbc41faf0dcea010da9aa54995058653
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: a9d1faf5a834cb5d9be19f995aaa3eee1202171b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894980"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727448"
 ---
 # <a name="icordebugarrayvaluehasbaseindicies-method"></a>ICorDebugArrayValue::HasBaseIndicies — Metoda
+
 Pobiera wartość wskazującą, czy wszystkie wymiary tej tablicy mają indeks podstawowy różny od zera.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT HasBaseIndicies (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pbHasBaseIndicies`  
- określoną Wskaźnik do wartości logicznej, która jest `true` , jeśli co najmniej jeden wymiar tego `ICorDebugArrayValue` obiektu ma indeks podstawowy różny od zera. w przeciwnym razie wartość logiczna to `false`.  
+ określoną Wskaźnik do wartości logicznej, która jest, `true` Jeśli co najmniej jeden wymiar tego `ICorDebugArrayValue` obiektu ma indeks podstawowy niebędący zerem; w przeciwnym razie wartość logiczna to `false` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

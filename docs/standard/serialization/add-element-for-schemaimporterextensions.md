@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XML serialization, configuration
 - <add> element for <schemaImporterExtensions> element
 ms.assetid: c828a558-094b-441e-9065-790b87315fa0
-ms.openlocfilehash: 38d8ebd6e973632b23865ad60e007d9aa21e7da6
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: b8a0775e9d33d59606b1150aa9a1b3b1026d4b0b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282000"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726447"
 ---
 # <a name="add-element-for-schemaimporterextensions"></a>\<add>, element dla \<schemaImporterExtensions>
 
@@ -29,6 +29,7 @@ Dodaje typy używane przez program <xref:System.Xml.Serialization.XmlSchemaImpor
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -39,6 +40,7 @@ Dodaje typy używane przez program <xref:System.Xml.Serialization.XmlSchemaImpor
 |**Wprowadź**|Wymagane. Określa klasę rozszerzenia schematu do dodania. Wartość atrybutu **typu** musi znajdować się w jednym wierszu i zawierać w pełni kwalifikowaną nazwę typu. Gdy zestaw znajduje się w globalnej pamięci podręcznej zestawów (GAC), musi również zawierać wersję, kulturę i token klucza publicznego podpisanego zestawu.|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -48,6 +50,7 @@ Dodaje typy używane przez program <xref:System.Xml.Serialization.XmlSchemaImpor
 |\<schemaImporterExtensions>|Zawiera typy, które są używane przez <xref:System.Xml.Serialization.XmlSchemaImporter>.|  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu dodaje typ rozszerzenia, którego XmlSchemaImporter może używać podczas mapowania typów.  
   
 ```xml  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0aa60f24-8bbd-4c83-83c5-86ad191b1d82
 topic_type:
 - apiref
-ms.openlocfilehash: f5438ddc655f0f6a7c11d978a47b1bf9e2a13059
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e44b8afe22fdb10077048dc7bc2ccb1f605edd75
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497013"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727097"
 ---
 # <a name="icorprofilerinfo2getfunctioninfo2-method"></a>ICorProfilerInfo2::GetFunctionInfo2 — Metoda
+
 Pobiera klasę nadrzędną, token metadanych i `ClassID` dla każdego argumentu typu, jeśli istnieje, funkcji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,11 +41,12 @@ HRESULT GetFunctionInfo2(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `funcId`  
  podczas Identyfikator funkcji, dla której ma zostać pobrana Klasa nadrzędna i inne informacje.  
   
  `frameInfo`  
- podczas `COR_PRF_FRAME_INFO`Wartość, która wskazuje na informacje o klatce stosu.  
+ podczas `COR_PRF_FRAME_INFO` Wartość, która wskazuje na informacje o klatce stosu.  
   
  `pClassId`  
  określoną Wskaźnik do klasy nadrzędnej funkcji.  
@@ -65,6 +67,7 @@ HRESULT GetFunctionInfo2(
  określoną Tablica `ClassID` wartości, z których każdy jest identyfikatorem argumentu typu funkcji. Gdy metoda zwraca, `typeArgs` będzie zawierać niektóre lub wszystkie `ClassID` wartości.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Kod profilera może wywołać [ICorProfilerInfo:: GetModuleMetaData —](icorprofilerinfo-getmodulemetadata-method.md) w celu uzyskania interfejsu [metadanych](../metadata/index.md) dla danego modułu. Token metadanych, który jest zwracany do lokalizacji, do której się odwołuje się, `pToken` może następnie zostać użyty w celu uzyskania dostępu do metadanych dla funkcji.  
   
  Identyfikator klasy i argumenty typu, które są zwracane przez `pClassId` Parametry i są `typeArgs` zależne od wartości przekazanej w `frameInfo` parametrze, jak pokazano w poniższej tabeli.  
@@ -80,6 +83,7 @@ HRESULT GetFunctionInfo2(
  Alternatywnie, można najpierw wywołać `GetFunctionInfo2` z buforem o zerowej długości, `pcTypeArgs` Aby uzyskać prawidłowy rozmiar buforu. Następnie można ustawić rozmiar buforu na wartość zwracaną w `pcTypeArgs` podzieleniu przez rozmiar `ClassID` wartości i `GetFunctionInfo2` ponownie wywołać.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -90,7 +94,7 @@ HRESULT GetFunctionInfo2(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2, interfejs](icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 — Interfejs](icorprofilerinfo2-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)

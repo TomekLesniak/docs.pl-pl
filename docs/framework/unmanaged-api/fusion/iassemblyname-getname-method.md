@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1dee9781-1cf3-48a9-a376-d18ea1f73280
 topic_type:
 - apiref
-ms.openlocfilehash: 5f758d76d779cff7db119e69dc1cf3342071f1c1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 58b8b83ce1db9338612cbaa01a0db0862cf1054e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134351"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727903"
 ---
 # <a name="iassemblynamegetname-method"></a>IAssemblyName::GetName — Metoda
+
 Pobiera prostą, niezaszyfrowaną nazwę zestawu, do którego odwołuje się ten obiekt [IAssemblyName](iassemblyname-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,19 +36,21 @@ HRESULT GetName (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `lpcwBuffer`  
- [in. out] Rozmiar `pwzName` w znaki dwubajtowe, w tym znak końcowy o wartości null.  
+ [in. out] Rozmiar znaków dwubajtowych `pwzName` , w tym znak końcowy o wartości null.  
   
  `pwzName`  
  określoną Bufor przechowujący nazwę przywoływanego zestawu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IAssemblyName, interfejs](iassemblyname-interface.md)
+- [IAssemblyName — Interfejs](iassemblyname-interface.md)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3c4a8a5a-8a46-4ac9-947f-4959bc9d6ac6
 topic_type:
 - apiref
-ms.openlocfilehash: d31b0190ef9a697fb27c849db080bec6c57618ae
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f90e08373c0497201816bc7eead89b83b84be255
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616388"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726876"
 ---
 # <a name="eapicategories-enumeration"></a>EApiCategories — Wyliczenie
+
 Opisuje kategorie możliwości, które host może blokować z uruchamiania w częściowo zaufanym kodzie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -59,20 +60,22 @@ typedef enum {
 |`eUI`|Określa, że zarządzane klasy i elementy członkowskie, które zezwalają na interakcję ludzką lub wymagają, aby nie były uruchamiane w częściowo zaufanym kodzie.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Metoda [ICLRHostProtectionManager:: SetProtectedCategories —](iclrhostprotectionmanager-setprotectedcategories-method.md) przyjmuje parametr typu `EApiCategories` .  
   
  `EApiCategories`Wyliczenie i `SetProtectedCategories` Metoda są bezpośrednio powiązane z klasą zarządzaną <xref:System.Security.Permissions.HostProtectionAttribute?displayProperty=nameWithType> . Zarządzana Klasa jest używana z <xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType> wyliczeniem, którego wartości odpowiadają bezpośrednio na `EApiCategories` wartości, aby oznaczyć zarządzane typy i składowe, które uwidaczniają możliwości odpowiadające kategoriom opisanym przez `EApiCategories` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICLRHostProtectionManager, interfejs](iclrhostprotectionmanager-interface.md)
+- [ICLRHostProtectionManager — Interfejs](iclrhostprotectionmanager-interface.md)
 - [Hosting — Wyliczenia](hosting-enumerations.md)

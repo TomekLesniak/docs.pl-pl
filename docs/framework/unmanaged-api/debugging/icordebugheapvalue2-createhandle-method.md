@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: fbc418e8-fa22-420d-84ec-e0e1800db041
 topic_type:
 - apiref
-ms.openlocfilehash: cbc056e9a3cc00178b32dee4011da4403dff508a
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 278120c6e1bc87a061a3f81f71bdb7b89cd421be
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212779"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726564"
 ---
 # <a name="icordebugheapvalue2createhandle-method"></a>ICorDebugHeapValue2::CreateHandle — Metoda
+
 Tworzy dojście określonego typu dla wartości sterty reprezentowanej przez ten obiekt ICorDebugHeapValue2.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT CreateHandle (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `type`  
  podczas Wartość wyliczenia CorDebugHandleType —, która określa typ dojścia do utworzenia.  
   
@@ -42,11 +44,13 @@ HRESULT CreateHandle (
  określoną Wskaźnik do adresu obiektu ICorDebugHandleValue, który reprezentuje nowe dojście dla tej wartości sterty.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Dojście zostanie utworzone w domenie aplikacji skojarzonej z wartością sterty i stanie się nieprawidłowe, jeśli domena aplikacji zostanie zwolniona z ładowania.  
   
  Wielokrotne wywołania tej funkcji dla tej samej wartości sterty spowodują utworzenie wielu dojść. Ponieważ uchwyty wpływają na wydajność modułu wyrzucania elementów bezużytecznych, debuger powinien ograniczyć się do stosunkowo niewielkiej liczby dojść (około 256), które są aktywne w danym momencie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 93aeecb9-7fef-4545-8daf-f566dfc47084
 topic_type:
 - apiref
-ms.openlocfilehash: a5c743064b8ca645cf45d02b8800c88187bf4c6c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 738e29fa15340c76b055b608140f3c3bfbd29611
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179286"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726356"
 ---
 # <a name="cor_segment-structure"></a>COR_SEGMENT — Struktura
+
 Zawiera informacje o regionie pamięci w zarządzanym stosie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,24 +42,26 @@ typedef struct _COR_SEGMENT {
 |------------|-----------------|  
 |`start`|Adres początkowy regionu pamięci.|  
 |`end`|Adres końcowy regionu pamięci.|  
-|`gen`|A [CorDebugGenerationTypes](cordebuggenerationtypes-enumeration.md) element członkowski wyliczenia, który wskazuje generowanie regionu pamięci.|  
-|`heap`|Numer sterty, w którym znajduje się region pamięci. Zobacz sekcję Spostrzeżenia, aby uzyskać więcej informacji.|  
+|`gen`|Element członkowski wyliczenia [CorDebugGenerationTypes —](cordebuggenerationtypes-enumeration.md) wskazujący generowanie regionu pamięci.|  
+|`heap`|Numer sterty, w której znajduje się region pamięci. Zobacz sekcję Spostrzeżenia, aby uzyskać więcej informacji.|  
   
 ## <a name="remarks"></a>Uwagi  
- Struktura `COR_SEGMENTS` reprezentuje region pamięci w zarządzanym stosie.  `COR_SEGMENTS`obiekty są członkami obiektu kolekcji [ICorDebugHeapRegionEnum,](icordebugheapsegmentenum-interface.md) który jest wypełniany przez [wywołanie metody ICorDebugProcess5::EnumerateHeapRegions.](icordebugprocess5-enumerateheapregions-method.md)  
+
+ `COR_SEGMENTS`Struktura reprezentuje region pamięci w zarządzanym stosie.  `COR_SEGMENTS` obiekty są elementami członkowskimi obiektu kolekcji [ICorDebugHeapRegionEnum](icordebugheapsegmentenum-interface.md) , który jest wypełniany przez wywołanie metody [ICorDebugProcess5:: EnumerateHeapRegions —](icordebugprocess5-enumerateheapregions-method.md) .  
   
- To `heap` pole jest numerem procesora, który odpowiada zgłoszonemu stercie. Dla modułów zbierających elementy bezużyteczne stacji roboczej jego wartość jest zawsze równa zero, ponieważ stacje robocze mają tylko jedną stertę wyrzucania elementów bezużytecznych. W przypadku modułów zbierających elementy bezużyteczne serwera jego wartość odpowiada procesorowi, do którym jest dołączona sterta. Należy zauważyć, że może być więcej lub mniej sterty wyrzucania elementów bezużytecznych niż istnieją rzeczywiste procesory ze względu na szczegóły implementacji modułu zbierającego elementy bezużyteczne.  
+ `heap`Pole jest numerem procesora, który odnosi się do raportowanej sterty. W przypadku modułów bezużytecznych stacji roboczej jego wartość jest zawsze zerowa, ponieważ stacje robocze mają tylko jedną stertę odzyskiwania pamięci. W przypadku modułów wyrzucających elementy bezużyteczne serwera jego wartość odpowiada procesorowi, do którego jest dołączona sterta. Należy zauważyć, że może być więcej lub mniej sterty wyrzucania elementów bezużytecznych, ponieważ istnieją rzeczywiste procesory ze względu na szczegóły implementacji modułu wyrzucania elementów bezużytecznych.  
   
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
+
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
- **Nagłówek:** CorDebug.idl, CorDebug.h  
+ **Nagłówek:** CorDebug. idl, CorDebug. h  
   
- **Biblioteka:** CorGuids.lib  
+ **Biblioteka:** CorGuids. lib  
   
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Struktury debugowania](debugging-structures.md)
-- [Debugging](index.md)
+- [Debugowanie](index.md)

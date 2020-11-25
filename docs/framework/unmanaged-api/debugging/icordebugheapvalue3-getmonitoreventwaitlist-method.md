@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 035a9035-ac66-4953-b48a-99652b42b7fe
 topic_type:
 - apiref
-ms.openlocfilehash: 923e9b0821788143fff59eafe10d1802583df7a6
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 21bf0122039a720ff8a1d38d62e77c2560dcc435
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210426"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726538"
 ---
 # <a name="icordebugheapvalue3getmonitoreventwaitlist-method"></a>ICorDebugHeapValue3::GetMonitorEventWaitList — Metoda
+
 Udostępnia uporządkowaną listę wątków, które są umieszczane w kolejce dla zdarzenia, które jest skojarzone z blokadą monitora.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT GetMonitorEventWaitList (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppThreadEnum`  
  określoną Moduł wyliczający ICorDebugThreadEnum, który dostarcza uporządkowaną listę wątków.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca następujące określone wartości HRESULT oraz błędy HRESULT wskazujące niepowodzenie metody.  
   
 |HRESULT|Opis|  
@@ -48,6 +51,7 @@ HRESULT GetMonitorEventWaitList (
 ## <a name="exceptions"></a>Wyjątki  
   
 ## <a name="remarks"></a>Uwagi  
+
  Pierwszy wątek na liście to pierwszy wątek, który jest wydawany przez następne wywołanie do <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=nameWithType> . Następny wątek na liście jest publikowany w następującym wywołaniu i tak dalej.  
   
  Jeśli lista nie jest pusta, metoda zwraca S_OK. Jeśli lista jest pusta, metoda zwraca S_FALSE; w takim przypadku Wyliczenie jest nadal ważne, chociaż jest puste.  
@@ -59,6 +63,7 @@ HRESULT GetMonitorEventWaitList (
  Jeśli wystąpi błąd, aby nie można było ustalić, który, jeśli istnieje, wątki oczekują na monitor, metoda zwraca wartość HRESULT, która wskazuje na błąd.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -67,7 +72,7 @@ HRESULT GetMonitorEventWaitList (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)
 - [Debugowanie](index.md)

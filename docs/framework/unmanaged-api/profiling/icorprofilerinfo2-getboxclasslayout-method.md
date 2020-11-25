@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 624672b5-1189-488a-85d2-3e12b49617c1
 topic_type:
 - apiref
-ms.openlocfilehash: 630b67a64716f26577bbc376970e4f76216f4da5
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ff39a688132112e88438bc192d7c1ab61f169400
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84497358"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727162"
 ---
 # <a name="icorprofilerinfo2getboxclasslayout-method"></a>ICorProfilerInfo2::GetBoxClassLayout — Metoda
+
 Pobiera informacje o miejscu, w którym znajduje się określony typ wartości, gdy jest on opakowany.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetBoxClassLayout(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `classId`  
  podczas Identyfikator klasy opisującej typ wartości, która jest opakowana.  
   
@@ -41,9 +43,11 @@ HRESULT GetBoxClassLayout(
  określoną Liczba całkowita, która jest przesunięciem względem wskaźnika identyfikatora obiektu zapakowanego typu wartości.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `pBufferOffset`Wartość jest lokalizacją typu wartości w polu. Po `pBufferOffset` zastosowaniu do obiektu w ramce, układ klasy typu wartości może służyć do interpretowania wartości obiektu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -54,5 +58,5 @@ HRESULT GetBoxClassLayout(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2, interfejs](icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 — Interfejs](icorprofilerinfo2-interface.md)

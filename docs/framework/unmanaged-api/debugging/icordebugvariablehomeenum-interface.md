@@ -14,28 +14,31 @@ helpviewer_keywords:
 ms.assetid: c312ae6d-c8dc-48d6-9f1e-ead515c88fdf
 topic_type:
 - apiref
-ms.openlocfilehash: d5962de8cc2762f6ecf4864c5255da0fe83918e4
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 8e8caad9f0fc60121dbd1c738a6024da3e4d02f6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396533"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726005"
 ---
 # <a name="icordebugvariablehomeenum-interface"></a>ICorDebugVariableHomeEnum, interfejs
+
 Dostarcza moduł wyliczający do zmiennych lokalnych i argumentów w funkcji.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[Next — Metoda](icordebugvariablehomeenum-next-method.md)|Pobiera określoną liczbę wystąpień [ICorDebugVariableHome](icordebugvariablehome-interface.md) , które zawierają informacje o zmiennych lokalnych i argumentach w funkcji.|  
+|[Next, metoda](icordebugvariablehomeenum-next-method.md)|Pobiera określoną liczbę wystąpień [ICorDebugVariableHome](icordebugvariablehome-interface.md) , które zawierają informacje o zmiennych lokalnych i argumentach w funkcji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ICorDebugVariableHomeEnum`Interfejs implementuje interfejs ICorDebugEnum.  
   
- `ICorDebugVariableHomeEnum`Wystąpienie jest wypełniane wystąpieniami [ICorDebugVariableHome](icordebugvariablehome-interface.md) przez wywołanie metody [ICorDebugCode4:: EnumerateVariableHomes](icordebugcode4-enumeratevariablehomes-method.md) . Każde wystąpienie [ICorDebugVariableHome](icordebugvariablehome-interface.md) w kolekcji reprezentuje zmienną lokalną lub argument w funkcji. Obiekty [ICorDebugVariableHome](icordebugvariablehome-interface.md) w kolekcji mogą być wyliczane przez wywołanie metody [ICorDebugVariableHomeEnum:: Next](icordebugvariablehomeenum-next-method.md) .  
+ `ICorDebugVariableHomeEnum`Wystąpienie jest wypełniane wystąpieniami [ICorDebugVariableHome](icordebugvariablehome-interface.md) przez wywołanie metody [ICorDebugCode4:: EnumerateVariableHomes](icordebugcode4-enumeratevariablehomes-method.md) . Każde wystąpienie [ICorDebugVariableHome](icordebugvariablehome-interface.md) w kolekcji reprezentuje zmienną lokalną lub argument w funkcji. Obiekty  [ICorDebugVariableHome](icordebugvariablehome-interface.md) w kolekcji mogą być wyliczane przez wywołanie metody [ICorDebugVariableHomeEnum:: Next](icordebugvariablehomeenum-next-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9e986986-2223-4d5f-b040-85d716146924
 topic_type:
 - apiref
-ms.openlocfilehash: 200e68abb3f176c267045bf2a5e7e35d18400519
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 7c4589c3371d2c66279684a365cde102bef58c6e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610096"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95727591"
 ---
 # <a name="isymunmanagedwriterdefineconstant-method"></a>ISymUnmanagedWriter::DefineConstant — Metoda
+
 Definiuje nazwę wartości stałej.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT DefineConstant(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `name`  
  podczas Wskaźnik do elementu `WCHAR` , który definiuje stałą nazwę.  
   
@@ -49,9 +51,11 @@ HRESULT DefineConstant(
  podczas Podpis typu dla stałej.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

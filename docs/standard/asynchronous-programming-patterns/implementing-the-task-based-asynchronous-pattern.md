@@ -11,28 +11,32 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET support for
 - .NET, asynchronous design patterns
 ms.assetid: fab6bd41-91bd-44ad-86f9-d8319988aa78
-ms.openlocfilehash: 8bac9d265211d2f266db634d4bcebb87c2debd9a
-ms.sourcegitcommit: 4a938327bad8b2e20cabd0f46a9dc50882596f13
+ms.openlocfilehash: 7613d93e1ca2ac9594759434966745a238ba166e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92888779"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95726733"
 ---
 # <a name="implementing-the-task-based-asynchronous-pattern"></a>Implementacja wzorca asynchronicznego opartego na zadaniach
+
 Wzorzec asynchroniczny oparty na zadaniach (TAP) można zaimplementować na trzy sposoby: za pomocą kompilatorów C# i Visual Basic w programie Visual Studio, ręcznie lub za pomocą kombinacji kompilatora i metod ręcznych. W poniższych sekcjach szczegółowo omówiono każdą metodę. Możesz użyć wzorca TAP, aby zaimplementować operacje asynchroniczne powiązane z obliczaniem i we/wy. W sekcji [obciążenia](#workloads) omówiono każdy typ operacji.
 
 ## <a name="generating-tap-methods"></a>Generowanie metod TAP
 
 ### <a name="using-the-compilers"></a>Korzystanie z kompilatorów
+
 Począwszy od .NET Framework 4,5, każda metoda, która jest przypisana za pomocą `async` słowa kluczowego ( `Async` w Visual Basic) jest uznawana za metodę asynchroniczną, a kompilatory C# i Visual Basic wykonują wymagane przekształcenia w celu asynchronicznego zaimplementowania metody przy użyciu narzędzia TAP. Metoda asynchroniczna powinna zwracać albo <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> obiekt. Dla tej ostatniej, treść funkcji powinna zwracać `TResult` i kompilator zapewnia, że wynik jest udostępniany przez wynikowy obiekt zadania. Podobnie wszystkie wyjątki, które nie są obsługiwane w treści metody są przekazywane do zadania wyjściowego i powodują, że wynikowe zadanie zakończy się w <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType> stanie. Wyjątkiem od tej reguły jest <xref:System.OperationCanceledException> nieobsłużony (lub typ pochodny), w którym przypadku wyniki zadania kończą się w <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stanie.
 
 ### <a name="generating-tap-methods-manually"></a>Ręczne generowanie metod TAP
+
 Wzorzec TAP można zaimplementować ręcznie w celu zapewnienia lepszej kontroli nad implementacją. Kompilator opiera się na obszarze powierzchni publicznej uwidocznionej z <xref:System.Threading.Tasks?displayProperty=nameWithType> przestrzeni nazw i typów pomocniczych w <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> przestrzeni nazw. Aby zaimplementować samodzielne wybieranie, należy utworzyć <xref:System.Threading.Tasks.TaskCompletionSource%601> obiekt, wykonać operację asynchroniczną i po jego zakończeniu wywołać <xref:System.Threading.Tasks.TaskCompletionSource%601.SetResult%2A> <xref:System.Threading.Tasks.TaskCompletionSource%601.SetException%2A> metodę,, lub <xref:System.Threading.Tasks.TaskCompletionSource%601.SetCanceled%2A> lub `Try` wersję jednej z tych metod. W przypadku ręcznego zaimplementowania metody TAP należy wykonać zadanie podrzędne, gdy zostanie ukończona operacja asynchroniczna. Na przykład:
 
 [!code-csharp[Conceptual.TAP_Patterns#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap_patterns/cs/patterns1.cs#1)]
 [!code-vb[Conceptual.TAP_Patterns#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.tap_patterns/vb/patterns1.vb#1)]
 
 ### <a name="hybrid-approach"></a>Podejście hybrydowe
+
  Przydatne może okazać się ręczne wdrożenie wzorca TAP, ale w celu delegowania podstawowej logiki implementacji do kompilatora. Na przykład możesz chcieć użyć podejścia hybrydowego, gdy chcesz zweryfikować argumenty poza metodę asynchroniczną wygenerowaną przez kompilator, aby wyjątki mogły wyjść bezpośrednio do obiektu wywołującego metody, a nie ujawniać go za pośrednictwem <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> :
 
  [!code-csharp[Conceptual.TAP_Patterns#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap_patterns/cs/patterns1.cs#2)]
@@ -41,9 +45,11 @@ Wzorzec TAP można zaimplementować ręcznie w celu zapewnienia lepszej kontroli
  Innym przypadkiem, gdy takie delegowanie jest przydatne, jest wdrożenie szybkiej optymalizacji ścieżki i zwrócenie zadania w pamięci podręcznej.
 
 ## <a name="workloads"></a>Obciążenia
+
 Można zaimplementować operacje asynchroniczne powiązane z obliczeniami i we/wy jako metody TAP. Mimo że metody TAP są ujawniane publicznie z biblioteki, powinny być dostarczane tylko w przypadku obciążeń obejmujących operacje we/wy (mogą także dotyczyć obliczeń, ale nie powinny być czyste). Jeśli metoda ma charakter wyłącznie obliczeniowy, powinno być uwidoczniona tylko jako implementacja synchroniczna. Kod, który go zużywa, może następnie zdecydować, czy należy otoczyć wywołanie tej metody synchronicznej do zadania w celu odciążenia pracy do innego wątku lub osiągnięcia równoległości. A jeśli metoda jest powiązana we/wy, powinna być udostępniona tylko jako implementacja asynchroniczna.
 
 ### <a name="compute-bound-tasks"></a>Zadania związane z obliczeniami
+
 <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>Klasa doskonale nadaje się do reprezentowania operacji intensywnie korzystających z obliczeń. Domyślnie wykorzystuje ona specjalną pomoc techniczną w ramach <xref:System.Threading.ThreadPool> klasy w celu zapewnienia wydajnego wykonania i zapewnia znaczącą kontrolę nad tym, gdzie i jak są wykonywane asynchroniczne obliczenia.
 
 Zadania związane z obliczeniami można generować w następujący sposób:
@@ -74,6 +80,7 @@ Zadania powiązane z obliczeniami kończą się w <xref:System.Threading.Tasks.T
 Jeśli inny wyjątek nie jest obsługiwany w treści zadania, zadanie zakończy się w <xref:System.Threading.Tasks.TaskStatus.Faulted> stanie, a wszystkie próby oczekiwania na zadanie lub uzyskania dostępu do wyniku spowodują wystąpienie wyjątku.
 
 ### <a name="io-bound-tasks"></a>Operacje we/wy — powiązane zadania
+
 Aby utworzyć zadanie, które nie powinno być bezpośrednio wykonywane przez wątek dla całości jego wykonywania, użyj <xref:System.Threading.Tasks.TaskCompletionSource%601> typu. Ten typ uwidacznia <xref:System.Threading.Tasks.TaskCompletionSource%601.Task%2A> Właściwość, która zwraca skojarzone <xref:System.Threading.Tasks.Task%601> wystąpienie. Cykl życia tego zadania jest kontrolowany przy użyciu <xref:System.Threading.Tasks.TaskCompletionSource%601> metod takich jak <xref:System.Threading.Tasks.TaskCompletionSource%601.SetResult%2A> ,, <xref:System.Threading.Tasks.TaskCompletionSource%601.SetException%2A> <xref:System.Threading.Tasks.TaskCompletionSource%601.SetCanceled%2A> i ich `TrySet` wariantów.
 
 Załóżmy, że chcesz utworzyć zadanie, które zostanie ukończone po upływie określonego czasu. Na przykład możesz chcieć opóźnić działanie w interfejsie użytkownika. <xref:System.Threading.Timer?displayProperty=nameWithType>Klasa umożliwia już Asynchroniczne wywoływanie delegata po określonym czasie, a przy użyciu <xref:System.Threading.Tasks.TaskCompletionSource%601> można umieścić <xref:System.Threading.Tasks.Task%601> na nim przód, na przykład:
@@ -92,6 +99,7 @@ Załóżmy, że chcesz utworzyć zadanie, które zostanie ukończone po upływie
 [!code-vb[Conceptual.TAP_Patterns#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.tap_patterns/vb/patterns1.vb#6)]
 
 ### <a name="mixed-compute-bound-and-io-bound-tasks"></a>Mieszane zadania powiązane z obliczeniami i operacje we/wy
+
 Metody asynchroniczne nie są ograniczone do operacji tylko powiązanych z obliczeniami lub we/wy, ale mogą reprezentować kombinację dwóch. W rzeczywistości wiele operacji asynchronicznych często są łączone w większe operacje mieszane. Na przykład `RenderAsync` Metoda w poprzednim przykładzie wykonała operację obliczeniową intensywnie, aby renderować obraz na podstawie niektórych danych wejściowych `imageData` . `imageData`Może to być z usługi sieci Web, do której masz dostęp asynchroniczny:
 
 [!code-csharp[Conceptual.TAP_Patterns#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap_patterns/cs/patterns1.cs#7)]
