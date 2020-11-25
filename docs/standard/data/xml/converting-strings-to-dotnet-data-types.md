@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-ms.openlocfilehash: 2eee3ff905473d8fd520929c0fe5abfb5d5c42da
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 0cee7481f9c002f860bff7f12b8be0bb763dadb1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830964"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701474"
 ---
 # <a name="convert-strings-to-net-data-types"></a>Konwertowanie ciągów na typy danych .NET
 
@@ -22,7 +22,7 @@ Jeśli chcesz przekonwertować ciąg na typ danych .NET, użyj metody **XmlConve
   
 |Typ .NET|Zwrócony ciąg|  
 |-------------------------|---------------------|  
-|Boolean|"true", "false"|  
+|Wartość logiczna|"true", "false"|  
 |Single. PositiveInfinity|INF|  
 |Single. NegativeInfinity|"-INF"|  
 |Double. PositiveInfinity|INF|  
@@ -33,7 +33,7 @@ Jeśli chcesz przekonwertować ciąg na typ danych .NET, użyj metody **XmlConve
 > [!NOTE]
 > W przypadku konwertowania dowolnego z typów .NET wymienionych w tabeli do ciągu przy użyciu metody **ToString** zwracany ciąg nie jest typem podstawowym, ale typ ciągu schematu XML (XSD).  
   
- Typ wartości **DateTime** i **TimeSpan** różni się w tym, że element **DateTime** reprezentuje chwilę w czasie, podczas gdy obiekt **TimeSpan** reprezentuje przedział czasu. Formaty **DateTime** i **TimeSpan** są określone w specyfikacji typów danych schematu XML (XSD). Przykład:  
+ Typ wartości **DateTime** i **TimeSpan** różni się w tym, że element **DateTime** reprezentuje chwilę w czasie, podczas gdy obiekt **TimeSpan** reprezentuje przedział czasu. Formaty **DateTime** i **TimeSpan** są określone w specyfikacji typów danych schematu XML (XSD). Na przykład:  
   
 ```vb  
 Dim writer As New XmlTextWriter("myfile.xml", Nothing)  
@@ -72,6 +72,7 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
  Jeśli jednak konwertujesz ciąg na **wartość Boolean**, **Single** lub **Double**, zwracany typ platformy .NET nie jest taki sam jak typ zwracany podczas używania klasy **System. Convert** .  
   
 ## <a name="string-to-boolean"></a>Ciąg do wartości logicznej  
+
  W poniższej tabeli przedstawiono typ, który jest generowany dla danego ciągu wejściowego podczas konwertowania ciągu na **wartość logiczną** przy użyciu metody **ToBoolean** .  
   
 |Prawidłowy parametr wejściowy ciągu|Typ danych wyjściowych platformy .NET|  
@@ -104,6 +105,7 @@ Console.WriteLine(bvalue);
 ```  
   
 ## <a name="string-to-single"></a>Ciąg do jednego  
+
  W poniższej tabeli przedstawiono typ, który jest generowany dla danych wejściowych ciągów, podczas konwertowania ciągu na **pojedynczy** przy użyciu metody **ToSingle —** .  
   
 |Prawidłowy parametr wejściowy ciągu|Typ danych wyjściowych platformy .NET|  
@@ -112,6 +114,7 @@ Console.WriteLine(bvalue);
 |"-INF"|Single. NegativeInfinity|  
   
 ## <a name="string-to-double"></a>Ciąg na Double  
+
  W poniższej tabeli przedstawiono typ, który jest generowany dla danych wejściowych ciągów, podczas konwertowania ciągu na **pojedynczy** przy użyciu metody **ToDouble —** .  
   
 |Prawidłowy parametr wejściowy ciągu|Typ danych wyjściowych platformy .NET|  

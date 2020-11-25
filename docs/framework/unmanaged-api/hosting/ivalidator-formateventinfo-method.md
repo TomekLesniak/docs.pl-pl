@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4c0c7477-05ba-461b-b21b-cbfba95f1db1
 topic_type:
 - apiref
-ms.openlocfilehash: 0c60631b5e034bc46d74412440d35d526359d043
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: c5c89e0eda6e93e34775c00d5ec8fb4ff0940707
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008576"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701019"
 ---
 # <a name="ivalidatorformateventinfo-method"></a>IValidator::FormatEventInfo — Metoda
+
 Pobiera komunikat o błędzie odpowiadający określonemu błędowi walidacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,11 +39,12 @@ HRESULT FormatEventInfo(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `hVECode`  
  podczas Wartość HRESULT, która została przeniesiona do procedury obsługi błędów walidacji.  
   
  `Context`  
- podczas `VEContext`Wystąpienie zawierające informacje kontekstu dotyczące błędu walidacji.  
+ podczas `VEContext` Wystąpienie zawierające informacje kontekstu dotyczące błędu walidacji.  
   
  `msg`  
  [in. out] Ciąg, który zawiera zwracany komunikat o błędzie.  
@@ -54,10 +56,11 @@ HRESULT FormatEventInfo(
  podczas Bezpieczna tablica zawierająca dodatkowe parametry opisujące błąd.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** IValidator. idl, IValidator. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  

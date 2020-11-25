@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 50e04026-4d4a-47d9-96c1-f4677d6d938b
 topic_type:
 - apiref
-ms.openlocfilehash: 44439eda62f85c32893b73f17bd057195cf6b2e1
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d44ad493a786aaa35150515b7c254965490bd714
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503552"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701708"
 ---
 # <a name="imetadataimportgetnativecallconvfromsig-method"></a>IMetaDataImport::GetNativeCallConvFromSig — Metoda
+
 Pobiera natywną konwencję wywoływania dla metody reprezentowanej przez określony wskaźnik podpisu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT GetNativeCallConvFromSig (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pvSig`  
  podczas Wskaźnik do sygnatury metadanych metody zwracającej konwencję wywoływania.  
   
@@ -46,11 +48,12 @@ HRESULT GetNativeCallConvFromSig (
  określoną Wskaźnik do natywnej konwencji wywoływania.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
@@ -58,4 +61,4 @@ HRESULT GetNativeCallConvFromSig (
 
 - <xref:System.Runtime.InteropServices.CallingConvention>
 - [IMetaDataImport — Interfejs](imetadataimport-interface.md)
-- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)
+- [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)

@@ -11,14 +11,15 @@ helpviewer_keywords:
 - multiple attribute instances
 - attributes [.NET], retrieving
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
-ms.openlocfilehash: 8f58648f5cc73b911f0393f2a631b8976ac097b4
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 6ba01fcd23e626354e5f9a2baa914815b61c8332
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829027"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701565"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>Pobieranie informacji przechowywanych w atrybutach
+
 Pobieranie atrybutu niestandardowego jest procesem prostym. Najpierw Zadeklaruj wystąpienie atrybutu, który ma zostać pobrany. Następnie użyj metody, <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> Aby zainicjować nowy atrybut do wartości atrybutu, który ma zostać pobrany. Po zainicjowaniu nowego atrybutu wystarczy użyć jego właściwości w celu uzyskania wartości.  
   
 > [!IMPORTANT]
@@ -33,7 +34,9 @@ Pobieranie atrybutu niestandardowego jest procesem prostym. Najpierw Zadeklaruj 
 - [Pobieranie wielu wystąpień atrybutu zastosowanych do różnych zakresów](#cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes)  
   
 <a name="cpconretrievingsingleinstanceofattribute"></a>
+
 ## <a name="retrieving-a-single-instance-of-an-attribute"></a>Pobieranie pojedynczego wystąpienia atrybutu  
+
  W poniższym przykładzie `DeveloperAttribute` (opisany w poprzedniej sekcji) jest stosowany do `MainApp` klasy na poziomie klasy. `GetAttribute`Metoda używa metody **GetCustomAttribute** do pobierania wartości przechowywanych `DeveloperAttribute` na poziomie klasy przed wyświetleniem ich w konsoli programu.  
   
  [!code-cpp[Conceptual.Attributes.Usage#18](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source3.cpp#18)]
@@ -57,7 +60,9 @@ The attribute was not found.
  W tym przykładzie przyjęto założenie, że definicja atrybutu znajduje się w bieżącej przestrzeni nazw. Pamiętaj, aby zaimportować przestrzeń nazw, w której znajduje się Definicja atrybutu, jeśli nie znajduje się w bieżącej przestrzeni nazw.  
   
 <a name="cpconretrievingmultipleinstancesofattributeappliedtosamescope"></a>
+
 ## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-the-same-scope"></a>Pobieranie wielu wystąpień atrybutu zastosowanych do tego samego zakresu  
+
  W poprzednim przykładzie Klasa do sprawdzenia i określony atrybut do znalezienia są przenoszone do <xref:System.Attribute.GetCustomAttribute%2A> . Ten kod działa prawidłowo, gdy tylko jedno wystąpienie atrybutu jest stosowane na poziomie klasy. Jeśli jednak na tym samym poziomie klasy zastosowano wiele wystąpień atrybutu, Metoda **GetCustomAttribute** nie pobiera wszystkich informacji. W przypadkach, gdy wiele wystąpień tego samego atrybutu jest stosowanych do tego samego zakresu, można użyć, <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType> Aby umieścić wszystkie wystąpienia atrybutu w tablicy. Na przykład jeśli dwa wystąpienia `DeveloperAttribute` są stosowane na poziomie klasy tej samej klasy, `GetAttribute` można zmodyfikować metodę w celu wyświetlenia informacji znalezionych w obu atrybutach. Pamiętaj, aby zastosować wiele atrybutów na tym samym poziomie, atrybut musi być zdefiniowany za pomocą właściwości **AllowMultiple** ustawionej na **wartość true** w elemencie <xref:System.AttributeUsageAttribute> .  
   
  Poniższy przykład kodu pokazuje, jak za pomocą metody **GetCustomAttributes —** utworzyć tablicę, która odwołuje się do wszystkich wystąpień `DeveloperAttribute` w danej klasie. Wartości wszystkich atrybutów są następnie wyświetlane w konsoli programu.  
@@ -69,7 +74,9 @@ The attribute was not found.
  Jeśli nie zostaną znalezione żadne atrybuty, ten kod zgłosi użytkownika. W przeciwnym razie wyświetlane są informacje zawarte w obu wystąpieniach elementu `DeveloperAttribute` .  
   
 <a name="cpconretrievingmultipleinstancesofattributeappliedtodifferentscopes"></a>
+
 ## <a name="retrieving-multiple-instances-of-an-attribute-applied-to-different-scopes"></a>Pobieranie wielu wystąpień atrybutu zastosowanych do różnych zakresów  
+
  <xref:System.Attribute.GetCustomAttributes%2A>Metody i <xref:System.Attribute.GetCustomAttribute%2A> nie przeszukują całej klasy i zwracają wszystkie wystąpienia atrybutu w tej klasie. Zamiast tego przeszukują tylko jedną określoną metodę lub element członkowski jednocześnie. Jeśli masz klasę z tym samym atrybutem, który jest stosowany do każdego elementu członkowskiego i chcesz pobrać wartości we wszystkich atrybutach zastosowanych do tych elementów członkowskich, musisz dostarczyć każdą metodę lub element członkowski oddzielnie do **GetCustomAttributes —** i **GetCustomAttribute**.  
   
  Poniższy przykład kodu przyjmuje klasę jako parametr i wyszukuje `DeveloperAttribute` (zdefiniowane wcześniej) na poziomie klasy i dla każdej indywidualnej metody tej klasy.  

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - with expression [C#]
 - with operator [C#]
-ms.openlocfilehash: 8412dfe8663703d3b201fe98b5f4752da1b344cf
-ms.sourcegitcommit: f99115e12a5eb75638abe45072e023a3ce3351ac
+ms.openlocfilehash: d7d3758c8c5da7859974b5b50b63d2a5ca16b24d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556715"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95702228"
 ---
 # <a name="with-expression-c-reference"></a>with — wyrażenie (odwołanie w C#)
 
@@ -41,7 +41,7 @@ Aby uzyskać więcej informacji, zobacz następujące sekcje dotyczące [oferty 
 - [`with` wyrażenia](~/_csharplang/proposals/csharp-9.0/records.md#with-expression)
 - [Kopiowanie i klonowanie elementów członkowskich](~/_csharplang/proposals/csharp-9.0/records.md#copy-and-clone-members)
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Dokumentacja języka C#](../index.md)
 - [Operatory i wyrażenia języka C#](index.md)

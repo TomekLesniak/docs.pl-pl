@@ -17,14 +17,15 @@ helpviewer_keywords:
 ms.assetid: 47dbaea4-8857-462e-93ba-fff880fc9e50
 topic_type:
 - apiref
-ms.openlocfilehash: 499e1fd859a66bb6992c6d02a46e38c514503bd8
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 3a9ef06f312126319875544caf272903b9f7c716
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205586"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701032"
 ---
 # <a name="icordebugprocess5gettypeid-method"></a>ICorDebugProcess5::GetTypeID — Metoda
+
 Konwertuje adres obiektu na identyfikator [COR_TYPEID](cor-typeid-structure.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT GetTypeID(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `obj`  
  podczas Adres obiektu.  
   
@@ -46,6 +48,7 @@ HRESULT GetTypeID(
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -54,7 +57,7 @@ HRESULT GetTypeID(
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugProcess5 — Interfejs](icordebugprocess5-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

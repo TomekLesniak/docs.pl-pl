@@ -12,14 +12,15 @@ helpviewer_keywords:
 - classes [.NET Framework], vs. structures
 - type design guidelines, classes
 ms.assetid: f8b8ec9b-0ba7-4dea-aadf-a93395cd804f
-ms.openlocfilehash: b1f3d36f4a9b6e44451a8534ca79fb674071a955
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 05ba9abbc9495d927b7f58ebb06f152c0c15772f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821479"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701253"
 ---
 # <a name="choosing-between-class-and-struct"></a>Wybieranie między klasą i strukturą
+
 Jedną z podstawowych decyzji projektowych każdej twarzy projektanta platformy jest to, czy projekt typu ma być klasą (typem referencyjnym) czy jako struktura (typ wartości). Dobre zrozumienie różnic w zachowaniu typów referencyjnych i typów wartości jest decydujące w przypadku dokonania tego wyboru.
 
  Pierwszą różnicą między typami referencyjnymi i typami wartości, które należy wziąć pod uwagę, jest to, że typy odwołań są przydzielane na stercie i elementy bezużyteczne, a typy wartości są przydzielane na stosie lub w wierszu zawierającym typy i cofane, gdy stos jest odsunięty lub gdy typ zawierający zostanie cofnięty przydział. W związku z tym alokacje i cofanie alokacji typów wartości są ogólnie tańsze niż alokacje i cofanie alokacji typów referencyjnych.

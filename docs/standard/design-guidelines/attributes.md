@@ -5,14 +5,15 @@ helpviewer_keywords:
 - attributes [.NET Framework], about
 - class library design guidelines [.NET Framework], attributes
 ms.assetid: ee0038ef-b247-4747-a650-3c5c5cd58d8b
-ms.openlocfilehash: cc4752066124a0ea8081390bfb5f3791d21ec96d
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c02c41244fa74b686277c2f3c3940405fe2d95ba
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821622"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701370"
 ---
 # <a name="attributes"></a>Atrybuty
+
 <xref:System.Attribute?displayProperty=nameWithType> jest klasą bazową służącą do definiowania atrybutów niestandardowych.
 
  Atrybuty są adnotacjami, które mogą być dodawane do elementów programistycznych, takich jak zestawy, typy, elementy członkowskie i parametry. Są one przechowywane w metadanych zestawu i dostępne w czasie wykonywania przy użyciu interfejsów API odbicia. Na przykład struktura definiuje <xref:System.ObsoleteAttribute> , który można zastosować do typu lub elementu członkowskiego, aby wskazać, że typ lub element członkowski jest przestarzały.

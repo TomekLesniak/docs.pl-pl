@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: bd492834-6529-4d39-b93d-f8cdbd3e297f
 topic_type:
 - apiref
-ms.openlocfilehash: 28a5f79f6fa8d25fd254c4093b0f76e0308edbad
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c942838fb62bf86c4054761f4e7f2ef0518b3d89
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84492528"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701813"
 ---
 # <a name="imetadatafiltermarktoken-method"></a>IMetaDataFilter::MarkToken — Metoda
+
 Ustawia wartość wskazującą, że określony token metadanych został przetworzony.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,15 +35,17 @@ HRESULT MarkToken (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `tk`  
  podczas Token, który ma zostać oznaczony jako przetworzony.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

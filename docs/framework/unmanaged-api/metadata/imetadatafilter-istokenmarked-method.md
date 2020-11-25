@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7d90dcee-0206-4540-807b-06982fe65f1a
 topic_type:
 - apiref
-ms.openlocfilehash: eb0ebab0f4e05d81730d5beb2b5345e319e8e274
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: ce7292003872805c9390ce3d9c59b39497a83ed1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84492541"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701838"
 ---
 # <a name="imetadatafilteristokenmarked-method"></a>IMetaDataFilter::IsTokenMarked — Metoda
+
 Pobiera wartość wskazującą, czy określony token metadanych został oznaczony jako przetworzony.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT IsTokenMarked (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `tk`  
  podczas Token do sprawdzenia pod kątem znacznika przetwarzania.  
   
@@ -42,11 +44,12 @@ HRESULT IsTokenMarked (
  określoną Wartość, która jest w `true` przypadku `tk` przetworzenia; w przeciwnym razie `false` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

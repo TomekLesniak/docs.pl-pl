@@ -6,17 +6,19 @@ helpviewer_keywords:
 - design patterns in class libraries
 - class library design guidelines [.NET Framework], design patterns
 ms.assetid: f7bd1361-4ab2-4132-972d-a044b8f197e1
-ms.openlocfilehash: ed580365f7d7bb3c91f1aa4065413f64e0e965db
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 06c12352d50bf8091071b41c974618320ce0b2b1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821466"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95701228"
 ---
 # <a name="common-design-patterns"></a>Często używane wzorce projektowe
+
 Istnieją liczne książki dotyczące wzorców oprogramowania, języków wzorców i antywzorców, które stanowią ogólny zakres wzorców. W związku z tym Rozdział ten zawiera wytyczne i dyskusje związane z bardzo ograniczonym zestawem wzorców, które są często używane w projekcie .NET Framework interfejsów API.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Właściwości zależności](dependency-properties.md)  
  [Wzorzec Dispose](../garbage-collection/implementing-dispose.md)  
  *Fragmenty © 2005, 2009 Microsoft Corporation. Wszelkie prawa zastrzeżone.*  
