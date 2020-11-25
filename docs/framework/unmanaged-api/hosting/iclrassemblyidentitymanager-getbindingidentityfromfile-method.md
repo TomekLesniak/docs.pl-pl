@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7797562d-7b4c-4bd9-8b93-f35e0e2869e4
 topic_type:
 - apiref
-ms.openlocfilehash: 5b537d59014afa783d3f8c5046cc02dad7ea7740
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 443acfa77dc8103008263f19bed116d02e7ea676
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615998"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716745"
 ---
 # <a name="iclrassemblyidentitymanagergetbindingidentityfromfile-method"></a>ICLRAssemblyIdentityManager::GetBindingIdentityFromFile — Metoda
+
 Pobiera dane powiązania tożsamości zestawu z określoną ścieżką do pliku.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT GetBindingIdentityFromFile(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pwzFilePath`  
  podczas Ścieżka do pliku do oceny.  
   
@@ -63,19 +65,21 @@ HRESULT GetBindingIdentityFromFile(
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Jeśli metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
- `GetBindingIdentityFromFile`jest zazwyczaj wywoływana dwukrotnie. Pierwsze wywołanie dostarcza wartość null dla `pwzBuffer` , a metoda zwraca odpowiedni rozmiar w `pcchBufferSize` . Drugie wywołanie dostarcza odpowiednio przydzielony bufor, a metoda zwraca z rzeczywistymi danymi buforu po zakończeniu.  
+
+ `GetBindingIdentityFromFile` jest zazwyczaj wywoływana dwukrotnie. Pierwsze wywołanie dostarcza wartość null dla `pwzBuffer` , a metoda zwraca odpowiedni rozmiar w `pcchBufferSize` . Drugie wywołanie dostarcza odpowiednio przydzielony bufor, a metoda zwraca z rzeczywistymi danymi buforu po zakończeniu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICLRAssemblyIdentityManager, interfejs](iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyIdentityManager — Interfejs](iclrassemblyidentitymanager-interface.md)
 - [ICLRAssemblyReferenceList — Interfejs](iclrassemblyreferencelist-interface.md)
-- [ICLRHostBindingPolicyManager, interfejs](iclrhostbindingpolicymanager-interface.md)
+- [ICLRHostBindingPolicyManager — Interfejs](iclrhostbindingpolicymanager-interface.md)

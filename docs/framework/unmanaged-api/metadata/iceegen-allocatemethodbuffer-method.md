@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 845ab77e-9639-47f5-99fb-f3b619e3e779
 topic_type:
 - apiref
-ms.openlocfilehash: 8dc7f439cac56c2d55916ff8631ec3095c67680d
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: e1849eb95401e3637a1fd1b00715332f9886071e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008888"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715527"
 ---
 # <a name="iceegenallocatemethodbuffer-method"></a>ICeeGen::AllocateMethodBuffer — Metoda
+
 Tworzy bufor o określonym rozmiarze dla metody i pobiera względny adres wirtualny metody.  
   
  Ta metoda jest przestarzała i nie powinna być używana.  
@@ -38,6 +39,7 @@ HRESULT AllocateMethodBuffer (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cchBuffer`  
  podczas Długość buforu do utworzenia.  
   
@@ -48,14 +50,15 @@ HRESULT AllocateMethodBuffer (
  określoną Względny adres wirtualny metody.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICeeGen — Interfejs](iceegen-interface.md)

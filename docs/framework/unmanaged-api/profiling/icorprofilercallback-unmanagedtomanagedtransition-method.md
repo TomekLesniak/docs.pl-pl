@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ade2cc01-9b81-4e09-a5f9-b3b9dda27e96
 topic_type:
 - apiref
-ms.openlocfilehash: 8734fa9c9418b818cbe14ebe87ce2af6fa59c078
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 446de663d437c950f3a9be968e7dcbe8d25ed2b0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499847"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717279"
 ---
 # <a name="icorprofilercallbackunmanagedtomanagedtransition-method"></a>ICorProfilerCallback::UnmanagedToManagedTransition — Metoda
+
 Powiadamia profiler o wystąpieniu przejścia z niezarządzanego kodu do kodu zarządzanego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT UnmanagedToManagedTransition(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `functionId`  
  podczas Identyfikator funkcji, która jest wywoływana.  
   
@@ -41,11 +43,13 @@ HRESULT UnmanagedToManagedTransition(
  podczas Wartość wyliczenia [COR_PRF_TRANSITION_REASON](cor-prf-transition-reason-enumeration.md) , która wskazuje, czy przeprowadzono przejście do kodu zarządzanego z niezarządzanego kodu, czy z powodu powrotu z niezarządzanej funkcji wywołanej przez zarządzaną metodę.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli wartość `reason` jest COR_PRF_TRANSITION_RETURN i `functionId` nie ma wartości null, identyfikator funkcji jest niezarządzaną funkcją i nigdy nie zostanie skompilowany przy użyciu kompilatora just-in-Time (JIT). Funkcje niezarządzane mają skojarzone z nimi podstawowe informacje, takie jak nazwa i niektóre metadane.  
   
  Jeśli wartość `reason` jest COR_PRF_TRANSITION_CALL, istnieje możliwość, że wywołana funkcja (czyli funkcja zarządzana) nie została jeszcze skompilowana w trybie JIT.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

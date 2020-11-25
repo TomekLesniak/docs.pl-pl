@@ -10,15 +10,16 @@ api_type:
 ms.assetid: e795e6a2-1008-4a81-af88-d777888e942e
 topic_type:
 - apiref
-ms.openlocfilehash: 54332f5b3383f1c1513242a79cbd81eb8aa5c4f2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ece5bd5373fed1a10e6592ff884e98b614e7991d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179261"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715995"
 ---
 # <a name="cordebugcodeinvokekind-enumeration"></a>Wyliczenie CorDebugCodeInvokeKind
-W tym artykule opisano, jak wyeksportowana funkcja wywołuje kod zarządzany.  
+
+Opisuje sposób, w jaki wyeksportowana funkcja wywołuje kod zarządzany.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -35,26 +36,28 @@ typedef enum CorDebugCodeInvokeKind
   
 |Członek|Opis|  
 |------------|-----------------|  
-|`CODE_INVOKE_KIND_NONE`|Jeśli dowolny kod zarządzany jest wywoływany przez tę metodę, będzie musiał znajdować się przez jawne zdarzenia lub punkty przerwania później.<br /><br /> --lub--<br /><br /> Możemy po prostu pominąć niektóre kod zarządzany tej metody wywołuje, ponieważ nie ma łatwego sposobu, aby zatrzymać się na nim.<br /><br /> --lub--<br /><br /> Metoda nigdy nie może wywołać kod zarządzany.|  
-|`CODE_INVOKE_KIND_RETURN`|Ta metoda wywoła kod zarządzany za pomocą instrukcji zwracania. Wychodząc powinien dotrzeć do następnego kodu zarządzanego.|  
-|`CODE_INVOKE_KIND_TAILCALL`|Ta metoda będzie wywoływać kod zarządzany za pośrednictwem wywołania ogona. Pojedynczy krok po kroku i przechodzenie przez wszelkie instrukcje wywołania powinny uzyskać kod zarządzany.|  
+|`CODE_INVOKE_KIND_NONE`|Jeśli jakikolwiek kod zarządzany jest wywoływany przez tę metodę, będzie musiał znajdować się w nim jawne zdarzenia lub punkty przerwania.<br /><br /> --lub--<br /><br /> Możemy po prostu zrezygnować z kodu zarządzanego ta metoda wywołuje, ponieważ nie ma prostego sposobu na jej zatrzymanie.<br /><br /> --lub--<br /><br /> Metoda może nigdy nie wywołać kodu zarządzanego.|  
+|`CODE_INVOKE_KIND_RETURN`|Ta metoda wywoła kod zarządzany za pośrednictwem instrukcji return. Należy wzważyć przy następnym zarządzanym kodzie.|  
+|`CODE_INVOKE_KIND_TAILCALL`|Ta metoda wywoła kod zarządzany za pośrednictwem wywołania tail. Wykonywanie pojedynczych instrukcji wywołania i przechodzenie do nich powinno dotrzeć do kodu zarządzanego.|  
   
 ## <a name="remarks"></a>Uwagi  
- To wyliczenie jest używane przez [metodę ICorDebugProcess6::GetExportStepInfo](icordebugprocess6-getexportstepinfo-method.md) w celu zapewnienia informacji o przechodzeniu przez kod zarządzany.  
+
+ To wyliczenie jest używane przez metodę [Metoda ICorDebugProcess6:: GetExportStepInfo](icordebugprocess6-getexportstepinfo-method.md) w celu uzyskania informacji na temat wykonywania kroków w kodzie zarządzanym.  
   
 > [!NOTE]
-> To wyliczenie jest przeznaczone do użycia tylko w scenariuszach debugowania natywnego platformy .NET.  
+> To wyliczenie jest przeznaczone do użycia tylko w scenariuszach debugowania .NET Native.  
   
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
-  
- **Nagłówek:** CorDebug.idl, CorDebug.h  
-  
- **Biblioteka:** CorGuids.lib  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [Debugowanie, wyliczenia](debugging-enumerations.md)
-- [Debugging](index.md)
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
+  
+ **Nagłówek:** CorDebug. idl, CorDebug. h  
+  
+ **Biblioteka:** CorGuids. lib  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [Debugowanie — wyliczenia](debugging-enumerations.md)
+- [Debugowanie](index.md)

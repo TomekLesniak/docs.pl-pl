@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 42230928-2c33-41fd-9519-d96efef6c7af
 topic_type:
 - apiref
-ms.openlocfilehash: c0a43dc1640bdaa0ae104832eb4d1f8eb15b0392
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6f37979c7a4873a7751db0296dc7d485c3444561
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134334"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715904"
 ---
 # <a name="iassemblynamegetversion-method"></a>IAssemblyName::GetVersion — Metoda
+
 Pobiera informacje o wersji zestawu, do którego odwołuje się ten obiekt [IAssemblyName](iassemblyname-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT GetVersion (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pdwVersionHi`  
  określoną Wysoka 32 bitów wersji.  
   
@@ -42,12 +44,13 @@ HRESULT GetVersion (
  określoną Niska 32 bitów wersji.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IAssemblyName, interfejs](iassemblyname-interface.md)
+- [IAssemblyName — Interfejs](iassemblyname-interface.md)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: aaf96116-372b-4538-afb1-9e0fcdac1f98
 topic_type:
 - apiref
-ms.openlocfilehash: 3b8c9421dea4040a9f183b886f1ad8575cace780
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: fa8d15bc8e504a57d5cc87c170a3a5b022798add
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762435"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715787"
 ---
 # <a name="icorconfiguration-interface"></a>ICorConfiguration — Interfejs
+
 Zapewnia metody konfigurowania środowiska uruchomieniowego języka wspólnego (CLR).  
   
 ## <a name="methods"></a>Metody  
@@ -34,15 +35,16 @@ Zapewnia metody konfigurowania środowiska uruchomieniowego języka wspólnego (
 |[SetGCThreadControl, metoda](icorconfiguration-setgcthreadcontrol-method.md)|Ustawia interfejs wywołania zwrotnego dla wątków planowania dla zadań innych niż środowisko uruchomieniowe, które w przeciwnym razie byłyby blokowane dla wyrzucania elementów bezużytecznych.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Hosting, interfejsy](hosting-interfaces.md)
-- [CorRuntimeHost, klasa coclass](corruntimehost-coclass.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)
+- [CorRuntimeHost — Klasa coclass](corruntimehost-coclass.md)

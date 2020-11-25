@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 32c27576-71fa-42ee-8230-67b92913ea08
 topic_type:
 - apiref
-ms.openlocfilehash: 63346c679efc083dea9ab0eaa4f983a5308695f8
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 88866d75cc97d40c827359450e8e7bdbe13ef3ab
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895251"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715891"
 ---
 # <a name="icordebugappdomaingetid-method"></a>ICorDebugAppDomain::GetId — Metoda
+
 Pobiera unikatowy identyfikator domeny aplikacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT GetID (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pId`  
  określoną Unikatowy identyfikator domeny aplikacji.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Identyfikator domeny aplikacji jest unikatowy w ramach procesu zawierającego.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

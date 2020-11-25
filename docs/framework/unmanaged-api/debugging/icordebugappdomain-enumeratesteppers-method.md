@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3f3c4503-570e-44c1-ae6a-a3c6b840c732
 topic_type:
 - apiref
-ms.openlocfilehash: a46d1b4ebf84514a77e62a4108f6aa34cd2dd94e
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: fd9243d9e0c12b572613694538661fd553e8a487
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895263"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715930"
 ---
 # <a name="icordebugappdomainenumeratesteppers-method"></a>ICorDebugAppDomain::EnumerateSteppers — Metoda
+
 Pobiera moduł wyliczający dla wszystkich aktywnych współdziałań w domenie aplikacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT EnumerateSteppers (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppSteppers`  
  określoną Wskaźnik do adresu obiektu ICorDebugStepperEnum, który jest modułem wyliczającym dla wszystkich aktywnych współdziałań w domenie aplikacji.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

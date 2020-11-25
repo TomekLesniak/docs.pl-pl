@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a5906b2a-ad4a-4cc6-a421-2d7d8adf7468
 topic_type:
 - apiref
-ms.openlocfilehash: 6168c5b27868a261871b292e17ca02b04ae89917
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5290db008bfe5727ed5899c2ed6f7e41ae9a353a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500783"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716359"
 ---
 # <a name="cor_prf_snapshot_info-enumeration"></a>COR_PRF_SNAPSHOT_INFO — Wyliczenie
+
 Określa ilość danych, które mają zostać przekazane z migawki stosu w każdym wywołaniu funkcji [StackSnapshotCallback —](stacksnapshotcallback-function.md) profilera.  
   
 ## <a name="syntax"></a>Składnia  
@@ -43,9 +44,11 @@ typedef enum _COR_PRF_SNAPSHOT_INFO {
 |`COR_PRF_SNAPSHOT_X86_OPTIMIZED`|Wskazuje, że zostanie użyty prostszy, alternatywny algorytm przechodzenia stosu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wartości, które są dostarczane przez `COR_PRF_SNAPSHOT_INFO` Wyliczenie, są przekazywane jako parametry do metody [DoStackSnapshot —](icorprofilerinfo2-dostacksnapshot-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -57,4 +60,4 @@ typedef enum _COR_PRF_SNAPSHOT_INFO {
 ## <a name="see-also"></a>Zobacz także
 
 - [DoStackSnapshot, metoda](icorprofilerinfo2-dostacksnapshot-method.md)
-- [Profilowanie — wyliczenia](profiling-enumerations.md)
+- [Profilowanie — Wyliczenia](profiling-enumerations.md)

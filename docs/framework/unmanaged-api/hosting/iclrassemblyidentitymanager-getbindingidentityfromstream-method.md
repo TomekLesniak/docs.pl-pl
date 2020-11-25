@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 40123b30-a589-46b3-95d3-af7b2b0baa05
 topic_type:
 - apiref
-ms.openlocfilehash: abba19600616cad8ba3377ae2ebb23459449d2a0
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f1e6a47c0838782ae0610d49ca7fce3eb8554458
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615985"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716710"
 ---
 # <a name="iclrassemblyidentitymanagergetbindingidentityfromstream-method"></a>ICLRAssemblyIdentityManager::GetBindingIdentityFromStream — Metoda
+
 Pobiera dane tożsamości zestawu kanonicznego dla zestawu w określonym strumieniu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT GetBindingIdentityFromStream (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pStream`  
  podczas Strumień zestawu, który ma zostać obliczony.  
   
@@ -63,15 +65,16 @@ HRESULT GetBindingIdentityFromStream (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Jeśli metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICLRAssemblyIdentityManager, interfejs](iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyIdentityManager — Interfejs](iclrassemblyidentitymanager-interface.md)
 - [ICLRAssemblyReferenceList — Interfejs](iclrassemblyreferencelist-interface.md)

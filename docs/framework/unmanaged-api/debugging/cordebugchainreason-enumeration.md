@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c915da51-50b2-41df-841a-2b971f4d0975
 topic_type:
 - apiref
-ms.openlocfilehash: 2f53e3e938f62e714bf421ee7ba0cbf0a47b9f8e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6185c5dda69a0cf7e9847ddc021448612a426b19
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132282"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716060"
 ---
 # <a name="cordebugchainreason-enumeration"></a>CorDebugChainReason — Wyliczenie
+
 Wskazuje przyczynę lub przyczyny inicjacji łańcucha wywołań.  
   
 ## <a name="syntax"></a>Składnia  
@@ -46,7 +47,7 @@ typedef enum CorDebugChainReason {
   
 ## <a name="members"></a>Elementy członkowskie  
   
-|Element członkowski|Opis|  
+|Członek|Opis|  
 |------------|-----------------|  
 |`CHAIN_NONE`|Nie zainicjowano łańcucha wywołań.|  
 |`CHAIN_CLASS_INIT`|Łańcuch został zainicjowany przez konstruktora.|  
@@ -63,17 +64,19 @@ typedef enum CorDebugChainReason {
 |`CHAIN_FUNC_EVAL`|Łańcuch został zainicjowany przez funkcję oceny funkcji.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Użyj metody [ICorDebugChain:: Getpowód](icordebugchain-getreason-method.md) , aby określić przyczyny inicjacji łańcucha wywołań.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
   
  **Biblioteka:** CorGuids. lib  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Debugowanie, wyliczenia](debugging-enumerations.md)
+- [Debugowanie — wyliczenia](debugging-enumerations.md)

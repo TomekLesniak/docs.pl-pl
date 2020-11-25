@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: fc51d6db-f7f8-408b-b93d-c166fc712c99
 topic_type:
 - apiref
-ms.openlocfilehash: d7e78dfc4beba67cc376b221d0cd49f7200f5d23
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c14e27b67fc600e2684f8c967af30bb9a5cee126
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501706"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716746"
 ---
 # <a name="cor_gc_stat_types-enumeration"></a>COR_GC_STAT_TYPES — Wyliczenie
+
 Określa statystyki, które mają być rejestrowane w celu wyrzucania elementów bezużytecznych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ typedef enum {
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  To Wyliczenie określa, które statystyki w strukturze [COR_GC_STATS](cor-gc-stats-structure.md) mają być ustawiane za pomocą metody [ICLRGCManager::](iclrgcmanager-getstats-method.md) getstatistics.  
   
 ## <a name="members"></a>Elementy członkowskie  
@@ -44,6 +46,7 @@ typedef enum {
 |`COR_GC_MEMORYUSAGE`|Rejestruje dane statystyczne dotyczące użycia pamięci i wyrzucania elementów bezużytecznych.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** GCHost. idl, GCHost. h  
@@ -52,5 +55,5 @@ typedef enum {
   
 ## <a name="see-also"></a>Zobacz także
 
-- [COR_GC_STATS, struktura](cor-gc-stats-structure.md)
+- [COR_GC_STATS — Struktura](cor-gc-stats-structure.md)
 - [Hosting — Wyliczenia](hosting-enumerations.md)

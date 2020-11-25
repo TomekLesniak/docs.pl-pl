@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ce7a21f9-0ca3-4b92-bc4b-bb803cae3f51
 topic_type:
 - apiref
-ms.openlocfilehash: 8c88e97f8187ac347f4ff39890c8d87ee80c8f9e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e8466970a1c137276e842b37f0305fdfd9169be6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500718"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717274"
 ---
 # <a name="functionenter2-function"></a>FunctionEnter2 — Funkcja
+
 Powiadamia profiler, że sterowanie jest przesyłane do funkcji i zawiera informacje na temat ramki stosu i argumentów funkcji. Ta funkcja zastępuje funkcję [FunctionEnter —](functionenter-function.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -58,6 +59,7 @@ void __stdcall FunctionEnter2 (
   Aby można było uzyskać dostęp do informacji o argumencie, `COR_PRF_ENABLE_FUNCTION_ARGS` należy ustawić flagę. Profiler może użyć metody [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) , aby ustawić flagi zdarzeń.
 
 ## <a name="remarks"></a>Uwagi  
+
  Wartości `func` `argumentInfo` parametrów i są nieprawidłowe po `FunctionEnter2` powrocie funkcji, ponieważ wartości mogą ulec zmianie lub zostać zniszczone.  
   
  `FunctionEnter2`Funkcja jest wywołaniem zwrotnym, należy ją zaimplementować. Implementacja musi używać `__declspec` `naked` atrybutu klasy magazynu ().  
@@ -73,6 +75,7 @@ void __stdcall FunctionEnter2 (
  Ponadto `FunctionEnter2` Funkcja nie może wywołać kodu zarządzanego lub w jakikolwiek sposób może spowodować alokację pamięci zarządzanej.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl  
@@ -84,6 +87,6 @@ void __stdcall FunctionEnter2 (
 ## <a name="see-also"></a>Zobacz także
 
 - [FunctionLeave2 — Funkcja](functionleave2-function.md)
-- [FunctionTailcall2, funkcja](functiontailcall2-function.md)
+- [FunctionTailcall2 — Funkcja](functiontailcall2-function.md)
 - [SetEnterLeaveFunctionHooks2, metoda](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
 - [Profilowanie statycznych funkcji globalnych](profiling-global-static-functions.md)

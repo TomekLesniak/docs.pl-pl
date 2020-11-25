@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT [.NET Framework profiling]
 ms.assetid: f2fc441f-d62e-4f72-a011-354ea13c8c59
-ms.openlocfilehash: d6cba2ec3e82c07ce60f0f2b2199cc97e31a000b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1a75b51b57bdf2923ca6386f42c19c0b2f44fd39
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555552"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717477"
 ---
 # <a name="corprof_e_unsupported_call_sequence-hresult"></a>Wynik CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT
 
@@ -72,6 +72,7 @@ Te dwa scenariusze zostały omówione w poniższych sekcjach.
  Aby uzyskać więcej informacji, zobacz wpis [dlaczego CORPROF_E_UNSUPPORTED_CALL_SEQUENCE](/archive/blogs/davbr/why-we-have-corprof_e_unsupported_call_sequence) w blogu interfejsu API profilowania CLR.  
   
 ## <a name="triggering-garbage-collections"></a>Wyzwalanie wyrzucania elementów bezużytecznych  
+
  Ten scenariusz obejmuje Profiler, który działa wewnątrz metody wywołania zwrotnego (na przykład jedną z `ICorProfilerCallback` metod), która zabrania wyrzucania elementów bezużytecznych. Jeśli profiler próbuje wywołać metodę informacyjną (na przykład metodę w `ICorProfilerInfo` interfejsie), która może wyzwolić wyrzucanie elementów bezużytecznych, Metoda informacyjna kończy się niepowodzeniem z CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT.  
   
  W poniższej tabeli przedstawiono metody wywołania zwrotnego, które zabraniają wyrzucania elementów bezużytecznych, oraz metody informacyjne, które mogą wyzwalać odzyskiwanie pamięci. Jeśli profiler wykonuje się w jednej z wymienionych metod wywołania zwrotnego i wywołuje jedną z wymienionych metod informacyjnych, ta metoda informacyjna kończy się niepowodzeniem z CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT.  

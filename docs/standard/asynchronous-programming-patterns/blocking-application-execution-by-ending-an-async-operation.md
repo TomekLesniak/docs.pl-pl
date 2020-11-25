@@ -10,14 +10,15 @@ ms.assetid: cc5e2834-a65b-4df8-b750-7bdb79997fee
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 848f3e6e1a421a8edfcd9a5506988bc132d721fe
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: d99c09c4ac087152407fa8dc12894c216f9f43dc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830483"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716177"
 ---
 # <a name="blocking-application-execution-by-ending-an-async-operation"></a>Blokowanie wykonywania aplikacji poprzez zakończenie operacji asynchronicznej
+
 Aplikacje, które nie mogą kontynuować wykonywania innych zadań podczas oczekiwania na wyniki operacji asynchronicznej, muszą być blokowane do momentu zakończenia operacji. Użyj jednej z następujących opcji, aby zablokować główny wątek aplikacji podczas oczekiwania na ukończenie operacji asynchronicznej:  
   
 - Wywołaj metodę **kończenia**_operacji operacji_ asynchronicznej. Ta metoda jest przedstawiona w tym temacie.  
@@ -27,6 +28,7 @@ Aplikacje, które nie mogą kontynuować wykonywania innych zadań podczas oczek
  Aplikacje korzystające z **metody End**_OperationName_ do blokowania do momentu ukończenia operacji asynchronicznej zwykle wywołują **metodę Begin**_OperationName_ , wykonują wszelkie zadania, które można wykonać bez wyników operacji, a następnie Wywołaj **zakończenie**_operacji_.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu demonstruje użycie metod asynchronicznych w <xref:System.Net.Dns> klasie w celu pobrania informacji o systemie nazw domen dla komputera określonego przez użytkownika. Należy zauważyć, że `null` ( `Nothing` w Visual Basic) jest przekazane do <xref:System.Net.Dns.BeginGetHostByName%2A> `requestCallback` parametrów i, `stateObject` ponieważ te argumenty nie są wymagane podczas korzystania z tego podejścia.  
   
  [!code-csharp[AsyncDesignPattern#1](../../../samples/snippets/csharp/VS_Snippets_CLR/AsyncDesignPattern/CS/Async_EndBlock.cs#1)]

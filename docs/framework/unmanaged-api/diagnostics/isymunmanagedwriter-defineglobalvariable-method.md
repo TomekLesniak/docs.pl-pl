@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 843c904a-8176-4d8f-bd47-b4d4c29f4c5c
 topic_type:
 - apiref
-ms.openlocfilehash: 674089f8a1076342a2479c64e253b7dda53ade87
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: bc389b7247a6b1d6ce16cb3cf350f1672213b2e2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615205"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716424"
 ---
 # <a name="isymunmanagedwriterdefineglobalvariable-method"></a>ISymUnmanagedWriter::DefineGlobalVariable — Metoda
+
 Definiuje pojedynczą zmienną globalną.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,6 +41,7 @@ HRESULT DefineGlobalVariable(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `name`  
  podczas Wskaźnik do elementu `WCHAR` , który definiuje globalną nazwę zmiennej.  
   
@@ -47,7 +49,7 @@ HRESULT DefineGlobalVariable(
  podczas Atrybuty zmiennej globalnej.  
   
  `cSig`  
- podczas `ULONG32`Wskazuje rozmiar bufora (w znakach) `signature` .  
+ podczas `ULONG32` Wskazuje rozmiar bufora (w znakach) `signature` .  
   
  `signature`  
  podczas Podpis zmiennej globalnej.  
@@ -65,9 +67,11 @@ HRESULT DefineGlobalVariable(
  podczas Trzeci adres dla specyfikacji parametru.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

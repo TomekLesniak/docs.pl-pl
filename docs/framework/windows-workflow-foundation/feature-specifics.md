@@ -3,12 +3,12 @@ title: Charakterystyka funkcji programu Windows Workflow Foundation
 description: W tym artykule opisano nowe funkcje, które .NET Framework 4 dodaje do Windows Workflow Foundation i scenariuszy, w których funkcje mogą być przydatne.
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: ae15f3ed536967cb15d1a5913f9ca1eab8a510d9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6c508e184aee0e4aa0634d128de94ac45ef78f45
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554609"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716294"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Charakterystyka funkcji programu Windows Workflow Foundation
 
@@ -66,7 +66,7 @@ Korelacja jest jedną z dwóch rzeczy:
 
 - Aby rozpocząć pracę z korelacją, Utwórz nowy projekt w programie Visual Studio. Utwórz zmienną typu <xref:System.ServiceModel.Activities.CorrelationHandle> .
 
-- Przykładem korelacji używanym do grupowania komunikatów jest korelacja typu żądanie-odpowiedź, która powoduje grupowanie komunikatów.
+- Przykładem korelacji używanym do grupowania komunikatów jest korelacja Request-Reply, która grupuje komunikaty.
 
   - Na <xref:System.ServiceModel.Activities.Receive> działanie, kliknij <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> Właściwość i Dodaj <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> przy użyciu obiekt CorrelationHandle utworzonych w pierwszym kroku powyżej.
 
@@ -114,7 +114,7 @@ Schemat konfiguracji programu WCF jest skomplikowany i oferuje użytkownikom wie
 
 ## <a name="data-contract-resolver"></a>Program rozpoznawania kontraktu danych
 
-W programie .NET 3,5 istniały pewne ograniczenia dotyczące projektowania znanych typów:
+W .NET Framework 3,5 istniały pewne ograniczenia dotyczące projektowania znanych typów:
 
 - Dynamiczne dodawanie znanych typów podczas serializacji lub deserializacji nie było możliwe.
 
@@ -122,7 +122,7 @@ W programie .NET 3,5 istniały pewne ograniczenia dotyczące projektowania znany
 
 - Użytkownicy mogą określić, jakie dane xsi: Type mają być wyświetlane w sieci, na przykład, aby rozmiar wystąpienia serializacji w sieci był mniejszy.
 
-[Obiektu DataContractResolver](../wcf/samples/datacontractresolver.md) rozwiązuje te problemy w programie .NET 4,5.
+[Obiektu DataContractResolver](../wcf/samples/datacontractresolver.md) rozwiązuje te problemy w .NET Framework 4,5.
 
 ### <a name="getting-started"></a>Wprowadzenie
 
@@ -144,7 +144,7 @@ W programie .NET 3,5 istniały pewne ograniczenia dotyczące projektowania znany
 
 ## <a name="flowchart"></a>Schemat blokowy
 
-Schemat blokowy jest dobrze znanym modelem, aby wizualnie reprezentować problemy z domeną. Jest to nowy styl przepływu sterowania wprowadzany w programie .NET 4. Podstawowa charakterystyka schematu blokowego polega na tym, że w danym momencie wykonywane jest tylko jedno działanie. Schematy blokowe mogą wyznaczać pętle i alternatywne wyniki, ale nie mogą natywnie wyrażać jednoczesnego wykonywania wielu węzłów.
+Schemat blokowy jest dobrze znanym modelem, aby wizualnie reprezentować problemy z domeną. Jest to nowy styl przepływu sterowania wprowadzany w .NET Framework 4. Podstawowa charakterystyka schematu blokowego polega na tym, że w danym momencie wykonywane jest tylko jedno działanie. Schematy blokowe mogą wyznaczać pętle i alternatywne wyniki, ale nie mogą natywnie wyrażać jednoczesnego wykonywania wielu węzłów.
 
 ### <a name="getting-started"></a>Wprowadzenie
 
@@ -264,7 +264,7 @@ Użytkownik musi zostać poproszony o podanie danych wejściowych. W normalnych 
 
 ## <a name="wcf-routing-service"></a>Usługa routingu WCF
 
-Usługa routingu jest przeznaczona do ogólnego routera programowego, który umożliwia kontrolowanie sposobu przepływu komunikatów WCF między klientami i usługami. Usługa routingu umożliwia rozdzielenie klientów od usług, co zapewnia znacznie większą swobodę w zakresie konfiguracji, które mogą być obsługiwane, oraz elastyczność, którą należy wykonać, biorąc pod uwagę sposób hostowania usług. W programie .NET 3,5 klienci i usługi były ściśle sprzężone; Klient musiał poznać wszystkie usługi, których potrzebuje, aby komunikować się z nimi i gdzie się znajdują. Ponadto program WCF w .NET Framework 3,5 miał następujące ograniczenia:
+Usługa routingu jest przeznaczona do ogólnego routera programowego, który umożliwia kontrolowanie sposobu przepływu komunikatów WCF między klientami i usługami. Usługa routingu umożliwia rozdzielenie klientów od usług, co zapewnia znacznie większą swobodę w zakresie konfiguracji, które mogą być obsługiwane, oraz elastyczność, którą należy wykonać, biorąc pod uwagę sposób hostowania usług. W .NET Framework 3,5 klienci i usługi były ściśle sprzężone; Klient musiał poznać wszystkie usługi, których potrzebuje, aby komunikować się z nimi i gdzie się znajdują. Ponadto program WCF w .NET Framework 3,5 miał następujące ograniczenia:
 
 - Obsługa błędów była złożona, ponieważ ta logika musiała być trwale zakodowana w kliencie.
 
@@ -308,7 +308,7 @@ Usługa routingu jest przydatna w następujących scenariuszach:
 
 Odnajdywanie WCF to technologia platformy, która umożliwia włączenie mechanizmu odnajdywania do infrastruktury aplikacji. Można go użyć, aby umożliwić odnajdywanie usługi i skonfigurować klientów do wyszukiwania usług. Klienci nie muszą już być zakodowani przy użyciu punktu końcowego, co sprawia, że aplikacja jest bardziej niezawodna i odporna na uszkodzenia. Odnajdywanie to idealna platforma do tworzenia funkcji automatycznej konfiguracji w aplikacji.
 
-Produkt jest oparty na standardzie WS-Discovery. Jest ona zaprojektowana tak, aby była interoperacyjna, rozszerzalna i ogólna. Produkt obsługuje dwa tryby działania:
+Produkt jest oparty na bazie WS-Discovery Standard. Jest ona zaprojektowana tak, aby była interoperacyjna, rozszerzalna i ogólna. Produkt obsługuje dwa tryby działania:
 
 1. Zarządzane: w przypadku, gdy w sieci istnieje jednostka z wiedzą na temat istniejących usług, klienci wysyłają do nich zapytanie bezpośrednio w celu uzyskania informacji. Jest to analogiczne do Active Directory.
 

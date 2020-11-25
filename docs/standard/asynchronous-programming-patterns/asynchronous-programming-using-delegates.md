@@ -11,12 +11,12 @@ helpviewer_keywords:
 - delegates [.NET], asynchronous
 - synchronous calling in asynchronous manner
 ms.assetid: 38a345ca-6963-4436-9608-5c9defef9c64
-ms.openlocfilehash: da468d3b16ee504317c7de2e216a9be2073d1cf3
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 01cdf5acf8f64472c218f35a0b8095aebf8f4571
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830509"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716268"
 ---
 # <a name="asynchronous-programming-using-delegates"></a>Programowanie asynchroniczne przy użyciu delegatów
 
@@ -26,10 +26,12 @@ Delegaty umożliwiają wywoływanie metody synchronicznej w sposób asynchronicz
 > Kompilatory powinny emitować klasy delegatów `Invoke` z `BeginInvoke` `EndInvoke` metodami, i przy użyciu podpisu delegata określonego przez użytkownika. `BeginInvoke`Metody i `EndInvoke` powinny być dekoracyjne. Ponieważ te metody są oznaczone jako natywne, środowisko CLR automatycznie udostępnia implementację w czasie ładowania klasy. Moduł ładujący gwarantuje, że nie są one zastępowane.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Wywołanie metod synchronicznych w sposób asynchroniczny](calling-synchronous-methods-asynchronously.md)  
  W tym artykule omówiono użycie delegatów do wykonywania wywołań asynchronicznych metod zwykłych i przedstawiono proste przykłady kodu, które pokazują cztery sposoby oczekiwania na zwrócenie wywołania asynchronicznego.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Asynchroniczny wzorzec oparty na zdarzeniach (EAP)](event-based-asynchronous-pattern-eap.md)  
  Opisuje programowanie asynchroniczne w programie .NET.  
   

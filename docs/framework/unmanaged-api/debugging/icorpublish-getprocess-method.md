@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c5143805-2eb7-45b8-85ed-c8fb34df1084
 topic_type:
 - apiref
-ms.openlocfilehash: 2cd2238ac67713564922be440ce64a2ebc4bbf44
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: a45f613b7547e2e80abdbd8ac85cb0b2b6a499e5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396337"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95716892"
 ---
 # <a name="icorpublishgetprocess-method"></a>ICorPublish::GetProcess — Metoda
+
 Pobiera wystąpienie [ICorPublishProcess](icorpublishprocess-interface.md) , które reprezentuje proces o określonym identyfikatorze.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT GetProcess(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pid`  
  podczas Identyfikator procesu.  
   
@@ -42,9 +44,11 @@ HRESULT GetProcess(
  określoną Wskaźnik do adresu `ICorPublishProcess` wystąpienia, które reprezentuje proces.  
   
 ## <a name="remarks"></a>Uwagi  
- `GetProcess`Niepowodzenie, jeśli proces nie istnieje lub nie jest procesem zarządzanym, który może być debugowany przez bieżącego użytkownika.  
+
+ `GetProcess` Niepowodzenie, jeśli proces nie istnieje lub nie jest procesem zarządzanym, który może być debugowany przez bieżącego użytkownika.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorPub. idl, CorPub. h  

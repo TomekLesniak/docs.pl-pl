@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f7ce7e8c-0a3e-4587-a180-063e2b85940e
 topic_type:
 - apiref
-ms.openlocfilehash: a5a86df3ac1f50ca624490ad80a6fed903433436
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: d3748621474373fee8248496d48414ff67c699d6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762373"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715700"
 ---
 # <a name="icorruntimehostcloseenum-method"></a>ICorRuntimeHost::CloseEnum — Metoda
+
 Resetuje moduł wyliczający domeny z powrotem do początku listy domen.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT CloseEnum (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `hEnum`  
  podczas Moduł wyliczający do zresetowania.  
   
@@ -47,15 +49,16 @@ HRESULT CloseEnum (
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:** 1,0, 1,1  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [CorBindToRuntimeEx, funkcja](corbindtoruntimeex-function.md)
-- [ICorRuntimeHost, interfejs](icorruntimehost-interface.md)
+- [CorBindToRuntimeEx — Funkcja](corbindtoruntimeex-function.md)
+- [ICorRuntimeHost — Interfejs](icorruntimehost-interface.md)

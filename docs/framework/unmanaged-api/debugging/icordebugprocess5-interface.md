@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 30a39d79-1f10-4328-9c5d-094ed824e2ba
 topic_type:
 - apiref
-ms.openlocfilehash: 1953a3e0492e4cfcdaea761b68ea22cf5a4a8ed7
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: cef69ac7e3572b67dd676ce8408e4210d93accf0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205519"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717581"
 ---
 # <a name="icordebugprocess5-interface"></a>ICorDebugProcess5 — Interfejs
+
 Rozszerza interfejs ICorDebugProcess w celu obsługi dostępu do sterty zarządzanej w celu zapewnienia informacji na temat wyrzucania elementów bezużytecznych obiektów zarządzanych oraz do określenia, czy debuger ładuje obrazy z lokalnej pamięci podręcznej obrazów natywnych aplikacji.  
   
 ## <a name="methods"></a>Metody  
@@ -42,12 +43,14 @@ Rozszerza interfejs ICorDebugProcess w celu obsługi dostępu do sterty zarządz
 |[GetTypeLayout, metoda](icordebugprocess5-gettypelayout-method.md)|Pobiera informacje o układzie obiektu w pamięci na podstawie jego identyfikatora typu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten interfejs logicznie rozszerza interfejsy ICorDebugProcess, ICorDebugProcess2 i [ICorDebugProcess3](icordebugprocess3-interface.md) .  
   
 > [!NOTE]
 > Ten interfejs nie obsługuje wywoływania zdalnego, z innego komputera lub z innego procesu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -56,7 +59,7 @@ Rozszerza interfejs ICorDebugProcess w celu obsługi dostępu do sterty zarządz
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)
 - [Debugowanie](index.md)

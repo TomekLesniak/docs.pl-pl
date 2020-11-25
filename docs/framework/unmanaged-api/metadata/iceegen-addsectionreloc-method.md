@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b500a260-1d57-4953-95e1-c27063f7c8da
 topic_type:
 - apiref
-ms.openlocfilehash: 2f66d34fcfdd8c61dcc92817ec1a928ac5b603fc
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 87a5224247c2d94613de482fbaa34bf978198bf0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008901"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715540"
 ---
 # <a name="iceegenaddsectionreloc-method"></a>ICeeGen::AddSectionReloc — Metoda
+
 Dodaje instrukcję. reloc do bazy kodu.  
   
  Ta metoda jest przestarzała i nie powinna być używana.  
@@ -39,6 +40,7 @@ HRESULT AddSectionReloc (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `section`  
  podczas Sekcja kodu w pamięci, do której ma zostać dodana Instrukcja. reloc.  
   
@@ -52,14 +54,15 @@ HRESULT AddSectionReloc (
  podczas Jedna z wartości [CeeSectionRelocType —](ceesectionreloctype-enumeration.md) , wskazując rodzaj instrukcji. reloc, która ma zostać dodana.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICeeGen — Interfejs](iceegen-interface.md)

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b3cbb47c-457f-4083-8895-49562ca99ab8
 topic_type:
 - apiref
-ms.openlocfilehash: a43d5e15c02a97ff10a6a5afd439cadebb6b33d2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 520a24ced6e897d926ce68ef5973ab7083731b9d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73109213"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95717633"
 ---
 # <a name="assembly_info-structure"></a>ASSEMBLY_INFO — Struktura
+
 Zawiera informacje dotyczące zestawu, który jest zarejestrowany w globalnej pamięci podręcznej zestawów.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,22 +39,23 @@ typedef struct _ASSEMBLY_INFO {
   
 ## <a name="members"></a>Elementy członkowskie  
   
-|Element członkowski|Opis|  
+|Członek|Opis|  
 |------------|-----------------|  
 |`cbAssemblyInfo`|Rozmiar (w bajtach) struktury. To pole jest zarezerwowane do użytku w przyszłości.|  
-|`dwAssemblyFlags`|Flagi wskazujące szczegóły instalacji zestawu. Obsługiwane są następujące wartości:<br /><br /> -Wartość ASSEMBLYINFO_FLAG_INSTALLED, która wskazuje, że zestaw jest zainstalowany. Bieżąca wersja .NET Framework zawsze ustawia `dwAssemblyFlags` na tę wartość.<br />-Wartość ASSEMBLYINFO_FLAG_PAYLOADRESIDENT, która wskazuje, że zestaw jest rezydentem ładunku. Bieżąca wersja .NET Framework nigdy nie ustawia `dwAssemblyFlags` na tę wartość.|  
+|`dwAssemblyFlags`|Flagi wskazujące szczegóły instalacji zestawu. Obsługiwane są następujące wartości:<br /><br /> -Wartość ASSEMBLYINFO_FLAG_INSTALLED, która wskazuje, że zestaw jest zainstalowany. Bieżąca wersja .NET Framework zawsze jest ustawiana `dwAssemblyFlags` na tę wartość.<br />-Wartość ASSEMBLYINFO_FLAG_PAYLOADRESIDENT, która wskazuje, że zestaw jest rezydentem ładunku. Bieżąca wersja .NET Framework nigdy nie ustawia `dwAssemblyFlags` tej wartości.|  
 |`uliAssemblySizeInKB`|Łączny rozmiar (w kilobajtach) plików, które zawiera zestaw.|  
 |`pszCurrentAssemblyPathBuf`|Wskaźnik do buforu ciągu, który przechowuje bieżącą ścieżkę do pliku manifestu. Ścieżka musi kończyć się znakiem null.|  
 |`cchBuf`|Liczba znaków dwubajtowych, łącznie z terminatorem wartości null, który `pszCurrentAssemblyPathBuf` zawiera.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Łączenie — struktury](fusion-structures.md)
+- [Łączenie — Struktury](fusion-structures.md)
 - [Global Assembly Cache](../../app-domains/gac.md)
