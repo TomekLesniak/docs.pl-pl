@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c8f11b4-35d3-4c39-9bbd-58b896ba5ba6
 topic_type:
 - apiref
-ms.openlocfilehash: 878dba37728734a777d2f95226b60bfbe9aae16a
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 1e0cb52a6b9f03209256e5398415b4ec632fb5e5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805272"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705511"
 ---
 # <a name="idebuggerthreadcontrolstartblockingfordebugger-method"></a>IDebuggerThreadControl::StartBlockingForDebugger — Metoda
+
 Powiadamia hosta o konieczności rozpoczęcia blokowania wszystkich wątków przez usługi debugowania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,21 +35,24 @@ HRESULT StartBlockingForDebugger (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `dwUnused`  
  podczas Zarezerwowane do użytku w przyszłości.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `StartBlockingForDebugger`Metodę można wywołać w wątku środowiska uruchomieniowego.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [IDebuggerThreadControl, interfejs](idebuggerthreadcontrol-interface.md)
+- [IDebuggerThreadControl — Interfejs](idebuggerthreadcontrol-interface.md)

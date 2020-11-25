@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6b1fcd11-c7fb-4be2-8910-abc862d4caf4
 topic_type:
 - apiref
-ms.openlocfilehash: 649a9159f99afa64615c40c23a98a80318ae0d7f
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: e9c9674bfe0e5a8006a4881e103b633ee8f2af1d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009174"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706058"
 ---
 # <a name="corserializationtype-enumeration"></a>CorSerializationType — Wyliczenie
+
 Określa, jak obiekt jest serializowany przez środowisko uruchomieniowe języka wspólnego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -79,12 +80,13 @@ typedef enum CorSerializationType {
 |`SERIALIZATION_TYPE_ENUM`|Obiekt jest serializowany jako Wyliczenie.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)

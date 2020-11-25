@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ed4c6458-0435-44fc-8e78-8ba00be362f2
 topic_type:
 - apiref
-ms.openlocfilehash: 972a981188c36236b81f3da17c09abeeb1e32857
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 493793c45e7d13511e4c36fe76e472a856b50d72
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212194"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705751"
 ---
 # <a name="icordebuggenericvaluesetvalue-method"></a>ICorDebugGenericValue::SetValue — Metoda
+
 Kopiuje nową wartość z określonego buforu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT SetValue (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pFrom`  
  podczas Wskaźnik do buforu, z którego ma zostać skopiowana wartość.  
   
 ## <a name="remarks"></a>Uwagi  
+
  W przypadku typów referencyjnych wartością jest odwołanie, a nie zawartość.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

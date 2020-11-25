@@ -11,14 +11,15 @@ helpviewer_keywords:
 - names [.NET Framework]
 - format naming guidelines [.NET Framework]
 ms.assetid: fc076d66-9b5f-42d3-aa65-61d970c794a3
-ms.openlocfilehash: e82b6941d3ea0243f4ae16bc9d42ea8d1f1fccfb
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: de68eeb287b13bc9f55230243f23cd03508f2561
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820881"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706427"
 ---
 # <a name="naming-guidelines"></a>Wskazówki dotyczące nazewnictwa
+
 Zgodnie ze spójnym zestawem konwencji nazewnictwa w rozwoju struktury może być istotnym udziałem w zakresie użyteczności platformy. Pozwala ona na użycie platformy przez wielu deweloperów w oddzielnym projekcie. Poza spójnością formy nazwy elementów struktury muszą być łatwo zrozumiałe i muszą przekazywać funkcję każdego elementu.  
   
  Celem tego rozdziału jest zapewnienie spójnego zestawu konwencji nazewnictwa, które są wynikiem nazw, które sprawiają, że deweloperzy.  
@@ -26,6 +27,7 @@ Zgodnie ze spójnym zestawem konwencji nazewnictwa w rozwoju struktury może by�
  Chociaż stosowanie tych konwencji nazewnictwa jako ogólnych wytycznych dotyczących programowania kodu spowoduje bardziej spójne nazewnictwo w całym kodzie, wymagane jest tylko ich zastosowanie do interfejsów API, które są publicznie uwidocznione (typy publiczne lub chronione oraz członkowie i jawnie zaimplementowane interfejsy).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Konwencje kapitalizacji](capitalization-conventions.md)  
  [Ogólne konwencje nazewnictwa](general-naming-conventions.md)  
  [Nazwy zestawów i bibliotek DLL](names-of-assemblies-and-dlls.md)  

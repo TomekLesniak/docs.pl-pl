@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c9937666-8e18-484d-9fe0-b9ac95199530
 topic_type:
 - apiref
-ms.openlocfilehash: 76cab0b8b5f16f24c62e31be2707c95c7e557034
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 68f548705213da7d715ae569116abae0cd24129d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76777644"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705660"
 ---
 # <a name="icordebugguidtotypeenumnext-method"></a>ICorDebugGuidToTypeEnum::Next — Metoda
+
 Pobiera określoną liczbę wystąpień [CorDebugGuidToTypeMapping —](cordebugguidtotypemapping-structure.md) , które MAPUJĄ identyfikatory GUID na informacje o typie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT Next(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `celt`  
  podczas Liczba obiektów mapowania GUID-to-Type do pobrania.  
   
@@ -43,20 +45,21 @@ HRESULT Next(
  określoną Tablica wskaźników, z których każdy wskazuje obiekt [CorDebugGuidToTypeMapping —](cordebugguidtotypemapping-structure.md) , który MAPUJE identyfikator GUID środowisko wykonawcze systemu Windows do odpowiadającego mu obiektu ICorDebugType.  
   
  `pceltFetched`  
- określoną Wskaźnik do liczby obiektów [CorDebugGuidToTypeMapping —](cordebugguidtotypemapping-structure.md) faktycznie zwróconych w `values`.  
+ określoną Wskaźnik do liczby obiektów [CorDebugGuidToTypeMapping —](cordebugguidtotypemapping-structure.md) faktycznie zwróconych w elemencie `values` .  
   
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** środowisko wykonawcze systemu Windows  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
   
  **Biblioteka:** CorGuids. lib  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorDebugGuidToTypeEnum, interfejs](icordebugguidtotypeenum-interface.md)
-- [Debugowanie, interfejsy](debugging-interfaces.md)
+- [ICorDebugGuidToTypeEnum — Interfejs](icordebugguidtotypeenum-interface.md)
+- [Debugowanie — Interfejsy](debugging-interfaces.md)

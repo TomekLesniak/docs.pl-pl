@@ -9,14 +9,15 @@ helpviewer_keywords:
 - members [.NET Framework], type
 - class library design guidelines [.NET Framework], nested types
 ms.assetid: 12feb7f0-b793-4d96-b090-42d6473bab8c
-ms.openlocfilehash: 1ac2f9f5e10149027b79cd67e5077ec6bc17f9c9
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: bc0aee32b5cc1d40afdd9cce8260d5b5341a687d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820816"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706401"
 ---
 # <a name="nested-types"></a>Zagnieżdżone typy
+
 Typ zagnieżdżony jest typem zdefiniowanym w zakresie innego typu, który jest nazywany typem otaczającym. Typ zagnieżdżony ma dostęp do wszystkich elementów członkowskich jego typu otaczającego. Na przykład ma dostęp do prywatnych pól zdefiniowanych w typie otaczającym i do chronionych pól zdefiniowanych we wszystkich elementów nadrzędnych typu otaczającego.
 
  Ogólnie rzecz biorąc, zagnieżdżone typy powinny być używane oszczędnie. Istnieje kilka przyczyn tego. Niektórzy deweloperzy nie są w pełni zaznajomieni z koncepcją. Tacy deweloperzy mogą na przykład mieć problemy z składnią deklarowania zmiennych typów zagnieżdżonych. Zagnieżdżone typy są również bardzo ściśle sprzężone z ich otaczającymi typami i nie są odpowiednie do typów ogólnego przeznaczenia.

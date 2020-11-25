@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6b791351-bcc5-4ddd-9cab-eff2f7dd5142
 topic_type:
 - apiref
-ms.openlocfilehash: 2d075820df534e08bdf4c2b75d36f6a60f979662
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 0f42020821ec71d1e59ae8097f22ee530e16a576
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894093"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706180"
 ---
 # <a name="icordebugchainenumnext-method"></a>ICorDebugChainEnum::Next — Metoda
+
 Pobiera określoną liczbę wystąpień ICorDebugChain z wyliczenia, rozpoczynając od bieżącego położenia.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT Next (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `celt`  
  podczas Liczba `ICorDebugChain` wystąpień do pobrania.  
   
@@ -44,9 +46,10 @@ HRESULT Next (
  określoną Tablica wskaźników, z których każdy wskazuje `ICorDebugChain` obiekt, który reprezentuje łańcuch.  
   
  `pceltFetched`  
- określoną Wskaźnik do liczby faktycznie zwróconych `ICorDebugChain` wystąpień. Ta wartość może być równa `celt` null, jeśli jest taka.  
+ określoną Wskaźnik do liczby `ICorDebugChain` faktycznie zwróconych wystąpień. Ta wartość może być równa null, jeśli `celt` jest taka.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

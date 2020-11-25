@@ -9,14 +9,15 @@ helpviewer_keywords:
 - namespaces [.NET Framework], names
 - names [.NET Framework], type names
 ms.assetid: a49058d2-0276-43a7-9502-04adddf857b2
-ms.openlocfilehash: e435e0281165b4a9f12bbccbeb10401b57375dcb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 561a6e4ed1abf82fc1412123a4558a63e7176b2f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290204"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706492"
 ---
 # <a name="names-of-namespaces"></a>Nazwy przestrzeni nazw
+
 Podobnie jak w przypadku innych wytycznych dotyczących nazewnictwa, celem podczas nazewnictwa przestrzeni nazw jest utworzenie wystarczającej przejrzystości dla programisty korzystającego z platformy, aby natychmiast znać zawartość przestrzeni nazw. Następujący szablon określa ogólną regułę nazewnictwa przestrzeni nazw:
 
  `<Company>.(<Product>|<Technology>)[.<Feature>][.<Subnamespace>]`
@@ -29,7 +30,7 @@ Podobnie jak w przypadku innych wytycznych dotyczących nazewnictwa, celem podcz
 
  ✔️ Użyj stabilnej, niezależnej od wersji nazwy produktu na drugim poziomie nazwy przestrzeni nazw.
 
- ❌NIE używaj hierarchii organizacyjnych jako podstawy nazw w hierarchiach przestrzeni nazw, ponieważ nazwy grup w firmach są ograniczone do krótkotrwałego życia. Organizuj hierarchię przestrzeni nazw wokół grup powiązanych technologii.
+ ❌ NIE używaj hierarchii organizacyjnych jako podstawy nazw w hierarchiach przestrzeni nazw, ponieważ nazwy grup w firmach są ograniczone do krótkotrwałego życia. Organizuj hierarchię przestrzeni nazw wokół grup powiązanych technologii.
 
  ✔️ używać PascalCasing i oddzielaj składniki przestrzeni nazw z okresami (np. `Microsoft.Office.PowerPoint` ). Jeśli Marka używa nietradycyjnej wielkości liter, należy postępować zgodnie z wielkością liter zdefiniowaną przez markę, nawet jeśli odbiega od normalnej wielkości liter przestrzeni nazw.
 
@@ -37,12 +38,13 @@ Podobnie jak w przypadku innych wytycznych dotyczących nazewnictwa, celem podcz
 
  Na przykład: użyj opcji `System.Collections` zamiast `System.Collection`. Jednak nazwy marki i akronimy są wyjątkami od tej reguły. Na przykład: użyj opcji `System.IO` zamiast `System.IOs`.
 
- ❌NIE należy używać tej samej nazwy dla przestrzeni nazw i typu w tej przestrzeni nazw.
+ ❌ NIE należy używać tej samej nazwy dla przestrzeni nazw i typu w tej przestrzeni nazw.
 
  Na przykład nie należy używać `Debug` jako nazwy przestrzeni nazw, a następnie dostarczać klasy o nazwie `Debug` w tej samej przestrzeni nazw. Kilka kompilatorów wymaga, aby te typy były w pełni kwalifikowane.
 
 ### <a name="namespaces-and-type-name-conflicts"></a>Konflikty nazw i nazw typów
- ❌Nie należy wprowadzać nazw typów ogólnych, takich jak `Element` , `Node` , `Log` i `Message` .
+
+ ❌ Nie należy wprowadzać nazw typów ogólnych, takich jak `Element` , `Node` , `Log` i `Message` .
 
  Istnieje bardzo wysokie prawdopodobieństwo, że spowoduje to powstanie konfliktów nazw typu w typowych scenariuszach. Należy zakwalifikować nazwy typów ogólnych ( `FormElement` , `XmlNode` ,, `EventLog` `SoapMessage` ).
 
@@ -54,7 +56,7 @@ Podobnie jak w przypadku innych wytycznych dotyczących nazewnictwa, celem podcz
 
      `System.Windows*` `System.Web.UI*`
 
-     ❌NIE należy dawać tej samej nazwy do typów w przestrzeniach nazw w ramach jednego modelu aplikacji.
+     ❌ NIE należy dawać tej samej nazwy do typów w przestrzeniach nazw w ramach jednego modelu aplikacji.
 
      Na przykład nie należy dodawać typu o nazwie `Page` do <xref:System.Web.UI.Adapters?displayProperty=nameWithType> przestrzeni nazw, ponieważ <xref:System.Web.UI?displayProperty=nameWithType> przestrzeń nazw zawiera już typ o nazwie `Page` .
 
@@ -66,7 +68,7 @@ Podobnie jak w przypadku innych wytycznych dotyczących nazewnictwa, celem podcz
 
      Podstawowe przestrzenie nazw obejmują wszystkie `System` przestrzenie nazw, z wyłączeniem przestrzeni nazw modeli aplikacji i przestrzeni nazw infrastruktury. Podstawowe przestrzenie nazw obejmują między innymi, `System` ,, `System.IO` `System.Xml` , i `System.Net` .
 
-     ❌NIE należy przyznawać nazw typów, które mogłyby powodować konflikt z dowolnym typem w podstawowych obszarach nazw.
+     ❌ NIE należy przyznawać nazw typów, które mogłyby powodować konflikt z dowolnym typem w podstawowych obszarach nazw.
 
      Na przykład nigdy nie używaj `Stream` jako nazwy typu. Wystąpił konflikt z <xref:System.IO.Stream?displayProperty=nameWithType> , bardzo często używanym typem.
 
@@ -74,9 +76,9 @@ Podobnie jak w przypadku innych wytycznych dotyczących nazewnictwa, celem podcz
 
      Ta kategoria zawiera wszystkie przestrzenie nazw z tymi samymi dwoma węzłami przestrzeni nazw `(<Company>.<Technology>*` , takimi jak `Microsoft.Build.Utilities` i `Microsoft.Build.Tasks` . Ważne jest, aby typy należące do jednej technologii nie powodowały konfliktów ze sobą.
 
-     ❌Nie przypisuj nazw typów, które mogłyby powodować konflikt z innymi typami w ramach jednej technologii.
+     ❌ Nie przypisuj nazw typów, które mogłyby powodować konflikt z innymi typami w ramach jednej technologii.
 
-     ❌NIE wprowadzaj konfliktów nazw typów między typami w przestrzeni nazw technologii i przestrzeni nazw modelu aplikacji (chyba że technologia nie jest przeznaczona do użycia z modelem aplikacji).
+     ❌ NIE wprowadzaj konfliktów nazw typów między typami w przestrzeni nazw technologii i przestrzeni nazw modelu aplikacji (chyba że technologia nie jest przeznaczona do użycia z modelem aplikacji).
 
  *Fragmenty © 2005, 2009 Microsoft Corporation. Wszelkie prawa zastrzeżone.*
 

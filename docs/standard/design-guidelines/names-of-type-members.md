@@ -12,17 +12,19 @@ helpviewer_keywords:
 - names [.NET Framework], type members
 - members [.NET Framework], type
 ms.assetid: af5a0903-36af-4c2a-b848-cf959affeaa5
-ms.openlocfilehash: 85f3137b4a8d75de92b12d6535415743395db890
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 409e881198a359fa28356e22ea73d5b724742a0d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94820916"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706479"
 ---
 # <a name="names-of-type-members"></a>Nazwy składowych typu
+
 Typy składowe są elementami członkowskimi: metodami, właściwościami, zdarzeniami, konstruktorami i polami. W poniższych sekcjach opisano wskazówki dotyczące nazewnictwa elementów członkowskich typu.
 
 ## <a name="names-of-methods"></a>Nazwy metod
+
  Ponieważ metody są metodą podjęcia działania, wskazówki dotyczące projektowania wymagają, aby nazwy metod były czasownikami lub wyrażeniami czasownikowymi. Poniższe wytyczne umożliwiają również odróżnianie nazw metod od nazw właściwości i typów, które są frazami rzeczownikmi lub przymiotnikami.
 
  ✔️ NALEŻY nadać metodom nazwy, które są czasownikami lub czasownikami zleceń.
@@ -36,6 +38,7 @@ public class String {
 ```
 
 ## <a name="names-of-properties"></a>Nazwy właściwości
+
  W przeciwieństwie do innych elementów członkowskich, właściwości powinny zawierać frazę rzeczowników lub nazwy przymiotników. Oznacza to, że Właściwość odwołuje się do danych, a nazwa właściwości odzwierciedla to. PascalCasing jest zawsze używana dla nazw właściwości.
 
  ✔️ Właściwości nazwy przy użyciu rzeczownika, frazy rzeczowników lub przymiotniku.
@@ -62,6 +65,7 @@ public class Control {
 ```
 
 ## <a name="names-of-events"></a>Nazwy zdarzeń
+
  Zdarzenia zawsze odwołują się do niektórych akcji, takich, które są wykonywane lub takie, które wystąpiły. W związku z tym, podobnie jak w przypadku metod, zdarzenia są nazwane przy użyciu czasowników, a w celu wskazania czasu, gdy zdarzenie jest zgłaszane, używana jest wartość zlecenia.
 
  ✔️ NALEŻY nazwać zdarzenia za pomocą czasownika lub wyrażenia orzeczenia.
@@ -85,6 +89,7 @@ public class Control {
  ✔️ NALEŻY nazwać klasy argumentów zdarzeń z sufiksem "EventArgs".
 
 ## <a name="names-of-fields"></a>Nazwy pól
+
  Wskazówki dotyczące nazewnictwa pól mają zastosowanie do statycznych pól publicznych i chronionych. Pola wewnętrzne i prywatne nie są objęte wskazówkami, a pola Public lub Protected instance są niedozwolone w [wytycznych dotyczących projektowania elementu członkowskiego](member.md).
 
  ✔️ używać PascalCasing w nazwach pól.

@@ -14,19 +14,21 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - COM interop, applying attributes
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
-ms.openlocfilehash: 7b9e557e36d2ff6aa978eb28d3c82764ffb1980a
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 38632c5a1f462c3a7b537978fde81424916746da
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93188682"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706297"
 ---
 # <a name="applying-interop-attributes"></a>Stosowanie atrybutów międzyoperacyjności
+
 <xref:System.Runtime.InteropServices>Przestrzeń nazw zawiera trzy kategorie atrybutów specyficznych dla współdziałania: te stosowane w czasie projektowania, które są stosowane przez narzędzia i interfejsy API międzyoperacyjności modelu COM w procesie konwersji i są stosowane przez użytkownika lub międzyoperacyjność modelu com.  
   
  Jeśli nie znasz zadania dotyczącego stosowania atrybutów do kodu zarządzanego, zobacz [Rozszerzanie metadanych przy użyciu atrybutów](../attributes/index.md). Podobnie jak w przypadku innych atrybutów niestandardowych, można zastosować atrybuty dotyczące międzyoperacyjności do typów, metod, właściwości, parametrów, pól i innych elementów członkowskich.  
   
 ## <a name="design-time-attributes"></a>Atrybuty Design-Time  
+
  Można dostosować wynik procesu konwersji wykonywanego przez narzędzia i interfejsy API międzyoperacyjności modelu COM przy użyciu atrybutów czasu projektowania. W poniższej tabeli opisano atrybuty, które można zastosować do zarządzanego kodu źródłowego. Narzędzia międzyoperacyjności modelu COM mogą również zastosować atrybuty opisane w tej tabeli.  
   
 |Atrybut|Opis|  
@@ -38,11 +40,11 @@ ms.locfileid: "93188682"
 |<xref:System.Runtime.InteropServices.ComRegisterFunctionAttribute>|Wskazuje, że metoda powinna być wywoływana, gdy zestaw jest zarejestrowany do użycia z modelu COM, dzięki czemu kod może być wykonywany podczas procesu rejestracji.|  
 |<xref:System.Runtime.InteropServices.ComSourceInterfacesAttribute>|Identyfikuje interfejsy, które są źródła zdarzeń dla klasy.<br /><br /> Narzędzia międzyoperacyjności modelu COM mogą zastosować ten atrybut.|  
 |<xref:System.Runtime.InteropServices.ComUnregisterFunctionAttribute>|Wskazuje, że metoda powinna być wywoływana, gdy zestaw jest wyrejestrowany z modelu COM, dzięki czemu kod zapisany przez użytkownika może być wykonywany podczas procesu.|  
-|<xref:System.Runtime.InteropServices.ComVisibleAttribute>|Renderuje typy niewidoczne do modelu COM, gdy wartość atrybutu jest równa **false** . Ten atrybut może być stosowany do pojedynczego typu lub do całego zestawu, aby kontrolować widoczność modelu COM. Domyślnie widoczne są wszystkie typy zarządzane, publiczne. Ten atrybut nie jest wymagany, aby były widoczne.|  
+|<xref:System.Runtime.InteropServices.ComVisibleAttribute>|Renderuje typy niewidoczne do modelu COM, gdy wartość atrybutu jest równa **false**. Ten atrybut może być stosowany do pojedynczego typu lub do całego zestawu, aby kontrolować widoczność modelu COM. Domyślnie widoczne są wszystkie typy zarządzane, publiczne. Ten atrybut nie jest wymagany, aby były widoczne.|  
 |<xref:System.Runtime.InteropServices.DispIdAttribute>|Określa identyfikator wysyłania COM (DISPID) metody lub pola. Ten atrybut zawiera identyfikator DISPID dla metody, pola lub właściwości, która opisuje.<br /><br /> Narzędzia międzyoperacyjności modelu COM mogą zastosować ten atrybut.|
 |<xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute>|Wskazuje domyślny interfejs dla klasy COM wdrożony w środowisku .NET.<br /><br /> Narzędzia międzyoperacyjności modelu COM mogą zastosować ten atrybut.|
-|<xref:System.Runtime.InteropServices.FieldOffsetAttribute>|Wskazuje fizyczną pozycję każdego pola w klasie, gdy jest używany z **StructLayoutAttribute** , a **LayoutKind** jest ustawiona na wartość explicit.|  
-|<xref:System.Runtime.InteropServices.GuidAttribute>|Określa unikatowy identyfikator globalny (GUID) klasy, interfejsu lub całej biblioteki typów. Ciąg przesłany do atrybutu musi być formatem, który jest akceptowalnym argumentem konstruktora dla typu **System. GUID** .<br /><br /> Narzędzia międzyoperacyjności modelu COM mogą zastosować ten atrybut.|  
+|<xref:System.Runtime.InteropServices.FieldOffsetAttribute>|Wskazuje fizyczną pozycję każdego pola w klasie, gdy jest używany z **StructLayoutAttribute**, a **LayoutKind** jest ustawiona na wartość explicit.|  
+|<xref:System.Runtime.InteropServices.GuidAttribute>|Określa unikatowy identyfikator globalny (GUID) klasy, interfejsu lub całej biblioteki typów. Ciąg przesłany do atrybutu musi być formatem, który jest akceptowalnym argumentem konstruktora dla typu **System. GUID**.<br /><br /> Narzędzia międzyoperacyjności modelu COM mogą zastosować ten atrybut.|  
 |<xref:System.Runtime.InteropServices.IDispatchImplAttribute>|Wskazuje, która implementacja interfejsu **IDispatch** używa środowiska uruchomieniowego języka wspólnego podczas udostępniania podwójnych interfejsów i dispinterfaces do modelu com.|  
 |<xref:System.Runtime.InteropServices.InAttribute>|Wskazuje, że dane powinny być przekazywane do obiektu wywołującego. Może służyć do atrybutów parametrów.|  
 |<xref:System.Runtime.InteropServices.InterfaceTypeAttribute>|Steruje sposobem ujawniania interfejsu zarządzanego klientom modelu COM (tylko dla podwójnych elementów IUnknown lub IDispatch).<br /><br /> Narzędzia międzyoperacyjności modelu COM mogą zastosować ten atrybut.|  
@@ -55,6 +57,7 @@ ms.locfileid: "93188682"
 |<xref:System.Runtime.InteropServices.StructLayoutAttribute>|Kontroluje układ fizyczny pól klasy.<br /><br /> Narzędzia międzyoperacyjności modelu COM mogą zastosować ten atrybut.|  
   
 ## <a name="conversion-tool-attributes"></a>Atrybuty Conversion-Tool  
+
  W poniższej tabeli opisano atrybuty stosowane przez narzędzia modelu COM Interop w procesie konwersji. Te atrybuty nie są stosowane w czasie projektowania.  
   
 |Atrybut|Opis|  
@@ -67,7 +70,7 @@ ms.locfileid: "93188682"
 |<xref:System.Runtime.InteropServices.TypeLibTypeAttribute>|Zawiera **TYPEFLAGS** , które zostały pierwotnie zaimportowane dla tego typu z biblioteki typów com.|  
 |<xref:System.Runtime.InteropServices.TypeLibVarAttribute>|Zawiera **VARFLAGS** , które zostały pierwotnie zaimportowane dla tej zmiennej z biblioteki typów com.|  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Runtime.InteropServices>
 - [Udostępnianie składników .NET Framework modelowi COM](../../framework/interop/exposing-dotnet-components-to-com.md)
