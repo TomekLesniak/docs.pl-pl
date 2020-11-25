@@ -9,14 +9,15 @@ helpviewer_keywords:
 - post-events
 - signatures, event handling
 ms.assetid: 67b3c6e2-6a8f-480d-a78f-ebeeaca1b95a
-ms.openlocfilehash: eee4b1a9e72c167b9b1e48a73dbb3f0528744bdc
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: d04ffd2cab21177f1342a13259a81df22b65723a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821336"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734416"
 ---
 # <a name="event-design"></a>Projekt zdarzenia
+
 Zdarzenia są najczęściej używane w formie wywołań zwrotnych (konstrukcje, które umożliwiają platformie Wywoływanie kodu użytkownika). Inne mechanizmy wywołania zwrotnego obejmują członków, którzy mają delegatów, wirtualne elementy członkowskie i wtyczki oparte na interfejsie. Dane z badań użyteczności wskazują, że większość deweloperów jest bardziej wygodna przy użyciu zdarzeń, niż korzystają z innych mechanizmów wywołania zwrotnego. Zdarzenia są dobrze zintegrowane z programem Visual Studio i wieloma językami.
 
  Należy pamiętać, że istnieją dwie grupy zdarzeń: zdarzenia wywoływane przed zmianą systemu, zwane przed zdarzeniami i zdarzenia zgłoszone po zmianie stanu, nazywanego po wprowadzeniu zdarzeń. Przykładem przed zdarzeniem jest `Form.Closing` , który jest wywoływany przed zamknięciem formularza. Przykładem zdarzenia po zdarzeniu może być `Form.Closed` , które jest wywoływane po zamknięciu formularza.
@@ -52,6 +53,7 @@ Zdarzenia są najczęściej używane w formie wywołań zwrotnych (konstrukcje, 
  Użyj <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType> lub jej podklasy jako argumentu zdarzenia, aby umożliwić użytkownikowi końcowemu anulowanie zdarzeń.
 
 ### <a name="custom-event-handler-design"></a>Projekt programu obsługi zdarzeń niestandardowych
+
  Istnieją przypadki, w których `EventHandler<T>` nie można ich użyć, na przykład gdy struktura musi działać we wcześniejszych wersjach środowiska CLR, które nie obsługują typów ogólnych. W takich przypadkach może być konieczne zaprojektowanie i opracowanie niestandardowego delegata obsługi zdarzeń.
 
  ✔️ używać zwracanego typu void dla programów obsługi zdarzeń.

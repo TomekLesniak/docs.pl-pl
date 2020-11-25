@@ -8,14 +8,15 @@ helpviewer_keywords:
 - parsing text with regular expressions, threads
 - pattern-matching with regular expressions, threads
 ms.assetid: 7c4a167b-5236-4cde-a2ca-58646230730f
-ms.openlocfilehash: 8f4930e0bc1fca51164d1108b169d35c8e73987d
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a10b5d01d308af3c808404608e6be1d77e6be8e0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818742"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734169"
 ---
 # <a name="thread-safety-in-regular-expressions"></a>Bezpieczeństwo wątków w wyrażeniach regularnych
+
 <xref:System.Text.RegularExpressions.Regex>Sama klasa jest bezpieczna wątkowo i niezmienna (tylko do odczytu). Oznacza to, że obiekty **wyrażenia regularnego** można tworzyć w dowolnym wątku i współdzielonym przez wątki. Metody pasujące mogą być wywoływane z dowolnego wątku i nigdy nie zmieniają żadnego stanu globalnego.  
   
  Jednak obiekty wynikowe (**Match** i **MatchCollection**) zwracane przez **wyrażenie regularne** powinny być używane w pojedynczym wątku. Chociaż wiele z tych obiektów jest logicznie niezmienne, ich implementacje mogą opóźniać Obliczanie niektórych wyników w celu zwiększenia wydajności i w związku z tym wywołujący muszą serializować dostęp do nich.  

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - exceptions, performance
 - throwing exceptions, performance
 ms.assetid: 3ad6aad9-08e6-4232-b336-0e301f2493e6
-ms.openlocfilehash: 1d9e4ff3cfb02b1db358c19786322622621329fe
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: babe378e0d61357709006e08f71ff578492f116c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821206"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734754"
 ---
 # <a name="exceptions-and-performance"></a>Wyjątki i wydajność
+
 Jeden typowy problem związany z wyjątkami polega na tym, że jeśli wyjątki są używane dla kodu, który rutynowie kończy się niepowodzeniem, wydajność implementacji będzie nieakceptowalna. Jest to istotny problem. Gdy element członkowski zgłasza wyjątek, jego wydajność może być Rzędna wolniej. Istnieje jednak możliwość osiągnięcia odpowiedniej wydajności, ale ściśle przestrzeganie wytycznych dotyczących wyjątków, które nie zezwalają na używanie kodów błędów. Dwa wzorce opisane w tej sekcji sugerują sposoby wykonania tej czynności.
 
  ❌ NIE używaj kodów błędów ze względu na to, że wyjątki mogą negatywnie wpłynąć na wydajność.
@@ -23,6 +24,7 @@ Jeden typowy problem związany z wyjątkami polega na tym, że jeśli wyjątki s
  Aby zwiększyć wydajność, można użyć wzorca Tester-Doer lub wzorca Try-Parse, opisanego w następnych dwóch sekcjach.
 
 ## <a name="tester-doer-pattern"></a>Wzorzec Tester-Doer
+
  Czasami można poprawić wydajność zgłaszanego przez wyjątek, dzieląc element członkowski na dwa. Przyjrzyjmy się <xref:System.Collections.Generic.ICollection%601.Add%2A> metodzie <xref:System.Collections.Generic.ICollection%601> interfejsu.
 
 ```csharp
@@ -46,6 +48,7 @@ if (!numbers.IsReadOnly)
  ✔️ ROZWAŻYĆ wzorzec Tester-Doer dla elementów członkowskich, które mogą zgłosić wyjątki w typowych scenariuszach, aby uniknąć problemów z wydajnością związanych z wyjątkami.
 
 ## <a name="try-parse-pattern"></a>Wzorzec Try-Parse
+
  W przypadku niezwykle wydajnych interfejsów API należy użyć jeszcze szybszego wzorca niż wzorzec Tester-Doer opisany w poprzedniej sekcji. Wzorzec wywołuje zmianę nazwy elementu członkowskiego, aby uczynić dobrze zdefiniowanym przypadkiem testowym częścią semantyki elementu członkowskiego. Na przykład <xref:System.DateTime> definiuje <xref:System.DateTime.Parse%2A> metodę, która zgłasza wyjątek, jeśli analizowanie ciągu kończy się niepowodzeniem. Definiuje również odpowiadającą <xref:System.DateTime.TryParse%2A> metodę, która próbuje analizować, ale zwraca wartość false, jeśli analiza nie powiedzie się i zwraca wynik pomyślnej analizy przy użyciu `out` parametru.
 
 ```csharp

@@ -2,14 +2,15 @@
 title: Właściwości zależności
 ms.date: 10/22/2008
 ms.assetid: 212cfb1e-cec4-4047-94a6-47209b387f6f
-ms.openlocfilehash: c6cebd7c6c630af6a1a439b48faccad2aea74a91
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ab30da59670c146874defe86b1d048f97eebf449
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821375"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734767"
 ---
 # <a name="dependency-properties"></a>Właściwości zależności
+
 Właściwość zależności (DP) to zwykła właściwość, która przechowuje jej wartość w magazynie właściwości, zamiast przechowywać ją w zmiennej typu (pole), na przykład.
 
  Właściwość dołączona zależność jest rodzajem właściwości zależności modelowanym jako statyczne metody get i Set reprezentujące "właściwości" opisujące relacje między obiektami i ich kontenerami (np. pozycja `Button` obiektu w `Panel` kontenerze).
@@ -17,6 +18,7 @@ Właściwość zależności (DP) to zwykła właściwość, która przechowuje j
  ✔️ zapewnić właściwości zależności, jeśli potrzebujesz właściwości do obsługi funkcji WPF, takich jak style, wyzwalacze, powiązanie danych, animacje, zasoby dynamiczne i dziedziczenie.
 
 ## <a name="dependency-property-design"></a>Projekt właściwości zależności
+
  ✔️ dziedziczyć po <xref:System.Windows.DependencyObject> lub jeden z jego podtypów podczas implementowania właściwości zależności. Typ zapewnia bardzo wydajną implementację magazynu właściwości i automatycznie obsługuje powiązanie danych WPF.
 
  ✔️ zapewnić zwykłą Właściwość środowiska CLR i publiczne statyczne pole tylko do odczytu przechowujące wystąpienie <xref:System.Windows.DependencyProperty?displayProperty=nameWithType> dla każdej właściwości zależności.
@@ -36,6 +38,7 @@ Właściwość zależności (DP) to zwykła właściwość, która przechowuje j
  ❌ NIE należy używać właściwości zależności do przechowywania zabezpieczonych danych. Nawet prywatne właściwości zależności są dostępne publicznie.
 
 ## <a name="attached-dependency-property-design"></a>Projekt właściwości dołączonej zależności
+
  Właściwości zależności opisane w poprzedniej sekcji reprezentują właściwości wewnętrzne typu deklarującego; na przykład `Text` Właściwość jest właściwością `TextButton` , która deklaruje ją. Szczególnym rodzajem właściwości zależności jest dołączona właściwość zależności.
 
  Klasycznym przykładem dołączonej właściwości jest <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType> Właściwość. Właściwość reprezentuje położenie kolumny przycisku (nie siatki), ale ma zastosowanie tylko wtedy, gdy przycisk jest zawarty w siatce i dlatego jest "dołączony" do przycisków według siatki.
@@ -75,6 +78,7 @@ public class Grid {
 ```
 
 ## <a name="dependency-property-validation"></a>Walidacja właściwości zależności
+
  Właściwości często implementują to, co jest nazywane walidacją. Logika walidacji jest wykonywana, gdy podejmowana jest próba zmiany wartości właściwości.
 
  Metody dostępu właściwości zależności nie mogą zawierać dowolnego kodu weryfikacyjnego. Zamiast tego należy określić logikę walidacji właściwości zależności podczas rejestracji właściwości.
@@ -82,9 +86,11 @@ public class Grid {
  ❌ NIE należy umieszczać logiki walidacji właściwości zależności we właściwościach dostępu. Zamiast tego należy przekazać wywołanie zwrotne walidacji do `DependencyProperty.Register` metody.
 
 ## <a name="dependency-property-change-notifications"></a>Powiadomienia o zmianie właściwości zależności
+
  ❌ NIE implementuje logiki powiadomień o zmianach we właściwościach dostępu zależności. Właściwości zależności mają wbudowaną funkcję powiadomień o zmianach, która musi być używana przez dostarczenie wywołania zwrotnego powiadomienia o zmianie <xref:System.Windows.PropertyMetadata> .
 
 ## <a name="dependency-property-value-coercion"></a>Wymuszone przekształcenie wartości właściwości zależności
+
  Wymuszanie właściwości odbywa się, gdy wartość określona dla metody ustawiającej właściwość jest modyfikowana przez metodę ustawiającą przed faktycznym zmodyfikowaniem magazynu właściwości.
 
  ❌ NIE Wdrażaj logiki przekształcenia we właściwościach dostępu zależności.

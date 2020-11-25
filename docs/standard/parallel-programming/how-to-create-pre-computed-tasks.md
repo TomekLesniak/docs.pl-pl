@@ -7,17 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - tasks, creating pre-computed
 ms.assetid: a73eafa2-1f49-4106-a19e-997186029b58
-ms.openlocfilehash: 3f2a47d2f9ba8870ff3598c5bc73b54588039702
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: e83b467e23013b5690db7cc63d061cab4d5d0e31
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825770"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734507"
 ---
 # <a name="how-to-create-pre-computed-tasks"></a>Instrukcje: Tworzenie wstępnie obliczonych zadań
+
 W tym dokumencie opisano sposób użycia <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> metody do pobierania wyników asynchronicznych operacji pobierania przechowywanych w pamięci podręcznej. <xref:System.Threading.Tasks.Task.FromResult%2A>Metoda zwraca gotowy <xref:System.Threading.Tasks.Task%601> obiekt, który posiada podaną wartość jako <xref:System.Threading.Tasks.Task%601.Result%2A> Właściwość. Ta metoda jest przydatna w przypadku wykonywania operacji asynchronicznej, która zwraca <xref:System.Threading.Tasks.Task%601> obiekt, a wynik tego <xref:System.Threading.Tasks.Task%601> obiektu jest już obliczany.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pobiera ciągi z sieci Web. Definiuje `DownloadStringAsync` metodę. Ta metoda umożliwia pobieranie ciągów z sieci Web asynchronicznie. Ten przykład używa również <xref:System.Collections.Concurrent.ConcurrentDictionary%602> obiektu do buforowania wyników poprzednich operacji. Jeśli adres wejściowy jest przechowywany w tej pamięci podręcznej, `DownloadStringAsync` używa <xref:System.Threading.Tasks.Task.FromResult%2A> metody, aby utworzyć <xref:System.Threading.Tasks.Task%601> obiekt, który przechowuje zawartość pod tym adresem. W przeciwnym razie program `DownloadStringAsync` pobierze plik z sieci Web i doda wynik do pamięci podręcznej.  
   
  [!code-csharp[TPL_CachedDownloads#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_cacheddownloads/cs/cacheddownloads.cs#1)]

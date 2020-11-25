@@ -1,15 +1,16 @@
 ---
-title: Metody rozszerzania
+title: Metody rozszerzeń
 ms.date: 10/22/2008
 ms.assetid: 5de945cb-88f4-49d7-b0e6-f098300cf357
-ms.openlocfilehash: d48651e9621beecd3c9a0665ca4be26894b50c45
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 02a421c9a4b73c779474a392e77104d4ccfbb109
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821141"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734715"
 ---
-# <a name="extension-methods"></a>Metody rozszerzania
+# <a name="extension-methods"></a>Metody rozszerzeń
+
 Metody rozszerzające są funkcją języka, która umożliwia wywoływanie metod statycznych przy użyciu składni wywołania metody wystąpienia. Te metody muszą przyjmować co najmniej jeden parametr, który reprezentuje wystąpienie, na którym ma działać Metoda.
 
  Klasa, która definiuje takie metody rozszerzenia, jest określana jako Klasa "sponsora" i musi być zadeklarowana jako statyczna. Aby można było użyć metod rozszerzających, należy zaimportować przestrzeń nazw definiującą klasę sponsora.

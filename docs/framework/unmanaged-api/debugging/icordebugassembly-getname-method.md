@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: cdeda721-b214-4503-a291-c70b68b5f36b
 topic_type:
 - apiref
-ms.openlocfilehash: daf5319f5d57f44cb20ce9f28d3c7b84c7015ff6
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 3794a3b308bd5c96a38337d8b81e61167e4dc988
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894917"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734052"
 ---
 # <a name="icordebugassemblygetname-method"></a>ICorDebugAssembly::GetName — Metoda
-Pobiera nazwę zestawu reprezentowanego przez to `ICorDebugAssembly` wystąpienie.  
+
+Pobiera nazwę zestawu `ICorDebugAssembly` reprezentowanego przez to wystąpienie.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -36,6 +37,7 @@ HRESULT GetName (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cchName`  
  podczas Rozmiar `szName` tablicy.  
   
@@ -46,9 +48,11 @@ HRESULT GetName (
  określoną Tablica, która przechowuje nazwę.  
   
 ## <a name="remarks"></a>Uwagi  
- `GetName` Metoda zwraca pełną ścieżkę i nazwę pliku zestawu.  
+
+ `GetName`Metoda zwraca pełną ścieżkę i nazwę pliku zestawu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

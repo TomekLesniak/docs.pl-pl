@@ -2,20 +2,20 @@
 title: Zachowanie zmian w przypadku porównywania ciągów w programie .NET 5 +
 description: Informacje o zmianach zachowania porównania ciągów w programie .NET 5 i nowszych wersjach w systemie Windows.
 ms.date: 11/04/2020
-ms.openlocfilehash: 49be2169bb165b8fe0205800415542bea7bf9787
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.openlocfilehash: fa1a1d12f45e5b41877a674d7b8747bb2b2f9658
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93403635"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734234"
 ---
 # <a name="behavior-changes-when-comparing-strings-on-net-5"></a>Zachowanie zmian w przypadku porównywania ciągów w programie .NET 5 +
 
-W programie .NET 5,0 wprowadzono zmianę behawioralną środowiska uruchomieniowego, w której interfejsy API globalizacji [teraz domyślnie używają ICU](../../core/compatibility/3.1-5.0.md#globalization-apis-use-icu-libraries-on-windows) na wszystkich obsługiwanych platformach. Jest to wyjście z wcześniejszych wersji programu .NET Core i z .NET Framework, które korzystają z funkcji obsługi języka narodowego (NLS) systemu operacyjnego w przypadku uruchamiania w systemie Windows. Aby uzyskać więcej informacji na temat tych zmian, w tym przełączników zgodności, które mogą przywrócić zmianę zachowania, zobacz [globalizacja platformy .NET i ICU](../globalization-localization/globalization-icu.md).
+W programie .NET 5,0 wprowadzono zmianę behawioralną środowiska uruchomieniowego, w której interfejsy API globalizacji [teraz domyślnie używają ICU](../../core/compatibility/globalization/5.0/icu-globalization-api.md) na wszystkich obsługiwanych platformach. Jest to wyjście z wcześniejszych wersji programu .NET Core i z .NET Framework, które korzystają z funkcji obsługi języka narodowego (NLS) systemu operacyjnego w przypadku uruchamiania w systemie Windows. Aby uzyskać więcej informacji na temat tych zmian, w tym przełączników zgodności, które mogą przywrócić zmianę zachowania, zobacz [globalizacja platformy .NET i ICU](../globalization-localization/globalization-icu.md).
 
 ## <a name="reason-for-change"></a>Przyczyna zmiany
 
-Ta zmiana została wprowadzona w celu ujednolicenia. Zachowanie globalizacji sieci we wszystkich obsługiwanych systemach operacyjnych. Zapewnia również możliwość tworzenia przez aplikacje własnych bibliotek globalizacji, a nie zależą od wbudowanych bibliotek systemu operacyjnego. Aby uzyskać więcej informacji, zobacz [powiadomienie o zmianie](../../core/compatibility/3.1-5.0.md#globalization-apis-use-icu-libraries-on-windows).
+Ta zmiana została wprowadzona w celu ujednolicenia. Zachowanie globalizacji sieci we wszystkich obsługiwanych systemach operacyjnych. Zapewnia również możliwość tworzenia przez aplikacje własnych bibliotek globalizacji, a nie zależą od wbudowanych bibliotek systemu operacyjnego. Aby uzyskać więcej informacji, zobacz [powiadomienie o zmianie](../../core/compatibility/globalization/5.0/icu-globalization-api.md).
 
 ## <a name="behavioral-differences"></a>Różnice w zachowaniu
 
@@ -139,9 +139,9 @@ Aby zapoznać się z bardziej szczegółową analizą zachowania poszczególnych
 
 ## <a name="ordinal-vs-linguistic-search-and-comparison"></a>Liczba porządkowa a wyszukiwanie lingwistyczne i porównanie
 
-*Liczba porządkowa* (znana także jako *niejęzykowa* ) Wyszukiwanie i porównywanie składa ciąg w poszczególnych `char` elementach i wykonuje wyszukiwanie typu char-by-char. Na przykład ciągi `"dog"` i `"dog"` porównywanie jako *takie* same, jak w przypadku opcji `Ordinal` porównującej, ponieważ dwa ciągi składają się z dokładnie tej samej sekwencji znaków. Jednakże `"dog"` i `"Dog"` porównać *nie równa* się w ramach opcji `Ordinal` porównującej, ponieważ nie zawierają dokładnie tej samej sekwencji znaków. Oznacza to, że wielkie litery `'D'` `U+0044` występuje przed punktem kodu małymi literami `'d'` `U+0064` , co spowoduje `"dog"` sortowanie przed `"Dog"` .
+*Liczba porządkowa* (znana także jako *niejęzykowa*) Wyszukiwanie i porównywanie składa ciąg w poszczególnych `char` elementach i wykonuje wyszukiwanie typu char-by-char. Na przykład ciągi `"dog"` i `"dog"` porównywanie jako *takie* same, jak w przypadku opcji `Ordinal` porównującej, ponieważ dwa ciągi składają się z dokładnie tej samej sekwencji znaków. Jednakże `"dog"` i `"Dog"` porównać *nie równa* się w ramach opcji `Ordinal` porównującej, ponieważ nie zawierają dokładnie tej samej sekwencji znaków. Oznacza to, że wielkie litery `'D'` `U+0044` występuje przed punktem kodu małymi literami `'d'` `U+0064` , co spowoduje `"dog"` sortowanie przed `"Dog"` .
 
-`OrdinalIgnoreCase`Funkcja porównująca nadal działa na zasadzie typu char-by-char, ale eliminuje różnice wielkości liter podczas wykonywania operacji. W obszarze `OrdinalIgnoreCase` porównującym pary znaków `'d'` i są `'D'` porównywane jako *równe* , tak jak pary char `'á'` i `'Á'` . Ale nieakcentowane znak jest `'a'` porównywany z *nierównym* znakiem akcentu `'á'` .
+`OrdinalIgnoreCase`Funkcja porównująca nadal działa na zasadzie typu char-by-char, ale eliminuje różnice wielkości liter podczas wykonywania operacji. W obszarze `OrdinalIgnoreCase` porównującym pary znaków `'d'` i są `'D'` porównywane jako *równe*, tak jak pary char `'á'` i `'Á'` . Ale nieakcentowane znak jest `'a'` porównywany z *nierównym* znakiem akcentu `'á'` .
 
 Kilka przykładów tego typu przedstawiono w poniższej tabeli:
 
@@ -317,7 +317,7 @@ ReadOnlySpan<char> span = s.AsSpan();
 if (span.StartsWith("Hello", StringComparison.Ordinal)) { /* do something */ } // ordinal comparison
 ```
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Zmiany dotyczące podziału globalizacji](../../core/compatibility/globalization.md)
 - [Najlepsze rozwiązania dotyczące porównywania ciągów w programie .NET](best-practices-strings.md)

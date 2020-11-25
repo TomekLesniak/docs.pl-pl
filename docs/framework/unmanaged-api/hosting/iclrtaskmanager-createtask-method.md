@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: eea570d9-2e53-4320-9ea0-eb777bf9dcf3
 topic_type:
 - apiref
-ms.openlocfilehash: 9829f57da911b43626516284e4858adc4139a3ca
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: c8d18b78cf0185271eae763892610d13f76e42ab
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762880"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734000"
 ---
 # <a name="iclrtaskmanagercreatetask-method"></a>ICLRTaskManager::CreateTask — Metoda
+
 Żądania jawnie, które tworzą nowe zadanie środowiska uruchomieniowego języka wspólnego (CLR).  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT CreateTask (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pTask`  
  określoną Wskaźnik na adres nowo utworzonego [ICLRTask](iclrtask-interface.md)lub wartość null, jeśli nie można utworzyć zadania.  
   
@@ -50,25 +52,27 @@ HRESULT CreateTask (
 |E_OUTOFMEMORY|Za mało dostępnej pamięci, aby przydzielić żądany zasób.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR tworzy nowe zadanie automatycznie po zainicjowaniu, gdy kod użytkownika tworzy wątek przy użyciu typów w <xref:System.Threading> przestrzeni nazw lub zwiększenie rozmiaru puli wątków. Tworzy również zadania, gdy kod niezarządzany wykonuje wywołanie do funkcji zarządzanej.  
   
- `CreateTask`umożliwia hostowi jawne żądanie utworzenia nowego zadania przez środowisko CLR. Na przykład host może wywołać tę metodę, aby wstępnie zainicjować struktury danych.  
+ `CreateTask` umożliwia hostowi jawne żądanie utworzenia nowego zadania przez środowisko CLR. Na przykład host może wywołać tę metodę, aby wstępnie zainicjować struktury danych.  
   
 > [!IMPORTANT]
 > Nowe zadanie jest zwracane w stanie wstrzymania i pozostaje zawieszone, dopóki Host jawnie wywoła [IHostTask:: Start](ihosttask-start-method.md).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRTask — Interfejs](iclrtask-interface.md)
-- [ICLRTaskManager, interfejs](iclrtaskmanager-interface.md)
-- [IHostTask, interfejs](ihosttask-interface.md)
-- [IHostTaskManager, interfejs](ihosttaskmanager-interface.md)
+- [ICLRTaskManager — Interfejs](iclrtaskmanager-interface.md)
+- [IHostTask — Interfejs](ihosttask-interface.md)
+- [IHostTaskManager — Interfejs](ihosttaskmanager-interface.md)

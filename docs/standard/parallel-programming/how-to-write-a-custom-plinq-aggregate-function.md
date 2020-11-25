@@ -7,20 +7,22 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to create aggregate function
 ms.assetid: 5a70dd49-ab2a-4798-b551-196ee7042b1a
-ms.openlocfilehash: d04f90e9c763c8ddba5ba07b650ffb878869ff3a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: dc03802c960c0926380d7b7fa44fdf436b8fea89
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825471"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734260"
 ---
 # <a name="how-to-write-a-custom-plinq-aggregate-function"></a>Instrukcje: Pisanie niestandardowej funkcji agregowania w PLINQ
+
 Ten przykład pokazuje, jak używać <xref:System.Linq.ParallelEnumerable.Aggregate%2A> metody do zastosowania niestandardowej funkcji agregacji do sekwencji źródłowej.  
   
 > [!WARNING]
 > Ten przykład jest przeznaczony do zademonstrowania użycia i może nie działać szybciej niż równoważne LINQ to Objects sekwencyjne zapytanie. Aby uzyskać więcej informacji na temat przyspieszenie, zobacz [Opis przyspieszenie w PLINQ](understanding-speedup-in-plinq.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład oblicza odchylenie standardowe sekwencji liczb całkowitych.  
   
  [!code-csharp[PLINQ#31](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#31)]

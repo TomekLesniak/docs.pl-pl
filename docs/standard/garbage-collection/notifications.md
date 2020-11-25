@@ -8,14 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - garbage collection, notifications
 ms.assetid: e12d8e74-31e3-4035-a87d-f3e66f0a9b89
-ms.openlocfilehash: c91712b9d25221f1ffd9e9e980c420be32e2379a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 70343851ba73af9041014e8654f5df82d8389c39
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831185"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734780"
 ---
 # <a name="garbage-collection-notifications"></a>Powiadomienia dotyczące odzyskiwania pamięci
+
 Istnieją sytuacje, w których pełne odzyskiwanie pamięci (czyli kolekcja generacji 2) przez środowisko uruchomieniowe języka wspólnego może niekorzystnie wpłynąć na wydajność. Może to być problem szczególnie w przypadku serwerów, które przetwarzają duże ilości żądań; w takim przypadku długotrwałe wyrzucanie elementów bezużytecznych może spowodować przekroczenie limitu czasu żądania. Aby zapobiec występowaniu pełnej kolekcji w okresie krytycznym, można powiadomić o tym, że pełne odzyskiwanie pamięci zbliża się, a następnie podejmuje działania w celu przekierowania obciążenia do innego wystąpienia serwera. Istnieje również możliwość wywołania kolekcji samodzielnie, pod warunkiem, że bieżące wystąpienie serwera nie musi przetwarzać żądań.  
   
  <xref:System.GC.RegisterForFullGCNotification%2A>Metoda rejestruje powiadomienie, które zostanie wywołane, gdy środowisko uruchomieniowe wskazuje, że zbliża się pełne odzyskiwanie pamięci. Istnieją dwie części tego powiadomienia: Kiedy pełne odzyskiwanie pamięci zbliża się i gdy pełne odzyskiwanie pamięci zostało zakończone.  
@@ -32,6 +33,7 @@ Istnieją sytuacje, w których pełne odzyskiwanie pamięci (czyli kolekcja gene
  <xref:System.GC.WaitForFullGCApproach%2A> <xref:System.GC.WaitForFullGCComplete%2A> Metody i są zaprojektowane tak, aby współdziałać. Użycie jednego bez nich może spowodować uzyskanie nieokreślonych wyników.  
   
 ## <a name="full-garbage-collection"></a>Pełne odzyskiwanie pamięci  
+
  Środowisko uruchomieniowe powoduje pełne wyrzucanie elementów bezużytecznych, gdy spełnione są dowolne z następujących scenariuszy:  
   
 - Dostateczna ilość pamięci została podwyższona do generacji 2 w celu spowodowania nowej kolekcji generacji 2.  
@@ -49,6 +51,7 @@ Istnieją sytuacje, w których pełne odzyskiwanie pamięci (czyli kolekcja gene
  Trzeci scenariusz przyczynia się również do niepewności, kiedy otrzymasz powiadomienie. Chociaż nie jest to gwarancja, warto zastanowić się, że jest to przydatny sposób na uniknięcie efektów inopportune pełnego odzyskiwania pamięci przez przekierowanie żądań w tym czasie lub wypróbowanie kolekcji, gdy będzie można lepiej obsłużyć.  
   
 ## <a name="notification-threshold-parameters"></a>Parametry progu powiadomienia  
+
  <xref:System.GC.RegisterForFullGCNotification%2A>Metoda ma dwa parametry, aby określić wartości progowe obiektów generacji 2 i sterty dużego obiektu. Gdy te wartości są spełnione, powinno zostać zgłoszone powiadomienie o wyrzucaniu elementów bezużytecznych. W poniższej tabeli opisano te parametry.  
   
 |Parametr|Opis|  
@@ -63,6 +66,7 @@ Istnieją sytuacje, w których pełne odzyskiwanie pamięci (czyli kolekcja gene
 ## <a name="example"></a>Przykład  
   
 ### <a name="description"></a>Opis  
+
  W poniższym przykładzie Grupa serwerów obsługuje przychodzące żądania sieci Web. Aby symulować obciążenie żądań przetwarzania, tablice bajtowe są dodawane do <xref:System.Collections.Generic.List%601> kolekcji. Każdy serwer rejestruje do powiadomienia o wyrzucaniu elementów bezużytecznych, a następnie uruchamia wątek w `WaitForFullGCProc` metodzie użytkownika w celu ciągłego monitorowania <xref:System.GCNotificationStatus> wyliczenia zwracanego przez <xref:System.GC.WaitForFullGCApproach%2A> i <xref:System.GC.WaitForFullGCComplete%2A> metod.  
   
  <xref:System.GC.WaitForFullGCApproach%2A> <xref:System.GC.WaitForFullGCComplete%2A> Metody i zadzwonią odpowiednie metody użytkownika obsługującego zdarzenia, gdy zostanie zgłoszone powiadomienie:  

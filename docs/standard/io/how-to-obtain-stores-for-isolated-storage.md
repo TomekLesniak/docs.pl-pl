@@ -12,14 +12,15 @@ helpviewer_keywords:
 - data stores, obtaining
 - data storage using isolated storage, obtaining stores
 ms.assetid: fcb6b178-d526-47c4-b029-e946f880f9db
-ms.openlocfilehash: a3803f50c99b8c31030c6afe756e209c9350137f
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ac53432374b546a46417e9d3b9de342a7ea2ef81
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830743"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734624"
 ---
 # <a name="how-to-obtain-stores-for-isolated-storage"></a>Instrukcje: Uzyskiwanie magazynów dla izolowanego magazynu
+
 Izolowany magazyn uwidacznia wirtualny system plików w przedziale danych. <xref:System.IO.IsolatedStorage.IsolatedStorageFile>Klasa dostarcza wiele metod współpracy z izolowanym magazynem. Aby utworzyć i pobrać magazyny, program <xref:System.IO.IsolatedStorage.IsolatedStorageFile> udostępnia trzy metody statyczne:  
   
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> zwraca magazyn izolowany przez użytkownika i zestaw.  
@@ -45,6 +46,7 @@ Izolowany magazyn uwidacznia wirtualny system plików w przedziale danych. <xref
  Nie istnieje mechanizm, który uniemożliwia przekazanie <xref:System.IO.IsolatedStorage.IsolatedStorageFile> obiektu do kodu, który nie ma wystarczających uprawnień dostępu do pobrania samego sklepu. Tożsamości domen i zestawów oraz uprawnienia izolowanego magazynu są sprawdzane tylko wtedy, gdy <xref:System.IO.IsolatedStorage.IsolatedStorage> jest uzyskiwane odwołanie do obiektu, zazwyczaj w <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A> <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> metodzie, lub. Ochrona odwołań do <xref:System.IO.IsolatedStorage.IsolatedStorageFile> obiektów jest z tego względu odpowiedzialnością za kod, który używa tych odwołań.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod zawiera prosty przykład klasy pobierającej magazyn izolowany przez użytkownika i zestaw. Kod można zmienić, aby pobrać magazyn izolowany według użytkownika, domeny i zestawu przez dodanie <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain?displayProperty=nameWithType> do argumentów, które są <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> przekazywane przez metodę.  
   
  Po uruchomieniu kodu można potwierdzić, że magazyn został utworzony, wpisując **Storeadm/list** w wierszu polecenia. Spowoduje to uruchomienie [Narzędzia izolowanego magazynu (Storeadm.exe)](../../framework/tools/storeadm-exe-isolated-storage-tool.md) i wyświetlenie listy wszystkich aktualnie wyizolowanych magazynów dla danego użytkownika.  

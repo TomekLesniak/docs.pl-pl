@@ -2,14 +2,15 @@
 title: Zestawy węzłów w przekształceniach
 ms.date: 03/30/2017
 ms.assetid: ad034f0e-ff8b-4a71-9a4c-528c754263c4
-ms.openlocfilehash: 72b3af5b471d73cc159dd700ddd29c4ffb5ea639
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2ace103d9721b2adecb08a25ab89cf9b0f05bb93
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830119"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734117"
 ---
 # <a name="node-sets-in-transformations"></a>Zestawy węzłów w przekształceniach
+
 Zestawy węzłów to jeden z czterech podstawowych typów danych, które są zwracane z wyrażeń XPath (XML Path Language). Zestaw węzłów, który jest nieuporządkowaną kolekcją węzłów bez duplikatów, utworzonych w kolejności dokumentu, można przypisać do zmiennej w arkuszu stylów.  
   
 > [!NOTE]

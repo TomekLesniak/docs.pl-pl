@@ -7,17 +7,19 @@ helpviewer_keywords:
 - errors [.NET Framework], exceptions
 - reporting errors
 ms.assetid: bc177b2f-7528-4ae4-83db-aacfb04b86d0
-ms.openlocfilehash: 776e559bb1629245c275cb4463531a8dd4b230ae
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 28a3e40443c9f1be14243816b347da773705ff02
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821154"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734736"
 ---
 # <a name="design-guidelines-for-exceptions"></a>Wyjątki — zalecenia dotyczące projektowania
+
 Obsługa wyjątków ma wiele zalet w porównaniu z raportowaniem błędów zwracających wartość. Dobry projekt platformy ułatwia deweloperom aplikacji wykorzystanie korzyści z wyjątków. W tej sekcji omówiono zalety wyjątków i przedstawiono wskazówki dotyczące efektywnego korzystania z nich.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Wyjątek zgłaszany](exception-throwing.md)  
  [Używanie standardowych typów wyjątków](using-standard-exception-types.md)  
  [Wyjątki i wydajność](exceptions-and-performance.md)  

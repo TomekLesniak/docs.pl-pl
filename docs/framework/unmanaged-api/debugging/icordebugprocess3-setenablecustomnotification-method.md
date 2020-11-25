@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: afd88ee9-2589-4461-a75a-9b6fe55a2525
 topic_type:
 - apiref
-ms.openlocfilehash: 523d9665ffd2637a0e856d74d4d3b3838cb5e83c
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 078e5cb03848564b42e30a079101d5a61e0074bd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212129"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734026"
 ---
 # <a name="icordebugprocess3setenablecustomnotification-method"></a>ICorDebugProcess3::SetEnableCustomNotification — Metoda
+
 Włącza i wyłącza niestandardowe powiadomienia debugera określonego typu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,18 +34,21 @@ HRESULT SetEnableCustomNotification(ICorDebugClass * pClass,
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pClass`  
  podczas Typ, który określa niestandardowe powiadomienia debugera.  
   
  `fEnable`  
- [w] `true` Aby włączyć niestandardowe powiadomienia debugera; `false`Aby wyłączyć powiadomienia. Wartość domyślna to `false`.  
+ [w] `true` Aby włączyć niestandardowe powiadomienia debugera; `false` Aby wyłączyć powiadomienia. Wartość domyślna to `false`.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Gdy `fEnable` jest ustawiona na `true` , wywołania <xref:System.Diagnostics.Debugger.NotifyOfCrossThreadDependency%2A?displayProperty=nameWithType> metody wyzwalają wywołanie zwrotne [ICorDebugManagedCallback3:: CustomNotification —](icordebugmanagedcallback3-customnotification-method.md) . Powiadomienia są domyślnie wyłączone; w związku z tym debuger musi określić wszelkie typy powiadomień, o których wie i który chce obsłużyć. Ponieważ Klasa [ICorDebugClass](icordebug-interface.md) jest objęta zakresem przez domenę aplikacji, debuger musi wywołać `SetEnableCustomNotification` dla każdej domeny aplikacji w procesie, jeśli chce otrzymywać powiadomienie przez cały proces.  
   
  Począwszy od .NET Framework 4, jedyne obsługiwane powiadomienie to powiadomienie obejmujące zależność między wątkami.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -53,7 +57,7 @@ HRESULT SetEnableCustomNotification(ICorDebugClass * pClass,
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugProcess3 — Interfejs](icordebugprocess3-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

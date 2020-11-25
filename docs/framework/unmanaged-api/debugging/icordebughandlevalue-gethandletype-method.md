@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d5e7b12d-835a-4e86-ae2f-d658d4f1c67c
 topic_type:
 - apiref
-ms.openlocfilehash: 6eb76ddd6ee8b2a00aac3af9ebf815338d29f194
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 72ef9a0fe4cd08ce67594600375953c249243d4f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212168"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734156"
 ---
 # <a name="icordebughandlevaluegethandletype-method"></a>ICorDebugHandleValue::GetHandleType — Metoda
+
 Pobiera wartość wskazującą rodzaj dojścia, do którego odwołuje się ten obiekt ICorDebugHandleValue.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT GetHandleType (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pType`  
  określoną Wskaźnik do wartości wyliczenia CorDebugHandleType —, który wskazuje typ tego uchwytu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

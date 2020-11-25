@@ -15,17 +15,19 @@ helpviewer_keywords:
 - data stores, reading and writing to files
 - stores, reading and writing to files
 ms.assetid: f977ebdc-1b55-475a-bc3d-3376470b08ae
-ms.openlocfilehash: eff020ebb1de40f83582bbf872339c7652d1d4b1
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 3a8b783cf2cce93cb26b11823d9f565961376ca3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830704"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734598"
 ---
 # <a name="how-to-read-and-write-to-files-in-isolated-storage"></a>Instrukcje: Odczyt i zapis w plikach w izolowanym magazynie
+
 Aby odczytywać lub zapisywać dane w pliku w izolowanym magazynie, użyj <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> obiektu z czytnikiem strumienia ( <xref:System.IO.StreamReader> obiektem) lub składnikiem zapisywania strumienia ( <xref:System.IO.StreamWriter> Object).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu uzyskuje izolowany magazyn i sprawdza, czy plik o nazwie TestStore.txt istnieje w magazynie. Jeśli nie istnieje, tworzy plik i zapisuje "Hello izolowany magazyn" do pliku. Jeśli TestStore.txt już istnieje, przykładowy kod odczytuje z pliku.  
   
  [!code-csharp[Conceptual.IsolatedStorage#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source5.cs#5)]

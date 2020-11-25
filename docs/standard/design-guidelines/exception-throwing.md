@@ -6,14 +6,15 @@ helpviewer_keywords:
 - explicitly throwing exceptions
 - throwing exceptions, design guidelines
 ms.assetid: 5388e02b-52f5-460e-a2b5-eeafe60eeebe
-ms.openlocfilehash: 6f22878a9ddfb394f6705a335930ef2cc270895f
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: d41467b971e43ca9b22c59e3b64bdd45d16c740b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821271"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734403"
 ---
 # <a name="exception-throwing"></a>Zgłaszanie wyjątku
+
 Zasady zgłaszania wyjątku opisane w tej sekcji wymagają odpowiedniej definicji znaczenia błędu wykonania. Niepowodzenie wykonywania występuje zawsze, gdy członek nie może wykonać czynności, do których został zaprojektowany (co oznacza nazwa elementu członkowskiego). Na przykład, jeśli `OpenFile` Metoda nie może zwrócić otwartego dojścia do pliku wywołującego, będzie traktowana jako błąd wykonania.
 
  Większość deweloperów była wygodna z użyciem wyjątków dla błędów użycia, takich jak dzielenie przez zero lub puste odwołania. W strukturze wyjątki są używane dla wszystkich warunków błędów, w tym błędów wykonania.

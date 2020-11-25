@@ -13,14 +13,15 @@ helpviewer_keywords:
 - constructs, grouping
 - grouping constructs
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
-ms.openlocfilehash: 52f7efdf5591901602811cba8f2b6c1a4f42f96c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 62de6dc3b6276aab4667c719033ee3b66928ea2c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823007"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734377"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Konstrukcje grupujące w wyrażeniach regularnych
+
 Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przechwytuje podciągi ciągu wejściowego. Można użyć konstrukcji grupowania, aby wykonać następujące czynności:  
   
 - Dopasowuje Podwyrażenie powtarzające się w ciągu wejściowym.  
@@ -49,7 +50,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
  Aby uzyskać informacje na temat grup i modelu obiektów wyrażeń regularnych, zobacz [Grouping konstrukcjes and Regular Expression Objects](#Objects).  
   
 <a name="matched_subexpression"></a>
+
 ## <a name="matched-subexpressions"></a>Dopasowane podwyrażenie  
+
  Następująca konstrukcja grupująca przechwytuje Dopasowane Podwyrażenie:  
   
  `(`*Podwyrażenie*`)`  
@@ -88,7 +91,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
 |`\W`|Dopasowuje znak niebędący słowem, w tym odstępy i znaki interpunkcyjne. Zapobiega to, aby wzorzec wyrażenia regularnego był zgodny z wyrazem rozpoczynającym się od pierwszej przechwyconej grupy.|  
   
 <a name="named_matched_subexpression"></a>
+
 ## <a name="named-matched-subexpressions"></a>O nazwie dopasowane podwyrażenia  
+
  Następująca konstrukcja grupująca przechwytuje Dopasowane Podwyrażenie i umożliwia dostęp do niego według nazwy lub liczby:  
   
 `(?<name>subexpression)`  
@@ -162,7 +167,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
 |`(?<digit>\d+)?`|Dopasowanie do zera lub jednego wystąpienia co najmniej jednego znaku cyfry dziesiętnej. Przypisz dopasowanie do `digit` nazwanej grupy.|  
   
 <a name="balancing_group_definition"></a>
+
 ## <a name="balancing-group-definitions"></a>Równoważenie definicji grup  
+
  Definicja grupy równoważenia usuwa definicję wcześniej zdefiniowanej grupy i magazynów w bieżącej grupie, interwał między wcześniej zdefiniowaną grupą a bieżącą grupą. Ta konstrukcja grupująca ma następujący format:  
   
 `(?<name1-name2>subexpression)`  
@@ -235,7 +242,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
 |24|`$`|Dopasowuje koniec ciągu wejściowego.|  
   
 <a name="noncapturing_group"></a>
+
 ## <a name="noncapturing-groups"></a>Grupy niezapamiętywane  
+
  Następująca konstrukcja grupująca nie przechwytuje podciągu, który jest dopasowany przez Podwyrażenie:  
   
 `(?:subexpression)`
@@ -261,7 +270,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
 |`\.`|Dopasowuje okres.|  
   
 <a name="group_options"></a>
+
 ## <a name="group-options"></a>Opcje grupy  
+
  Następująca konstrukcja grupująca stosuje lub wyłącza określone opcje w ramach podwyrażenia:  
   
  `(?imnsx-imnsx:`*Podwyrażenie*`)`  
@@ -285,7 +296,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
  [!code-vb[Conceptual.Regex.Language.Options#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#8)]  
   
 <a name="zerowidth_positive_lookahead_assertion"></a>
+
 ## <a name="zero-width-positive-lookahead-assertions"></a>Dodatnie asercje z patrzeniem w przód o zerowej szerokości  
+
  Następująca konstrukcja grupująca definiuje pozytywne potwierdzenie o zerowej szerokości:  
   
  `(?=`*Podwyrażenie*`)`  
@@ -308,7 +321,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
 |`(?=\sis\b)`|Ustal, czy znaki słowa są poprzedzone znakiem odstępu, a ciąg "is", który jest kończący się na granicy słowa. Jeśli tak, dopasowanie zostanie wykonane pomyślnie.|  
   
 <a name="zerowidth_negative_lookahead_assertion"></a>
+
 ## <a name="zero-width-negative-lookahead-assertions"></a>Ujemne asercje z patrzeniem w przód o zerowej szerokości  
+
  Następująca konstrukcja grupująca definiuje negatywną Poprzednia wartość zerowej szerokości:  
   
  `(?!`*Podwyrażenie*`)`  
@@ -346,7 +361,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
 |`\p{P})`|Jeśli następny znak nie jest symbolem interpunkcji (na przykład kropką lub przecinkiem), dopasowanie powiedzie się.|  
   
 <a name="zerowidth_positive_lookbehind_assertion"></a>
+
 ## <a name="zero-width-positive-lookbehind-assertions"></a>Dodatnie asercje wsteczne o zerowej szerokości  
+
  Następująca konstrukcja grupująca definiuje asercja wsteczna pozytywnej o zerowej szerokości:  
   
  `(?<=`*Podwyrażenie*`)`  
@@ -371,7 +388,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
  Pozytywne potwierdzenia asercja wsteczna o zerowej szerokości są również używane do ograniczania wycofywania, gdy ostatni znak lub znaki w przechwyconej grupie muszą być podzbiorem znaków, które pasują do wzorca wyrażenia regularnego tej grupy. Na przykład jeśli grupa przechwytuje wszystkie kolejne znaki wyrazu, można użyć pozytywnej asercja wsteczna o zerowej szerokości, aby wymagać, aby ostatni znak był alfabetyczny.  
   
 <a name="zerowidth_negative_lookbehind_assertion"></a>
+
 ## <a name="zero-width-negative-lookbehind-assertions"></a>Ujemne asercje wsteczne o zerowej szerokości  
+
  Następująca konstrukcja grupująca definiuje negatywną asercja wstecznaą o zerowej szerokości:  
   
  `(?<!`*Podwyrażenie*`)`  
@@ -396,7 +415,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
 |<code>(?<!(Saturday&#124;Sunday) )</code>|Jeśli dopasowanie jest poprzedzone znakiem innym niż ciągi "Sobota" lub "Niedziela", po którym następuje spacja, dopasowanie zostanie wykonane pomyślnie.|  
   
 <a name="atomic_groups"></a>
+
 ## <a name="atomic-groups"></a>Grupy niepodzielne  
+
  Następująca konstrukcja grupująca reprezentuje niepodzielną grupę (znaną w innych aparatach wyrażeń regularnych jako Podwyrażenie Podwyrażenie, dwuwyrażenie cząstkowe lub Podwyrażenie tylko raz):
   
  `(?>`*Podwyrażenie*`)`  
@@ -425,7 +446,9 @@ Konstrukcje grupujące odróżnić podwyrażenia wyrażenia regularnego i przech
 |`(?>(\w)\1+)`|Dopasowuje jedno lub więcej wystąpień zduplikowanego znaku słowa, ale nie nawrotu się w celu dopasowania do ostatniego znaku na granicy słowa.|  
   
 <a name="Objects"></a>
+
 ## <a name="grouping-constructs-and-regular-expression-objects"></a>Konstrukty grupujące i obiekty wyrażeń regularnych  
+
  Podciągi dopasowane przez grupę przechwyconą wyrażenia regularnego są reprezentowane przez <xref:System.Text.RegularExpressions.Group?displayProperty=nameWithType> obiekty, które można pobrać z obiektu, <xref:System.Text.RegularExpressions.GroupCollection?displayProperty=nameWithType> który jest zwracany przez <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> Właściwość. <xref:System.Text.RegularExpressions.GroupCollection>Obiekt jest wypełniany w następujący sposób:  
   
 - Pierwszy <xref:System.Text.RegularExpressions.Group> obiekt w kolekcji (obiekt pod indeksem zero) reprezentuje całe dopasowanie.  

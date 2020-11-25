@@ -14,14 +14,15 @@ helpviewer_keywords:
 - .NET regular expressions, character escapes
 - constructs, character escapes
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
-ms.openlocfilehash: 5a9890f9ada6a4e749c8cf5ee96d9e8668525040
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 820e6cd7fa4a60fa6adfcaf0f0ff4d25fdda0f21
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823267"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734390"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Znaki specjalne w wyrażeniach regularnych
+
 Ukośnik odwrotny ( \\ ) w wyrażeniu regularnym wskazuje jedną z następujących wartości:  
   
 - Znak, który następuje po nim jest znakiem specjalnym, jak pokazano w tabeli w poniższej sekcji. Na przykład `\b` jest kotwicą wskazującą, że dopasowanie wyrażenia regularnego powinno rozpoczynać się od granicy słowa, `\t` reprezentuje kartę i `\x020` reprezentuje spację.  
@@ -32,6 +33,7 @@ Ukośnik odwrotny ( \\ ) w wyrażeniu regularnym wskazuje jedną z następujący
 > Znaki ucieczki są rozpoznawane w wzorcach wyrażeń regularnych, ale nie w wzorcach zastępczych.  
   
 ## <a name="character-escapes-in-net"></a>Znak ucieczki w programie .NET  
+
  W poniższej tabeli wymieniono znaki ucieczki obsługiwane przez wyrażenia regularne w programie .NET.  
   
 |Znak lub sekwencja|Opis|  
@@ -52,6 +54,7 @@ Ukośnik odwrotny ( \\ ) w wyrażeniu regularnym wskazuje jedną z następujący
 |`\`|Gdy następuje znak, który nie jest rozpoznawany jako znak ucieczki, dopasowuje ten znak. Na przykład `\*` dopasowuje znak gwiazdki (*) i jest taka sama jak `\x2A` .|  
   
 ## <a name="an-example"></a>Przykład  
+
  Poniższy przykład ilustruje użycie znaku ucieczki w wyrażeniu regularnym. Analizuje ciąg, który zawiera nazwy największych miast i ich populacje w 2009. Nazwy poszczególnych miast są oddzielane od ich populacji za pomocą tabulatora ( `\t` ) lub kreski pionowej (&#124; lub `\u007c` ). Poszczególne miasta i ich populacje są oddzielone od siebie przez powrotu karetki i wysuwu wiersza.  
   
  [!code-csharp[RegularExpressions.Language.Escapes#1](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.escapes/cs/escape1.cs#1)]

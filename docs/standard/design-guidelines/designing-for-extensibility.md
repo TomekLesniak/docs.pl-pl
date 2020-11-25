@@ -7,19 +7,21 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], extensibility
 - class library extensibility [.NET Framework]
 ms.assetid: 1cdb8740-871a-456c-9bd9-db96ca8d79b3
-ms.openlocfilehash: 9e75ef433f3bd9af34e8dd40331a8267755e59fe
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7b7b1bcfc907612be12e7f8ca7114183f7e830ef
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821388"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734455"
 ---
 # <a name="designing-for-extensibility"></a>Projektowanie pod kątem rozszerzalności
+
 Jednym z ważniejszych aspektów projektowania struktury jest upewnienie się, że rozszerzalność struktury jest starannie rozpatrywana. Wymaga to zrozumienia kosztów i korzyści związanych z różnymi mechanizmami rozszerzalności. Ten rozdział ułatwia podjęcie decyzji, które mechanizmy rozszerzalności — podklasy, zdarzenia, wirtualne elementy członkowskie, wywołania zwrotne i tak dalej — mogą najlepiej spełniać wymagania platformy.  
   
  Istnieje wiele sposobów na umożliwienie rozszerzalności w strukturach. Są one większe niż tańsze, ale tańsze, ale kosztowne. W przypadku danego wymagania dotyczącego rozszerzalności należy wybrać najniższy, kosztowny mechanizm rozszerzania spełniający wymagania. Należy pamiętać, że jest zwykle możliwe dodanie większej liczby rozszerzeń później, ale nigdy nie należy wprowadzać zmian.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Niezapieczętowane klasy](unsealed-classes.md)  
  [Chronione elementy członkowskie](protected-members.md)  
  [Zdarzenia i wywołania zwrotne](events-and-callbacks.md)  

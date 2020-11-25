@@ -9,14 +9,15 @@ helpviewer_keywords:
 - providers [.NET], in observer design pattern
 - observables [.NET], in observer design pattern
 ms.assetid: 790b5d8b-d546-40a6-beeb-151b574e5ee5
-ms.openlocfilehash: c58d4b79c9f722889352587c2cb1313fc1595319
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b63666a581959f7a6c6a30ca8763f9c22067f32a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828351"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734338"
 ---
 # <a name="how-to-implement-a-provider"></a>Porady: implementowanie dostawcy
+
 Wzorzec projektowy obserwatora wymaga podziału między dostawcą, który monitoruje dane i wysyła powiadomienia oraz co najmniej jednego obserwatora, który odbiera powiadomienia (wywołania zwrotne) od dostawcy. W tym temacie omówiono sposób tworzenia dostawcy. Pokrewny temat, [jak: implementowanie obserwatora](how-to-implement-an-observer.md), omawia sposób tworzenia obserwatora.  
   
 ### <a name="to-create-a-provider"></a>Aby utworzyć dostawcę  
@@ -52,6 +53,7 @@ Wzorzec projektowy obserwatora wymaga podziału między dostawcą, który monito
      [!code-vb[Conceptual.ObserverDesign.HowTo#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#6)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład zawiera pełen kod źródłowy służący do definiowania <xref:System.IObservable%601> implementacji dla aplikacji monitorującej temperaturę. Obejmuje ona `Temperature` strukturę, czyli dane wysyłane do obserwatorów oraz `TemperatureMonitor` klasę, która jest <xref:System.IObservable%601> implementacją.  
   
  [!code-csharp[Conceptual.ObserverDesign.HowTo#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#7)]

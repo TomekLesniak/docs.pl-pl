@@ -35,14 +35,15 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, classes
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-ms.openlocfilehash: ecaa0016c37abf33c793fb8a362a697672f3275a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 996a8cca8222e3de6517ee6fa7cef3c4f44fc5a9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831289"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734190"
 ---
 # <a name="the-regular-expression-object-model"></a>Model obiektów wyrażeń regularnych
+
 <a name="introduction"></a> W tym temacie opisano model obiektów używany w pracy z wyrażeniami regularnymi programu .NET. Ten temat zawiera następujące sekcje:  
   
 - [Aparat wyrażeń regularnych](#Engine)  
@@ -58,7 +59,9 @@ ms.locfileid: "94831289"
 - [Pojedyncze przechwycenie](#the_individual_capture)  
   
 <a name="Engine"></a>
+
 ## <a name="the-regular-expression-engine"></a>Aparat wyrażeń regularnych  
+
  Aparat wyrażeń regularnych w programie .NET jest reprezentowany przez <xref:System.Text.RegularExpressions.Regex> klasę. Aparat wyrażeń regularnych jest odpowiedzialny za analizowanie i kompilowanie wyrażenia regularnego oraz wykonywanie operacji, które pasują do wzorca wyrażenia regularnego z ciągiem wejściowym. Aparat jest centralnym składnikiem w modelu obiektów wyrażeń regularnych programu .NET.  
   
  Aparat wyrażeń regularnych można używać na dwa sposoby:  
@@ -82,6 +85,7 @@ ms.locfileid: "94831289"
  Te operacje są opisane w poniższych sekcjach.  
   
 ### <a name="matching-a-regular-expression-pattern"></a>Dopasowanie wzorca wyrażenia regularnego  
+
  <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType>Metoda zwraca `true` , czy ciąg pasuje do wzorca, czy nie `false` . <xref:System.Text.RegularExpressions.Regex.IsMatch%2A>Metoda jest często używana do walidacji danych wejściowych ciągu. Na przykład poniższy kod zapewnia, że ciąg jest zgodny z prawidłowym numerem ubezpieczenia społecznego w Stany Zjednoczone.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/validate1.cs#1)]
@@ -100,6 +104,7 @@ ms.locfileid: "94831289"
 |`$`|Dopasowuje koniec ciągu wejściowego.|  
   
 ### <a name="extracting-a-single-match-or-the-first-match"></a>Wyodrębnianie pojedynczego dopasowania lub pierwszego dopasowania  
+
  <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType>Metoda zwraca <xref:System.Text.RegularExpressions.Match> obiekt, który zawiera informacje na temat pierwszego podciągu, który pasuje do wzorca wyrażenia regularnego. Jeśli `Match.Success` Właściwość zwraca `true` , wskazując, że znaleziono dopasowanie, można pobrać informacje o kolejnych dopasowaniach, wywołując <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metodę. Te wywołania metod mogą być kontynuowane do momentu, gdy `Match.Success` właściwość zwróci wartość `false` . Na przykład poniższy kod używa <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=nameWithType> metody, aby znaleźć pierwsze wystąpienie zduplikowanego wyrazu w ciągu. Następnie wywołuje <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metodę w celu znalezienia wszelkich dodatkowych wystąpień. Przykład sprawdza `Match.Success` Właściwość po wywołaniu każdej metody, aby określić, czy bieżące dopasowanie zakończyło się powodzeniem i czy wywołanie <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metody powinno następować po.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/match1.cs#2)]
@@ -116,12 +121,14 @@ ms.locfileid: "94831289"
 |`\b`|Zakończ dopasowanie na granicy słowa.|  
   
 ### <a name="extracting-all-matches"></a>Wyodrębnianie wszystkich dopasowań  
+
  <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType>Metoda zwraca <xref:System.Text.RegularExpressions.MatchCollection> obiekt, który zawiera informacje o wszystkich dopasowaniach, które aparat wyrażeń regularnych znalazł w ciągu wejściowym. Na przykład poprzedni przykład może zostać ponownie zapisany w celu wywołania <xref:System.Text.RegularExpressions.Regex.Matches%2A> metody zamiast <xref:System.Text.RegularExpressions.Regex.Match%2A> <xref:System.Text.RegularExpressions.Match.NextMatch%2A> metod i.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/matches1.cs#3)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/matches1.vb#3)]  
   
 ### <a name="replacing-a-matched-substring"></a>Zastępowanie dopasowanego podciągu  
+
  <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>Metoda zastępuje każdy podciąg, który jest zgodny ze wzorcem wyrażenia regularnego z określonym ciągiem lub wzorcem wyrażenia regularnego, i zwraca cały ciąg wejściowy z zamiennikami. Na przykład poniższy kod dodaje symbol waluty USA przed liczbą dziesiętną w ciągu.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/replace1.cs#4)]
@@ -145,6 +152,7 @@ ms.locfileid: "94831289"
 |`$&`|Cały dopasowany podciąg.|  
   
 ### <a name="splitting-a-single-string-into-an-array-of-strings"></a>Dzielenie pojedynczego ciągu na tablicę ciągów  
+
  <xref:System.Text.RegularExpressions.Regex.Split%2A?displayProperty=nameWithType>Metoda dzieli ciąg wejściowy w pozycjach zdefiniowanych przez wyrażenie regularne dopasowywania. Na przykład poniższy kod umieszcza elementy w numerowanej liście do tablicy ciągów.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/split1.cs#5)]
@@ -160,11 +168,15 @@ ms.locfileid: "94831289"
 |`\s`|Dopasowuje znak odstępu.|  
   
 <a name="Match_and_MCollection"></a>
+
 ## <a name="the-matchcollection-and-match-objects"></a>MatchCollection i Match Objects  
+
  Metody wyrażeń regularnych zwracają dwa obiekty, które są częścią modelu obiektów wyrażeń regularnych: <xref:System.Text.RegularExpressions.MatchCollection> obiekt i <xref:System.Text.RegularExpressions.Match> obiekt.  
   
 <a name="the_match_collection"></a>
+
 ### <a name="the-match-collection"></a>Kolekcja dopasowania  
+
  <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType>Metoda zwraca <xref:System.Text.RegularExpressions.MatchCollection> obiekt, który zawiera <xref:System.Text.RegularExpressions.Match> obiekty, które reprezentują wszystkie dopasowania wykryte przez aparat wyrażeń regularnych w kolejności, w jakiej występują w ciągu wejściowym. Jeśli nie ma żadnych dopasowań, metoda zwraca <xref:System.Text.RegularExpressions.MatchCollection> obiekt bez elementów członkowskich. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType>Właściwość umożliwia dostęp do poszczególnych elementów członkowskich kolekcji przez indeks, od zera do jednego mniejszego od wartości <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> właściwości. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A> jest indeksatorem kolekcji (w języku C#) i właściwością domyślną (w Visual Basic).  
   
  Domyślnie wywołanie <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> metody używa oceny z opóźnieniem do wypełnienia <xref:System.Text.RegularExpressions.MatchCollection> obiektu. Dostęp do właściwości, które wymagają w pełni wypełnionej kolekcji, takiej <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> jak <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> właściwości i, mogą spowodować spadek wydajności. W związku z tym zalecamy dostęp do kolekcji przy użyciu <xref:System.Collections.IEnumerator> obiektu, który jest zwracany przez <xref:System.Text.RegularExpressions.MatchCollection.GetEnumerator%2A?displayProperty=nameWithType> metodę. Poszczególne języki udostępniają konstrukcje, takie jak `For Each` w Visual Basic i `foreach` w języku C#, które zawijają <xref:System.Collections.IEnumerator> interfejs kolekcji.  
@@ -175,7 +187,9 @@ ms.locfileid: "94831289"
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/matchcollection1.vb#6)]  
   
 <a name="the_match"></a>
+
 ### <a name="the-match"></a>Dopasowanie  
+
  <xref:System.Text.RegularExpressions.Match>Klasa reprezentuje wynik pojedynczego wyrażenia regularnego dopasowywania. Dostęp do obiektów można uzyskać <xref:System.Text.RegularExpressions.Match> na dwa sposoby:  
   
 - Pobierając je z <xref:System.Text.RegularExpressions.MatchCollection> obiektu, który jest zwracany przez <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> metodę. Aby pobrać pojedyncze <xref:System.Text.RegularExpressions.Match> obiekty, należy wykonać iterację kolekcji przy użyciu funkcji `foreach` (w języku C#) lub `For Each` ... `Next` (w Visual Basic) lub użyć <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> właściwości w celu pobrania określonego <xref:System.Text.RegularExpressions.Match> obiektu według indeksu lub według nazwy. Możesz również pobrać pojedyncze <xref:System.Text.RegularExpressions.Match> obiekty z kolekcji, przenosząc kolekcje według indeksu, od zera do jednego mniejszego niż liczba obiektów w kolekcji. Jednakże ta metoda nie wykorzystuje oceny z opóźnieniem, ponieważ uzyskuje dostęp do <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> właściwości.  
@@ -229,7 +243,9 @@ ms.locfileid: "94831289"
  [Powrót do początku](#introduction)  
   
 <a name="GroupCollection"></a>
+
 ## <a name="the-group-collection"></a>Kolekcja grup  
+
  <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>Właściwość zwraca <xref:System.Text.RegularExpressions.GroupCollection> obiekt, który zawiera <xref:System.Text.RegularExpressions.Group> obiekty reprezentujące przechwycone grupy w jednym dopasowaniu. Pierwszy <xref:System.Text.RegularExpressions.Group> obiekt w kolekcji (pod indeksem 0) reprezentuje cały odpowiednik. Każdy obiekt, który następuje, reprezentuje wyniki pojedynczej grupy przechwytywania.  
   
  Poszczególne <xref:System.Text.RegularExpressions.Group> obiekty w kolekcji można pobrać przy użyciu <xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType> właściwości. Grupy nienazwanych można pobrać według ich pozycji porządkowej w kolekcji i pobrać nazwane grupy według nazwy lub pozycji porządkowej. Przechwycenia nienazwane są wyświetlane jako pierwsze w kolekcji i są indeksowane od lewej do prawej w kolejności, w jakiej są wyświetlane we wzorcu wyrażenia regularnego. Nazwane przechwycenia są indeksowane po nienazwanym przechwytywaniu, od lewej do prawej w kolejności, w jakiej są wyświetlane we wzorcu wyrażenia regularnego. Aby określić, które grupy numerowane są dostępne w kolekcji zwróconej dla konkretnej metody zgodnej z wyrażeniem regularnym, można wywołać <xref:System.Text.RegularExpressions.Regex.GetGroupNumbers%2A?displayProperty=nameWithType> metodę wystąpienia. Aby określić, które nazwane grupy są dostępne w kolekcji, można wywołać <xref:System.Text.RegularExpressions.Regex.GetGroupNames%2A?displayProperty=nameWithType> metodę wystąpienia. Obie metody są szczególnie przydatne w procedurach ogólnego przeznaczenia, które analizują dopasowania znalezione przez dowolne wyrażenie regularne.  
@@ -260,7 +276,9 @@ ms.locfileid: "94831289"
  [Powrót do początku](#introduction)  
   
 <a name="the_captured_group"></a>
+
 ## <a name="the-captured-group"></a>Przechwycona Grupa  
+
  <xref:System.Text.RegularExpressions.Group>Klasa reprezentuje wynik z pojedynczej grupy przechwytywania. Obiekty grupy reprezentujące grupy przechwytywania zdefiniowane w wyrażeniu regularnym są zwracane przez <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> Właściwość <xref:System.Text.RegularExpressions.GroupCollection> obiektu zwróconego przez <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> Właściwość. <xref:System.Text.RegularExpressions.GroupCollection.Item%2A>Właściwość jest indeksatorem (w języku C#) i właściwością domyślną (w Visual Basic) <xref:System.Text.RegularExpressions.Group> klasy. Możesz również pobrać poszczególnych członków, iterjąc kolekcję przy użyciu `foreach` konstrukcji lub `For Each` . Aby zapoznać się z przykładem, zobacz poprzednią sekcję.  
   
  Poniższy przykład używa zagnieżdżonych konstrukcji grupowania do przechwytywania podciągów do grup. Wzorzec wyrażenia regularnego `(a(b))c` pasuje do ciągu "ABC". Przypisuje podciąg "AB" pierwszej grupie przechwytywania, a podciąg "b" drugiej grupie przechwytywania.  
@@ -307,7 +325,9 @@ ms.locfileid: "94831289"
  [Powrót do początku](#introduction)  
   
 <a name="CaptureCollection"></a>
+
 ## <a name="the-capture-collection"></a>Kolekcja przechwytywania  
+
  <xref:System.Text.RegularExpressions.Group>Obiekt zawiera informacje dotyczące ostatniego przechwytywania. Jednak cały zestaw przechwytywania wykonany przez grupę przechwytywania nadal jest dostępny z <xref:System.Text.RegularExpressions.CaptureCollection> obiektu, który jest zwracany przez <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> Właściwość. Każdy element członkowski kolekcji jest <xref:System.Text.RegularExpressions.Capture> obiektem, który reprezentuje przechwytywanie wykonane przez tę grupę przechwytywania w kolejności, w której zostały przechwycone (i w związku z tym w kolejności, w której przechwycone ciągi zostały dopasowane od lewej do prawej w ciągu wejściowym). Poszczególne obiekty można pobrać <xref:System.Text.RegularExpressions.Capture> z kolekcji na jeden z dwóch sposobów:  
   
 - Przez iterację kolekcji przy użyciu konstrukcji takiej jak `foreach` (w języku C#) lub `For Each` (w Visual Basic).  
@@ -329,7 +349,9 @@ ms.locfileid: "94831289"
  [Powrót do początku](#introduction)  
   
 <a name="the_individual_capture"></a>
+
 ## <a name="the-individual-capture"></a>Pojedyncze przechwycenie  
+
  <xref:System.Text.RegularExpressions.Capture>Klasa zawiera wyniki przechwycenia pojedynczego podwyrażenia. <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType>Właściwość zawiera dopasowany tekst, a <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType> Właściwość wskazuje pozycję od zera w ciągu wejściowym, w którym rozpoczyna się dopasowany podciąg.  
   
  Poniższy przykład analizuje ciąg wejściowy dla temperatury wybranych miast. Przecinek (",") jest używany do oddzielenia miejscowości i jej temperatury, a średnik (";") jest używany do oddzielania danych poszczególnych miast. Cały ciąg wejściowy reprezentuje pojedyncze dopasowanie. We wzorcu wyrażenia regularnego `((\w+(\s\w+)*),(\d+);)+` , który jest używany do analizowania ciągu, nazwa miasta jest przypisywana do drugiej grupy przechwytywania, a temperatura jest przypisana do czwartej grupy przechwytywania.  

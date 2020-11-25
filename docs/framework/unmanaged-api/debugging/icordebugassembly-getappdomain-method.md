@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 14e18510-23ac-4cba-9f96-c86147a2df9d
 topic_type:
 - apiref
-ms.openlocfilehash: 81936052c3fa2ad4fb77b503341b8b4873b80695
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 55a798bcc575aee3f309c35eb454a0675e0cbd97
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894932"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734091"
 ---
 # <a name="icordebugassemblygetappdomain-method"></a>ICorDebugAssembly::GetAppDomain — Metoda
+
 Pobiera wskaźnik interfejsu do domeny aplikacji, która zawiera to `ICorDebugAssembly` wystąpienie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT GetAppDomain (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppAppDomain`  
  określoną Wskaźnik do adresu interfejsu ICorDebugAppDomain, który reprezentuje domenę aplikacji.  
   
 ## <a name="remarks"></a>Uwagi  
- Jeśli ten zestaw jest zestawem systemowym `GetAppDomain` , zwraca wartość null.  
+
+ Jeśli ten zestaw jest zestawem systemowym, `GetAppDomain` zwraca wartość null.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

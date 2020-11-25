@@ -6,14 +6,15 @@ helpviewer_keywords:
 - virtual members
 - members [.NET Framework], virtual
 ms.assetid: 8ff4eb97-0364-43ec-8a02-934b5cd94d19
-ms.openlocfilehash: 22eb71ccfc1b9a3d359b0453e4ff47f3f41827f5
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7727ea7fcfdbbecf2e53ddd7a44b4cf907211f80
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828403"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734351"
 ---
 # <a name="virtual-members"></a>Wirtualne składowe
+
 Wirtualne elementy członkowskie można przesłonić, zmieniając zachowanie podklasy. Są one bardzo podobne do wywołania zwrotnego pod względem rozszerzalności, które zapewnia, ale są lepsze pod względem wydajności i zużycia pamięci. Ponadto wirtualne elementy członkowskie działają bardziej naturalnie w scenariuszach, które wymagają utworzenia specjalnego rodzaju istniejącego typu (specjalizacji).
 
  Wirtualne elementy członkowskie działają lepiej niż wywołania zwrotne i zdarzenia, ale nie wykonują lepszych możliwości niż w przypadku metod innych niż wirtualne.

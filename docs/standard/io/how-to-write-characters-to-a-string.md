@@ -10,24 +10,26 @@ helpviewer_keywords:
 - streams, writing characters to strings
 - I/O [.NET], writing characters to strings
 ms.assetid: 1222cbeb-0760-44bf-9888-914a2a37174b
-ms.openlocfilehash: d4a6bbc77a9feb16293fc88e1598d124d8d2d75d
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 21661a858cff9fc8bc84d497b4af8bedb1393f0a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829729"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734533"
 ---
 # <a name="how-to-write-characters-to-a-string"></a>Instrukcje: Wpisywanie znaków do ciągu
 
 Poniższe przykłady kodu zapisują znaki synchronicznie lub asynchronicznie z tablicy znaków w ciągu.  
   
 ## <a name="example-write-characters-synchronously-in-a-console-app"></a>Przykład: zapisuj znaki synchronicznie w aplikacji konsolowej  
+
  Poniższy przykład używa <xref:System.IO.StringWriter> do zapisu pięciu znaków synchronicznie do <xref:System.Text.StringBuilder> obiektu.
   
  [!code-csharp[Conceptual.StringBuilder#9](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/example2.cs#9)]
  [!code-vb[Conceptual.StringBuilder#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/example2.vb#9)]  
   
 ## <a name="example-write-characters-asynchronously-in-a-wpf-app"></a>Przykład: zapisuj znaki asynchronicznie w aplikacji WPF
+
  Następny przykład to kod związany z aplikacją WPF. W przypadku ładowania okna przykład Asynchronicznie odczytuje wszystkie znaki z <xref:System.Windows.Controls.TextBox> kontrolki i zapisuje je w tablicy. Następnie asynchronicznie zapisuje każdą literę lub biały znak w osobnym wierszu <xref:System.Windows.Controls.TextBlock> kontrolki.  
   
  [!code-csharp[StreamReaderWriter](../../../samples/snippets/csharp/VS_Snippets_Wpf/StringReaderWriter/MainWindow.xaml.cs)]

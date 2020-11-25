@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 450e350b-6a68-4634-a2a5-33f4dc33baf0
-ms.openlocfilehash: 97cc7558f51b7bcbdb5201ef0f0c463da8f2c070
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9c4fbba63428e04b7b29a803061f288ca6ee5031
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822610"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734143"
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mapowanie hierarchii obiektów na dane XML
+
 Gdy dokument XML znajduje się w pamięci, reprezentacja koncepcyjna jest drzewem. W przypadku programowania istnieje hierarchia obiektów do uzyskiwania dostępu do węzłów drzewa. W poniższym przykładzie pokazano, jak zawartość XML staną się węzłami.  
   
  Ponieważ kod XML jest odczytywany do Document Object Model XML (DOM), fragmenty są tłumaczone na węzły, a te węzły zachowują dodatkowe metadane dotyczące siebie, takie jak typ węzła i wartości. Typ węzła jest obiektem, co określa, jakie akcje można wykonać i jakie właściwości można ustawić lub pobrać.  

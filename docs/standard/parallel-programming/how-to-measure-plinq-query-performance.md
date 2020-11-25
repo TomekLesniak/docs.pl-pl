@@ -7,18 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to measure performance
 ms.assetid: 491ba43b-2c10-473d-9aab-e2cb96446711
-ms.openlocfilehash: 43f83a34531b853d108785052f637d9568c45280
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2cbd178d5004d28120ab701a777a474a7e78e09e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826882"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734442"
 ---
 # <a name="how-to-measure-plinq-query-performance"></a>Instrukcje: Mierzenie wydajności zapytań PLINQ
 
 Ten przykład pokazuje, jak używać <xref:System.Diagnostics.Stopwatch> klasy do mierzenia czasu potrzebnego na wykonanie zapytania PLINQ.  
   
 ## <a name="example"></a>Przykład  
+
  W tym przykładzie jest używana pusta `foreach` Pętla ( `For Each` w Visual Basic) do mierzenia czasu wykonywania zapytania. W kodzie rzeczywistym pętla zwykle zawiera dodatkowe kroki przetwarzania, które dodają do łącznego czasu wykonywania zapytania. Należy zauważyć, że stopera nie jest uruchomiona przed pętlą, ponieważ jest to wykonywane po rozpoczęciu wykonywania zapytania. Jeśli potrzebujesz bardziej szczegółowych pomiarów, możesz użyć `ElapsedTicks` Właściwości zamiast `ElapsedMilliseconds` .  
   
  [!code-csharp[PLINQ#19](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/measure2.cs#19)]

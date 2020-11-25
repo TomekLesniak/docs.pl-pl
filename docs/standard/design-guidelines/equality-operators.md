@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Equals method
 - == operator (equality) [.NET Framework]
 ms.assetid: bc496a91-fefb-4ce0-ab4c-61f09964119a
-ms.openlocfilehash: 85a9e81d28995229e6b47d7fe4d0b541265999f8
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2331a852adb4dd254af85060a5077f454bcfe0eb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821349"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734429"
 ---
 # <a name="equality-operators"></a>Operatory równości
+
 W tej sekcji omówiono przeciążanie operatorów równości i odwołuje się do nich `operator==` `operator!=` operator równości i.
 
  ❌ Nie należy przeciążać jednego z operatorów równości, a nie innych.
@@ -29,11 +30,13 @@ W tej sekcji omówiono przeciążanie operatorów równości i odwołuje się do
  Na przykład Zwróć wartość false, jeśli jeden z argumentów ma wartość null, a nie Przerzucanie `NullReferenceException` .
 
 ## <a name="equality-operators-on-value-types"></a>Operatory równości w typach wartości
+
  ✔️ przeciążać operatory równości dla typów wartości, jeśli równość jest istotna.
 
  W większości języków programowania nie istnieje domyślna implementacja `operator==` dla typów wartości.
 
 ## <a name="equality-operators-on-reference-types"></a>Operatory równości w typach referencyjnych
+
  ❌ UNIKAj przeciążania operatorów równości dla modyfikowalnych typów odwołań.
 
  Wiele języków ma wbudowane operatory równości dla typów referencyjnych. Operatory wbudowane zwykle implementują równość odwołań, a wielu deweloperów jest przeważnie, gdy domyślne zachowanie zostanie zmienione na równość wartości.

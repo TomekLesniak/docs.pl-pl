@@ -7,14 +7,15 @@ helpviewer_keywords:
 - callback methods
 - callbacks
 ms.assetid: 48b55c60-495f-4089-9396-97f9122bba7c
-ms.openlocfilehash: 82c1df01197e04d14436b6e5b3b2c6aaa249add2
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c63a88cb4e500504f993352a03478f40cad58400
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821232"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734738"
 ---
 # <a name="events-and-callbacks"></a>Zdarzenia i wywołania zwrotne
+
 Wywołania zwrotne to punkty rozszerzalności, które umożliwiają platformie wywołanie z powrotem do kodu użytkownika przez delegata. Te Delegaty są zwykle przesyłane do struktury za pomocą parametru metody.
 
  Zdarzenia to specjalne przypadki wywołania zwrotnego, które obsługują wygodną i spójną składnię do dostarczania delegata (program obsługi zdarzeń). Ponadto uzupełnianie instrukcji i projektantów programu Visual Studio zapewnia pomoc przy korzystaniu z interfejsów API opartych na zdarzeniach. (Zobacz [projekt zdarzenia](event.md)).

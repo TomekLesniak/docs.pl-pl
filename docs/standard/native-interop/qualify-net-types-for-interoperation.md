@@ -10,14 +10,15 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing .NET components
 - COM interop, exposing COM components
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
-ms.openlocfilehash: 3fa9f0d5d8dd4d532fc510a1d946eddf32016748
-ms.sourcegitcommit: 7588b1f16b7608bc6833c05f91ae670c22ef56f8
+ms.openlocfilehash: 3f5fe0f168e0e520ce1985faf5a8228c1bfbdf20
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93187765"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734312"
 ---
 # <a name="qualifying-net-types-for-com-interoperation"></a>Kwalifikowanie typów .NET do współdziałania z modelem COM
+
 Jeśli zamierzasz uwidocznić typy w zestawie w aplikacjach COM, weź pod uwagę wymagania międzyoperacyjności modelu COM w czasie projektowania. Typy zarządzane (Klasa, interfejs, struktura i Wyliczenie) bezproblemowo integrują się z typami COM w przypadku przestrzegania następujących wytycznych:  
   
 - Klasy powinny jawnie implementować interfejsy.  
@@ -46,7 +47,7 @@ Jeśli zamierzasz uwidocznić typy w zestawie w aplikacjach COM, weź pod uwagę
   
  Po eksportowaniu do modelu COM Hierarchia dziedziczenia typu zarządzanego jest spłaszczona. Przechowywanie wersji różni się również między środowiskami zarządzanymi i niezarządzanymi. Typy ujawnione dla modelu COM nie mają takich samych cech wersji jak inne typy zarządzane.  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System.Runtime.InteropServices.ComVisibleAttribute>
 - [Udostępnianie składników .NET Framework modelowi COM](../../framework/interop/exposing-dotnet-components-to-com.md)

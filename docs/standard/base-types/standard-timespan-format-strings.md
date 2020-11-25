@@ -17,12 +17,12 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-ms.openlocfilehash: ab64b2ef0a87cbad3b3c036d74f4690ff7fdb1f4
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 251f90e85d037d8cf4f3fd58bc27659c98d04b5e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831315"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734247"
 ---
 # <a name="standard-timespan-format-strings"></a>Standardowe ciągi formatujące TimeSpan
 
@@ -47,6 +47,7 @@ Poniższa tabela zawiera listę specyfikatorów formatu standardowego interwału
 |„G”|Format ogólnie długi|Ten specyfikator zawsze Wyprowadza dni i siedem cyfr. Jest ona zależna od kultury i ma postać `[-]d':'hh':'mm':'ss.fffffff` .<br /><br /> Więcej informacji: [specyfikator formatu ogólnego ("G")](#the-general-long-g-format-specifier).|`New TimeSpan(18, 30, 0)` -> 0:18:30:00.0000000 (EN-US)<br /><br /> `New TimeSpan(18, 30, 0)` -> 0:18:30:00, 0000000 (fr-FR)|  
 
 ## <a name="the-constant-c-format-specifier"></a>Specyfikator formatu stałej ("c")  
+
  Specyfikator formatu "c" zwraca reprezentację ciągu <xref:System.TimeSpan> wartości w następującej postaci:  
   
  [-] [*d*.] *hh*:*mm*:*SS*[.*fffffff*]  
@@ -73,6 +74,7 @@ Poniższa tabela zawiera listę specyfikatorów formatu standardowego interwału
  [!code-vb[Conceptual.TimeSpan.Standard#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/standardc1.vb#1)]  
 
 ## <a name="the-general-short-g-format-specifier"></a>Specyfikator formatu ogólnego ("g")  
+
  Specyfikator formatu "g" <xref:System.TimeSpan> zwraca reprezentację ciągu <xref:System.TimeSpan> wartości w postaci kompaktowej przez uwzględnienie tylko tych elementów, które są niezbędne. Ma następującą postać:  
   
  [-] [*d*:] *h*:*mm*:*SS*[.*FFFFFFF*]  
@@ -97,6 +99,7 @@ Poniższa tabela zawiera listę specyfikatorów formatu standardowego interwału
  [!code-vb[Conceptual.TimeSpan.Standard#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/standardshort1.vb#4)]  
 
 ## <a name="the-general-long-g-format-specifier"></a>Specyfikator formatu ogólnego ("G")  
+
  Specyfikator formatu "G" <xref:System.TimeSpan> zwraca reprezentację ciągu <xref:System.TimeSpan> wartości w postaci długiej, która zawsze zawiera dni i ułamki sekund. Ciąg, który jest wynikiem specyfikatora formatu standardowego "G", ma następującą postać:  
   
  [-] *d*:*hh*:*mm*:*SS*. *fffffff*  
