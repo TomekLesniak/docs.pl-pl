@@ -13,37 +13,38 @@ helpviewer_keywords:
 - I/O [.NET], writing data
 - BinaryWriter class, examples
 ms.assetid: e209d949-31e8-44ea-8e38-87f9093f3093
-ms.openlocfilehash: 940d720edfde93f8707a4fd7040e5dd3618a2680
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 8ec14ef560ddd69e8c9217298271b7ec715fcb9c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830717"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95734585"
 ---
-# <a name="how-to-read-and-write-to-a-newly-created-data-file"></a><span data-ttu-id="7b68b-103">Instrukcje: Odczyt i zapis w nowo utworzonym pliku danych</span><span class="sxs-lookup"><span data-stu-id="7b68b-103">How to: Read and write to a newly created data file</span></span>
+# <a name="how-to-read-and-write-to-a-newly-created-data-file"></a><span data-ttu-id="ec012-103">Instrukcje: Odczyt i zapis w nowo utworzonym pliku danych</span><span class="sxs-lookup"><span data-stu-id="ec012-103">How to: Read and write to a newly created data file</span></span>
 
-<span data-ttu-id="7b68b-104"><xref:System.IO.BinaryWriter?displayProperty=nameWithType>Klasy i <xref:System.IO.BinaryReader?displayProperty=nameWithType> są używane do zapisywania i odczytywania danych innych niż ciągi znaków.</span><span class="sxs-lookup"><span data-stu-id="7b68b-104">The <xref:System.IO.BinaryWriter?displayProperty=nameWithType> and <xref:System.IO.BinaryReader?displayProperty=nameWithType> classes are used for writing and reading data other than character strings.</span></span> <span data-ttu-id="7b68b-105">Poniższy przykład pokazuje, jak utworzyć pusty strumień plików, zapisać w nim dane i odczytać z niego dane.</span><span class="sxs-lookup"><span data-stu-id="7b68b-105">The following example shows how to create an empty file stream, write data to it, and read data from it.</span></span>
+<span data-ttu-id="ec012-104"><xref:System.IO.BinaryWriter?displayProperty=nameWithType>Klasy i <xref:System.IO.BinaryReader?displayProperty=nameWithType> są używane do zapisywania i odczytywania danych innych niż ciągi znaków.</span><span class="sxs-lookup"><span data-stu-id="ec012-104">The <xref:System.IO.BinaryWriter?displayProperty=nameWithType> and <xref:System.IO.BinaryReader?displayProperty=nameWithType> classes are used for writing and reading data other than character strings.</span></span> <span data-ttu-id="ec012-105">Poniższy przykład pokazuje, jak utworzyć pusty strumień plików, zapisać w nim dane i odczytać z niego dane.</span><span class="sxs-lookup"><span data-stu-id="ec012-105">The following example shows how to create an empty file stream, write data to it, and read data from it.</span></span>
 
-<span data-ttu-id="7b68b-106">Przykład tworzy plik danych o nazwie *test. Data* w bieżącym katalogu, tworzy skojarzone <xref:System.IO.BinaryWriter> <xref:System.IO.BinaryReader> obiekty i używa <xref:System.IO.BinaryWriter> obiektu, aby napisać liczbę całkowitą od 0 do 10 w celu *przetestowania. dane*, co pozostawia wskaźnik pliku na końcu pliku.</span><span class="sxs-lookup"><span data-stu-id="7b68b-106">The example creates a data file called *Test.data* in the current directory, creates the associated <xref:System.IO.BinaryWriter> and <xref:System.IO.BinaryReader> objects, and uses the <xref:System.IO.BinaryWriter> object to write the integers 0 through 10 to *Test.data*, which leaves the file pointer at the end of the file.</span></span> <span data-ttu-id="7b68b-107"><xref:System.IO.BinaryReader>Następnie obiekt ustawia wskaźnik pliku z powrotem do źródła i odczytuje określoną zawartość.</span><span class="sxs-lookup"><span data-stu-id="7b68b-107">The <xref:System.IO.BinaryReader> object then sets the file pointer back to the origin and reads out the specified content.</span></span>  
+<span data-ttu-id="ec012-106">Przykład tworzy plik danych o nazwie *test. Data* w bieżącym katalogu, tworzy skojarzone <xref:System.IO.BinaryWriter> <xref:System.IO.BinaryReader> obiekty i używa <xref:System.IO.BinaryWriter> obiektu, aby napisać liczbę całkowitą od 0 do 10 w celu *przetestowania. dane*, co pozostawia wskaźnik pliku na końcu pliku.</span><span class="sxs-lookup"><span data-stu-id="ec012-106">The example creates a data file called *Test.data* in the current directory, creates the associated <xref:System.IO.BinaryWriter> and <xref:System.IO.BinaryReader> objects, and uses the <xref:System.IO.BinaryWriter> object to write the integers 0 through 10 to *Test.data*, which leaves the file pointer at the end of the file.</span></span> <span data-ttu-id="ec012-107"><xref:System.IO.BinaryReader>Następnie obiekt ustawia wskaźnik pliku z powrotem do źródła i odczytuje określoną zawartość.</span><span class="sxs-lookup"><span data-stu-id="ec012-107">The <xref:System.IO.BinaryReader> object then sets the file pointer back to the origin and reads out the specified content.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="7b68b-108">Jeśli *test. Data* już istnieje w bieżącym katalogu, <xref:System.IO.IOException> zgłaszany jest wyjątek.</span><span class="sxs-lookup"><span data-stu-id="7b68b-108">If *Test.data* already exists in the current directory, an <xref:System.IO.IOException> exception is thrown.</span></span> <span data-ttu-id="7b68b-109">Użyj opcji Tryb plików <xref:System.IO.FileMode.Create?displayProperty=nameWithType> zamiast tego, <xref:System.IO.FileMode.CreateNew?displayProperty=nameWithType> Aby zawsze tworzyć nowy plik bez zgłaszania wyjątku.</span><span class="sxs-lookup"><span data-stu-id="7b68b-109">Use the file mode option <xref:System.IO.FileMode.Create?displayProperty=nameWithType> rather than <xref:System.IO.FileMode.CreateNew?displayProperty=nameWithType> to always create a new file without throwing an exception.</span></span>  
+> <span data-ttu-id="ec012-108">Jeśli *test. Data* już istnieje w bieżącym katalogu, <xref:System.IO.IOException> zgłaszany jest wyjątek.</span><span class="sxs-lookup"><span data-stu-id="ec012-108">If *Test.data* already exists in the current directory, an <xref:System.IO.IOException> exception is thrown.</span></span> <span data-ttu-id="ec012-109">Użyj opcji Tryb plików <xref:System.IO.FileMode.Create?displayProperty=nameWithType> zamiast tego, <xref:System.IO.FileMode.CreateNew?displayProperty=nameWithType> Aby zawsze tworzyć nowy plik bez zgłaszania wyjątku.</span><span class="sxs-lookup"><span data-stu-id="ec012-109">Use the file mode option <xref:System.IO.FileMode.Create?displayProperty=nameWithType> rather than <xref:System.IO.FileMode.CreateNew?displayProperty=nameWithType> to always create a new file without throwing an exception.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7b68b-110">Przykład</span><span class="sxs-lookup"><span data-stu-id="7b68b-110">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="ec012-110">Przykład</span><span class="sxs-lookup"><span data-stu-id="ec012-110">Example</span></span>  
+
  [!code-csharp[System.IO.BinaryReaderWriter#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CS/source6.cs#7)]
  [!code-vb[System.IO.BinaryReaderWriter#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/VB/source6.vb#7)]  
   
-## <a name="see-also"></a><span data-ttu-id="7b68b-111">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="7b68b-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ec012-111">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="ec012-111">See also</span></span>
 
 - <xref:System.IO.BinaryReader>  
 - <xref:System.IO.BinaryWriter>  
 - <xref:System.IO.FileStream>  
 - <xref:System.IO.FileStream.Seek%2A?displayProperty=nameWithType>  
 - <xref:System.IO.SeekOrigin>  
-- [<span data-ttu-id="7b68b-112">Instrukcje: Wyliczanie katalogów i plików</span><span class="sxs-lookup"><span data-stu-id="7b68b-112">How to: Enumerate directories and files</span></span>](how-to-enumerate-directories-and-files.md)  
-- [<span data-ttu-id="7b68b-113">Instrukcje: otwieranie pliku dziennika i dołączanie do niego</span><span class="sxs-lookup"><span data-stu-id="7b68b-113">How to: Open and append to a log file</span></span>](how-to-open-and-append-to-a-log-file.md)  
-- [<span data-ttu-id="7b68b-114">Instrukcje: odczytywanie tekstu z pliku</span><span class="sxs-lookup"><span data-stu-id="7b68b-114">How to: Read text from a file</span></span>](how-to-read-text-from-a-file.md)  
-- [<span data-ttu-id="7b68b-115">Instrukcje: wpisywanie tekstu do pliku</span><span class="sxs-lookup"><span data-stu-id="7b68b-115">How to: Write text to a file</span></span>](how-to-write-text-to-a-file.md)  
-- [<span data-ttu-id="7b68b-116">Instrukcje: odczytywanie znaków z ciągu</span><span class="sxs-lookup"><span data-stu-id="7b68b-116">How to: Read characters from a string</span></span>](how-to-read-characters-from-a-string.md)  
-- [<span data-ttu-id="7b68b-117">Instrukcje: Wpisywanie znaków do ciągu</span><span class="sxs-lookup"><span data-stu-id="7b68b-117">How to: Write characters to a string</span></span>](how-to-write-characters-to-a-string.md)  
-- [<span data-ttu-id="7b68b-118">We/wy plików i strumieni</span><span class="sxs-lookup"><span data-stu-id="7b68b-118">File and stream I/O</span></span>](index.md)
+- [<span data-ttu-id="ec012-112">Instrukcje: Wyliczanie katalogów i plików</span><span class="sxs-lookup"><span data-stu-id="ec012-112">How to: Enumerate directories and files</span></span>](how-to-enumerate-directories-and-files.md)  
+- [<span data-ttu-id="ec012-113">Instrukcje: otwieranie pliku dziennika i dołączanie do niego</span><span class="sxs-lookup"><span data-stu-id="ec012-113">How to: Open and append to a log file</span></span>](how-to-open-and-append-to-a-log-file.md)  
+- [<span data-ttu-id="ec012-114">Instrukcje: odczytywanie tekstu z pliku</span><span class="sxs-lookup"><span data-stu-id="ec012-114">How to: Read text from a file</span></span>](how-to-read-text-from-a-file.md)  
+- [<span data-ttu-id="ec012-115">Instrukcje: wpisywanie tekstu do pliku</span><span class="sxs-lookup"><span data-stu-id="ec012-115">How to: Write text to a file</span></span>](how-to-write-text-to-a-file.md)  
+- [<span data-ttu-id="ec012-116">Instrukcje: odczytywanie znaków z ciągu</span><span class="sxs-lookup"><span data-stu-id="ec012-116">How to: Read characters from a string</span></span>](how-to-read-characters-from-a-string.md)  
+- [<span data-ttu-id="ec012-117">Instrukcje: Wpisywanie znaków do ciągu</span><span class="sxs-lookup"><span data-stu-id="ec012-117">How to: Write characters to a string</span></span>](how-to-write-characters-to-a-string.md)  
+- [<span data-ttu-id="ec012-118">We/wy plików i strumieni</span><span class="sxs-lookup"><span data-stu-id="ec012-118">File and stream I/O</span></span>](index.md)
