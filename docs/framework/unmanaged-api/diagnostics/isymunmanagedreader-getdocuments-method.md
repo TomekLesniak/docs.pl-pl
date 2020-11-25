@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e3b73a3f-d089-4101-a9a9-5e0765d05b61
 topic_type:
 - apiref
-ms.openlocfilehash: b8a3a74888a3caae03da6f88a003bd277939ae59
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 757b7fecbbb187da079c8a5c51462ec58431966f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615049"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707623"
 ---
 # <a name="isymunmanagedreadergetdocuments-method"></a>ISymUnmanagedReader::GetDocuments — Metoda
+
 Zwraca tablicę wszystkich dokumentów zdefiniowanych w magazynie symboli.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT GetDocuments (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cDocs`  
  podczas Rozmiar `pDocs` tablicy.  
   
@@ -46,9 +48,11 @@ HRESULT GetDocuments (
  określoną Wskaźnik do zmiennej, która otrzymuje tablicę dokumentu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

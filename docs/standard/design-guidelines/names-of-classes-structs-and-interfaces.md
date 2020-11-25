@@ -13,14 +13,15 @@ helpviewer_keywords:
 - interfaces [.NET Framework], names
 - generic type parameters
 ms.assetid: 87a4b0da-ed64-43b1-ac43-968576c444ce
-ms.openlocfilehash: b9de9329cc8e1bfc47a46523c7119bb3b2c244d8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 49bafda0d5c362fa02313c5304436069d054cfd9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290217"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706518"
 ---
 # <a name="names-of-classes-structs-and-interfaces"></a>Nazwy klas, struktur i interfejsów
+
 Poniższe wskazówki dotyczące nazewnictwa mają zastosowanie do ogólnego nazewnictwa typów.
 
  ✔️ DO nazw klas i struktur z rzeczownikami lub rzeczownikami, za pomocą PascalCasing.
@@ -31,7 +32,7 @@ Poniższe wskazówki dotyczące nazewnictwa mają zastosowanie do ogólnego naze
 
  Rzeczowniki i frazy rzeczowników powinny być używane rzadko i mogą wskazywać, że typ powinien być klasą abstrakcyjną, a nie interfejsem.
 
- ❌NIE należy podawać nazw klas jako prefiksu (np. "C").
+ ❌ NIE należy podawać nazw klas jako prefiksu (np. "C").
 
  ✔️ Rozważ zakończenie nazwy klas pochodnych o nazwie klasy bazowej.
 
@@ -44,6 +45,7 @@ Poniższe wskazówki dotyczące nazewnictwa mają zastosowanie do ogólnego naze
  ✔️ Upewnij się, że nazwy różnią się tylko prefiksem "I" w nazwie interfejsu podczas definiowania pary interfejsów klasy, w których Klasa jest implementacją standardową interfejsu.
 
 ## <a name="names-of-generic-type-parameters"></a>Nazwy parametrów typu ogólnego
+
  Typy ogólne zostały dodane do .NET Framework 2,0. Funkcja wprowadziła nowy rodzaj identyfikatora o nazwie *parametr typu*.
 
  ✔️ nazywają ogólne parametry typu z nazwami opisowymi, chyba że jednoliterowa nazwa nie jest całkowicie oczywista, a nazwa opisowa nie będzie dodawać wartości.
@@ -69,14 +71,15 @@ public interface ISessionChannel<TSession> where TSession : ISession {
  Na przykład parametr ograniczony do `ISession` może być wywoływany `TSession` .
 
 ## <a name="names-of-common-types"></a>Nazwy typów wspólnych
+
  ✔️ Postępuj zgodnie z wytycznymi opisanymi w poniższej tabeli podczas nazewnictwa typów pochodnych lub implementacji niektórych typów .NET Framework.
 
 |Typ podstawowy|Wytyczne typu pochodnego/implementującego|
 |---------------|------------------------------------------|
 |`System.Attribute`|✔️ dodać sufiks "Attribute" do nazw klas atrybutów niestandardowych.|
-|`System.Delegate`|✔️ Dodaj sufiks "EventHandler" do nazw delegatów używanych w zdarzeniach.<br /><br /> ✔️ Dodaj sufiks "wywołanie zwrotne" do nazw delegatów innych niż te używane jako programy obsługi zdarzeń.<br /><br /> ❌Nie dodawaj sufiksu "delegat" do delegata.|
+|`System.Delegate`|✔️ Dodaj sufiks "EventHandler" do nazw delegatów używanych w zdarzeniach.<br /><br /> ✔️ Dodaj sufiks "wywołanie zwrotne" do nazw delegatów innych niż te używane jako programy obsługi zdarzeń.<br /><br /> ❌ Nie dodawaj sufiksu "delegat" do delegata.|
 |`System.EventArgs`|✔️ dodać sufiks "EventArgs".|
-|`System.Enum`|❌NIE pochodzą od tej klasy; Zamiast tego należy użyć słowa kluczowego obsługiwanego przez język; na przykład, w języku C#, użyj `enum` słowa kluczowego.<br /><br /> ❌NIE należy dodawać sufiksu "enum" ani "flag".|
+|`System.Enum`|❌ NIE pochodzą od tej klasy; Zamiast tego należy użyć słowa kluczowego obsługiwanego przez język; na przykład, w języku C#, użyj `enum` słowa kluczowego.<br /><br /> ❌ NIE należy dodawać sufiksu "enum" ani "flag".|
 |`System.Exception`|✔️ Dodaj sufiks "Exception".|
 |`IDictionary` <br /> `IDictionary<TKey,TValue>`|✔️ dodać sufiks "dictionary". Należy pamiętać, że `IDictionary` jest to konkretny typ kolekcji, ale wskazówki te mają pierwszeństwo przed bardziej ogólnymi wskazówkami dotyczącymi kolekcji.|
 |`IEnumerable` <br /> `ICollection` <br /> `IList` <br /> `IEnumerable<T>` <br /> `ICollection<T>` <br /> `IList<T>`|✔️ dodać sufiks "Kolekcja".|
@@ -84,17 +87,18 @@ public interface ISessionChannel<TSession> where TSession : ISession {
 |`CodeAccessPermission IPermission`|✔️ dodać sufiks "uprawnienie".|
 
 ## <a name="naming-enumerations"></a>Wyliczanie nazw
+
  Nazwy typów wyliczeniowych (nazywane również wyliczeniami) ogólnie powinny być zgodne ze standardowymi regułami nazewnictwa typów (PascalCasing itp.). Istnieją jednak dodatkowe wytyczne, które dotyczą wyłącznie wyliczeń.
 
  ✔️ do wyliczenia należy używać pojedynczej nazwy typu, chyba że jej wartości są polami bitowymi.
 
  ✔️ należy używać nazwy typu w liczbie mnogiej dla wyliczenia z polami bitowymi jako wartości, nazywane również flagami enum.
 
- ❌NIE używaj sufiksu "enum" w nazwach typów wyliczeniowych.
+ ❌ NIE używaj sufiksu "enum" w nazwach typów wyliczeniowych.
 
- ❌NIE używaj sufiksów "flag" ani "flags" w nazwach typów wyliczeniowych.
+ ❌ NIE używaj sufiksów "flag" ani "flags" w nazwach typów wyliczeniowych.
 
- ❌NIE należy używać prefiksu dla nazw wartości wyliczenia (np. "AD" dla wyliczeń ADO, "RTF" dla tekstu sformatowanego RTF itp.).
+ ❌ NIE należy używać prefiksu dla nazw wartości wyliczenia (np. "AD" dla wyliczeń ADO, "RTF" dla tekstu sformatowanego RTF itp.).
 
  *Fragmenty © 2005, 2009 Microsoft Corporation. Wszelkie prawa zastrzeżone.*
 

@@ -2,12 +2,12 @@
 title: Terminologia platformy Docker
 description: Architektura mikrousług platformy .NET dla aplikacji platformy .NET w kontenerze | Terminologia platformy Docker
 ms.date: 01/30/2020
-ms.openlocfilehash: 16aaaa2df0f68434b766d4d1cc96974e83449953
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: b30ea26ee174caf3484931945c832c72a1acf93d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199901"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707768"
 ---
 # <a name="docker-terminology"></a>Terminologia platformy Docker
 
@@ -35,7 +35,7 @@ docker build
 
 **Rejestr**: usługa, która zapewnia dostęp do repozytoriów. Domyślnym rejestrem większości obrazów publicznych jest [centrum platformy Docker](https://hub.docker.com/) (należące do platformy Docker jako organizacja). Rejestr zawiera zwykle repozytoria z wielu zespołów. Firmy często mają prywatne rejestry do przechowywania utworzonych przez siebie obrazów i zarządzania nimi. Azure Container Registry jest kolejnym przykładem.
 
-**Obraz**z obsługą wielu rozwiązań: w przypadku wielu architektur jest to funkcja, która upraszcza wybór odpowiedniego obrazu, zgodnie z platformą, na której działa platforma Docker. Na przykład gdy pliku dockerfile żąda obrazu podstawowego **z MCR.Microsoft.com/dotnet/Core/SDK:3.1** z rejestru, faktycznie otrzymuje **3,1-SDK-nanoserver-1909**, **3,1-SDK-nanoserver-1809** lub **3,1-SDK-Buster-Slim**, w zależności od systemu operacyjnego i wersji, w której działa program Docker.
+**Obraz** z obsługą wielu rozwiązań: w przypadku wielu architektur jest to funkcja, która upraszcza wybór odpowiedniego obrazu, zgodnie z platformą, na której działa platforma Docker. Na przykład gdy pliku dockerfile żąda obrazu podstawowego **z MCR.Microsoft.com/dotnet/SDK:3.1** z rejestru, faktycznie otrzymuje **3,1-SDK-nanoserver-1909**, **3,1-SDK-nanoserver-1809** lub **3,1-SDK-Buster-Slim**, w zależności od systemu operacyjnego i wersji, w której działa program Docker.
 
 **Centrum platformy Docker**: Rejestr publiczny służący do przekazywania obrazów i pracy z nimi. Centrum platformy Docker zapewnia hosting obrazów platformy Docker, rejestry publiczne lub prywatne, wyzwalacze kompilacji i elementy webhook oraz integrację z usługą GitHub i Bitbucket.
 
@@ -54,5 +54,5 @@ docker build
 **Orchestrator**: Narzędzie upraszczające Zarządzanie klastrami i hostami platformy Docker. Koordynatorzy umożliwiają zarządzanie obrazami, kontenerami i hostami za pomocą interfejsu wiersza polecenia (CLI) lub graficznego interfejsu użytkownika. Można zarządzać sieciami kontenera, konfiguracjami, równoważeniem obciążenia, odnajdywaniem usług, wysoką dostępnością, konfiguracją hosta platformy Docker i innymi. Koordynator jest odpowiedzialny za uruchamianie, dystrybuowanie, skalowanie i korygowanie obciążeń w kolekcji węzłów. Zazwyczaj produkty Orchestrator są tymi samymi produktami, które zapewniają infrastrukturę klastra, taką jak Kubernetes i Azure Service Fabric, między innymi ofertami na rynku.
 
 >[!div class="step-by-step"]
->[Poprzedni](docker-defined.md)
->[Następny](docker-containers-images-registries.md)
+>[Poprzedni](docker-defined.md) 
+> [Dalej](docker-containers-images-registries.md)

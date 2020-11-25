@@ -8,12 +8,12 @@ helpviewer_keywords:
 - parameters, design guidelines
 - reserved parameters
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
-ms.openlocfilehash: 707ae48be3f45d82ed3819f943dc5ba3743172f3
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 815075198f34c0c045603b9d377b9d5fbdf1a91d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94828806"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707883"
 ---
 # <a name="parameter-design"></a>Projekt parametrów
 
@@ -40,6 +40,7 @@ Ta sekcja zawiera szczegółowe wskazówki dotyczące projektowania parametrów,
  To lepiej komunikuje się relacją między metodami.
 
 ### <a name="choosing-between-enum-and-boolean-parameters"></a>Wybór między parametrami enum i Boolean  
+
  ✔️ Użyj typów wyliczeniowych, jeśli element członkowski mógłby w inny sposób mieć co najmniej dwa parametry logiczne.
 
  ❌ NIE używaj wartości logicznych, chyba że masz absolutną pewność, że nie będzie potrzebna więcej niż dwie wartości.
@@ -49,6 +50,7 @@ Ta sekcja zawiera szczegółowe wskazówki dotyczące projektowania parametrów,
  ✔️ ROZWAŻYĆ użycie wartości logicznych dla parametrów konstruktora, które są w prawdziwie wartościami dwustanowymi i są po prostu używane do inicjowania właściwości logicznych.
 
 ### <a name="validating-arguments"></a>Sprawdzanie poprawności argumentów
+
  ✔️ weryfikują argumenty przekazane do publicznych, chronionych lub jawnie zaimplementowanych elementów członkowskich. Throw <xref:System.ArgumentException?displayProperty=nameWithType> lub jednej z jej podklas, jeśli sprawdzanie poprawności zakończy się niepowodzeniem.
 
  Należy zauważyć, że rzeczywista weryfikacja nie musi występować w publicznej lub chronionej składowej. Może się to zdarzyć na niższym poziomie w pewnej prywatnej lub wewnętrznej procedurze. Głównym punktem jest to, że cały obszar powierzchni, który jest widoczny dla użytkowników końcowych, sprawdza argumenty.
@@ -66,6 +68,7 @@ Ta sekcja zawiera szczegółowe wskazówki dotyczące projektowania parametrów,
  Jeśli składowa jest wrażliwa na zabezpieczenia, zachęca się do tworzenia kopii, a następnie weryfikacji i przetwarzania argumentu.
 
 ### <a name="parameter-passing"></a>Przekazywanie parametru
+
  Z perspektywy projektanta struktury istnieją trzy główne grupy parametrów: według wartości parametrów, `ref` parametrów i `out` parametrów.
 
  Gdy argument jest przenoszona przez parametr przez wartość, element członkowski otrzymuje kopię rzeczywistego argumentu przekazywane. Jeśli argument jest typem wartości, kopia argumentu jest umieszczana na stosie. Jeśli argument jest typem referencyjnym, kopia odwołania jest umieszczana na stosie. Najpopularniejsze języki CLR, takie jak C#, VB.NET i C++, domyślnie przechodzą parametry według wartości.
@@ -83,6 +86,7 @@ Ta sekcja zawiera szczegółowe wskazówki dotyczące projektowania parametrów,
  Istnieją pewne ograniczone wyjątki dla reguły, takie jak metoda, która może służyć do wymiany odwołań.
 
 ### <a name="members-with-variable-number-of-parameters"></a>Elementy członkowskie ze zmienną liczbą parametrów
+
  Elementy członkowskie, które mogą przyjmować zmienną liczbę argumentów, są wyrażane przez podanie parametru array. Na przykład <xref:System.String> zapewnia następującą metodę:
 
 ```csharp
@@ -140,6 +144,7 @@ public class String {
  Niektóre języki CLR, takie jak C++, obsługują alternatywną Konwencję do przekazywania list parametrów zmiennych nazywanych `varargs` metodami. Konwencji nie należy używać w strukturach, ponieważ nie jest ona zgodna ze specyfikacją CLS.
 
 ### <a name="pointer-parameters"></a>Parametry wskaźnika
+
  Ogólnie rzecz biorąc wskaźniki nie powinny znajdować się w obszarze publicznej powierzchni dobrze zaprojektowanej struktury kodu zarządzanego. W większości przypadków wskaźniki powinny być hermetyzowane. Jednak w niektórych przypadkach wskaźniki są wymagane ze względu na współdziałanie, a w takich przypadkach są odpowiednie wskaźniki.
 
  ✔️ zapewnić alternatywę dla każdego elementu członkowskiego, który przyjmuje argument wskaźnika, ponieważ wskaźniki nie są zgodne ze specyfikacją CLS.

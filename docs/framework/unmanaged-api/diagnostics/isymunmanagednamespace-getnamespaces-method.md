@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0ea9d9af-8709-4a46-872b-f54d9e840088
 topic_type:
 - apiref
-ms.openlocfilehash: 48c50ac6be6d525676d85578e5a55a27104c180a
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8eef973c4c054b704b7c3f798e5dc1aa455dda96
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615101"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707778"
 ---
 # <a name="isymunmanagednamespacegetnamespaces-method"></a>ISymUnmanagedNamespace::GetNamespaces — Metoda
+
 Pobiera elementy podrzędne tej przestrzeni nazw.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,8 +37,9 @@ HRESULT GetNamespaces(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cNameSpaces`  
- podczas `ULONG32`Wskazuje rozmiar `namespaces` tablicy.  
+ podczas `ULONG32` Wskazuje rozmiar `namespaces` tablicy.  
   
  `pcNameSpaces`  
  określoną Wskaźnik do obiektu, `ULONG32` który odbiera rozmiar (w znakach) bufora wymaganego do przechowywania przestrzeni nazw.  
@@ -46,11 +48,13 @@ HRESULT GetNamespaces(
  określoną Wskaźnik do buforu, który zawiera przestrzenie nazw.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ISymUnmanagedNamespace, interfejs](isymunmanagednamespace-interface.md)
+- [ISymUnmanagedNamespace — Interfejs](isymunmanagednamespace-interface.md)

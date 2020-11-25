@@ -1,6 +1,6 @@
 ---
-title: EndMethodEnumeration, funkcja (odwołanie do interfejsu API niezarządzanego)
-description: EndMethodEnumeration Funkcja kończy sekwencję wyliczenia metody.
+title: EndMethodEnumeration — funkcja (niezarządzana dokumentacja interfejsu API)
+description: Funkcja EndMethodEnumeration kończy sekwencję wyliczenia metod.
 ms.date: 11/06/2017
 api_name:
 - EndMethodEnumeration
@@ -14,15 +14,16 @@ helpviewer_keywords:
 - EndMethodEnumeration function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 63667d0668f905ded2aedd961be0d1831faf838c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 82f50530967699427d8a00b1c9f518b639273626
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175008"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708065"
 ---
 # <a name="endmethodenumeration-function"></a>EndMethodEnumeration, funkcja
-Kończy sekwencję wyliczenia rozpoczętą wywołaniem [funkcji BeginMethodEnumeration](beginmethodenumeration.md).  
+
+Kończy sekwencję wyliczenia rozpoczętą od wywołania [funkcji BeginMethodEnumeration](beginmethodenumeration.md).  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -38,33 +39,34 @@ HRESULT EndMethodEnumeration (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[w] Ten parametr jest nieużywane.
+podczas Ten parametr jest nieużywany.
 
 `ptr`  
-[w] Wskaźnik do wystąpienia [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
+podczas Wskaźnik do wystąpienia [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 ## <a name="return-value"></a>Wartość zwracana
 
-Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówka *WbemCli.h* lub można zdefiniować je jako stałe w kodzie:
+Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówkowym *WbemCli. h* lub można je definiować jako stałe w kodzie:
 
-|Stały  |Wartość  |Opis  |
+|Stała  |Wartość  |Opis  |
 |---------|---------|---------|
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Wystąpił błąd wewnętrzny. |
 |`WBEM_S_NO_ERROR` | 0 | Wywołanie funkcji zakończyło się pomyślnie.  |
   
 ## <a name="remarks"></a>Uwagi
 
-Ta funkcja zawija wywołanie [metody IWbemClassObject::EndMethodEnumeration.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-endmethodenumeration)
+Ta funkcja otacza wywołanie metody [IWbemClassObject:: EndMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-endmethodenumeration) .
 
-Wywołujący rozpoczyna sekwencję wyliczenia za pomocą [funkcji BeginMethodEnumeration](beginmethodenumeration.md), a następnie `WBEM_S_NO_MORE_DATA`wywołuje funkcję [NextMethod,](nextmethod.md )dopóki metoda nie zwróci . Wywołujący opcjonalnie kończy sekwencję `EndMethodEnumeration`przez wywołanie . Wywołujący może zakończyć wyliczenie wcześnie, wywołując `EndMethodEnumeration` w dowolnym momencie.
+Obiekt wywołujący rozpoczyna sekwencję wyliczenia za pomocą [funkcji BeginMethodEnumeration](beginmethodenumeration.md), a następnie wywołuje [funkcję NextMethod](nextmethod.md )do momentu, gdy metoda zwróci metodę `WBEM_S_NO_MORE_DATA` . Obiekt wywołujący opcjonalnie kończy sekwencję przez wywołanie metody `EndMethodEnumeration` . Obiekt wywołujący może zakończyć Wyliczenie wczesne przez wywołanie `EndMethodEnumeration` w dowolnym momencie.
 
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
-  
- **Nagłówek:** WMINet_Utils.idl  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [Liczniki wydajności WMI i (niezarządzane odwołanie interfejsu API)](index.md)
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
+  
+ **Nagłówek:** WMINet_Utils. idl  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [WMI i liczniki wydajności (niezarządzana dokumentacja interfejsu API)](index.md)

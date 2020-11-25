@@ -2,14 +2,15 @@
 title: Wskazówki dotyczące kolekcji
 ms.date: 10/22/2008
 ms.assetid: 297b8f1d-b11f-4dc6-960a-8e990817304e
-ms.openlocfilehash: 2306462d933e71d0d23021a0e036e8cc23100c68
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a143e88be01bf2c8f45e25f26498d2d3ccbd98da
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821089"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706674"
 ---
 # <a name="guidelines-for-collections"></a>Wskazówki dotyczące kolekcji
+
 Każdy typ przeznaczony specjalnie do manipulowania grupą obiektów, które mają pewną wspólną charakterystykę, może być traktowany jako kolekcja. Jest prawie zawsze odpowiednie dla takich typów do wdrożenia <xref:System.Collections.IEnumerable> lub <xref:System.Collections.Generic.IEnumerable%601> , dlatego w tej sekcji rozważamy tylko typy implementujące jeden lub oba te interfejsy, które mają być kolekcjami.
 
  ❌ NIE używaj słabo wpisanych kolekcji w publicznych interfejsach API.
@@ -31,6 +32,7 @@ Każdy typ przeznaczony specjalnie do manipulowania grupą obiektów, które maj
  ❌ NIE należy implementować obu `IEnumerator<T>` i `IEnumerable<T>` tego samego typu. To samo dotyczy interfejsów nierodzajowych `IEnumerator` i `IEnumerable` .
 
 ## <a name="collection-parameters"></a>Parametry kolekcji
+
  ✔️ używać typu najmniej wyspecjalizowanego możliwego jako typ parametru. Większość elementów członkowskich przyjmujących kolekcje jako parametry używają `IEnumerable<T>` interfejsu.
 
  ❌ Należy unikać używania <xref:System.Collections.Generic.ICollection%601> lub <xref:System.Collections.ICollection> jako parametru tylko w celu uzyskania dostępu do `Count` właściwości.
@@ -38,6 +40,7 @@ Każdy typ przeznaczony specjalnie do manipulowania grupą obiektów, które maj
  Zamiast tego należy rozważyć użycie `IEnumerable<T>` lub `IEnumerable` i dynamiczne sprawdzenie, czy obiekt implementuje `ICollection<T>` lub `ICollection` .
 
 ## <a name="collection-properties-and-return-values"></a>Właściwości kolekcji i wartości zwracane
+
  ❌ Nie udostępniaj właściwości kolekcji settable.
 
  Użytkownicy mogą zastąpić zawartość kolekcji, czyszcząc najpierw kolekcję, a następnie dodając nową zawartość. Jeśli zastępowanie całej kolekcji jest typowym scenariuszem, rozważ dostarczenie `AddRange` metody do kolekcji.
@@ -69,6 +72,7 @@ Każdy typ przeznaczony specjalnie do manipulowania grupą obiektów, które maj
  Ogólna reguła to wartość null i puste (0 elementów) kolekcje lub tablice powinny być traktowane jako takie same.
 
 ### <a name="snapshots-versus-live-collections"></a>Migawki a kolekcje na żywo
+
  Kolekcje reprezentujące stan w pewnym momencie są nazywane kolekcjami migawek. Na przykład Kolekcja zawierająca wiersze zwrócone z kwerendy bazy danych będzie migawką. Kolekcje, które zawsze reprezentują bieżący stan, są nazywane kolekcjami dynamicznymi. Na przykład kolekcja `ComboBox` elementów jest kolekcją dynamiczną.
 
  ❌ Nie zwracaj kolekcji migawek z właściwości. Właściwości powinny zwracać kolekcje dynamiczne.
@@ -80,6 +84,7 @@ Każdy typ przeznaczony specjalnie do manipulowania grupą obiektów, które maj
  Ogólnie rzecz biorąc, wszystkie kolekcje reprezentujące zasób udostępniony (np. pliki w katalogu) są nietrwałe. Takie kolekcje są bardzo trudne lub niemożliwe do wdrożenia jako kolekcje dynamiczne, chyba że implementacja to po prostu moduł wyliczający tylko do przodu.
 
 ## <a name="choosing-between-arrays-and-collections"></a>Wybór między tablicami a kolekcjami
+
  ✔️ Preferuj kolekcje za pośrednictwem tablic.
 
  Kolekcje zapewniają większą kontrolę nad zawartością, mogą być rozwijane z upływem czasu i są bardziej użyteczne. Ponadto nie zaleca się używania tablic dla scenariuszy tylko do odczytu, ponieważ koszt klonowania tablicy jest zabroniony. Badania użyteczności wykazały, że niektórzy deweloperzy są bardziej wygodni przy użyciu interfejsów API opartych na kolekcji.
@@ -93,6 +98,7 @@ Każdy typ przeznaczony specjalnie do manipulowania grupą obiektów, które maj
  ❌ NIE używaj tablic dla właściwości, jeśli właściwość będzie musiała zwracać nową tablicę (np. kopię tablicy wewnętrznej) za każdym razem, gdy wywoływana jest metoda pobierająca właściwości.
 
 ## <a name="implementing-custom-collections"></a>Implementowanie kolekcji niestandardowych
+
  ✔️ NALEŻY rozważyć dziedziczenie z `Collection<T>` , `ReadOnlyCollection<T>` lub `KeyedCollection<TKey,TItem>` podczas projektowania nowych kolekcji.
 
  ✔️ Implementowanie `IEnumerable<T>` podczas projektowania nowych kolekcji. Rozważ zaimplementowanie `ICollection<T>` lub nawet `IList<T>` tam, gdzie jest to zrozumiałe.
@@ -106,6 +112,7 @@ Każdy typ przeznaczony specjalnie do manipulowania grupą obiektów, które maj
  ❌ NIE Dziedzicz z nieogólnych kolekcji podstawowych, takich jak `CollectionBase` . Użyj `Collection<T>` , `ReadOnlyCollection<T>` , i `KeyedCollection<TKey,TItem>` zamiast.
 
 ### <a name="naming-custom-collections"></a>Nazewnictwo kolekcji niestandardowych
+
  Kolekcje (typy, które implementują `IEnumerable` ) są tworzone głównie z dwóch powodów: (1), aby utworzyć nową strukturę danych z operacjami specyficznymi dla określonej struktury i często różnymi charakterystykami wydajności niż istniejące struktury danych (np.,,  <xref:System.Collections.Generic.List%601> <xref:System.Collections.Generic.LinkedList%601> <xref:System.Collections.Generic.Stack%601> ) i (2) do tworzenia wyspecjalizowanej kolekcji do przechowywania określonego zestawu elementów (np.  <xref:System.Collections.Specialized.StringCollection> ). Struktury danych są najczęściej używane w wewnętrznej implementacji aplikacji i bibliotek. Wyspecjalizowane kolekcje są głównie udostępniane w interfejsach API (jako typy właściwości i parametrów).
 
  ✔️ Użyj sufiksu "dictionary" w nazwach abstrakcji implementujących `IDictionary` lub `IDictionary<TKey,TValue>` .

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 7123a89b-eb9b-463a-a552-a081e33b0a3a
 topic_type:
 - apiref
-ms.openlocfilehash: 395d5f63eef12570c07f1f601de7f9e480d62905
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6497dd3e720874e47de9dfda74e483a642cbb181
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540508"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708234"
 ---
 # <a name="loadtypelibwithresolver-function"></a>LoadTypeLibWithResolver — Funkcja
+
 Ładuje bibliotekę typów i używa dostarczonego [interfejsu ITypeLibResolver](itypelibresolver-interface.md) do rozpoznawania wszelkich wewnętrznie przywoływanych bibliotek typów.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT LoadTypeLibWithResolver(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `szFile`  
  podczas Ścieżka pliku biblioteki typów.  
   
@@ -54,6 +56,7 @@ HRESULT LoadTypeLibWithResolver(
  określoną Odwołanie do biblioteki typów, która jest ładowana.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Jedna z wartości HRESULT wymienionych w poniższej tabeli.  
   
 |Wartość zwracana|Znaczenie|  
@@ -68,6 +71,7 @@ HRESULT LoadTypeLibWithResolver(
 |`TYPE_E_CANTLOADLIBRARY`|Nie można załadować biblioteki typów lub biblioteki DLL.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  [Tlbexp.exe (Eksporter biblioteki typów)](../../tools/tlbexp-exe-type-library-exporter.md) wywołuje funkcję w `LoadTypeLibWithResolver` procesie konwersji zestawu na typ biblioteki.  
   
  Ta funkcja ładuje określoną bibliotekę typów o minimalnym dostępie do rejestru. Funkcja następnie analizuje bibliotekę typów dla wewnętrznie przywoływanych bibliotek typów, z których każdy musi być załadowany i dodany do biblioteki typów nadrzędnych.  
@@ -83,6 +87,7 @@ HRESULT LoadTypeLibWithResolver(
  Jeśli wywołasz `LoadTypeLibWithResolver` bezpośrednio, musisz podać własną implementację [interfejsu ITypeLibResolver](itypelibresolver-interface.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** TlbRef. h  

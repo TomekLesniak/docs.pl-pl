@@ -10,12 +10,12 @@ helpviewer_keywords:
 - threading [.NET], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: b2a3f2efc12392316f6d90242ef0a9224e7d13a4
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 88cbf266d15a10ff7c56e07a30161e0a800989d5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826316"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708052"
 ---
 # <a name="managed-threading-best-practices"></a>Zarządzane wątki z najlepszymi rozwiązaniami
 
@@ -25,9 +25,11 @@ Wielowątkowość wymaga starannego programowania. W przypadku większości zada
 > Począwszy od .NET Framework 4, Biblioteka zadań równoległych i PLINQ zapewniają interfejsy API, które zmniejszają część złożoności i zagrożeń związanych z programowaniem wielowątkowym. Aby uzyskać więcej informacji, zobacz [programowanie równoległe w programie .NET](../parallel-programming/index.md).  
   
 ## <a name="deadlocks-and-race-conditions"></a>Zakleszczenia i sytuacje wyścigu  
+
  Wielowątkowość rozwiązuje problemy dotyczące przepływności i czasu reakcji, ale w ten sposób wprowadza nowe problemy: zakleszczenie i sytuacje wyścigu.  
   
 ### <a name="deadlocks"></a>Zakleszczenia  
+
  Zakleszczenie występuje, gdy każdy z dwóch wątków próbuje zablokować zasób, drugi został już zablokowany. Żaden wątek nie może wykonywać żadnych dalszych postępów.  
   
  Wiele metod klas zarządzanych wątków zapewnia przekroczenia limitu czasu, aby pomóc w wykrywaniu zakleszczenii. Na przykład poniższy kod próbuje uzyskać blokadę obiektu o nazwie `lockObject` . Jeśli blokada nie zostanie uzyskana w 300 milisekundach, <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> zwraca `false` .  
@@ -59,6 +61,7 @@ else {
 ```  
   
 ### <a name="race-conditions"></a>Warunki wyścigu  
+
  Sytuacja wyścigu jest usterką, która występuje, gdy wynik programu zależy od tego, co dwa lub więcej wątków osiągną określony blok kodu jako pierwszy. Uruchamianie programu wiele razy daje różne wyniki, a wynik danego uruchomienia nie może być przewidywany.  
   
  Prosty przykład warunku wyścigu powoduje zwiększenie pola. Załóżmy, że Klasa ma prywatne pole **statyczne** (**udostępniane** w Visual Basic), które jest zwiększane za każdym razem, gdy tworzone jest wystąpienie klasy, przy użyciu kodu, takiego jak `objCt++;` (C#) lub `objCt += 1` (Visual Basic). Ta operacja wymaga załadowania wartości z `objCt` do rejestru, zwiększenia wartości i zapisania jej w `objCt` .  
@@ -70,6 +73,7 @@ else {
  Sytuacje wyścigu mogą również wystąpić podczas synchronizowania działań wielu wątków. Za każdym razem, gdy piszesz wiersz kodu, należy wziąć pod uwagę to, co może się zdarzyć, jeśli wątek został przemieszczony przed wykonaniem wiersza (lub przed dowolnym z instrukcji poszczególnych maszyn, które składają się na linię), a inny wątek przejdzie do niego.  
   
 ## <a name="static-members-and-static-constructors"></a>Statyczne elementy członkowskie i konstruktory statyczne  
+
  Klasa nie została zainicjowana do momentu zakończenia działania konstruktora klasy ( `static` Konstruktor w języku C# w `Shared Sub New` Visual Basic). Aby zapobiec wykonywaniu kodu w typie, który nie został zainicjowany, środowisko uruchomieniowe języka wspólnego blokuje wszystkie wywołania z innych wątków do `static` elementów członkowskich klasy ( `Shared` elementy członkowskie w Visual Basic) do momentu zakończenia działania konstruktora klasy.  
   
  Na przykład jeśli Konstruktor klasy uruchamia nowy wątek, a procedura wątku wywołuje `static` element członkowski klasy, nowy wątek jest blokowany do momentu ukończenia konstruktora klasy.  
@@ -83,6 +87,7 @@ Bez względu na to, czy istnieje wiele procesorów, czy tylko jeden procesor dos
 Użyj <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> właściwości, aby określić liczbę procesorów dostępnych w czasie wykonywania.
   
 ## <a name="general-recommendations"></a>Ogólne zalecenia  
+
  Podczas korzystania z wielu wątków należy wziąć pod uwagę następujące wytyczne:  
   
 - Nie używaj <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> do kończenia innych wątków. Wywołanie metody **Abort** w innym wątku jest zbliżone, aby zgłaszać wyjątek w tym wątku, bez znajomości tego, który punkt został osiągnięty w jego przetwarzaniu.  
@@ -163,6 +168,7 @@ Użyj <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> wła
     > <xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29>Przeciążenie metody zapewnia bezpieczną alternatywę typu dla typów referencyjnych.
   
 ## <a name="recommendations-for-class-libraries"></a>Zalecenia dotyczące bibliotek klas  
+
  Podczas projektowania bibliotek klas dla wielowątkowości należy wziąć pod uwagę następujące wytyczne:  
   
 - Należy unikać synchronizacji, jeśli jest to możliwe. Jest to szczególnie prawdziwe w przypadku silnie używanego kodu. Na przykład algorytm może zostać dostosowany do tolerowania warunku wyścigu zamiast go wyeliminować. Niepotrzebna synchronizacja zmniejsza wydajność i tworzy możliwość zakleszczenia i warunków wyścigu.  

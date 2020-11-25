@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 634ac28c-a5b7-4fc3-af84-256c24ca8177
 topic_type:
 - apiref
-ms.openlocfilehash: ba15440df79dded95a8afa9438657d064e167f36
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2ac645cbaaa45554568874653be016e4691bbd2f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84495973"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707480"
 ---
 # <a name="icorprofilerinfo4getrejitids-method"></a>ICorProfilerInfo4::GetReJITIDs — Metoda
+
 Zwraca tablicę identyfikatorów, które identyfikują wszystkie wersje JIT-ponownie skompilowane określonej funkcji, które są nadal przydzieleni. Obejmuje to ponowne skompilowane przez JIT wersje funkcji, które zostały później przywrócone, ale nie zostały jeszcze zwolnione (na przykład wtedy, gdy domena aplikacji zawierająca przywróconą funkcję jest nadal w użyciu).  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,8 +37,9 @@ HRESULT GetReJITIDs (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `functionId`  
- podczas `FunctionID`Wystąpienia funkcji, dla którego mają zostać wyliczone wersje.  
+ podczas `FunctionID` Wystąpienia funkcji, dla którego mają zostać wyliczone wersje.  
   
  `cReJitIds`  
  podczas Liczba identyfikatorów ponownych kompilacji JIT przypisywanych w `reJitIds` tablicy.  
@@ -49,9 +51,11 @@ HRESULT GetReJITIDs (
  określoną Tablica przypisana przez obiekt wywołujący, która będzie zawierać identyfikatory ponownie skompilowane JIT dla określonej funkcji.  
   
 ## <a name="remarks"></a>Uwagi  
- `GetReJITIDs`wylicza aktywne, ponownie skompilowane identyfikatory JIT dla danego wystąpienia funkcji. Jest on zgodny z tym samym wzorcem użycia, co inne `ICorProfilerInfo` funkcje, które akceptują bufory przydzieloną przez proces wywołujący.  
+
+ `GetReJITIDs` wylicza aktywne, ponownie skompilowane identyfikatory JIT dla danego wystąpienia funkcji. Jest on zgodny z tym samym wzorcem użycia, co inne `ICorProfilerInfo` funkcje, które akceptują bufory przydzieloną przez proces wywołujący.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

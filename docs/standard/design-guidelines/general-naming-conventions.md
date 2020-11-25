@@ -14,18 +14,19 @@ helpviewer_keywords:
 - names [.NET Framework], type names
 - names [.NET Framework], acronyms
 ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
-ms.openlocfilehash: ff9efd40b630e8e25963b3d69b026feea2823ece
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 60832e823ed2f51fdd13c467dbbef4378de27885
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821102"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706713"
 ---
 # <a name="general-naming-conventions"></a>Ogólne konwencje nazewnictwa
 
 W tej sekcji opisano ogólne konwencje nazewnictwa, które odnoszą się do wyboru wyrazu, wytyczne dotyczące używania skrótów i akronimów oraz Zalecenia dotyczące unikania używania nazw specyficznych dla języka.
 
 ## <a name="word-choice"></a>Wybór wyrazów
+
  ✔️ Wybierz łatwe DO odczytu nazwy identyfikatorów.
 
  Na przykład właściwość o nazwie `HorizontalAlignment` jest bardziej czytelna w języku angielskim niż `AlignmentHorizontal` .
@@ -43,6 +44,7 @@ W tej sekcji opisano ogólne konwencje nazewnictwa, które odnoszą się do wybo
  Zgodnie z regułą 4 Common Language Specification (CLS) wszystkie zgodne Języki muszą zapewniać mechanizm, który umożliwia dostęp do nazwanych elementów, które używają słowa kluczowego tego języka jako identyfikatora. Na przykład w języku C# w tym przypadku używa znaku @. Jednak nadal dobrym pomysłem jest uniknięcie typowych słów kluczowych, ponieważ jest znacznie trudniejsze użycie metody z sekwencją ucieczki od jednej.
 
 ## <a name="using-abbreviations-and-acronyms"></a>Używanie skrótów i akronimów
+
  ❌ NIE używaj skrótów ani kontraktów jako części nazw identyfikatorów.
 
  Na przykład użyj `GetWindow` zamiast `GetWin` .
@@ -50,6 +52,7 @@ W tej sekcji opisano ogólne konwencje nazewnictwa, które odnoszą się do wybo
  ❌ Nie używaj żadnych akronimów, które nie są powszechnie akceptowane, a nawet jeśli są, tylko w razie potrzeby.
 
 ## <a name="avoiding-language-specific-names"></a>Unikanie nazw Language-Specific
+
  ✔️ należy używać semantycznie interesujących nazw, a nie słów kluczowych charakterystycznych dla języka dla nazw typów.
 
  Na przykład `GetLength` to lepsza nazwa niż `GetInt` .
@@ -64,20 +67,21 @@ W tej sekcji opisano ogólne konwencje nazewnictwa, które odnoszą się do wybo
 |**Bajc**|**Bajc**|**unsigned char**|**Bajc**|
 |**short**|**Wybierak**|**short**|**Int16**|
 |**ushort**|**UInt16**|**unsigned short**|**UInt16**|
-|**int**|**Całkowitą**|**int**|**Int32**|
+|**int**|**Liczba całkowita**|**int**|**Int32**|
 |**uint**|**UInt32**|**unsigned int**|**UInt32**|
 |**liczba długa**|**Długo**|**__int64**|**Int64**|
 |**ulong**|**UInt64**|**__int64 bez znaku**|**UInt64**|
-|**liczba zmiennoprzecinkowa**|**Pojedynczy**|**liczba zmiennoprzecinkowa**|**Pojedynczy**|
+|**liczba zmiennoprzecinkowa**|**Pojedyncze**|**liczba zmiennoprzecinkowa**|**Pojedyncze**|
 |**liczba o podwójnej precyzji**|**Double**|**liczba o podwójnej precyzji**|**Double**|
-|**bool**|**Boolean**|**bool**|**Boolean**|
+|**bool**|**Wartość logiczna**|**bool**|**Wartość logiczna**|
 |**char**|**Delikatn**|**wchar_t**|**Delikatn**|
-|**parametry**|**Ciąg**|**Ciąg**|**Ciąg**|
+|**ciąg**|**Ciąg**|**Ciąg**|**Ciąg**|
 |**object**|**Stream**|**Stream**|**Stream**|
 
  ✔️ używać nazwy pospolitej, takiej jak `value` lub `item` , zamiast powtarzania nazwy typu, w rzadkich przypadkach, gdy identyfikator nie ma znaczenia semantycznego i typ parametru jest nieważny.
 
 ## <a name="naming-new-versions-of-existing-apis"></a>Nazywanie nowych wersji istniejących interfejsów API
+
  ✔️ Użyj nazwy podobnej do starego interfejsu API podczas tworzenia nowych wersji istniejącego interfejsu API.
 
  Dzięki temu można wyróżnić relacje między interfejsami API.

@@ -26,18 +26,19 @@ helpviewer_keywords:
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-ms.openlocfilehash: eae1b52f5462cdc395504da877e40e62e5417b76
-ms.sourcegitcommit: 30e9e11dfd90112b8eec6406186ba3533f21eba1
+ms.openlocfilehash: f361e0e250368694d7afa078183b1e5cb7ef1464
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95098817"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707870"
 ---
 # <a name="generics-in-net"></a>Typy ogólne w .NET
 
 Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu do precyzyjnego typu danych, na którym działa. Na przykład zamiast używać <xref:System.Collections.Hashtable> klasy, która umożliwia określenie kluczy i wartości dowolnego typu, można użyć <xref:System.Collections.Generic.Dictionary%602> klasy generycznej i określić typy dozwolone dla klucza i wartości. Korzyści płynące z typów ogólnych to zwiększone wykorzystanie kodu i bezpieczeństwo typów.  
 
 ## <a name="defining-and-using-generics"></a>Definiowanie i używanie typów ogólnych
+
  Typy ogólne to klasy, struktury, interfejsy i metody, które mają symbole zastępcze (parametry typu) dla jednego lub kilku typów, które są przez nie przechowywane lub używane. Klasa kolekcji generycznej może używać parametru typu jako symbolu zastępczego dla typu obiektów, które przechowuje; parametry typu są wyświetlane jako typy pól i typy parametrów jego metod. Metoda generyczna może używać swojego parametru typu jako typu wartości zwracanej lub jako typ jednego z jego parametrów formalnych. Poniższy kod ilustruje prostą definicję klasy ogólnej.  
   
  [!code-cpp[Conceptual.Generics.Overview#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.generics.overview/cpp/source.cpp#2)]
@@ -51,6 +52,7 @@ Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu 
  [!code-vb[Conceptual.Generics.Overview#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.generics.overview/vb/source.vb#3)]  
 
 ### <a name="generics-terminology"></a>Terminologia ogólna  
+
  Poniższe terminy są używane do omówienia typów ogólnych w programie .NET:  
   
 - *Definicja typu ogólnego* jest deklaracją klasy, struktury lub interfejsu, która działa jako szablon, z symbolami zastępczymi dla typów, które mogą zawierać lub używać. Na przykład <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> Klasa może zawierać dwa typy: klucze i wartości. Ponieważ definicja typu ogólnego jest tylko szablonem, nie można tworzyć wystąpień klasy, struktury lub interfejsu, który jest definicją typu ogólnego.  
@@ -80,6 +82,7 @@ Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu 
  [!code-vb[Conceptual.Generics.Overview#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.generics.overview/vb/source.vb#5)]  
   
 ## <a name="advantages-and-disadvantages-of-generics"></a>Zalety i wady typów ogólnych
+
  Istnieje wiele zalet używania ogólnych kolekcji i delegatów:  
   
 - Bezpieczeństwo typu. Typy ogólne przesuwają obciążenie typu bezpieczeństwo od użytkownika do kompilatora. Nie ma potrzeby pisania kodu do przetestowania pod kątem poprawnego typu danych, ponieważ jest wymuszany w czasie kompilacji. Konieczne jest zmniejszenie liczby operacji rzutowania typów i możliwości błędów czasu wykonywania.  
@@ -112,6 +115,7 @@ Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu 
      Aby uzyskać więcej informacji, zobacz "typy zagnieżdżone" w temacie <xref:System.Type.MakeGenericType%2A> .  
 
 ## <a name="class-library-and-language-support"></a>Obsługa biblioteki klas i języka  
+
  Platforma .NET udostępnia szereg klas ogólnych kolekcji w następujących obszarach nazw:  
   
 - <xref:System.Collections.Generic>Przestrzeń nazw zawiera większość ogólnych typów kolekcji dostarczonych przez platformę .NET, takich jak <xref:System.Collections.Generic.List%601> i <xref:System.Collections.Generic.Dictionary%602> klasy ogólne.  
@@ -127,6 +131,7 @@ Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu 
  Visual C++, C# i Visual Basic wszystkie zapewniają pełną obsługę definiowania i używania typów ogólnych. Aby uzyskać więcej informacji na temat obsługi języków, zobacz [typy ogólne w Visual Basic](../../visual-basic/programming-guide/language-features/data-types/generic-types.md), [wprowadzenie do typów ogólnych](../../csharp/programming-guide/generics/index.md)i [omówienie rodzajów ogólnych w Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp).
 
 ## <a name="nested-types-and-generics"></a>Typy zagnieżdżone i generyczne  
+
  Typ, który jest zagnieżdżony w typie ogólnym, może zależeć od parametrów typu otaczającego typu ogólnego. Środowisko uruchomieniowe języka wspólnego traktuje zagnieżdżone typy jako ogólne, nawet jeśli nie mają własnych parametrów typu ogólnego. Podczas tworzenia wystąpienia typu zagnieżdżonego należy określić argumenty typu dla wszystkich typów ogólnych.  
 
 ## <a name="related-topics"></a>Tematy pokrewne  
@@ -145,6 +150,7 @@ Typy ogólne umożliwiają dostosowanie metody, klasy, struktury lub interfejsu 
 |[Przegląd typów ogólnych w Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Opisuje funkcję generyczną dla użytkowników języka C++, w tym różnice między rodzajami i szablonami.|  
 
 ## <a name="reference"></a>Tematy pomocy  
+
  <xref:System.Collections.Generic>  
   
  <xref:System.Collections.ObjectModel>  

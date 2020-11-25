@@ -2,14 +2,15 @@
 title: ISymUnmanagedAsyncMethodPropertiesWriter — Interfejs
 ms.date: 03/30/2017
 ms.assetid: caa71820-8058-4b6a-93a2-25ee757d92d3
-ms.openlocfilehash: 04876483fd42e3f6e55222416fd0747891734a52
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 779b737da43f61d1023a0a640dce936e11c4704c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501862"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707038"
 ---
 # <a name="isymunmanagedasyncmethodpropertieswriter-interface"></a>ISymUnmanagedAsyncMethodPropertiesWriter — Interfejs
+
 Umożliwia zdefiniowanie opcjonalnych informacji o metodzie asynchronicznej dla każdego symbolu metody. Zawsze używaj z otwartą metodą; oznacza to, między wywołaniami [metody OpenMethod —](isymunmanagedwriter-openmethod-method.md) i [CloseMethod —](isymunmanagedwriter-closemethod-method.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -19,6 +20,7 @@ Umożliwia zdefiniowanie opcjonalnych informacji o metodzie asynchronicznej dla 
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Ten interfejs zawiera następujące metody:  
   
 |Metoda|Opis|  
@@ -28,6 +30,7 @@ Umożliwia zdefiniowanie opcjonalnych informacji o metodzie asynchronicznej dla 
 |[DefineKickoffMethod, metoda](isymunmanagedasyncmethodpropertieswriter-definekickoffmethod-method.md)|Ustawia metodę początkową inicjującą operację asynchroniczną.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

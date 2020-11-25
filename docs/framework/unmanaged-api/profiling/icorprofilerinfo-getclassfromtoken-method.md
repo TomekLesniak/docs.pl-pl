@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0afc1197-2a5b-424f-8b82-9cb59a7e00db
 topic_type:
 - apiref
-ms.openlocfilehash: 12b4b897f9dc51175037d39c0368b6ce59fefefb
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 7d9fe7d6d5c5af32be22ba19b52e7d40033a6eb2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84498482"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95706752"
 ---
 # <a name="icorprofilerinfogetclassfromtoken-method"></a>ICorProfilerInfo::GetClassFromToken — Metoda
+
 Pobiera identyfikator klasy, z uwzględnieniem tokenu metadanych. Ta metoda jest przestarzała w .NET Framework w wersji 2,0. Zamiast tego użyj [ICorProfilerInfo2:: GetClassFromTokenAndTypeArgs —](icorprofilerinfo2-getclassfromtokenandtypeargs-method.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,19 +36,22 @@ HRESULT GetClassFromToken(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `moduleID`  
  podczas Identyfikator modułu, który zawiera klasę.  
   
  `typeDef`  
- podczas `mdTypeDef`Token metadanych, który odwołuje się do klasy.  
+ podczas `mdTypeDef` Token metadanych, który odwołuje się do klasy.  
   
  `cTypeArgs`  
  określoną Wskaźnik do identyfikatora klasy.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta metoda jest przestarzała; Zamiast tego należy używać `ICorProfilerInfo2::GetClassFromTokenAndTypeArgs` dla wszystkich typów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -58,4 +62,4 @@ HRESULT GetClassFromToken(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)

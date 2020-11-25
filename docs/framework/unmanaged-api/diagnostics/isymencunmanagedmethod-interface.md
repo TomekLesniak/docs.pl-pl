@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: faebf594-67d5-4abf-b9c1-547fd3a1ff87
 topic_type:
 - apiref
-ms.openlocfilehash: 54c8c7f5c3ba6b4afd4ff352a8afb947a92e2d61
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: acb8d48ed6314756e2c1a10fff314a303799fb24
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441880"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707285"
 ---
 # <a name="isymencunmanagedmethod-interface"></a>ISymENCUnmanagedMethod — Interfejs
+
 Zawiera informacje dotyczące funkcji Edytuj i Kontynuuj.  
   
 ## <a name="methods"></a>Metody  
@@ -35,6 +36,7 @@ Zawiera informacje dotyczące funkcji Edytuj i Kontynuuj.
 |[GetSourceExtentInDocument, metoda](isymencunmanagedmethod-getsourceextentindocument-method.md)|Pobiera najmniejszą linię początkową i największą linię końcową dla metody w określonym dokumencie.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

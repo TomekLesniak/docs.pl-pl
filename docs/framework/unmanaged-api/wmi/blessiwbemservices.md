@@ -1,5 +1,5 @@
 ---
-title: Funkcja BlessIWbemServices (odwołanie do interfejsu API niezarządzanego)
+title: BlessIWbemServices — funkcja (niezarządzana dokumentacja interfejsu API)
 description: Funkcja BlessIWbemServices wskazuje, czy poświadczenia użytkownika zezwalają na dostęp do klasy IWbemServices.
 ms.date: 11/06/2017
 api_name:
@@ -14,15 +14,16 @@ helpviewer_keywords:
 - BlessIWbemServices function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 4b15af840cc00b3ec261604db4f3625c6b975d3e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 43ef617ee754c9dcd661b31abba6b17434563c22
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176867"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708156"
 ---
 # <a name="blessiwbemservices-function"></a>BlessIWbemServices, funkcja
-Wskazuje, czy poświadczenia użytkownika zezwalają na dostęp do określonej klasy [IWbemServices.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices)
+
+Wskazuje, czy poświadczenia użytkownika zezwalają na dostęp do określonej klasy [IWbemServices](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) .
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -42,43 +43,43 @@ HRESULT BlessIWbemServices (
 ## <a name="parameters"></a>Parametry
 
 `pIWbemServices`\
-[w] Wskaźnik do [obiektu IWbemServices,](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) dla którego wymagane są uprawnienia.
+podczas Wskaźnik do obiektu [IWbemServices](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) , dla którego wymagane są uprawnienia.
 
 `strUser`\
-[w] Nazwa użytkownika.
+podczas Nazwa użytkownika.
 
 `strPassword`\
-[w] Hasło skojarzone `strUser`z programem .
+podczas Hasło skojarzone z `strUser` .
 
 `strAuthority`\
-[w] Nazwa domeny użytkownika. Więcej informacji można znaleźć w funkcji [ConnectServerWmi.](connectserverwmi.md)
+podczas Nazwa domeny użytkownika. Zobacz funkcję [ConnectServerWmi](connectserverwmi.md) , aby uzyskać więcej informacji.
 
 `impLevel`\
-[w] Poziom personifikacji.
+podczas Poziom personifikacji.
 
 `authnLevel`\
-[w] Poziom autoryzacji.
+podczas Poziom autoryzacji.
 
 ## <a name="return-value"></a>Wartość zwracana
 
-Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówka *WinError.h* lub można zdefiniować je jako stałe w kodzie:
+Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówkowym *Winerror. h* lub można je definiować jako stałe w kodzie:
 
-|Stały  |Wartość  |Opis  |
+|Stała  |Wartość  |Opis  |
 |---------|---------|---------|
-| `E_INVALIDARG` | 0x80070057 | Jeden lub więcej argumentów jest nieprawidłowych. |
-| `E_POINTER` | 0x80004003 | Parametr `pIWbemServices` ma wartość `null`. |
+| `E_INVALIDARG` | 0x80070057 | Co najmniej jeden argument jest nieprawidłowy. |
+| `E_POINTER` | 0x80004003 | `pIWbemServices` to `null`. |
 | `E_FAIL` | 0x80000008 | Wystąpił nieokreślony błąd. |
-| `E_OUTOFMEMORY` | 0x80000002 | Niewystarczająca ilość pamięci jest dostępna do wykonania operacji. |
+| `E_OUTOFMEMORY` | 0x80000002 | Za mało dostępnej pamięci, aby wykonać tę operację. |
 | `S_OK` | 0 | Wywołanie funkcji zakończyło się pomyślnie. |
 
 ## <a name="requirements"></a>Wymagania  
 
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
- **Nagłówek:** WMINet_Utils.idl  
+ **Nagłówek:** WMINet_Utils. idl  
   
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Liczniki wydajności WMI i (niezarządzane odwołanie interfejsu API)](index.md)
+- [WMI i liczniki wydajności (niezarządzana dokumentacja interfejsu API)](index.md)

@@ -1,5 +1,5 @@
 ---
-title: Funkcja DeleteMethod (odwołanie do niezarządzanego interfejsu API)
+title: DeleteMethod — funkcja (niezarządzana dokumentacja interfejsu API)
 description: Funkcja DeleteMethod usuwa określoną metodę z definicji klasy CIM.
 ms.date: 11/06/2017
 api_name:
@@ -14,14 +14,15 @@ helpviewer_keywords:
 - DeleteMethod function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 4059555d74c0b0f151332ddcf9faedecf238e795
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8ca58ed3510360b20577890055e4284869d1bf94
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174995"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95708104"
 ---
 # <a name="deletemethod-function"></a>DeleteMethod, funkcja
+
 Usuwa określoną metodę z definicji klasy CIM.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -39,37 +40,38 @@ HRESULT Delete (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[w] Ten parametr jest nieużywane.
+podczas Ten parametr jest nieużywany.
 
 `ptr`  
-[w] Wskaźnik do wystąpienia [IWbemClassObject.](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)
+podczas Wskaźnik do wystąpienia [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszName`  
-[w] Nazwa metody do usunięcia z tabeli klas. `wszName`musi być wskaźnikiem `LPCWSTR`do prawidłowego .
+podczas Nazwa metody do usunięcia z tabeli klas. `wszName` musi być wskaźnikiem prawidłowym `LPCWSTR` .
 
 ## <a name="return-value"></a>Wartość zwracana
 
-Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówka *WbemCli.h* lub można zdefiniować je jako stałe w kodzie:
+Następujące wartości zwracane przez tę funkcję są zdefiniowane w pliku nagłówkowym *WbemCli. h* lub można je definiować jako stałe w kodzie:
 
-|Stały  |Wartość  |Opis  |
+|Stała  |Wartość  |Opis  |
 |---------|---------|---------|
 | `WBEM_E_NOT_FOUND` | 0x80041002 | Określona metoda nie istnieje. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nie ma wystarczającej ilości pamięci, aby zakończyć operację. |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Za mało pamięci, aby ukończyć operację. |
 | `WBEM_S_NO_ERROR` | 0 | Wywołanie funkcji zakończyło się pomyślnie.  |
 
 ## <a name="remarks"></a>Uwagi
 
-Ta funkcja zawija wywołanie [metody IWbemClassObject::DeleteMethod.](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-deletemethod)
+Ta funkcja otacza wywołanie metody [IWbemClassObject::D eletemethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-deletemethod) .
 
-Usuwanie metody nie jest obsługiwane dla wskaźników [IWbemClassObject,](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) które wskazują na wystąpienia CIM.
+Usuwanie metody nie jest obsługiwane dla wskaźników [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) , które wskazują wystąpienia modelu wspólnych informacji.
 
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
-  
- **Nagłówek:** WMINet_Utils.idl  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [Liczniki wydajności WMI i (niezarządzane odwołanie interfejsu API)](index.md)
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
+  
+ **Nagłówek:** WMINet_Utils. idl  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [WMI i liczniki wydajności (niezarządzana dokumentacja interfejsu API)](index.md)

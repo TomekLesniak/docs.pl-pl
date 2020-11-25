@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ea7c1617-f3ce-4220-8288-f2b50eaf0f0f
 topic_type:
 - apiref
-ms.openlocfilehash: 091f497024b48589953456e1ea6daf6635738240
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f554fa95f552285ad92d9f780a8d77f53e6890b6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615088"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95707701"
 ---
 # <a name="isymunmanagednamespacegetvariables-method"></a>ISymUnmanagedNamespace::GetVariables — Metoda
+
 Zwraca wszystkie zmienne zdefiniowane w zakresie globalnym w tej przestrzeni nazw.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,8 +37,9 @@ HRESULT GetVariables(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cVars`  
- podczas `ULONG32`Wskazuje rozmiar `pVars` tablicy.  
+ podczas `ULONG32` Wskazuje rozmiar `pVars` tablicy.  
   
  `pcVars`  
  określoną Wskaźnik do obiektu `ULONG32` , który odbiera rozmiar buforu wymaganego do przechowywania przestrzeni nazw.  
@@ -46,11 +48,13 @@ HRESULT GetVariables(
  określoną Wskaźnik do buforu, który zawiera przestrzenie nazw.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ISymUnmanagedNamespace, interfejs](isymunmanagednamespace-interface.md)
+- [ISymUnmanagedNamespace — Interfejs](isymunmanagednamespace-interface.md)
