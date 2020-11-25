@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7d1bbe8b-ed43-4e62-a5ba-d602d244f4ae
-ms.openlocfilehash: d9291ff4010e04bf94a216f099ea80f8a3e2de12
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 29bb345c2654baec8fbd2adce3788a4b4f2d582d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94821726"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720870"
 ---
 # <a name="xpathdocument-input-to-xsltransform"></a>Dane wejściowe obiektu XPathDocument klasy XslTransform
+
 <xref:System.Xml.XPath.XPathDocument>Jest pamięcią podręczną tylko do odczytu, na potrzeby przetwarzania dokumentów przy użyciu programu <xref:System.Xml.Xsl.XslTransform> . Jest on strukturalnie podobny do Document Object Model XML (DOM), ale jest wysoce zoptymalizowany pod kątem przetwarzania Extensible Stylesheet Language for Transformations (XSLT) i modelu danych XML Path Language (XPath) przy użyciu funkcji optymalizacji XPath w <xref:System.Xml.XPath.XPathNavigator> .  
   
 > [!NOTE]

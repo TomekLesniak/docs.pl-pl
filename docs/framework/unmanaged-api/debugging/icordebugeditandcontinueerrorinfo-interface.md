@@ -14,16 +14,17 @@ helpviewer_keywords:
 ms.assetid: 6ae0204c-6bb2-4bda-b13e-94507203bc68
 topic_type:
 - apiref
-ms.openlocfilehash: 28d5a486f51aa81c56683f51da19c2636c320929
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 85e3e24612961f44f4bd9c07201c58fcdda8d226
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76783274"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721403"
 ---
 # <a name="icordebugeditandcontinueerrorinfo-interface"></a>ICorDebugEditAndContinueErrorInfo — Interfejs
-`ICorDebugEditAndContinueErrorInfo` jest przestarzała. Nie używaj tego interfejsu.  
+
+`ICorDebugEditAndContinueErrorInfo` jest przestarzały. Nie używaj tego interfejsu.  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Debugowanie, interfejsy](debugging-interfaces.md)
+- [Debugowanie — Interfejsy](debugging-interfaces.md)

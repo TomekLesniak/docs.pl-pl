@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d6f9ac84-302a-4f5e-b990-e76f4269fceb
 topic_type:
 - apiref
-ms.openlocfilehash: 8ee4c1bffccb44d15fa53eb3d4d6c0fcdc3e7697
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b0590f93c6a4c5ef28e03fc909c1f6a1474e5fad
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614971"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720610"
 ---
 # <a name="isymunmanagedreadergetmethodversion-method"></a>ISymUnmanagedReader::GetMethodVersion — Metoda
+
 Pobiera wersję metody. Wersja metody zaczyna się od 1 i jest zwiększana za każdym razem, gdy metoda jest ponownie kompilowana. Ponowna kompilacja może wystąpić bez zmian w metodzie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetMethodVersion (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pMethod`  
  podczas Metoda, dla której ma zostać uzyskana wersja.  
   
@@ -41,9 +43,11 @@ HRESULT GetMethodVersion (
  określoną Wskaźnik do zmiennej, która otrzymuje wersję metody.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

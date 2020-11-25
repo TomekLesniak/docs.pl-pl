@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: df7083d2-fd43-44c7-9ce5-912c25cef0ff
 topic_type:
 - apiref
-ms.openlocfilehash: bab52d9179d7454cab4a47e1a2bfe80a49b00c2a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: f365a95b0859f4f97dab96ec85af6d7dfb96d8e5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502837"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721624"
 ---
 # <a name="icorprofilerinfo3getfunctionleave3info-method"></a>ICorProfilerInfo3::GetFunctionLeave3Info — Metoda
+
 Udostępnia ramkę stosu i zwracaną wartość funkcji raportowanej do profilera przez funkcję [funkcji FunctionLeave3WithInfo](functionleave3withinfo-function.md) . Tę metodę można wywołać tylko w trakcie `FunctionLeave3WithInfo` wywołania zwrotnego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,8 +37,9 @@ HRESULT GetFunctionLeave3Info(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `functionId`  
- podczas `FunctionID`Funkcja, która zwraca.  
+ podczas `FunctionID` Funkcja, która zwraca.  
   
  `eltInfo`  
  podczas Nieprzezroczyste dojście, które reprezentuje informacje o danej klatce stosu. Profiler powinien zapewnić taki sam `eltInfo` , który został przekazany do profilera przez funkcję [FunctionLeave3WithInfo](functionleave3withinfo-function.md) .  
@@ -51,6 +53,7 @@ HRESULT GetFunctionLeave3Info(
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -64,6 +67,6 @@ HRESULT GetFunctionLeave3Info(
 - [FunctionEnter3WithInfo](functionenter3withinfo-function.md)
 - [FunctionLeave3WithInfo](functionleave3withinfo-function.md)
 - [FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md)
-- [ICorProfilerInfo3, interfejs](icorprofilerinfo3-interface.md)
+- [ICorProfilerInfo3 — Interfejs](icorprofilerinfo3-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)

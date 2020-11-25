@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5e17a6fc-f335-4aae-9bb0-c3e1271a9426
 topic_type:
 - apiref
-ms.openlocfilehash: a23083777d0cd5965511f3689578a60220008420
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 673c32c86c808c36db6454b8a9f0d8e68f9b1258
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762233"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720636"
 ---
 # <a name="icorruntimehostgetdefaultdomain-method"></a>ICorRuntimeHost::GetDefaultDomain — Metoda
+
 Pobiera wskaźnik interfejsu typu <xref:System._AppDomain?displayProperty=nameWithType> , który reprezentuje domenę domyślną dla bieżącego procesu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetDefaultDomain (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pAppDomain`  
  określoną Wskaźnik interfejsu typu <xref:System._AppDomain?displayProperty=nameWithType> do <xref:System.AppDomain> wystąpienia, które reprezentuje domyślną domenę aplikacji dla procesu.  
   
@@ -49,16 +51,17 @@ HRESULT GetDefaultDomain (
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:** 1,0, 1,1  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - <xref:System._AppDomain>
 - <xref:System.AppDomain>
-- [ICorRuntimeHost, interfejs](icorruntimehost-interface.md)
+- [ICorRuntimeHost — Interfejs](icorruntimehost-interface.md)

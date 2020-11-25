@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c66f3ac5-6489-484a-9bed-c31b711cee01
 topic_type:
 - apiref
-ms.openlocfilehash: ccad76e1c8a49222d4f527f8b7b18d4e40ff8cae
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: bc647ad025b5e22187b476383ed0128761cb632f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83760410"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721039"
 ---
 # <a name="icorruntimehoststart-method"></a>ICorRuntimeHost::Start — Metoda
+
 Uruchamia środowisko uruchomieniowe języka wspólnego (CLR).  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,17 +42,19 @@ HRESULT Start ();
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Zazwyczaj nie jest konieczne wywoływanie `Start` metody, ponieważ środowisko CLR jest uruchamiane automatycznie przy pierwszym żądaniu uruchomienia kodu zarządzanego.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:** 1,0, 1,1  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [ICorRuntimeHost, interfejs](icorruntimehost-interface.md)
+- [ICorRuntimeHost — Interfejs](icorruntimehost-interface.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5245d4b5-b6c3-48df-9cb9-8caf059f43fb
 topic_type:
 - apiref
-ms.openlocfilehash: c95b787101d4d0302ce4d2a5cd3bdc7e11f9cd63
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5a4870a4472081a78cd1fade51f441c22aa5eb48
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501433"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720480"
 ---
 # <a name="ihosttaskalert-method"></a>IHostTask::Alert — Metoda
+
 Żąda, aby Host wznowił zadanie reprezentowane przez bieżące wystąpienie [IHostTask](ihosttask-interface.md) , więc zadanie można przerwać.  
   
 ## <a name="syntax"></a>Składnia  
@@ -43,23 +44,25 @@ HRESULT Alert ();
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR wywołuje `Alert` metodę, gdy <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> jest wywoływana z kodu użytkownika lub gdy jest <xref:System.AppDomain> skojarzony z bieżącym <xref:System.Threading.Thread> zamknięciem. Host musi zwrócić natychmiast, ponieważ wywołanie zostało wykonane asynchronicznie. Jeśli host nie może natychmiast ostrzec zadania, musi wznowić działanie przy następnym wejściu w stan, w którym można otrzymywać alerty.  
   
 > [!NOTE]
-> `Alert`ma wpływ tylko na te zadania, do których środowisko uruchomieniowe przekazało [WAIT_OPTION](wait-option-enumeration.md) wartość WAIT_ALERTABLE do metod takich jak [Join](ihosttask-join-method.md).  
+> `Alert` ma wpływ tylko na te zadania, do których środowisko uruchomieniowe przekazało [WAIT_OPTION](wait-option-enumeration.md) wartość WAIT_ALERTABLE do metod takich jak [Join](ihosttask-join-method.md).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [ICLRTask — Interfejs](iclrtask-interface.md)
-- [ICLRTaskManager, interfejs](iclrtaskmanager-interface.md)
-- [IHostTask, interfejs](ihosttask-interface.md)
-- [IHostTaskManager, interfejs](ihosttaskmanager-interface.md)
+- [ICLRTaskManager — Interfejs](iclrtaskmanager-interface.md)
+- [IHostTask — Interfejs](ihosttask-interface.md)
+- [IHostTaskManager — Interfejs](ihosttaskmanager-interface.md)

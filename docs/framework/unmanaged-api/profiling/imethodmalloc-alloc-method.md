@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8653bd4c-2290-43d2-a3e1-cbbd50033f4f
 topic_type:
 - apiref
-ms.openlocfilehash: a82a2150f32b1b335da083ca235ed9d2966a0b6e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 58809f12e4dd4419b754caafc3f8b883b8bc5089
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494205"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721169"
 ---
 # <a name="imethodmallocalloc-method"></a>IMethodMalloc::Alloc — Metoda
 
@@ -46,6 +46,7 @@ podczas Liczba bajtów do przydzielenia dla treści metody.
  `Alloc`Metoda powinna być używana w połączeniu z metodą [ICorProfilerInfo:: SetILFunctionBody —](icorprofilerinfo-setilfunctionbody-method.md) .
 
 ## <a name="requirements"></a>Wymagania
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).
 
  **Nagłówek:** CorProf. idl, CorProf. h
@@ -56,4 +57,4 @@ podczas Liczba bajtów do przydzielenia dla treści metody.
 
 ## <a name="see-also"></a>Zobacz także
 
-- [IMethodMalloc, interfejs](imethodmalloc-interface.md)
+- [IMethodMalloc — Interfejs](imethodmalloc-interface.md)

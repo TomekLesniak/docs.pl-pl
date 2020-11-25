@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3c1cb268-57a0-4664-91c7-f6908ff29e32
 topic_type:
 - apiref
-ms.openlocfilehash: ac822dda30d697cbbbcacf19eb6a57d1e5fb4c3b
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 6388d804df43964866073d7c3b32dca84fb2d06f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007952"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720428"
 ---
 # <a name="corargtype-enumeration"></a>CorArgType — Wyliczenie
+
 Zawiera wartości opisujące typ natywny dojścia środowiska uruchomieniowego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -45,12 +46,13 @@ typedef enum CorArgType {
 ```  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorHdr. h  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)

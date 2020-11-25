@@ -2,14 +2,15 @@
 title: ICorDebugLoadedModule::GetSize — metoda
 ms.date: 03/30/2017
 ms.assetid: aaa0e5c0-be9d-4fe1-8418-5295b9b184d6
-ms.openlocfilehash: 6a1c8c94b3c45ac995501b84bb4a69d73e7db25b
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 2ed19cb4a190f2af7581a827e8bd11b748b3d4a2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209854"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721325"
 ---
 # <a name="icordebugloadedmodulegetsize-method"></a>ICorDebugLoadedModule::GetSize — metoda
+
 Pobiera rozmiar w bajtach załadowanego modułu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -21,6 +22,7 @@ HRESULT GetSize(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pcBytes`  
  określoną Wskaźnik do liczby bajtów w załadowanym module.  
   
@@ -30,6 +32,7 @@ HRESULT GetSize(
 > Ta metoda jest dostępna tylko z .NET Native.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -38,7 +41,7 @@ HRESULT GetSize(
   
  **.NET Framework wersje:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugLoadedModule — interfejs](icordebugloadedmodule-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

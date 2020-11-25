@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f1f6b8f3-dcfc-49e8-be76-ea50ea90d5a7
 topic_type:
 - apiref
-ms.openlocfilehash: d2b7e93866bf0aa79849925234a4d6e4cc9b5b52
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2213b674cce27c77156b8de1bbf20d2975e3e55c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502824"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721598"
 ---
 # <a name="icorprofilerinfo3getmoduleinfo2-method"></a>ICorProfilerInfo3::GetModuleInfo2 — Metoda
+
 Podano identyfikator modułu, zwraca nazwę pliku modułu, identyfikator zestawu nadrzędnego modułu i maskę bitów opisującą właściwości modułu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,6 +41,7 @@ HRESULT GetModuleInfo2(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `moduleId`  
  podczas Identyfikator modułu, dla którego będą pobierane informacje.  
   
@@ -62,6 +64,7 @@ HRESULT GetModuleInfo2(
  określoną Maska bitów wartości z wyliczenia [COR_PRF_MODULE_FLAGS](cor-prf-module-flags-enumeration.md) , która określa właściwości modułu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Dla modułów dynamicznych `szName` parametr jest nazwą metadanych modułu, a adres podstawowy to 0 (zero). Nazwa metadanych jest wartością w kolumnie Nazwa z tabeli modułu w metadanych. Jest to również uwidocznione jako <xref:System.Reflection.Module.ScopeName%2A?displayProperty=nameWithType> Właściwość do kodu zarządzanego, a jako `szName` parametr metody [IMetaDataImport:: GetScopeProps —](../metadata/imetadataimport-getscopeprops-method.md) do niezarządzanego kodu klienta metadanych.  
   
  Mimo że `GetModuleInfo2` Metoda może być wywoływana, gdy tylko identyfikator modułu już istnieje, identyfikator zestawu nadrzędnego nie będzie dostępny do momentu otrzymania przez profiler wywołania zwrotnego [ICorProfilerCallback:: ModuleAttachedToAssembly —](icorprofilercallback-moduleattachedtoassembly-method.md) .  
@@ -71,6 +74,7 @@ HRESULT GetModuleInfo2(
  Alternatywnie, można najpierw wywołać `GetModuleInfo2` z buforem o zerowej długości, `szName` Aby uzyskać prawidłowy rozmiar buforu. Następnie można ustawić rozmiar buforu na wartość zwracaną w `pcchName` i `GetModuleInfo2` ponownie wywołać.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -81,6 +85,6 @@ HRESULT GetModuleInfo2(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)

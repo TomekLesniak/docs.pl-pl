@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b5a22ebc-0582-49de-91f9-97a3d9789290
 topic_type:
 - apiref
-ms.openlocfilehash: b067ca72e030bce24a7efde5e3488a00024e9613
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 9332b3462ba389783a113d173e32850d40427ce2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762872"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720233"
 ---
 # <a name="iclrtask2-interface"></a>ICLRTask2 — Interfejs
+
 Oferuje wszystkie funkcje interfejsu [ICLRTask](iclrtask-interface.md) ; Ponadto udostępnia metody zezwalające na opóźnione przerywanie wątków w bieżącym wątku.  
   
 ## <a name="methods"></a>Metody  
@@ -32,6 +33,7 @@ Oferuje wszystkie funkcje interfejsu [ICLRTask](iclrtask-interface.md) ; Ponadto
 |[EndPreventAsyncAbort, metoda](iclrtask2-endpreventasyncabort-method.md)|Zezwala na to, aby nowe lub oczekujące żądania przerwania wątku powodowały przerwania wątku w bieżącym wątku.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ICLRTask2`Interfejs dziedziczy `ICLRTask` interfejs i dodaje metody, które pozwalają hostowi opóźnić przerwania wątku, aby chronić region kodu, który nie może kończyć się niepowodzeniem. Wywołanie `BeginPreventAsyncAbort` zwiększa wartość licznika Opóźnij wątek i Przerwij dla bieżącego wątku i wywołuje `EndPreventAsyncAbort` jego zmniejszenie. Wywołania `BeginPreventAsyncAbort` i `EndPreventAsyncAbort` mogą być zagnieżdżane. Tak długo, jak licznik jest większy od zera, przerwania wątku dla bieżącego wątku są opóźnione.  
   
  Jeśli wywołania do `BeginPreventAsyncAbort` i `EndPreventAsyncAbort` nie są sparowane, możliwe jest osiągnięcie stanu, w którym przerwania wątku nie można dostarczyć do bieżącego wątku.  
@@ -43,18 +45,19 @@ Oferuje wszystkie funkcje interfejsu [ICLRTask](iclrtask-interface.md) ; Ponadto
  Aby uzyskać informacje na temat członków dziedziczonych z `ICLRTask` i innych sposobów korzystania z tego interfejsu, zobacz Interfejs [ICLRTask](iclrtask-interface.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRTask — Interfejs](iclrtask-interface.md)
-- [ICLRTaskManager, interfejs](iclrtaskmanager-interface.md)
-- [IHostTask, interfejs](ihosttask-interface.md)
-- [IHostTaskManager, interfejs](ihosttaskmanager-interface.md)
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [ICLRTaskManager — Interfejs](iclrtaskmanager-interface.md)
+- [IHostTask — Interfejs](ihosttask-interface.md)
+- [IHostTaskManager — Interfejs](ihosttaskmanager-interface.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)

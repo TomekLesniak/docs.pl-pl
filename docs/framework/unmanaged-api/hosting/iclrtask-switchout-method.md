@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: b6fb168c-b24b-4ecf-a390-2b5ba3317ae6
 topic_type:
 - apiref
-ms.openlocfilehash: 75517ae55ebae07242f19c19c5473780ce4b0809
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 1b27983b3f10eba225442dcd2f5df02062e53ed4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762919"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720277"
 ---
 # <a name="iclrtaskswitchout-method"></a>ICLRTask::SwitchOut — Metoda
+
 Powiadamia środowisko uruchomieniowe języka wspólnego (CLR), że zadanie reprezentowane przez bieżące wystąpienie [ICLRTask](iclrtask-interface.md) nie jest już w stanie obsługiwanym.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,7 +36,7 @@ HRESULT SwitchOut ();
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`SwitchOut`pomyślnie zwrócono.|  
+|S_OK|`SwitchOut` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -43,20 +44,22 @@ HRESULT SwitchOut ();
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Host wywołuje `SwitchOut` w celu informowania środowiska CLR o tymczasowym zatrzymaniu wykonywania zadania, które `ICLRTask` reprezentuje bieżące wystąpienie, i ponownie planuje zadanie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRTask — Interfejs](iclrtask-interface.md)
-- [ICLRTaskManager, interfejs](iclrtaskmanager-interface.md)
-- [IHostTask, interfejs](ihosttask-interface.md)
-- [IHostTaskManager, interfejs](ihosttaskmanager-interface.md)
+- [ICLRTaskManager — Interfejs](iclrtaskmanager-interface.md)
+- [IHostTask — Interfejs](ihosttask-interface.md)
+- [IHostTaskManager — Interfejs](ihosttaskmanager-interface.md)

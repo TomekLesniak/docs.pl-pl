@@ -9,40 +9,40 @@ helpviewer_keywords:
 - Ngen.exe
 - Ngen.exe, profilers and native images
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
-ms.openlocfilehash: 714715968388325713a12027fb0ab89415e1d60c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f8830b13cb64c737525f5399beb244aeb6d9817f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544287"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721897"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (narzędzie optymalizacji sterowania zarządzanym profilem)
 
-Zarządzane profilowanie narzędzia do optymalizacji z przewodnikiem (Mpgo.exe) to narzędzie wiersza polecenia, które używa typowych scenariuszy użytkowników końcowych do optymalizowania zestawów obrazów natywnych, które są tworzone przez [Generator obrazu natywnego (Ngen.exe)](ngen-exe-native-image-generator.md). To narzędzie umożliwia uruchamianie scenariuszy szkoleniowych, które generują dane profilu. [Generator obrazu natywnego (Ngen.exe)](ngen-exe-native-image-generator.md) używa tych danych do optymalizowania wygenerowanych zestawów aplikacji obrazu natywnego. Scenariusz szkoleniowy jest próbnym uruchomieniem oczekiwanego użycia aplikacji. Mpgo.exe jest dostępny w programie Visual Studio Ultimate 2012 i jego nowszych wersjach. Począwszy od Visual Studio 2013, można także użyć Mpgo.exe do optymalizowania aplikacji ze sklepu Windows 8. x.  
-  
-Profilowana optymalizacja poprawia czas uruchamiania aplikacji, wykorzystanie pamięci (rozmiar zestawu roboczego) i przepustowość przez zbieranie danych ze scenariuszy szkoleniowych i używanie ich do optymalizowania układu obrazów natywnych.  
-  
-Jeśli wystąpią problemy z wydajnością czasu uruchamiania i rozmiarem zestawu roboczego dla zestawów języka pośredniego (IL), zaleca się użyć w pierwszej kolejności Ngen.exe, aby wyeliminować koszty kompilacji JIT oraz umożliwić udostępnianie kodu. Jeśli potrzebujesz dodatkowych usprawnień, możesz użyć Mpgo.exe do dalszej optymalizacji aplikacji. Dane dotyczące wydajności z zestawów niezoptymalizowanego obrazu natywnego można zastosować jako podstawę do oszacowania wzrostu wydajności. Użycie Mpgo.exe może spowodować przyspieszenie zimnego uruchamiania i zmniejszenie rozmiaru zestawu roboczego. Mpgo.exe dodaje informacje do zestawów IL, których Ngen.exe używa do tworzenia zoptymalizowanych zestawów obrazu natywnego. Aby uzyskać więcej informacji, zobacz wpis [Poprawianie wydajności uruchamiania aplikacji klasycznych](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/) w blogu platformy .NET.  
-  
-To narzędzie jest instalowane automatycznie z programem Visual Studio. Aby uruchomić narzędzie, użyj wiersz polecenia dla deweloperów dla programu Visual Studio (lub wiersza polecenia programu Visual Studio w systemie Windows 7) z poświadczeniami administratora, a następnie wpisz następujące polecenie w wierszu polecenia. Aby uzyskać więcej informacji, zobacz [wiersza polecenia](developer-command-prompt-for-vs.md).  
-  
-W przypadku aplikacji klasycznych:  
-  
-```console  
-mpgo –Scenario <command> [-Import <directory>] –AssemblyList <assembly1>  <assembly2> ... -OutDir <directory> [options]  
-```  
-  
-W przypadku aplikacji ze sklepu Windows 8. x:  
-  
-## <a name="syntax"></a>Składnia  
-  
-```console  
-mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>  
-```  
-  
-## <a name="parameters"></a>Parametry  
- We wszystkich argumentach programu Mpgo.exe nie jest rozróżniana wielkość liter. Polecenia są poprzedzone kreską.  
-  
+Zarządzane profilowanie narzędzia do optymalizacji z przewodnikiem (Mpgo.exe) to narzędzie wiersza polecenia, które używa typowych scenariuszy użytkowników końcowych do optymalizowania zestawów obrazów natywnych, które są tworzone przez [Generator obrazu natywnego (Ngen.exe)](ngen-exe-native-image-generator.md). To narzędzie umożliwia uruchamianie scenariuszy szkoleniowych, które generują dane profilu. [Generator obrazu natywnego (Ngen.exe)](ngen-exe-native-image-generator.md) używa tych danych do optymalizowania wygenerowanych zestawów aplikacji obrazu natywnego. Scenariusz szkoleniowy jest próbnym uruchomieniem oczekiwanego użycia aplikacji. Mpgo.exe jest dostępny w programie Visual Studio Ultimate 2012 i jego nowszych wersjach. Począwszy od Visual Studio 2013, można także użyć Mpgo.exe do optymalizowania aplikacji ze sklepu Windows 8. x.
+
+Profilowana optymalizacja poprawia czas uruchamiania aplikacji, wykorzystanie pamięci (rozmiar zestawu roboczego) i przepustowość przez zbieranie danych ze scenariuszy szkoleniowych i używanie ich do optymalizowania układu obrazów natywnych.
+
+Jeśli wystąpią problemy z wydajnością czasu uruchamiania i rozmiarem zestawu roboczego dla zestawów języka pośredniego (IL), zaleca się użyć w pierwszej kolejności Ngen.exe, aby wyeliminować koszty kompilacji JIT oraz umożliwić udostępnianie kodu. Jeśli potrzebujesz dodatkowych usprawnień, możesz użyć Mpgo.exe do dalszej optymalizacji aplikacji. Dane dotyczące wydajności z zestawów niezoptymalizowanego obrazu natywnego można zastosować jako podstawę do oszacowania wzrostu wydajności. Użycie Mpgo.exe może spowodować przyspieszenie zimnego uruchamiania i zmniejszenie rozmiaru zestawu roboczego. Mpgo.exe dodaje informacje do zestawów IL, których Ngen.exe używa do tworzenia zoptymalizowanych zestawów obrazu natywnego. Aby uzyskać więcej informacji, zobacz wpis [Poprawianie wydajności uruchamiania aplikacji klasycznych](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/) w blogu platformy .NET.
+
+To narzędzie jest instalowane automatycznie z programem Visual Studio. Aby uruchomić narzędzie, użyj wiersz polecenia dla deweloperów dla programu Visual Studio (lub wiersza polecenia programu Visual Studio w systemie Windows 7) z poświadczeniami administratora, a następnie wpisz następujące polecenie w wierszu polecenia. Aby uzyskać więcej informacji, zobacz [wiersza polecenia](developer-command-prompt-for-vs.md).
+
+W przypadku aplikacji klasycznych:
+
+```console
+mpgo –Scenario <command> [-Import <directory>] –AssemblyList <assembly1>  <assembly2> ... -OutDir <directory> [options]
+```
+
+W przypadku aplikacji ze sklepu Windows 8. x:
+
+## <a name="syntax"></a>Składnia
+
+```console
+mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
+```
+
+## <a name="parameters"></a>Parametry
+ We wszystkich argumentach programu Mpgo.exe nie jest rozróżniana wielkość liter. Polecenia są poprzedzone kreską.
+
 > [!NOTE]
 > Możesz użyć albo `–Scenario` `–Import` jako wymaganego polecenia, ale nie obu jednocześnie. Jeśli określisz opcję, żaden z wymaganych parametrów nie jest używany `–Reset` .
 
@@ -74,60 +74,60 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
  Użycie Ngen.exe i Mpgo.exe jest zalecane tylko dla dużych zarządzanych aplikacji, ponieważ korzyści wynikające ze wstępnie skompilowanym obrazów natywnych zazwyczaj są widoczne tylko wtedy, gdy eliminuje dużą część kompilacji JIT w czasie wykonywania. Uruchamianie Mpgo.exe w aplikacjach w stylu "Hello world", które nie działają w znacznym stopniu, nie zapewnia żadnych korzyści i Mpgo.exe może nawet nie być możliwe zebranie danych profilu.
 
 > [!NOTE]
-> Nie zaleca się stosowania Ngen.exe i Mpgo.exe w odniesieniu do aplikacji ASP.NET i usług Windows Communication Foundation (WCF).  
-  
-## <a name="to-use-mpgoexe"></a>Aby użyć Mpgo.exe  
-  
-1. Użyj komputera, na którym zainstalowano Visual Studio Ultimate 2012 i aplikację.  
-  
-2. Uruchom Mpgo.exe jako administrator z wymaganymi parametrami.  W następnej sekcji znajdują się przykładowe polecenia.  
-  
-     Zoptymalizowane zestawy języka pośredniego (IL) są tworzone w folderze określonym przez `–OutDir` parametr (w przykładach jest to `C:\Optimized` folder).  
-  
-3. Zastąp zestawy IL używane na potrzeby Ngen.exe z nowymi zestawami IL zawierającymi informacje o profilu z katalogu określonego przez `–OutDir` .  
-  
-4. Instalator aplikacji (przy użyciu obrazów dostarczonych przez Mpgo.exe) zainstaluje zoptymalizowane obrazy natywne.  
-  
-## <a name="suggested-workflow"></a>Sugerowany przebieg pracy  
-  
-1. Utwórz zestaw zoptymalizowanych zestawów IL przy użyciu Mpgo.exe z `–Scenario` parametrem.  
-  
-2. Sprawdź zoptymalizowane zestawy IL w kontroli źródła.  
-  
-3. W procesie kompilacji Wywołaj Mpgo.exe z `–Import` parametrem jako krok po kompilacji, aby generować zoptymalizowane obrazy Il do przekazania do Ngen.exe.  
-  
- Ten proces daje pewność, że wszystkie zestawy posiadają dane optymalizacji. Jeśli ewidencjonujesz zaktualizowane zoptymalizowane zestawy (kroki 1 i 2) częściej, wydajności będą spójniejsze w całym procesie tworzenia produktu.  
-  
-## <a name="using-mpgoexe-from-visual-studio"></a>Przy użyciu Mpgo.exe z Visual Studio  
- Mpgo.exe można uruchomić z programu Visual Studio (Zobacz artykuł [How to: Określanie zdarzeń kompilacji (C#)](/visualstudio/ide/how-to-specify-build-events-csharp)) z następującymi ograniczeniami:  
-  
-- Nie można używać ścieżek w cudzysłowie ze znakami ukośnika na końcu, ponieważ makra Visual Studio również domyślnie używają końcowych ukośników. (Na przykład `–OutDir "C:\Output Folder\"` jest nieprawidłowy). Aby obejść to ograniczenie, można wyjść z końcowym ukośnikiem. (Na przykład użyj `-OutDir "$(OutDir)\"` zamiast tego).  
-  
-- Domyślnie program Mpgo.exe nie znajduje się w ścieżce kompilacji programu Visual Studio. Możesz dodać ścieżkę do programu Visual Studio lub podać pełną ścieżkę w wierszu polecenia Mpgo. Możesz użyć albo `–Scenario` `–Import` parametru w zdarzeniu po kompilacji w programie Visual Studio. Typowym procesem jest jednak użycie `–Scenario` jednego czasu z wiersz polecenia dla deweloperów dla programu Visual Studio, a następnie użycie `–Import` go do zaktualizowania zoptymalizowanych zestawów po każdej kompilacji; na przykład:  `"C:\Program Files\Microsoft Visual Studio 11.0\Team Tools\Performance Tools\mpgo.exe" -import "$(OutDir)tmp" -assemblylist "$(TargetPath)" -outdir "$(OutDir)\"` .  
-  
+> Nie zaleca się stosowania Ngen.exe i Mpgo.exe w odniesieniu do aplikacji ASP.NET i usług Windows Communication Foundation (WCF).
+
+## <a name="to-use-mpgoexe"></a>Aby użyć Mpgo.exe
+
+1. Użyj komputera, na którym zainstalowano Visual Studio Ultimate 2012 i aplikację.
+
+2. Uruchom Mpgo.exe jako administrator z wymaganymi parametrami.  W następnej sekcji znajdują się przykładowe polecenia.
+
+     Zoptymalizowane zestawy języka pośredniego (IL) są tworzone w folderze określonym przez `–OutDir` parametr (w przykładach jest to `C:\Optimized` folder).
+
+3. Zastąp zestawy IL używane na potrzeby Ngen.exe z nowymi zestawami IL zawierającymi informacje o profilu z katalogu określonego przez `–OutDir` .
+
+4. Instalator aplikacji (przy użyciu obrazów dostarczonych przez Mpgo.exe) zainstaluje zoptymalizowane obrazy natywne.
+
+## <a name="suggested-workflow"></a>Sugerowany przebieg pracy
+
+1. Utwórz zestaw zoptymalizowanych zestawów IL przy użyciu Mpgo.exe z `–Scenario` parametrem.
+
+2. Sprawdź zoptymalizowane zestawy IL w kontroli źródła.
+
+3. W procesie kompilacji Wywołaj Mpgo.exe z `–Import` parametrem jako krok po kompilacji, aby generować zoptymalizowane obrazy Il do przekazania do Ngen.exe.
+
+ Ten proces daje pewność, że wszystkie zestawy posiadają dane optymalizacji. Jeśli ewidencjonujesz zaktualizowane zoptymalizowane zestawy (kroki 1 i 2) częściej, wydajności będą spójniejsze w całym procesie tworzenia produktu.
+
+## <a name="using-mpgoexe-from-visual-studio"></a>Przy użyciu Mpgo.exe z Visual Studio
+ Mpgo.exe można uruchomić z programu Visual Studio (Zobacz artykuł [How to: Określanie zdarzeń kompilacji (C#)](/visualstudio/ide/how-to-specify-build-events-csharp)) z następującymi ograniczeniami:
+
+- Nie można używać ścieżek w cudzysłowie ze znakami ukośnika na końcu, ponieważ makra Visual Studio również domyślnie używają końcowych ukośników. (Na przykład `–OutDir "C:\Output Folder\"` jest nieprawidłowy). Aby obejść to ograniczenie, można wyjść z końcowym ukośnikiem. (Na przykład użyj `-OutDir "$(OutDir)\"` zamiast tego).
+
+- Domyślnie program Mpgo.exe nie znajduje się w ścieżce kompilacji programu Visual Studio. Możesz dodać ścieżkę do programu Visual Studio lub podać pełną ścieżkę w wierszu polecenia Mpgo. Możesz użyć albo `–Scenario` `–Import` parametru w zdarzeniu po kompilacji w programie Visual Studio. Typowym procesem jest jednak użycie `–Scenario` jednego czasu z wiersz polecenia dla deweloperów dla programu Visual Studio, a następnie użycie `–Import` go do zaktualizowania zoptymalizowanych zestawów po każdej kompilacji; na przykład:  `"C:\Program Files\Microsoft Visual Studio 11.0\Team Tools\Performance Tools\mpgo.exe" -import "$(OutDir)tmp" -assemblylist "$(TargetPath)" -outdir "$(OutDir)\"` .
+
 <a name="samples"></a>
-## <a name="examples"></a>Przykłady  
- Następujące polecenie Mpgo.exe z wiersz polecenia dla deweloperów dla programu Visual Studio optymalizuje aplikację podatkową:  
-  
-```console  
-mpgo –scenario "C:\MyApp\MyTax.exe /params par" –AssemblyList Mytax.dll MyTaxUtil2011.dll –OutDir C:\Optimized –TimeOut 15  
-```  
-  
- Następujące polecenie Mpgo.exe optymalizuje zdrową aplikację:  
-  
-```console  
-mpgo –scenario "C:\MyApp\wav2wma.exe –input song1.wav –output song1.wma" –AssemblyList transcode.dll –OutDir C:\Optimized –TimeOut 15  
-```  
-  
- Następujące polecenie Mpgo.exe korzysta z danych z zestawów wcześniej zoptymalizowanych do optymalizacji nowszych wersji zestawów:  
-  
-```console  
-mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyTaxUtil2011.dll" -outdir C:\ReOptimized  
-```  
-  
+## <a name="examples"></a>Przykłady
+ Następujące polecenie Mpgo.exe z wiersz polecenia dla deweloperów dla programu Visual Studio optymalizuje aplikację podatkową:
+
+```console
+mpgo –scenario "C:\MyApp\MyTax.exe /params par" –AssemblyList Mytax.dll MyTaxUtil2011.dll –OutDir C:\Optimized –TimeOut 15
+```
+
+ Następujące polecenie Mpgo.exe optymalizuje zdrową aplikację:
+
+```console
+mpgo –scenario "C:\MyApp\wav2wma.exe –input song1.wav –output song1.wma" –AssemblyList transcode.dll –OutDir C:\Optimized –TimeOut 15
+```
+
+ Następujące polecenie Mpgo.exe korzysta z danych z zestawów wcześniej zoptymalizowanych do optymalizacji nowszych wersji zestawów:
+
+```console
+mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyTaxUtil2011.dll" -outdir C:\ReOptimized
+```
+
 ## <a name="see-also"></a>Zobacz także
 
 - [Ngen.exe (Generator obrazu natywnego)](ngen-exe-native-image-generator.md)
 - [Wiersze poleceń](developer-command-prompt-for-vs.md)
 - [Poprawianie wydajności uruchamiania aplikacji klasycznych](https://devblogs.microsoft.com/dotnet/improving-launch-performance-for-your-desktop-applications/)
-- [Omówienie ulepszeń wydajności w programie .NET 4,5](/archive/msdn-magazine/2012/april/clr-an-overview-of-performance-improvements-in-net-4-5)
+- [Omówienie ulepszeń wydajności w .NET Framework 4,5](/archive/msdn-magazine/2012/april/clr-an-overview-of-performance-improvements-in-net-4-5)

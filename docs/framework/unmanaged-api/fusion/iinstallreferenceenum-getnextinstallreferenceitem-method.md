@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ce969c9d-6538-4c34-8784-148ffd99fe7a
 topic_type:
 - apiref
-ms.openlocfilehash: 0dad50f1acac38f8cdc505026e88d42882deb580
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e093de7d2c2388274cbe9ebbe46084ee6ae3ff8c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131722"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721104"
 ---
 # <a name="iinstallreferenceenumgetnextinstallreferenceitem-method"></a>IInstallReferenceEnum::GetNextInstallReferenceItem — Metoda
+
 Pobiera wskaźnik do następnego obiektu [IInstallReferenceItem](iinstallreferenceitem-interface.md) zawartego w tym obiekcie [IInstallReferenceEnum](iinstallreferenceenum-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,8 +37,9 @@ HRESULT GetNextInstallReferenceItem (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppRefItem`  
- określoną Zwrócony wskaźnik `IInstallReferenceItem`.  
+ określoną Zwrócony `IInstallReferenceItem` wskaźnik.  
   
  `dwFlags`  
  podczas Zarezerwowane do użytku w przyszłości. `dwFlags` musi mieć wartość 0 (zero).  
@@ -46,13 +48,14 @@ HRESULT GetNextInstallReferenceItem (
  podczas Zarezerwowane do użytku w przyszłości. `pvReserved` musi być odwołaniem o wartości null.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IInstallReferenceItem, interfejs](iinstallreferenceitem-interface.md)
-- [IInstallReferenceEnum, interfejs](iinstallreferenceenum-interface.md)
+- [IInstallReferenceItem — Interfejs](iinstallreferenceitem-interface.md)
+- [IInstallReferenceEnum — Interfejs](iinstallreferenceenum-interface.md)

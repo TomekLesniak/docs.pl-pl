@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5aef6808-5aac-4b2f-a2c7-fee1575c55ed
 topic_type:
 - apiref
-ms.openlocfilehash: e7cb1c2070e760258e548d2f45e3b6ed11e046c4
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: c24e4557695d26666682ee385131abaab707a24d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616323"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720714"
 ---
 # <a name="eclroperation-enumeration"></a>EClrOperation — Wyliczenie
+
 Opisuje zestaw operacji, dla których host może stosować akcje zasad.  
   
 ## <a name="syntax"></a>Składnia  
@@ -51,6 +52,7 @@ typedef enum {
 |`OPR_ThreadRudeAbortInNonCriticalRegion`|Host może określać akcje zasad, które mają być podejmowane po przerwaniu wątku prosta w niekrytycznym regionie kodu.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Infrastruktura niezawodności aparatu plików wykonywalnych języka wspólnego (CLR) odróżnia między przerwami a błędami alokacji zasobów, które występują w krytycznych regionach kodu i tych, które występują w niekrytycznych regionach kodu. Ta różnica została zaprojektowana tak, aby umożliwić hostom Ustawianie różnych zasad w zależności od tego, gdzie wystąpi błąd w kodzie.  
   
  *Krytyczny region kodu* jest dowolnym miejscem, w którym środowisko CLR nie może zagwarantować, że przerywanie zadania lub niepowodzenie żądania dla zasobów będzie wpływać tylko na bieżące zadanie. Na przykład, jeśli zadanie utrzymuje blokadę i otrzymuje wynik HRESULT wskazujący błąd podczas tworzenia żądania alokacji pamięci, to nie wystarczy po prostu przerwać to zadanie, aby zapewnić stabilność <xref:System.AppDomain> , ponieważ <xref:System.AppDomain> może zawierać inne zadania oczekujące na tę samą blokadę. Aby porzucić bieżące zadanie, może spowodować, że te inne zadania przestaną odpowiadać. W takim przypadku host musi mieć możliwość zwolnienia całości, <xref:System.AppDomain> a nie ryzyka potencjalnej niestabilności.  
@@ -60,11 +62,12 @@ typedef enum {
  Środowisko CLR rozróżnia również łagodne i niebezpieczne przerwania (prosta). Ogólnie rzecz biorąc, normalne lub bezpieczne przerwanie podejmuje wszelkie wysiłki, aby uruchomić procedury obsługi wyjątków i finalizatory przed przerwaniem zadania, podczas gdy przerwanie prosta nie daje takich gwarancji.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
@@ -72,6 +75,6 @@ typedef enum {
 
 - [EClrFailure — Wyliczenie](eclrfailure-enumeration.md)
 - [EPolicyAction — Wyliczenie](epolicyaction-enumeration.md)
-- [ICLRPolicyManager, interfejs](iclrpolicymanager-interface.md)
-- [IHostPolicyManager, interfejs](ihostpolicymanager-interface.md)
+- [ICLRPolicyManager — Interfejs](iclrpolicymanager-interface.md)
+- [IHostPolicyManager — Interfejs](ihostpolicymanager-interface.md)
 - [Hosting — Wyliczenia](hosting-enumerations.md)

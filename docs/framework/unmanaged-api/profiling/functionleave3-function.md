@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 5d798088-7992-48a0-ae55-d2a7ee31913f
 topic_type:
 - apiref
-ms.openlocfilehash: 456d9a0e8236948ac69ed069495b1999ebf7e80a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8eaf36579bb82d66ff356aa68afc38c70d7eaca3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500614"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720389"
 ---
 # <a name="functionleave3-function"></a>FunctionLeave3 — Funkcja
+
 Powiadamia profiler, że formant jest zwracany przez funkcję.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ void __stdcall FunctionLeave3(FunctionOrRemappedID functionOrRemappedID);
   \[in] identyfikator funkcji, z której jest zwracany formant.
   
 ## <a name="remarks"></a>Uwagi  
+
  `FunctionLeave3`Funkcja wywołania zwrotnego powiadamia profiler w miarę wywoływania funkcji, ale nie obsługuje inspekcji wartości zwracanej. Użyj [metody ICorProfilerInfo3:: SetEnterLeaveFunctionHooks3 —](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) , aby zarejestrować implementację tej funkcji.  
   
  `FunctionLeave3`Funkcja jest wywołaniem zwrotnym, należy ją zaimplementować. Implementacja musi używać `__declspec(naked)` atrybutu klasy magazynu.  
@@ -52,6 +54,7 @@ void __stdcall FunctionLeave3(FunctionOrRemappedID functionOrRemappedID);
  `FunctionLeave3`Funkcja nie może wywołać kodu zarządzanego lub spowodować alokacji pamięci zarządzanej w dowolny sposób.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl  

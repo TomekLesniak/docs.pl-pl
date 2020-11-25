@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c1bda761-6292-4750-a14b-7d5db8f33456
 topic_type:
 - apiref
-ms.openlocfilehash: ff1dabcfc366607639cd98be4392f8dd59dc83a1
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: fe2db3df688f91ec6e1aadd8cc3bb43726e5c30f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442010"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95719960"
 ---
 # <a name="inotifysink2onsynccallreturn-method"></a>INotifySink2::OnSyncCallReturn — Metoda
+
 Wywoływany, gdy wywołanie zwraca wartość.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT OnSyncCallReturn
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `in_CallID`  
  podczas Identyfikator wywołania, z którego są zwracane. Zobacz [strukturę CALL_ID](call-id-structure.md).  
   
@@ -47,9 +49,11 @@ HRESULT OnSyncCallReturn
  podczas Rozmiar buforu wywołań w bajtach.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda zakończy się pomyślnie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Zobacz także

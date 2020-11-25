@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 48d410d7-6749-4125-a8fd-f9562c7088e9
 topic_type:
 - apiref
-ms.openlocfilehash: 89fba6af9b76f729ca40d4ee63f525611bdf43a9
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 5f831f0f42231f594e170567535af75216e68c45
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205634"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721312"
 ---
 # <a name="icordebugmanagedcallbackcreateappdomain-method"></a>ICorDebugManagedCallback::CreateAppDomain — Metoda
+
 Powiadamia debuger o utworzeniu domeny aplikacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT CreateAppDomain (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pProcess`  
  podczas Wskaźnik do obiektu ICorDebugProcess, który reprezentuje proces, w którym została utworzona domena aplikacji.  
   
@@ -42,6 +44,7 @@ HRESULT CreateAppDomain (
  podczas Wskaźnik do obiektu ICorDebugAppDomain, który reprezentuje domenę aplikacji, która została utworzona.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -50,6 +53,6 @@ HRESULT CreateAppDomain (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugManagedCallback — Interfejs](icordebugmanagedcallback-interface.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: acb8b029-4a96-4ed7-ae3c-310204e5ceea
 topic_type:
 - apiref
-ms.openlocfilehash: 4218faf1c324175424ab20305224f7f2fa51bb7a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 12b7b53c408388c21d7508f6591ead5ccf55936b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494218"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721182"
 ---
 # <a name="icorprofilerthreadenumskip-method"></a>ICorProfilerThreadEnum::Skip — Metoda
+
 Przesuwa kursor modułu wyliczającego z jego bieżącej pozycji, aby pominąć określoną liczbę elementów.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,21 +34,25 @@ HRESULT Skip (    [in] ULONG celt
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `celt`  
  podczas Liczba elementów, które mają zostać pominięte.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca następujące określone wartości HRESULT oraz błędy HRESULT wskazujące niepowodzenie metody.  
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`celt`elementy zostały pominięte.|  
+|S_OK|`celt` elementy zostały pominięte.|  
 |S_FALSE|`celt`Pominięto mniej niż elementy, co oznacza, że nie ma więcej elementów.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Nowa pozycja kursora tego modułu wyliczającego to (bieżąca pozycja) + `celt` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -58,5 +63,5 @@ HRESULT Skip (    [in] ULONG celt
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerThreadEnum, interfejs](icorprofilerthreadenum-interface.md)
+- [ICorProfilerThreadEnum — Interfejs](icorprofilerthreadenum-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)

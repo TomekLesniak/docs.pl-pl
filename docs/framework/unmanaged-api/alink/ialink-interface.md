@@ -6,75 +6,77 @@ f1_keywords:
 helpviewer_keywords:
 - IALink interface
 ms.assetid: 50abd02d-6488-4815-999b-4fb89af4d568
-ms.openlocfilehash: 73b6bb9eac3f706df5cb1fd63b2f67c9791c8ed2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 657c16f6e96633e568903ca4a55b4c68c1a49fa5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441817"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720324"
 ---
 # <a name="ialink-interface"></a>IALink — Interfejs
+
 Pomaga w konstruowaniu zestawów .NET Framework. Interfejs zawiera między innymi metody, które ułatwiają pisanie manifestów zestawów dla zestawów wielomodułowych, podpisywanie zestawów o silnych nazwach i tworzenie modułów sieci.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [AddFile — Metoda](addfile-method.md)  
   
- [Addimport — Metoda](addimport-method.md)  
+ [AddImport — Metoda](addimport-method.md)  
   
- [CloseAssembly, metoda](closeassembly-method.md)  
+ [CloseAssembly — Metoda](closeassembly-method.md)  
   
- [CloseEnum, metoda](closeenum-method.md)  
+ [CloseEnum — Metoda](closeenum-method.md)  
   
- [EmbedResource, metoda](embedresource-method.md)  
+ [EmbedResource — Metoda](embedresource-method.md)  
   
- [EmitAssemblyCustomAttribute, metoda](emitassemblycustomattribute-method.md)  
+ [EmitAssemblyCustomAttribute — Metoda](emitassemblycustomattribute-method.md)  
   
- [EmitManifest, metoda](emitmanifest-method.md)  
+ [EmitManifest — Metoda](emitmanifest-method.md)  
   
- [EndMerge, metoda](endmerge-method.md)  
+ [EndMerge — Metoda](endmerge-method.md)  
   
- [EnumCustomAttributes, metoda](enumcustomattributes-method.md)  
+ [EnumCustomAttributes — Metoda](enumcustomattributes-method.md)  
   
- [EnumImportTypes, metoda](enumimporttypes-method.md)  
+ [EnumImportTypes — Metoda](enumimporttypes-method.md)  
   
- [ExportNestedType, metoda](exportnestedtype-method.md)  
+ [ExportNestedType — Metoda](exportnestedtype-method.md)  
   
- [ExportNestedTypeForwarder, metoda](exportnestedtypeforwarder-method.md)  
+ [ExportNestedTypeForwarder — Metoda](exportnestedtypeforwarder-method.md)  
   
- [ExportType, metoda](exporttype-method.md)  
+ [ExportType — Metoda](exporttype-method.md)  
   
- [ExportTypeForwarder, metoda](exporttypeforwarder-method.md)  
+ [ExportTypeForwarder — Metoda](exporttypeforwarder-method.md)  
   
- [FreeWin32ResBlob, metoda](freewin32resblob-method.md)  
+ [FreeWin32ResBlob — Metoda](freewin32resblob-method.md)  
   
- [GetAssemblyRefHash, metoda](getassemblyrefhash-method.md)  
+ [GetAssemblyRefHash — Metoda](getassemblyrefhash-method.md)  
   
- [GetResolutionScope, metoda](getresolutionscope-method.md)  
+ [GetResolutionScope — Metoda](getresolutionscope-method.md)  
   
  [GetScope — Metoda](getscope-method.md)  
   
- [GetWin32ResBlob, metoda](getwin32resblob-method.md)  
+ [GetWin32ResBlob — Metoda](getwin32resblob-method.md)  
   
- [ImportFile, metoda](importfile-method.md)  
+ [ImportFile — Metoda](importfile-method.md)  
   
- [ImportFile2, metoda](importfile2-method.md)  
+ [ImportFile2 — Metoda](importfile2-method.md)  
   
- [ImportTypes, metoda](importtypes-method.md)  
+ [ImportTypes — Metoda](importtypes-method.md)  
   
  "Init — Metoda"  
   
- [LinkResource, metoda](linkresource-method.md)  
+ [LinkResource — Metoda](linkresource-method.md)  
   
- [PreCloseAssembly, metoda](precloseassembly-method.md)  
+ [PreCloseAssembly — Metoda](precloseassembly-method.md)  
   
- [SetAssemblyFile, metoda](setassemblyfile-method.md)  
+ [SetAssemblyFile — Metoda](setassemblyfile-method.md)  
   
- [SetAssemblyProps, metoda](setassemblyprops-method.md)  
+ [SetAssemblyProps — Metoda](setassemblyprops-method.md)  
   
- [SetNonAssemblyFlags, metoda](setnonassemblyflags-method.md)  
+ [SetNonAssemblyFlags — Metoda](setnonassemblyflags-method.md)  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ALink, interfejs API](index.md)
-- [IALink2, interfejs](ialink2-interface.md)
-- [Al.exe (konsolidator zestawów)](../../tools/al-exe-assembly-linker.md)
+- [ALink — interfejs API](index.md)
+- [IALink2 — Interfejs](ialink2-interface.md)
+- [Al.exe (Konsolidator zestawu)](../../tools/al-exe-assembly-linker.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8e9aae1b-d1b7-4b6e-b577-6faf36dcec85
 topic_type:
 - apiref
-ms.openlocfilehash: dcec97bac2aefc8db1f9351f1dacb0f36fc0d2a0
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: cb5bec66ab02de248109d8aaf444a93e67c2c6d2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396798"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720363"
 ---
 # <a name="icordebugvalue2getexacttype-method"></a>ICorDebugValue2::GetExactType — Metoda
+
 Pobiera wskaźnik interfejsu do obiektu "ICorDebugType", który reprezentuje <xref:System.Type> tę wartość.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT GetExactType (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppType`  
  określoną Wskaźnik do adresu `ICorDebugType` obiektu, który reprezentuje <xref:System.Type> wartość reprezentowaną przez ten obiekt "ICorDebugValue2".  
   
 ## <a name="remarks"></a>Uwagi  
+
  Metoda oparta na typach ogólnych `GetExactType` zastępuje metody [ICorDebugObjectValue:: GetClass](icordebugobjectvalue-getclass-method.md) i [ICorDebugValue:: GetType](icordebugvalue-gettype-method.md) , z których każdy zwraca informacje o typie wartości.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

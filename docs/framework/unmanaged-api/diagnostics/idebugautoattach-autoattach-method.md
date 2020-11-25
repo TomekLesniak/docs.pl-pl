@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 3cf3bd9c-7d88-4afa-a476-94cdc7609aa6
 topic_type:
 - apiref
-ms.openlocfilehash: aae03b0dc76639c50f4615d41eef73990226b5f7
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 64dd653bb0d4e383075a999e0803e4acfd0fae3d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442127"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720103"
 ---
 # <a name="idebugautoattachautoattach-method"></a>IDebugAutoAttach::AutoAttach — Metoda
+
 Wykonuje automatyczne dołączanie debugera wywoływanego przez serwer.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ HRESULT AutoAttach
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `guidPort`  
  podczas Zawsze ustawiaj na `GUID_NULL` .  
   
@@ -55,11 +57,13 @@ HRESULT AutoAttach
  podczas Ciąg przesłany przez czasownik debugowania.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda zakończy się pomyślnie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** DbgAutoAttach. h  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IDebugAutoAttach — Interfejs](idebugautoattach-interface.md)

@@ -3,12 +3,12 @@ title: Ustawienia konfiguracji globalizacji
 description: Dowiedz się więcej o ustawieniach czasu wykonywania, które konfigurują aspekty globalizacji aplikacji .NET Core, na przykład analizując daty w języku japońskim.
 ms.date: 05/18/2020
 ms.topic: reference
-ms.openlocfilehash: 56228e9a6cb6dbab6a22bdc00d11212e1019776b
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: fc98e965093c28b75b9b66e4f1c9f147abd4680e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761970"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721920"
 ---
 # <a name="run-time-configuration-options-for-globalization"></a>Opcje konfiguracji czasu wykonywania dla globalizacji
 
@@ -20,13 +20,13 @@ ms.locfileid: "83761970"
 
 | | Nazwa ustawienia | Wartości |
 | - | - | - |
-| **runtimeconfig. JSON** | `System.Globalization.Invariant` | `false`— dostęp do danych kultury<br/>`true`-Uruchom w trybie niezmiennym |
-| **Właściwość programu MSBuild** | `InvariantGlobalization` | `false`— dostęp do danych kultury<br/>`true`-Uruchom w trybie niezmiennym |
-| **Zmienna środowiskowa** | `DOTNET_SYSTEM_GLOBALIZATION_INVARIANT` | `0`— dostęp do danych kultury<br/>`1`-Uruchom w trybie niezmiennym |
+| **runtimeconfig.jsna** | `System.Globalization.Invariant` | `false` — dostęp do danych kultury<br/>`true` -Uruchom w trybie niezmiennym |
+| **Właściwość programu MSBuild** | `InvariantGlobalization` | `false` — dostęp do danych kultury<br/>`true` -Uruchom w trybie niezmiennym |
+| **Zmienna środowiskowa** | `DOTNET_SYSTEM_GLOBALIZATION_INVARIANT` | `0` — dostęp do danych kultury<br/>`1` -Uruchom w trybie niezmiennym |
 
 ### <a name="examples"></a>Przykłady
 
-plik *runtimeconfig. JSON* :
+*runtimeconfig.js* pliku:
 
 ```json
 {
@@ -58,8 +58,8 @@ Plik projektu:
 
 | | Nazwa ustawienia | Wartości |
 | - | - | - |
-| **runtimeconfig. JSON** | `Switch.System.Globalization.EnforceJapaneseEraYearRanges` | `false`-swobodne kontrole zakresu<br/>`true`-nadprzepływy powodują wyjątek |
-| **Zmienna środowiskowa** | Nie dotyczy | Nie dotyczy |
+| **runtimeconfig.jsna** | `Switch.System.Globalization.EnforceJapaneseEraYearRanges` | `false` -swobodne kontrole zakresu<br/>`true` -nadprzepływy powodują wyjątek |
+| **Zmienna środowiskowa** | NIE DOTYCZY | NIE DOTYCZY |
 
 ## <a name="japanese-date-parsing"></a>Japońska analiza daty
 
@@ -69,8 +69,8 @@ Plik projektu:
 
 | | Nazwa ustawienia | Wartości |
 | - | - | - |
-| **runtimeconfig. JSON** | `Switch.System.Globalization.EnforceLegacyJapaneseDateParsing` | `false`-Jest obsługiwana wartość "Gannen" lub "1"<br/>`true`-tylko "1" jest obsługiwana |
-| **Zmienna środowiskowa** | Nie dotyczy | Nie dotyczy |
+| **runtimeconfig.jsna** | `Switch.System.Globalization.EnforceLegacyJapaneseDateParsing` | `false` -Jest obsługiwana wartość "Gannen" lub "1"<br/>`true` -tylko "1" jest obsługiwana |
+| **Zmienna środowiskowa** | NIE DOTYCZY | NIE DOTYCZY |
 
 ## <a name="japanese-year-format"></a>Japoński rok
 
@@ -80,16 +80,16 @@ Plik projektu:
 
 | | Nazwa ustawienia | Wartości |
 | - | - | - |
-| **runtimeconfig. JSON** | `Switch.System.Globalization.FormatJapaneseFirstYearAsANumber` | `false`-Format jako "Gannen"<br/>`true`-formatowanie jako liczba |
-| **Zmienna środowiskowa** | Nie dotyczy | Nie dotyczy |
+| **runtimeconfig.jsna** | `Switch.System.Globalization.FormatJapaneseFirstYearAsANumber` | `false` -Format jako "Gannen"<br/>`true` -formatowanie jako liczba |
+| **Zmienna środowiskowa** | NIE DOTYCZY | NIE DOTYCZY |
 
 ## <a name="nls"></a>NLS
 
 - Określa, czy platforma .NET korzysta z interfejsu API globalizacji języka narodowego (NLS) lub składników międzynarodowych dla aplikacji systemu Windows (ICU). .NET 5,0 i nowsze wersje używają interfejsów API ICU globalizacji domyślnie w systemie Windows 10 maja 2019 Update i nowszych wersjach.
 - W przypadku pominięcia tego ustawienia platforma .NET domyślnie używa interfejsów API ICU globalizacji. Jest to równoznaczne z ustawieniem wartości `false` .
-- Aby uzyskać więcej informacji, zobacz [interfejsy API globalizacji korzystają z BIBLIOTEK ICU w systemie Windows](../compatibility/3.1-5.0.md#globalization-apis-use-icu-libraries-on-windows).
+- Aby uzyskać więcej informacji, zobacz [interfejsy API globalizacji korzystają z BIBLIOTEK ICU w systemie Windows](../compatibility/globalization/5.0/icu-globalization-api.md).
 
-| | Nazwa ustawienia | Wartości | Wraca |
+| | Nazwa ustawienia | Wartości | Wprowadzono |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.Globalization.UseNls` | `false`-Korzystanie z interfejsów API ICU globalizacji<br/>`true`-Korzystanie z interfejsów API globalizacji NLS | .NET 5,0 |
-| **Zmienna środowiskowa** | `DOTNET_SYSTEM_GLOBALIZATION_USENLS` | `false`-Korzystanie z interfejsów API ICU globalizacji<br/>`true`-Korzystanie z interfejsów API globalizacji NLS | .NET 5,0 |
+| **runtimeconfig.jsna** | `System.Globalization.UseNls` | `false` -Korzystanie z interfejsów API ICU globalizacji<br/>`true` -Korzystanie z interfejsów API globalizacji NLS | .NET 5,0 |
+| **Zmienna środowiskowa** | `DOTNET_SYSTEM_GLOBALIZATION_USENLS` | `false` -Korzystanie z interfejsów API ICU globalizacji<br/>`true` -Korzystanie z interfejsów API globalizacji NLS | .NET 5,0 |

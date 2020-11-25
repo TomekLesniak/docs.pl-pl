@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 025e358c-448f-4423-a2f2-57acf437c8a5
 topic_type:
 - apiref
-ms.openlocfilehash: e88a844a7f79f14c717a5966b345588b3b3b9f81
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 39235c5c26cb168dfc995de97f72b80dccb6b818
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609420"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720298"
 ---
 # <a name="isymunmanagedwriter3openmethod2-method"></a>ISymUnmanagedWriter3::OpenMethod2 — Metoda
+
 Otwiera metodę i udostępnia jej rzeczywiste przesunięcie sekcji w obrazie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT OpenMethod2(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `method`  
  podczas Token metadanych dla metody, która ma zostać otwarta.  
   
@@ -45,9 +47,11 @@ HRESULT OpenMethod2(
  podczas Przesunięcie na obrazie.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

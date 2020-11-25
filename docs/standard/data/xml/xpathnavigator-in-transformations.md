@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 118f97d1-7110-4d1b-b0bd-4143252c0bb0
-ms.openlocfilehash: b28a2d4991e2e4b14027460c0f3c97145862da2a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 935f0b2263fbf909decee354b0109d16d82a06e0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818378"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720857"
 ---
 # <a name="xpathnavigator-in-transformations"></a>Klasa XPathNavigator w przekształceniach
+
 <xref:System.Xml.XPath.XPathNavigator>Klasa zapewnia dostęp losowy tylko do odczytu do danych i jest przeznaczona do użycia jako dane wejściowe do Extensible Stylesheet Language for Transformations (XSLT). Jest ona zaimplementowana w <xref:System.Xml.XPath.XPathDocument> , <xref:System.Xml.XmlDataDocument> , i <xref:System.Xml.XmlDocument> . <xref:System.Xml.XPath.XPathNavigator>Jest oparty na modelu danych organizacja World Wide Web Consortium (W3C) zgodnie z opisem w sekcji 5 zalecenia XML Path Language (XPath).  
   
  <xref:System.Xml.XPath.XPathNavigator>Definiuje model kursora na dowolnym sklepie i zapewnia szybkie, tylko do odczytu zapytania XPath w dowolnym magazynie danych. <xref:System.Xml.XPath.XPathNavigator>Jest również klasą używaną do iteracji względem fragmentów drzewa wyników.  
@@ -107,6 +108,7 @@ public class sample
 ```  
   
 ## <a name="output"></a>Dane wyjściowe  
+
  Wynik transformacji zostanie znaleziony w pliku **out.xml**:  
   
 ```xml  

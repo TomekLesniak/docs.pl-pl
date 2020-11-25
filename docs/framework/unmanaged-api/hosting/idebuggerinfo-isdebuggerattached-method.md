@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6e21872f-602f-411a-a423-bff5cdf27000
 topic_type:
 - apiref
-ms.openlocfilehash: 95b7a2f6d35104c3353853549dacc783355feb5b
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 28b0c5ad5ed8b706974399dcd5468e9810b9fd57
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805331"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721702"
 ---
 # <a name="idebuggerinfoisdebuggerattached-method"></a>IDebuggerInfo::IsDebuggerAttached — Metoda
+
 Pobiera wartość wskazującą, czy zarządzany debuger jest dołączony do tego procesu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,18 +35,20 @@ HRESULT IsDebuggerAttached (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pbAttached`  
  określoną Wskaźnik do wartości, która jest w `true` przypadku dołączenia zarządzanego debugera do procesu; w przeciwnym razie `false` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [IDebuggerInfo, interfejs](idebuggerinfo-interface.md)
+- [IDebuggerInfo — Interfejs](idebuggerinfo-interface.md)

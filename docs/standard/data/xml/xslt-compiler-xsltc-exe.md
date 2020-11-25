@@ -2,14 +2,15 @@
 title: Kompilator XSLT (xsltc.exe)
 ms.date: 03/30/2017
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
-ms.openlocfilehash: cfeebc3ac0c0259c975439dc93c3c5f003b60c40
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 89e2291cb4eafe9ca9e5001061b960f348fe4719
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818326"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720831"
 ---
 # <a name="xslt-compiler-xsltcexe"></a>Kompilator XSLT (xsltc.exe)
+
 Kompilator XSLT (xsltc.exe) kompiluje arkusze stylów XSLT i generuje zestaw. Skompilowany arkusz stylów można następnie przesłać bezpośrednio do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody. Nie można generować podpisanych zestawów przy użyciu xsltc.exe.  
   
  Narzędzie xsltc.exe jest dołączone do programu Visual Studio. Aby uzyskać więcej informacji, zobacz [Visual Studio — pliki do pobrania](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).  
@@ -41,6 +42,7 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 |`?`|Wyświetla składnię polecenia i opcje narzędzia.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Rozwiązania XSLT mogą składać się z wielu modułów arkusza stylów. Narzędzie xsltc.exe generuje zestawy z arkuszy stylów. Zestawy można następnie przekazywać do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody. Może to pomóc w zmniejszeniu kosztów wydajności w niektórych scenariuszach wdrażania XSLT.  
   
 > [!NOTE]
@@ -49,6 +51,7 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
  Narzędzie xsltc.exe nie weryfikuje nazw klas ( `/class:` *nazw*) ani zestawów ( `/out:` *AssemblyName*). Błędy są zgłaszane przez środowisko uruchomieniowe języka wspólnego, jeśli nazwy są nieprawidłowe.  
   
 ## <a name="examples"></a>Przykłady  
+
  Poniższe polecenie kompiluje arkusz stylów i tworzy zestaw o nazwie booksort.dll.  
   
 ```console  

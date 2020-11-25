@@ -2,19 +2,21 @@
 title: Nawigacja po przestrzeni nazw XPath
 ms.date: 03/30/2017
 ms.assetid: 06cc7abb-7416-415c-9dd6-67751b8cabd5
-ms.openlocfilehash: 4d2ef71a41d19fd5bb573afab66dc8a15e19c393
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: d5350f0c8f73c5efb0f7d9e4c492a841b4978c36
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831211"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720896"
 ---
 # <a name="xpath-namespace-navigation"></a>Nawigacja po przestrzeni nazw XPath
+
 Aby używać zapytań XPath z dokumentami XML, należy poprawnie adresować przestrzenie nazw XML i elementy zawarte w przestrzeni nazw. Przestrzenie nazw uniemożliwiają niejasności, które mogą wystąpić, gdy nazwy są używane w więcej niż jednym kontekście; na przykład nazwa `ID` może odnosić się do więcej niż jednego identyfikatora skojarzonego z różnymi elementami dokumentu XML. Składnia przestrzeni nazw Określa identyfikatory URI, nazwy i prefiksy odróżniające elementy dokumentu XML.  
   
  W przykładzie w tym temacie przedstawiono sposób użycia prefiksów w nawigowaniu po dokumencie XML za pomocą <xref:System.Xml.XPath.XPathNavigator> . Aby uzyskać więcej informacji na temat przestrzeni nazw i składni, zobacz [pliki XML: Opis przestrzeni nazw XML](/previous-versions/dotnet/articles/bb986013(v=msdn.10)).  
   
 ## <a name="namespace-declarations"></a>Deklaracje przestrzeni nazw  
+
  Deklaracje przestrzeni nazw sprawiają, że elementy dokumentu XML są odróżniane i adresowane podczas korzystania z wystąpienia <xref:System.Xml.XPath.XPathNavigator> . Prefiksy przestrzeni nazw zawierają krótką składnię do adresowania przestrzeni nazw.  
   
  Prefiksy są definiowane przez formularz: `<e:Envelope xmlns:e=http://schemas.xmlsoap.org/soap/envelope/>.` w tej składni prefiks " `e` " jest skrótem dla formalnego identyfikatora URI przestrzeni nazw. Element może być identyfikowany `Body` jako element członkowski `Envelope` przestrzeni nazw za pomocą składni: `e:Body` .  
@@ -35,6 +37,7 @@ Aby używać zapytań XPath z dokumentami XML, należy poprawnie adresować prze
 ```  
   
 ## <a name="navigation-by-namespace-prefix"></a>Nawigacja według prefiksu przestrzeni nazw  
+
  Kod w tej sekcji używa <xref:System.Xml.XPath.XPathNavigator> obiektów i <xref:System.Xml.XmlNamespaceManager> do wybierania `Search` elementu z dokumentu XML w poprzedniej sekcji. Zapytanie `xpath` zawiera prefiksy przestrzeni nazw dla każdego elementu w ścieżce. Określenie dokładnej tożsamości przestrzeni nazw, które zawierają każdy element, zapewnia poprawną nawigację do `Search` elementu przez <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A> metodę.  
   
 ```csharp  

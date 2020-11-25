@@ -3,18 +3,21 @@ title: Zarządzanie przestrzeniami nazw w dokumencie XML
 description: Dowiedz się, jak zarządzać przestrzeniami nazw w dokumencie XML. Przestrzenie nazw XML kojarzą nazwy elementów i atrybutów w dokumencie XML z niestandardowymi i wstępnie zdefiniowanymi identyfikatorami URI.
 ms.date: 03/30/2017
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-ms.openlocfilehash: ab9dceed66e65ea74d0996071ab3a17057e43fc3
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 120493de430c2372f3f71d1d1498ba880feda3d1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822623"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720155"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Zarządzanie przestrzeniami nazw w dokumencie XML
+
 Przestrzenie nazw XML kojarzą nazwy elementów i atrybutów w dokumencie XML z niestandardowymi i wstępnie zdefiniowanymi identyfikatorami URI. Aby utworzyć te skojarzenia, należy zdefiniować prefiksy dla identyfikatorów URI przestrzeni nazw, a następnie użyć tych prefiksów do kwalifikowania nazw elementów i atrybutów w danych XML. Przestrzenie nazw uniemożliwiają kolizje nazw elementów i atrybutów, a elementy i atrybuty o tej samej nazwie mogą być obsługiwane i sprawdzane inaczej.  
   
 <a name="declare"></a>
+
 ## <a name="declaring-namespaces"></a>Deklarowanie przestrzeni nazw  
+
  Aby zadeklarować przestrzeń nazw dla elementu, należy użyć `xmlns:` atrybutu:  
   
  `xmlns:<name>=<"uri">`  
@@ -32,7 +35,9 @@ Przestrzenie nazw XML kojarzą nazwy elementów i atrybutów w dokumencie XML z 
  Aby wyrównać, że element jest częścią określonego obszaru nazw, Dodaj do niego prefiks przestrzeni nazw. Na przykład jeśli `Author` element należy do `mybook` przestrzeni nazw, zostanie zadeklarowany jako `<mybook:Author>` .  
   
 <a name="scope"></a>
+
 ## <a name="declaration-scope"></a>Zakres deklaracji  
+
  Przestrzeń nazw zaczyna się od jej punktu deklaracji do końca elementu, w którym został zadeklarowany. W tym przykładzie przestrzeń nazw zdefiniowana w `BOOK` elemencie nie ma zastosowania do elementów poza `BOOK` elementem, takich jak `Publisher` element:  
   
 ```xml  
@@ -59,6 +64,7 @@ Przestrzenie nazw XML kojarzą nazwy elementów i atrybutów w dokumencie XML z 
 ```  
   
 ## <a name="managing-namespaces"></a>Zarządzanie przestrzeniami nazw  
+
  <xref:System.Xml.XmlNamespaceManager>Klasa przechowuje kolekcję identyfikatorów URI przestrzeni nazw i ich prefiksów, a następnie umożliwia wyszukiwanie, Dodawanie i usuwanie przestrzeni nazw z tej kolekcji. W niektórych kontekstach Ta klasa jest wymagana w celu uzyskania lepszej wydajności przetwarzania kodu XML. Na przykład <xref:System.Xml.Xsl.XsltContext> Klasa używa <xref:System.Xml.XmlNamespaceManager> dla obsługi XPath.  
   
  Menedżer przestrzeni nazw nie wykonuje żadnych walidacji w przestrzeniach nazw, ale zakłada, że prefiksy i przestrzenie nazw zostały już zweryfikowane i są zgodne ze specyfikacją [przestrzeni nazw W3C](https://www.w3.org/TR/REC-xml-names/) .  

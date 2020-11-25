@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 796b63f3-c809-47f1-89cc-b23ad8eb5e79
 topic_type:
 - apiref
-ms.openlocfilehash: 8a042e71690b5ae77c1e4cda7be394a163ab2774
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 22b9970556dd9d8b5070f38a7712462aa5a4aae2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503266"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720168"
 ---
 # <a name="icorprofilercallbackremotingclientinvocationstarted-method"></a>ICorProfilerCallback::RemotingClientInvocationStarted — Metoda
+
 Powiadamia program profilujący o rozpoczęciu wywołania usług zdalnych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,11 +33,12 @@ HRESULT RemotingClientInvocationStarted();
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  To zdarzenie jest takie samo dla wywołań synchronicznych i asynchronicznych.  
   
  Każda z następujących par wywołań zwrotnych nastąpi w tym samym wątku:  
   
-- `RemotingClientInvocationStarted`i [ICorProfilerCallback:: RemotingClientSendingMessage —](icorprofilercallback-remotingclientsendingmessage-method.md)  
+- `RemotingClientInvocationStarted` i [ICorProfilerCallback:: RemotingClientSendingMessage —](icorprofilercallback-remotingclientsendingmessage-method.md)  
   
 - [ICorProfilerCallback:: RemotingClientReceivingReply —](icorprofilercallback-remotingclientreceivingreply-method.md) i [ICorProfilerCallback:: RemotingClientInvocationFinished —](icorprofilercallback-remotingclientinvocationfinished-method.md)  
   
@@ -49,6 +51,7 @@ HRESULT RemotingClientInvocationStarted();
 - Profiler nie odbiera dokładne powiadomienia o asynchronicznych zdarzeniach zdalnych.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

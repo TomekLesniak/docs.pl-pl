@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8960332f-c98a-405a-ba92-7003de0c1187
 topic_type:
 - apiref
-ms.openlocfilehash: 014bd4f2b12c84790065f76a67765aaf35e8b2d8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 14286970a4f7093d72b47b780ea880f5ccb1bca5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131684"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721078"
 ---
 # <a name="iinstallreferenceitemgetreference-method"></a>IInstallReferenceItem::GetReference — Metoda
+
 Pobiera wskaźnik do struktury [FUSION_INSTALL_REFERENCE](fusion-install-reference-structure.md) reprezentowanej przez ten obiekt [IInstallReferenceItem](iinstallreferenceitem-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,8 +37,9 @@ HRESULT GetReference (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppRefData`  
- określoną Zwrócony wskaźnik `FUSION_INSTALL_REFERENCE`.  
+ określoną Zwrócony `FUSION_INSTALL_REFERENCE` wskaźnik.  
   
  `dwFlags`  
  podczas Zarezerwowane do użytku w przyszłości. `dwFlags` musi mieć wartość 0 (zero).  
@@ -46,13 +48,14 @@ HRESULT GetReference (
  podczas Zarezerwowane do użytku w przyszłości. `pvReserved` musi być odwołaniem o wartości null.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IInstallReferenceItem, interfejs](iinstallreferenceitem-interface.md)
-- [FUSION_INSTALL_REFERENCE, struktura](fusion-install-reference-structure.md)
+- [IInstallReferenceItem — Interfejs](iinstallreferenceitem-interface.md)
+- [FUSION_INSTALL_REFERENCE — Struktura](fusion-install-reference-structure.md)

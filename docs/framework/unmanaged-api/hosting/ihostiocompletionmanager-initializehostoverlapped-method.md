@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c35199bf-bc47-4901-b467-4e8a37644bbb
 topic_type:
 - apiref
-ms.openlocfilehash: cf257ab86d27946c861c89dff5e6f09a42013e58
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 397dbbeb0b85cb549a8b5917f977ecb13b3d6539
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804715"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720220"
 ---
 # <a name="ihostiocompletionmanagerinitializehostoverlapped-method"></a>IHostIoCompletionManager::InitializeHostOverlapped — Metoda
+
 Udostępnia hostowi możliwość zainicjowania dowolnych danych niestandardowych w celu dołączenia do `OVERLAPPED` struktury Win32, która jest używana na potrzeby asynchronicznych żądań we/wy.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT InitializeHostOverlapped (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pvOverlapped`  
  podczas Wskaźnik do struktury Win32, `OVERLAPPED` który ma zostać dołączony do żądania we/wy.  
   
@@ -41,7 +43,7 @@ HRESULT InitializeHostOverlapped (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`InitializeHostOverlapped`pomyślnie zwrócono.|  
+|S_OK|`InitializeHostOverlapped` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -50,6 +52,7 @@ HRESULT InitializeHostOverlapped (
 |E_OUTOFMEMORY|Za mało dostępnej pamięci, aby przydzielić żądany zasób.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Funkcje platformy systemu Windows używają `OVERLAPPED` struktury do przechowywania stanu asynchronicznych żądań we/wy. Środowisko CLR wywołuje `InitializeHostOverlapped` metodę, aby umożliwić hostowi dołączenie danych niestandardowych do `OVERLAPPED` wystąpienia.  
   
 > [!IMPORTANT]
@@ -58,16 +61,17 @@ HRESULT InitializeHostOverlapped (
  Wartość zwracana E_OUTOFMEMORY wskazuje, że host nie zainicjuje swoich niestandardowych danych. W takim przypadku środowisko CLR zgłasza błąd i nie wywołuje wywołania.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [ICLRIoCompletionManager, interfejs](iclriocompletionmanager-interface.md)
+- [ICLRIoCompletionManager — Interfejs](iclriocompletionmanager-interface.md)
 - [GetHostOverlappedSize, metoda](ihostiocompletionmanager-gethostoverlappedsize-method.md)
-- [IHostIoCompletionManager, interfejs](ihostiocompletionmanager-interface.md)
+- [IHostIoCompletionManager — Interfejs](ihostiocompletionmanager-interface.md)

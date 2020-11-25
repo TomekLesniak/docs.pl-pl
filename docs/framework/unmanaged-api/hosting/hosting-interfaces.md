@@ -6,14 +6,15 @@ helpviewer_keywords:
 - hosting interfaces [.NET Framework]
 - unmanaged interfaces [.NET Framework], hosting
 ms.assetid: cc64cb05-38da-418e-815a-daac8e8e26e5
-ms.openlocfilehash: b1459bf78276abe0daefd7a7ee814841f3c65dfb
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f82301da1813b8d50deebf4452d8c07809c186c5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550667"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721806"
 ---
 # <a name="hosting-interfaces"></a>Hosting — Interfejsy
+
 W tej sekcji opisano interfejsy, które mogą być używane przez niezarządzane hosty do integrowania środowiska uruchomieniowego języka wspólnego (CLR) z aplikacjami.  
   
  Interfejsy hostingu .NET Framework w wersji 2,0 zastępują interfejsy .NET Framework wersja 1,0 i 1,1. Istnieją znaczne różnice między dwoma zestawami interfejsów. Mieszanie ich może spowodować nieoczekiwane zachowanie i nie jest zalecane.  
@@ -23,6 +24,7 @@ W tej sekcji opisano interfejsy, które mogą być używane przez niezarządzane
  Interfejsy hostingu w .NET Framework 4 zastępują interfejsy .NET Framework 2,0.
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Przestarzałe klasy coclass i interfejsy hostingu środowiska CLR](deprecated-clr-hosting-interfaces-and-coclasses.md)  
  Opisuje interfejsy hostingu wprowadzone w .NET Framework wersje 1,0 i 1,1.  
   
@@ -33,6 +35,7 @@ W tej sekcji opisano interfejsy, które mogą być używane przez niezarządzane
  Opisuje interfejsy hostingu wprowadzone w .NET Framework 4.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Współklasy hostingu](hosting-coclasses.md)  
   
  [Przestarzałe funkcje hostingu środowiska CLR](deprecated-clr-hosting-functions.md)  

@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2bc6ddc6-674a-4f75-b264-abc35e4e5857
-ms.openlocfilehash: cd8320071f1de15d503c94c138c02cab5742685c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a1542c0800f9042e27a4b0806d717c58d7783c79
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818436"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720844"
 ---
 # <a name="xpathnodeiterator-in-transformations"></a>Klasa XPathNodeIterator w przekształceniach
+
 <xref:System.Xml.XPath.XPathNodeIterator>Zapewnia metody do iteracji nad zestawem węzłów utworzonych w wyniku zapytania XML Path Language (XPath) lub fragmentu drzewa wynik przekonwertowany na węzeł ustawiony za pomocą metody zestawu węzłów. <xref:System.Xml.XPath.XPathNodeIterator>Pozwala na iterację węzłów w tym zestawie węzłów. Po pobraniu zestawu węzłów <xref:System.Xml.XPath.XPathNodeIterator> Klasa zawiera kursor tylko do odczytu, który przesunięty do wybranego zestawu węzłów. Zestaw węzłów jest tworzony w kolejności dokumentu, dlatego wywołanie tej metody jest przenoszone do następnego węzła w kolejności dokumentu. <xref:System.Xml.XPath.XPathNodeIterator> nie kompiluje drzewa węzłów wszystkich węzłów w zestawie. Zamiast tego zapewnia ono pojedyncze okno węzła do danych, udostępniając węzeł podstawowy, który wskazuje, w miarę poruszania się w drzewie. Metody i właściwości dostępne z <xref:System.Xml.XPath.XPathNodeIterator> klasy umożliwiają uzyskanie informacji z bieżącego węzła. Listę dostępnych metod i właściwości można znaleźć w temacie <xref:System.Windows.Forms.ToolBar> .  
   
  Ponieważ <xref:System.Xml.XPath.XPathNodeIterator> przenosi się na zestaw węzłów utworzonych na podstawie zapytania XPath i przenosi tylko do przodu, Metoda przenoszenia odbywa się przy użyciu <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> metody. Zwracany typ tej metody to `Boolean` , zwracając `true` Jeśli przechodzi do następnego wybranego węzła i `false` Jeśli nie ma więcej wybranych węzłów. Jeśli zwróci `true` , Poniższa lista zawiera dostępne właściwości:  

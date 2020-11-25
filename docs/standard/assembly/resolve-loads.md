@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 16f2f61a2a36e4189e98c85b3d3ce706a52e2938
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: edd101e57793668d71d44db08f191ae412c6d998
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687282"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720909"
 ---
 # <a name="resolve-assembly-loads"></a>Rozwiązywanie załadowań zestawów
 
@@ -28,6 +28,7 @@ Platforma .NET udostępnia <xref:System.AppDomain.AssemblyResolve?displayPropert
 > W celu rozpoznawania obciążeń zestawów w kontekście tylko odbicia należy <xref:System.AppDomain.ReflectionOnlyAssemblyResolve?displayProperty=nameWithType> zamiast tego użyć zdarzenia.  
   
 ## <a name="how-the-assemblyresolve-event-works"></a>Jak działa zdarzenie AssemblyResolve  
+
  Po zarejestrowaniu procedury obsługi dla <xref:System.AppDomain.AssemblyResolve> zdarzenia program obsługi jest wywoływany za każdym razem, gdy środowisko uruchomieniowe nie zostanie powiązane z zestawem według nazwy. Na przykład wywoływanie następujących metod z kodu użytkownika może spowodować <xref:System.AppDomain.AssemblyResolve> podniesienie poziomu zdarzenia:  
   
 - <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>Przeciążenie metody lub <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> Przeciążenie metody, których pierwszy argument jest ciągiem, który reprezentuje nazwę wyświetlaną zestawu do załadowania (czyli ciąg zwracany przez <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType> Właściwość).  
@@ -39,6 +40,7 @@ Platforma .NET udostępnia <xref:System.AppDomain.AssemblyResolve?displayPropert
 - <xref:System.AppDomain.CreateInstance%2A?displayProperty=nameWithType> <xref:System.AppDomain.CreateInstanceAndUnwrap%2A?displayProperty=nameWithType> Przeciążenie metody lub, które tworzy wystąpienie obiektu w innej domenie aplikacji.  
   
 ### <a name="what-the-event-handler-does"></a>Działanie programu obsługi zdarzeń  
+
  Procedura obsługi dla <xref:System.AppDomain.AssemblyResolve> zdarzenia otrzymuje nazwę wyświetlaną zestawu, który ma zostać załadowany we <xref:System.ResolveEventArgs.Name%2A?displayProperty=nameWithType> właściwości. Jeśli program obsługi nie rozpoznaje nazwy zestawu, zwraca `null` (C#), `Nothing` (Visual Basic) lub `nullptr` (Visual C++).  
   
  Jeśli program obsługi rozpoznaje nazwę zestawu, może ładować i zwracać zestaw, który spełnia żądanie. Na poniższej liście opisano kilka przykładowych scenariuszy.  
@@ -69,6 +71,7 @@ Platforma .NET udostępnia <xref:System.AppDomain.AssemblyResolve?displayPropert
  Wiele wersji tego samego zestawu może być załadowanych do tej samej domeny aplikacji. Ta metoda nie jest zalecana, ponieważ może to prowadzić do problemów z przypisaniem. Zapoznaj się z [najlepszymi rozwiązaniami dotyczącymi ładowania zestawu](../../framework/deployment/best-practices-for-assembly-loading.md).  
   
 ### <a name="what-the-event-handler-should-not-do"></a>Czego nie powinien wykonać program obsługi zdarzeń  
+
 Podstawową regułą obsługi <xref:System.AppDomain.AssemblyResolve> zdarzenia jest to, że nie należy próbować zwrócić zestawu, który nie jest rozpoznawany. Podczas pisania procedury obsługi należy wiedzieć, które zestawy mogą spowodować podniesienie poziomu zdarzenia. Program obsługi powinien zwrócić wartość null dla innych zestawów.  
 
 > [!IMPORTANT]

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8cdb1188-952a-4ba8-9f05-bfebc18cdd29
 topic_type:
 - apiref
-ms.openlocfilehash: 723cb277a7df592e0494505018f7422e4e40f5f6
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 26c26cf204f1a2743f46cfcfdfadbf2c3e3df38e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496155"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721572"
 ---
 # <a name="icorprofilerinfo3setfunctionidmapper2-method"></a>ICorProfilerInfo3::SetFunctionIDMapper2 — Metoda
+
 Określa funkcję zaimplementowaną przez profiler, która zostanie wywołana w celu mapowania `FunctionID` wartości na wartości alternatywne, które są przesyłane do punktów zaczepienia wejścia/wyjścia profilera. Ta metoda rozszerza metodę [ICorProfilerInfo:: SetFunctionIDMapper —](icorprofilerinfo-setfunctionidmapper-method.md) z dodatkowym parametrem danych, którego mogą używać pliki do rozróżniania między środowiskami uruchomieniowymi.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT SetFunctionIDMapper2(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pFunc`  
  podczas Wskaźnik do implementacji [FunctionIDMapper2 —](functionidmapper2-function.md) , który zostanie wywołany w celu mapowania `FunctionID` wartości na ich wartości alternatywne.  
   
@@ -43,11 +45,13 @@ HRESULT SetFunctionIDMapper2(
 ## <a name="return-value"></a>Wartość zwracana  
   
 ## <a name="remarks"></a>Uwagi  
+
  Alternatywy dla wartości FunctionID zostaną przesłane do punktów zaczepienia wejścia/wyjścia profilera ([FunctionEnter3](functionenter3-function.md), [FunctionLeave3](functionleave3-function.md), and [FunctionTailcall3](functiontailcall3-function.md);, [FunctionEnter3WithInfo](functionenter3withinfo-function.md), [FunctionLeave3WithInfo](functionleave3withinfo-function.md)i [FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md)), które są określone przez metodę [SetEnterLeaveFunctionHooks3 —](icorprofilerinfo3-setenterleavefunctionhooks3-method.md) lub [SetEnterLeaveFunctionHooks3WithInfo —](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md) .  
   
  `FunctionIDMapper2`Metodę można ustawić tylko raz. zalecamy jej ustawienie w [ICorProfilerCallback:: Initialize](icorprofilercallback-initialize-method.md) wywołania zwrotnego.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -59,6 +63,6 @@ HRESULT SetFunctionIDMapper2(
 ## <a name="see-also"></a>Zobacz także
 
 - [SetFunctionIDMapper —](icorprofilerinfo-setfunctionidmapper-method.md)
-- [ICorProfilerInfo3, interfejs](icorprofilerinfo3-interface.md)
+- [ICorProfilerInfo3 — Interfejs](icorprofilerinfo3-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)

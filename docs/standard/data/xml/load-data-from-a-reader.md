@@ -2,14 +2,15 @@
 title: Ładowanie danych z czytnika
 ms.date: 03/30/2017
 ms.assetid: 7e74918c-bc72-4977-a49b-e1520a6d8f60
-ms.openlocfilehash: ea125e57dd6251a4fbd401bac8f37826083965b8
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 345b6e35c84fe531e131d27bd09fbd8a87b4521a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822675"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720142"
 ---
 # <a name="load-data-from-a-reader"></a>Ładowanie danych z czytnika
+
 Jeśli dokument XML zostanie załadowany przy użyciu <xref:System.Xml.XmlDocument.Load%2A> metody i parametru <xref:System.Xml.XmlReader> , istnieją różnice w zachowaniu, które występuje w porównaniu z zachowaniem ładowania danych z innych formatów. Jeśli czytnik jest w stanie początkowym, <xref:System.Xml.XmlDocument.Load%2A> zużywa całą zawartość z czytnika i kompiluje Document Object Model XML (dom) ze wszystkich danych w czytniku.  
   
  Jeśli czytnik znajduje się już w węźle w dokumencie, a czytnik jest następnie przeszedł do <xref:System.Xml.XmlDocument.Load%2A> metody, <xref:System.Xml.XmlDocument.Load%2A> próbuje odczytać bieżący węzeł i wszystkie jego elementy równorzędne, aż do tagu końcowego, który zamknie bieżącą głębokość do pamięci. Pomyślne próba jest <xref:System.Xml.XmlDocument.Load%2A> zależna od węzła, na którym jest on odczytywany po próbie załadowania, ponieważ <xref:System.Xml.XmlDocument.Load%2A> sprawdza, czy plik XML z czytnika jest poprawnie sformułowany. Jeśli plik XML nie jest poprawnie sformułowany, <xref:System.Xml.XmlDocument.Load%2A> zgłasza wyjątek. Na przykład następujący zestaw węzłów zawiera dwa elementy poziomu głównego, kod XML nie jest dobrze sformułowany i <xref:System.Xml.XmlDocument.Load%2A> zgłasza wyjątek.  

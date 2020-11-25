@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4369533d-7834-4497-bc37-bfea0ad737b1
 topic_type:
 - apiref
-ms.openlocfilehash: 420f22a242a20f8bdf5d5b84f47a297a2f503db0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9fcb5e189af9f72de7635aad550a5e8ab5522dbd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546024"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720623"
 ---
 # <a name="icorruntimehost-interface"></a>ICorRuntimeHost — Interfejs
+
 Zapewnia metody, które umożliwiają hostowi uruchamianie i zatrzymywanie jawnie środowiska uruchomieniowego języka wspólnego (CLR), w celu utworzenia i skonfigurowania domen aplikacji, uzyskania dostępu do domeny domyślnej i wyliczenia wszystkich domen uruchomionych w procesie.  
   
  W .NET Framework w wersji 2,0 ten interfejs został zastąpiony przez [ICLRRuntimeHost](iclrruntimehost-interface.md).  
@@ -39,7 +40,7 @@ Zapewnia metody, które umożliwiają hostowi uruchamianie i zatrzymywanie jawni
 |[CurrentDomain, metoda](icorruntimehost-currentdomain-method.md)|Pobiera wskaźnik interfejsu typu <xref:System._AppDomain> , który reprezentuje domenę załadowana w bieżącym wątku.|  
 |[DeleteLogicalThreadState, metoda](icorruntimehost-deletelogicalthreadstate-method.md)|Nie używaj.|  
 |[EnumDomains, metoda](icorruntimehost-enumdomains-method.md)|Pobiera moduł wyliczający dla domen w bieżącym procesie.|  
-|[GetConfiguration, metoda](icorruntimehost-getconfiguration-method.md)|Pobiera obiekt, który umożliwia hostowi określenie konfiguracji wywołania zwrotnego środowiska CLR.|  
+|[GetConfiguration — Metoda](icorruntimehost-getconfiguration-method.md)|Pobiera obiekt, który umożliwia hostowi określenie konfiguracji wywołania zwrotnego środowiska CLR.|  
 |[GetDefaultDomain, metoda](icorruntimehost-getdefaultdomain-method.md)|Pobiera wskaźnik interfejsu typu <xref:System._AppDomain> , który reprezentuje domenę domyślną dla bieżącego procesu.|  
 |[LocksHeldByLogicalThread, metoda](icorruntimehost-locksheldbylogicalthread-method.md)|Nie używaj.|  
 |[MapFile, metoda](icorruntimehost-mapfile-method.md)|Mapuje określony plik do pamięci. Ta metoda jest przestarzała.|  
@@ -51,6 +52,7 @@ Zapewnia metody, które umożliwiają hostowi uruchamianie i zatrzymywanie jawni
 |[UnloadDomain, metoda](icorruntimehost-unloaddomain-method.md)|Zwalnia określoną domenę aplikacji z bieżącego procesu.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  

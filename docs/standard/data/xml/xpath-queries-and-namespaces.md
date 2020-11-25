@@ -6,19 +6,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ef6402be-2f8e-4be2-8d3e-a80891cdef8b
-ms.openlocfilehash: a97ff5afef23c361b1f675d2f07f43b3bc5df299
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 74dbe6b84c8d9400790f763f811da5542c732892
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94818391"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720883"
 ---
 # <a name="xpath-queries-and-namespaces"></a>Zapytania XPath i przestrzenie nazw
+
 Zapytania XPath są świadome przestrzeni nazw w dokumencie XML i mogą używać prefiksów przestrzeni nazw do kwalifikowania nazw elementów i atrybutów. Kwalifikujące się nazwy elementów i atrybutów z prefiksem przestrzeni nazw ograniczają węzły zwracane przez zapytanie XPath tylko do tych węzłów, które należą do określonej przestrzeni nazw.  
   
  Na przykład jeśli prefiks `books` mapuje do przestrzeni nazw `http://www.contoso.com/books` , następujące zapytanie XPath `/books:books/books:book` wybiera tylko te `book` elementy w przestrzeni nazw `http://www.contoso.com/books` .  
   
 ## <a name="the-xmlnamespacemanager"></a>Nazwa XmlNamespaceManager  
+
  Aby używać przestrzeni nazw w zapytaniu XPath, obiekt pochodzący z <xref:System.Xml.IXmlNamespaceResolver> interfejsu, takiego jak <xref:System.Xml.XmlNamespaceManager> Klasa, jest konstruowany przy użyciu identyfikatora URI przestrzeni nazw i prefiksu do uwzględnienia w zapytaniu XPath.  
   
  <xref:System.Xml.XmlNamespaceManager>Obiekt może być używany w zapytaniu w każdym z poniższych sposobów.  
@@ -36,6 +38,7 @@ Zapytania XPath są świadome przestrzeni nazw w dokumencie XML i mogą używać
 - <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
   
 ### <a name="the-default-namespace"></a>Domyślna przestrzeń nazw  
+
  W poniższym dokumencie XML, domyślna przestrzeń nazw z pustym prefiksem jest używana do deklarowania `http://www.contoso.com/books` przestrzeni nazw.  
   
 ```xml  

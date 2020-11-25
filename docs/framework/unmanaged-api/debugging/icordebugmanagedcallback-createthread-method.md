@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6b961728-21c4-4e8d-ae81-197458be62f4
 topic_type:
 - apiref
-ms.openlocfilehash: 5fa3bafd35912a7729833896f7e6f0bb2ff9b121
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 56ec7c56b167c29c9951638c5eee159e1d3c7ffb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212389"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721299"
 ---
 # <a name="icordebugmanagedcallbackcreatethread-method"></a>ICorDebugManagedCallback::CreateThread — Metoda
+
 Powiadamia debuger o rozpoczęciu wykonywania kodu zarządzanego przez wątek.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT CreateThread (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pAppDomain`  
  podczas Wskaźnik do obiektu ICorDebugAppDomain, który reprezentuje domenę aplikacji, która zawiera wątek.  
   
@@ -42,9 +44,11 @@ HRESULT CreateThread (
  podczas Wskaźnik do obiektu ICorDebugThread, który reprezentuje wątek.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wątek zostanie umieszczony w pierwszej instrukcji kodu zarządzanego do wykonania.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -53,6 +57,6 @@ HRESULT CreateThread (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebugManagedCallback — Interfejs](icordebugmanagedcallback-interface.md)

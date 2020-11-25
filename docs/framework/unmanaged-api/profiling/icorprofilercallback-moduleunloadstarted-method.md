@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2debcaab-6005-4245-afdb-4268bb7e74bd
 topic_type:
 - apiref
-ms.openlocfilehash: c7ad94bf766e0fcdbff95b0766cf68c2196a2c71
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 12d5f7e073337af6034b8f313a2e0161620a65ea
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503339"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95720961"
 ---
 # <a name="icorprofilercallbackmoduleunloadstarted-method"></a>ICorProfilerCallback::ModuleUnloadStarted — Metoda
+
 Powiadamia program profilujący, że moduł jest zwolniony.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,13 +34,16 @@ HRESULT ModuleUnloadStarted(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `moduleId`  
  podczas Identyfikator modułu, który jest zwalniany.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wartość `moduleId` nie jest prawidłowa dla żądania informacji po `ModuleUnloadStarted` powrocie metody — jest to Ostatnia szansa dla profilera, aby uzyskać informacje na temat tego modułu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

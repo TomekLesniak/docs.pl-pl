@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: e30c29f7-3f19-4081-b572-a731aa14cd44
 topic_type:
 - apiref
-ms.openlocfilehash: 24dc55cc9a49c3602829ca627d584c761b4088ce
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 70a07f0ce7f1fa4c904fde594dcf82c5149616fd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894750"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95721533"
 ---
 # <a name="icordebugbreakpointactivate-method"></a>ICorDebugBreakpoint::Activate — Metoda
-Ustawia stan aktywności tego `ICorDebugBreakpoint`elementu.  
+
+Ustawia stan aktywności tego elementu `ICorDebugBreakpoint` .  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -34,10 +35,12 @@ HRESULT Activate (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `bActive`  
- podczas Ustaw tę wartość na `true` , aby określić stan jako aktywny; w przeciwnym razie ustaw tę wartość `false`na.  
+ podczas Ustaw tę wartość na, `true` Aby określić stan jako aktywny; w przeciwnym razie ustaw tę wartość na `false` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

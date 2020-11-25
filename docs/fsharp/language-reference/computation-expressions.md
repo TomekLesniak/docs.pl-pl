@@ -4,12 +4,12 @@ description: 'Dowiedz się, jak utworzyć wygodną składnię do pisania oblicze
 ms.date: 08/15/2020
 f1_keywords:
 - let!_FS
-ms.openlocfilehash: 1649d8c57ea9e025d40ef6d39d92b96795964150
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: bc3842b6f1075d68d1997e78c8bd8485731fca52
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812162"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95705309"
 ---
 # <a name="computation-expressions"></a>Wyrażenia obliczeń
 
@@ -181,7 +181,7 @@ W przeciwieństwie do `yield` , `yield!` musi być jawnie określona. Zachowanie
 `return`Słowo kluczowe otacza wartość w typie odpowiadającym wyrażeniu obliczenia. Poza wyrażeniami obliczeń używając `yield` , jest używany do "ukończenia" wyrażenia obliczeń:
 
 ```fsharp
-let req = // 'req' is of type is 'Async<data>'
+let req = // 'req' is of type 'Async<data>'
     async {
         let! data = fetch url
         return data
@@ -198,7 +198,7 @@ let result = Async.RunSynchronously req
 `return!`Słowo kluczowe realizuje wartość wyrażenia obliczeń i zawija ten wynik w typie odpowiadającym wyrażeniu obliczeń:
 
 ```fsharp
-let req = // 'req' is of type is 'Async<data>'
+let req = // 'req' is of type 'Async<data>'
     async {
         return! fetch url
     }
