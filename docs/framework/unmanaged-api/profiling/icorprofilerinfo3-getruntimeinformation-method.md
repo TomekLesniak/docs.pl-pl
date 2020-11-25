@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4400fb8c-0407-4791-8557-f011fd2aee51
 topic_type:
 - apiref
-ms.openlocfilehash: b8e503af11fa1d02aac2ec83edde0ffbd562d8e5
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: fdb2b1601e0164de19bcc1e8f60856346aeaacb1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496402"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698016"
 ---
 # <a name="icorprofilerinfo3getruntimeinformation-method"></a>ICorProfilerInfo3::GetRuntimeInformation — Metoda
+
 Zawiera informacje o wersji dotyczące PROFILOWANEGO środowiska uruchomieniowego języka wspólnego (CLR).  
   
 ## <a name="syntax"></a>Składnia  
@@ -42,6 +43,7 @@ HRESULT GetRuntimeInformation(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pClrInstanceId`  
  określoną Identyfikator reprezentatywny uruchomionego wystąpienia środowiska CLR w procesie. Jest to takie samo, jak `ClrInstanceID` raport zdarzenia uruchamiania śledzenie zdarzeń systemu Windows (ETW).  
   
@@ -70,9 +72,11 @@ HRESULT GetRuntimeInformation(
  określoną Ciąg wersji środowiska CLR.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Dla dowolnego parametru można przekazać wartość null. Jednak `pcchVersionString` nie może mieć wartości null, chyba że `szVersionString` ma również wartość null.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -83,6 +87,6 @@ HRESULT GetRuntimeInformation(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo3, interfejs](icorprofilerinfo3-interface.md)
+- [ICorProfilerInfo3 — Interfejs](icorprofilerinfo3-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)

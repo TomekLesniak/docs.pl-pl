@@ -1,21 +1,21 @@
 ---
-title: Co nowego w programie Windows Workflow Foundation na platformie .NET 4.5
+title: Co nowego w Windows Workflow Foundation w .NET Framework 4,5
 description: Windows Workflow Foundation w .NET Framework 4,5 wprowadza wiele nowych funkcji, takich jak nowe działania, możliwości projektanta i modele tworzenia przepływu pracy.
 ms.date: 03/30/2017
 ms.assetid: 195c43a8-e0a8-43d9-aead-d65a9e6751ec
-ms.openlocfilehash: b115a0a5bb5e425e808270d3daf8bb0aeb942b3c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0d7086fd5ff9bfa410568a74092be3e29f732e23
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556619"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697912"
 ---
-# <a name="whats-new-in-windows-workflow-foundation-in-net-45"></a>Co nowego w programie Windows Workflow Foundation na platformie .NET 4.5
+# <a name="whats-new-in-windows-workflow-foundation-in-net-framework-45"></a>Co nowego w Windows Workflow Foundation w .NET Framework 4,5
 
-Windows Workflow Foundation (WF) w .NET Framework 4,5 wprowadza wiele nowych funkcji, takich jak nowe działania, możliwości projektanta i modele tworzenia przepływu pracy. Wiele, ale nie wszystkie, nowych funkcji przepływu pracy wprowadzonych w .NET Framework 4,5 są obsługiwane w ponownie hostowanym Projektancie przepływu pracy. Aby uzyskać więcej informacji o nowych funkcjach, które są obsługiwane, zobacz [Obsługa nowych funkcji programu Workflow Foundation 4,5 w Projektant przepływu pracy](wf-features-in-the-rehosted-workflow-designer.md)przewidzianych do przeszukania. Aby uzyskać więcej informacji na temat migrowania aplikacji przepływu pracy .NET 3,0 i .NET 3,5 do korzystania z najnowszej wersji, zobacz [wskazówki dotyczące migracji](migration-guidance.md). Ten temat zawiera omówienie nowych funkcji przepływu pracy wprowadzonych w .NET Framework 4,5.
+Windows Workflow Foundation (WF) w .NET Framework 4,5 wprowadza wiele nowych funkcji, takich jak nowe działania, możliwości projektanta i modele tworzenia przepływu pracy. Wiele, ale nie wszystkie, nowych funkcji przepływu pracy wprowadzonych w .NET Framework 4,5 są obsługiwane w ponownie hostowanym Projektancie przepływu pracy. Aby uzyskać więcej informacji o nowych funkcjach, które są obsługiwane, zobacz [Obsługa nowych funkcji programu Workflow Foundation 4,5 w Projektant przepływu pracy](wf-features-in-the-rehosted-workflow-designer.md)przewidzianych do przeszukania. Aby uzyskać więcej informacji na temat migrowania aplikacji przepływu pracy .NET Framework 3,0 i .NET Framework 3,5 do korzystania z najnowszej wersji, zobacz [wskazówki dotyczące migracji](migration-guidance.md). Ten artykuł zawiera omówienie nowych funkcji przepływu pracy wprowadzonych w .NET Framework 4,5.
 
 > [!WARNING]
-> Nowe funkcje Windows Workflow Foundation wprowadzone w .NET Framework 4,5 nie są dostępne dla projektów przeznaczonych dla wcześniejszych wersji platformy. Jeśli projekt przeznaczony dla .NET Framework 4,5 zostanie odtworzony w poprzedniej wersji środowiska, mogą wystąpić pewne problemy.
+> Nowe funkcje Windows Workflow Foundation wprowadzone w .NET Framework 4,5 nie są dostępne dla projektów przeznaczonych dla wcześniejszych wersji platformy. Jeśli projekt przeznaczony dla .NET Framework 4,5 zostanie przekierowany do poprzedniej wersji środowiska, mogą wystąpić pewne problemy.
 >
 > - Wyrażenia języka C# zostaną zastąpione w projektancie, a **wartość wiadomości została ustawiona w języku XAML**.
 > - Wystąpi wiele błędów kompilacji, w tym następujący błąd.
@@ -151,7 +151,7 @@ W projektancie można również przeciągać i upuszczać wiele opcji, a także 
 
 ### <a name="outline-view-of-workflow-items"></a><a name="BKMK_DocumentOutline"></a> widok konspektu elementów przepływu pracy
 
-W celu ułatwienia nawigacji hierarchicznych przepływów pracy składniki przepływu pracy są wyświetlane w widoku konspektu w stylu drzewa. Widok konspektu jest wyświetlany w widoku **konspektu dokumentu** . Aby otworzyć ten widok, w górnym menu wybierz pozycję **Widok**, **inne okna**, **Konspekt dokumentu**lub naciśnij klawisze Ctrl W, U. Kliknięcie węzła w widoku konspektu spowoduje przejście do odpowiedniego działania w Projektancie przepływu pracy, a widok konspektu zostanie zaktualizowany w celu wyświetlenia działań wybranych w projektancie.
+W celu ułatwienia nawigacji hierarchicznych przepływów pracy składniki przepływu pracy są wyświetlane w widoku konspektu w stylu drzewa. Widok konspektu jest wyświetlany w widoku **konspektu dokumentu** . Aby otworzyć ten widok, w górnym menu wybierz pozycję **Widok**, **inne okna**, **Konspekt dokumentu** lub naciśnij klawisze Ctrl W, U. Kliknięcie węzła w widoku konspektu spowoduje przejście do odpowiedniego działania w Projektancie przepływu pracy, a widok konspektu zostanie zaktualizowany w celu wyświetlenia działań wybranych w projektancie.
 
 Poniższy zrzut ekranu ukończonego przepływu pracy w [samouczku wprowadzenie](getting-started-tutorial.md) przedstawia widok konspektu z sekwencyjnym przepływem pracy.
 

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 017a7ba5-aaaf-44e2-9cbe-ceebef259df0
 topic_type:
 - apiref
-ms.openlocfilehash: e3e50538bde8fe3509b49e3dbcb031875e6863e5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b417377ea1d0746e563490d87cc9a988e857d943
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127116"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697041"
 ---
 # <a name="iassemblycachecreateassemblycacheitem-method"></a>IAssemblyCache::CreateAssemblyCacheItem — Metoda
+
 Pobiera odwołanie do nowego obiektu [IAssemblyCacheItem](iassemblycacheitem-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT CreateAssemblyCacheItem (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `dwFlags`  
  podczas Flagi zdefiniowane w pliku Fusion. idl. Obsługiwane są następujące wartości:  
   
@@ -48,19 +50,20 @@ HRESULT CreateAssemblyCacheItem (
  podczas Zarezerwowane do użytku w przyszłości. `pvReserved` musi być odwołaniem o wartości null.  
   
  `ppAsmItem`  
- określoną Zwrócony wskaźnik `IAssemblyCacheItem`.  
+ określoną Zwrócony `IAssemblyCacheItem` wskaźnik.  
   
  `pszAssemblyName`  
- [w, opcjonalnie] Niekanoniczne pary `name=value` oddzielane przecinkami.  
+ [w, opcjonalnie] Niekanoniczne, pary rozdzielane przecinkami `name=value` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IAssemblyCache, interfejs](iassemblycache-interface.md)
-- [IAssemblyCacheItem, interfejs](iassemblycacheitem-interface.md)
+- [IAssemblyCache — Interfejs](iassemblycache-interface.md)
+- [IAssemblyCacheItem — Interfejs](iassemblycacheitem-interface.md)

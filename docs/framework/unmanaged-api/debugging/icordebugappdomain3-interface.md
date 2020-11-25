@@ -14,40 +14,43 @@ helpviewer_keywords:
 ms.assetid: 875ef5be-c1e7-4d95-97e9-d3a667aeaba0
 topic_type:
 - apiref
-ms.openlocfilehash: 1aaccb37ec61ed1ba6a7e6e1f508704973117cca
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 644457edbf5035f6d946e1c83ff0053fb118288e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76784882"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698237"
 ---
 # <a name="icordebugappdomain3-interface"></a>ICorDebugAppDomain3 — Interfejs
+
 Zapewnia metody do pobierania informacji o zarządzanych reprezentacjach typów środowisko wykonawcze systemu Windows aktualnie załadowanych w domenie aplikacji. Ten interfejs jest rozszerzeniem interfejsów ICorDebugAppDomain i ICorDebugAppDomain2.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[ICorDebugAppDomain3::GetCachedWinRTTypes](icordebugappdomain3-getcachedwinrttypes-method.md)|Pobiera moduł wyliczający dla wszystkich typów środowisko wykonawcze systemu Windows w pamięci podręcznej.|  
-|[ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs](icordebugappdomain3-getcachedwinrttypesforiids-method.md)|Pobiera moduł wyliczający dla buforowanych środowisko wykonawcze systemu Windows typów w domenie aplikacji w oparciu o ich identyfikatory interfejsów.|  
+|[ICorDebugAppDomain3:: GetCachedWinRTTypes —](icordebugappdomain3-getcachedwinrttypes-method.md)|Pobiera moduł wyliczający dla wszystkich typów środowisko wykonawcze systemu Windows w pamięci podręcznej.|  
+|[ICorDebugAppDomain3:: GetCachedWinRTTypesForIIDs —](icordebugappdomain3-getcachedwinrttypesforiids-method.md)|Pobiera moduł wyliczający dla buforowanych środowisko wykonawcze systemu Windows typów w domenie aplikacji w oparciu o ich identyfikatory interfejsów.|  
   
 ## <a name="remarks"></a>Uwagi  
- Ten interfejs jest przeznaczony do użycia przez debuger w połączeniu z wywołaniem oceny funkcji do `M:System.Runtime.InteropServices.Marshal.GetInspectableIIDs(System.Object)`. Gdy metoda pobiera identyfikatory interfejsów obsługiwane przez obiekt serwera środowisko wykonawcze systemu Windows, debuger może użyć metod zdefiniowanych w tym interfejsie do mapowania ich na typy zarządzane, które odpowiadają tym interfejsom.  
+
+ Ten interfejs jest przeznaczony do użycia przez debuger w połączeniu z wywołaniem oceny funkcji do `M:System.Runtime.InteropServices.Marshal.GetInspectableIIDs(System.Object)` . Gdy metoda pobiera identyfikatory interfejsów obsługiwane przez obiekt serwera środowisko wykonawcze systemu Windows, debuger może użyć metod zdefiniowanych w tym interfejsie do mapowania ich na typy zarządzane, które odpowiadają tym interfejsom.  
   
- Aby pobrać wystąpienie tego interfejsu, uruchom `QueryInterface` na wystąpieniu interfejsu ICorDebugAppDomain lub ICorDebugAppDomain2.  
+ Aby pobrać wystąpienie tego interfejsu, uruchom polecenie `QueryInterface` na wystąpieniu interfejsu ICorDebugAppDomain lub ICorDebugAppDomain2.  
   
 > [!NOTE]
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** środowisko wykonawcze systemu Windows  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
   
  **Biblioteka:** CorGuids. lib  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Debugowanie, interfejsy](debugging-interfaces.md)
+- [Debugowanie — Interfejsy](debugging-interfaces.md)

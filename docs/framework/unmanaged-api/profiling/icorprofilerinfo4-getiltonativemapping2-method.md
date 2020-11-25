@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 756c1c25-08a7-4060-9798-dbeaa2f3bee5
 topic_type:
 - apiref
-ms.openlocfilehash: 9a6ee58cda5e0b673b3ff1378240f89323e30194
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 37d6b6d5112089df18fb138086db5e138a69629c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496064"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697756"
 ---
 # <a name="icorprofilerinfo4getiltonativemapping2-method"></a>ICorProfilerInfo4::GetILToNativeMapping2 — Metoda
+
 Pobiera mapę z przesunięcia języka pośredniego firmy Microsoft (MSIL) do natywnych przesunięć dla kodu zawartego w ponownej kompilacji JIT w wersji określonej funkcji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,6 +39,7 @@ HRESULT GetILToNativeMapping(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `functionId`  
  podczas Identyfikator funkcji, która zawiera kod.  
   
@@ -54,7 +56,8 @@ HRESULT GetILToNativeMapping(
  określoną Tablica `COR_DEBUG_IL_TO_NATIVE_MAP` struktur, z których każdy określa przesunięcia. Po `GetILToNativeMapping2` powrocie metody `map` będzie zawierać niektóre lub wszystkie `COR_DEBUG_IL_TO_NATIVE_MAP` struktury.  
   
 ## <a name="remarks"></a>Uwagi  
- `GetILToNativeMapping2`jest podobna do metody [ICorProfilerInfo:: GetILToNativeMapping —](icorprofilerinfo-getiltonativemapping-method.md) , z tą różnicą, że umożliwia profilerowi określenie identyfikatora ponownie skompilowanej funkcji w przyszłych wydaniach.  
+
+ `GetILToNativeMapping2` jest podobna do metody [ICorProfilerInfo:: GetILToNativeMapping —](icorprofilerinfo-getiltonativemapping-method.md) , z tą różnicą, że umożliwia profilerowi określenie identyfikatora ponownie skompilowanej funkcji w przyszłych wydaniach.  
   
 > [!NOTE]
 > Metoda [ICorProfilerFunctionControl:: SetILInstrumentedCodeMap —](icorprofilerfunctioncontrol-setilinstrumentedcodemap-method.md) nie jest zaimplementowana w .NET Framework 4,5, dlatego funkcje, które zostały ponownie skompilowane w trybie JIT, nie mogą mieć mapowania Il-to-natywnego, które różni się od pierwotnie skompilowanej funkcji. W związku `GetILToNativeMapping2` z tym nie można wywołać z niezerowym identyfikatorem ponownej kompilacji JIT w .NET Framework 4,5.  
@@ -66,6 +69,7 @@ HRESULT GetILToNativeMapping(
  Alternatywnie, można najpierw wywołać `GetILToNativeMapping2` z buforem o zerowej długości, `map` Aby uzyskać prawidłowy rozmiar buforu. Następnie można ustawić rozmiar buforu na wartość zwracaną w `pcMap` i `GetILToNativeMapping2` ponownie wywołać.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -76,7 +80,7 @@ HRESULT GetILToNativeMapping(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [GetILToNativeMapping — Metoda](icorprofilerinfo-getiltonativemapping-method.md)
+- [GetILToNativeMapping, metoda](icorprofilerinfo-getiltonativemapping-method.md)
 - [ICorProfilerInfo4 — Interfejs](icorprofilerinfo4-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)

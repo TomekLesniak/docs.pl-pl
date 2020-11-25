@@ -17,12 +17,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-ms.openlocfilehash: 1779bb51267af3c2f50ec03112f3c45199390333
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: ef7363cd1c5161217fa4cf74dbfae9dee86fa76f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830431"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697743"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Instrukcje: Implementacja składnika obsługującego wzorzec asynchroniczny oparty na zdarzeniach
 
@@ -51,6 +51,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
  Aby skopiować kod w tym temacie jako pojedynczą listę, zobacz [How to: Implementuj klienta wzorca asynchronicznego opartego na zdarzeniach](how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
 ## <a name="creating-the-component"></a>Tworzenie składnika  
+
  Pierwszym krokiem jest utworzenie składnika, który będzie implementował wzorzec asynchroniczny oparty na zdarzeniach.  
   
 ### <a name="to-create-the-component"></a>Aby utworzyć składnik  
@@ -58,6 +59,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
 - Utwórz klasę o nazwie `PrimeNumberCalculator` , która dziedziczy z <xref:System.ComponentModel.Component> .  
   
 ## <a name="defining-public-asynchronous-events-and-delegates"></a>Definiowanie publicznych zdarzeń asynchronicznych i delegatów  
+
  Składnik komunikuje się z klientami przy użyciu zdarzeń. Zdarzenie _MethodName_**zostało wykonane** przez klientów do ukończenia zadania asynchronicznego, a zdarzenie **ProgressChanged** _MethodName_ informuje klientów o postępie zadania asynchronicznego.  
   
 ### <a name="to-define-asynchronous-events-for-clients-of-your-component"></a>Aby zdefiniować zdarzenia asynchroniczne dla klientów składnika:  
@@ -83,6 +85,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
      [!code-vb[System.ComponentModel.AsyncOperationManager#6](snippets/component-that-supports-the-event-based-asynchronous-pattern/vb/primenumbercalculatormain.vb#6)]  
   
 ## <a name="checkpoint"></a>Punkt kontrolny  
+
  W tym momencie można skompilować składnik.  
   
 ### <a name="to-test-your-component"></a>Aby przetestować składnik  
@@ -99,6 +102,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
      Te ostrzeżenia zostaną wyczyszczone w następnej sekcji.  
   
 ## <a name="defining-private-delegates"></a>Definiowanie prywatnych delegatów  
+
  Asynchroniczne aspekty `PrimeNumberCalculator` składnika są implementowane wewnętrznie z specjalnym delegatem znanym jako <xref:System.Threading.SendOrPostCallback> . <xref:System.Threading.SendOrPostCallback>Reprezentuje metodę wywołania zwrotnego, która jest wykonywana w <xref:System.Threading.ThreadPool> wątku. Metoda wywołania zwrotnego musi mieć sygnaturę, która przyjmuje pojedynczy parametr typu <xref:System.Object> , co oznacza, że należy przekazać stan między delegatami w klasie otoki. Aby uzyskać więcej informacji, zobacz <xref:System.Threading.SendOrPostCallback>.  
   
 ### <a name="to-implement-your-components-internal-asynchronous-behavior"></a>Aby zaimplementować wewnętrzne zachowanie asynchroniczne składnika:  
@@ -130,6 +134,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
      [!code-vb[System.ComponentModel.AsyncOperationManager#23](snippets/component-that-supports-the-event-based-asynchronous-pattern/vb/primenumbercalculatormain.vb#23)]  
   
 ## <a name="implementing-public-events"></a>Implementowanie zdarzeń publicznych  
+
  Składniki implementujące wzorzec asynchroniczny oparty na zdarzeniach komunikują się z klientami przy użyciu zdarzeń. Te zdarzenia są wywoływane w odpowiednim wątku z pomocą <xref:System.ComponentModel.AsyncOperation> klasy.  
   
 ### <a name="to-raise-events-to-your-components-clients"></a>Aby zgłosić zdarzenia do klientów składnika:  
@@ -140,6 +145,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
      [!code-vb[System.ComponentModel.AsyncOperationManager#24](snippets/component-that-supports-the-event-based-asynchronous-pattern/vb/primenumbercalculatormain.vb#24)]  
   
 ## <a name="implementing-the-completion-method"></a>Implementowanie metody ukończenia  
+
  Delegat uzupełniający to metoda, którą podstawowe, wolne od wątku zachowanie asynchroniczne wywoła, gdy operacja asynchroniczna kończy się przez pomyślne zakończenie, błąd lub anulowanie. To wywołanie występuje w dowolnym wątku.  
   
  Ta metoda polega na tym, że identyfikator zadania klienta jest usuwany z wewnętrznej kolekcji unikatowych tokenów klienta. Ta metoda również końcowy okres istnienia określonej operacji asynchronicznej przez wywołanie <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> metody w odpowiedniej <xref:System.ComponentModel.AsyncOperation> . To wywołanie podnosi zdarzenie ukończenia w wątku, który jest odpowiedni dla modelu aplikacji. Po <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> wywołaniu metody to wystąpienie <xref:System.ComponentModel.AsyncOperation> nie może być już używane, a wszystkie kolejne próby jego użycia spowodują zgłoszenie wyjątku.  
@@ -154,6 +160,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
      [!code-vb[System.ComponentModel.AsyncOperationManager#26](snippets/component-that-supports-the-event-based-asynchronous-pattern/vb/primenumbercalculatormain.vb#26)]  
   
 ## <a name="checkpoint"></a>Punkt kontrolny  
+
  W tym momencie można skompilować składnik.  
   
 ### <a name="to-test-your-component"></a>Aby przetestować składnik  
@@ -169,6 +176,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
      To ostrzeżenie zostanie rozwiązane w następnej sekcji.  
   
 ## <a name="implementing-the-worker-methods"></a>Implementowanie metod roboczych  
+
  Do tej pory wdrożono kod asynchroniczny dla `PrimeNumberCalculator` składnika. Teraz można zaimplementować kod, który wykonuje rzeczywistą prace. Zostaną zaimplementowane trzy metody: `CalculateWorker` , `BuildPrimeNumberList` , i `IsPrime` . Razem `BuildPrimeNumberList` i `IsPrime` składają się dobrze znany algorytm o nazwie Sit of Eratostenesa, który określa, czy liczba jest na początku, przez znalezienie wszystkich numerów głównych do pierwiastek kwadratowy numeru testu. Jeśli żaden dzielnik nie zostanie znaleziony przez ten punkt, numer testu jest podstawowy.  
   
  Jeśli ten składnik został zastosowany w celu uzyskania maksymalnej wydajności, Zapamiętaj wszystkie liczby podstawowe wykryte przez różne wywołania dla różnych numerów testów. Sprawdza również, czy istnieją proste dzielniki, takie jak 2, 3 i 5. Celem tego przykładu jest zademonstrowanie sposobu, w jaki operacje czasochłonne mogą być wykonywane asynchronicznie, jednak te optymalizacje są pozostawione jako ćwiczenie.  
@@ -208,6 +216,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
      [!code-vb[System.ComponentModel.AsyncOperationManager#29](snippets/component-that-supports-the-event-based-asynchronous-pattern/vb/primenumbercalculatormain.vb#29)]  
   
 ## <a name="checkpoint"></a>Punkt kontrolny  
+
  W tym momencie można skompilować składnik.  
   
 ### <a name="to-test-your-component"></a>Aby przetestować składnik  
@@ -217,6 +226,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
      Wszystkie te, które pozostały do zapisania, są metodami do uruchamiania i anulowania operacji asynchronicznych `CalculatePrimeAsync` oraz `CancelAsync` .  
   
 ## <a name="implementing-the-start-and-cancel-methods"></a>Implementowanie metod Start i Cancel  
+
  Metoda Worker jest uruchamiana we własnym wątku przez wywołanie `BeginInvoke` obiektu delegowanego, który go otacza. Aby zarządzać okresem istnienia określonej operacji asynchronicznej, należy wywołać <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A> metodę w <xref:System.ComponentModel.AsyncOperationManager> klasie pomocnika. Zwraca <xref:System.ComponentModel.AsyncOperation> , który kierujące wywołania do obsługi zdarzeń klienta do właściwego wątku lub kontekstu.  
   
  Użytkownik anulował określoną oczekującą operację, wywołując <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A> odpowiedni element <xref:System.ComponentModel.AsyncOperation> . Spowoduje to zakończenie tej operacji, a wszelkie kolejne wywołania do niej <xref:System.ComponentModel.AsyncOperation> spowodują zgłoszenie wyjątku.  
@@ -234,6 +244,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
      [!code-vb[System.ComponentModel.AsyncOperationManager#4](snippets/component-that-supports-the-event-based-asynchronous-pattern/vb/primenumbercalculatormain.vb#4)]  
   
 ## <a name="checkpoint"></a>Punkt kontrolny  
+
  W tym momencie można skompilować składnik.  
   
 ### <a name="to-test-your-component"></a>Aby przetestować składnik  
@@ -245,6 +256,7 @@ W przypadku pisania klasy z niektórymi operacjami, które mogą mieć zauważal
  Aby zapoznać się z przykładowym klientem korzystającym z `PrimeNumberCalculator` składnika, zobacz [How to: Implementuj klienta wzorca asynchronicznego opartego na zdarzeniach](how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
 ## <a name="next-steps"></a>Następne kroki  
+
  Możesz wypełnić ten przykład, pisząc `CalculatePrime` , synchroniczną równoważność `CalculatePrimeAsync` metody. Dzięki temu składnik jest w `PrimeNumberCalculator` pełni zgodny ze wzorcem asynchronicznym opartym na zdarzeniach.  
   
  Możesz ulepszyć ten przykład, zachowując listę wszystkich pierwszych liczb odnalezionych przez różne wywołania dla różnych numerów testów. Korzystając z tej metody, każde zadanie będzie korzystać z pracy wykonanej przez poprzednie zadania. Należy zachować ostrożność, aby chronić tę listę z `lock` regionami, więc dostęp do listy przez różne wątki jest serializowany.  

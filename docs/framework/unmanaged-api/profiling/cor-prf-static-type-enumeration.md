@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 441d7809-5b65-41a5-ba64-2910a8008315
 topic_type:
 - apiref
-ms.openlocfilehash: 80d72aefc736054afcee152c55e941c0f8f3c6a8
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2fbcbb6f6115ec48085b533dbf5611054a8235c5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500770"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696742"
 ---
 # <a name="cor_prf_static_type-enumeration"></a>COR_PRF_STATIC_TYPE — Wyliczenie
+
 Wskazuje, czy pole jest statyczne i, jeśli tak, statyczna jakość stosowana do pola. Te wartości można łączyć za pomocą bitowego lub operacji, aby wskazać, że pole ma wiele różnych klas statycznych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -47,6 +48,7 @@ typedef enum {
 |`COR_PRF_FIELD_RVA_STATIC`|Pole jest względnym adresem wirtualnym (RVA) — static.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -57,4 +59,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Profilowanie — wyliczenia](profiling-enumerations.md)
+- [Profilowanie — Wyliczenia](profiling-enumerations.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f0621465-b84f-40ab-a4e5-56a7abc776a7
 topic_type:
 - apiref
-ms.openlocfilehash: eb658d682ce589b7dfdcfc0228d0c657310e6f7a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: a7272d55771620db129125ce543d12d19a0b4dfb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496272"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697847"
 ---
 # <a name="icorprofilerinfo3setenterleavefunctionhooks3-method"></a>ICorProfilerInfo3::SetEnterLeaveFunctionHooks3 — Metoda
+
 Określa funkcje zaimplementowane przez profiler, które będą wywoływane w funkcjach [FunctionEnter3](functionenter3-function.md), [FunctionLeave3](functionleave3-function.md)i [FunctionTailcall3](functiontailcall3-function.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT SetEnterLeaveFunctionHooks3(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pFuncEnter3`  
  podczas Wskaźnik do implementacji, który ma być używany jako `FunctionEnter3` wywołanie zwrotne.  
   
@@ -45,13 +47,15 @@ HRESULT SetEnterLeaveFunctionHooks3(
  podczas Wskaźnik do implementacji, który ma być używany jako `FunctionTailcall3` wywołanie zwrotne.  
   
 ## <a name="remarks"></a>Uwagi  
- Haki [FunctionEnter3](functionenter3-function.md), [FunctionLeave3](functionleave3-function.md)i [FunctionTailcall3](functiontailcall3-function.md) nie zapewniają przeprowadzenia inspekcji ramki i argumentu stosu. Aby uzyskać dostęp do tych informacji, należy `COR_PRF_ENABLE_FUNCTION_ARGS` `COR_PRF_ENABLE_FUNCTION_RETVAL` ustawić flagi, i/lub `COR_PRF_ENABLE_FRAME_INFO` . Profiler może użyć metody [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) , aby ustawić flagi zdarzeń, a następnie użyć metody [ICorProfilerInfo3:: SetEnterLeaveFunctionHooks3WithInfo —](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md) do zarejestrowania implementacji tej funkcji.  
+
+ Haki [FunctionEnter3](functionenter3-function.md), [FunctionLeave3](functionleave3-function.md)i [FunctionTailcall3](functiontailcall3-function.md) nie zapewniają przeprowadzenia inspekcji ramki i argumentu stosu. Aby uzyskać dostęp do tych informacji, należy `COR_PRF_ENABLE_FUNCTION_ARGS` `COR_PRF_ENABLE_FUNCTION_RETVAL` ustawić flagi, i/lub  `COR_PRF_ENABLE_FRAME_INFO` . Profiler może użyć metody [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) , aby ustawić flagi zdarzeń, a następnie użyć metody [ICorProfilerInfo3:: SetEnterLeaveFunctionHooks3WithInfo —](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md) do zarejestrowania implementacji tej funkcji.  
   
  Tylko jeden zestaw wywołań zwrotnych może być aktywny w danym momencie, a Najnowsza wersja ma pierwszeństwo. W związku z tym, jeśli Profiler wywołuje zarówno [metodę SetEnterLeaveFunctionHooks2 —](icorprofilerinfo2-setenterleavefunctionhooks2-method.md) , jak i `SetEnterLeaveFunctionHooks3` metodę, `SetEnterLeaveFunctionHooks3` jest używana.  
   
  `SetEnterLeaveFunctionHooks3`Metoda może być wywoływana tylko z [ICorProfilerCallback:: Initialize](icorprofilercallback-initialize-method.md) wywołania zwrotnego.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

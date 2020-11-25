@@ -14,21 +14,22 @@ helpviewer_keywords:
 ms.assetid: 988718c1-1a4a-40f2-a04c-7d67e5cfe1e2
 topic_type:
 - apiref
-ms.openlocfilehash: c39c047cce97db7c98f1fad403bd16d0e6a2c0fe
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: facea5cd7f0b0e0e6c0b1049e87a2355f1d3965a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379454"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697171"
 ---
 # <a name="icordebugstepperenum-interface"></a>ICorDebugStepperEnum, interfejs
+
 Implementuje metody ICorDebugEnum i wylicza tablice ICorDebugStepper.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[Next — Metoda](icordebugstepperenum-next-method.md)|Pobiera określoną liczbę `ICorDebugStepper` wystąpień z wyliczenia, rozpoczynając od bieżącego położenia.|  
+|[Next, metoda](icordebugstepperenum-next-method.md)|Pobiera określoną liczbę `ICorDebugStepper` wystąpień z wyliczenia, rozpoczynając od bieżącego położenia.|  
   
 ## <a name="remarks"></a>Uwagi  
   
@@ -36,6 +37,7 @@ Implementuje metody ICorDebugEnum i wylicza tablice ICorDebugStepper.
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -44,6 +46,6 @@ Implementuje metody ICorDebugEnum i wylicza tablice ICorDebugStepper.
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

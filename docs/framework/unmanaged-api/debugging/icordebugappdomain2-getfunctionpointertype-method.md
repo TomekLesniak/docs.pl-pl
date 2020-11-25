@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0aba6096-5b38-435c-a72a-86d35db4daef
 topic_type:
 - apiref
-ms.openlocfilehash: fb9b5ee329b41a8b842b94d59bd61c8bcf5f0bf5
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: be797b1b3f288fd367d7f624e9cf33015dd114ac
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895149"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698276"
 ---
 # <a name="icordebugappdomain2getfunctionpointertype-method"></a>ICorDebugAppDomain2::GetFunctionPointerType — Metoda
+
 Pobiera wskaźnik do funkcji, która ma daną sygnaturę.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT GetFunctionPointerType (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `nTypeArgs`  
  podczas Liczba argumentów typu dla funkcji.  
   
@@ -46,6 +48,7 @@ HRESULT GetFunctionPointerType (
  określoną Wskaźnik do adresu `ICorDebugType` obiektu, który reprezentuje wskaźnik do funkcji.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

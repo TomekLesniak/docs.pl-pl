@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7ac3cba5-c282-402e-b7ef-b46634f5176b
 topic_type:
 - apiref
-ms.openlocfilehash: 7a52e61f41bd1d7f68523dd16f70010ffbba401e
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 0b6b6f46c7fff8f1d4c2ad555c93423f9ca8ac09
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895036"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95698152"
 ---
 # <a name="icordebugarrayvaluegetelement-method"></a>ICorDebugArrayValue::GetElement — Metoda
+
 Pobiera wartość danego elementu tablicy.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,10 +38,11 @@ HRESULT GetElement (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cdim`  
  podczas Liczba wymiarów tego `ICorDebugArrayValue` obiektu.  
   
- Ta wartość jest również rozmiarem `indices` tablicy, ponieważ jej rozmiar jest równy liczbie wymiarów `ICorDebugArrayValue` obiektu.  
+ Ta wartość jest również rozmiarem tablicy, `indices` ponieważ jej rozmiar jest równy liczbie wymiarów `ICorDebugArrayValue` obiektu.  
   
  `indices`  
  podczas Tablica wartości indeksu, z których każdy określa pozycję w wymiarze `ICorDebugArrayValue` obiektu.  
@@ -51,6 +53,7 @@ HRESULT GetElement (
  określoną Wskaźnik do adresu obiektu ICorDebugValue, który reprezentuje wartość określonego elementu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

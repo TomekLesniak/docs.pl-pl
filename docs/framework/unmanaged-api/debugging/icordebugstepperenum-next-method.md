@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d0ea0f30-e8d2-48b0-8477-e1a029ceb4dd
 topic_type:
 - apiref
-ms.openlocfilehash: 293d1a9cd93b5ce45105427e7df864ad8bfbe77a
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: b8156b858bde550bb66a8f4ac254f850058ea1a2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379195"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697197"
 ---
 # <a name="icordebugstepperenumnext-method"></a>ICorDebugStepperEnum::Next — Metoda
+
 Pobiera określoną liczbę wystąpień ICorDebugStepper z wyliczenia, rozpoczynając od bieżącego położenia.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT Next(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `celt`  
  podczas Liczba `ICorDebugStepper` wystąpień do pobrania.  
   
@@ -47,6 +49,7 @@ HRESULT Next(
  określoną Wskaźnik do liczby `ICorDebugStepper` faktycznie zwróconych wystąpień. Ta wartość może być równa null, jeśli `celt` jest taka.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

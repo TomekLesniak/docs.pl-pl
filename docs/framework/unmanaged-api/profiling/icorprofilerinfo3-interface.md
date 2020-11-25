@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 044a262f-0fa7-485d-b0c1-64cdc359c654
 topic_type:
 - apiref
-ms.openlocfilehash: 0a474719935ba763cbd15dc6e18fe5ba99c14ebc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 9944234da1677608aec10066b61bfc6a6cb72bcb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84496311"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95697860"
 ---
 # <a name="icorprofilerinfo3-interface"></a>ICorProfilerInfo3 — Interfejs
+
 Zapewnia metody, które są używane przez program codeer do komunikowania się ze środowiskiem uruchomieniowym języka wspólnego (CLR) w celu kontrolowania monitorowania zdarzeń oraz żądania informacji. `ICorProfilerInfo3`Interfejs jest rozszerzeniem interfejsu [ICorProfilerInfo2](icorprofilerinfo2-interface.md) . Dostępne są nowe metody obsługiwane w .NET Framework 4 i nowszych wersjach.  
   
 ## <a name="methods"></a>Metody  
@@ -44,11 +45,13 @@ Zapewnia metody, które są używane przez program codeer do komunikowania się 
 |[SetFunctionIDMapper2, metoda](icorprofilerinfo3-setfunctionidmapper2-method.md)|Określa funkcję zaimplementowaną przez profiler, która zostanie wywołana w celu mapowania `FunctionID` wartości na wartości alternatywne, które są przesyłane do punktów zaczepienia wejścia/wyjścia profilera. Ta metoda rozszerza [ICorProfilerInfo:: SetFunctionIDMapper —](icorprofilerinfo-setfunctionidmapper-method.md) z parametrem, który może być używany przez program do rozróżniania między środowiskami uruchomieniowymi.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR implementuje metody `ICorProfilerInfo3` interfejsu przy użyciu modelu typu "wolny-wątek". Każda metoda zwraca wynik HRESULT wskazujący powodzenie lub niepowodzenie. Aby uzyskać listę możliwych kodów powrotu, zobacz plik CorError. h.  
   
  Środowisko CLR przekazuje `ICorProfilerInfo3` interfejs do każdego profilera kodu podczas inicjowania przy użyciu implementacji profilera [ICorProfilerCallback:: Initialize](icorprofilercallback-initialize-method.md) lub [ICorProfilerCallback3:: InitializeForAttach —](icorprofilercallback3-initializeforattach-method.md) . Program Code profiler może następnie wywołać `ICorProfilerInfo3` metody, aby uzyskać informacje o zarządzanym kodzie, który jest wykonywany pod kontrolą środowiska CLR.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -60,4 +63,4 @@ Zapewnia metody, które są używane przez program codeer do komunikowania się 
 ## <a name="see-also"></a>Zobacz także
 
 - [Interfejsy profilowania](profiling-interfaces.md)
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
