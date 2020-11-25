@@ -1,15 +1,15 @@
 ---
 title: Visual Basic istotne zmiany
-description: Wyświetla listę istotnych zmian w Visual Basic używany z platformą .NET Core.
+description: Wyświetla listę istotnych zmian w Visual Basic używany z platformą .NET Core 3,0.
 ms.date: 09/20/2019
-ms.openlocfilehash: f6dd25586b9da173a4809cd4721bf2a39c9e0401
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: b814edbf3a3a58d37b0a2b66a0e1c4f680f14b57
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87555915"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95713148"
 ---
-# <a name="visual-basic-breaking-changes"></a>Visual Basic istotne zmiany
+# <a name="visual-basic-breaking-changes-in-net-core-30"></a>Visual Basic istotne zmiany w programie .NET Core 3,0
 
 Poniżej znajduje się lista istotnych zmian w Visual Basic:
 

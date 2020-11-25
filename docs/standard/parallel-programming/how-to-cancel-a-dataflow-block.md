@@ -9,14 +9,15 @@ helpviewer_keywords:
 - dataflow blocks, canceling in TPL
 - TPL dataflow library,canceling dataflow blocks
 ms.assetid: fbddda0d-da3b-4ec8-a1d6-67ab8573fcd7
-ms.openlocfilehash: 3dbe0675b73f902a7da0fb4f7881c1ee15022b36
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: c0f184720849a0c21fdeda1de4543a2443d60674
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825861"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95713356"
 ---
 # <a name="how-to-cancel-a-dataflow-block"></a>Instrukcje: Anulowanie bloku przepływu danych
+
 W tym dokumencie przedstawiono sposób włączania anulowania w aplikacji. Ten przykład używa Windows Forms, aby pokazać, gdzie elementy robocze są aktywne w potoku przepływu danych, a także wpływ anulowania.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -34,6 +35,7 @@ W tym dokumencie przedstawiono sposób włączania anulowania w aplikacji. Ten p
 5. Dodaj cztery <xref:System.Windows.Forms.ToolStripProgressBar> obiekty do <xref:System.Windows.Forms.ToolStrip> kontrolki.  
   
 ## <a name="creating-the-dataflow-pipeline"></a>Tworzenie potoku przepływu danych  
+
  W tej sekcji opisano sposób tworzenia potoku przepływu danych, który przetwarza elementy robocze i aktualizuje paski postępu.  
   
 ### <a name="to-create-the-dataflow-pipeline"></a>Aby utworzyć potok przepływu danych  
@@ -65,6 +67,7 @@ W tym dokumencie przedstawiono sposób włączania anulowania w aplikacji. Ten p
  Ten przykład ustawia <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> Właściwość podczas konstrukcji elementów członkowskich potoku. Ponieważ <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> Właściwość trwale anuluje wykonywanie bloku przepływu danych, cały potok musi zostać utworzony ponownie, gdy użytkownik anuluje operację, a następnie chce dodać więcej elementów roboczych do potoku. Przykład demonstrujący alternatywny sposób anulowania bloku przepływu danych, dzięki czemu można wykonać inną pracę po anulowaniu operacji, zobacz [Przewodnik: używanie przepływu danych w aplikacji Windows Forms](walkthrough-using-dataflow-in-a-windows-forms-application.md).  
   
 ## <a name="connecting-the-dataflow-pipeline-to-the-user-interface"></a>Łączenie potoku przepływu danych z interfejsem użytkownika  
+
  W tej sekcji opisano sposób łączenia potoku przepływu danych z interfejsem użytkownika. Tworzenie potoku i Dodawanie elementów roboczych do potoku jest kontrolowane przez program obsługi zdarzeń dla przycisku **Dodaj elementy robocze** . Anulowanie jest inicjowane przez przycisk **Anuluj** . Gdy użytkownik kliknie jeden z tych przycisków, odpowiednia akcja zostanie zainicjowana w sposób asynchroniczny.  
   
 ### <a name="to-connect-the-dataflow-pipeline-to-the-user-interface"></a>Aby połączyć potok przepływu danych z interfejsem użytkownika  
@@ -84,6 +87,7 @@ W tym dokumencie przedstawiono sposób włączania anulowania w aplikacji. Ten p
      [!code-vb[TPLDataflow_CancellationWinForms#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_cancellationwinforms/vb/cancellationwinforms/form1.vb#6)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje kompletny kod dla Form1.cs (Form1. vb dla Visual Basic).  
   
  [!code-csharp[TPLDataflow_CancellationWinForms#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_cancellationwinforms/cs/cancellationwinforms/form1.cs#100)]
