@@ -14,23 +14,25 @@ helpviewer_keywords:
 ms.assetid: 5f3c91c9-c035-454f-96cc-011cab1ea06b
 topic_type:
 - apiref
-ms.openlocfilehash: 5650a7e6e6cb0108f0d043914ea94debe2b703bf
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 12ce800cb83ef4f79710aa441b50be860526023c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213104"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728124"
 ---
 # <a name="icordebuggcreferenceenum-interface"></a>ICorDebugGCReferenceEnum — Interfejs
+
 Dostarcza moduł wyliczający dla obiektów, które zostaną usunięte jako elementy bezużyteczne.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[Next — Metoda](icordebuggcreferenceenum-next-method.md)|Pobiera określoną liczbę wystąpień [COR_GC_REFERENCE](cor-gc-reference-structure.md) , które zawierają informacje o obiektach, które będą zbierane jako elementy bezużyteczne.|  
+|[Next, metoda](icordebuggcreferenceenum-next-method.md)|Pobiera określoną liczbę wystąpień [COR_GC_REFERENCE](cor-gc-reference-structure.md) , które zawierają informacje o obiektach, które będą zbierane jako elementy bezużyteczne.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ICorDebugGCReferenceEnum`Interfejs implementuje interfejs "ICorDebugEnum".  
   
  `ICorDebugGCReferenceEnum`Wystąpienie jest wypełniane wystąpieniami [COR_GC_REFERENCE](cor-gc-reference-structure.md) , wywołując metodę [ICorDebugProcess5:: EnumerateGCReferences —](icordebugprocess5-enumerategcreferences-method.md) . [COR_GC_REFERENCE](cor-gc-reference-structure.md) obiektów można wyliczyć, wywołując metodę [ICorDebugGCReference:: Next](icordebuggcreferenceenum-next-method.md) .  
@@ -44,6 +46,7 @@ Dostarcza moduł wyliczający dla obiektów, które zostaną usunięte jako elem
 - Obiekty z kolejki finalizatora. Obiekty główne kolejki finalizatora do momentu uruchomienia finalizatora.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -52,6 +55,6 @@ Dostarcza moduł wyliczający dla obiektów, które zostaną usunięte jako elem
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

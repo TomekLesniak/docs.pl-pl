@@ -6,12 +6,12 @@ helpviewer_keywords:
 - threading [.NET], about threading
 - managed threading
 ms.assetid: 7b46a7d9-c6f1-46d1-a947-ae97471bba87
-ms.openlocfilehash: 568b93fbfb6f757719d44a07b99ac18375ed539a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 28ba05c345d22b14512d280f3855934d727b3142
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826342"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728449"
 ---
 # <a name="managed-threading"></a>Zarządzana wątkowość
 
@@ -21,6 +21,7 @@ Niezależnie od tego, czy tworzysz komputery z jednym procesorem, czy kilka, chc
 > Począwszy od .NET Framework 4, programowanie wielowątkowe jest znacznie uproszczone przy użyciu <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> klas i, [Parallel LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md), klas kolekcji współbieżnych w <xref:System.Collections.Concurrent?displayProperty=nameWithType> przestrzeni nazw oraz modelu programowania opartego na koncepcji zadań, a nie wątków. Aby uzyskać więcej informacji, zobacz [programowanie równoległe](../parallel-programming/index.md).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Zarządzana wątkowość — podstawy](managed-threading-basics.md)  
  Zawiera omówienie zarządzania wątkami i omówiono, kiedy należy używać wielu wątków.  
   
@@ -34,6 +35,7 @@ Niezależnie od tego, czy tworzysz komputery z jednym procesorem, czy kilka, chc
  Opisuje zarządzane klasy, których można użyć do synchronizowania działań wątków i danych obiektów, do których dostęp odbywa się w różnych wątkach i zawiera Omówienie wątków puli wątków.  
   
 ## <a name="reference"></a>Dokumentacja  
+
  <xref:System.Threading>  
  Zawiera klasy służące do korzystania z i synchronizowania zarządzanych wątków.  
   
@@ -44,6 +46,7 @@ Niezależnie od tego, czy tworzysz komputery z jednym procesorem, czy kilka, chc
  Zawiera klasy służące do tworzenia i planowania współbieżnych zadań przetwarzania.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Domeny aplikacji](../../framework/app-domains/application-domains.md)  
  Zawiera omówienie domen aplikacji i ich użycia przez Common Language Infrastructure.  
   

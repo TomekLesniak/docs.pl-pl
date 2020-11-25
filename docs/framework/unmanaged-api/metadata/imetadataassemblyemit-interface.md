@@ -14,43 +14,45 @@ helpviewer_keywords:
 ms.assetid: 34fb03cc-2285-4a45-ac48-ad993b7a921a
 topic_type:
 - apiref
-ms.openlocfilehash: 807e1ee831a43a4ef1e7b0a269ee38131f24081e
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 5d8bc54a94e1571ff8335c934407bbf235179ecc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008121"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728293"
 ---
 # <a name="imetadataassemblyemit-interface"></a>IMetaDataAssemblyEmit — Interfejs
+
 Dostarcza metody, które obsługują model z własnymi opisami używany przez środowisko uruchomieniowe języka wspólnego do rozwiązywania i korzystania z zasobów.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[DefineAssembly — Metoda](imetadataassemblyemit-defineassembly-method.md)|Tworzy strukturę danych zestawu zawierającą metadane dla określonego zestawu i zwraca skojarzony token metadanych.|  
-|[DefineAssemblyRef — Metoda](imetadataassemblyemit-defineassemblyref-method.md)|Tworzy `AssemblyRef` strukturę zawierającą metadane zestawu, do którego odwołuje się ten zestaw, i zwraca skojarzony token metadanych.|  
-|[DefineExportedType — Metoda](imetadataassemblyemit-defineexportedtype-method.md)|Tworzy `ExportedType` strukturę zawierającą metadane dla określonego typu wyeksportowanego i zwraca skojarzony token metadanych.|  
-|[DefineFile — Metoda](imetadataassemblyemit-definefile-method.md)|Tworzy `File` strukturę metadanych zawierającą metadane zestawu, do którego odwołuje się ten zestaw, i zwraca skojarzony token metadanych.|  
-|[DefineManifestResource — Metoda](imetadataassemblyemit-definemanifestresource-method.md)|Tworzy `ManifestResource` strukturę zawierającą metadane dla określonego zasobu manifestu i zwraca skojarzony token metadanych.|  
+|[DefineAssembly, metoda](imetadataassemblyemit-defineassembly-method.md)|Tworzy strukturę danych zestawu zawierającą metadane dla określonego zestawu i zwraca skojarzony token metadanych.|  
+|[DefineAssemblyRef, metoda](imetadataassemblyemit-defineassemblyref-method.md)|Tworzy `AssemblyRef` strukturę zawierającą metadane zestawu, do którego odwołuje się ten zestaw, i zwraca skojarzony token metadanych.|  
+|[DefineExportedType, metoda](imetadataassemblyemit-defineexportedtype-method.md)|Tworzy `ExportedType` strukturę zawierającą metadane dla określonego typu wyeksportowanego i zwraca skojarzony token metadanych.|  
+|[DefineFile, metoda](imetadataassemblyemit-definefile-method.md)|Tworzy `File` strukturę metadanych zawierającą metadane zestawu, do którego odwołuje się ten zestaw, i zwraca skojarzony token metadanych.|  
+|[DefineManifestResource, metoda](imetadataassemblyemit-definemanifestresource-method.md)|Tworzy `ManifestResource` strukturę zawierającą metadane dla określonego zasobu manifestu i zwraca skojarzony token metadanych.|  
 |[SetAssemblyProps — Metoda](imetadataassemblyemit-setassemblyprops-method.md)|Modyfikuje określoną `Assembly` strukturę metadanych.|  
-|[SetAssemblyRefProps — Metoda](imetadataassemblyemit-setassemblyrefprops-method.md)|Modyfikuje określoną `AssemblyRef` strukturę metadanych.|  
-|[SetExportedTypeProps — Metoda](imetadataassemblyemit-setexportedtypeprops-method.md)|Modyfikuje określoną `ExportedType` strukturę metadanych.|  
-|[SetFileProps — Metoda](imetadataassemblyemit-setfileprops-method.md)|Modyfikuje określoną `File` strukturę metadanych.|  
-|[SetManifestResourceProps — Metoda](imetadataassemblyemit-setmanifestresourceprops-method.md)|Modyfikuje określoną `ManifestResource` strukturę metadanych.|  
+|[SetAssemblyRefProps, metoda](imetadataassemblyemit-setassemblyrefprops-method.md)|Modyfikuje określoną `AssemblyRef` strukturę metadanych.|  
+|[SetExportedTypeProps, metoda](imetadataassemblyemit-setexportedtypeprops-method.md)|Modyfikuje określoną `ExportedType` strukturę metadanych.|  
+|[SetFileProps, metoda](imetadataassemblyemit-setfileprops-method.md)|Modyfikuje określoną `File` strukturę metadanych.|  
+|[SetManifestResourceProps, metoda](imetadataassemblyemit-setmanifestresourceprops-method.md)|Modyfikuje określoną `ManifestResource` strukturę metadanych.|  
   
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Interfejsy metadanych](metadata-interfaces.md)
 - [IMetaDataAssemblyImport — Interfejs](imetadataassemblyimport-interface.md)

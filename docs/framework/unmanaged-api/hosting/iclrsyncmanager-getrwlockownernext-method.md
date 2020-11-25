@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0e025b6a-280e-40a2-a2d0-b15f58777b81
 topic_type:
 - apiref
-ms.openlocfilehash: e5a8f69e66bb4b6373aea2c753bff9351bff8128
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 93a8b3884d831b7da412b6c53dd599af216cbbf2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762490"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728319"
 ---
 # <a name="iclrsyncmanagergetrwlockownernext-method"></a>ICLRSyncManager::GetRWLockOwnerNext — Metoda
+
 Pobiera następne wystąpienie [IHostTask](ihosttask-interface.md) , które jest blokowane na bieżącym zablokowaniu czytnika czytelników.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT GetRWLockOwnerNext (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `Iterator`  
  podczas Iterator, który został utworzony przy użyciu wywołania do [CreateRWLockOwnerIterator —](iclrsyncmanager-createrwlockowneriterator-method.md).  
   
@@ -45,7 +47,7 @@ HRESULT GetRWLockOwnerNext (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`GetRWLockOwnerNext`pomyślnie zwrócono.|  
+|S_OK|`GetRWLockOwnerNext` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -53,21 +55,23 @@ HRESULT GetRWLockOwnerNext (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli `ppOwnerHostTask` jest ustawiona na wartość null, iteracja została zakończona, a host powinien wywołać metodę [DeleteRWLockOwnerIterator —](iclrsyncmanager-deleterwlockowneriterator-method.md) .  
   
 > [!NOTE]
 > Środowisko CLR wywołuje `AddRef` na, `IHostTask` które `ppOwnerHostTask` punkty uniemożliwiają zakończenie tego zadania, gdy host utrzymuje wskaźnik. Host musi wywołać `Release` , aby zmniejszyć liczbę odwołań po zakończeniu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRSyncManager — Interfejs](iclrsyncmanager-interface.md)
-- [IHostSyncManager, interfejs](ihostsyncmanager-interface.md)
+- [IHostSyncManager — Interfejs](ihostsyncmanager-interface.md)

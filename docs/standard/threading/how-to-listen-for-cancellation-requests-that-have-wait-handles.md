@@ -7,26 +7,29 @@ dev_langs:
 helpviewer_keywords:
 - cancellation, waiting with wait handles
 ms.assetid: 6e2aa49b-fc84-4bcf-962b-17db98b7edcb
-ms.openlocfilehash: ec5bc796532381b3e21e4dddc037a927b7e68833
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 74b32144a1c49fe6adfc5aa1fbdcf5dc9c8a4dd7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826446"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728501"
 ---
 # <a name="how-to-listen-for-cancellation-requests-that-have-wait-handles"></a>Instrukcje: Nasłuchiwanie żądań anulowania z dojściami oczekiwania
+
 Jeśli metoda jest blokowana, gdy oczekuje na zasygnalizowanie zdarzenia, nie może sprawdzić wartości tokenu anulowania i odpowiedzieć w odpowiednim czasie. W pierwszym przykładzie pokazano, jak rozwiązać ten problem podczas pracy ze zdarzeniami, takimi jak <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> , które nie obsługują natywnie ujednoliconej platformy anulowania. Drugi przykład przedstawia bardziej usprawnione podejście, które używa <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> , które obsługuje ujednolicone anulowanie.  
   
 > [!NOTE]
 > Po włączeniu "Tylko mój kod" program Visual Studio będzie przerywał pracę w wierszu, który zgłosi wyjątek i wyświetli komunikat o błędzie "wyjątek nie jest obsługiwany przez kod użytkownika". Ten błąd jest niegroźny. Możesz nacisnąć klawisz F5, aby kontynuować z niego i zobaczyć zachowanie obsługi wyjątków, które przedstawiono w poniższych przykładach. Aby zapobiec utracie przez program Visual Studio pierwszego błędu, po prostu usuń zaznaczenie pola wyboru "Tylko mój kod" w obszarze **Narzędzia, opcje, debugowanie, ogólne**.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie używa <xref:System.Threading.ManualResetEvent> się, aby zademonstrować, jak odblokować dojścia oczekiwania, które nie obsługują ujednoliconego anulowania.  
   
  [!code-csharp[Cancellation#9](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex9.cs#9)]
  [!code-vb[Cancellation#9](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex9.vb#9)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa, <xref:System.Threading.ManualResetEventSlim> Aby zademonstrować, jak odblokować elementy podstawowe koordynacji, które obsługują ujednolicone anulowanie. Takie samo podejście może być używane z innymi uproszczonymi typami podstawowymi koordynacji, takimi jak <xref:System.Threading.Semaphore> `Slim` i <xref:System.Threading.CountdownEvent> .  
   
  [!code-csharp[Cancellation#10](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex10.cs#10)]

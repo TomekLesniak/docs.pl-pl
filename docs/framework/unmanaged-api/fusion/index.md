@@ -6,25 +6,27 @@ helpviewer_keywords:
 - native API reference [.NET Framework], fusion
 - fusion [.NET Framework], using the unmanaged API
 ms.assetid: f8f20967-ea17-4900-bf05-87a078095fe6
-ms.openlocfilehash: 2bf7bbb59cf983ed536a579ee3a418603f78b49a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ae3e3dd09a8509665f70527371afcc73adef049b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73131638"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728592"
 ---
 # <a name="fusion-unmanaged-api-reference"></a>Łączenie (Niezarządzany wykaz interfejsów API)
-Interfejs API fuzji umożliwia hostowi środowiska wykonawczego dostęp do właściwości zasobów aplikacji w celu zlokalizowania poprawnych wersji tych zasobów dla aplikacji.  
+
+Interfejs API Fusion umożliwia hostowi środowiska uruchomieniowego dostęp do właściwości zasobów aplikacji w celu zlokalizowania odpowiednich wersji tych zasobów dla aplikacji.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Interfejsy łączenia](fusion-interfaces.md)  
- W tym artykule opisano interfejsy niezarządzane, który używa interfejsu API fuzji.  
+ Opisuje interfejsy niezarządzane używane przez interfejs API Fusion.  
   
  [Łączenie statycznych funkcji globalnych](fusion-global-static-functions.md)  
- W tym artykule opisano niezarządzane globalne funkcje statyczne, które używa interfejsu API fuzji.  
+ Opisuje niezarządzane globalne funkcje statyczne używane przez interfejs API Fusion.  
   
  [Wyliczenia łączenia](fusion-enumerations.md)  
- W tym artykule opisano wyliczenia niezarządzane, którego używa interfejs API fuzji.  
+ Opisuje niezarządzane wyliczenia używane przez interfejs API Fusion.  
   
- [Łączenie — struktury](fusion-structures.md)  
- W tym artykule opisano struktury niezarządzane, który używa interfejsu API fuzji.
+ [Łączenie — Struktury](fusion-structures.md)  
+ Opisuje niezarządzane struktury używane przez interfejs API Fusion.

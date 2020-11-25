@@ -7,17 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - SpinWait, how to synchronize two-phase wait
 ms.assetid: b2ac4e4a-051a-4f65-b4b9-f8e103aff195
-ms.openlocfilehash: 0a8ece86d71823eb78a9ebbec661722f0e249790
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: e5d58067f70706294308952b9f7cfbf69fa89a58
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819724"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728488"
 ---
 # <a name="how-to-use-spinwait-to-implement-a-two-phase-wait-operation"></a>Porady: korzystanie z metody SpinWait do implementacji dwufazowej operacji oczekiwania
+
 Poniższy przykład pokazuje, jak używać <xref:System.Threading.SpinWait?displayProperty=nameWithType> obiektu do implementowania dwufazowej operacji oczekiwania. W pierwszej fazie obiekt synchronizacji, a `Latch` , obraca się dla kilku cykli podczas sprawdzania, czy blokada stanie się dostępna. W drugiej fazie, jeśli blokada zostanie udostępniona, `Wait` Metoda zwróci metodę bez użycia polecenia, <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> Aby wykonać oczekiwanie; w przeciwnym razie `Wait` wykonuje oczekiwanie.  
   
 ## <a name="example"></a>Przykład  
+
  W tym przykładzie przedstawiono bardzo podstawową implementację elementu pierwotnego synchronizacji zamka. Tej struktury danych można użyć, gdy czasy oczekiwania są bardzo krótkie. Ten przykład służy tylko do celów demonstracyjnych. Jeśli w programie jest wymagana funkcja typu zatrzaśnięcia, rozważ użycie <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> .  
   
  [!code-csharp[CDS_SpinWait#03](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_spinwait/cs/spinwait03.cs#03)]

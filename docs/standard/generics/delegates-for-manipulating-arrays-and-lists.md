@@ -9,17 +9,19 @@ helpviewer_keywords:
 - lists [.NET], generic delegates
 - generics [.NET], delegates
 ms.assetid: 416be383-cc61-4102-9b1b-88b51adb963e
-ms.openlocfilehash: b3b18a2efc4dba432ee241d764c1a81101796baf
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 5356671b4f1c48c125e49c35a2f8ddc5ea1ca26b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827285"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728514"
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>Delegaty ogólne do manipulowania tablicami i listami
+
 Ten temat zawiera przegląd ogólnych delegatów dla konwersji, predykatów wyszukiwania i akcji, które mają być podejmowane w elementach tablicy lub kolekcji.  
   
 ## <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>Delegaty ogólne do manipulowania tablicami i listami  
+
  <xref:System.Action%601>Delegat generyczny reprezentuje metodę wykonującą pewne działania na elemencie określonego typu. Można utworzyć metodę, która wykonuje żądaną akcję dla elementu, utworzyć wystąpienie <xref:System.Action%601> delegata do reprezentowania tej metody, a następnie przekazać tablicę i delegata do <xref:System.Array.ForEach%2A?displayProperty=nameWithType> statycznej metody ogólnej. Metoda jest wywoływana dla każdego elementu tablicy.  
   
  <xref:System.Collections.Generic.List%601>Klasa generyczna udostępnia również <xref:System.Collections.Generic.List%601.ForEach%2A> metodę, która używa <xref:System.Action%601> delegata. Ta metoda nie jest rodzajowa.  
@@ -36,6 +38,7 @@ Ten temat zawiera przegląd ogólnych delegatów dla konwersji, predykatów wysz
  <xref:System.Converter%602>Delegat generyczny umożliwia zdefiniowanie konwersji między dwoma typami, a także konwersję tablicy jednego typu na tablicę lub konwersję listy jednego typu na listę innych. Utwórz metodę, która konwertuje elementy istniejącej listy na nowy typ, Utwórz wystąpienie delegata reprezentujące metodę i Użyj <xref:System.Array.ConvertAll%2A?displayProperty=nameWithType> generycznej metody statycznej, aby utworzyć tablicę nowego typu z oryginalnej tablicy, lub <xref:System.Collections.Generic.List%601.ConvertAll%60%601%28System.Converter%7B%600%2C%60%600%7D%29?displayProperty=nameWithType> metodę wystąpienia ogólnego, aby utworzyć listę nowych typów z listy pierwotnej.  
   
 ### <a name="chaining-delegates"></a>Tworzenie łańcuchów obiektów delegowanych  
+
  Wiele metod, które używają tych delegatów, zwraca tablicę lub listę, które mogą być przesyłane do innej metody. Na przykład jeśli chcesz wybrać niektóre elementy tablicy, przekonwertuj te elementy na nowy typ i Zapisz je w nowej tablicy, możesz przekazać tablicę zwracaną przez <xref:System.Array.FindAll%2A> metodę rodzajową do <xref:System.Array.ConvertAll%2A> metody ogólnej. Jeśli typ nowego elementu nie ma naturalnej kolejności sortowania, można przekazać tablicę zwracaną przez <xref:System.Array.ConvertAll%2A> metodę rodzajową do <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29> metody ogólnej.  
   
 ## <a name="see-also"></a>Zobacz także

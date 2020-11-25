@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a247c792-45e1-4538-9e1f-b46acca4a463
 topic_type:
 - apiref
-ms.openlocfilehash: 467ba53f90081f0c3499fb22acab96b5e380a3f4
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 47c0c4dfa78e85bcc83f0bb2a333955c8e8666fa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83395843"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728371"
 ---
 # <a name="icordebugvaluegetaddress-method"></a>ICorDebugValue::GetAddress — Metoda
+
 Pobiera adres tego obiektu "ICorDebugValue", który jest w trakcie debugowania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT GetAddress (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pAddress`  
  określoną Wskaźnik do `CORDB_ADDRESS` obiektu, który określa adres tego obiektu wartości.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli wartość jest niedostępna, zwracana jest wartość 0 (zero). Może się tak zdarzyć, jeśli wartość jest co najmniej częściowo w rejestrach lub przechowywana w dojściu do modułu zbierającego elementy bezużyteczne ( `GCHandle` ).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
