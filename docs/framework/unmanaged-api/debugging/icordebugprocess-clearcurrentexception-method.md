@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9e02ee1a-e495-4578-bfb5-b946274bede7
 topic_type:
 - apiref
-ms.openlocfilehash: b8d20de990ff4a27a82590342494a307c986457e
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 0d36390a905561b64b3ca6ca95722f82158450be
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207398"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95695221"
 ---
 # <a name="icordebugprocessclearcurrentexception-method"></a>ICorDebugProcess::ClearCurrentException — Metoda
+
 Czyści bieżący wyjątek niezarządzany w danym wątku.  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,15 +33,18 @@ HRESULT ClearCurrentException([in] DWORD threadID);
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `threadID`  
  podczas Identyfikator wątku, w którym zostanie wyczyszczony bieżący wyjątek niezarządzany.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wywołaj tę metodę przed wywołaniem [ICorDebugController:: Continue](icordebugcontroller-continue-method.md) , gdy wątek zgłosił wyjątek niezarządzany, który powinien zostać zignorowany przez debugowanego obiektu. Spowoduje to wyczyszczenie wszystkich oczekujących zdarzeń w paśmie (IB) i poza pasmem (OOB) w danym wątku. Wszystkie punkty przerwania OOB i wyjątki pojedynczego kroku są automatycznie wyczyszczone.  
   
  Użyj [ICorDebugThread2:: InterceptCurrentException —](icordebugthread2-interceptcurrentexception-method.md) , aby przechwycić bieżący wyjątek zarządzany wątku.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: be86f4b5-418a-4c5c-a67c-97148c65ed8c
 topic_type:
 - apiref
-ms.openlocfilehash: ab48efccc88787f099a182627777db95304cdc3e
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 7f9d4ac99234545ef75d9b91e6e84f79a133ffef
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212077"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95694922"
 ---
 # <a name="icordebugprocess-interface"></a>ICorDebugProcess, interfejs
+
 Reprezentuje proces, który wykonuje kod zarządzany. Ten interfejs jest podklasą elementu ICorDebugController.  
   
 ## <a name="methods"></a>Metody  
@@ -37,7 +38,7 @@ Reprezentuje proces, który wykonuje kod zarządzany. Ten interfejs jest podklas
 |[GetID, metoda](icordebugprocess-getid-method.md)|Pobiera identyfikator systemu operacyjnego (OS) procesu.|  
 |[GetObject — Metoda](icordebugprocess-getobject-method.md)|Nie zaimplementowano.|  
 |[GetThread, metoda](icordebugprocess-getthread-method.md)|Pobiera wystąpienie ICorDebugThread o określonym IDENTYFIKATORze wątku systemu operacyjnego.|  
-|[GetThreadContext — Metoda](icordebugprocess-getthreadcontext-method.md)|Pobiera kontekst dla danego wątku.|  
+|[GetThreadContext, metoda](icordebugprocess-getthreadcontext-method.md)|Pobiera kontekst dla danego wątku.|  
 |[IsOSSuspended, metoda](icordebugprocess-isossuspended-method.md)|Określa, czy wątek został wstrzymany w wyniku debugera zatrzymywania procesu.|  
 |[IsTransitionStub, metoda](icordebugprocess-istransitionstub-method.md)|Określa, czy adres znajduje się wewnątrz klasy zastępczej, która spowoduje przejście do kodu zarządzanego.|  
 |[ModifyLogSwitch, metoda](icordebugprocess-modifylogswitch-method.md)|Ustawia poziom ważności określonego przełącznika dziennika.|  
@@ -52,6 +53,7 @@ Reprezentuje proces, który wykonuje kod zarządzany. Ten interfejs jest podklas
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -60,7 +62,7 @@ Reprezentuje proces, który wykonuje kod zarządzany. Ten interfejs jest podklas
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebug — Interfejs](icordebug-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

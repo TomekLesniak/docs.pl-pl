@@ -10,14 +10,15 @@ api_type:
 ms.assetid: b22717b9-ead5-4eea-887e-789b52d613dc
 topic_type:
 - apiref
-ms.openlocfilehash: 8c9c507f00780d5ef5c5aeb28a1b10493351f37e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 17eda7470e5f2e4b41d1f2ed164843eaeeedea93
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546975"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95695872"
 ---
 # <a name="icordebugfunction3-interface"></a>Interfejs ICorDebugFunction3
+
 [Obsługiwane w .NET Framework 4.5.2 i nowszych wersjach]  
   
  Logicznie rozszerza interfejs ICorDebugFunction w celu zapewnienia dostępu do kodu z żądania ReJIT.  
@@ -31,6 +32,7 @@ ms.locfileid: "90546975"
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -43,4 +45,4 @@ ms.locfileid: "90546975"
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)
 - [Debugowanie](index.md)
-- [ReJIT: Przewodnik po poradniku](/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT: Przewodnik How-To](/archive/blogs/davbr/rejit-a-how-to-guide)

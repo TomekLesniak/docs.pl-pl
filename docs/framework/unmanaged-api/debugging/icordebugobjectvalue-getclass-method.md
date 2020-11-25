@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5be25292-8357-445f-a09b-f997c0de761c
 topic_type:
 - apiref
-ms.openlocfilehash: b0e8fd162ccc1cfc944fb870f493febfe2e5ef42
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 42e5ffeeb81bc5e9a99c8ada8d58296fc9f610d3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207685"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95695416"
 ---
 # <a name="icordebugobjectvaluegetclass-method"></a>ICorDebugObjectValue::GetClass — Metoda
+
 Pobiera klasę tej wartości obiektu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT GetClass (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppClass`  
  określoną Wskaźnik do adresu obiektu "ICorDebugClass", który reprezentuje klasę wartości obiektu reprezentowanej przez ten obiekt "ICorDebugObjectValue".  
   
 ## <a name="remarks"></a>Uwagi  
+
  `GetClass`Metody i [ICorDebugValue:: GetType](icordebugvalue-gettype-method.md) każda zwracają informacje o typie wartości; są one zastępowane przez ogólne [ICorDebugValue2:: GetExactType](icordebugvalue2-getexacttype-method.md).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -49,4 +53,4 @@ HRESULT GetClass (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także

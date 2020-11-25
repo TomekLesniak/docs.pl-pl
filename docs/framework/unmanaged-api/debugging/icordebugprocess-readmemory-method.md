@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 28e4b2f6-9589-445c-be24-24a3306795e7
 topic_type:
 - apiref
-ms.openlocfilehash: ccd2350589126109ff11da439a8b83abfc4b91fa
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: a0abc7168ff7bffdbb835c1c1bc93de9df6e381c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210478"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95694870"
 ---
 # <a name="icordebugprocessreadmemory-method"></a>ICorDebugProcess::ReadMemory — Metoda
+
 Odczytuje określony obszar pamięci dla tego procesu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT ReadMemory(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `address`  
  podczas Wartość określająca `CORDB_ADDRESS` podstawowy adres pamięci, która ma zostać odczytana.  
   
@@ -49,6 +51,7 @@ HRESULT ReadMemory(
  określoną Wskaźnik do liczby bajtów transferowanych do określonego buforu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ReadMemory`Metoda jest przeznaczona głównie do użycia przez debugowanie międzyoperacyjną do inspekcji regionów pamięci, które są używane przez niezarządzaną część debugowanego obiektu. Ta metoda może być również używana do odczytywania kodu języka pośredniego firmy Microsoft (MSIL) i natywnego kodu skompilowanego JIT.  
   
  Wszystkie zarządzane punkty przerwania zostaną usunięte z danych, które są zwracane w `buffer` parametrze. Nie będą wprowadzane żadne korekty dla natywnych punktów przerwania ustawionych przez [ICorDebugProcess2:: SetUnmanagedBreakpoint —](icordebugprocess2-setunmanagedbreakpoint-method.md).  
@@ -56,6 +59,7 @@ HRESULT ReadMemory(
  Nie jest wykonywane buforowanie pamięci procesu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

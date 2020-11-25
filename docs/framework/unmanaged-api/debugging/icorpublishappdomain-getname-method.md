@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6ef8ac9b-9803-4b65-8b13-25f3e0b1bc6b
 topic_type:
 - apiref
-ms.openlocfilehash: e95f96847c6e069758362fb6febc28dc31911bc9
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: d6b05333b9e02c4202c0fd9bdee9b5c055aa4da3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396298"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95694363"
 ---
 # <a name="icorpublishappdomaingetname-method"></a>ICorPublishAppDomain::GetName — Metoda
+
 Pobiera nazwę domeny aplikacji reprezentowanej przez ten [ICorPublishAppDomain](icorpublishappdomain-interface.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT GetName (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cchName`  
  podczas Rozmiar `szName` tablicy.  
   
@@ -47,11 +49,13 @@ HRESULT GetName (
  określoną Tablica, w której ma zostać przechowana nazwa.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli `szName` jest inna niż null, `GetName` Metoda kopiuje do. do `cchName` znaków (w tym terminator wartości null) `szName` . Jeśli zwracana jest wartość inna niż null `pcchName` , rzeczywista liczba znaków w nazwie (łącznie z terminatorem wartości null) jest przechowywana w `szName` tablicy.  
   
  `GetName`Metoda zwraca S_OK HRESULT, niezależnie od liczby skopiowanych znaków.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorPub. idl, CorPub. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1f838215-ac8a-434f-8ce6-03021d3098d9
 topic_type:
 - apiref
-ms.openlocfilehash: 21c4d00e4156b9db27ae4188aace19764a2be53e
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 10f06fb04099ef947711bc7c5641e5a7f1fa36b7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213078"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95695703"
 ---
 # <a name="icordebugnativeframegetlocaldoubleregistervalue-method"></a>ICorDebugNativeFrame::GetLocalDoubleRegisterValue — Metoda
+
 Pobiera wartość argumentu lub zmiennej lokalnej przechowywanej w dwóch określonych rejestrach dla tej ramki natywnej.  
   
 ## <a name="syntax"></a>Składnia  
@@ -38,6 +39,7 @@ HRESULT GetLocalDoubleRegisterValue (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `highWordReg`  
  podczas Wartość wyliczenia "CorDebugRegister —", która określa rejestr zawierający wysokie słowo wartości.  
   
@@ -54,9 +56,11 @@ HRESULT GetLocalDoubleRegisterValue (
  określoną Wskaźnik do adresu obiektu "ICorDebugValue" reprezentującego pobraną wartość, która jest przechowywana w określonych rejestrach.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `GetLocalDoubleRegisterValue`Metoda może być używana w ramce natywnej lub w postaci wbudowanej w tryb just-in-Time (JIT).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -65,4 +69,4 @@ HRESULT GetLocalDoubleRegisterValue (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9ffb4498-7719-49d3-8890-df2c22248a0c
 topic_type:
 - apiref
-ms.openlocfilehash: 0594caf53a889d51ea78e2ee9d6fff4d30f7cff2
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 9400c4fa3ddcefef923d7bcfaae80e2cef62dc7d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205288"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95695468"
 ---
 # <a name="icordebugobjectenum-interface"></a>ICorDebugObjectEnum, interfejs
 
@@ -29,7 +29,7 @@ Implementuje metody ICorDebugEnum i wylicza tablice obiektów według ich wzglę
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[Next — Metoda](icordebugobjectenum-next-method.md)|Pobiera RVA określoną liczbę obiektów z wyliczenia, rozpoczynając od bieżącego położenia.|  
+|[Next, metoda](icordebugobjectenum-next-method.md)|Pobiera RVA określoną liczbę obiektów z wyliczenia, rozpoczynając od bieżącego położenia.|  
   
 ## <a name="remarks"></a>Uwagi  
   
@@ -37,6 +37,7 @@ Implementuje metody ICorDebugEnum i wylicza tablice obiektów według ich wzglę
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -45,6 +46,6 @@ Implementuje metody ICorDebugEnum i wylicza tablice obiektów według ich wzglę
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)
