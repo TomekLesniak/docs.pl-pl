@@ -15,17 +15,18 @@ helpviewer_keywords:
 ms.assetid: df51f2bb-6d15-44a9-a48c-22db700a5766
 topic_type:
 - apiref
-ms.openlocfilehash: 63d445d6231ee579bbd635ee5b54bdbf5b339e59
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2c58f4e8b29ca5e46751230c19b8861599f522a7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128779"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724562"
 ---
-# <a name="icordebugprocessgetobject-method"></a><span data-ttu-id="611be-102">ICorDebugProcess::GetObject — Metoda</span><span class="sxs-lookup"><span data-stu-id="611be-102">ICorDebugProcess::GetObject Method</span></span>
-<span data-ttu-id="611be-103">Ta metoda nie została zaimplementowana.</span><span class="sxs-lookup"><span data-stu-id="611be-103">This method has not been implemented.</span></span>  
+# <a name="icordebugprocessgetobject-method"></a><span data-ttu-id="f75b0-102">ICorDebugProcess::GetObject — Metoda</span><span class="sxs-lookup"><span data-stu-id="f75b0-102">ICorDebugProcess::GetObject Method</span></span>
+
+<span data-ttu-id="f75b0-103">Ta metoda nie została zaimplementowana.</span><span class="sxs-lookup"><span data-stu-id="f75b0-103">This method has not been implemented.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="611be-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="611be-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f75b0-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="f75b0-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetObject(  

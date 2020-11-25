@@ -14,40 +14,43 @@ helpviewer_keywords:
 ms.assetid: 52a80838-af36-4399-bc97-d8a4c6d76df2
 topic_type:
 - apiref
-ms.openlocfilehash: cd2a2821128ad9265e8a831f7b02792e6453b1ee
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: ddf5af0bc0a5e5e21d837d8b2f3f76185ed7e2b1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213793"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95724718"
 ---
-# <a name="icordebugnativeframe2-interface"></a><span data-ttu-id="1ee05-102">ICorDebugNativeFrame2 — Interfejs</span><span class="sxs-lookup"><span data-stu-id="1ee05-102">ICorDebugNativeFrame2 Interface</span></span>
-<span data-ttu-id="1ee05-103">Dostarcza metody testowania relacji podrzędnych i nadrzędnych ramek.</span><span class="sxs-lookup"><span data-stu-id="1ee05-103">Provides methods that test for child and parent frame relationships.</span></span>  
+# <a name="icordebugnativeframe2-interface"></a><span data-ttu-id="ea60b-102">ICorDebugNativeFrame2 — Interfejs</span><span class="sxs-lookup"><span data-stu-id="ea60b-102">ICorDebugNativeFrame2 Interface</span></span>
+
+<span data-ttu-id="ea60b-103">Dostarcza metody testowania relacji podrzędnych i nadrzędnych ramek.</span><span class="sxs-lookup"><span data-stu-id="ea60b-103">Provides methods that test for child and parent frame relationships.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="1ee05-104">Metody</span><span class="sxs-lookup"><span data-stu-id="1ee05-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="ea60b-104">Metody</span><span class="sxs-lookup"><span data-stu-id="ea60b-104">Methods</span></span>  
   
-|<span data-ttu-id="1ee05-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="1ee05-105">Method</span></span>|<span data-ttu-id="1ee05-106">Opis</span><span class="sxs-lookup"><span data-stu-id="1ee05-106">Description</span></span>|  
+|<span data-ttu-id="ea60b-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="ea60b-105">Method</span></span>|<span data-ttu-id="ea60b-106">Opis</span><span class="sxs-lookup"><span data-stu-id="ea60b-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="1ee05-107">IsChild, metoda</span><span class="sxs-lookup"><span data-stu-id="1ee05-107">IsChild Method</span></span>](icordebugnativeframe2-ischild-method.md)|<span data-ttu-id="1ee05-108">Określa, czy bieżąca ramka jest ramką podrzędną.</span><span class="sxs-lookup"><span data-stu-id="1ee05-108">Determines whether the current frame is a child frame.</span></span>|  
-|[<span data-ttu-id="1ee05-109">IsMatchingParentFrame, metoda</span><span class="sxs-lookup"><span data-stu-id="1ee05-109">IsMatchingParentFrame Method</span></span>](icordebugnativeframe2-ismatchingparentframe-method.md)|<span data-ttu-id="1ee05-110">Określa, czy określona ramka jest elementem nadrzędnym bieżącej ramki.</span><span class="sxs-lookup"><span data-stu-id="1ee05-110">Determines whether the specified frame is the parent of the current frame.</span></span>|  
-|[<span data-ttu-id="1ee05-111">GetStackParameterSize, metoda</span><span class="sxs-lookup"><span data-stu-id="1ee05-111">GetStackParameterSize Method</span></span>](icordebugnativeframe2-getstackparametersize-method.md)|<span data-ttu-id="1ee05-112">Zwraca skumulowany rozmiar parametrów na stosie w systemach operacyjnych x86.</span><span class="sxs-lookup"><span data-stu-id="1ee05-112">Returns the cumulative size of the parameters on the stack on x86 operating systems.</span></span>|  
+|[<span data-ttu-id="ea60b-107">IsChild, metoda</span><span class="sxs-lookup"><span data-stu-id="ea60b-107">IsChild Method</span></span>](icordebugnativeframe2-ischild-method.md)|<span data-ttu-id="ea60b-108">Określa, czy bieżąca ramka jest ramką podrzędną.</span><span class="sxs-lookup"><span data-stu-id="ea60b-108">Determines whether the current frame is a child frame.</span></span>|  
+|[<span data-ttu-id="ea60b-109">IsMatchingParentFrame, metoda</span><span class="sxs-lookup"><span data-stu-id="ea60b-109">IsMatchingParentFrame Method</span></span>](icordebugnativeframe2-ismatchingparentframe-method.md)|<span data-ttu-id="ea60b-110">Określa, czy określona ramka jest elementem nadrzędnym bieżącej ramki.</span><span class="sxs-lookup"><span data-stu-id="ea60b-110">Determines whether the specified frame is the parent of the current frame.</span></span>|  
+|[<span data-ttu-id="ea60b-111">GetStackParameterSize, metoda</span><span class="sxs-lookup"><span data-stu-id="ea60b-111">GetStackParameterSize Method</span></span>](icordebugnativeframe2-getstackparametersize-method.md)|<span data-ttu-id="ea60b-112">Zwraca skumulowany rozmiar parametrów na stosie w systemach operacyjnych x86.</span><span class="sxs-lookup"><span data-stu-id="ea60b-112">Returns the cumulative size of the parameters on the stack on x86 operating systems.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="1ee05-113">Uwagi</span><span class="sxs-lookup"><span data-stu-id="1ee05-113">Remarks</span></span>  
- <span data-ttu-id="1ee05-114">Ten interfejs logicznie rozszerza interfejs "ICorDebugNativeFrame".</span><span class="sxs-lookup"><span data-stu-id="1ee05-114">This interface logically extends the "ICorDebugNativeFrame" interface.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ea60b-113">Uwagi</span><span class="sxs-lookup"><span data-stu-id="ea60b-113">Remarks</span></span>  
+
+ <span data-ttu-id="ea60b-114">Ten interfejs logicznie rozszerza interfejs "ICorDebugNativeFrame".</span><span class="sxs-lookup"><span data-stu-id="ea60b-114">This interface logically extends the "ICorDebugNativeFrame" interface.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="1ee05-115">Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.</span><span class="sxs-lookup"><span data-stu-id="1ee05-115">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
+> <span data-ttu-id="ea60b-115">Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.</span><span class="sxs-lookup"><span data-stu-id="ea60b-115">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="1ee05-116">Wymagania</span><span class="sxs-lookup"><span data-stu-id="1ee05-116">Requirements</span></span>  
- <span data-ttu-id="1ee05-117">**Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1ee05-117">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
-  
- <span data-ttu-id="1ee05-118">**Nagłówek:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="1ee05-118">**Header:** CorDebug.idl, CorDebug.h</span></span>  
-  
- <span data-ttu-id="1ee05-119">**Biblioteka:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="1ee05-119">**Library:** CorGuids.lib</span></span>  
-  
- <span data-ttu-id="1ee05-120">**.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1ee05-120">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="1ee05-121">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="1ee05-121">See also</span></span>
+## <a name="requirements"></a><span data-ttu-id="ea60b-116">Wymagania</span><span class="sxs-lookup"><span data-stu-id="ea60b-116">Requirements</span></span>  
 
-- [<span data-ttu-id="1ee05-122">Debugowanie — Interfejsy</span><span class="sxs-lookup"><span data-stu-id="1ee05-122">Debugging Interfaces</span></span>](debugging-interfaces.md)
-- [<span data-ttu-id="1ee05-123">Debugowanie</span><span class="sxs-lookup"><span data-stu-id="1ee05-123">Debugging</span></span>](index.md)
+ <span data-ttu-id="ea60b-117">**Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ea60b-117">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+  
+ <span data-ttu-id="ea60b-118">**Nagłówek:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="ea60b-118">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+  
+ <span data-ttu-id="ea60b-119">**Biblioteka:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="ea60b-119">**Library:** CorGuids.lib</span></span>  
+  
+ <span data-ttu-id="ea60b-120">**.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ea60b-120">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="ea60b-121">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="ea60b-121">See also</span></span>
+
+- [<span data-ttu-id="ea60b-122">Debugowanie — Interfejsy</span><span class="sxs-lookup"><span data-stu-id="ea60b-122">Debugging Interfaces</span></span>](debugging-interfaces.md)
+- [<span data-ttu-id="ea60b-123">Debugowanie</span><span class="sxs-lookup"><span data-stu-id="ea60b-123">Debugging</span></span>](index.md)

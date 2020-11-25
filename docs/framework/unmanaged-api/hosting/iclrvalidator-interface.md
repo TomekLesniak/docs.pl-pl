@@ -14,34 +14,36 @@ helpviewer_keywords:
 ms.assetid: 2edd0a10-77fb-4173-91eb-f2970cc364d0
 topic_type:
 - apiref
-ms.openlocfilehash: e071f9cba7e991c59bf697647e0e4badea57573a
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: d9ccd5c6c91b1ab2166ff40a0fb2048e15927d3a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762048"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723951"
 ---
-# <a name="iclrvalidator-interface"></a><span data-ttu-id="3358e-102">ICLRValidator — Interfejs</span><span class="sxs-lookup"><span data-stu-id="3358e-102">ICLRValidator Interface</span></span>
-<span data-ttu-id="3358e-103">Zapewnia metody sprawdzania poprawności przenośnych obrazów wykonywalnych (PE) i raportowania błędów walidacji.</span><span class="sxs-lookup"><span data-stu-id="3358e-103">Provides methods for validating portable executable (PE) images and reporting validation errors.</span></span>  
-  
-## <a name="methods"></a><span data-ttu-id="3358e-104">Metody</span><span class="sxs-lookup"><span data-stu-id="3358e-104">Methods</span></span>  
-  
-|<span data-ttu-id="3358e-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="3358e-105">Method</span></span>|<span data-ttu-id="3358e-106">Opis</span><span class="sxs-lookup"><span data-stu-id="3358e-106">Description</span></span>|  
-|------------|-----------------|  
-|[<span data-ttu-id="3358e-107">FormatEventInfo, metoda</span><span class="sxs-lookup"><span data-stu-id="3358e-107">FormatEventInfo Method</span></span>](iclrvalidator-formateventinfo-method.md)|<span data-ttu-id="3358e-108">Pobiera szczegółowy komunikat o określonym błędzie walidacji.</span><span class="sxs-lookup"><span data-stu-id="3358e-108">Gets a detailed message about the specified validation error.</span></span>|  
-|[<span data-ttu-id="3358e-109">Validate, metoda</span><span class="sxs-lookup"><span data-stu-id="3358e-109">Validate Method</span></span>](iclrvalidator-validate-method.md)|<span data-ttu-id="3358e-110">Sprawdza poprawność przenośnego pliku wykonywalnego lub języka pośredniego firmy Microsoft (MSIL) w określonym pliku.</span><span class="sxs-lookup"><span data-stu-id="3358e-110">Validates the portable executable or Microsoft intermediate language (MSIL) in the specified file.</span></span>|  
-  
-## <a name="requirements"></a><span data-ttu-id="3358e-111">Wymagania</span><span class="sxs-lookup"><span data-stu-id="3358e-111">Requirements</span></span>  
- <span data-ttu-id="3358e-112">**Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3358e-112">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
-  
- <span data-ttu-id="3358e-113">**Nagłówek:** IValidator. idl, IValidator. h</span><span class="sxs-lookup"><span data-stu-id="3358e-113">**Header:** IValidator.idl, IValidator.h</span></span>  
-  
- <span data-ttu-id="3358e-114">**Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="3358e-114">**Library:** Included as a resource in MSCorEE.dll</span></span>  
-  
- <span data-ttu-id="3358e-115">**.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3358e-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="3358e-116">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="3358e-116">See also</span></span>
+# <a name="iclrvalidator-interface"></a><span data-ttu-id="2e394-102">ICLRValidator — Interfejs</span><span class="sxs-lookup"><span data-stu-id="2e394-102">ICLRValidator Interface</span></span>
 
-- [<span data-ttu-id="3358e-117">ICLRErrorReportingManager, interfejs</span><span class="sxs-lookup"><span data-stu-id="3358e-117">ICLRErrorReportingManager Interface</span></span>](iclrerrorreportingmanager-interface.md)
-- [<span data-ttu-id="3358e-118">Hosting, interfejsy</span><span class="sxs-lookup"><span data-stu-id="3358e-118">Hosting Interfaces</span></span>](hosting-interfaces.md)
-- [<span data-ttu-id="3358e-119">CLRRuntimeHost, klasa coclass</span><span class="sxs-lookup"><span data-stu-id="3358e-119">CLRRuntimeHost Coclass</span></span>](clrruntimehost-coclass.md)
+<span data-ttu-id="2e394-103">Zapewnia metody sprawdzania poprawności przenośnych obrazów wykonywalnych (PE) i raportowania błędów walidacji.</span><span class="sxs-lookup"><span data-stu-id="2e394-103">Provides methods for validating portable executable (PE) images and reporting validation errors.</span></span>  
+  
+## <a name="methods"></a><span data-ttu-id="2e394-104">Metody</span><span class="sxs-lookup"><span data-stu-id="2e394-104">Methods</span></span>  
+  
+|<span data-ttu-id="2e394-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="2e394-105">Method</span></span>|<span data-ttu-id="2e394-106">Opis</span><span class="sxs-lookup"><span data-stu-id="2e394-106">Description</span></span>|  
+|------------|-----------------|  
+|[<span data-ttu-id="2e394-107">FormatEventInfo, metoda</span><span class="sxs-lookup"><span data-stu-id="2e394-107">FormatEventInfo Method</span></span>](iclrvalidator-formateventinfo-method.md)|<span data-ttu-id="2e394-108">Pobiera szczegółowy komunikat o określonym błędzie walidacji.</span><span class="sxs-lookup"><span data-stu-id="2e394-108">Gets a detailed message about the specified validation error.</span></span>|  
+|[<span data-ttu-id="2e394-109">Validate, metoda</span><span class="sxs-lookup"><span data-stu-id="2e394-109">Validate Method</span></span>](iclrvalidator-validate-method.md)|<span data-ttu-id="2e394-110">Sprawdza poprawność przenośnego pliku wykonywalnego lub języka pośredniego firmy Microsoft (MSIL) w określonym pliku.</span><span class="sxs-lookup"><span data-stu-id="2e394-110">Validates the portable executable or Microsoft intermediate language (MSIL) in the specified file.</span></span>|  
+  
+## <a name="requirements"></a><span data-ttu-id="2e394-111">Wymagania</span><span class="sxs-lookup"><span data-stu-id="2e394-111">Requirements</span></span>  
+
+ <span data-ttu-id="2e394-112">**Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2e394-112">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+  
+ <span data-ttu-id="2e394-113">**Nagłówek:** IValidator. idl, IValidator. h</span><span class="sxs-lookup"><span data-stu-id="2e394-113">**Header:** IValidator.idl, IValidator.h</span></span>  
+  
+ <span data-ttu-id="2e394-114">**Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="2e394-114">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+  
+ <span data-ttu-id="2e394-115">**.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2e394-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="2e394-116">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="2e394-116">See also</span></span>
+
+- [<span data-ttu-id="2e394-117">ICLRErrorReportingManager — Interfejs</span><span class="sxs-lookup"><span data-stu-id="2e394-117">ICLRErrorReportingManager Interface</span></span>](iclrerrorreportingmanager-interface.md)
+- [<span data-ttu-id="2e394-118">Hosting — Interfejsy</span><span class="sxs-lookup"><span data-stu-id="2e394-118">Hosting Interfaces</span></span>](hosting-interfaces.md)
+- [<span data-ttu-id="2e394-119">CLRRuntimeHost — Klasa coclass</span><span class="sxs-lookup"><span data-stu-id="2e394-119">CLRRuntimeHost Coclass</span></span>](clrruntimehost-coclass.md)

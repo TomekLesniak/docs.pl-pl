@@ -14,17 +14,18 @@ helpviewer_keywords:
 ms.assetid: c3f7d307-4047-4f9a-be8c-f152fca42fd0
 topic_type:
 - apiref
-ms.openlocfilehash: d41e048b67d4bc7159f6dd5266457651f1658290
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: ed08d9f818f6fc180dbd655243488bf8a527ae11
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420594"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95725290"
 ---
-# <a name="corsymvarflag-enumeration"></a><span data-ttu-id="077ec-102">CorSymVarFlag — Wyliczenie</span><span class="sxs-lookup"><span data-stu-id="077ec-102">CorSymVarFlag Enumeration</span></span>
-<span data-ttu-id="077ec-103">Wskazuje, czy zmienna jest generowana przez kompilator.</span><span class="sxs-lookup"><span data-stu-id="077ec-103">Indicates whether a variable is compiler-generated.</span></span>  
+# <a name="corsymvarflag-enumeration"></a><span data-ttu-id="54650-102">CorSymVarFlag — Wyliczenie</span><span class="sxs-lookup"><span data-stu-id="54650-102">CorSymVarFlag Enumeration</span></span>
+
+<span data-ttu-id="54650-103">Wskazuje, czy zmienna jest generowana przez kompilator.</span><span class="sxs-lookup"><span data-stu-id="54650-103">Indicates whether a variable is compiler-generated.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="077ec-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="077ec-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="54650-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="54650-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorSymVarFlag
@@ -33,15 +34,16 @@ typedef enum CorSymVarFlag
 } CorSymVarFlag;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="077ec-105">Elementy członkowskie</span><span class="sxs-lookup"><span data-stu-id="077ec-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="54650-105">Elementy członkowskie</span><span class="sxs-lookup"><span data-stu-id="54650-105">Members</span></span>  
   
-|<span data-ttu-id="077ec-106">Członek</span><span class="sxs-lookup"><span data-stu-id="077ec-106">Member</span></span>|<span data-ttu-id="077ec-107">Opis</span><span class="sxs-lookup"><span data-stu-id="077ec-107">Description</span></span>|  
+|<span data-ttu-id="54650-106">Członek</span><span class="sxs-lookup"><span data-stu-id="54650-106">Member</span></span>|<span data-ttu-id="54650-107">Opis</span><span class="sxs-lookup"><span data-stu-id="54650-107">Description</span></span>|  
 |------------|-----------------|  
-|`VAR_IS_COMP_GEN`|<span data-ttu-id="077ec-108">Wskazuje, że dana zmienna jest generowana przez kompilator.</span><span class="sxs-lookup"><span data-stu-id="077ec-108">Indicates that the given variable is compiler-generated.</span></span>|  
+|`VAR_IS_COMP_GEN`|<span data-ttu-id="54650-108">Wskazuje, że dana zmienna jest generowana przez kompilator.</span><span class="sxs-lookup"><span data-stu-id="54650-108">Indicates that the given variable is compiler-generated.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="077ec-109">Wymagania</span><span class="sxs-lookup"><span data-stu-id="077ec-109">Requirements</span></span>  
- <span data-ttu-id="077ec-110">**Nagłówek:** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="077ec-110">**Header:** CorSym.idl, CorSym.h</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="077ec-111">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="077ec-111">See also</span></span>
+## <a name="requirements"></a><span data-ttu-id="54650-109">Wymagania</span><span class="sxs-lookup"><span data-stu-id="54650-109">Requirements</span></span>  
 
-- [<span data-ttu-id="077ec-112">Wyliczenia magazynu symboli diagnostycznych</span><span class="sxs-lookup"><span data-stu-id="077ec-112">Diagnostics Symbol Store Enumerations</span></span>](diagnostics-symbol-store-enumerations.md)
+ <span data-ttu-id="54650-110">**Nagłówek:** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="54650-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="54650-111">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="54650-111">See also</span></span>
+
+- [<span data-ttu-id="54650-112">Wyliczenia magazynu symboli diagnostycznych</span><span class="sxs-lookup"><span data-stu-id="54650-112">Diagnostics Symbol Store Enumerations</span></span>](diagnostics-symbol-store-enumerations.md)
