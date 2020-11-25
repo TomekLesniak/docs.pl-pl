@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7cc22562-128c-440a-9147-55ff20f173d7
 topic_type:
 - apiref
-ms.openlocfilehash: b7b15261d825c1bd5f217c4cecd82ed36a716d0e
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 9d14ec33128596a148ca3509a49c8c97fafe82d6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008264"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723106"
 ---
 # <a name="iceegengetstring-method"></a>ICeeGen::GetString — Metoda
+
 Pobiera ciąg przechowywany w określonym względnym adresie wirtualnym.  
   
  Ta metoda jest przestarzała i nie powinna być używana.  
@@ -37,6 +38,7 @@ HRESULT GetString (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `RVA`  
  podczas Względny adres wirtualny ciągu do zwrócenia.  
   
@@ -44,14 +46,15 @@ HRESULT GetString (
  określoną Zwrócony ciąg.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICeeGen — Interfejs](iceegen-interface.md)

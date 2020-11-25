@@ -2,14 +2,15 @@
 title: Kopiowanie istniejących węzłów z jednego dokumentu do innego
 ms.date: 03/30/2017
 ms.assetid: 3caa78c1-3448-4b7b-b83c-228ee857635e
-ms.openlocfilehash: f4d58fa5aafdd48feff1a768ab0463ac09315476
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2e66d6eb83692e8e6541ce869062e2ce67c3c1df
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829612"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722209"
 ---
 # <a name="copying-existing-nodes-from-one-document-to-another"></a>Kopiowanie istniejących węzłów z jednego dokumentu do innego
+
 Metoda **ImportNode** jest mechanizmem, za pomocą którego jest kopiowany węzeł lub całe poddrzewo węzła z jednego **dokumentu XmlDocument** do innego. Węzeł zwrócony z wywołania to kopia węzła z dokumentu źródłowego, w tym wartości atrybutów, nazwa węzła, typ węzła i wszystkie atrybuty powiązane z przestrzenią nazw, takie jak prefiks, nazwa lokalna i przestrzeń nazw Uniform Resource Identifier (URI). Dokument źródłowy nie jest zmieniany. Po zaimportowaniu węzła nadal trzeba dodać go do drzewa przy użyciu jednej z metod używanych do wstawiania węzłów.  
   
  Gdy węzeł zostanie dołączony do nowego dokumentu, nowy dokument jest właścicielem węzła. Przyczyną jest to, że każdy węzeł, gdy został utworzony, ma dokument będącego właścicielem, nawet jeśli węzły są tworzone w oddzielnych fragmentach dokumentu. Jest to wymaganie Document Object Model XML (DOM) i jest wymuszane przez projekt tworzenia fabryki w klasie **XmlDocument** . Na przykład, **CreateElement**, jest jedynym sposobem tworzenia nowych węzłów.  

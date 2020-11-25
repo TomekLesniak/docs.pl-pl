@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e06fc19d-2cf4-4cad-81a3-137a68af8969
 topic_type:
 - apiref
-ms.openlocfilehash: 9cc68e39dfef096b8ab6a8ba743f7a516cc349be
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: fef0902aedbcd8572d2dc67fae7927f754af4489
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210413"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723314"
 ---
 # <a name="icordebugheapvalue3getthreadowningmonitorlock-method"></a>ICorDebugHeapValue3::GetThreadOwningMonitorLock — Metoda
+
 Zwraca zarządzany wątek, który jest właścicielem blokady monitora dla tego obiektu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT GetThreadOwningMonitorLock (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppThread`  
  określoną Zarządzany wątek, który jest właścicielem blokady monitora dla tego obiektu.  
   
@@ -42,6 +44,7 @@ HRESULT GetThreadOwningMonitorLock (
  określoną Liczba przypadków, w których ten wątek będzie musiał zwolnić blokadę, zanim powróci do elementu będącego właścicielem.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca następujące określone wartości HRESULT oraz błędy HRESULT wskazujące niepowodzenie metody.  
   
 |HRESULT|Opis|  
@@ -52,6 +55,7 @@ HRESULT GetThreadOwningMonitorLock (
 ## <a name="exceptions"></a>Wyjątki  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli zarządzany wątek jest właścicielem blokady monitora dla tego obiektu:  
   
 - Metoda zwraca S_OK.  
@@ -65,6 +69,7 @@ HRESULT GetThreadOwningMonitorLock (
  Jeśli wystąpi błąd w taki sposób, że nie można ustalić, który z nich jest właścicielem blokady monitora dla tego obiektu, metoda zwraca wartość HRESULT, która wskazuje na błąd.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -73,7 +78,7 @@ HRESULT GetThreadOwningMonitorLock (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)
 - [Debugowanie](index.md)

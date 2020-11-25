@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 18e89f45-e068-426a-be16-9f53a4346860
 topic_type:
 - apiref
-ms.openlocfilehash: 836e4843ead940bc9f76ff6bdd0433e21e400afd
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 13636da9c3e8ac4aa9e8dc1fa02b2e33afef4717
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500640"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722261"
 ---
 # <a name="functionleave-function"></a>FunctionLeave — Funkcja
+
 Powiadamia profiler, że funkcja ma zwrócić do obiektu wywołującego.  
   
 > [!NOTE]
@@ -42,6 +43,7 @@ void __stdcall FunctionLeave (
   \[in] Identyfikator zwracanej funkcji.
 
 ## <a name="remarks"></a>Uwagi  
+
  `FunctionLeave`Funkcja jest wywołaniem zwrotnym, należy ją zaimplementować. Implementacja musi używać `__declspec` `naked` atrybutu klasy magazynu ().  
   
  Aparat wykonywania nie zapisuje żadnych rejestrów przed wywołaniem tej funkcji.  
@@ -55,6 +57,7 @@ void __stdcall FunctionLeave (
  Ponadto `FunctionLeave` Funkcja nie może wywołać kodu zarządzanego lub w jakikolwiek sposób może spowodować alokację pamięci zarządzanej.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl  
@@ -65,8 +68,8 @@ void __stdcall FunctionLeave (
   
 ## <a name="see-also"></a>Zobacz także
 
-- [FunctionEnter2, funkcja](functionenter2-function.md)
+- [FunctionEnter2 — Funkcja](functionenter2-function.md)
 - [FunctionLeave2 — Funkcja](functionleave2-function.md)
-- [FunctionTailcall2, funkcja](functiontailcall2-function.md)
+- [FunctionTailcall2 — Funkcja](functiontailcall2-function.md)
 - [SetEnterLeaveFunctionHooks2, metoda](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
 - [Profilowanie statycznych funkcji globalnych](profiling-global-static-functions.md)

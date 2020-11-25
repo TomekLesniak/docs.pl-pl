@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 26fb69f8-1467-4711-bd24-cb117c63938f
 topic_type:
 - apiref
-ms.openlocfilehash: 0a36af5b411673081e74aa243ec8e0f8f876f238
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 1fb701a40abe2dc6e51443837c07ee5ba05ddfbe
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860474"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723652"
 ---
 # <a name="iclrdatatarget2freevirtual-method"></a>ICLRDataTarget2::FreeVirtual — Metoda
+
 Wywoływane przez usługi dostępu do danych środowiska uruchomieniowego języka wspólnego (CLR) do wolnej pamięci, która została wcześniej przydzielone w przestrzeni adresowej procesu docelowego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,8 +37,9 @@ HRESULT FreeVirtual(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `addr`  
- podczas `CLRDATA_ADDRESS` Wartość określająca początkowy adres pamięci, która ma zostać zwolniona.  
+ podczas Wartość określająca `CLRDATA_ADDRESS` początkowy adres pamięci, która ma zostać zwolniona.  
   
  `size`  
  podczas Rozmiar (w bajtach) pamięci, która ma zostać zwolniona.  
@@ -46,11 +48,13 @@ HRESULT FreeVirtual(
  podczas Flagi kontrolujące zwalnianie pamięci. Zobacz funkcję Win32 `VirtualFree` .  
   
 ## <a name="remarks"></a>Uwagi  
- `FreeVirtual` Metoda służy jako otoka logiczna dla funkcji Win32 `VirtualFree` .  
+
+ `FreeVirtual`Metoda służy jako otoka logiczna dla `VirtualFree` funkcji Win32.  
   
  Ta metoda jest implementowana przez moduł zapisujący aplikacji debugowania.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** ClrData. idl, ClrData. h  
@@ -59,7 +63,7 @@ HRESULT FreeVirtual(
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRDataTarget2 — Interfejs](iclrdatatarget2-interface.md)
 - [AllocVirtual, metoda](iclrdatatarget2-allocvirtual-method.md)

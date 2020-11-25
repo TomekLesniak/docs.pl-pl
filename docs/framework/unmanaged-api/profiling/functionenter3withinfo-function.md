@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 277c3344-d0cb-431e-beae-eb1eeeba8eea
 topic_type:
 - apiref
-ms.openlocfilehash: ff4b32185e604611eaaead2847c11bc139d405a6
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b511c5abe10ab6c0ec856a5686b082132ed4a5d9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500692"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722868"
 ---
 # <a name="functionenter3withinfo-function"></a>FunctionEnter3WithInfo — Funkcja
+
 Powiadamia profiler, że formant jest przesyłany do funkcji i udostępnia dojście, które może być przekazane do [metody ICorProfilerInfo3:: GetFunctionEnter3Info —](icorprofilerinfo3-getfunctionenter3info-method.md) w celu pobrania ramki stosu i argumentów funkcji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -43,6 +44,7 @@ void __stdcall FunctionEnter3WithInfo(
   \[w] nieprzezroczysty uchwyt reprezentujący informacje o danej klatce stosu. To dojście jest prawidłowe tylko w przypadku wywołania zwrotnego, do którego zostało przesłane.
 
 ## <a name="remarks"></a>Uwagi  
+
  `FunctionEnter3WithInfo`Metoda wywołania zwrotnego powiadamia profiler w miarę wywoływania funkcji i umożliwia profilerowi użycie [metody ICorProfilerInfo3:: GetFunctionEnter3Info —](icorprofilerinfo3-getfunctionenter3info-method.md) w celu sprawdzenia wartości argumentów. Aby uzyskać dostęp do informacji o argumencie, `COR_PRF_ENABLE_FUNCTION_ARGS` należy ustawić flagę. Profiler może użyć [metody ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) , aby ustawić flagi zdarzeń, a następnie użyć [metody ICorProfilerInfo3:: SetEnterLeaveFunctionHooks3WithInfo —](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md) do zarejestrowania implementacji tej funkcji.  
   
  `FunctionEnter3WithInfo`Funkcja jest wywołaniem zwrotnym, należy ją zaimplementować. Implementacja musi używać `__declspec(naked)` atrybutu klasy magazynu.  
@@ -58,6 +60,7 @@ void __stdcall FunctionEnter3WithInfo(
  `FunctionEnter3WithInfo`Funkcja nie może wywołać kodu zarządzanego lub spowodować alokacji pamięci zarządzanej w dowolny sposób.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl  

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to use execution mode
 ms.assetid: e52ff26c-c5d3-4fab-9fec-c937fb387963
-ms.openlocfilehash: d45aaa04e08c0ada77a01d4f67379c9b1b8773e2
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 725f232337952449cd8569b12f65da75569996df
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825549"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722409"
 ---
 # <a name="how-to-specify-the-execution-mode-in-plinq"></a>Instrukcje: Określanie trybu wykonywania w PLINQ
 
@@ -22,12 +22,14 @@ Ten przykład pokazuje, jak wymusić PLINQ, aby pominąć domyślne heurystyke i
 > Ten przykład jest przeznaczony do zademonstrowania użycia i może nie działać szybciej niż równoważne LINQ to Objects sekwencyjne zapytanie. Aby uzyskać więcej informacji na temat przyspieszenie, zobacz [Opis przyspieszenie w PLINQ](understanding-speedup-in-plinq.md).  
   
 ## <a name="example"></a>Przykład  
+
  [!code-csharp[PLINQ#22](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#22)]
  [!code-vb[PLINQ#22](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#22)]  
   
  PLINQ zaprojektowano w celu wykorzystania możliwości programu przetwarzanie równoległe. Jednak nie wszystkie zapytania korzystają z wykonywania równoległego. Na przykład, gdy zapytanie zawiera pojedynczego delegata użytkownika, który wykonuje małą ilość pracy, zapytanie będzie zazwyczaj wykonywane szybciej sekwencyjnie. Wykonywanie sekwencyjne jest szybsze, ponieważ obciążenie związane z włączaniem wykonywania przekształcają jest droższe niż uzyskany przyspieszenie. W związku z tym PLINQ nie jest automatycznie zrównoleglanie wszystkich zapytań. Najpierw analizuje kształt zapytania i różne operatory, które go tworzą. Na podstawie tej analizy PLINQ w domyślnym trybie wykonywania może zdecydować się na wykonanie niektórych lub wszystkich zapytań sekwencyjnie. Jednak w niektórych przypadkach można dowiedzieć się więcej o zapytaniu niż PLINQ jest w stanie określić na podstawie jego analizy. Na przykład może być wiadomo, że delegat jest kosztowny i że zapytanie będzie ostatecznie korzystać z przetwarzanie równoległe. W takich przypadkach można użyć <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> metody i określić <xref:System.Linq.ParallelExecutionMode.ForceParallelism> wartość, aby polecić PLINQ, aby zawsze uruchamiała zapytanie jako Parallel.  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
+
  Wytnij i wklej ten kod do [przykładu danych PLINQ](plinq-data-sample.md) i Wywołaj metodę z `Main` .  
   
 ## <a name="see-also"></a>Zobacz także

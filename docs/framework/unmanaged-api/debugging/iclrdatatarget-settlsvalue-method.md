@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4a2d6a24-749a-47ad-9f01-4517203d3f35
 topic_type:
 - apiref
-ms.openlocfilehash: 6c98fc93fd659ccfc0ccd42eec7d95382cf342f8
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: d2eaab1f42eb04d8e9727220a08842ca75a2eadf
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860512"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723691"
 ---
 # <a name="iclrdatatargetsettlsvalue-method"></a>ICLRDataTarget::SetTLSValue — Metoda
+
 Ustawia wartość w ramach wątku lokalnego magazynu (TLS) określonego wątku w procesie docelowym. Ta metoda jest wywoływana przez usługi dostępu do danych środowiska uruchomieniowego języka wspólnego (CLR).  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT SetTLSValue (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `threadID`  
  podczas Identyfikator systemu operacyjnego wątku w procesie docelowym.  
   
@@ -46,9 +48,11 @@ HRESULT SetTLSValue (
  podczas `CLRDATA_ADDRESS` Wartość, która określa wartość umieszczaną w danej lokalizacji protokołu TLS.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta metoda jest implementowana przez moduł zapisujący aplikacji debugowania.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** ClrData. idl, ClrData. h  
@@ -57,6 +61,6 @@ HRESULT SetTLSValue (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRDataTarget — Interfejs](iclrdatatarget-interface.md)

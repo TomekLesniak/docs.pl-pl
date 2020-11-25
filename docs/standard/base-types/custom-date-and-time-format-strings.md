@@ -15,12 +15,12 @@ helpviewer_keywords:
 - formatting [.NET], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: 804a72f865fc491d6fc991e78c53ceb62d20cd1c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 70e68de3ce736bc4935dea80e37cc805068b0bc5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824457"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722469"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Niestandardowe ciągi formatujące datę i godzinę
 
@@ -630,6 +630,7 @@ W poniższym przykładzie specyfikator formatu niestandardowego „zzz” jest u
 ## <a name="date-and-time-separator-specifiers"></a>Specyfikatory separatora daty i godziny
 
 ### <a name="the--custom-format-specifier"></a><a name="timeSeparator"></a> Specyfikator formatu niestandardowego ":"
+
 Specyfikator formatu niestandardowego „:” przedstawia separator godzin, który jest używany do odróżnienia godzin, minut i sekund. Odpowiedni zlokalizowany separator czasu jest pobierany z <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A?displayProperty=nameWithType> właściwości bieżącej lub określonej kultury.
 
 > [!NOTE]

@@ -7,17 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - parallel loops, how to speed up
 ms.assetid: c7a66677-cb59-4cbf-969a-d2e8fc61a6ce
-ms.openlocfilehash: 0e6e32386992a5dc4ac4556bc9d0489d0fd9d289
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 2597e37ed5901d704c94ff960bcb4b2c97633392
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826830"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722404"
 ---
 # <a name="how-to-speed-up-small-loop-bodies"></a>Instrukcje: Przyspieszanie małych jednostek pętli
+
 Gdy <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> Pętla ma małą treść, może działać wolniej niż równoważna pętla sekwencyjna, taka jak pętla [for](../../csharp/language-reference/keywords/for.md) w C# i pętla [for](/previous-versions/visualstudio/visual-studio-2008/44kykk21(v=vs.90)) w Visual Basic. Mniejsza wydajność wynika z obciążenia związanego z partycjonowaniem danych i kosztem wywołania delegata dla każdej iteracji pętli. Aby rozwiązać takie scenariusze, <xref:System.Collections.Concurrent.Partitioner> Klasa udostępnia <xref:System.Collections.Concurrent.Partitioner.Create%2A?displayProperty=nameWithType> metodę, która umożliwia wykonywanie pętli sekwencyjnej dla treści delegata, tak aby delegat został wywołany tylko raz na partycję, a nie raz na iterację. Aby uzyskać więcej informacji, zobacz [niestandardowe partycje dla PLINQ i TPL](custom-partitioners-for-plinq-and-tpl.md).  
   
 ## <a name="example"></a>Przykład  
+
  [!code-csharp[TPL_Partitioners#01](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_partitioners/cs/partitioner01.cs#01)]
  [!code-vb[TPL_Partitioners#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_partitioners/vb/partitionercreate01.vb#01)]  
   

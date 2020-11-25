@@ -14,14 +14,15 @@ helpviewer_keywords:
 - GetErrorInfo function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 9a80c0b5522113e704336cda29362a0406077931
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5da4eaa459c515689b822e4cb537380245e800e1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553678"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722768"
 ---
 # <a name="geterrorinfo-function"></a>GetErrorInfo — funkcja
+
 Pobiera informacje o błędzie z poprzedniego wywołania funkcji.  
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -41,6 +42,7 @@ Wskaźnik do obiektu [IErrorInfo](/previous-versions/windows/desktop/api/oaidl/n
 Ta funkcja otacza wywołanie metody [IComThreadingInfo:: GetErrorInfo](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) .
 
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** WMINet_Utils. def  

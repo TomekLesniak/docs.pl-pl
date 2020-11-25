@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 66347e03-9a97-41e8-8f9d-89b80803f7b5
 topic_type:
 - apiref
-ms.openlocfilehash: 42ea497bdcab71518bec08514b827d76f0317d57
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 02bc6f4bbb6754bd160fe2694f27563908f3a759
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500601"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722222"
 ---
 # <a name="functiontailcall-function"></a>FunctionTailcall — Funkcja
+
 Powiadamia profiler, że aktualnie wykonywana funkcja ma wykonać wywołanie tail do innej funkcji.  
   
 > [!NOTE]
@@ -42,6 +43,7 @@ void __stdcall FunctionTailcall (
   \[in) identyfikator aktualnie wykonywanej funkcji, która ma na celu wykonanie wywołania tail.
 
 ## <a name="remarks"></a>Uwagi  
+
  Funkcja Target wywołania tail będzie używać bieżącej ramki stosu i zwróci się bezpośrednio do obiektu wywołującego funkcji, która wykonał wywołanie tail. Oznacza to, że wywołanie zwrotne [FunctionLeave —](functionleave-function.md) nie zostanie wygenerowane dla funkcji, która jest elementem docelowym wywołania tail.  
   
  `FunctionTailcall`Funkcja jest wywołaniem zwrotnym, należy ją zaimplementować. Implementacja musi używać `__declspec` `naked` atrybutu klasy magazynu ().  
@@ -57,6 +59,7 @@ void __stdcall FunctionTailcall (
  Ponadto `FunctionTailcall` Funkcja nie może wywołać kodu zarządzanego lub w jakikolwiek sposób może spowodować alokację pamięci zarządzanej.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl  
@@ -67,7 +70,7 @@ void __stdcall FunctionTailcall (
   
 ## <a name="see-also"></a>Zobacz także
 
-- [FunctionEnter2, funkcja](functionenter2-function.md)
+- [FunctionEnter2 — Funkcja](functionenter2-function.md)
 - [FunctionLeave2 — Funkcja](functionleave2-function.md)
 - [SetEnterLeaveFunctionHooks2, metoda](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
 - [Profilowanie statycznych funkcji globalnych](profiling-global-static-functions.md)

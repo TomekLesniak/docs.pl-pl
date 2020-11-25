@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c6b7fb4-cbca-4479-b650-ab9a99732ea0
 topic_type:
 - apiref
-ms.openlocfilehash: 2858e924ab6effe192955ce53dad9d333d2d244d
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 25aefff46f7557f89f27d1eccab58c9c70d2d13e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009070"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722118"
 ---
 # <a name="imetadataassemblyimportgetassemblyrefprops-method"></a>IMetaDataAssemblyImport::GetAssemblyRefProps — Metoda
+
 Pobiera zestaw właściwości dla odwołania do zestawu z określonym podpisem metadanych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -43,8 +44,9 @@ HRESULT GetAssemblyRefProps (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `mdar`  
- podczas `mdAssemblyRef`Token metadanych reprezentujący odwołanie do zestawu, dla którego mają zostać pobrane właściwości.  
+ podczas `mdAssemblyRef` Token metadanych reprezentujący odwołanie do zestawu, dla którego mają zostać pobrane właściwości.  
   
  `ppbPublicKeyOrToken`  
  określoną Wskaźnik do klucza publicznego lub tokenu metadanych.  
@@ -74,17 +76,19 @@ HRESULT GetAssemblyRefProps (
  określoną Wskaźnik do flag, które opisują metadane zastosowane do zestawu. Wartość flags jest kombinacją co najmniej jednej wartości [CorAssemblyFlags —](corassemblyflags-enumeration.md) .  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca S_OK, jeśli zakończy się pomyślnie; w przeciwnym razie zwraca jeden z kodów błędów zdefiniowanych w pliku nagłówkowym Winerror. h.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataAssemblyImport — Interfejs](imetadataassemblyimport-interface.md)

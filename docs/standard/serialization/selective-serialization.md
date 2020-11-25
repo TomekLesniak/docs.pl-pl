@@ -8,14 +8,15 @@ helpviewer_keywords:
 - serialization, selective serialization
 - binary serialization, selective serialization
 ms.assetid: 39c56635-95d2-4afd-aff1-b022e7649bb3
-ms.openlocfilehash: 74113979f0ebe77319ae308c2a669e91d8cb4209
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3c99a3be92beb992ff20188b02ff33a92f196baf
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84278418"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722183"
 ---
 # <a name="selective-serialization"></a>Serializacja selektywna
+
 Klasa często zawiera pola, które nie powinny być serializowane. Załóżmy na przykład, że klasa przechowuje identyfikator wątku w zmiennej składowej. Podczas deserializacji klasy wątek przechowuje identyfikator, dla którego Serializacja klasy może nie być już uruchomiona; Dlatego Serializacja tej wartości nie ma sensu. Można zapobiec serializacji zmiennych składowych poprzez oznaczenie ich przy użyciu atrybutu [Nieserializowanego](xref:System.NonSerializedAttribute) w następujący sposób.  
   
 ```csharp  
@@ -36,4 +37,4 @@ Jeśli to możliwe należy obiekt zawierający dane dotyczące zabezpieczeń non
 
 - [Serializacja binarna](binary-serialization.md)
 - [Serializacja XML i SOAP](xml-and-soap-serialization.md)
-- [Zabezpieczenia i serializacja](../../framework/misc/security-and-serialization.md)
+- [Zabezpieczenia i Serializacja](../../framework/misc/security-and-serialization.md)

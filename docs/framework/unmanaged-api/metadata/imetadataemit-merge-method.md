@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7596220c-f699-4b6c-8ae7-c83220610650
 topic_type:
 - apiref
-ms.openlocfilehash: e7fe5cbe27c0771a71e4c03d14ab68ada7d0741a
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: e64d644b511f7c3249c48b9642bfd3163142af3c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004195"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722014"
 ---
 # <a name="imetadataemitmerge-method"></a>IMetaDataEmit::Merge — Metoda
+
 Dodaje określony zaimportowany zakres do listy zakresów, które mają zostać scalone.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT Merge (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pImport`  
  podczas Wskaźnik do obiektu [IMetaDataImport](imetadataimport-interface.md) , który identyfikuje importowany zakres do scalenia.  
   
@@ -46,18 +48,20 @@ HRESULT Merge (
  podczas Wskaźnik do obiektu [IUnknown](/cpp/atl/iunknown) , który określa błędy.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wywołanie [IMetaDataEmit:: MergeEnd —](imetadataemit-mergeend-method.md) w celu wyzwolenia fuzji metadanych w pojedynczym zakresie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataEmit — Interfejs](imetadataemit-interface.md)
-- [IMetaDataEmit2, interfejs](imetadataemit2-interface.md)
+- [IMetaDataEmit2 — Interfejs](imetadataemit2-interface.md)

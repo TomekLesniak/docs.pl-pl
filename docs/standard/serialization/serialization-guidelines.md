@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: 32d71aba5d8a650293a4d8653fb2a2e383b8a800
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 110efce0bd7fae1a4f39f5d879496bf541ffe667
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282378"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722157"
 ---
 # <a name="serialization-guidelines"></a>Wskazówki dotyczące serializacji
 
@@ -39,6 +39,7 @@ Ten artykuł zawiera wskazówki, które należy wziąć pod uwagę podczas proje
   Serializacji jest ważna projektowania dla dowolnego typu, ponieważ programy może być wymagane do utrwalenia lub przesłania wystąpienie typu.
 
 ### <a name="choosing-the-right-serialization-technology-to-support"></a>Wybieranie odpowiedniej technologii serializacji do obsługi
+
  Dla dowolnego typu może obsługiwać none, co najmniej jedną z technologii serializacji.
 
 - NALEŻY rozważyć obsługę *serializacji kontraktu danych* , jeśli wystąpienia typu mogą wymagać utrwalenia lub użycia w usługach sieci Web.
@@ -52,6 +53,7 @@ Ten artykuł zawiera wskazówki, które należy wziąć pod uwagę podczas proje
 - UNIKAJ obsługi czasu wykonywania serializacji lub serializacji XML tylko dla trwałości głównej przyczyny. Zamiast tego użyć serializacji kontrakt danych
 
 #### <a name="data-contract-serialization"></a>Serializacja kontraktu danych
+
  Typy mogą obsługiwać serializacji kontraktu danych przez zastosowanie <xref:System.Runtime.Serialization.DataContractAttribute> do typu i <xref:System.Runtime.Serialization.DataMemberAttribute> do elementów członkowskich (pól i właściwości) typu.
 
  [!code-csharp[SerializationGuidelines#1](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#1)]
@@ -96,6 +98,7 @@ Ten artykuł zawiera wskazówki, które należy wziąć pod uwagę podczas proje
      Aby uzyskać więcej informacji, zobacz [Kontrakty danych zgodne z przekazywaniem dalej](../../framework/wcf/feature-details/forward-compatible-data-contracts.md).
 
 #### <a name="xml-serialization"></a>Serializacja XML
+
  Serializacja kontraktu danych jest główną (domyślną) technologią serializacji w .NET Framework, ale istnieją scenariusze serializacji, które nie obsługują serializacji kontraktu danych. Na przykład nie zapewnia pełnej kontroli nad kształtem XML produkowanym lub zużywanym przez serializator. Jeśli wymagana jest taka kontrola, *Serializacja XML* musi być używana i musisz zaprojektować typy do obsługi tej technologii serializacji.
 
 1. Należy UNIKAĆ projektowanie swój typ specjalnie dla serializacji XML, chyba że użytkownik ma bardzo duży Przyczyna do określenia kształtu XML utworzone. Ta technologia serializacji została zastąpiona przez serializacji kontrakt danych opisanych w poprzedniej sekcji.
@@ -108,6 +111,7 @@ Ten artykuł zawiera wskazówki, które należy wziąć pod uwagę podczas proje
 2. Rozważ zaimplementowanie <xref:System.Xml.Serialization.IXmlSerializable> interfejsu, jeśli chcesz jeszcze bardziej kontrolować kształt serializowanego kodu XML niż to, co jest oferowane przez zastosowanie atrybutów serializacji XML. Dwie metody interfejsu <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> i <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A> umożliwiają pełną kontrolę serializowanego strumienia XML. Można również kontrolować schemat XML, który jest generowany dla typu przez zastosowanie <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atrybutu.
 
 #### <a name="runtime-serialization"></a>Serializacja środowiska uruchomieniowego
+
  *Serializacja środowiska uruchomieniowego* jest technologią używaną przez funkcję komunikacji zdalnej platformy .NET. Jeśli uważasz, że Twoje typy będą transportowane przy użyciu komunikacji zdalnej .NET, upewnij się, że obsługują serializacji środowiska uruchomieniowego.
 
  Podstawowe wsparcie dla *serializacji środowiska uruchomieniowego* może być zapewnione przez zastosowanie <xref:System.SerializableAttribute> atrybutu, a bardziej zaawansowane scenariusze obejmują implementację prostego, *serializowanego wzorca środowiska uruchomieniowego* (implementacja <xref:System.Runtime.Serialization.ISerializable> i dostarczenie konstruktora serializacji).

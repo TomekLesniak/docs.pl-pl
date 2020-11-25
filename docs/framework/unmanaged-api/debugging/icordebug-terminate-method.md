@@ -15,18 +15,19 @@ helpviewer_keywords:
 ms.assetid: fffe5616-0896-4426-ab5e-21869b514883
 topic_type:
 - apiref
-ms.openlocfilehash: 44bb98f54debb129f951cc388fea81ca0f17b20c
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: cf9c9d11c4725908fcf7ff4a0c91882b70a80190
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895320"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723379"
 ---
 # <a name="icordebugterminate-method"></a>ICorDebug::Terminate — Metoda
+
 Kończy `ICorDebug` obiekt.  
   
 > [!NOTE]
-> `Terminate`nie należy wywoływać do momentu odebrania wywołania zwrotnego [ICorDebugManagedCallback:: ExitProcess —](icordebugmanagedcallback-exitprocess-method.md) dla wszystkich debugowanych procesów.  
+> `Terminate` nie należy wywoływać do momentu odebrania wywołania zwrotnego [ICorDebugManagedCallback:: ExitProcess —](icordebugmanagedcallback-exitprocess-method.md) dla wszystkich debugowanych procesów.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -35,9 +36,11 @@ HRESULT Terminate ();
 ```  
   
 ## <a name="remarks"></a>Uwagi  
- `Terminate`musi być wywoływana, `ICorDebug` gdy obiekt nie jest już wymagany.  
+
+ `Terminate` musi być wywoływana, gdy `ICorDebug` obiekt nie jest już wymagany.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -46,6 +49,6 @@ HRESULT Terminate ();
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebug — Interfejs](icordebug-interface.md)

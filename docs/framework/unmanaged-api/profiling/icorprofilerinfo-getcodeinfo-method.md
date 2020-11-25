@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 90140b0f-a926-4a7e-b6fa-23e05f703cce
 topic_type:
 - apiref
-ms.openlocfilehash: eb6efc738b270f8f76d7130a12af4927fb6220ce
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: da3b0acefa68be3506567ad4742784943f4ec5ab
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84498365"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722521"
 ---
 # <a name="icorprofilerinfogetcodeinfo-method"></a>ICorProfilerInfo::GetCodeInfo — Metoda
+
 Pobiera zakres kodu natywnego skojarzonego z określonym IDENTYFIKATORem funkcji.  
   
  Ta metoda jest przestarzała. Zamiast tego użyj metody [ICorProfilerInfo2:: GetCodeInfo2 —](icorprofilerinfo2-getcodeinfo2-method.md) .  
@@ -37,6 +38,7 @@ HRESULT GetCodeInfo(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `functionId`  
  podczas Identyfikator funkcji, z którą jest skojarzony kod natywny.  
   
@@ -47,11 +49,13 @@ HRESULT GetCodeInfo(
  określoną Wskaźnik do liczby całkowitej, która określa rozmiar (w bajtach) kodu natywnego.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby zoptymalizować wydajność, środowisko uruchomieniowe w .NET Framework w wersji 2,0 dzieli wstępnie skompilowany kod natywny funkcji na wiele regionów. W związku z tym `GetCodeInfo` Metoda jest przestarzała w .NET Framework 2,0, ponieważ nie jest w stanie obsłużyć zakresu kodu natywnego funkcji. W zamian należy przełączyć się na używanie bardziej ogólnej `ICorProfilerInfo2::GetCodeInfo2` metody.  
   
  Ta funkcja używa buforów przyznanych przez obiekt wywołujący.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -62,6 +66,6 @@ HRESULT GetCodeInfo(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [Profilowanie](index.md)

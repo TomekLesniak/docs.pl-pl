@@ -15,12 +15,12 @@ helpviewer_keywords:
 - namespaces [.NET], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: d9ee7020c7ec06f079b7f0a05d5fea67ff1c1a90
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 0f80be2d1da43341f8e2af6f32580be2e01289dc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823189"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723223"
 ---
 # <a name="common-type-system"></a>System typu wspólnego
 
@@ -52,7 +52,7 @@ Wspólny system typów definiuje, w jaki sposób typy są zadeklarowane, używan
   
 - [Interfejsy](#interfaces)  
   
-- [Delegaci](#delegates)  
+- [Delegaty](#delegates)  
   
 ### <a name="classes"></a>Klasy
 
@@ -127,7 +127,7 @@ Wspólny system typów definiuje, w jaki sposób typy są zadeklarowane, używan
   
  Każdy język musi dostarczyć reguły mapowania implementacji do interfejsu, który wymaga elementu członkowskiego, ponieważ więcej niż jeden interfejs może deklarować składową z tym samym podpisem, a te elementy członkowskie mogą mieć oddzielne implementacje.  
 
-### <a name="delegates"></a>Delegaci
+### <a name="delegates"></a>Delegaty
 
  Delegaty są typami odwołań, które służą do celów podobnych do wskaźników funkcji w języku C++. Są one używane na potrzeby obsługi zdarzeń i funkcji wywołania zwrotnego w programie .NET. W przeciwieństwie do wskaźników funkcji Delegaty są bezpieczne, sprawdzalne i typu bezpieczne. Typ delegata może reprezentować każdą metodę wystąpienia lub metodę statyczną, która ma zgodną sygnaturę.  
   
@@ -170,11 +170,13 @@ Wspólny system typów definiuje, w jaki sposób typy są zadeklarowane, używan
 - Definicje dla każdego elementu członkowskiego typu.  
   
 ### <a name="attributes"></a>Atrybuty  
+
  Atrybuty zapewniają dodatkowe metadane zdefiniowane przez użytkownika. Najczęściej są one używane do przechowywania dodatkowych informacji o typie w zestawie lub do modyfikacji zachowania elementu członkowskiego typu w środowisku czasu projektowania lub czasu wykonywania.  
   
  Atrybuty są same klas, które dziedziczą z <xref:System.Attribute?displayProperty=nameWithType> . Języki, które obsługują korzystanie z atrybutów, mają własną składnię stosowania atrybutów do elementu języka. Atrybuty mogą być stosowane do niemal dowolnego elementu języka; określone elementy, do których można zastosować atrybut, są definiowane przez <xref:System.AttributeUsageAttribute> , który jest stosowany do tej klasy atrybutu.  
   
 ### <a name="type-accessibility"></a>Ułatwienia dostępu typu  
+
  Wszystkie typy mają modyfikator, który reguluje dostępność z innych typów. W poniższej tabeli opisano typ podano obsługiwany przez środowisko uruchomieniowe.  
   
 |Ułatwienia dostępu|Opis|  
@@ -197,6 +199,7 @@ Wspólny system typów definiuje, w jaki sposób typy są zadeklarowane, używan
 - Jeśli zadeklarowana dostępność elementu `M` to `private` , domena dostępności `M` jest tekstem programu `T` .  
   
 ### <a name="type-names"></a>Nazwy typów  
+
  Wspólny system typów nakłada tylko dwa ograniczenia dotyczące nazw:  
   
 - Wszystkie nazwy są kodowane jako ciągi znaków Unicode (16-bitowych).  
@@ -208,6 +211,7 @@ Wspólny system typów definiuje, w jaki sposób typy są zadeklarowane, używan
  Chociaż typ może odwoływać się do typów z innych modułów i zestawów, typ musi być w pełni zdefiniowany w obrębie jednego modułu .NET. (W zależności od obsługi kompilatora można jednak podzielić je na wiele plików kodu źródłowego). Nazwy typów muszą być unikatowe tylko w obrębie przestrzeni nazw. Aby w pełni identyfikować typ, nazwa typu musi być kwalifikowana według przestrzeni nazw zawierającej implementację typu.  
   
 ### <a name="base-types-and-interfaces"></a>Typy podstawowe i interfejsy  
+
  Typ może dziedziczyć wartości i zachowania z innego typu. Wspólny system typów nie zezwala na dziedziczenie typów z więcej niż jednego typu podstawowego.  
   
  Typ może implementować dowolną liczbę interfejsów. Aby zaimplementować interfejs, typ musi implementować wszystkie wirtualne elementy członkowskie tego interfejsu. Metoda wirtualna może być implementowana przez typ pochodny i może być wywoływana statycznie lub dynamicznie.  
@@ -222,11 +226,11 @@ Wspólny system typów definiuje, w jaki sposób typy są zadeklarowane, używan
   
 - [Metody](#methods)  
   
-- [Konstruktory](#constructors)  
+- [Konstruktorów](#constructors)  
   
 - [Zdarzenia](#events)  
   
-- [Zagnieżdżone typy](#nested-types)  
+- [Typy zagnieżdżone](#nested-types)  
 
 ### <a name="fields"></a>Pola
 
@@ -256,7 +260,7 @@ Wspólny system typów definiuje, w jaki sposób typy są zadeklarowane, używan
   
  Chociaż większość metod definiuje dokładną liczbę parametrów wymaganych dla wywołań metod, niektóre metody obsługują zmienną liczbę parametrów. Końcowy zadeklarowany parametr tych metod jest oznaczony <xref:System.ParamArrayAttribute> atrybutem. Kompilatory języka zwykle dostarczają słowa kluczowego, takiego jak `params` C# i `ParamArray` in Visual Basic, co sprawia, że jawne użycie nie jest <xref:System.ParamArrayAttribute> wymagane.  
 
-### <a name="constructors"></a>Konstruktory
+### <a name="constructors"></a>Konstruktorów
 
  Konstruktor jest specjalnym rodzajem metody, która tworzy nowe wystąpienia klasy lub struktury. Podobnie jak w przypadku każdej innej metody, Konstruktor może zawierać parametry; jednak konstruktory nie mają zwracanych wartości (oznacza to, że zwracają `void` ).  
   
@@ -281,22 +285,24 @@ Wspólny system typów definiuje, w jaki sposób typy są zadeklarowane, używan
 |Charakterystyka|Może dotyczyć|Opis|  
 |--------------------|------------------|-----------------|  
 |abstract|Metody, właściwości i zdarzenia|Typ nie dostarcza implementacji metody. Typy dziedziczące lub implementujące metody abstrakcyjne muszą dostarczać implementację metody. Jedyny wyjątek polega na tym, że typ pochodny jest własnym typem abstrakcyjnym. Wszystkie metody abstrakcyjne są wirtualne.|  
-|prywatna, Rodzina, zestaw, Rodzina i zestaw, Rodzina lub zestaw lub publiczne|Wszystko|Definiuje dostępność elementu członkowskiego:<br /><br /> private<br /> Dostępne tylko z tego samego typu co element członkowski lub w obrębie typu zagnieżdżonego.<br /><br /> rodzina<br /> Dostępne z tego samego typu co element członkowski oraz z typów pochodnych, które dziedziczą z niego.<br /><br /> zestaw<br /> Dostępne tylko w zestawie, w którym jest zdefiniowany typ.<br /><br /> Rodzina i zestaw<br /> Dostępne tylko z typów, które kwalifikują się do dostępu do rodziny i zestawu.<br /><br /> Rodzina lub zestaw<br /> Dostępne tylko z typów, które kwalifikują się do dostępu do rodziny lub zestawu.<br /><br /> public<br /> Dostępne z dowolnego typu.|  
+|prywatna, Rodzina, zestaw, Rodzina i zestaw, Rodzina lub zestaw lub publiczne|Wszystkie|Definiuje dostępność elementu członkowskiego:<br /><br /> private<br /> Dostępne tylko z tego samego typu co element członkowski lub w obrębie typu zagnieżdżonego.<br /><br /> rodzina<br /> Dostępne z tego samego typu co element członkowski oraz z typów pochodnych, które dziedziczą z niego.<br /><br /> zestaw<br /> Dostępne tylko w zestawie, w którym jest zdefiniowany typ.<br /><br /> Rodzina i zestaw<br /> Dostępne tylko z typów, które kwalifikują się do dostępu do rodziny i zestawu.<br /><br /> Rodzina lub zestaw<br /> Dostępne tylko z typów, które kwalifikują się do dostępu do rodziny lub zestawu.<br /><br /> public<br /> Dostępne z dowolnego typu.|  
 |końcowe|Metody, właściwości i zdarzenia|Nie można zastąpić metody wirtualnej w typie pochodnym.|  
 |tylko Inicjalizacja|Pola|Wartość może zostać zainicjowana i nie można jej zapisać po zainicjowaniu.|  
 |np|Pola, metody, właściwości i zdarzenia|Jeśli element członkowski nie jest oznaczony jako `static` (c# i c++), `Shared` (Visual Basic), `virtual` (c# i c++) lub `Overridable` (Visual Basic), jest to element członkowski wystąpienia (brak słowa kluczowego wystąpienia). Istnieje wiele kopii takich członków w pamięci, ponieważ istnieją obiekty, które go używają.|  
 |literal|Pola|Wartość przypisana do pola to stała wartość, znana w czasie kompilacji, typu wartości wbudowanej. Pola literału są czasami określane jako stałe.|  
-|NewSlot lub Przesłoń|Wszystko|Definiuje sposób interakcji elementu członkowskiego z dziedziczonymi elementami członkowskimi, które mają taki sam podpis:<br /><br /> NewSlot<br /> Ukrywa dziedziczone elementy członkowskie, które mają taki sam podpis.<br /><br /> override<br /> Zastępuje definicję dziedziczonej metody wirtualnej.<br /><br /> Wartość domyślna to NewSlot.|  
+|NewSlot lub Przesłoń|Wszystkie|Definiuje sposób interakcji elementu członkowskiego z dziedziczonymi elementami członkowskimi, które mają taki sam podpis:<br /><br /> NewSlot<br /> Ukrywa dziedziczone elementy członkowskie, które mają taki sam podpis.<br /><br /> override<br /> Zastępuje definicję dziedziczonej metody wirtualnej.<br /><br /> Wartość domyślna to NewSlot.|  
 |static|Pola, metody, właściwości i zdarzenia|Element członkowski należy do typu, który jest zdefiniowany w, a nie do określonego wystąpienia typu; element członkowski istnieje, nawet jeśli wystąpienie typu nie zostało utworzone i jest udostępniane między wszystkimi wystąpieniami tego typu.|  
 |virtual|Metody, właściwości i zdarzenia|Metoda może być implementowana przez typ pochodny i może być wywoływana statycznie lub dynamicznie. W przypadku użycia wywołania dynamicznego typ wystąpienia, które wywołuje wywołanie w czasie wykonywania (a nie typ znany w czasie kompilacji) określa, która implementacja metody jest wywoływana. Aby wywołać metodę wirtualną statycznie, zmienna może być musiała być rzutowana na typ, który używa odpowiedniej wersji metody.|  
   
 ### <a name="overloading"></a>Przeciążenie  
+
  Każdy element członkowski typu ma unikatowy podpis. Sygnatury metod składają się z nazwy metody i listy parametrów (kolejność i typy argumentów metody). Wiele metod o tej samej nazwie można zdefiniować w obrębie typu, tak długo, jak ich podpisy różnią się. Gdy zdefiniowane są dwie lub więcej metod o tej samej nazwie, metoda jest określana jako przeciążona. Na przykład, <xref:System.Char?displayProperty=nameWithType> <xref:System.Char.IsDigit%2A> Metoda jest przeciążona. Jedna metoda przyjmuje <xref:System.Char> . Druga metoda przyjmuje <xref:System.String> i <xref:System.Int32> .  
   
 > [!NOTE]
 > Zwracany typ nie jest uważany za część podpisu metody. Oznacza to, że metody nie mogą być przeciążone, jeśli różnią się tylko zwracanym typem.  
   
 ### <a name="inherit-override-and-hide-members"></a>Dziedzicz, Przesłoń i ukrywaj elementy członkowskie  
+
  Typ pochodny dziedziczy wszystkie elementy członkowskie jego typu podstawowego; oznacza to, że te składowe są zdefiniowane w, i dostępne dla, typ pochodny. Zachowanie lub jakość dziedziczonych elementów członkowskich można modyfikować na dwa sposoby:  
   
 - Typ pochodny może ukryć Dziedziczony element członkowski przez zdefiniowanie nowego elementu członkowskiego o tej samej sygnaturze. Może to być zrobione, aby wcześniej publiczny element członkowski był prywatny lub definiować nowe zachowanie dla dziedziczonej metody, która jest oznaczona jako `final` .  

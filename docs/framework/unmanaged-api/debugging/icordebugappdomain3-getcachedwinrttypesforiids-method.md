@@ -15,15 +15,16 @@ helpviewer_keywords:
 ms.assetid: 23682ca0-1bcf-48e6-996e-69f7ba337682
 topic_type:
 - apiref
-ms.openlocfilehash: f8e92ec4f813e8810273a1514298d0739a3d2406
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2aff86fb63b87869ed13028bd7344afe11363f51
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179064"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723184"
 ---
 # <a name="icordebugappdomain3getcachedwinrttypesforiids-method"></a>ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs — Metoda
-Pobiera moduł wyliczacza dla buforowanych typów środowiska wykonawczego systemu Windows w domenie aplikacji na podstawie ich identyfikatorów interfejsu.  
+
+Pobiera moduł wyliczający dla buforowanych środowisko wykonawcze systemu Windows typów w domenie aplikacji w oparciu o ich identyfikatory interfejsów.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -36,27 +37,30 @@ HRESULT GetCachedWinRTTypesForIIDs (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cReqTypes`  
- [w] Liczba wymaganych typów.  
+ podczas Liczba wymaganych typów.  
   
  `iidsToResolve`  
- [w] Wskaźnik do tablicy zawierającej identyfikatory interfejsu odpowiadające zarządzanym reprezentacjom typów środowiska wykonawczego systemu Windows do pobrania.  
+ podczas Wskaźnik do tablicy zawierającej identyfikatory interfejsów odpowiadające zarządzanym reprezentacjom typów środowisko wykonawcze systemu Windows do pobrania.  
   
  `ppTypesEnum`  
- [na zewnątrz] Wskaźnik do adresu obiektu interfejsu "ICorDebugTypeEnum", który umożliwia wyliczanie buforowanych zarządzanych reprezentacji pobranych typów środowiska wykonawczego `iidsToResolve`systemu Windows, na podstawie identyfikatorów interfejsu w programie .  
+ określoną Wskaźnik do adresu obiektu interfejsu "ICorDebugTypeEnum", który umożliwia Wyliczenie buforowanych reprezentacji typów środowisko wykonawcze systemu Windows pobranych, opartych na identyfikatorach interfejsu w `iidsToResolve` .  
   
 ## <a name="remarks"></a>Uwagi  
- Jeśli metoda nie może pobrać informacji dla określonego identyfikatora interfejsu, odpowiedni wpis w kolekcji "ICorDebugTypeEnum" będzie miał `ELEMENT_TYPE_END` typ `ELEMENT_TYPE_VOID` błędów z powodu problemów z pobieraniem danych lub nieznanych identyfikatorów interfejsu.  
+
+ Jeśli metoda nie może pobrać informacji o określonym identyfikatorze interfejsu, odpowiadający wpis w kolekcji "ICorDebugTypeEnum" będzie miał typ `ELEMENT_TYPE_END` dla błędów spowodowany problemami z pobieraniem danych lub `ELEMENT_TYPE_VOID` nieznanymi identyfikatorami interfejsów.  
   
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Środowisko wykonawcze systemu Windows  
-  
- **Nagłówek:** CorDebug.idl, CorDebug.h  
-  
- **Biblioteka:** CorGuids.lib  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [ICorDebugAppDomain3, interfejs](icordebugappdomain3-interface.md)
+ **Platformy:** środowisko wykonawcze systemu Windows  
+  
+ **Nagłówek:** CorDebug. idl, CorDebug. h  
+  
+ **Biblioteka:** CorGuids. lib  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [ICorDebugAppDomain3 — Interfejs](icordebugappdomain3-interface.md)

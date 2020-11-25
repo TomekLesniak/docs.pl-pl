@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 910beb2f-cfb3-4e8e-9936-f7e0c5f4064a
-ms.openlocfilehash: 42f721e56c803fb404f7885d126bea9560224f4c
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: d1e13d2bcc7525f261df90c36aa4214f318cf3c0
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94824990"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722716"
 ---
 # <a name="how-to-migrate-your-xsltransform-code"></a>Instrukcje: Migrowanie kodu XslTransform
+
 Nowe klasy XSLT zostały zaprojektowane tak, aby były bardzo podobne do istniejących klas. <xref:System.Xml.Xsl.XslCompiledTransform>Klasa zastępuje <xref:System.Xml.Xsl.XslTransform> klasę. Arkusze stylów są kompilowane przy użyciu <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metody. Transformacje są wykonywane przy użyciu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. W poniższych procedurach przedstawiono typowe zadania XSLT i porównano kod przy użyciu <xref:System.Xml.Xsl.XslTransform> klasy w porównaniu z <xref:System.Xml.Xsl.XslCompiledTransform> klasą.  
   
 ### <a name="to-transform-a-file-and-output-to-a-uri"></a>Aby przekształcić plik i dane wyjściowe na identyfikator URI  

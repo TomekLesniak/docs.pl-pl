@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - tasks, how to unwrap nested tasks
 ms.assetid: a0769dd2-0f6d-48ca-8418-a9d39de7f450
-ms.openlocfilehash: cda42dbc88d73eadf04720c0faaf98151d371127
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 3eec3b7e8cc76ee171d88a7886b4983000848084
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825562"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722625"
 ---
 # <a name="how-to-unwrap-a-nested-task"></a>Instrukcje: Odpakowywanie zadania zagnieżdżonego
+
 Można zwrócić zadanie z metody, a następnie zaczekać lub kontynuować z tego zadania, jak pokazano w następującym przykładzie:  
   
  [!code-csharp[TPL_Unwrap#01](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_unwrap/cs/unwrapprogram.cs#01)]
@@ -35,6 +36,7 @@ Można zwrócić zadanie z metody, a następnie zaczekać lub kontynuować z teg
  <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A>Metody mogą służyć do przekształcania dowolnego `Task<Task>` lub `Task<Task<TResult>>` ( `Task(Of Task)` lub `Task(Of Task(Of TResult))` w Visual Basic) na `Task` lub `Task<TResult>` ( `Task(Of TResult)` w Visual Basic). Nowe zadanie w pełni reprezentuje wewnętrzne zagnieżdżone zadanie i zawiera stan anulowania oraz wszystkie wyjątki.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje sposób używania <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> metod rozszerzających.  
   
  [!code-csharp[TPL_UnWrap#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_unwrap/cs/unwrapprogram.cs#04)]

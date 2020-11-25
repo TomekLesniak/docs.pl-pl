@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: fee56a29-3154-4192-958d-71da2ced3740
 topic_type:
 - apiref
-ms.openlocfilehash: 6eb26de83a6cdce47477e6cb3dffd6a94d889975
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: d1d057d38e16503175138c6ec978eb6c1f12bc6d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83397022"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722339"
 ---
 # <a name="icordebugvalue3getsize64-method"></a>ICorDebugValue3::GetSize64 — Metoda
+
 Pobiera rozmiar (w bajtach) tego obiektu [ICorDebugValue3](icordebugvalue3-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,15 +35,18 @@ HRESULT GetSize64(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  pSize  
  określoną Wskaźnik do rozmiaru, w bajtach, tego obiektu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli typ tej wartości jest typem referencyjnym, Metoda ta zwraca rozmiar wskaźnika, a nie rozmiar obiektu.  
   
  `ICorDebugValue3::GetSize`Metoda różni się od metody [ICorDebugValue:: GetSize](icordebugvalue-getsize-method.md) w typie parametru wyjściowego. W [ICorDebugValue:: GetSize](icordebugvalue-getsize-method.md)parametr wyjściowy to a `ULONG32` ; w `ICorDebugValue3::GetSize` , jest to `ULONG64` . Dzięki temu Interfejs [ICorDebugValue3](icordebugvalue3-interface.md) może raportować rozmiar tablic, które przekraczają 2 GB.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6fab8a58-3883-490f-8b27-64042c90f104
 topic_type:
 - apiref
-ms.openlocfilehash: 5730cdd910257d762230f5e54576d5e0a7ac1adb
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b8b9f8e63a0b52dde0e814f53cfc75e6f6d48e78
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614828"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723028"
 ---
 # <a name="isymunmanagedwriterdefinelocalvariable-method"></a>ISymUnmanagedWriter::DefineLocalVariable — Metoda
+
 Definiuje pojedynczą zmienną w bieżącym zakresie leksykalnym. Tę metodę można wywołać wiele razy dla zmiennej o tej samej nazwie, która ma wiele domów w całym zakresie. Jednak w takim przypadku wartości `startOffset` `endOffset` parametrów i nie mogą nakładać się na siebie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -42,6 +43,7 @@ HRESULT DefineLocalVariable(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `name`  
  podczas Wskaźnik do elementu `WCHAR` , który definiuje nazwę zmiennej lokalnej.  
   
@@ -49,7 +51,7 @@ HRESULT DefineLocalVariable(
  podczas Atrybuty zmiennej lokalnej.  
   
  `cSig`  
- podczas `ULONG32`Wskazuje rozmiar bufora (w bajtach) `signature` .  
+ podczas `ULONG32` Wskazuje rozmiar bufora (w bajtach) `signature` .  
   
  `signature`  
  podczas Podpis zmiennej lokalnej.  
@@ -73,9 +75,11 @@ HRESULT DefineLocalVariable(
  podczas Przesunięcie końcowe dla zmiennej. Ten parametr jest opcjonalny. Jeśli wartość jest równa 0, ten parametr jest ignorowany, a zmienna jest zdefiniowana w całym zakresie. Jeśli jest to wartość różna od zera, zmienna znajduje się w przesunięciach bieżącego zakresu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

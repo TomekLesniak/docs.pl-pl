@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a3ccdf18-4ec6-494d-9024-48e5c8c724f5
 topic_type:
 - apiref
-ms.openlocfilehash: 9c22ca47a606da0949529cf55655bbcde19cb5c9
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 5eee2aee5873fe512136bc5407e395acdc31af29
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795667"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722612"
 ---
 # <a name="cordebugthreadstate-enumeration"></a>CorDebugThreadState — Wyliczenie
+
 Określa stan wątku do debugowania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -41,11 +42,13 @@ typedef enum CorDebugThreadState {
 |`THREAD_SUSPEND`|Nie można uruchomić wątku.|  
   
 ## <a name="remarks"></a>Uwagi  
- Debuger używa wyliczenia, `CorDebugThreadState` aby kontrolować wykonywanie wątku. Stan wątku można ustawić za pomocą metody [ICorDebugThread:: SetDebugState —](icordebugthread-setdebugstate-method.md) lub [ICorDebugController:: SetAllThreadsDebugState —](icordebugcontroller-setallthreadsdebugstate-method.md) .  
+
+ Debuger używa wyliczenia, `CorDebugThreadState` Aby kontrolować wykonywanie wątku. Stan wątku można ustawić za pomocą metody [ICorDebugThread:: SetDebugState —](icordebugthread-setdebugstate-method.md) lub [ICorDebugController:: SetAllThreadsDebugState —](icordebugcontroller-setallthreadsdebugstate-method.md) .  
   
  Wywołanie zwrotne obsługiwane w [interfejsie API hostingu](../hosting/index.md) umożliwia pompowanie komunikatów, dlatego nie jest wymagany stan przerwania.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

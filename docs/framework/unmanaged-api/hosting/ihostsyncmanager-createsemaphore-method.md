@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 37679e94-5ff9-4173-8fa5-457febeb89bf
 topic_type:
 - apiref
-ms.openlocfilehash: 680280e959d523356b95a5a4d9390c80720c0330
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 9af38a58ce8786c56d9f50089605dc994167497e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803140"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722131"
 ---
 # <a name="ihostsyncmanagercreatesemaphore-method"></a>IHostSyncManager::CreateSemaphore — Metoda
+
 Tworzy obiekt [IHostSemaphore](ihostsemaphore-interface.md) dla środowiska uruchomieniowego języka wspólnego (CLR) do użycia jako semafor dla zdarzeń oczekiwania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT CreateSemaphore (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `dwInitial`  
  podczas Początkowa liczba dla `ppSemaphore` .  
   
@@ -49,7 +51,7 @@ HRESULT CreateSemaphore (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`CreateSemaphore`pomyślnie zwrócono.|  
+|S_OK|`CreateSemaphore` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -58,19 +60,21 @@ HRESULT CreateSemaphore (
 |E_OUTOFMEMORY|Za mało dostępnej pamięci, aby utworzyć żądany obiekt zdarzenia.|  
   
 ## <a name="remarks"></a>Uwagi  
- `CreateSemaphore`odzwierciedla funkcję Win32, która ma taką samą nazwę. `dwInitial`Parametry i `dwMax` używają tej samej semantyki jako `lInitialCount` odpowiednio Win32 i `lMaximumCount` Parameters. `dwInitial`musi zawierać się w przedziale od 0 do `dwMax` włącznie. `dwMax`musi być większa od zera.  
+
+ `CreateSemaphore` odzwierciedla funkcję Win32, która ma taką samą nazwę. `dwInitial`Parametry i `dwMax` używają tej samej semantyki jako `lInitialCount` odpowiednio Win32 i `lMaximumCount` Parameters. `dwInitial` musi zawierać się w przedziale od 0 do `dwMax` włącznie. `dwMax` musi być większa od zera.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRSyncManager — Interfejs](iclrsyncmanager-interface.md)
-- [IHostSemaphore, interfejs](ihostsemaphore-interface.md)
-- [IHostSyncManager, interfejs](ihostsyncmanager-interface.md)
+- [IHostSemaphore — Interfejs](ihostsemaphore-interface.md)
+- [IHostSyncManager — Interfejs](ihostsyncmanager-interface.md)

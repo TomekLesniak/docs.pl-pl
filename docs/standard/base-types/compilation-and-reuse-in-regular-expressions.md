@@ -11,17 +11,19 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, compilation
 - regular expressions, engines
 ms.assetid: 182ec76d-5a01-4d73-996c-0b0d14fcea18
-ms.openlocfilehash: f0da4a226feb6bafc7e17c7333cbc507701311af
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b0d3ac619e8d9548fffcb41b23d2ebd6663915e9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823111"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723210"
 ---
 # <a name="compilation-and-reuse-in-regular-expressions"></a>Kompilacja i ponowne użycie w wyrażeniach regularnych
+
 Aby zoptymalizować wydajność aplikacji, które dzielą użycie wyrażeń regularnych, można zrozumieć, jak aparat wyrażeń regularnych kompiluje wyrażenia i opisując, w jaki sposób są buforowane wyrażenia regularne. W tym temacie omówiono kompilację i pamięć podręczną.  
   
 ## <a name="compiled-regular-expressions"></a>Skompilowane wyrażenia regularne  
+
  Domyślnie aparat wyrażeń regularnych kompiluje wyrażenie regularne w celu uzyskania sekwencji wewnętrznych instrukcji (są to kody wysokiego poziomu, które różnią się od języka pośredniego firmy Microsoft lub MSIL). Gdy aparat wykonuje wyrażenie regularne, interpretuje kody wewnętrzne.  
   
  Jeśli <xref:System.Text.RegularExpressions.Regex> obiekt jest skonstruowany przy użyciu <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType> opcji, kompiluje wyrażenie regularne na jawny kod MSIL zamiast ogólnych instrukcji ogólnego wyrażenia regularnego. To umożliwia. Kompilator "just-in-Time" (JIT) w sieci, aby przekonwertować wyrażenie na natywny kod maszynowy w celu zwiększenia wydajności.  Koszt konstruowania <xref:System.Text.RegularExpressions.Regex> obiektu może być wyższy, ale koszt wykonywania dopasowań jest prawdopodobnie dużo mniejszy.
@@ -29,6 +31,7 @@ Aby zoptymalizować wydajność aplikacji, które dzielą użycie wyrażeń regu
  Alternatywą jest użycie wstępnie skompilowanych wyrażeń regularnych. Wszystkie wyrażenia można kompilować do biblioteki DLL wielokrotnego użytku przy użyciu <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A> metody. Pozwala to uniknąć konieczności kompilowania w czasie wykonywania, a jednocześnie korzystać z szybkości kompilowanych wyrażeń regularnych.  
   
 ## <a name="the-regular-expressions-cache"></a>Pamięć podręczna wyrażeń regularnych  
+
  Aby zwiększyć wydajność, aparat wyrażeń regularnych zachowuje pamięć podręczną dla skompilowanych wyrażeń regularnych. W pamięci podręcznej są przechowywane wzorce wyrażeń regularnych, które są używane tylko w wywołaniach metod statycznych. (Wzorce wyrażeń regularnych dostarczone do metod wystąpienia nie są buforowane). Pozwala to uniknąć konieczności ponownej analizy wyrażenia w kodzie bajtowym wysokiego poziomu za każdym razem, gdy jest używany.  
   
  Maksymalna liczba buforowanych wyrażeń regularnych jest określana przez wartość `static` `Shared` właściwości (w Visual Basic) <xref:System.Text.RegularExpressions.Regex.CacheSize%2A?displayProperty=nameWithType> . Domyślnie aparat wyrażeń regularnych buforuje do 15 skompilowanych wyrażeń regularnych. Jeśli liczba skompilowanych wyrażeń regularnych przekracza rozmiar pamięci podręcznej, najmniej ostatnio używane wyrażenie regularne jest odrzucane, a nowe wyrażenie regularne jest buforowane.  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ba25d166-1d28-4f1d-aca2-de298bbca669
 topic_type:
 - apiref
-ms.openlocfilehash: 14a2fa36393135a1e5ccecb69879113a62a9d065
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: bf672c90cdbb9e9fb66105820a264a49601b38d7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895392"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723457"
 ---
 # <a name="icordebugenumerateprocesses-method"></a>ICorDebug::EnumerateProcesses — Metoda
+
 Pobiera moduł wyliczający dla procesów, które są debugowane.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT EnumerateProcesses (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppProcess`  
  Wskaźnik do adresu obiektu ICorDebugProcessEnum, który jest modułem wyliczającym dla debugowanych procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -46,6 +49,6 @@ HRESULT EnumerateProcesses (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebug — Interfejs](icordebug-interface.md)

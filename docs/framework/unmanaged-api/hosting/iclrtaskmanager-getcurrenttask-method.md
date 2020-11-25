@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c0b82a9f-edc6-4878-9c81-48de53c02142
 topic_type:
 - apiref
-ms.openlocfilehash: 9cb97d9f383b7b54b431457042c4c4a7fc9cd876
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: af855e3ba47dc329a4fb722c3e13d5f1816beba4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762836"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723278"
 ---
 # <a name="iclrtaskmanagergetcurrenttask-method"></a>ICLRTaskManager::GetCurrentTask — Metoda
+
 Pobiera wystąpienie [ICLRTask](iclrtask-interface.md) , które jest aktualnie uruchomione w wątku systemu operacyjnego, z którego pochodzi wywołanie metody.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetCurrentTask (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppTask`  
  określoną Wskaźnik do adresu `ICLRTask` wystąpienia, które jest aktualnie wykonywane w wątku systemu operacyjnego, z którego pochodzi wywołanie lub wartość null, jeśli żadne zadanie nie jest aktualnie wykonywane w tym wątku.  
   
@@ -49,20 +51,22 @@ HRESULT GetCurrentTask (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ICLRTask`Wystąpienie, które `ppTask` wskazuje parametr, aby reprezentować aktualnie wykonywane zadanie dla środowiska CLR. `ICLRTask`Wystąpienie jest skojarzone z odpowiednim wystąpieniem [IHostTask](ihosttask-interface.md) , które reprezentuje zadanie dla hosta.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRTask — Interfejs](iclrtask-interface.md)
-- [ICLRTaskManager, interfejs](iclrtaskmanager-interface.md)
-- [IHostTask, interfejs](ihosttask-interface.md)
-- [IHostTaskManager, interfejs](ihosttaskmanager-interface.md)
+- [ICLRTaskManager — Interfejs](iclrtaskmanager-interface.md)
+- [IHostTask — Interfejs](ihosttask-interface.md)
+- [IHostTaskManager — Interfejs](ihosttaskmanager-interface.md)

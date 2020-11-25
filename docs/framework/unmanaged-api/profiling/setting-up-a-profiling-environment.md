@@ -10,14 +10,15 @@ helpviewer_keywords:
 - COR_ENABLE_PROFILING environment variable
 - profiling API [.NET Framework], enabling
 ms.assetid: fefca07f-7555-4e77-be86-3c542e928312
-ms.openlocfilehash: adf790e0b2d2b72b5a1f0b2a41b80db6d5026869
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 9c712c5efe8d6d79454b70d0bf4f3ca2fa83b637
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494023"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722482"
 ---
 # <a name="setting-up-a-profiling-environment"></a>Konfigurowanie środowiska profilowania
+
 > [!NOTE]
 > W .NET Framework 4 wprowadzono istotne zmiany profilowania.  
   
@@ -41,13 +42,14 @@ ms.locfileid: "84494023"
 > Aby użyć .NET Framework w wersji 2,0, 3,0 i 3,5 do prekoderów w .NET Framework 4 i nowszych wersjach, należy ustawić zmienną środowiskową COMPLUS_ProfAPI_ProfilerCompatibilitySetting.  
   
 ## <a name="environment-variable-scope"></a>Zakres zmiennej środowiskowej  
+
  Sposób ustawiania zmiennych środowiskowych COR_ENABLE_PROFILING i COR_PROFILER określi ich zakres. Można ustawić te zmienne w jeden z następujących sposobów:  
   
 - Jeśli ustawisz zmienne w wywołaniu [ICorDebug:: CreateProcess](../debugging/icordebug-createprocess-method.md) , zostaną one zastosowane tylko do aplikacji, która jest uruchomiona w danym momencie. (Zostaną one również zastosowane do innych aplikacji uruchomionych przez aplikację, która dziedziczy środowisko).  
   
 - Jeśli ustawisz zmienne w oknie wiersza polecenia, zostaną one zastosowane do wszystkich aplikacji, które są uruchamiane z tego okna.  
   
-- Jeśli ustawisz zmienne na poziomie użytkownika, zostaną one zastosowane do wszystkich aplikacji, które zaczynają się od Eksploratora plików. Okno wiersza polecenia otwarte po ustawieniu zmiennych będzie miało te ustawienia środowiska, a więc każda aplikacja uruchamiana z tego okna. Aby ustawić zmienne środowiskowe na poziomie użytkownika, kliknij prawym przyciskiem myszy pozycję **mój komputer**, kliknij pozycję **Właściwości**, kliknij kartę **Zaawansowane** , kliknij przycisk **zmienne środowiskowe**i Dodaj zmienne do listy **zmiennych użytkownika** .  
+- Jeśli ustawisz zmienne na poziomie użytkownika, zostaną one zastosowane do wszystkich aplikacji, które zaczynają się od Eksploratora plików. Okno wiersza polecenia otwarte po ustawieniu zmiennych będzie miało te ustawienia środowiska, a więc każda aplikacja uruchamiana z tego okna. Aby ustawić zmienne środowiskowe na poziomie użytkownika, kliknij prawym przyciskiem myszy pozycję **mój komputer**, kliknij pozycję **Właściwości**, kliknij kartę **Zaawansowane** , kliknij przycisk **zmienne środowiskowe** i Dodaj zmienne do listy **zmiennych użytkownika** .  
   
 - Jeśli ustawisz zmienne na poziomie komputera, zostaną one zastosowane do wszystkich aplikacji uruchomionych na tym komputerze. Okno wiersza polecenia otwarte na tym komputerze będzie miało te ustawienia środowiska, a więc każda aplikacja uruchamiana z tego okna. Oznacza to, że każdy proces zarządzany na tym komputerze zacznie od profilera. Aby ustawić zmienne środowiskowe na poziomie komputera, kliknij prawym przyciskiem myszy pozycję **mój komputer**, kliknij pozycję **Właściwości**, kliknij kartę **Zaawansowane** , kliknij przycisk **zmienne środowiskowe**, Dodaj zmienne do listy **zmienne systemowe** , a następnie uruchom ponownie komputer. Po ponownym uruchomieniu zmienne będą dostępne dla całego systemu.  
   
@@ -62,6 +64,7 @@ ms.locfileid: "84494023"
 - Ponieważ Profiler jest obiektem COM, który jest tworzony w procesie, każda profilowana aplikacja będzie miała własną kopię profilera. W związku z tym pojedyncze wystąpienie profilera nie musi obsługiwać danych z wielu aplikacji. Należy jednak dodać logikę do kodu rejestrowania profilera, aby zapobiec zastępowaniu pliku dziennika z innych profilowanych aplikacji.  
   
 ## <a name="initializing-the-profiler"></a>Inicjowanie profilera  
+
  Gdy obie zmienne środowiskowe sprawdzają przebieg, środowisko CLR tworzy wystąpienie profilera w podobny sposób do `CoCreateInstance` funkcji com. Profiler nie jest ładowany przez bezpośrednie wywołanie do `CoCreateInstance` . W związku z tym, należy wywołać metodę `CoInitialize` , która wymaga ustawienia modelu wątkowości. Środowisko CLR następnie wywołuje metodę [ICorProfilerCallback:: Initialize](icorprofilercallback-initialize-method.md) w profilera. Sygnatura tej metody jest następująca.  
   
 ```cpp  
@@ -71,6 +74,7 @@ HRESULT Initialize(IUnknown *pICorProfilerInfoUnk)
  Profiler musi zbadać `pICorProfilerInfoUnk` wskaźnik interfejsu [ICorProfilerInfo](icorprofilerinfo-interface.md) lub [ICorProfilerInfo2](icorprofilerinfo2-interface.md) i zapisać go, aby można było zażądać dalszych informacji później podczas profilowania.  
   
 ## <a name="setting-event-notifications"></a>Ustawianie powiadomień o zdarzeniach  
+
  Profiler wywołuje następnie metodę [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) , aby określić, które kategorie powiadomień interesują. Na przykład, jeśli Profiler jest interesujący tylko funkcja wprowadzanie i pozostawianie powiadomień i powiadomień o wyrzucaniu elementów bezużytecznych, określa następujące kwestie.  
   
 ```cpp  
@@ -84,7 +88,9 @@ pInfo->SetEventMask(COR_PRF_MONITOR_ENTERLEAVE | COR_PRF_MONITOR_GC)
  Niektóre zdarzenia profilera są niezmienne. Oznacza to, że zaraz po ustawieniu tych zdarzeń w `ICorProfilerCallback::Initialize` wywołaniu zwrotnym nie można ich wyłączyć i nie można włączyć nowych zdarzeń. Próby zmiany niezmiennego zdarzenia spowodują zwrócenie wyniku `ICorProfilerInfo::SetEventMask` zakończonego niepowodzeniem.  
   
 <a name="windows_service"></a>
+
 ## <a name="profiling-a-windows-service"></a>Profilowanie usługi systemu Windows  
+
  Profilowanie usługi systemu Windows przypomina Profilowanie aplikacji środowiska uruchomieniowego języka wspólnego. Obie operacje profilowania są włączane za poorednictwem zmiennych środowiskowych. Ponieważ usługa systemu Windows jest uruchamiana podczas uruchamiania systemu operacyjnego, zmienne środowiskowe omówione wcześniej w tym temacie muszą być już obecne i ustawione na wartości wymagane przed uruchomieniem systemu. Ponadto biblioteka DLL profilowania musi być już zarejestrowana w systemie.  
   
  Po ustawieniu zmiennych środowiskowych COR_ENABLE_PROFILING i COR_PROFILER i zarejestrowaniu biblioteki DLL profilera należy ponownie uruchomić komputer docelowy, aby usługa systemu Windows mogła wykryć te zmiany.  

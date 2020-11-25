@@ -6,17 +6,19 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: fe1b4a11-37f4-4e1a-93c9-239f4fe736c0
-ms.openlocfilehash: f382165ca8e2b972c47a080244a3d0054b5eb604
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b2feb14e304c8ba7ecc19b2e79b943204044da05
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822740"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722677"
 ---
 # <a name="including-or-importing-xml-schemas"></a>Uwzględnianie lub importowanie schematów XML
+
 Schemat XML może zawierać `<xs:import />` elementy, `<xs:include />` , i `<xs:redefine />` . Te elementy schematu odwołują się do innych schematów XML, które mogą służyć do uzupełniania struktury schematu, który zawiera lub importuje. <xref:System.Xml.Schema.XmlSchemaImport> <xref:System.Xml.Schema.XmlSchemaInclude> <xref:System.Xml.Schema.XmlSchemaRedefine> Klasy i mapują do tych elementów w interfejsie API modelu obiektów schematu (SOM).  
   
 ## <a name="including-or-importing-an-xml-schema"></a>Dołączanie lub importowanie schematu XML  
+
  Poniższy przykład kodu uzupełnia schemat klienta utworzony w temacie [Tworzenie schematów XML](building-xml-schemas.md) ze schematem adresu. Uzupełnienie schematu klienta przy użyciu schematu adresu sprawia, że typy adresów są dostępne w schemacie klienta.  
   
  Schemat adresów może być dołączany przy użyciu albo `<xs:include />` `<xs:import />` elementów, aby użyć składników schematu adresu jako-lub za pomocą elementu, aby `<xs:redefine />` zmodyfikować dowolny składnik, aby odpowiadał potrzebom schematu klienta. Ze względu na to, `targetNamespace` że schemat adresu różni się od schematu klienta, `<xs:import />` jest używany element i dlatego semantyka importu.  

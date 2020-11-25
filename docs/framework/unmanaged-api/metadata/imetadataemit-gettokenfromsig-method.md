@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 50a58a83-6287-40a4-b315-47823cea0a5c
 topic_type:
 - apiref
-ms.openlocfilehash: 740dad54bc3a79ff546176abdc35487d89ed8f44
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: b41891227d94b66bf59128d620eba9da117fe92a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009252"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722053"
 ---
 # <a name="imetadataemitgettokenfromsig-method"></a>IMetaDataEmit::GetTokenFromSig — Metoda
+
 Pobiera token dla określonej sygnatury metadanych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT GetTokenFromSig (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pvSig`  
  podczas Podpis, który ma zostać utrwalony i zapisany.  
   
@@ -43,18 +45,19 @@ HRESULT GetTokenFromSig (
  podczas Liczba bajtów w `pvSig` .  
   
  `pmsig`  
- określoną `mdSignature`Przypisany token.  
+ określoną `mdSignature` Przypisany token.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataEmit — Interfejs](imetadataemit-interface.md)
-- [IMetaDataEmit2, interfejs](imetadataemit2-interface.md)
+- [IMetaDataEmit2 — Interfejs](imetadataemit2-interface.md)

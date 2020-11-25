@@ -20,12 +20,12 @@ helpviewer_keywords:
 - waiting for asynchronous calls
 - status information [.NET], asynchronous operations
 ms.assetid: 41972034-92ed-450a-9664-ab93fcc6f1fb
-ms.openlocfilehash: 668ac7552289a9d1015b62ed9e68f53415dd6211
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 8d12ab2904b336f38e56387c8aaf2a851a46007e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830444"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722729"
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a>Wywołanie metod synchronicznych w sposób asynchroniczny
 
@@ -55,6 +55,7 @@ Przykłady kodu w tym temacie przedstawiają cztery typowe sposoby korzystania z
 > Niezależnie od używanej techniki, zawsze wywołuj, `EndInvoke` Aby zakończyć wywołanie asynchroniczne.
 
 ## <a name="defining-the-test-method-and-asynchronous-delegate"></a>Definiowanie metody testowej i delegata asynchronicznego
+
  Poniższe przykłady kodu przedstawiają różne sposoby wywoływania tej samej metody długotrwałej, `TestMethod` asynchronicznie. `TestMethod`Metoda wyświetla komunikat konsoli, aby pokazać, że rozpoczęło przetwarzanie, uśpienie przez kilka sekund, a następnie kończy działanie. `TestMethod` ma `out` parametr, który pokazuje, jak takie parametry są dodawane do sygnatur `BeginInvoke` i `EndInvoke` . Parametry można obsłużyć `ref` podobnie.
 
  Poniższy przykład kodu pokazuje definicję `TestMethod` i delegata o nazwie `AsyncMethodCaller` , który może być używany do wywołania `TestMethod` asynchronicznego. Aby skompilować przykłady kodu, musisz uwzględnić definicje dla `TestMethod` i `AsyncMethodCaller` delegata.
@@ -64,6 +65,7 @@ Przykłady kodu w tym temacie przedstawiają cztery typowe sposoby korzystania z
  [!code-vb[AsyncDelegateExamples#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/TestMethod.vb#1)]
 
 ## <a name="waiting-for-an-asynchronous-call-with-endinvoke"></a>Oczekiwanie na wywołanie asynchroniczne z EndInvoke
+
  Najprostszym sposobem wykonania metody asynchronicznie jest rozpoczęcie wykonywania metody przez wywołanie metody delegata `BeginInvoke` , wykonanie pewnej pracy w wątku głównym, a następnie wywołanie metody delegata `EndInvoke` . `EndInvoke` może blokować wątek wywołujący, ponieważ nie zwraca do momentu zakończenia wywołania asynchronicznego. Jest to dobrym sposobem na korzystanie z operacji na plikach lub w sieci.
 
 > [!IMPORTANT]
@@ -74,6 +76,7 @@ Przykłady kodu w tym temacie przedstawiają cztery typowe sposoby korzystania z
  [!code-vb[AsyncDelegateExamples#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/EndInvoke.vb#2)]
 
 ## <a name="waiting-for-an-asynchronous-call-with-waithandle"></a>Oczekiwanie na wywołanie asynchroniczne z elementem WaitHandle
+
  Można uzyskać <xref:System.Threading.WaitHandle> za pomocą <xref:System.IAsyncResult.AsyncWaitHandle%2A> właściwości <xref:System.IAsyncResult> zwracanej przez `BeginInvoke` . <xref:System.Threading.WaitHandle>Jest sygnalizowane sygnałem, gdy wywołanie asynchroniczne zostanie zakończone, i można go oczekiwać przez wywołanie <xref:System.Threading.WaitHandle.WaitOne%2A> metody.
 
  Jeśli używasz, możesz <xref:System.Threading.WaitHandle> wykonać dodatkowe przetwarzanie przed ukończeniem wywołania asynchronicznego lub po jego zakończeniu, ale przed wywołaniem `EndInvoke` do pobrania wyników.
@@ -86,6 +89,7 @@ Przykłady kodu w tym temacie przedstawiają cztery typowe sposoby korzystania z
  [!code-vb[AsyncDelegateExamples#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/WaitHandle.vb#3)]
 
 ## <a name="polling-for-asynchronous-call-completion"></a>Sondowanie w celu asynchronicznego uzupełniania wywołań
+
  Możesz użyć <xref:System.IAsyncResult.IsCompleted%2A> właściwości <xref:System.IAsyncResult> zwracanego przez, `BeginInvoke` Aby wykryć, kiedy wywołanie asynchroniczne zostało zakończone. Można to zrobić podczas wykonywania wywołania asynchronicznego z wątku, który jest usługami interfejsu użytkownika. Sondowanie pod kątem ukończenia pozwala wątek wywołujący kontynuować wykonywanie podczas wywołania asynchronicznego wykonywanego na <xref:System.Threading.ThreadPool> wątku.
 
  [!code-cpp[AsyncDelegateExamples#4](../../../samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/polling.cpp#4)]
@@ -93,6 +97,7 @@ Przykłady kodu w tym temacie przedstawiają cztery typowe sposoby korzystania z
  [!code-vb[AsyncDelegateExamples#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDelegateExamples/VB/polling.vb#4)]
 
 ## <a name="executing-a-callback-method-when-an-asynchronous-call-completes"></a>Wykonywanie metody wywołania zwrotnego po zakończeniu wywołania asynchronicznego
+
  Jeśli wątek inicjujący wywołanie asynchroniczne nie musi być wątkiem, który przetwarza wyniki, można wykonać metodę wywołania zwrotnego po zakończeniu wywołania. Metoda wywołania zwrotnego jest wykonywana w <xref:System.Threading.ThreadPool> wątku.
 
  Aby użyć metody wywołania zwrotnego, należy przekazać `BeginInvoke` <xref:System.AsyncCallback> delegata, który reprezentuje metodę wywołania zwrotnego. Można również przekazać obiekt, który zawiera informacje, które będą używane przez metodę wywołania zwrotnego. W metodzie wywołania zwrotnego można rzutować <xref:System.IAsyncResult> , który jest jedynym parametrem metody wywołania zwrotnego do <xref:System.Runtime.Remoting.Messaging.AsyncResult> obiektu. Następnie można użyć właściwości, <xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncDelegate%2A?displayProperty=nameWithType> Aby uzyskać delegata, który został użyty do zainicjowania wywołania, aby można było wywołać `EndInvoke` .

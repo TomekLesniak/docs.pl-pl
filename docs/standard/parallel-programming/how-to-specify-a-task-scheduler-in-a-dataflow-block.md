@@ -9,14 +9,15 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - task scheduler, linking from TPL
 ms.assetid: 27ece374-ed5b-49ef-9cec-b20db34a65e8
-ms.openlocfilehash: 716892940bf8387cbe3d39fd36258c5ede02ee8b
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: b8c27c1ca61356b36183bb74b8360e41f5324d25
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826908"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722443"
 ---
 # <a name="how-to-specify-a-task-scheduler-in-a-dataflow-block"></a>Instrukcje: Określanie harmonogramu zadań w bloku przepływu danych
+
 W tym dokumencie przedstawiono sposób kojarzenia określonego harmonogramu zadań w przypadku korzystania z przepływu danych w aplikacji. W przykładzie używa <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair?displayProperty=nameWithType> klasy w aplikacji Windows Forms, aby pokazać, kiedy zadania czytnika są aktywne, a zadanie składnika zapisywania jest aktywne. Używa również metody, <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> Aby umożliwić uruchamianie bloku przepływu danych w wątku interfejsu użytkownika.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -30,6 +31,7 @@ W tym dokumencie przedstawiono sposób kojarzenia określonego harmonogramu zada
 3. Dodaj <xref:System.Windows.Forms.Timer> kontrolkę do formularza. Ustaw <xref:System.Windows.Forms.Timer.Interval%2A> Właściwość na wartość `2500` .  
   
 ## <a name="adding-dataflow-functionality"></a>Dodawanie funkcji przepływu danych  
+
  W tej sekcji opisano sposób tworzenia bloków przepływu danych, które uczestniczą w aplikacji oraz jak skojarzyć każdą z nich z harmonogramem zadań.  
   
 ### <a name="to-add-dataflow-functionality-to-the-application"></a>Aby dodać funkcję przepływu danych do aplikacji  
@@ -73,6 +75,7 @@ W tym dokumencie przedstawiono sposób kojarzenia określonego harmonogramu zada
  Ten przykład używa również <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> klasy do włączania pewnych bloków przepływu danych do działania współbieżnie i innego bloku przepływu danych do działania wyłącznie w odniesieniu do wszystkich innych bloków przepływu danych, które działają w tym samym <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair> obiekcie. Ta technika jest przydatna, gdy wiele bloków przepływu danych współużytkuje zasób, a niektóre wymagają wyłącznego dostępu do tego zasobu, ponieważ eliminuje konieczność ręcznej synchronizacji dostępu do tego zasobu. Eliminacja synchronizacji ręcznej może zwiększyć wydajność kodu.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje kompletny kod dla Form1.cs (Form1. vb dla Visual Basic).  
   
  [!code-csharp[TPLDataflow_WriterReadersWinForms#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#100)]

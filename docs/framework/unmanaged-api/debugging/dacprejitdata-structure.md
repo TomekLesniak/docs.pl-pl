@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 4436ece72b0a6a405fc41cba5413093fc42ce750
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 46708acc77dad00727ee35e7d06e4228eacbd502
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82860781"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723041"
 ---
 # <a name="dacprejitdata-structure"></a>DacpReJitData, struktura
 
@@ -60,12 +60,13 @@ struct MSLAYOUT DacpReJitData
 Ta struktura jest w czasie wykonywania i nie jest udostępniana za pomocą żadnych plików nagłówkowych ani bibliotek. Aby go użyć, Zdefiniuj strukturę zgodnie z powyższym opisem. Strukturę należy również zdefiniować przy użyciu `ms_struct` pakowania, jeśli nie używa kompilatorów firmy Microsoft.
 
 ## <a name="requirements"></a>Wymagania
+
 **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
 **Nagłówek:** Dawaj  
 **Biblioteka:** Dawaj  
 **.NET Framework wersje:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie](index.md)
 - [Struktury debugowania](debugging-structures.md)

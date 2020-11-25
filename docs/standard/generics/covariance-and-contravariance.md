@@ -11,12 +11,12 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-ms.openlocfilehash: 1ad8f72f80e88971e2bbf672bd92d9c607134783
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9d5d5b27fb77500aa5f6deff3fcb1c739ba8b094
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827415"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95722664"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kowariancja i kontrawariancja w typach ogólnych
 
@@ -71,6 +71,7 @@ Gdy odwołujesz się do systemu typu, Kowariancja, kontrawariancja i niewariancj
 - Począwszy od języka C# 9, obsługiwane są typy zwrotne współwariantu. Zastępujący Metoda może deklarować bardziej pochodny typ zwracany metody, która zastąpi, a właściwość zastępujący tylko do odczytu może deklarować bardziej pochodny typ.
 
 <a name="InterfaceCovariantTypeParameters"></a>
+
 ## <a name="generic-interfaces-with-covariant-type-parameters"></a>Interfejsy ogólne z parametrami typu współwariantowego
 
 Niektóre interfejsy ogólne mają parametry typu współwariantowego, na przykład,,, <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Collections.Generic.IEnumerator%601> <xref:System.Linq.IQueryable%601> i <xref:System.Linq.IGrouping%602> . Wszystkie parametry typu tych interfejsów są kowariantne, więc parametry typu są używane tylko dla typów zwracanych elementów członkowskich.  

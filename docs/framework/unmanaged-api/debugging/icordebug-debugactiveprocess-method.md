@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: fdab0ade-7f56-4fa2-b3ef-f7a1d2852bba
 topic_type:
 - apiref
-ms.openlocfilehash: 3630e25b6c24edaa366f1b0fae088e760e851fa4
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 1713623fa575bea6df649106b37212f7aeaee6db
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895405"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95723470"
 ---
 # <a name="icordebugdebugactiveprocess-method"></a>ICorDebug::DebugActiveProcess — Metoda
+
 Dołącza debuger do istniejącego procesu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,19 +37,22 @@ HRESULT DebugActiveProcess (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `id`  
  podczas Identyfikator procesu, do którego ma zostać dołączony debuger.  
   
  `win32Attach`  
- podczas Wartość logiczna, która jest ustawiona `true` na Jeśli debuger powinien zachowywać się jako debuger Win32 dla procesu i wysyłał niezarządzane wywołania zwrotne; w przeciwnym `false`razie.  
+ podczas Wartość logiczna, która jest ustawiona na, `true` Jeśli debuger powinien zachowywać się jako debuger Win32 dla procesu i wysyłał niezarządzane wywołania zwrotne; w przeciwnym razie `false` .  
   
  `ppProcess`  
  określoną Wskaźnik do adresu obiektu "ICorDebugProcess", który reprezentuje proces, do którego został podłączony debuger.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Debugowanie międzyoperacyjności nie jest obsługiwane na platformach Win9x i innych niż x86, na przykład na platformach opartych na architekturze IA-64 i AMD64.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -57,6 +61,6 @@ HRESULT DebugActiveProcess (
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICorDebug — Interfejs](icordebug-interface.md)
