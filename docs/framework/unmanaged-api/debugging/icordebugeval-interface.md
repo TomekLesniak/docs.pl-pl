@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3a5c9815-832d-47e1-b7f7-bbba135d7cf1
 topic_type:
 - apiref
-ms.openlocfilehash: f13cd6d6cae5bae0c51674e00f275a2c4853c915
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 5d8fd79b242f2b88b82c5c3d78dfe45d80f1194f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976229"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729788"
 ---
 # <a name="icordebugeval-interface"></a>ICorDebugEval, interfejs
 
@@ -41,7 +41,8 @@ Dostarcza metody umożliwiające debugerowi wykonywanie kodu w kontekście debug
 |[NewString, metoda](icordebugeval-newstring-method.md)|Przypisuje nowy obiekt ciągu z określoną zawartością.|  
   
 ## <a name="remarks"></a>Uwagi  
- `ICorDebugEval` Obiekt jest tworzony w kontekście określonego wątku, który jest używany do wykonywania obliczeń. Wszystkie obiekty i typy używane w danej ocenie muszą znajdować się w tej samej domenie aplikacji. Ta domena aplikacji nie musi być taka sama, jak bieżąca domena aplikacji wątku. Obliczenia mogą być zagnieżdżane.  
+
+ `ICorDebugEval`Obiekt jest tworzony w kontekście określonego wątku, który jest używany do wykonywania obliczeń. Wszystkie obiekty i typy używane w danej ocenie muszą znajdować się w tej samej domenie aplikacji. Ta domena aplikacji nie musi być taka sama, jak bieżąca domena aplikacji wątku. Obliczenia mogą być zagnieżdżane.  
   
  Operacje oceny nie zostaną ukończone, dopóki debuger nie wywoła [ICorDebugController:: Continue](icordebugcontroller-continue-method.md), a następnie odbiera wywołanie zwrotne [ICorDebugManagedCallback:: EvalComplete —](icordebugmanagedcallback-evalcomplete-method.md) . Jeśli konieczne jest użycie funkcji oceny bez zezwalania na uruchamianie innych wątków, należy wstrzymać wątki przy użyciu jednej z [ICorDebugController:: SetAllThreadsDebugState —](icordebugcontroller-setallthreadsdebugstate-method.md) lub [ICorDebugController:: Stop](icordebugcontroller-stop-method.md) przed wywołaniem [ICorDebugController:: Continue](icordebugcontroller-continue-method.md).  
   
@@ -53,6 +54,7 @@ Dostarcza metody umożliwiające debugerowi wykonywanie kodu w kontekście debug
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -61,6 +63,6 @@ Dostarcza metody umożliwiające debugerowi wykonywanie kodu w kontekście debug
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

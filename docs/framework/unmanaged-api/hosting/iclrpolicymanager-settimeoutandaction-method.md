@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 60454f91-d855-4ddf-bb6d-60a02f5eabab
 topic_type:
 - apiref
-ms.openlocfilehash: 02e836601be72d54f561e077cd3c466470bafb25
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 41e13e20a1cf5a7000907b1cc7d8d2af5174ceba
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504098"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728979"
 ---
 # <a name="iclrpolicymanagersettimeoutandaction-method"></a>ICLRPolicyManager::SetTimeoutAndAction — Metoda
+
 Ustawia wartość limitu czasu dla określonej operacji i określa akcję zasad, którą powinien wykonać środowisko uruchomieniowe języka wspólnego (CLR), gdy wystąpi operacja.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT SetTimeoutAndAction (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `operation`  
  podczas Jedna z wartości [EClrOperation —](eclroperation-enumeration.md) , wskazująca na operację, dla której ma zostać ustawiony limit czasu i zasady `action` . Obsługiwane są następujące wartości:  
   
@@ -57,7 +59,7 @@ HRESULT SetTimeoutAndAction (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`SetTimeoutAndAction`pomyślnie zwrócono.|  
+|S_OK|`SetTimeoutAndAction` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -66,17 +68,19 @@ HRESULT SetTimeoutAndAction (
 |E_INVALIDARG|Nie można ustawić limitu czasu dla określonego elementu `operation` lub podano nieprawidłową wartość dla elementu `action` .|  
   
 ## <a name="remarks"></a>Uwagi  
- `SetTimeoutAndAction`hermetyzuje możliwości metod [ICLRPolicyManager:: setTimeout](iclrpolicymanager-settimeout-method.md) i [ICLRPolicyManager:: SetActionOnTimeout —](iclrpolicymanager-setactionontimeout-method.md) i można je wywołać zamiast wywołań sekwencyjnych do tych dwóch metod.  
+
+ `SetTimeoutAndAction` hermetyzuje możliwości metod [ICLRPolicyManager:: setTimeout](iclrpolicymanager-settimeout-method.md) i [ICLRPolicyManager:: SetActionOnTimeout —](iclrpolicymanager-setactionontimeout-method.md) i można je wywołać zamiast wywołań sekwencyjnych do tych dwóch metod.  
   
 > [!IMPORTANT]
 > Nie wszystkie wartości akcji zasad można określić jako zachowanie limitu czasu dla operacji CLR. Zapoznaj się z sekcjami uwagi dla tych dwóch metod w celu uzyskania prawidłowych wartości.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
@@ -84,6 +88,6 @@ HRESULT SetTimeoutAndAction (
 
 - [EClrOperation — Wyliczenie](eclroperation-enumeration.md)
 - [EPolicyAction — Wyliczenie](epolicyaction-enumeration.md)
-- [ICLRPolicyManager, interfejs](iclrpolicymanager-interface.md)
+- [ICLRPolicyManager — Interfejs](iclrpolicymanager-interface.md)
 - [SetActionOnTimeout, metoda](iclrpolicymanager-setactionontimeout-method.md)
 - [ICLRPolicyManager:: SetTimeoutAndAction —](iclrpolicymanager-settimeoutandaction-method.md)

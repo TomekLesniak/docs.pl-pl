@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e2b0e2db-3fae-4b56-844e-d30a125a660c
 topic_type:
 - apiref
-ms.openlocfilehash: 505c16cb7ead7950b6d2d6d401730cc3368fb6aa
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 4c28c4a5cc64b20c9ac9c57e1aef5e7b90a20e01
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703294"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728891"
 ---
 # <a name="iclrruntimehostexecuteinappdomain-method"></a>ICLRRuntimeHost::ExecuteInAppDomain — Metoda
+
 Określa, <xref:System.AppDomain> w którym ma zostać wykonany określony kod zarządzany.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT ExecuteInAppDomain(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `AppDomainId`  
  podczas Identyfikator liczbowy, <xref:System.AppDomain> w którym ma zostać wykonana określona metoda.  
   
@@ -49,7 +51,7 @@ HRESULT ExecuteInAppDomain(
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`ExecuteInAppDomain`pomyślnie zwrócono.|  
+|S_OK|`ExecuteInAppDomain` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -57,17 +59,19 @@ HRESULT ExecuteInAppDomain(
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Jeśli metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
- `ExecuteInAppDomain`umożliwia hostowi wykonywanie kontroli nad tym, która zarządza <xref:System.AppDomain> określoną metodą zarządzaną w programie. Można uzyskać wartość identyfikatora domeny aplikacji, która odpowiada wartości <xref:System.AppDomain.Id%2A> właściwości, przez wywołanie [metody GetCurrentAppDomainId —](iclrruntimehost-getcurrentappdomainid-method.md).  
+
+ `ExecuteInAppDomain` umożliwia hostowi wykonywanie kontroli nad tym, która zarządza <xref:System.AppDomain> określoną metodą zarządzaną w programie. Można uzyskać wartość identyfikatora domeny aplikacji, która odpowiada wartości <xref:System.AppDomain.Id%2A> właściwości, przez wywołanie [metody GetCurrentAppDomainId —](iclrruntimehost-getcurrentappdomainid-method.md).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICLRRuntimeHost, interfejs](iclrruntimehost-interface.md)
+- [ICLRRuntimeHost — Interfejs](iclrruntimehost-interface.md)

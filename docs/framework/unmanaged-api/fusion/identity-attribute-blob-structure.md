@@ -16,15 +16,16 @@ helpviewer_keywords:
 ms.assetid: af14ae5f-d226-47dd-ba90-8fc6e6605d4d
 topic_type:
 - apiref
-ms.openlocfilehash: 8f838d5c812842e2a637065b25182b6a12609231
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9a59e70257064220e8138f9d267a815fcdbf3929
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176555"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729034"
 ---
 # <a name="identity_attribute_blob-structure"></a>IDENTITY_ATTRIBUTE_BLOB — Struktura
-Zawiera informacje o pojedynczym atrybucie w `DWORD`zestawie i składa się z trzech s. Każdy `DWORD` z nich jest offsetem `CurrentIntoBuffer` do buforu znaków wytwarzanego metodą [interfejsu IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md)  
+
+Zawiera informacje o pojedynczym atrybucie w zestawie i składa się z trzech elementów `DWORD` . Każdy `DWORD` jest przesunięciem do buforu znaków utworzonego przez `CurrentIntoBuffer` metodę interfejsu [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md)  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -40,20 +41,21 @@ typedef struct _IDENTITY_ATTRIBUTE_BLOB {
   
 |Członek|Opis|  
 |------------|-----------------|  
-|`ofsNamespace`|Pierwsze przesunięcie do buforu znaków. Po tym przesunięciu nie następuje obszar nazw atrybutu, ale seria znaków null. W związku z tym nie jest używany.|  
+|`ofsNamespace`|Pierwsze przesunięcie do buforu znaków. To przesunięcie nie następuje po nazwie przestrzeni nazw atrybutu, ale przez serię znaków null. W związku z tym nie jest używany.|  
 |`ofsName`|Drugie przesunięcie do buforu znaków. Ta lokalizacja oznacza początek nazwy atrybutu.|  
 |`ofsValue`|Trzecie przesunięcie do buforu znaków. Ta lokalizacja oznacza początek wartości atrybutu.|  
   
-## <a name="sample"></a>Sample  
- Poniższy przykład ilustruje kilka podstawowych kroków, które ostatecznie powodują strukturę wypełnioną: `IDENTITY_ATTRIBUTE_BLOB`  
+## <a name="sample"></a>Przykład  
+
+ Poniższy przykład ilustruje kilka podstawowych kroków, które ostatecznie spowodują, że została wypełniona `IDENTITY_ATTRIBUTE_BLOB` :  
   
-1. Uzyskaj [IReferenceIdentity](ireferenceidentity-interface.md) dla zestawu.  
+1. Uzyskaj [IReferenceIdentity —](ireferenceidentity-interface.md) dla zestawu.  
   
-2. Wywołanie `IReferenceIdentity::EnumAttributes` metody i uzyskać [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md).  
+2. Wywołaj `IReferenceIdentity::EnumAttributes` metodę i uzyskaj [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md).  
   
-3. Utwórz bufor znaków i przerzuć go jako strukturę. `IDENTITY_ATTRIBUTE_BLOB`  
+3. Utwórz bufor znaków i Cast jako `IDENTITY_ATTRIBUTE_BLOB` strukturę.  
   
-4. Wywołanie `CurrentIntoBuffer` metody `IEnumIDENTITY_ATTRIBUTE` interfejsu. Ta metoda kopiuje atrybuty `Namespace`, `Name`i `Value` do buforu znaków. Trzy przesunięcia do tych ciągów `IDENTITY_ATTRIBUTE_BLOB` staną się dostępne w strukturze.  
+4. Wywoływanie `CurrentIntoBuffer` metody `IEnumIDENTITY_ATTRIBUTE` interfejsu. Ta metoda kopiuje atrybuty `Namespace` , `Name` i `Value` do buforu znaków. Trzy przesunięcia do tych ciągów staną się dostępne w `IDENTITY_ATTRIBUTE_BLOB` strukturze.  
   
 ```cpp  
 // EnumAssemblyAttributes.cpp : main project file.  
@@ -219,30 +221,33 @@ Exit:
 }  
 ```  
   
-### <a name="to-run-the-sample"></a>Aby uruchomić próbkę  
- C:\\> EnumAssemblyAttributes.exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll  
+### <a name="to-run-the-sample"></a>Aby uruchomić przykład  
+
+ C: \\> EnumAssemblyAttributes.exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll  
   
 ### <a name="sample-output"></a>Przykładowe dane wyjściowe  
+
  Kultura = neutralna  
   
- nazwa = System  
+ Nazwa = system  
   
- procesorArchitecture = MSIL  
+ processorArchitecture = MSIL  
   
  PublicKeyToken = b77a5c561934e089  
   
  Wersja = 2.0.0.0  
   
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
+
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
- **Nagłówek:** Izolacja.h  
+ **Nagłówek:** Izolacja. h  
   
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IReferenceIdentity — Interfejs](ireferenceidentity-interface.md)
 - [IEnumIDENTITY_ATTRIBUTE — Interfejs](ienumidentity-attribute-interface.md)
 - [IDENTITY_ATTRIBUTE — Struktura](identity-attribute-structure.md)
-- [Łączenie — struktury](fusion-structures.md)
+- [Łączenie — Struktury](fusion-structures.md)

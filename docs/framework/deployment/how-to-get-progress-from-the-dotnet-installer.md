@@ -1,6 +1,6 @@
 ---
-title: 'Porady: pobieranie danych o postępie z Instalatora .NET Framework 4.5'
-description: Dowiedz się, jak uzyskać postęp z Instalatora programu .NET 4,5. Jeśli tworzysz aplikacje dla tej wersji platformy .NET, możesz dołączyć Instalatora programu .NET 4,5 (łańcucha) do konfiguracji aplikacji.
+title: 'Instrukcje: pobieranie danych o postępie z Instalatora .NET Framework 4.5'
+description: Dowiedz się, jak uzyskać postęp z Instalatora .NET Framework 4,5. Jeśli tworzysz aplikacje dla tej wersji platformy .NET, możesz uwzględnić konfigurację (łańcuch) .NET Framework 4,5 w konfiguracji aplikacji.
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - progress information, .NET Framework installer
 - .NET Framework, installing
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
-ms.openlocfilehash: 501fcaa7636d586ddfff8606768d4639fdc010d7
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 7e21a376c5a7551ecadeaa70c0a70968dc5752fd
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904263"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729125"
 ---
-# <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Porady: pobieranie danych o postępie z Instalatora .NET Framework 4.5
+# <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Instrukcje: pobieranie danych o postępie z Instalatora .NET Framework 4.5
 
 .NET Framework 4,5 to środowisko uruchomieniowe redystrybucyjne. W przypadku tworzenia aplikacji dla tej wersji .NET Framework można uwzględnić konfigurację (łańcuch) .NET Framework 4,5 jako część wymagań wstępnych konfiguracji aplikacji. Aby zaprezentować dostosowane lub ujednolicone środowisko konfiguracji, możesz chcieć dyskretnie uruchomić Instalatora .NET Framework 4,5 i śledzić jego postęp, pokazując postęp instalacji aplikacji. Aby włączyć śledzenie dyskretne, .NET Framework konfigurację 4,5 (którą można obejrzeć) definiuje protokół, używając segmentu we/wy mapowanego na pamięć (MMIO) w celu komunikacji z konfiguracją (obserwatorem lub łańcuchem). Ten protokół definiuje sposób uzyskiwania przez moduł łańcucha informacji o postępie, uzyskiwanie szczegółowych wyników, reagowanie na komunikaty i anulowanie konfiguracji .NET Framework 4,5.
 
@@ -308,7 +308,7 @@ W poniższych sekcjach opisano znaczące pliki w tym przykładzie: MMIOChainer. 
 
 Typowy serwer tworzy losową nazwę pliku MMIO, tworzy plik (jak pokazano w poprzednim przykładzie kodu, w `Server::CreateSection` ) i uruchamia pakiet redystrybucyjny przy użyciu `CreateProcess` metody i przekazując nazwę potoku przy użyciu `-pipe someFileSectionName` opcji. Serwer powinien implementować `OnProgress` `Send` metody,, i `Finished` z kodem SPECYFICZNYM dla interfejsu użytkownika aplikacji.
 
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przewodnik wdrażania dla deweloperów](deployment-guide-for-developers.md)
 - [Wdrożenie](index.md)

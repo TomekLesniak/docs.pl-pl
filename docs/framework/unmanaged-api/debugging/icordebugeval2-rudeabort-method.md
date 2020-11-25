@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 02468edf-d32b-4cb3-aaa8-3dd2abfc8b25
 topic_type:
 - apiref
-ms.openlocfilehash: e901c65824ee8d6949c79c7778944148c0d9eb28
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 478772925dfb7ca7389b5267433f9b06ace3d5a3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976060"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729619"
 ---
 # <a name="icordebugeval2rudeabort-method"></a>ICorDebugEval2::RudeAbort — Metoda
+
 Przerywa obliczenia, które `ICorDebugEval2` jest aktualnie wykonywane.  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,9 +33,11 @@ HRESULT RudeAbort ();
 ```  
   
 ## <a name="remarks"></a>Uwagi  
- `RudeAbort`nie zwalnia żadnych blokad, które są przechowywane przez ewaluatora, dlatego sesja debugowania jest pozostawiana w stanie niebezpiecznym. Wywołaj tę metodę z największą ostrożnością.  
+
+ `RudeAbort` nie zwalnia żadnych blokad, które są przechowywane przez ewaluatora, dlatego sesja debugowania jest pozostawiana w stanie niebezpiecznym. Wywołaj tę metodę z największą ostrożnością.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

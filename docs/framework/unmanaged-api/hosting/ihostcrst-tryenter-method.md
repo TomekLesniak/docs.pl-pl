@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a922fa98-beab-4f09-a342-cc94fc65687f
 topic_type:
 - apiref
-ms.openlocfilehash: 782a12a47de0196b90de06572520ef5ed36efb26
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 02f36068f12bf0a40e5f0ac477803abfb84c72a9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804866"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729541"
 ---
 # <a name="ihostcrsttryenter-method"></a>IHostCrst::TryEnter — Metoda
+
 Próbuje wprowadzić sekcję krytyczną reprezentowaną przez bieżące wystąpienie [IHostCrst](ihostcrst-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT TryEnter (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `option`  
  podczas Jeden z wartości [WAIT_OPTION](wait-option-enumeration.md) , wskazujący, jaka akcja powinna zostać podjęta przez hosta, jeśli operacja jest blokowana.  
   
@@ -45,7 +47,7 @@ HRESULT TryEnter (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`TryEnter`pomyślnie zwrócono.|  
+|S_OK|`TryEnter` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -53,19 +55,21 @@ HRESULT TryEnter (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
- `TryEnter`zwraca natychmiast i wskazuje, czy wywołujący wątek wszedł do sekcji krytycznej. Ta metoda odzwierciedla funkcję Wind32 `TryEnterCriticalSection` .  
+
+ `TryEnter` zwraca natychmiast i wskazuje, czy wywołujący wątek wszedł do sekcji krytycznej. Ta metoda odzwierciedla funkcję Wind32 `TryEnterCriticalSection` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRSyncManager — Interfejs](iclrsyncmanager-interface.md)
-- [IHostCrst, interfejs](ihostcrst-interface.md)
-- [IHostSyncManager, interfejs](ihostsyncmanager-interface.md)
+- [IHostCrst — Interfejs](ihostcrst-interface.md)
+- [IHostSyncManager — Interfejs](ihostsyncmanager-interface.md)

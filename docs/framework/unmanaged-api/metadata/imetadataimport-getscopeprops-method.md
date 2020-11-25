@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c8ba42d2-d9fa-43cb-bbc0-f33e1e592cb6
 topic_type:
 - apiref
-ms.openlocfilehash: 0916b6382bb9352616d85e21f423301dc6aa9fa9
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5a89d1406daa9a2416a708b63d88fd9005234015
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84490851"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729203"
 ---
 # <a name="imetadataimportgetscopeprops-method"></a>IMetaDataImport::GetScopeProps — Metoda
+
 Pobiera nazwę i opcjonalnie identyfikator wersji zestawu lub modułu w bieżącym zakresie metadanych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT GetScopeProps (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `szName`  
  określoną Bufor dla nazwy zestawu lub modułu.  
   
@@ -50,18 +52,20 @@ HRESULT GetScopeProps (
  [out, opcjonalne] Wskaźnik do identyfikatora GUID, który jednoznacznie identyfikuje wersję zestawu lub modułu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Metoda [IMetaDataEmit:: SetModuleProps —](imetadataemit-setmoduleprops-method.md) służy do ustawiania tych właściwości.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataImport — Interfejs](imetadataimport-interface.md)
-- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)
+- [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)

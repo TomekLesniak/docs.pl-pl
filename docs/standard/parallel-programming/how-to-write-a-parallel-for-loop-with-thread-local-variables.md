@@ -8,17 +8,19 @@ dev_langs:
 helpviewer_keywords:
 - parallel for loops, how to use local state
 ms.assetid: 68384064-7ee7-41e2-90e3-71f00bde01bb
-ms.openlocfilehash: 1e2dd0d554cdece23ac6d0e6b255ad70533236dc
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: f3adcfa98f4004f283b24bcd31dc243c18c2644c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94826661"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729372"
 ---
 # <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a>Instrukcje: Zapisywanie pętli Parallel.For ze zmiennymi lokalnymi wątku
+
 Ten przykład pokazuje, jak używać zmiennych lokalnych wątku do przechowywania i pobierania stanu w każdym osobnym zadaniu, które jest tworzone przez <xref:System.Threading.Tasks.Parallel.For%2A> pętlę. Przy użyciu danych z wątków lokalnych można uniknąć obciążenia synchronizacji dużej liczby dostępu do stanu udostępnionego. Zamiast zapisywać do zasobu udostępnionego dla każdej iteracji, obliczenia i przechowywanie wartości będą wykonywane do momentu ukończenia wszystkich iteracji dla zadania. Następnie można napisać ostatni wynik do zasobu udostępnionego lub przekazać go do innej metody.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład wywołuje metodę, <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> Aby obliczyć sumę wartości w tablicy zawierającej elementy 1 000 000. Wartość każdego elementu jest równa jego indeksowi.  
   
  [!code-csharp[TPL_Parallel#05](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/forandforeach_simple.cs#05)]

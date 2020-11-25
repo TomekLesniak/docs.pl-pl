@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dfc51d9e-b36d-4dba-9ea1-4f63fa0601ae
 topic_type:
 - apiref
-ms.openlocfilehash: 08af77c3a158b97cd698dbaeebdc7cdf1b9acfc3
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 0752afb42b8c512450b047a5e2e7e1ff34533487
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804894"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729580"
 ---
 # <a name="ihostcrstleave-method"></a>IHostCrst::Leave — Metoda
+
 Pozostawia sekcję krytyczną, która jest reprezentowana przez bieżące wystąpienie elementu [IHostCrst](ihostcrst-interface.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,7 +36,7 @@ HRESULT Leave ();
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`Leave`pomyślnie zwrócono.|  
+|S_OK|`Leave` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -43,19 +44,21 @@ HRESULT Leave ();
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Gdy metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
- `Leave`zezwala, aby środowisko CLR komunikować się bezpośrednio z implementacją wątkowości hosta, a nie przy użyciu odpowiedniej `LeaveCriticalSection` funkcji Win32. Wątek, który przejmuje własność sekcji krytycznej reprezentowanej przez bieżące `IHostCrst` wystąpienie, musi wywołać `Leave` raz za każdym razem, gdy wprowadza tę sekcję krytyczną.  
+
+ `Leave` zezwala, aby środowisko CLR komunikować się bezpośrednio z implementacją wątkowości hosta, a nie przy użyciu odpowiedniej `LeaveCriticalSection` funkcji Win32. Wątek, który przejmuje własność sekcji krytycznej reprezentowanej przez bieżące `IHostCrst` wystąpienie, musi wywołać `Leave` raz za każdym razem, gdy wprowadza tę sekcję krytyczną.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICLRSyncManager — Interfejs](iclrsyncmanager-interface.md)
-- [IHostCrst, interfejs](ihostcrst-interface.md)
-- [IHostSyncManager, interfejs](ihostsyncmanager-interface.md)
+- [IHostCrst — Interfejs](ihostcrst-interface.md)
+- [IHostSyncManager — Interfejs](ihostsyncmanager-interface.md)

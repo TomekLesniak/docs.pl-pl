@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f21c1612-9c5d-4abc-a337-577086d29c17
 topic_type:
 - apiref
-ms.openlocfilehash: 5afa7b37b804b6a11a894e0e6c7708c7787a20ae
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 3968adf418fcea847ee2be5a412385d041a53544
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703365"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728912"
 ---
 # <a name="iclrreferenceassemblyenumget-method"></a>ICLRReferenceAssemblyEnum::Get — Metoda
+
 Pobiera tożsamość zestawu przy użyciu podanego indeksu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT Get (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `dwIndex`  
  podczas Indeks (liczony od zera) tożsamości zestawu do zwrócenia.  
   
@@ -49,8 +51,8 @@ HRESULT Get (
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`Get`pomyślnie zwrócono.|  
-|ERROR_INSUFFICIENT_BUFFER|`pwzBuffer`jest za mała.|  
+|S_OK|`Get` pomyślnie zwrócono.|  
+|ERROR_INSUFFICIENT_BUFFER|`pwzBuffer` jest za mała.|  
 |ERROR_NO_MORE_ITEMS|Wyliczenie nie zawiera żadnych elementów.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko uruchomieniowe języka wspólnego (CLR) nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
@@ -59,18 +61,20 @@ HRESULT Get (
 |E_FAIL|Wystąpił nieznany błąd krytyczny. Jeśli metoda zwraca E_FAIL, środowisko CLR nie będzie już można używać w procesie. Kolejne wywołania metod hostingu zwracają HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Uwagi  
- `Get`jest zazwyczaj wywoływana dwukrotnie. Pierwsze wywołanie dostarcza wartość null dla `pwzBuffer` i ustawia `pcchBufferSize` rozmiar odpowiedni dla `pwzBuffer` . Drugie wywołanie dostarcza odpowiedni rozmiar `pwzBuffer` i zawiera dane tożsamości zestawu kanonicznego po zakończeniu.  
+
+ `Get` jest zazwyczaj wywoływana dwukrotnie. Pierwsze wywołanie dostarcza wartość null dla `pwzBuffer` i ustawia `pcchBufferSize` rozmiar odpowiedni dla `pwzBuffer` . Drugie wywołanie dostarcza odpowiedni rozmiar `pwzBuffer` i zawiera dane tożsamości zestawu kanonicznego po zakończeniu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [ICLRAssemblyReferenceList — Interfejs](iclrassemblyreferencelist-interface.md)
-- [ICLRReferenceAssemblyEnum, interfejs](iclrreferenceassemblyenum-interface.md)
+- [ICLRReferenceAssemblyEnum — Interfejs](iclrreferenceassemblyenum-interface.md)

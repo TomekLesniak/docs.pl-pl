@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: d5f54a34-6335-4708-b407-a756ec70fab4
 topic_type:
 - apiref
-ms.openlocfilehash: a2b76cb59a95082e0cf9c0884b8277cca3c8fe8d
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: e5bab32f6d18c87b030f484a47bc3f1d525d2338
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976073"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729632"
 ---
 # <a name="icordebugeval2newstringwithlength-method"></a>ICorDebugEval2::NewStringWithLength — Metoda
+
 Tworzy ciąg o określonej długości z określoną zawartością.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT NewStringWithLength (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `string`  
  podczas Wskaźnik do wartości ciągu.  
   
@@ -42,11 +44,13 @@ HRESULT NewStringWithLength (
  podczas Długość ciągu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli oczekiwany znak null ciągu powinien znajdować się w zarządzanym ciągu, obiekt wywołujący `NewStringWithLength` metody musi mieć pewność, że długość ciągu zawiera końcowy znak null.  
   
  Ten ciąg jest zawsze tworzony w domenie aplikacji, w której jest aktualnie wykonywany wątek.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 29e7a14b-d50e-4852-bfda-011b76c0c9ee
 topic_type:
 - apiref
-ms.openlocfilehash: b263fed7db5cb2ef687da45f8cbc99a02e1e3ea2
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: c2d29a0cc344539bf515793c071fe839aa441ebc
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976138"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729736"
 ---
 # <a name="icordebugevalnewstring-method"></a>ICorDebugEval::NewString — Metoda
+
 Przydziela nowe wystąpienie ciągu z określoną zawartością.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT NewString (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `string`  
  podczas Wskaźnik do zawartości dla ciągu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ten ciąg jest zawsze tworzony w domenie aplikacji, w której jest aktualnie wykonywany wątek.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4a261dba-450d-4f1f-8d98-865b58bfc992
 topic_type:
 - apiref
-ms.openlocfilehash: 3b0e60602d2f36552c3e0e85ec51205b4128486b
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 597a3dfecd42e206c98974093fa2417eba570f6a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499769"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729468"
 ---
 # <a name="icorprofilercallback2-interface"></a>ICorProfilerCallback2 — Interfejs
+
 Dostarcza metody, które są używane przez środowisko uruchomieniowe języka wspólnego (CLR) do powiadamiania profilera kodu o wystąpieniu zdarzeń subskrybowanych przez profiler. `ICorProfilerCallback2`Interfejs jest rozszerzeniem interfejsu [ICorProfilerCallback](icorprofilercallback-interface.md) . Oznacza to, że udostępnia nowe wywołania zwrotne wprowadzone w .NET Framework w wersji 2,0.  
   
 > [!NOTE]
@@ -41,6 +42,7 @@ Dostarcza metody, które są używane przez środowisko uruchomieniowe języka w
 |[ThreadNameChanged, metoda](icorprofilercallback2-threadnamechanged-method.md)|Powiadamia profiler kodu o zmianie nazwy wątku.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko CLR wywołuje metodę w `ICorProfilerCallback` interfejsie (lub `ICorProfilerCallback2` ) w celu powiadomienia profilera o wystąpieniu zdarzenia, do którego zasubskrybował Profiler. Jest to podstawowy interfejs wywołania zwrotnego, za pomocą którego środowisko CLR komunikuje się z profilerem kodu.  
   
  Profiler kodu musi implementować metody `ICorProfilerCallback` interfejsu. W przypadku .NET Framework 2,0 i nowszych wersji profiler musi również zaimplementować `ICorProfilerCallback2` metody. Każda implementacja metody musi zwrócić wynik HRESULT mający wartość S_OK w przypadku powodzenia lub E_FAIL w przypadku niepowodzenia. Obecnie środowisko CLR ignoruje wartość HRESULT zwracaną przez poszczególne wywołania zwrotne, z wyjątkiem [ICorProfilerCallback:: ObjectReferences —](icorprofilercallback-objectreferences-method.md).  
@@ -51,6 +53,7 @@ Dostarcza metody, które są używane przez środowisko uruchomieniowe języka w
 > Profiler rejestruje pojedynczy obiekt COM. Jeśli profiler jest ukierunkowany na .NET Framework wersja 1,0 lub 1,1, ten obiekt COM wymaga tylko implementacji metod `ICorProfilerCallback` . Jeśli jest to element docelowy .NET Framework wersja 2,0 lub nowsza, obiekt COM musi również zaimplementować metody `ICorProfilerCallback2` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -63,5 +66,5 @@ Dostarcza metody, które są używane przez środowisko uruchomieniowe języka w
 
 - [Interfejsy profilowania](profiling-interfaces.md)
 - [ICorProfilerCallback — Interfejs](icorprofilercallback-interface.md)
-- [ICorProfilerCallback3, interfejs](icorprofilercallback3-interface.md)
-- [ICorProfilerCallback4, interfejs](icorprofilercallback4-interface.md)
+- [ICorProfilerCallback3 — Interfejs](icorprofilercallback3-interface.md)
+- [ICorProfilerCallback4 — Interfejs](icorprofilercallback4-interface.md)

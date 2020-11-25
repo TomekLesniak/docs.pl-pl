@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 55a2f907-d216-42eb-8f2f-e5d59c2eebd6
 topic_type:
 - apiref
-ms.openlocfilehash: 2ce58113f40c8eb67a89b6ab6c9bb8f755975bd5
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 9e53e7bcecd900bb6c71d0a822e9b63ff6726e58
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84499756"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729521"
 ---
 # <a name="icorprofilercallback2rootreferences2-method"></a>ICorProfilerCallback2::RootReferences2 — Metoda
+
 Powiadamia profiler o odwołaniach głównych po wystąpieniu wyrzucania elementów bezużytecznych. Ta metoda jest rozszerzeniem metody [ICorProfilerCallback:: RootReferences —](icorprofilercallback-rootreferences-method.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT RootReferences2(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cRootRefs`  
  podczas Liczba elementów w `rootRefIds` tablicach,, `rootKinds` `rootFlags` i `rootIds` .  
   
@@ -55,6 +57,7 @@ HRESULT RootReferences2(
  Jeśli typ elementu głównego to stos, identyfikator główny jest dla funkcji, która zawiera zmienną. Jeśli ten identyfikator główny to 0, funkcja jest nienazwaną funkcją, która jest wewnętrzna dla środowiska CLR. Jeśli typ elementu głównego to dojście, identyfikator główny jest dla dojścia do wyrzucania elementów bezużytecznych. W przypadku innych typów głównych identyfikator jest wartością nieprzezroczystą i powinien zostać zignorowany.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `rootRefIds`Tablice, `rootKinds` , `rootFlags` i `rootIds` są tablicami równoległymi. To jest,,, `rootRefIds[i]` `rootKinds[i]` `rootFlags[i]` i `rootIds[i]` wszystko dotyczy tego samego katalogu głównego.  
   
  Oba `RootReferences` i `RootReferences2` są wywoływane w celu powiadomienia profilera. Profilowający zwykle implementują jedną metodę lub drugą, ale nie obie, ponieważ przesyłane informacje `RootReferences2` są podzbiorem, który przeszedł `RootReferences` .  
@@ -64,6 +67,7 @@ HRESULT RootReferences2(
  Identyfikatory obiektów zwrócone przez `RootReferences2` nie są prawidłowe podczas wywołania zwrotnego, ponieważ wyrzucanie elementów bezużytecznych może być w trakcie przeniesienia obiektów ze starych adresów na nowe adresy. W związku z tym nie należy próbować kontrolować obiektów podczas `RootReferences2` wywołania. Gdy wywoływana jest [ICorProfilerCallback2:: GarbageCollectionFinished —](icorprofilercallback2-garbagecollectionfinished-method.md) , wszystkie obiekty zostały przeniesione do nowych lokalizacji i można je bezpiecznie sprawdzić.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: bf4ffa50-4506-4dd4-aa13-a0457b47ca74
 topic_type:
 - apiref
-ms.openlocfilehash: 52870c7446987817ff00b90db26c3265bccdd096
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 9bc88d7dd5b00213da634dc9f511cfe0d39b42f1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84500731"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729840"
 ---
 # <a name="functionenter-function"></a>FunctionEnter — Funkcja
+
 Powiadamia profiler, że sterowanie jest przesyłane do funkcji.  
   
 > [!NOTE]
@@ -42,6 +43,7 @@ void __stdcall FunctionEnter (
   \[in) identyfikator funkcji, do której jest przenoszona kontrola.
 
 ## <a name="remarks"></a>Uwagi  
+
  `FunctionEnter`Funkcja jest wywołaniem zwrotnym, należy ją zaimplementować. Implementacja musi używać `__declspec` `naked` atrybutu klasy magazynu ().  
   
  Aparat wykonywania nie zapisuje żadnych rejestrów przed wywołaniem tej funkcji.  
@@ -55,6 +57,7 @@ void __stdcall FunctionEnter (
  Ponadto `FunctionEnter` Funkcja nie może wywołać kodu zarządzanego lub w jakikolwiek sposób może spowodować alokację pamięci zarządzanej.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl  
@@ -65,8 +68,8 @@ void __stdcall FunctionEnter (
   
 ## <a name="see-also"></a>Zobacz także
 
-- [FunctionEnter2, funkcja](functionenter2-function.md)
+- [FunctionEnter2 — Funkcja](functionenter2-function.md)
 - [FunctionLeave2 — Funkcja](functionleave2-function.md)
-- [FunctionTailcall2, funkcja](functiontailcall2-function.md)
+- [FunctionTailcall2 — Funkcja](functiontailcall2-function.md)
 - [SetEnterLeaveFunctionHooks2, metoda](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
 - [Profilowanie statycznych funkcji globalnych](profiling-global-static-functions.md)

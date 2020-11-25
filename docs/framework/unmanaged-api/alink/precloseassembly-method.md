@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 6d23ac54-15ea-4027-a172-9ebef43e8f56
 topic_type:
 - apiref
-ms.openlocfilehash: fcfd3e79bbb52837a333b5ffacf5c13ae60f2490
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 31c0c5e23d1a985c2005693e25ca91379037482a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445614"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728683"
 ---
 # <a name="precloseassembly-method"></a>PreCloseAssembly — Metoda
+
 Zamyka plik zestawu. Wywołaj tę metodę po zamknięciu wszystkich innych plików, ale przed zamknięciem pliku zestawu. Nie wywołuj tej metody dla modułów niepowiązanych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,17 +34,20 @@ HRESULT PreCloseAssembly(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `AssemblyID`  
  Identyfikator zestawu.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Zwraca S_OK, jeśli metoda zakończy się pomyślnie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  Wymaga Alink. h.  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IALink, interfejs](ialink-interface.md)
-- [IALink2, interfejs](ialink2-interface.md)
-- [ALink, interfejs API](index.md)
+- [IALink — Interfejs](ialink-interface.md)
+- [IALink2 — Interfejs](ialink2-interface.md)
+- [ALink — interfejs API](index.md)

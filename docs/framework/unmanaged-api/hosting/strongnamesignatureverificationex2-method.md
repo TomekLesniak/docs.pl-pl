@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: dfd4133f-a074-4db3-a7ee-4f250fe9ad3a
 topic_type:
 - apiref
-ms.openlocfilehash: 5e6f77b9b5da061a75d23d7f3f7b673754b62afd
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 423f6ee91d79a9e668de29d2e9e9a09a2bb779d4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84006370"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729879"
 ---
 # <a name="strongnamesignatureverificationex2-method"></a>StrongNameSignatureVerificationEx2 — Metoda
+
 Weryfikuje podpis zestawu o silnej nazwie i zapewnia mapowanie z klucza ECMA do klucza rzeczywistego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT StrongNameSignatureVerificationEx (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `wszFilePath`  
  podczas Ścieżka do przenośnego pliku wykonywalnego (. exe lub. dll) dla zestawu, który ma zostać zweryfikowany.  
   
@@ -53,19 +55,21 @@ HRESULT StrongNameSignatureVerificationEx (
  [out] `true` Jeśli podpis silnej nazwy został zweryfikowany; w przeciwnym razie `false` . Ten parametr jest również ustawiony na, `false` Jeśli weryfikacja zakończyła się pomyślnie z powodu ustawień rejestru.  
   
 ## <a name="return-value"></a>Wartość zwracana  
- `S_OK`Jeśli weryfikacja zakończyła się pomyślnie; w przeciwnym razie wartość HRESULT wskazująca niepowodzenie (zobacz [typowe wartości HRESULT](/windows/win32/seccrypto/common-hresult-values) dla listy).  
+
+ `S_OK` Jeśli weryfikacja zakończyła się pomyślnie; w przeciwnym razie wartość HRESULT wskazująca niepowodzenie (zobacz [typowe wartości HRESULT](/windows/win32/seccrypto/common-hresult-values) dla listy).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Obiekt ServiceHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [StrongNameSignatureVerification, metoda](iclrstrongname-strongnamesignatureverification-method.md)
 - [StrongNameSignatureVerificationEx, metoda](iclrstrongname-strongnamesignatureverificationex-method.md)
-- [ICLRStrongName, interfejs](iclrstrongname-interface.md)
+- [ICLRStrongName — Interfejs](iclrstrongname-interface.md)

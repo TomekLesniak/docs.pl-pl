@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 63d8260c-fb32-4f8f-a357-768afd570f68
 topic_type:
 - apiref
-ms.openlocfilehash: 1904a98f254a988ce035847a4cdeede182aa07bf
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 8cc28d9ccd40c65d225a96b269562c9d3dfa2124
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84006379"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729892"
 ---
 # <a name="strongnamegetpublickeyex-method"></a>StrongNameGetPublicKeyEx — Metoda
+
 Pobiera klucz publiczny z pary kluczy publiczny/prywatny i określa algorytm skrótu i algorytm podpisu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -40,6 +41,7 @@ HRESULT StrongNameGetPublicKey (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pwzKeyContainer`  
  podczas Nazwa kontenera kluczy, który zawiera parę kluczy publiczny/prywatny. Jeśli `pbKeyBlob` ma wartość null, `szKeyContainer` należy określić prawidłowy kontener w ramach dostawcy usług kryptograficznych (CSP). W takim przypadku `StrongNameGetPublicKeyEx` metoda wyodrębnia klucz publiczny z pary kluczy przechowywanej w kontenerze.  
   
@@ -66,12 +68,15 @@ HRESULT StrongNameGetPublicKey (
  podczas Zarezerwowane do użytku w przyszłości; Wartością domyślną jest null.  
   
 ## <a name="return-value"></a>Wartość zwracana  
- `S_OK`Jeśli metoda została ukończona pomyślnie; w przeciwnym razie wartość HRESULT wskazująca niepowodzenie (zobacz [typowe wartości HRESULT](/windows/win32/seccrypto/common-hresult-values) dla listy).  
+
+ `S_OK` Jeśli metoda została ukończona pomyślnie; w przeciwnym razie wartość HRESULT wskazująca niepowodzenie (zobacz [typowe wartości HRESULT](/windows/win32/seccrypto/common-hresult-values) dla listy).  
   
 ## <a name="remarks"></a>Uwagi  
+
  Klucz publiczny jest zawarty w strukturze [PublicKeyBlob —](../strong-naming/publickeyblob-structure.md) .  
   
 ## <a name="remarks"></a>Uwagi  
+
  W poniższej tabeli przedstawiono zestaw akceptowanych wartości `uHashAlgId` parametru.  
   
 |Nazwa|Wartość|  
@@ -83,17 +88,18 @@ HRESULT StrongNameGetPublicKey (
 |SHA-512|0x800e|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Obiekt ServiceHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [StrongNameTokenFromPublicKey, metoda](iclrstrongname-strongnametokenfrompublickey-method.md)
 - [PublicKeyBlob — Struktura](../strong-naming/publickeyblob-structure.md)
-- [ICLRStrongName, interfejs](iclrstrongname-interface.md)
+- [ICLRStrongName — Interfejs](iclrstrongname-interface.md)
 - [StrongNameGetPublicKey, metoda](iclrstrongname-strongnamegetpublickey-method.md)

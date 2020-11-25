@@ -14,15 +14,16 @@ helpviewer_keywords:
 ms.assetid: c8b65b19-d777-428f-bc0c-0d84c78a37bc
 topic_type:
 - apiref
-ms.openlocfilehash: fb77fe470829570d5abe291249eb7ef9023e6b14
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64a34cdf92df345041cb94e9069bcc4d489e3cf5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79178309"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728644"
 ---
 # <a name="asm_name-enumeration"></a>ASM_NAME — Wyliczenie
-Wskazuje wersję, kompilację, kulturę, podpis i tak dalej, zestawu, którego właściwości zostaną pobrane lub ustawione przez [metody IAssemblyName.](iassemblyname-interface.md)  
+
+Wskazuje wersję, kompilację, kulturę, sygnaturę i tak dalej, zestawu, którego właściwości będą pobierane lub ustawiane przez metody [IAssemblyName](iassemblyname-interface.md) .  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -63,15 +64,16 @@ typedef enum {
 ```  
   
 ## <a name="requirements"></a>Wymagania  
- **Platformy:** Zobacz [Wymagania systemowe](../../get-started/system-requirements.md).  
-  
- **Nagłówek:** Fuzja.h  
-  
- **Biblioteka:** Uwzględnione jako zasób w pliku MsCorEE.dll  
-  
- **Wersje programu .NET Framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
-## <a name="see-also"></a>Zobacz też
 
-- [IAssemblyName, interfejs](iassemblyname-interface.md)
+ **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
+  
+ **Nagłówek:** Fusion. h  
+  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
+  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+  
+## <a name="see-also"></a>Zobacz także
+
+- [IAssemblyName — Interfejs](iassemblyname-interface.md)
 - [Wyliczenia łączenia](fusion-enumerations.md)

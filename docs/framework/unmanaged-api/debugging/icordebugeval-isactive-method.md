@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: bf2bba24-d278-43bd-b1c5-35680e748d3e
 topic_type:
 - apiref
-ms.openlocfilehash: 4ee055812eb8dce2dc86f834dde92d7de5e1fdf9
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 5ac221b0b5837175b8073ab29f94c1f28078d3e4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82976216"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95729775"
 ---
 # <a name="icordebugevalisactive-method"></a>ICorDebugEval::IsActive — Metoda
+
 Pobiera wartość wskazującą, czy ten obiekt ICorDebugEval jest aktualnie wykonywany.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT IsActive (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pbActive`  
  określoną Wskaźnik na wartość wskazującą, czy ta Ocena jest aktywna.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

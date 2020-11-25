@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5c8840be-ffea-447f-9c8d-178f1eaf8d06
 topic_type:
 - apiref
-ms.openlocfilehash: 5e5bf097a4b1e366fff807595b22c4696a91cf43
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 9e907450b4ae985ee30d9958eec8baba797b495a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614555"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728605"
 ---
 # <a name="isymunmanagedencupdategetlocalvariables-method"></a>ISymUnmanagedENCUpdate::GetLocalVariables — Metoda
+
 Pobiera zmienne lokalne.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,11 +38,12 @@ HRESULT GetLocalVariables(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `mdMethodToken`  
  podczas Token metadanych metody.  
   
  `cLocals`  
- podczas `ULONG`Wskazuje rozmiar `rgLocals` parametru.  
+ podczas `ULONG` Wskazuje rozmiar `rgLocals` parametru.  
   
  `rgLocals`  
  określoną Zwrócona tablica wystąpień [ISymUnmanagedVariable](isymunmanagedvariable-interface.md) .  
@@ -50,11 +52,13 @@ HRESULT GetLocalVariables(
  określoną Wskaźnik do obiektu `ULONG` , który odbiera rozmiar `rgLocals` buforu wymaganego do przechowywania wartości lokalnych.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ISymUnmanagedENCUpdate, interfejs](isymunmanagedencupdate-interface.md)
+- [ISymUnmanagedENCUpdate — Interfejs](isymunmanagedencupdate-interface.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e47e3655-efd5-4572-a1dc-50c69bf2a468
 topic_type:
 - apiref
-ms.openlocfilehash: 68bcdc33e34075cc5876ee721ef57282cdaa6e86
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 928ac05fbd3a19a17e7f37674b2a75f8bc799fc6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703686"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95728878"
 ---
 # <a name="iclrruntimehostgetclrcontrol-method"></a>ICLRRuntimeHost::GetCLRControl — Metoda
+
 Pobiera wskaźnik interfejsu typu [ICLRControl](iclrcontrol-interface.md) , który może być używany przez hosty do dostosowywania aspektów środowiska uruchomieniowego języka wspólnego (CLR).  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT GetCLRControl(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pCLRControl`  
  określoną Wskaźnik interfejsu typu [ICLRControl](iclrcontrol-interface.md) , który umożliwia hostom Konfigurowanie dodatkowych aspektów środowiska CLR.  
   
@@ -41,7 +43,7 @@ HRESULT GetCLRControl(
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`GetCLRControl`pomyślnie zwrócono.|  
+|S_OK|`GetCLRControl` pomyślnie zwrócono.|  
 |HOST_E_CLRNOTAVAILABLE|Środowisko CLR nie zostało załadowane do procesu lub środowisko CLR znajduje się w stanie, w którym nie można uruchomić kodu zarządzanego lub przetworzyć wywołania pomyślnie.|  
 |HOST_E_TIMEOUT|Upłynął limit czasu połączenia.|  
 |HOST_E_NOT_OWNER|Obiekt wywołujący nie jest właocicielem blokady.|  
@@ -50,18 +52,20 @@ HRESULT GetCLRControl(
 |HOST_E_INVALIDOPERATION|Środowisko CLR zostało już uruchomione.|  
   
 ## <a name="remarks"></a>Uwagi  
- `ICLRControl`udostępnia metodę [metody GetCLRManager —](iclrcontrol-getclrmanager-method.md) , która umożliwia hostowi uzyskanie wskaźnika interfejsu do jednego z typów Menedżera.  
+
+ `ICLRControl` udostępnia metodę [metody GetCLRManager —](iclrcontrol-getclrmanager-method.md) , która umożliwia hostowi uzyskanie wskaźnika interfejsu do jednego z typów Menedżera.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [ICLRControl — Interfejs](iclrcontrol-interface.md)
-- [ICLRRuntimeHost, interfejs](iclrruntimehost-interface.md)
+- [ICLRRuntimeHost — Interfejs](iclrruntimehost-interface.md)
