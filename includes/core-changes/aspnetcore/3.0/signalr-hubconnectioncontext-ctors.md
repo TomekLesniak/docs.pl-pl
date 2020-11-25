@@ -1,43 +1,43 @@
 ---
 ms.openlocfilehash: 6be98e7ced6608ba0793c635adfe61c8b1a7e9d9
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81274776"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032875"
 ---
-### <a name="signalr-hubconnectioncontext-constructors-changed"></a><span data-ttu-id="fbd48-101">Sygnalizacja: zmieniono konstruktory HubConnectionContext</span><span class="sxs-lookup"><span data-stu-id="fbd48-101">SignalR: HubConnectionContext constructors changed</span></span>
+### <a name="signalr-hubconnectioncontext-constructors-changed"></a><span data-ttu-id="f9661-101">Sygnalizacja: zmieniono konstruktory HubConnectionContext</span><span class="sxs-lookup"><span data-stu-id="f9661-101">SignalR: HubConnectionContext constructors changed</span></span>
 
-<span data-ttu-id="fbd48-102">`HubConnectionContext`Konstruktory sygnalizujące uległy zmianie w celu zaakceptowania typu opcji, a nie wielu parametrów, do dalszego dodawania opcji.</span><span class="sxs-lookup"><span data-stu-id="fbd48-102">SignalR's `HubConnectionContext` constructors changed to accept an options type, rather than multiple parameters, to future-proof adding options.</span></span> <span data-ttu-id="fbd48-103">Ta zmiana zastępuje dwa konstruktory z pojedynczym konstruktorem akceptującym typ opcji.</span><span class="sxs-lookup"><span data-stu-id="fbd48-103">This change replaces two constructors with a single constructor that accepts an options type.</span></span>
+<span data-ttu-id="f9661-102">`HubConnectionContext`Konstruktory sygnalizujące uległy zmianie w celu zaakceptowania typu opcji, a nie wielu parametrów, do dalszego dodawania opcji.</span><span class="sxs-lookup"><span data-stu-id="f9661-102">SignalR's `HubConnectionContext` constructors changed to accept an options type, rather than multiple parameters, to future-proof adding options.</span></span> <span data-ttu-id="f9661-103">Ta zmiana zastępuje dwa konstruktory z pojedynczym konstruktorem akceptującym typ opcji.</span><span class="sxs-lookup"><span data-stu-id="f9661-103">This change replaces two constructors with a single constructor that accepts an options type.</span></span>
 
-#### <a name="version-introduced"></a><span data-ttu-id="fbd48-104">Wprowadzona wersja</span><span class="sxs-lookup"><span data-stu-id="fbd48-104">Version introduced</span></span>
+#### <a name="version-introduced"></a><span data-ttu-id="f9661-104">Wprowadzona wersja</span><span class="sxs-lookup"><span data-stu-id="f9661-104">Version introduced</span></span>
 
-<span data-ttu-id="fbd48-105">3,0</span><span class="sxs-lookup"><span data-stu-id="fbd48-105">3.0</span></span>
+<span data-ttu-id="f9661-105">3.0</span><span class="sxs-lookup"><span data-stu-id="f9661-105">3.0</span></span>
 
-#### <a name="old-behavior"></a><span data-ttu-id="fbd48-106">Stare zachowanie</span><span class="sxs-lookup"><span data-stu-id="fbd48-106">Old behavior</span></span>
+#### <a name="old-behavior"></a><span data-ttu-id="f9661-106">Stare zachowanie</span><span class="sxs-lookup"><span data-stu-id="f9661-106">Old behavior</span></span>
 
-<span data-ttu-id="fbd48-107">`HubConnectionContext` ma dwa konstruktory:</span><span class="sxs-lookup"><span data-stu-id="fbd48-107">`HubConnectionContext` has two constructors:</span></span>
+<span data-ttu-id="f9661-107">`HubConnectionContext` ma dwa konstruktory:</span><span class="sxs-lookup"><span data-stu-id="f9661-107">`HubConnectionContext` has two constructors:</span></span>
 
 ```csharp
 public HubConnectionContext(ConnectionContext connectionContext, TimeSpan keepAliveInterval, ILoggerFactory loggerFactory);
 public HubConnectionContext(ConnectionContext connectionContext, TimeSpan keepAliveInterval, ILoggerFactory loggerFactory, TimeSpan clientTimeoutInterval);
 ```
 
-#### <a name="new-behavior"></a><span data-ttu-id="fbd48-108">Nowe zachowanie</span><span class="sxs-lookup"><span data-stu-id="fbd48-108">New behavior</span></span>
+#### <a name="new-behavior"></a><span data-ttu-id="f9661-108">Nowe zachowanie</span><span class="sxs-lookup"><span data-stu-id="f9661-108">New behavior</span></span>
 
-<span data-ttu-id="fbd48-109">Dwa konstruktory zostały usunięte i zastąpione jednym konstruktorem:</span><span class="sxs-lookup"><span data-stu-id="fbd48-109">The two constructors were removed and replaced with one constructor:</span></span>
+<span data-ttu-id="f9661-109">Dwa konstruktory zostały usunięte i zastąpione jednym konstruktorem:</span><span class="sxs-lookup"><span data-stu-id="f9661-109">The two constructors were removed and replaced with one constructor:</span></span>
 
 ```csharp
 public HubConnectionContext(ConnectionContext connectionContext, HubConnectionContextOptions contextOptions, ILoggerFactory loggerFactory)
 ```
 
-#### <a name="reason-for-change"></a><span data-ttu-id="fbd48-110">Przyczyna zmiany</span><span class="sxs-lookup"><span data-stu-id="fbd48-110">Reason for change</span></span>
+#### <a name="reason-for-change"></a><span data-ttu-id="f9661-110">Przyczyna zmiany</span><span class="sxs-lookup"><span data-stu-id="f9661-110">Reason for change</span></span>
 
-<span data-ttu-id="fbd48-111">Nowy Konstruktor używa nowego obiektu options.</span><span class="sxs-lookup"><span data-stu-id="fbd48-111">The new constructor uses a new options object.</span></span> <span data-ttu-id="fbd48-112">W związku z tym funkcje programu `HubConnectionContext` mogą być rozwijane w przyszłości bez tworzenia większej liczby konstruktorów i zmieniania zmian.</span><span class="sxs-lookup"><span data-stu-id="fbd48-112">Consequently, the features of `HubConnectionContext` can be expanded in the future without making more constructors and breaking changes.</span></span>
+<span data-ttu-id="f9661-111">Nowy Konstruktor używa nowego obiektu options.</span><span class="sxs-lookup"><span data-stu-id="f9661-111">The new constructor uses a new options object.</span></span> <span data-ttu-id="f9661-112">W związku z tym funkcje programu `HubConnectionContext` mogą być rozwijane w przyszłości bez tworzenia większej liczby konstruktorów i zmieniania zmian.</span><span class="sxs-lookup"><span data-stu-id="f9661-112">Consequently, the features of `HubConnectionContext` can be expanded in the future without making more constructors and breaking changes.</span></span>
 
-#### <a name="recommended-action"></a><span data-ttu-id="fbd48-113">Zalecana akcja</span><span class="sxs-lookup"><span data-stu-id="fbd48-113">Recommended action</span></span>
+#### <a name="recommended-action"></a><span data-ttu-id="f9661-113">Zalecana akcja</span><span class="sxs-lookup"><span data-stu-id="f9661-113">Recommended action</span></span>
 
-<span data-ttu-id="fbd48-114">Zamiast korzystać z następującego konstruktora:</span><span class="sxs-lookup"><span data-stu-id="fbd48-114">Instead of using the following constructor:</span></span>
+<span data-ttu-id="f9661-114">Zamiast korzystać z następującego konstruktora:</span><span class="sxs-lookup"><span data-stu-id="f9661-114">Instead of using the following constructor:</span></span>
 
 ```csharp
 HubConnectionContext connectionContext = new HubConnectionContext(
@@ -47,7 +47,7 @@ HubConnectionContext connectionContext = new HubConnectionContext(
     clientTimeoutInterval: TimeSpan.FromSeconds(15));
 ```
 
-<span data-ttu-id="fbd48-115">Użyj następującego konstruktora:</span><span class="sxs-lookup"><span data-stu-id="fbd48-115">Use the following constructor:</span></span>
+<span data-ttu-id="f9661-115">Użyj następującego konstruktora:</span><span class="sxs-lookup"><span data-stu-id="f9661-115">Use the following constructor:</span></span>
 
 ```csharp
 HubConnectionContextOptions contextOptions = new HubConnectionContextOptions()
@@ -58,11 +58,11 @@ HubConnectionContextOptions contextOptions = new HubConnectionContextOptions()
 HubConnectionContext connectionContext = new HubConnectionContext(connectionContext, contextOptions, loggerFactory);
 ```
 
-#### <a name="category"></a><span data-ttu-id="fbd48-116">Kategoria</span><span class="sxs-lookup"><span data-stu-id="fbd48-116">Category</span></span>
+#### <a name="category"></a><span data-ttu-id="f9661-116">Kategoria</span><span class="sxs-lookup"><span data-stu-id="f9661-116">Category</span></span>
 
-<span data-ttu-id="fbd48-117">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="fbd48-117">ASP.NET Core</span></span>
+<span data-ttu-id="f9661-117">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="f9661-117">ASP.NET Core</span></span>
 
-#### <a name="affected-apis"></a><span data-ttu-id="fbd48-118">Dotyczy interfejsów API</span><span class="sxs-lookup"><span data-stu-id="fbd48-118">Affected APIs</span></span>
+#### <a name="affected-apis"></a><span data-ttu-id="f9661-118">Dotyczy interfejsów API</span><span class="sxs-lookup"><span data-stu-id="f9661-118">Affected APIs</span></span>
 
 - <xref:Microsoft.AspNetCore.SignalR.HubConnectionContext.%23ctor(Microsoft.AspNetCore.Connections.ConnectionContext,System.TimeSpan,Microsoft.Extensions.Logging.ILoggerFactory)>
 - <xref:Microsoft.AspNetCore.SignalR.HubConnectionContext.%23ctor(Microsoft.AspNetCore.Connections.ConnectionContext,System.TimeSpan,Microsoft.Extensions.Logging.ILoggerFactory,System.TimeSpan)>
