@@ -15,17 +15,18 @@ helpviewer_keywords:
 ms.assetid: 621b4543-a8f7-4117-98e4-930992cd688a
 topic_type:
 - apiref
-ms.openlocfilehash: 17cb3440c5b33d461b1624608ce115e1942d6beb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2a74688b90fbce63c9107d9389ddfd7bf5cd717b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129719"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95695182"
 ---
-# <a name="icordebugobjectvalue2getvirtualmethodandtype-method"></a><span data-ttu-id="1b2eb-102">ICorDebugObjectValue2::GetVirtualMethodAndType — Metoda</span><span class="sxs-lookup"><span data-stu-id="1b2eb-102">ICorDebugObjectValue2::GetVirtualMethodAndType Method</span></span>
-<span data-ttu-id="1b2eb-103">Ta metoda nie została jeszcze zaimplementowana.</span><span class="sxs-lookup"><span data-stu-id="1b2eb-103">This method is not yet implemented.</span></span>  
+# <a name="icordebugobjectvalue2getvirtualmethodandtype-method"></a><span data-ttu-id="244f9-102">ICorDebugObjectValue2::GetVirtualMethodAndType — Metoda</span><span class="sxs-lookup"><span data-stu-id="244f9-102">ICorDebugObjectValue2::GetVirtualMethodAndType Method</span></span>
+
+<span data-ttu-id="244f9-103">Ta metoda nie została jeszcze zaimplementowana.</span><span class="sxs-lookup"><span data-stu-id="244f9-103">This method is not yet implemented.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1b2eb-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="1b2eb-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="244f9-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="244f9-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetVirtualMethodAndType (  
@@ -35,7 +36,8 @@ HRESULT GetVirtualMethodAndType (
 );  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="1b2eb-105">Uwagi</span><span class="sxs-lookup"><span data-stu-id="1b2eb-105">Remarks</span></span>  
- <span data-ttu-id="1b2eb-106">Pobiera wskaźniki interfejsu do wystąpień "ICorDebugFunction" i "ICorDebugType", które reprezentują najbardziej pochodną metodę i typ dla określonego odwołania do elementu członkowskiego.</span><span class="sxs-lookup"><span data-stu-id="1b2eb-106">Gets interface pointers to the "ICorDebugFunction" and "ICorDebugType" instances that represent the most derived method and type for the specified member reference.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="244f9-105">Uwagi</span><span class="sxs-lookup"><span data-stu-id="244f9-105">Remarks</span></span>  
+
+ <span data-ttu-id="244f9-106">Pobiera wskaźniki interfejsu do wystąpień "ICorDebugFunction" i "ICorDebugType", które reprezentują najbardziej pochodną metodę i typ dla określonego odwołania do elementu członkowskiego.</span><span class="sxs-lookup"><span data-stu-id="244f9-106">Gets interface pointers to the "ICorDebugFunction" and "ICorDebugType" instances that represent the most derived method and type for the specified member reference.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1b2eb-107">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="1b2eb-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="244f9-107">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="244f9-107">See also</span></span>
