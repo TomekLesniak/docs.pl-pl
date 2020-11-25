@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ee3f85d3-044e-46b8-945c-93ebfa5d9e91
 topic_type:
 - apiref
-ms.openlocfilehash: 4bc8d56bf116cd64e3e1c5d2238e557784c56711
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 4277a552d217ad7f601bfe72cae32a1f25dd6be4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209607"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696235"
 ---
 # <a name="icordebugframeenum-interface"></a>ICorDebugFrameEnum, interfejs
 
@@ -29,7 +29,7 @@ Implementuje metody ICorDebugEnum i wylicza tablice ICorDebugFrame.
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[Next — Metoda](icordebugframeenum-next-method.md)|Pobiera określoną liczbę `ICorDebugFrame` wystąpień z wyliczenia, rozpoczynając od bieżącego położenia.|  
+|[Next, metoda](icordebugframeenum-next-method.md)|Pobiera określoną liczbę `ICorDebugFrame` wystąpień z wyliczenia, rozpoczynając od bieżącego położenia.|  
   
 ## <a name="remarks"></a>Uwagi  
   
@@ -37,6 +37,7 @@ Implementuje metody ICorDebugEnum i wylicza tablice ICorDebugFrame.
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -45,6 +46,6 @@ Implementuje metody ICorDebugEnum i wylicza tablice ICorDebugFrame.
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

@@ -14,15 +14,16 @@ helpviewer_keywords:
 ms.assetid: af15e2ca-6be1-472b-bd36-03644a1e3ddd
 topic_type:
 - apiref
-ms.openlocfilehash: 7b8a726cffcc00d7371675192a209b2d8e9db94d
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 8797f77388bf4992dfb69191ce8a844a9b7fdb8a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795784"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696443"
 ---
 # <a name="cordebugjitcompilerflagsdeprecated-enumeration"></a>CorDebugJITCompilerFlagsDeprecated — Wyliczenie
-To wyliczenie jest przestarzałe. Zamiast tego `CORDEBUG_JIT_DEFAULT` Użyj elementu członkowskiego wyliczenia [CorDebugJITCompilerFlags —](cordebugjitcompilerflags-enumeration.md) .  
+
+To wyliczenie jest przestarzałe. `CORDEBUG_JIT_DEFAULT`Zamiast tego użyj elementu członkowskiego wyliczenia [CorDebugJITCompilerFlags —](cordebugjitcompilerflags-enumeration.md) .  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -39,6 +40,7 @@ typedef enum CorDebugJITCompilerFlagsDeprecated {
 |`CORDEBUG_JIT_TRACK_DEBUG_INFO`|Zamiast tego użyj polecenia cmdlet `CORDEBUG_JIT_DEFAULT`.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

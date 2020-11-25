@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 7c0c92fe-8bd2-477f-b307-aca0143732ca
 topic_type:
 - apiref
-ms.openlocfilehash: e024500ea66dcb42e712e07e976a709401160a27
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 1bb99503481d917d41ae00a5ef73c8fa59e2a999
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795771"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696456"
 ---
 # <a name="cordebugmdaflags-enumeration"></a>CorDebugMDAFlags — Wyliczenie
+
 Określa stan wątku, w którym jest uruchamiany Asystent debugowania zarządzanego (MDA).  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,9 +40,11 @@ typedef enum CorDebugMDAFlags {
 |`MDA_FLAG_SLIP`|Wątek, w którym zostało wywołane zdarzenie MDA, został wywołany od momentu uruchomienia MDA.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Gdy stos wywołań nie opisuje już, gdzie zdarzenie MDA zostało pierwotnie zgłoszone, wątek jest traktowany jako *poślizg*. Jest to nietypowe działanie związane z wykonywaniem przez wątek nieprawidłowej operacji przy zamykaniu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

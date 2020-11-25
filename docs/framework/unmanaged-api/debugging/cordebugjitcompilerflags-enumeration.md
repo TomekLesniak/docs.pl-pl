@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c0774f70-5bed-45e8-9922-fdad778c4c33
 topic_type:
 - apiref
-ms.openlocfilehash: 8be8ce36b557831bc0997dd1c69abb924390d051
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 0c8398b9e423414f32a391edcd5ea1c709af37f5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795826"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696560"
 ---
 # <a name="cordebugjitcompilerflags-enumeration"></a>CorDebugJITCompilerFlags — Wyliczenie
+
 Zawiera wartości wpływające na zachowanie kompilatora zarządzanego (just-in-Time).  
   
 ## <a name="syntax"></a>Składnia  
@@ -45,6 +46,7 @@ typedef enum CorDebugJITCompilerFlags {
 |`CORDEBUG_JIT_ENABLE_ENC`|Określa, że kompilator ma śledzić dane kompilacji, wyłącza optymalizacje i umożliwia korzystanie z technologii Edytuj i Kontynuuj.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

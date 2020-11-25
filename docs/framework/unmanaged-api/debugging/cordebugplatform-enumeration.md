@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c5444816-7378-4521-afd3-bf5e4b5303d5
 topic_type:
 - apiref
-ms.openlocfilehash: fdb03b9244d3cb351735f5f2214248a08a399188
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 5435f78b28975a5426fcb2fce94904efc1051c5b
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795745"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696404"
 ---
 # <a name="cordebugplatform-enumeration"></a>Wyliczenie CorDebugPlatform
+
 Zapewnia wartości platformy docelowej, które są używane przez metodę [ICorDebugDataTarget:: GetPlatform](icordebugdatatarget-getplatform-method.md) .  
   
 ## <a name="syntax"></a>Składnia  
@@ -52,6 +53,7 @@ typedef enum CorDebugPlatform
 |CORDB_PLATFORM_MAC_AMD64|Platforma docelowa to system operacyjny Macintosh działający na sprzęcie AMD64.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -60,7 +62,7 @@ typedef enum CorDebugPlatform
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
- Elementy `CORDB_PLATFORM_WINDOWS_ARM` i `CORDB_PLATFORM_MAC_AMD64` są dostępne w .NET Framework 4.5.2 i nowszych wersjach.  
+ `CORDB_PLATFORM_WINDOWS_ARM`Elementy i `CORDB_PLATFORM_MAC_AMD64` są dostępne w .NET Framework 4.5.2 i nowszych wersjach.  
   
 ## <a name="see-also"></a>Zobacz także
 

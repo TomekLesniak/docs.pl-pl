@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9d657a28-6984-4c5e-8a54-89d20080baff
 topic_type:
 - apiref
-ms.openlocfilehash: d9e2236b944137de82bb056820f81014febfcc5f
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 821eae8ea5b4147408e9fe60d1e5b70c7936959e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82894896"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696248"
 ---
 # <a name="icordebugassembly-interface"></a>ICorDebugAssembly, interfejs
 
@@ -41,6 +41,7 @@ Reprezentuje zestaw.
 > Ten interfejs nie obsługuje wywoływania zdalnego na wielu maszynach ani wielu procesów.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -49,6 +50,6 @@ Reprezentuje zestaw.
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

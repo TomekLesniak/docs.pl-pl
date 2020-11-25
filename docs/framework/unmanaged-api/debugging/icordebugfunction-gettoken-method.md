@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c6bbf479-062e-48e9-9c70-0f92e293e36a
 topic_type:
 - apiref
-ms.openlocfilehash: e542145e888049231a6c5e4cccbb4ee96c62f98b
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 9aee95c554afad5b2ea3cf157fc9e62c9b7e40e9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213260"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95696118"
 ---
 # <a name="icordebugfunctiongettoken-method"></a>ICorDebugFunction::GetToken — Metoda
+
 Pobiera token metadanych dla tej funkcji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,10 +35,12 @@ HRESULT GetToken (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pMethodDef`  
  określoną Wskaźnik do `mdMethodDef` tokenu, który odwołuje się do metadanych dla tej funkcji.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
