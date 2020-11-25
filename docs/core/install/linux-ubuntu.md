@@ -4,12 +4,12 @@ description: Przedstawiono różne sposoby instalowania zestawu .NET SDK i środ
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 419bcf3ccd011cadba8f8c64e195d7dbdbf7e241
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 22ce3379e028f065528e1f507a2d8c1ae598f0e8
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94507029"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031852"
 ---
 # <a name="install-the-net-sdk-or-the-net-runtime-on-ubuntu"></a>Zainstaluj zestaw .NET SDK lub środowisko uruchomieniowe .NET w systemie Ubuntu
 
@@ -46,15 +46,27 @@ Następujące wersje platformy .NET nie są już obsługiwane. Pliki do pobrania
 - 2.2
 - 2,0
 
+## <a name="remove-preview-versions"></a>Usuń wersje w wersji zapoznawczej
+
+[!INCLUDE [package-manager uninstall notice](./includes/linux-uninstall-preview-info.md)]
+
 ## <a name="how-to-install-other-versions"></a>Jak zainstalować inne wersje
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
 
 ## <a name="2010-"></a>20,10 ✔️
 
-W programie .NET 5 i źródłach danych pakietu .NET Core 3,1 dla Ubuntu 20,10 obecnie występuje problem. Aby uzyskać więcej informacji o tym problemie, zobacz sekcję dotyczącą usługi [GitHub wydaj/Core # 5549](https://github.com/dotnet/core/issues/5549). Ten artykuł zostanie zaktualizowany po rozwiązaniu problemu.
+> [!IMPORTANT]
+> Program .NET Core 2,1 nie jest jeszcze dostępny w kanale informacyjnym pakietu.
 
-Aby zainstalować platformę .NET 5 lub .NET Core 3,1 w systemie Ubuntu 20,10, postępuj zgodnie z instrukcjami dotyczącymi [20,04](#2004-).
+[!INCLUDE [linux-prep-intro-apt](includes/linux-prep-intro-apt.md)]
+
+```bash
+wget https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+```
+
+[!INCLUDE [linux-apt-install-50](includes/linux-install-50-apt.md)]
 
 ## <a name="2004-"></a>20,04 ✔️
 

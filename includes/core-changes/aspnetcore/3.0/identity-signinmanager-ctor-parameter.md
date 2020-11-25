@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: ed5a90063b8963d79f412ec1c5c0b9030f980f83
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81275310"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032791"
 ---
 ### <a name="identity-signinmanager-constructor-accepts-new-parameter"></a>Tożsamość: Konstruktor SignInManager akceptuje nowy parametr
 
@@ -12,7 +12,7 @@ Począwszy od ASP.NET Core 3,0, `IUserConfirmation<TUser>` do konstruktora zosta
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 

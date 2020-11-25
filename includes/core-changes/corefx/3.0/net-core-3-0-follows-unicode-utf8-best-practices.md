@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 298cb441bf9fe7daddb30c85f9d7366dc972628c
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721713"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032142"
 ---
 ### <a name="replacing-ill-formed-utf-8-byte-sequences-follows-unicode-guidelines"></a>Zastępowanie źle sformułowanych sekwencji bajtów w formacie UTF-8 następuje po wskazówkach dotyczących standardu Unicode
 
@@ -22,7 +22,7 @@ W poniższej tabeli przedstawiono wpływ tej zmiany z nieprawidłowymi danymi we
 
 | Niewłaściwie sformułowane dane wejściowe 3-bajtowe | Dane wyjściowe przed platformą .NET Core 3,0          | Dane wyjściowe rozpoczynające się od platformy .NET Core 3,0        |
 |-------------------------|--------------------------------------|-------------------------------------------|
-| `[ ED A0 90 ]`          | `[ FFFD FFFD ]`(2-znakowe dane wyjściowe) | `[ FFFD FFFD FFFD ]`(3 znaki wyjściowe) |
+| `[ ED A0 90 ]`          | `[ FFFD FFFD ]` (2-znakowe dane wyjściowe) | `[ FFFD FFFD FFFD ]` (3 znaki wyjściowe) |
 
 3-znakowe dane wyjściowe to preferowane dane wyjściowe, zgodnie z _tabelą 3-9_ poprzednio połączonego pliku PDF w standardzie Unicode.
 

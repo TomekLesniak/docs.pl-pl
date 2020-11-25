@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 959f3959c28c7d0159be7a213986345e2865b9a2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72394440"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032865"
 ---
 ### <a name="shared-framework-removed-microsoftaspnetcoreall"></a>Udostępnione środowisko: Usunięto Microsoft. AspNetCore. All
 
@@ -12,7 +12,7 @@ Począwszy od ASP.NET Core 3,0, `Microsoft.AspNetCore.All` `Microsoft.AspNetCore
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 

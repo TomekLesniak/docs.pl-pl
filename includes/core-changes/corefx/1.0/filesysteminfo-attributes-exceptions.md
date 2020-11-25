@@ -1,30 +1,30 @@
 ---
 ms.openlocfilehash: 2ea9abca7578c2ddf92712a1c597f8f1ff4a5c0c
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021822"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032081"
 ---
-### <a name="unauthorizedaccessexception-thrown-by-filesysteminfoattributes"></a>NieautoryzowaneaccessException generowane przez FileSystemInfo.Attributes
+### <a name="unauthorizedaccessexception-thrown-by-filesysteminfoattributes"></a>UnauthorizedAccessException zgłoszone przez FileSystemInfo. Attributes
 
-W .NET Core <xref:System.UnauthorizedAccessException> jest generowany, gdy wywołujący próbuje ustawić wartość atrybutu pliku, ale nie ma uprawnień do zapisu.
+W przypadku platformy .NET Core <xref:System.UnauthorizedAccessException> jest generowany, gdy wywołujący próbuje ustawić wartość atrybutu pliku, ale nie ma uprawnienia do zapisu.
 
 #### <a name="change-description"></a>Zmień opis
 
-W .NET Framework <xref:System.ArgumentException> jest generowany, gdy wywołujący próbuje ustawić <xref:System.IO.FileSystemInfo.Attributes?displayProperty=nameWithType> wartość atrybutu pliku, ale nie ma uprawnień do zapisu. W .NET Core <xref:System.UnauthorizedAccessException> zamiast tego jest wyrzucany. (W .NET Core <xref:System.ArgumentException> program .NET Core jest nadal generowany, jeśli wywołujący próbuje ustawić nieprawidłowy atrybut pliku).
+W .NET Framework <xref:System.ArgumentException> jest generowany, gdy obiekt wywołujący próbuje ustawić wartość atrybutu pliku w programie, <xref:System.IO.FileSystemInfo.Attributes?displayProperty=nameWithType> ale nie ma uprawnienia do zapisu. W przypadku platformy .NET Core <xref:System.UnauthorizedAccessException> jest zgłaszany. (W programie .NET Core <xref:System.ArgumentException> jest nadal zgłaszane, jeśli obiekt wywołujący podejmie próbę ustawienia nieprawidłowego atrybutu pliku).
 
-#### <a name="version-introduced"></a>Wprowadzono wersję
+#### <a name="version-introduced"></a>Wprowadzona wersja
 
-1.0
+1,0
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Zmodyfikuj wszystkie `catch` instrukcje, aby złapać <xref:System.UnauthorizedAccessException> zamiast lub oprócz , <xref:System.ArgumentException>w razie potrzeby.
+Zmodyfikuj wszelkie `catch` instrukcje, aby przechwycić <xref:System.UnauthorizedAccessException> zamiast lub, w razie potrzeby,, lub oprócz, <xref:System.ArgumentException> .
 
 #### <a name="category"></a>Kategoria
 
-Podstawowe biblioteki .NET
+Podstawowe biblioteki platformy .NET
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 

@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 6be98e7ced6608ba0793c635adfe61c8b1a7e9d9
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81274776"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032875"
 ---
 ### <a name="signalr-hubconnectioncontext-constructors-changed"></a>Sygnalizacja: zmieniono konstruktory HubConnectionContext
 
@@ -12,7 +12,7 @@ ms.locfileid: "81274776"
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 

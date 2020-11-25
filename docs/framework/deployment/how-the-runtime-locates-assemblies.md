@@ -11,11 +11,11 @@ helpviewer_keywords:
 - assemblies [.NET Framework], location
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 ms.openlocfilehash: 4cf1e5787fe2e430d20208d8e79b610e9126c67c
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622630"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031712"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Sposoby lokalizowania zestawów przez środowisko uruchomieniowe
 
@@ -125,7 +125,7 @@ Aby utworzyć zestaw, można użyć narzędzia [Al.exe (Konsolidator zestawu)](.
 Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v:3.0.0.0
 ```
 
-`compatkey.dat`jest plikiem klucza o silnej nazwie. To polecenie tworzy zestaw o silnej nazwie, który można umieścić w globalnej pamięci podręcznej zestawów.
+`compatkey.dat` jest plikiem klucza o silnej nazwie. To polecenie tworzy zestaw o silnej nazwie, który można umieścić w globalnej pamięci podręcznej zestawów.
 
 > [!NOTE]
 > Zasady wydawcy mają wpływ na wszystkie aplikacje korzystające ze współużytkowanego składnika.
@@ -231,9 +231,9 @@ Uwzględniając następujące informacje:
 
 - Nazwa zestawu, do którego istnieje odwołanie: zestaw
 
-- Katalog główny aplikacji:`http://www.code.microsoft.com`
+- Katalog główny aplikacji: `http://www.code.microsoft.com`
 
-- [\<probing>](../configure-apps/file-schema/runtime/probing-element.md)element w pliku konfiguracji określa: bin
+- [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) element w pliku konfiguracji określa: bin
 
 - Kultura: de
 
@@ -265,7 +265,7 @@ Lokalizację zestawu można także określić przy użyciu bieżącego kontekstu
 
 Na przykład jeśli Assembly1 odwołuje się do Assembly2 i Assembly1 zostało pobrane z `http://www.code.microsoft.com/utils` , Ta lokalizacja jest uważana za wskazówkę, gdzie znaleźć Assembly2.dll. Środowisko uruchomieniowe następnie sonduje zestaw w `http://www.code.microsoft.com/utils/Assembly2.dll` i `http://www.code.microsoft.com/utils/Assembly2/Assembly2.dll` . Jeśli Assembly2 nie zostanie znaleziony w żadnej z tych lokalizacji, środowisko uruchomieniowe wyśle zapytanie do Instalator Windows.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Najlepsze praktyki dotyczące ładowania zestawu](best-practices-for-assembly-loading.md)
 - [Wdrożenie](index.md)

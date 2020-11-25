@@ -1,35 +1,35 @@
 ---
 ms.openlocfilehash: 9544b65f31772d0f4cee918528a73171fec4de99
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021808"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032053"
 ---
-### <a name="change-in-default-value-of-useshellexecute"></a>Zmiana wartości domyślnej UseShellExecute
+### <a name="change-in-default-value-of-useshellexecute"></a>Zmień wartość domyślną UseShellExecute
 
-<xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType>ma wartość domyślną `false` na .NET Core. W programie .NET Framework `true`jego wartością domyślną jest .
+<xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> ma wartość domyślną `false` w programie .NET Core. W .NET Framework wartość domyślna to `true` .
 
 #### <a name="change-description"></a>Zmień opis
 
-<xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType>umożliwia uruchomienie aplikacji bezpośrednio, na przykład z `Process.Start("mspaint.exe")` kodem takim jak uruchamia paint. Umożliwia również pośrednie uruchomienie skojarzonej <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> aplikacji, `true`jeśli jest ustawiona na . W programie .NET Framework <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> domyślną wartością `true`jest `Process.Start("mytextfile.txt")` , co oznacza, że kod, taki jak uruchomienie Notatnika, jeśli skojarzono pliki *.txt* z tym edytorem. Aby zapobiec pośredniemu uruchamianiu aplikacji w programie .NET `false`Framework, należy jawnie ustawić wartość <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> . W programie .NET Core <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> wartością domyślną jest `false`. Oznacza to, że domyślnie skojarzone aplikacje `Process.Start`nie są uruchamiane podczas wywoływania .
+<xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> umożliwia uruchamianie aplikacji bezpośrednio, na przykład przy użyciu kodu, takiego jak `Process.Start("mspaint.exe")` uruchomienie programu Paint. Umożliwia ona również pośrednio uruchomienie skojarzonej aplikacji, jeśli <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> jest ustawiona na `true` . Na .NET Framework wartość domyślna <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> to `true` , co oznacza, że kod taki jak `Process.Start("mytextfile.txt")` zostałby uruchomiony Notatnik, jeśli masz skojarzone pliki *txt* z tym edytorem. Aby zapobiec pośredniemu uruchamianiu aplikacji na .NET Framework, musisz jawnie ustawić <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> wartość `false` . W przypadku platformy .NET Core wartość domyślna <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> to `false` . Oznacza to, że domyślnie skojarzone aplikacje nie są uruchamiane podczas wywoływania `Process.Start` .
 
-Ta zmiana została wprowadzona w .NET Core ze względu na wydajność. Zazwyczaj <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> jest używany do uruchamiania aplikacji bezpośrednio. Bezpośrednie uruchamianie aplikacji nie musi obejmować powłoki systemu Windows i ponosić skojarzony koszt wydajności. Aby przyspieszyć ten domyślny przypadek, program .NET Core zmienia domyślną wartość <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> na `false`. Jeśli jej potrzebujesz, możesz zdecydować się na wolniejszą ścieżkę.
+Ta zmiana została wprowadzona w programie .NET Core ze względu na wydajność. Zwykle <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> jest używany do bezpośredniego uruchamiania aplikacji. Bezpośrednie uruchamianie aplikacji nie wymaga ponoszenia powłoki systemu Windows i wiąże się z powiązanymi kosztami wydajności. Aby ten przypadek domyślny był szybszy, program .NET Core zmienia wartość domyślną <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> na `false` . Jeśli potrzebujesz, możesz zrezygnować z wolniejszej ścieżki.
 
-#### <a name="version-introduced"></a>Wprowadzono wersję
+#### <a name="version-introduced"></a>Wprowadzona wersja
 
 2.1
 
 > [!NOTE]
-> We wcześniejszych wersjach programu `UseShellExecute` .NET Core nie został zaimplementowany dla systemu Windows.
+> We wcześniejszych wersjach programu .NET Core `UseShellExecute` nie została zaimplementowana dla systemu Windows.
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Jeśli aplikacja opiera się na <xref:System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)?displayProperty=nameWithType> stare <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute> zachowanie, <xref:System.Diagnostics.ProcessStartInfo> wywołać z ustawioną `true` na obiekt.
+Jeśli aplikacja korzysta ze starego zachowania, należy wywołać polecenie <xref:System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)?displayProperty=nameWithType> z <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute> ustawioną `true` na wartość dla <xref:System.Diagnostics.ProcessStartInfo> obiektu.
 
 #### <a name="category"></a>Kategoria
 
-Podstawowe biblioteki .NET
+Podstawowe biblioteki platformy .NET
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 

@@ -1,20 +1,20 @@
 ---
 ms.openlocfilehash: b55de00188d92623c493dfc5f9aca915890ae5df
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021469"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032088"
 ---
-### <a name="private-fields-added-to-built-in-struct-types"></a>Pola prywatne dodane do wbudowanych typów obiektów
+### <a name="private-fields-added-to-built-in-struct-types"></a>Pola prywatne dodane do wbudowanych typów struktur
 
-Pola prywatne zostały dodane do [niektórych typów struktury](#affected-apis) w [zestawach referencyjnych](../../../../docs/standard/assembly/reference-assemblies.md). W rezultacie w języku C#te typy struktury muszą być zawsze tworzone przy użyciu [nowego operatora](../../../../docs/csharp/language-reference/operators/new-operator.md) lub [domyślnego literału](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
+Pola prywatne zostały dodane do [niektórych typów struktur](#affected-apis) w [zestawach referencyjnych](../../../../docs/standard/assembly/reference-assemblies.md). W związku z tym w języku C# te typy struktur muszą zawsze być tworzone przy użyciu [operatora new](../../../../docs/csharp/language-reference/operators/new-operator.md) lub [default](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
 
 #### <a name="change-description"></a>Zmień opis
 
-W .NET Core 2.0 i poprzednich wersjach niektóre <xref:System.ConsoleKeyInfo>podane typy struktury, na `new` przykład, można utworzyć wystąpienia bez użycia operatora lub [domyślnego literału](../../../../docs/csharp/language-reference/operators/default.md#default-literal) w języku C#. Było to spowodowane [zestawów odwołań używanych](../../../../docs/standard/assembly/reference-assemblies.md) przez kompilator języka C# nie zawiera pól prywatnych dla struktur. Wszystkie pola prywatne dla typów struktury platformy .NET są dodawane do zestawów odwołań, począwszy od .NET Core 2.1.
+W programie .NET Core 2,0 i poprzednich wersjach niektóre dostarczone typy struktur, na przykład, <xref:System.ConsoleKeyInfo> można utworzyć wystąpienie bez użycia `new` operatora lub [domyślnego literału](../../../../docs/csharp/language-reference/operators/default.md#default-literal) w języku C#. Było tak dlatego, że [zestawy referencyjne](../../../../docs/standard/assembly/reference-assemblies.md) używane przez kompilator języka C# nie zawierały prywatnych pól dla struktur. Wszystkie pola prywatne dla typów struktury .NET są dodawane do zestawów referencyjnych zaczynających się na platformie .NET Core 2,1.
 
-Na przykład następujący kod języka C# kompiluje się w .NET Core 2.0, ale nie w .NET Core 2.1:
+Na przykład poniższy kod C# kompiluje się w programie .NET Core 2,0, ale nie w programie .NET Core 2,1:
 
 ```csharp
 ConsoleKeyInfo key;    // Struct type
@@ -25,17 +25,17 @@ if (key.ToString() == "y")
 }
 ```
 
-W .NET Core 2.1 poprzedni kod powoduje następujący błąd kompilatora: **CS0165 - Użycie nieprzypisanego zmiennej lokalnej "key"**
+W programie .NET Core 2,1 Poprzedni kod powoduje następujący błąd kompilatora: **CS0165-użycie nieprzypisanej zmiennej lokalnej "Key"**
 
-#### <a name="version-introduced"></a>Wprowadzono wersję
+#### <a name="version-introduced"></a>Wprowadzona wersja
 
 2.1
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Tworzenie wystąpienia typów struktury przy `new` użyciu operatora lub [domyślnego literału](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
+Tworzenie wystąpienia typów struktur przy użyciu `new` operatora lub [domyślnego literału](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
 
-Przykład:
+Na przykład:
 
 ```csharp
 ConsoleKeyInfo key = new ConsoleKeyInfo();    // Struct type.
@@ -53,7 +53,7 @@ if (key.ToString() == "y")
 
 #### <a name="category"></a>Kategoria
 
-Podstawowe biblioteki .NET
+Podstawowe biblioteki platformy .NET
 
 #### <a name="affected-apis"></a>Dotyczy interfejsów API
 

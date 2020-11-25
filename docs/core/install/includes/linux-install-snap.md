@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4ab2fc0645f76870dead99b5f45eef763643fb27
-ms.sourcegitcommit: bc9c63541c3dc756d48a7ce9d22b5583a18cf7fd
+ms.openlocfilehash: 83808f2f3a05333ed5d9e3809cbc2fd6e230d02c
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506904"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031784"
 ---
 
 [Program .NET Core jest dostępny w magazynie Snap.](https://snapcraft.io/dotnet-sdk)
@@ -15,7 +15,7 @@ Tylko obsługiwane wersje programu .NET Core są dostępne za poorednictwem przy
 
 ### <a name="install-the-sdk"></a>Instalacja zestawu SDK
 
-Pakiety przyciągania dla zestawu .NET SDK są publikowane w ramach tego samego identyfikatora: `dotnet-sdk` . Określoną wersję zestawu SDK można zainstalować, określając kanał. Zestaw SDK obejmuje środowisko uruchomieniowe współreagujące. W poniższej tabeli wymieniono kanały:
+Pakiety przyciągania dla zestawu .NET SDK są publikowane w ramach tego samego identyfikatora: `dotnet-sdk` . Określoną wersję zestawu SDK można zainstalować, określając kanał. Zestaw SDK zawiera odpowiednie środowisko uruchomieniowe. Poniższa tabela zawiera listę kanałów:
 
 | Wersja platformy .NET | Pakiet przyciągania             |
 |--------------|--------------------------|
@@ -76,7 +76,7 @@ Running 'dotnet restore' on /home/myhome/test/test.csproj...
 /snap/dotnet-sdk/27/sdk/2.2.103/NuGet.targets(114,5): error :   The remote certificate is invalid according to the validation procedure. [/home/myhome/test/test.csproj]
 ```
 
-Aby rozwiązać ten problem, ustaw kilka zmiennych środowisko:
+Aby rozwiązać ten problem, ustaw kilka zmiennych środowiskowych:
 
 ```bash
 export SSL_CERT_FILE=[path-to-certificate-file]

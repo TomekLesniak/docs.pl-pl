@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 92c03328414410d56a2ff5f445639757367b42c7
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420434"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032060"
 ---
 ### <a name="processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start"></a>Proces. element StartInfo zgłasza InvalidOperationException dla procesów, które nie zostały uruchomione
 
@@ -18,7 +18,7 @@ Począwszy od platformy .NET Core 1,0, jeśli odczytasz <xref:System.Diagnostics
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-1.0
+1,0
 
 #### <a name="recommended-action"></a>Zalecana akcja
 

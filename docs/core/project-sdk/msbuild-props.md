@@ -4,12 +4,12 @@ description: Odwołanie do właściwości i elementów programu MSBuild, które 
 ms.date: 02/14/2020
 ms.topic: reference
 ms.custom: updateeachrelease
-ms.openlocfilehash: ecd1cf405f661d0025553974f92fa1401b13220d
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: 14603ba98f00d46d0f167652500979f94de0ec9a
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94687474"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96031692"
 ---
 # <a name="msbuild-reference-for-net-sdk-projects"></a>Dokumentacja programu MSBuild dla projektów zestawu .NET SDK
 
@@ -81,10 +81,24 @@ Można określić właściwości, takie jak `PackageId` ,,, `PackageVersion` `Pa
 
 ## <a name="publish-properties-and-items"></a>Publikowanie właściwości i elementów
 
+- [CopyLocalLockFileAssemblies](#copylocallockfileassemblies)
 - [RuntimeIdentifier](#runtimeidentifier)
 - [RuntimeIdentifiers](#runtimeidentifiers)
 - [TrimmerRootAssembly](#trimmerrootassembly)
 - [UseAppHost](#useapphost)
+
+### <a name="copylocallockfileassemblies"></a>CopyLocalLockFileAssemblies
+
+`CopyLocalLockFileAssemblies`Właściwość jest przydatna w przypadku projektów wtyczek, które mają zależności od innych bibliotek. W przypadku ustawienia tej właściwości na wartość `true` wszystkie zależności pakietów NuGet są kopiowane do katalogu wyjściowego. Oznacza to, że możesz użyć danych wyjściowych programu, `dotnet build` Aby uruchomić wtyczkę na dowolnym komputerze.
+
+```xml
+<PropertyGroup>
+  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+</PropertyGroup>
+```
+
+> [!TIP]
+> Alternatywnie można użyć `dotnet publish` programu do opublikowania biblioteki klas. Aby uzyskać więcej informacji, zobacz [dotnet Publish](../tools/dotnet-publish.md).
 
 ### <a name="runtimeidentifier"></a>RuntimeIdentifier
 
@@ -398,7 +412,7 @@ Fragment pliku projektu w poniższym przykładzie odwołuje się do projektu o n
 </ItemGroup>
 ```
 
-### <a name="reference"></a>Dokumentacja
+### <a name="reference"></a>Odwołanie
 
 `Reference`Element definiuje odwołanie do pliku zestawu.
 
@@ -453,7 +467,7 @@ Aby uzyskać więcej informacji, zobacz [Udostępnianie składników .NET do mod
 </PropertyGroup>
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Odwołanie do schematu programu MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference)
 - [Typowe właściwości programu MSBuild](/visualstudio/msbuild/common-msbuild-project-properties)

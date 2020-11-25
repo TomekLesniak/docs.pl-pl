@@ -4,11 +4,11 @@ description: Poznaj narzędzia platformy Docker dostępne w programie Visual Stu
 ms.date: 08/06/2020
 ms.custom: vs-dotnet
 ms.openlocfilehash: ae20ebf7c3c27d7f2ebe51c33719b82048f86241
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90678930"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032193"
 ---
 # <a name="use-docker-tools-in-visual-studio-on-windows"></a>Korzystanie z narzędzi platformy Docker w programie Visual Studio w systemie Windows
 
@@ -45,7 +45,7 @@ Po dodaniu lub włączeniu obsługi platformy Docker program Visual Studio dodaj
 
 Jeśli chcesz utworzyć rozwiązanie z obsługą kilku kontenerów, Dodaj obsługę aranżacji kontenera do projektów. Dzięki temu można uruchamiać i debugować grupę kontenerów (całe rozwiązanie) w tym samym czasie, jeśli są one zdefiniowane w tym samym pliku _Docker-Compose. yml_ .
 
-Aby dodać obsługę aranżacji kontenera, kliknij prawym przyciskiem myszy węzeł rozwiązania lub projektu w **Eksplorator rozwiązań**i wybierz polecenie **Dodaj obsługę aranżacji kontenerów >**. Następnie wybierz pozycję **Kubernetes/Helm** lub **Docker Compose** , aby zarządzać kontenerami.
+Aby dodać obsługę aranżacji kontenera, kliknij prawym przyciskiem myszy węzeł rozwiązania lub projektu w **Eksplorator rozwiązań** i wybierz polecenie **Dodaj obsługę aranżacji kontenerów >**. Następnie wybierz pozycję **Kubernetes/Helm** lub **Docker Compose** , aby zarządzać kontenerami.
 
 Po dodaniu obsługi aranżacji kontenera do projektu zobaczysz pliku dockerfile dodaną do projektu i folderem **Docker-Zredaguj** do rozwiązania w **Eksplorator rozwiązań**, jak pokazano na rysunku 4-33:
 
@@ -57,7 +57,7 @@ Jeśli _Docker-Compose. yml_ już istnieje, Visual Studio dodaje do niego wymaga
 
 ## <a name="configure-docker-tools"></a>Konfigurowanie narzędzi platformy Docker
 
-Z menu głównego wybierz polecenie **narzędzia > opcje**i rozwiń węzeł **Narzędzia kontenera > ustawienia**. Zostaną wyświetlone ustawienia narzędzi kontenerów.
+Z menu głównego wybierz polecenie **narzędzia > opcje** i rozwiń węzeł **Narzędzia kontenera > ustawienia**. Zostaną wyświetlone ustawienia narzędzi kontenerów.
 
 ![Opcje narzędzi platformy Docker programu Visual Studio, pokazujące trzy strony: ogólne, pojedynczy projekt i Docker Compose, szczegóły w tekście artykułu.](media/visual-studio-docker-tools-options.png)
 

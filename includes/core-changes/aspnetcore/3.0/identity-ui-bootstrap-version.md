@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: c8f44ae1a500ed240dbff7d9a2c1479af368b7f1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72394104"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032792"
 ---
 ### <a name="identity-default-bootstrap-version-of-ui-changed"></a>Tożsamość: domyślna wersja użytkownika Bootstrap została zmieniona
 
@@ -12,7 +12,7 @@ Począwszy od ASP.NET Core 3,0, interfejs użytkownika tożsamości jest domyśl
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
@@ -37,7 +37,7 @@ services.AddDefaultIdentity<IdentityUser>().AddDefaultUI();
 Wykonaj jedno z następujących działań:
 
 - Przeprowadź migrację aplikacji, aby użyć ładowania początkowego 4 przy użyciu ich [przewodnika migracji](https://getbootstrap.com/docs/4.0/migration).
-- Aktualizacja `Startup.ConfigureServices` w celu wymuszenia użycia programu Bootstrap 3. Na przykład:
+- Aktualizacja `Startup.ConfigureServices` w celu wymuszenia użycia programu Bootstrap 3. Przykład:
 
     ```csharp
     services.AddDefaultIdentity<IdentityUser>().AddDefaultUI(UIFramework.Bootstrap3);

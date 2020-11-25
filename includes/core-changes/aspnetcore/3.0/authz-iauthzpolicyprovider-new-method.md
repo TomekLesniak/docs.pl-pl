@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 58dbb73902c0226fa81acf1a70de2160f406f6c6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75901631"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032696"
 ---
 ### <a name="authorization-iauthorizationpolicyprovider-implementations-require-new-method"></a>Autoryzacja: implementacje IAuthorizationPolicyProvider wymagają nowej metody
 
@@ -14,7 +14,7 @@ Aby uzyskać więcej informacji, zobacz [dotnet/aspnetcore # 9759](https://githu
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 

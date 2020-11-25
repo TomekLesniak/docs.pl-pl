@@ -5,14 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fde6f43f-c594-486f-abcb-2211197fae20
-ms.openlocfilehash: 57608ef143e6efd7f59d12d808274fa17961c483
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 1a2d1f0972bc610cb4943dacc74c1bae8c54012b
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95673478"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032219"
 ---
 # <a name="script-blocks-using-msxslscript"></a>Bloki skryptów i element msxsl:script
+
+> [!NOTE]
+> Bloki skryptów są obsługiwane tylko w .NET Framework. _Nie_ są one obsługiwane w przypadku platformy .NET Core lub .NET 5,0 lub nowszej.
 
 <xref:System.Xml.Xsl.XslCompiledTransform>Klasa obsługuje skrypty osadzone przy użyciu `msxsl:script` elementu. Po załadowaniu arkusza stylów wszystkie zdefiniowane funkcje są kompilowane do języka pośredniego firmy Microsoft (MSIL) przez Code Document Object Model (CodeDOM) i są wykonywane w czasie wykonywania. Zestaw wygenerowany z osadzonego bloku skryptu jest oddzielony od zestawu wygenerowanego dla arkusza stylów.  
   
@@ -94,7 +97,7 @@ ms.locfileid: "95673478"
   
  Ten `name` atrybut zawiera nazwę zestawu, a `href` atrybut zawiera ścieżkę do zestawu. Nazwa zestawu może być pełną nazwą, taką jak "System. Data, Version = 2.0.3600.0, Culture = neutral, PublicKeyToken = b77a5c561934e089" lub krótką nazwą, taką jak "System. Web".  
   
-#### <a name="namespaces"></a>Namespaces  
+#### <a name="namespaces"></a>Przestrzenie nazw  
 
  Domyślnie są uwzględniane następujące przestrzenie nazw:  
   
@@ -155,7 +158,7 @@ ms.locfileid: "95673478"
 </circles>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przekształcenia XSLT](xslt-transformations.md)
 - [Dynamiczne generowanie i kompilacja kodu źródłowego](../../../framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)

@@ -1,24 +1,24 @@
 ---
 ms.openlocfilehash: b3cc04d5675ea63a0a6b967e293da8a1bd79830d
-ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82595688"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032074"
 ---
 ### <a name="uribuilder-properties-no-longer-prepend-leading-characters"></a>Właściwości UriBuilder nie dołączają już znaków wiodących
 
-<xref:System.UriBuilder.Fragment?displayProperty=nameWithType>nie dołącza już znaku wiodącego `#` i nie <xref:System.UriBuilder.Query?displayProperty=nameWithType> dołącza już znaku wiodącego `?` , gdy jeden już istnieje.
+<xref:System.UriBuilder.Fragment?displayProperty=nameWithType> nie dołącza już znaku wiodącego `#` i <xref:System.UriBuilder.Query?displayProperty=nameWithType> nie dołącza już znaku wiodącego, `?` gdy jeden już istnieje.
 
 #### <a name="change-description"></a>Zmień opis
 
-<xref:System.UriBuilder.Fragment?displayProperty=nameWithType> W .NET Framework właściwości <xref:System.UriBuilder.Query?displayProperty=nameWithType> i zawsze są poprzedzone znakiem `?` `#` lub, odpowiednio, do przechowywanej wartości. Takie zachowanie może skutkować `#` wielokrotnym `?` znakiem w wartości przechowywanej, jeśli ciąg zawiera już jeden z tych znaków wiodących. Na przykład wartość <xref:System.UriBuilder.Fragment?displayProperty=nameWithType> może być równa `##main`.
+W .NET Framework <xref:System.UriBuilder.Fragment?displayProperty=nameWithType> <xref:System.UriBuilder.Query?displayProperty=nameWithType> właściwości i zawsze są poprzedzone `#` `?` znakiem lub, odpowiednio, do przechowywanej wartości. Takie zachowanie może skutkować wielokrotnym `#` `?` znakiem w wartości przechowywanej, jeśli ciąg zawiera już jeden z tych znaków wiodących. Na przykład wartość może być równa <xref:System.UriBuilder.Fragment?displayProperty=nameWithType> `##main` .
 
-Począwszy od platformy .NET Core 1,0, te właściwości nie `#` dołączają `?` lub do przechowywanej wartości, jeśli jeden już występuje na początku ciągu.
+Począwszy od platformy .NET Core 1,0, te właściwości nie dołączają `#` lub `?` do przechowywanej wartości, jeśli jeden już występuje na początku ciągu.
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-1.0
+1,0
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
@@ -36,8 +36,8 @@ builder.Query += "&four=4";
 Console.WriteLine(builder.Query);
 ```
 
-- W .NET Framework dane wyjściowe to `????one=1&two=2&three=3&four=4`.
-- W programie .NET Core dane wyjściowe to `?one=1&two=2&three=3&four=4`.
+- W .NET Framework dane wyjściowe to `????one=1&two=2&three=3&four=4` .
+- W programie .NET Core dane wyjściowe to `?one=1&two=2&three=3&four=4` .
 
 #### <a name="category"></a>Kategoria
 

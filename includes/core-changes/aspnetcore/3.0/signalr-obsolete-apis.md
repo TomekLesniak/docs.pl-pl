@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 2a65caedea2af65796267aa145e275ebff814bf8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72394062"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032888"
 ---
 ### <a name="signalr-usesignalr-and-useconnections-methods-marked-obsolete"></a>Sygnalizujący: metody UseSignalR i UseConnections oznaczone jako przestarzałe
 
@@ -12,7 +12,7 @@ Metody `UseConnections` i `UseSignalR` i klasy `ConnectionsRouteBuilder` i `HubR
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 

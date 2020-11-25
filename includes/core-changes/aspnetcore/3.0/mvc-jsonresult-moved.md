@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 96c2a32dd7cca91e965601d715bbd4625bba439a
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811279"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032839"
 ---
 ### <a name="mvc-jsonresult-moved-to-microsoftaspnetcoremvccore"></a>MVC: JsonResult przeniesiony do Microsoft. AspNetCore. MVC. Core
 

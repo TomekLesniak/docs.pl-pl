@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: ac5a3c4f3aefbb59418ad92b2d795f36916f877f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72394478"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032898"
 ---
 ### <a name="spas-spaservices-and-nodeservices-marked-obsolete"></a>Aplikacji jednostronicowych: SpaServices i NodeServices oznaczone jako przestarzałe
 
@@ -25,11 +25,11 @@ Poprzednie pakiety i moduły npm zostaną później usunięte w programie .NET 5
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
-Przestarzałe pakiety i moduły npm zostały zaprojektowane w celu zintegrowania ASP.NET Core z różnymi strukturami aplikacji jednostronicowych (SPA). Takie struktury obejmują kątowy, reagowanie i reagowanie na Redux.
+Przestarzałe pakiety i moduły npm zostały zaprojektowane w celu zintegrowania ASP.NET Core z różnymi strukturami Single-Page App (SPA). Takie struktury obejmują kątowy, reagowanie i reagowanie na Redux.
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
@@ -37,7 +37,7 @@ W pakiecie NuGet [Microsoft. AspNetCore. SpaServices. Extensions](https://www.nu
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
-ASP.NET Core obsługuje integrację z różnymi strukturami aplikacji jednostronicowych (SPA), w tym między innymi z zakresu, reakcji i reagowania na Redux. Początkowo integracja z tymi platformami została zrealizowana przy użyciu składników specyficznych dla ASP.NET Core, które obsługują scenariusze takie jak wstępne renderowanie po stronie serwera i integrację z pakietem WebPack. Po przekroczeniu tego czasu normy branżowe uległy zmianie. Każdy z platform SPA wydał własne standardowe interfejsy wiersza polecenia. Na przykład kątowy interfejs wiersza polecenia i Utwórz-reaguje na aplikację.
+ASP.NET Core obsługuje integrację z różnymi platformami Single-Page App (SPA), w tym z przedziałami kątowymi, reagują i reagują z Redux. Początkowo integracja z tymi platformami została zrealizowana przy użyciu składników specyficznych dla ASP.NET Core, które obsługują scenariusze takie jak wstępne renderowanie po stronie serwera i integrację z pakietem WebPack. Po przekroczeniu tego czasu normy branżowe uległy zmianie. Każdy z platform SPA wydał własne standardowe interfejsy wiersza polecenia. Na przykład kątowy interfejs wiersza polecenia i Utwórz-reaguje na aplikację.
 
 Gdy ASP.NET Core 2,1 zostało wydane w maju 2018, zespół odpowiedział na zmiany w standardach. Podano nowszą i uproszczoną metodę integracji ze swoimi łańcuchy narzędziami. Nowy mechanizm integracji istnieje w pakiecie `Microsoft.AspNetCore.SpaServices.Extensions` i pozostaje podstawą szablonów projektów "skośne" i "reaguje" od ASP.NET Core 2,1.
 

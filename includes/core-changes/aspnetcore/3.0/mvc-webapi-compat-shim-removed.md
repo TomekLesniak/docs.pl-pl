@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 75945e7ff26c1c6db891d12cef4c16ed210da6af
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72393950"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032840"
 ---
 ### <a name="mvc-web-api-compatibility-shim-removed"></a>MVC: Usunięto podkładkę zgodności z interfejsem API sieci Web
 
@@ -16,7 +16,7 @@ Począwszy od ASP.NET Core 3,0, `Microsoft.AspNetCore.Mvc.WebApiCompatShim` paki
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 

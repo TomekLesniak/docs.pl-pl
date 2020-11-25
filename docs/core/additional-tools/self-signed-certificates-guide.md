@@ -3,38 +3,38 @@ title: Generowanie Self-Signed certyfikatów
 description: Omówienie narzędzia Microsoft dotnet dev-certs, które dodaje funkcje dla projektów .NET Core i ASP.NET Core oraz inne opcje używania certyfikatów z podpisem własnym.
 author: angee
 ms.date: 11/19/2020
-ms.openlocfilehash: 15bbe3997ca34b503074595fa027bc6dfff1c0a7
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: b5bf4b719495c2d6ec248e8592367ac452be91c1
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95761423"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032180"
 ---
 # <a name="generate-self-signed-certificates-with-the-net-cli"></a>Generowanie certyfikatów z podpisem własnym za pomocą interfejsu wiersza polecenia platformy .NET
 
-W przypadku korzystania z certyfikatów z podpisem własnym istnieją różne sposoby tworzenia i używania ich na potrzeby scenariuszy projektowania i testowania.  W tym przewodniku omówiono korzystanie z certyfikatów z podpisem własnym `dotnet dev-certs` i innych opcji, takich jak `PowerShell` i `OpenSSL` .
+W przypadku korzystania z certyfikatów z podpisem własnym istnieją różne sposoby tworzenia i używania ich na potrzeby scenariuszy tworzenia i testowania.  W tym przewodniku omówiono korzystanie z certyfikatów z podpisem własnym `dotnet dev-certs` i innych opcji, takich jak `PowerShell` i `OpenSSL` .
 
 Następnie można sprawdzić, czy certyfikat zostanie załadowany przy użyciu przykładu, takiego jak [aplikacja ASP.NET Core](https://github.com/dotnet/dotnet-docker/blob/master/samples/run-aspnetcore-https-development.md) hostowana w kontenerze.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
-W przykładzie można użyć albo `.netcore 3.1` `.net 5` .
+W przykładzie można użyć platformy .NET Core 3,1 lub .NET 5.
 
-W przypadku programu `dotnet dev-certs` upewnij się, że `dotnet` zainstalowano odpowiednią wersję programu:
+W przypadku programu `dotnet dev-certs` upewnij się, że zainstalowano odpowiednią wersję programu .NET:
 
-* [Instalowanie dotnet w systemie Windows](../install/windows.md)
-* [Instalowanie dotnet w systemie Linux](../install/linux.md)
-* [Zainstaluj program dotnet w systemie macOS](../install/macos.md)
+* [Instalowanie programu .NET w systemie Windows](../install/windows.md)
+* [Instalowanie programu .NET w systemie Linux](../install/linux.md)
+* [Zainstaluj platformę .NET na macOS](../install/macos.md)
 
 Ten przykład wymaga [platformy docker 17,06](https://docs.docker.com/release-notes/docker-ce) lub nowszej wersji [klienta platformy Docker](https://www.docker.com/products/docker).
 
 ## <a name="prepare-sample-app"></a>Przygotowanie przykładowej aplikacji
 
-Należy przygotować przykładową aplikację w zależności od środowiska uruchomieniowego, którego chcesz użyć do testowania.
+Należy przygotować przykładową aplikację w zależności od środowiska uruchomieniowego, którego chcesz użyć do testowania, [.NET Core 3,1](#net-core-31-sample-app) lub [.NET 5](#net-5-sample-app).
 
-W tym przewodniku będziesz korzystać z [przykładowej aplikacji](https://hub.docker.com/_/microsoft-dotnet-samples) i wprowadzać zmiany w miarę potrzeb.
+W tym przewodniku użyjesz [przykładowej aplikacji](https://hub.docker.com/_/microsoft-dotnet-samples) i wprowadzisz zmiany w odpowiednim miejscu.
 
-### <a name="prepare-net-core-31-sample-app"></a>Przygotowanie przykładowej aplikacji platformy .NET Core 3,1
+### <a name="net-core-31-sample-app"></a>Przykładowa aplikacja platformy .NET Core 3,1
 
 Pobieranie przykładowej aplikacji.
 
@@ -61,7 +61,7 @@ Upewnij się, że `aspnetapp.csproj` zawiera ona odpowiednią platformę docelow
 </Project>
 ```
 
-Zmodyfikuj pliku dockerfile, aby upewnić się, że środowisko uruchomieniowe wskazuje na. rdzeń 3,1:
+Zmodyfikuj pliku dockerfile, aby upewnić się, że środowisko uruchomieniowe wskazuje na platformę .NET Core 3,1:
 
 ```Dockerfile
 # https://hub.docker.com/_/microsoft-dotnet-core
@@ -97,13 +97,13 @@ Utwórz kontener do testowania lokalnego.
 docker build -t aspnetapp:my-sample -f Dockerfile .
 ```
 
-### <a name="prepare-net-5-sample-app"></a>Przygotowywanie przykładowej aplikacji .NET 5
+### <a name="net-5-sample-app"></a>Przykładowa aplikacja platformy .NET 5
 
 W tym przewodniku [Przykładowa aspnetapp](https://hub.docker.com/_/microsoft-dotnet-samples) powinna zostać sprawdzona dla programu .NET 5.
 
 Sprawdź, czy aplikacja Przykładowa [pliku dockerfile](https://github.com/dotnet/dotnet-docker/blob/master/samples/aspnetapp/Dockerfile) korzysta z platformy .NET 5.
 
-W zależności od systemu operacyjnego hosta może być konieczne zaktualizowanie środowiska uruchomieniowego ASPNET. Na przykład zmiana z `mcr.microsoft.com/dotnet/aspnet:5.0-nanoservercore-2009 AS runtime` na na `mcr.microsoft.com/dotnet/aspnet:5.0-windowsservercore-ltsc2019 AS runtime` pliku dockerfile będzie pomocna w odniesieniu do odpowiedniego środowiska uruchomieniowego systemu Windows.
+W zależności od systemu operacyjnego hosta może być konieczne zaktualizowanie środowiska uruchomieniowego ASP.NET. Na przykład zmiana z `mcr.microsoft.com/dotnet/aspnet:5.0-nanoservercore-2009 AS runtime` na na `mcr.microsoft.com/dotnet/aspnet:5.0-windowsservercore-ltsc2019 AS runtime` pliku dockerfile będzie pomocna w odniesieniu do odpowiedniego środowiska uruchomieniowego systemu Windows.
 
 Na przykład może to pomóc w testowaniu certyfikatów w systemie Windows:
 
@@ -147,7 +147,7 @@ Upewnij się, że `aspnetapp.csproj` zawiera ona odpowiednią platformę docelow
 ```
 
 > [!NOTE]
-> Aby *obciąć* wdrożenie przy użyciu parametrów dotnet Publish, należy upewnić się, że odpowiednie zależności są dołączone do obsługi certyfikatów SSL.
+> Jeśli chcesz użyć `dotnet publish` parametrów do *przycinania* wdrożenia, upewnij się, że odpowiednie zależności są dołączone do obsługi certyfikatów SSL.
 Zaktualizuj [dotnet-docker\samples\aspnetapp\aspnetapp.csproj](https://github.com/dotnet/dotnet-docker/blob/master/samples/aspnetapp/aspnetapp/aspnetapp.csproj) , aby upewnić się, że odpowiednie zestawy znajdują się w kontenerze. Aby uzyskać informacje, należy sprawdzić, jak zaktualizować plik. csproj, aby [obsługiwał certyfikaty SSL](../deploying/trim-self-contained.md#support-for-ssl-certificates) podczas korzystania z przycinania do wdrożeń samodzielnych.
 
 Upewnij się, że wskażesz przykładową aplikację.
@@ -162,7 +162,15 @@ Utwórz kontener do testowania lokalnego.
 docker build -t aspnetapp:my-sample -f Dockerfile .
 ```
 
-## <a name="create-a-self-signed-certificate-with-dotnet-dev-certs"></a>Tworzenie certyfikatu z podpisem własnym przy użyciu programu dotnet dev-certs
+## <a name="create-a-self-signed-certificate"></a>Tworzenie certyfikatu z podpisem własnym
+
+Można utworzyć certyfikat z podpisem własnym:
+
+- [Przy użyciu programu dotnet dev-certs](#with-dotnet-dev-certs)
+- [Z programem PowerShell](#with-powershell)
+- [Z OpenSSL](#with-openssl)
+
+### <a name="with-dotnet-dev-certs"></a>Przy użyciu programu dotnet dev-certs
 
 Programu można użyć `dotnet dev-certs` do pracy z certyfikatami z podpisem własnym. W tym przykładzie używa się konsoli programu PowerShell.
 
@@ -191,7 +199,7 @@ docker run --rm -it -p 8000:80 -p 8001:443 -e ASPNETCORE_URLS="https://+;http://
 
 Po uruchomieniu aplikacji przejdź do `https://localhost:8001` przeglądarki sieci Web.
 
-### <a name="clean-up"></a>Czyszczenie
+#### <a name="clean-up"></a>Czyszczenie
 
 Jeśli wpisy tajne i certyfikaty nie są używane, należy je wyczyścić.
 
@@ -200,7 +208,7 @@ dotnet user-secrets remove "Kestrel:Certificates:Development:Password" -p aspnet
 dotnet dev-certs https --clean
 ```
 
-## <a name="create-a-self-signed-certificate-with-powershell"></a>Tworzenie certyfikatu z podpisem własnym przy użyciu programu PowerShell
+### <a name="with-powershell"></a>Z programem PowerShell
 
 Za pomocą programu PowerShell można generować certyfikaty z podpisem własnym. [Klienta PKI](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps&preserver-view=true) można użyć do wygenerowania certyfikatu z podpisem własnym.
 
@@ -238,7 +246,7 @@ Po uruchomieniu aplikacji przejdź do contoso.com:8001 w przeglądarce.
 
 Upewnij się, że wpisy hosta zostały zaktualizowane pod kątem `contoso.com` odpowiedzi na odpowiedni adres IP (na przykład 127.0.0.1). Jeśli certyfikat nie jest rozpoznawany, upewnij się, że certyfikat załadowany z kontenerem jest również zaufany na hoście oraz że odpowiednie wpisy dotyczące sieci SAN/DNS są dostępne dla programu `contoso.com` .
 
-### <a name="clean-up"></a>Czyszczenie
+#### <a name="clean-up"></a>Czyszczenie
 
 ```powershell
 $cert | Remove-Item
@@ -246,7 +254,7 @@ Get-ChildItem $certFilePath | Remove-Item
 $rootCert | Remove-item
 ```
 
-## <a name="create-a-self-signed-certificate-with-openssl"></a>Tworzenie certyfikatu z podpisem własnym za pomocą OpenSSL
+### <a name="with-openssl"></a>Z OpenSSL
 
 Za pomocą [OpenSSL](https://www.openssl.org/) można tworzyć certyfikaty z podpisem własnym. W tym przykładzie użyto WSL/Ubuntu i powłoki bash z `OpenSSL` .
 
@@ -336,7 +344,7 @@ Po uruchomieniu aplikacji przejdź do contoso.com:8001 w przeglądarce.
 
 Upewnij się, że wpisy hosta zostały zaktualizowane pod kątem `contoso.com` odpowiedzi na odpowiedni adres IP (na przykład 127.0.0.1). Jeśli certyfikat nie jest rozpoznawany, upewnij się, że certyfikat załadowany z kontenerem jest również zaufany na hoście oraz że odpowiednie wpisy dotyczące sieci SAN/DNS są dostępne dla programu `contoso.com` .
 
-### <a name="clean-up"></a>Czyszczenie
+#### <a name="clean-up"></a>Czyszczenie
 
 Pamiętaj, aby wyczyścić certyfikaty z podpisem własnym po zakończeniu testowania.
 

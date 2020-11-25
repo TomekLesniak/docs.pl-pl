@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 5741e8cdd51e00d5459c4c1032a56682429aab17
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75901690"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032832"
 ---
 ### <a name="mvc-pubternal-types-changed-to-internal"></a>MVC: typy "Pubternal" zostały zmienione na wewnętrzne
 
@@ -16,7 +16,7 @@ W ASP.NET Core typy "pubternal" są zadeklarowane jako, `public` ale znajdują s
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 

@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 60ebcd9fc9ca18c33d31b82ba5020426d22a7d5a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75902059"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032728"
 ---
 ### <a name="authentication-httpcontextauthentication-property-removed"></a>Uwierzytelnianie: Właściwość HttpContext. Authentication została usunięta
 
@@ -18,7 +18,7 @@ Aby zapoznać się z omówieniem, zobacz [dotnet/aspnetcore # 6533](https://gith
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 

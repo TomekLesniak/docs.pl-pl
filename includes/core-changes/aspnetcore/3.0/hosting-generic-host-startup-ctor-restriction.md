@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: d1ddba72ce25c5e01025d916d52f785b5a1a9e71
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75901912"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032744"
 ---
 ### <a name="hosting-generic-host-restricts-startup-constructor-injection"></a>Hosting: Host ogólny ogranicza iniekcję konstruktora startowego
 
@@ -26,7 +26,7 @@ Przed ASP.NET Core 3,0, iniekcja konstruktora może zostać użyta dla dowolnego
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="reason-for-change"></a>Przyczyna zmiany
 
@@ -34,7 +34,7 @@ Ta zmiana jest konsekwencją zmiany platformy stosu sieci Web na ogólną biblio
 
 #### <a name="recommended-action"></a>Zalecana akcja
 
-Wsuń usługi do `Startup.Configure` sygnatury metody. Na przykład:
+Wsuń usługi do `Startup.Configure` sygnatury metody. Przykład:
 
 ```csharp
 public void Configure(IApplicationBuilder app, IOptions<MyOptions> options)

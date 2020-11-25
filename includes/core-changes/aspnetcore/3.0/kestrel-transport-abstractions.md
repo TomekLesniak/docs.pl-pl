@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: fb23418816abcae125106c93b339a546aa9bc2ee
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721776"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032807"
 ---
 ### <a name="kestrel-transport-abstractions-removed-and-made-public"></a>Kestrel: skróty transportowe zostały usunięte i utworzone publicznie
 
@@ -12,7 +12,7 @@ W ramach przenoszenia z interfejsów API "pubternal" interfejsy API warstwy tran
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 

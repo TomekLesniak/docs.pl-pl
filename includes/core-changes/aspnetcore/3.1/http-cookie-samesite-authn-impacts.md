@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 8b6d334677991382d235fd53cd3c98e3a77d650d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539625"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032695"
 ---
 ### <a name="http-browser-samesite-changes-impact-authentication"></a>HTTP: zmiana SameSite w przeglądarce wpływa na uwierzytelnianie
 
@@ -22,7 +22,7 @@ Aby zapoznać się z omówieniem tego problemu, zobacz [dotnet/aspnetcore # 1499
 
 #### <a name="new-behavior"></a>Nowe zachowanie
 
-Firma Google zaproponowała nowy projekt Standard, który nie jest zgodny z poprzednimi wersjami. Standard zmienia tryb domyślny na `Lax` i dodaje nowy wpis, `None` Aby zrezygnować. jest to `Lax` wystarczające dla większości plików cookie aplikacji, jednak przerywa scenariusze między lokacjami, takie jak OpenID Connect Connect i logowanie przy użyciu protokołu WS-Federation. Większość logowań uwierzytelniania OAuth nie ma wpływu z powodu różnic w przepływie żądań. Nowy `None` parametr powoduje problemy ze zgodnością klientów, którzy zaimplementowali poprzednią wersję standardową (na przykład system iOS 12). Program Chrome 80 będzie zawierać zmiany. Zobacz [SameSite Updates](https://www.chromium.org/updates/same-site) dla osi czasu uruchamiania produktu Chrome.
+Firma Google zaproponowała nowy projekt Standard, który nie jest zgodny z poprzednimi wersjami. Standard zmienia tryb domyślny na `Lax` i dodaje nowy wpis, `None` Aby zrezygnować. jest to `Lax` wystarczające dla większości plików cookie aplikacji, jednak przerywa scenariusze między lokacjami, takie jak openid connect Connect i WS-Federation login. Większość logowań uwierzytelniania OAuth nie ma wpływu z powodu różnic w przepływie żądań. Nowy `None` parametr powoduje problemy ze zgodnością klientów, którzy zaimplementowali poprzednią wersję standardową (na przykład system iOS 12). Program Chrome 80 będzie zawierać zmiany. Zobacz [SameSite Updates](https://www.chromium.org/updates/same-site) dla osi czasu uruchamiania produktu Chrome.
 
 ASP.NET Core 3,1 został zaktualizowany, aby zaimplementować nowe `SameSite` zachowanie. Aktualizacja ponownie definiuje zachowanie programu, `SameSiteMode.None` Aby emitować `SameSite=None` i dodaje nową wartość `SameSiteMode.Unspecified` w celu pominięcia `SameSite` atrybutu. Wszystkie interfejsy API plików cookie teraz domyślnie to `Unspecified` , chociaż niektóre składniki używające plików cookie ustawiają wartości bardziej specyficzne dla ich scenariuszy, takich jak OpenID Connect Connect korelacji i pliki cookie nonce.
 
@@ -78,7 +78,7 @@ Wersje elektronów obejmują starsze wersje chromu. Na przykład wersja elektron
 
 Standard 2016 jest `SameSite` przyznany, że nieznane wartości są traktowane jako `SameSite=Strict` wartości. W związku z tym wszystkie starsze przeglądarki, które obsługują oryginalny Standard, mogą zostać przerwane, gdy zobaczysz `SameSite` Właściwość o wartości `None` . Aplikacje sieci Web muszą implementować wykrywanie przeglądarki, jeśli zamierzają obsługiwać te stare przeglądarki. ASP.NET Core nie implementuje wykrywania przeglądarki, ponieważ `User-Agent` wartości nagłówka żądania są bardzo niestabilne i zmieniają się co tydzień. Zamiast tego punkt rozszerzenia w zasadach dotyczących plików cookie pozwala na dodawanie `User-Agent` logiki specyficznej.
 
-W *Startup.cs*Dodaj następujący kod:
+W *Startup.cs* Dodaj następujący kod:
 
 ```csharp
 private void CheckSameSite(HttpContext httpContext, CookieOptions options)

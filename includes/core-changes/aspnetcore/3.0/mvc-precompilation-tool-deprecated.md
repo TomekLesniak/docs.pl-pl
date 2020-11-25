@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 8395428e1729a00fc1af72cf53fe689ee95b5fdf
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721199"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96032831"
 ---
 ### <a name="mvc-precompilation-tool-deprecated"></a>MVC: Narzędzie wstępnej kompilacji zostało zaniechane
 
@@ -14,7 +14,7 @@ W ASP.NET Core 3,0 zostało usunięte narzędzie wstępnej kompilacji MVC ASP.NE
 
 #### <a name="version-introduced"></a>Wprowadzona wersja
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Stare zachowanie
 
