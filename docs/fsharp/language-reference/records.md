@@ -2,18 +2,18 @@
 title: Rekordy
 description: 'Dowiedz się, w jaki sposób rekordy F # reprezentują proste agregowanie nazwanych wartości, opcjonalnie z elementami członkowskimi.'
 ms.date: 08/15/2020
-ms.openlocfilehash: a72c0f15b58407e7d759e2fb5a1b35a7fc0d29e3
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 03de96b9c53bc21e7a7723a15d2a8451d100ba76
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812357"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95682032"
 ---
-# <a name="records"></a><span data-ttu-id="388ee-103">Rekordy</span><span class="sxs-lookup"><span data-stu-id="388ee-103">Records</span></span>
+# <a name="records"></a><span data-ttu-id="4f669-103">Rekordy</span><span class="sxs-lookup"><span data-stu-id="4f669-103">Records</span></span>
 
-<span data-ttu-id="388ee-104">Rekordy reprezentują proste Agregowanie wartości nazwanych, opcjonalnie z elementami członkowskimi.</span><span class="sxs-lookup"><span data-stu-id="388ee-104">Records represent simple aggregates of named values, optionally with members.</span></span> <span data-ttu-id="388ee-105">Mogą to być struktury lub typy referencyjne.</span><span class="sxs-lookup"><span data-stu-id="388ee-105">They can either be structs or reference types.</span></span>  <span data-ttu-id="388ee-106">Domyślnie są to typy odwołań.</span><span class="sxs-lookup"><span data-stu-id="388ee-106">They are reference types by default.</span></span>
+<span data-ttu-id="4f669-104">Rekordy reprezentują proste Agregowanie wartości nazwanych, opcjonalnie z elementami członkowskimi.</span><span class="sxs-lookup"><span data-stu-id="4f669-104">Records represent simple aggregates of named values, optionally with members.</span></span> <span data-ttu-id="4f669-105">Mogą to być struktury lub typy referencyjne.</span><span class="sxs-lookup"><span data-stu-id="4f669-105">They can either be structs or reference types.</span></span>  <span data-ttu-id="4f669-106">Domyślnie są to typy odwołań.</span><span class="sxs-lookup"><span data-stu-id="4f669-106">They are reference types by default.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="388ee-107">Składnia</span><span class="sxs-lookup"><span data-stu-id="388ee-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="4f669-107">Składnia</span><span class="sxs-lookup"><span data-stu-id="4f669-107">Syntax</span></span>
 
 ```fsharp
 [ attributes ]
@@ -24,57 +24,57 @@ type [accessibility-modifier] typename =
     [ member-list ]
 ```
 
-## <a name="remarks"></a><span data-ttu-id="388ee-108">Uwagi</span><span class="sxs-lookup"><span data-stu-id="388ee-108">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="4f669-108">Uwagi</span><span class="sxs-lookup"><span data-stu-id="4f669-108">Remarks</span></span>
 
-<span data-ttu-id="388ee-109">W poprzedniej składni, *TypeName* jest nazwą typu rekordu, *Label1* i *etykiety 2* są nazwami wartości, zwanymi *etykietami*, a *Type1* i *Type2* są typami tych wartości.</span><span class="sxs-lookup"><span data-stu-id="388ee-109">In the previous syntax, *typename* is the name of the record type, *label1* and *label2* are names of values, referred to as *labels*, and *type1* and *type2* are the types of these values.</span></span> <span data-ttu-id="388ee-110">*Lista elementów członkowskich* jest opcjonalną listą elementów członkowskich typu.</span><span class="sxs-lookup"><span data-stu-id="388ee-110">*member-list* is the optional list of members for the type.</span></span>  <span data-ttu-id="388ee-111">Możesz użyć atrybutu, `[<Struct>]` Aby utworzyć rekord struktury, a nie rekord, który jest typem referencyjnym.</span><span class="sxs-lookup"><span data-stu-id="388ee-111">You can use the `[<Struct>]` attribute to create a struct record rather than a record which is a reference type.</span></span>
+<span data-ttu-id="4f669-109">W poprzedniej składni, *TypeName* jest nazwą typu rekordu, *Label1* i *etykiety 2* są nazwami wartości, zwanymi *etykietami*, a *Type1* i *Type2* są typami tych wartości.</span><span class="sxs-lookup"><span data-stu-id="4f669-109">In the previous syntax, *typename* is the name of the record type, *label1* and *label2* are names of values, referred to as *labels*, and *type1* and *type2* are the types of these values.</span></span> <span data-ttu-id="4f669-110">*Lista elementów członkowskich* jest opcjonalną listą elementów członkowskich typu.</span><span class="sxs-lookup"><span data-stu-id="4f669-110">*member-list* is the optional list of members for the type.</span></span>  <span data-ttu-id="4f669-111">Możesz użyć atrybutu, `[<Struct>]` Aby utworzyć rekord struktury, a nie rekord, który jest typem referencyjnym.</span><span class="sxs-lookup"><span data-stu-id="4f669-111">You can use the `[<Struct>]` attribute to create a struct record rather than a record which is a reference type.</span></span>
 
-<span data-ttu-id="388ee-112">Poniżej przedstawiono kilka przykładów.</span><span class="sxs-lookup"><span data-stu-id="388ee-112">Following are some examples.</span></span>
+<span data-ttu-id="4f669-112">Poniżej przedstawiono kilka przykładów.</span><span class="sxs-lookup"><span data-stu-id="4f669-112">Following are some examples.</span></span>
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1901.fs)]
 
-<span data-ttu-id="388ee-113">Gdy każda etykieta znajduje się w osobnym wierszu, średnik jest opcjonalny.</span><span class="sxs-lookup"><span data-stu-id="388ee-113">When each label is on a separate line, the semicolon is optional.</span></span>
+<span data-ttu-id="4f669-113">Gdy każda etykieta znajduje się w osobnym wierszu, średnik jest opcjonalny.</span><span class="sxs-lookup"><span data-stu-id="4f669-113">When each label is on a separate line, the semicolon is optional.</span></span>
 
-<span data-ttu-id="388ee-114">Można ustawić wartości w wyrażeniach nazywanych *wyrażeniami rekordów*.</span><span class="sxs-lookup"><span data-stu-id="388ee-114">You can set values in expressions known as *record expressions*.</span></span> <span data-ttu-id="388ee-115">Kompilator wnioskuje typ z użytych etykiet (Jeśli etykiety są wystarczająco odrębne od tych z innych typów rekordów).</span><span class="sxs-lookup"><span data-stu-id="388ee-115">The compiler infers the type from the labels used (if the labels are sufficiently distinct from those of other record types).</span></span> <span data-ttu-id="388ee-116">Nawiasy klamrowe ({}) otaczają wyrażenie rekordu.</span><span class="sxs-lookup"><span data-stu-id="388ee-116">Braces ({ }) enclose the record expression.</span></span> <span data-ttu-id="388ee-117">Poniższy kod przedstawia wyrażenie rekordu, które inicjuje rekord z trzema elementami zmiennoprzecinkowymi z etykietami `x` `y` i `z` .</span><span class="sxs-lookup"><span data-stu-id="388ee-117">The following code shows a record expression that initializes a record with three float elements with labels `x`, `y` and `z`.</span></span>
+<span data-ttu-id="4f669-114">Można ustawić wartości w wyrażeniach nazywanych *wyrażeniami rekordów*.</span><span class="sxs-lookup"><span data-stu-id="4f669-114">You can set values in expressions known as *record expressions*.</span></span> <span data-ttu-id="4f669-115">Kompilator wnioskuje typ z użytych etykiet (Jeśli etykiety są wystarczająco odrębne od tych z innych typów rekordów).</span><span class="sxs-lookup"><span data-stu-id="4f669-115">The compiler infers the type from the labels used (if the labels are sufficiently distinct from those of other record types).</span></span> <span data-ttu-id="4f669-116">Nawiasy klamrowe ({}) otaczają wyrażenie rekordu.</span><span class="sxs-lookup"><span data-stu-id="4f669-116">Braces ({ }) enclose the record expression.</span></span> <span data-ttu-id="4f669-117">Poniższy kod przedstawia wyrażenie rekordu, które inicjuje rekord z trzema elementami zmiennoprzecinkowymi z etykietami `x` `y` i `z` .</span><span class="sxs-lookup"><span data-stu-id="4f669-117">The following code shows a record expression that initializes a record with three float elements with labels `x`, `y` and `z`.</span></span>
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1907.fs)]
 
-<span data-ttu-id="388ee-118">Nie używaj skróconej formy, jeśli może istnieć inny typ, który ma również te same etykiety.</span><span class="sxs-lookup"><span data-stu-id="388ee-118">Do not use the shortened form if there could be another type that also has the same labels.</span></span>
+<span data-ttu-id="4f669-118">Nie używaj skróconej formy, jeśli może istnieć inny typ, który ma również te same etykiety.</span><span class="sxs-lookup"><span data-stu-id="4f669-118">Do not use the shortened form if there could be another type that also has the same labels.</span></span>
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1903.fs)]
 
-<span data-ttu-id="388ee-119">Etykiety ostatnio zadeklarowanego typu mają pierwszeństwo przed poprzednimi zadeklarowanymi typem, więc w poprzednim przykładzie `mypoint3D` jest wywnioskowane `Point3D` .</span><span class="sxs-lookup"><span data-stu-id="388ee-119">The labels of the most recently declared type take precedence over those of the previously declared type, so in the preceding example, `mypoint3D` is inferred to be `Point3D`.</span></span> <span data-ttu-id="388ee-120">Można jawnie określić typ rekordu, jak w poniższym kodzie.</span><span class="sxs-lookup"><span data-stu-id="388ee-120">You can explicitly specify the record type, as in the following code.</span></span>
+<span data-ttu-id="4f669-119">Etykiety ostatnio zadeklarowanego typu mają pierwszeństwo przed poprzednimi zadeklarowanymi typem, więc w poprzednim przykładzie `mypoint3D` jest wywnioskowane `Point3D` .</span><span class="sxs-lookup"><span data-stu-id="4f669-119">The labels of the most recently declared type take precedence over those of the previously declared type, so in the preceding example, `mypoint3D` is inferred to be `Point3D`.</span></span> <span data-ttu-id="4f669-120">Można jawnie określić typ rekordu, jak w poniższym kodzie.</span><span class="sxs-lookup"><span data-stu-id="4f669-120">You can explicitly specify the record type, as in the following code.</span></span>
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1908.fs)]
 
-<span data-ttu-id="388ee-121">Metody można definiować dla typów rekordów, tak jak w przypadku typów klas.</span><span class="sxs-lookup"><span data-stu-id="388ee-121">Methods can be defined for record types just as for class types.</span></span>
+<span data-ttu-id="4f669-121">Metody można definiować dla typów rekordów, tak jak w przypadku typów klas.</span><span class="sxs-lookup"><span data-stu-id="4f669-121">Methods can be defined for record types just as for class types.</span></span>
 
-## <a name="creating-records-by-using-record-expressions"></a><span data-ttu-id="388ee-122">Tworzenie rekordów przy użyciu wyrażeń rekordu</span><span class="sxs-lookup"><span data-stu-id="388ee-122">Creating Records by Using Record Expressions</span></span>
+## <a name="creating-records-by-using-record-expressions"></a><span data-ttu-id="4f669-122">Tworzenie rekordów przy użyciu wyrażeń rekordu</span><span class="sxs-lookup"><span data-stu-id="4f669-122">Creating Records by Using Record Expressions</span></span>
 
-<span data-ttu-id="388ee-123">Rekordy można inicjować przy użyciu etykiet, które są zdefiniowane w rekordzie.</span><span class="sxs-lookup"><span data-stu-id="388ee-123">You can initialize records by using the labels that are defined in the record.</span></span> <span data-ttu-id="388ee-124">Wyrażenie, które jest nazywane *wyrażeniem rekordu*.</span><span class="sxs-lookup"><span data-stu-id="388ee-124">An expression that does this is referred to as a *record expression*.</span></span> <span data-ttu-id="388ee-125">Użyj nawiasów klamrowych, aby ująć wyrażenie rekordu i użyć średnika jako ogranicznika.</span><span class="sxs-lookup"><span data-stu-id="388ee-125">Use braces to enclose the record expression and use the semicolon as a delimiter.</span></span>
+<span data-ttu-id="4f669-123">Rekordy można inicjować przy użyciu etykiet, które są zdefiniowane w rekordzie.</span><span class="sxs-lookup"><span data-stu-id="4f669-123">You can initialize records by using the labels that are defined in the record.</span></span> <span data-ttu-id="4f669-124">Wyrażenie, które jest nazywane *wyrażeniem rekordu*.</span><span class="sxs-lookup"><span data-stu-id="4f669-124">An expression that does this is referred to as a *record expression*.</span></span> <span data-ttu-id="4f669-125">Użyj nawiasów klamrowych, aby ująć wyrażenie rekordu i użyć średnika jako ogranicznika.</span><span class="sxs-lookup"><span data-stu-id="4f669-125">Use braces to enclose the record expression and use the semicolon as a delimiter.</span></span>
 
-<span data-ttu-id="388ee-126">Poniższy przykład pokazuje, jak utworzyć rekord.</span><span class="sxs-lookup"><span data-stu-id="388ee-126">The following example shows how to create a record.</span></span>
+<span data-ttu-id="4f669-126">Poniższy przykład pokazuje, jak utworzyć rekord.</span><span class="sxs-lookup"><span data-stu-id="4f669-126">The following example shows how to create a record.</span></span>
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1904.fs)]
 
-<span data-ttu-id="388ee-127">Średniki po ostatnim polu w wyrażeniu rekordu i w definicji typu są opcjonalne, bez względu na to, czy wszystkie pola znajdują się w jednym wierszu.</span><span class="sxs-lookup"><span data-stu-id="388ee-127">The semicolons after the last field in the record expression and in the type definition are optional, regardless of whether the fields are all in one line.</span></span>
+<span data-ttu-id="4f669-127">Średniki po ostatnim polu w wyrażeniu rekordu i w definicji typu są opcjonalne, bez względu na to, czy wszystkie pola znajdują się w jednym wierszu.</span><span class="sxs-lookup"><span data-stu-id="4f669-127">The semicolons after the last field in the record expression and in the type definition are optional, regardless of whether the fields are all in one line.</span></span>
 
-<span data-ttu-id="388ee-128">Podczas tworzenia rekordu należy podać wartości dla każdego pola.</span><span class="sxs-lookup"><span data-stu-id="388ee-128">When you create a record, you must supply values for each field.</span></span> <span data-ttu-id="388ee-129">Nie można odwołać się do wartości innych pól w wyrażeniu inicjalizacji dla każdego pola.</span><span class="sxs-lookup"><span data-stu-id="388ee-129">You cannot refer to the values of other fields in the initialization expression for any field.</span></span>
+<span data-ttu-id="4f669-128">Podczas tworzenia rekordu należy podać wartości dla każdego pola.</span><span class="sxs-lookup"><span data-stu-id="4f669-128">When you create a record, you must supply values for each field.</span></span> <span data-ttu-id="4f669-129">Nie można odwołać się do wartości innych pól w wyrażeniu inicjalizacji dla każdego pola.</span><span class="sxs-lookup"><span data-stu-id="4f669-129">You cannot refer to the values of other fields in the initialization expression for any field.</span></span>
 
-<span data-ttu-id="388ee-130">W poniższym kodzie typ `myRecord2` jest wywnioskowany na podstawie nazw pól.</span><span class="sxs-lookup"><span data-stu-id="388ee-130">In the following code, the type of `myRecord2` is inferred from the names of the fields.</span></span> <span data-ttu-id="388ee-131">Opcjonalnie można jawnie określić nazwę typu.</span><span class="sxs-lookup"><span data-stu-id="388ee-131">Optionally, you can specify the type name explicitly.</span></span>
+<span data-ttu-id="4f669-130">W poniższym kodzie typ `myRecord2` jest wywnioskowany na podstawie nazw pól.</span><span class="sxs-lookup"><span data-stu-id="4f669-130">In the following code, the type of `myRecord2` is inferred from the names of the fields.</span></span> <span data-ttu-id="4f669-131">Opcjonalnie można jawnie określić nazwę typu.</span><span class="sxs-lookup"><span data-stu-id="4f669-131">Optionally, you can specify the type name explicitly.</span></span>
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1905.fs)]
 
-<span data-ttu-id="388ee-132">Inna forma konstruowania rekordów może być przydatna, gdy trzeba skopiować istniejący rekord i ewentualnie zmienić niektóre wartości pól.</span><span class="sxs-lookup"><span data-stu-id="388ee-132">Another form of record construction can be useful when you have to copy an existing record, and possibly change some of the field values.</span></span> <span data-ttu-id="388ee-133">Ilustruje to poniższy wiersz kodu.</span><span class="sxs-lookup"><span data-stu-id="388ee-133">The following line of code illustrates this.</span></span>
+<span data-ttu-id="4f669-132">Inna forma konstruowania rekordów może być przydatna, gdy trzeba skopiować istniejący rekord i ewentualnie zmienić niektóre wartości pól.</span><span class="sxs-lookup"><span data-stu-id="4f669-132">Another form of record construction can be useful when you have to copy an existing record, and possibly change some of the field values.</span></span> <span data-ttu-id="4f669-133">Ilustruje to poniższy wiersz kodu.</span><span class="sxs-lookup"><span data-stu-id="4f669-133">The following line of code illustrates this.</span></span>
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1906.fs)]
 
-<span data-ttu-id="388ee-134">Ta forma wyrażenia rekordu jest nazywana *wyrażeniem Copy i Update Record*.</span><span class="sxs-lookup"><span data-stu-id="388ee-134">This form of the record expression is called the *copy and update record expression*.</span></span>
+<span data-ttu-id="4f669-134">Ta forma wyrażenia rekordu jest nazywana *wyrażeniem Copy i Update Record*.</span><span class="sxs-lookup"><span data-stu-id="4f669-134">This form of the record expression is called the *copy and update record expression*.</span></span>
 
-<span data-ttu-id="388ee-135">Rekordy są domyślnie niezmienne; można jednak łatwo tworzyć zmodyfikowane rekordy przy użyciu wyrażenia Copy i Update.</span><span class="sxs-lookup"><span data-stu-id="388ee-135">Records are immutable by default; however, you can easily create modified records by using a copy and update expression.</span></span> <span data-ttu-id="388ee-136">Można również jawnie określić pole modyfikowalne.</span><span class="sxs-lookup"><span data-stu-id="388ee-136">You can also explicitly specify a mutable field.</span></span>
+<span data-ttu-id="4f669-135">Rekordy są domyślnie niezmienne; można jednak łatwo tworzyć zmodyfikowane rekordy przy użyciu wyrażenia Copy i Update.</span><span class="sxs-lookup"><span data-stu-id="4f669-135">Records are immutable by default; however, you can easily create modified records by using a copy and update expression.</span></span> <span data-ttu-id="4f669-136">Można również jawnie określić pole modyfikowalne.</span><span class="sxs-lookup"><span data-stu-id="4f669-136">You can also explicitly specify a mutable field.</span></span>
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1909.fs)]
 
-<span data-ttu-id="388ee-137">Nie używaj atrybutu DefaultValue z polami rekordów.</span><span class="sxs-lookup"><span data-stu-id="388ee-137">Don't use the DefaultValue attribute with record fields.</span></span> <span data-ttu-id="388ee-138">Lepszym rozwiązaniem jest zdefiniowanie domyślnych wystąpień rekordów z polami, które są inicjowane do wartości domyślnych, a następnie użycie wyrażenia Kopiuj i Aktualizuj rekord, aby ustawić wszystkie pola, które różnią się od wartości domyślnych.</span><span class="sxs-lookup"><span data-stu-id="388ee-138">A better approach is to define default instances of records with fields that are initialized to default values and then use a copy and update record expression to set any fields that differ from the default values.</span></span>
+<span data-ttu-id="4f669-137">Nie używaj atrybutu DefaultValue z polami rekordów.</span><span class="sxs-lookup"><span data-stu-id="4f669-137">Don't use the DefaultValue attribute with record fields.</span></span> <span data-ttu-id="4f669-138">Lepszym rozwiązaniem jest zdefiniowanie domyślnych wystąpień rekordów z polami, które są inicjowane do wartości domyślnych, a następnie użycie wyrażenia Kopiuj i Aktualizuj rekord, aby ustawić wszystkie pola, które różnią się od wartości domyślnych.</span><span class="sxs-lookup"><span data-stu-id="4f669-138">A better approach is to define default instances of records with fields that are initialized to default values and then use a copy and update record expression to set any fields that differ from the default values.</span></span>
 
 ```fsharp
 // Rather than use [<DefaultValue>], define a default record.
@@ -90,13 +90,13 @@ let defaultRecord2 = { Field1 = 1; Field2 = 25 }
 let rr3 = { defaultRecord1 with Field2 = 42 }
 ```
 
-## <a name="creating-mutually-recursive-records"></a><span data-ttu-id="388ee-139">Tworzenie wzajemnie rekurencyjnych rekordów</span><span class="sxs-lookup"><span data-stu-id="388ee-139">Creating Mutually Recursive Records</span></span>
+## <a name="creating-mutually-recursive-records"></a><span data-ttu-id="4f669-139">Tworzenie wzajemnie rekurencyjnych rekordów</span><span class="sxs-lookup"><span data-stu-id="4f669-139">Creating Mutually Recursive Records</span></span>
 
-<span data-ttu-id="388ee-140">Czasami podczas tworzenia rekordu można zależeć od innego typu, który ma zostać zdefiniowany później.</span><span class="sxs-lookup"><span data-stu-id="388ee-140">Sometime when creating a record, you may want to have it depend on another type that you would like to define afterwards.</span></span> <span data-ttu-id="388ee-141">Jest to błąd kompilacji, chyba że zostanie zdefiniowany typ rekordu, który ma być wzajemnie cykliczne.</span><span class="sxs-lookup"><span data-stu-id="388ee-141">This is a compile error unless you define the record types to be mutually recursive.</span></span>
+<span data-ttu-id="4f669-140">Czasami podczas tworzenia rekordu można zależeć od innego typu, który ma zostać zdefiniowany później.</span><span class="sxs-lookup"><span data-stu-id="4f669-140">Sometime when creating a record, you may want to have it depend on another type that you would like to define afterwards.</span></span> <span data-ttu-id="4f669-141">Jest to błąd kompilacji, chyba że zostanie zdefiniowany typ rekordu, który ma być wzajemnie cykliczne.</span><span class="sxs-lookup"><span data-stu-id="4f669-141">This is a compile error unless you define the record types to be mutually recursive.</span></span>
 
-<span data-ttu-id="388ee-142">Definiowanie wzajemnie cyklicznych rekordów odbywa się za pomocą `and` słowa kluczowego.</span><span class="sxs-lookup"><span data-stu-id="388ee-142">Defining mutually recursive records is done with the `and` keyword.</span></span> <span data-ttu-id="388ee-143">Dzięki temu można połączyć 2 lub więcej typów rekordów jednocześnie.</span><span class="sxs-lookup"><span data-stu-id="388ee-143">This lets you link 2 or more record types together.</span></span>
+<span data-ttu-id="4f669-142">Definiowanie wzajemnie cyklicznych rekordów odbywa się za pomocą `and` słowa kluczowego.</span><span class="sxs-lookup"><span data-stu-id="4f669-142">Defining mutually recursive records is done with the `and` keyword.</span></span> <span data-ttu-id="4f669-143">Dzięki temu można połączyć 2 lub więcej typów rekordów jednocześnie.</span><span class="sxs-lookup"><span data-stu-id="4f669-143">This lets you link 2 or more record types together.</span></span>
 
-<span data-ttu-id="388ee-144">Na przykład poniższy kod definiuje a `Person` i `Address` Typ jako wzajemnie cyklicznie:</span><span class="sxs-lookup"><span data-stu-id="388ee-144">For example, the following code defines a `Person` and `Address` type as mutually recursive:</span></span>
+<span data-ttu-id="4f669-144">Na przykład poniższy kod definiuje a `Person` i `Address` Typ jako wzajemnie cyklicznie:</span><span class="sxs-lookup"><span data-stu-id="4f669-144">For example, the following code defines a `Person` and `Address` type as mutually recursive:</span></span>
 
 ```fsharp
 // Create a Person type and use the Address type that is not defined
@@ -112,15 +112,15 @@ and Address =
     Occupant: Person }
 ```
 
-<span data-ttu-id="388ee-145">Jeśli zdefiniowano poprzedni przykład bez `and` słowa kluczowego, nie zostanie on skompilowany.</span><span class="sxs-lookup"><span data-stu-id="388ee-145">If you were to define the previous example without the `and` keyword, then it would not compile.</span></span> <span data-ttu-id="388ee-146">`and`Słowo kluczowe jest wymagane dla wzajemnie cyklicznych definicji.</span><span class="sxs-lookup"><span data-stu-id="388ee-146">The `and` keyword is required for mutually recursive definitions.</span></span>
+<span data-ttu-id="4f669-145">Jeśli zdefiniowano poprzedni przykład bez `and` słowa kluczowego, nie zostanie on skompilowany.</span><span class="sxs-lookup"><span data-stu-id="4f669-145">If you were to define the previous example without the `and` keyword, then it would not compile.</span></span> <span data-ttu-id="4f669-146">`and`Słowo kluczowe jest wymagane dla wzajemnie cyklicznych definicji.</span><span class="sxs-lookup"><span data-stu-id="4f669-146">The `and` keyword is required for mutually recursive definitions.</span></span>
 
-## <a name="pattern-matching-with-records"></a><span data-ttu-id="388ee-147">Dopasowanie wzorca z rekordami</span><span class="sxs-lookup"><span data-stu-id="388ee-147">Pattern Matching with Records</span></span>
+## <a name="pattern-matching-with-records"></a><span data-ttu-id="4f669-147">Dopasowanie wzorca z rekordami</span><span class="sxs-lookup"><span data-stu-id="4f669-147">Pattern Matching with Records</span></span>
 
-<span data-ttu-id="388ee-148">Rekordy mogą być używane z dopasowywaniem do wzorca.</span><span class="sxs-lookup"><span data-stu-id="388ee-148">Records can be used with pattern matching.</span></span> <span data-ttu-id="388ee-149">Niektóre pola można określić jawnie i podać zmienne dla innych pól, które będą przypisywane w przypadku wystąpienia dopasowania.</span><span class="sxs-lookup"><span data-stu-id="388ee-149">You can specify some fields explicitly and provide variables for other fields that will be assigned when a match occurs.</span></span> <span data-ttu-id="388ee-150">Pokazano to w poniższym przykładzie kodu.</span><span class="sxs-lookup"><span data-stu-id="388ee-150">The following code example illustrates this.</span></span>
+<span data-ttu-id="4f669-148">Rekordy mogą być używane z dopasowywaniem do wzorca.</span><span class="sxs-lookup"><span data-stu-id="4f669-148">Records can be used with pattern matching.</span></span> <span data-ttu-id="4f669-149">Niektóre pola można określić jawnie i podać zmienne dla innych pól, które będą przypisywane w przypadku wystąpienia dopasowania.</span><span class="sxs-lookup"><span data-stu-id="4f669-149">You can specify some fields explicitly and provide variables for other fields that will be assigned when a match occurs.</span></span> <span data-ttu-id="4f669-150">Pokazano to w poniższym przykładzie kodu.</span><span class="sxs-lookup"><span data-stu-id="4f669-150">The following code example illustrates this.</span></span>
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1910.fs)]
 
-<span data-ttu-id="388ee-151">Dane wyjściowe tego kodu są następujące.</span><span class="sxs-lookup"><span data-stu-id="388ee-151">The output of this code is as follows.</span></span>
+<span data-ttu-id="4f669-151">Dane wyjściowe tego kodu są następujące.</span><span class="sxs-lookup"><span data-stu-id="4f669-151">The output of this code is as follows.</span></span>
 
 ```console
 Point is at the origin.
@@ -128,9 +128,9 @@ Point is on the x-axis. Value is 100.000000.
 Point is at (10.000000, 0.000000, -1.000000).
 ```
 
-## <a name="records-and-members"></a><span data-ttu-id="388ee-152">Rekordy i elementy członkowskie</span><span class="sxs-lookup"><span data-stu-id="388ee-152">Records and members</span></span>
+## <a name="records-and-members"></a><span data-ttu-id="4f669-152">Rekordy i elementy członkowskie</span><span class="sxs-lookup"><span data-stu-id="4f669-152">Records and members</span></span>
 
-<span data-ttu-id="388ee-153">Możesz określić elementy członkowskie dla rekordów, tak jak w przypadku klas.</span><span class="sxs-lookup"><span data-stu-id="388ee-153">You can specify members on records much like you can with classes.</span></span> <span data-ttu-id="388ee-154">Nie ma obsługi dla pól.</span><span class="sxs-lookup"><span data-stu-id="388ee-154">There is no support for fields.</span></span> <span data-ttu-id="388ee-155">Typowym podejściem jest zdefiniowanie `Default` statycznej składowej w celu łatwego konstruowania rekordów:</span><span class="sxs-lookup"><span data-stu-id="388ee-155">A common approach is to define a `Default` static member for easy record construction:</span></span>
+<span data-ttu-id="4f669-153">Możesz określić elementy członkowskie dla rekordów, tak jak w przypadku klas.</span><span class="sxs-lookup"><span data-stu-id="4f669-153">You can specify members on records much like you can with classes.</span></span> <span data-ttu-id="4f669-154">Nie ma obsługi dla pól.</span><span class="sxs-lookup"><span data-stu-id="4f669-154">There is no support for fields.</span></span> <span data-ttu-id="4f669-155">Typowym podejściem jest zdefiniowanie `Default` statycznej składowej w celu łatwego konstruowania rekordów:</span><span class="sxs-lookup"><span data-stu-id="4f669-155">A common approach is to define a `Default` static member for easy record construction:</span></span>
 
 ```fsharp
 type Person =
@@ -146,7 +146,7 @@ type Person =
 let defaultPerson = Person.Default
 ```
 
-<span data-ttu-id="388ee-156">Jeśli używasz samego identyfikatora, identyfikator ten odnosi się do wystąpienia rekordu, którego Członek jest wywoływany:</span><span class="sxs-lookup"><span data-stu-id="388ee-156">If you use a self identifier, that identifier refers to the instance of the record whose member is called:</span></span>
+<span data-ttu-id="4f669-156">Jeśli używasz samego identyfikatora, identyfikator ten odnosi się do wystąpienia rekordu, którego Członek jest wywoływany:</span><span class="sxs-lookup"><span data-stu-id="4f669-156">If you use a self identifier, that identifier refers to the instance of the record whose member is called:</span></span>
 
 ```fsharp
 type Person =
@@ -157,32 +157,32 @@ type Person =
     member this.WeirdToString() =
         this.Name + this.Address + string this.Age
 
-let p = { Name = "a"; Age = 12; Address = "abc123 }
+let p = { Name = "a"; Age = 12; Address = "abc123" }
 let weirdString = p.WeirdToString()
 ```
 
-## <a name="differences-between-records-and-classes"></a><span data-ttu-id="388ee-157">Różnice między rekordami i klasami</span><span class="sxs-lookup"><span data-stu-id="388ee-157">Differences Between Records and Classes</span></span>
+## <a name="differences-between-records-and-classes"></a><span data-ttu-id="4f669-157">Różnice między rekordami i klasami</span><span class="sxs-lookup"><span data-stu-id="4f669-157">Differences Between Records and Classes</span></span>
 
-<span data-ttu-id="388ee-158">Pola rekordów różnią się od klas, które są automatycznie uwidaczniane jako właściwości i są używane podczas tworzenia i kopiowania rekordów.</span><span class="sxs-lookup"><span data-stu-id="388ee-158">Record fields differ from classes in that they are automatically exposed as properties, and they are used in the creation and copying of records.</span></span> <span data-ttu-id="388ee-159">Konstrukcja rekordu różni się także od konstrukcji klasy.</span><span class="sxs-lookup"><span data-stu-id="388ee-159">Record construction also differs from class construction.</span></span> <span data-ttu-id="388ee-160">W typie rekordu nie można zdefiniować konstruktora.</span><span class="sxs-lookup"><span data-stu-id="388ee-160">In a record type, you cannot define a constructor.</span></span> <span data-ttu-id="388ee-161">Zamiast tego stosuje się składnię konstrukcyjną opisaną w tym temacie.</span><span class="sxs-lookup"><span data-stu-id="388ee-161">Instead, the construction syntax described in this topic applies.</span></span> <span data-ttu-id="388ee-162">Klasy nie mają bezpośredniej relacji między parametrami konstruktora, polami i właściwościami.</span><span class="sxs-lookup"><span data-stu-id="388ee-162">Classes have no direct relationship between constructor parameters, fields, and properties.</span></span>
+<span data-ttu-id="4f669-158">Pola rekordów różnią się od klas, które są automatycznie uwidaczniane jako właściwości i są używane podczas tworzenia i kopiowania rekordów.</span><span class="sxs-lookup"><span data-stu-id="4f669-158">Record fields differ from classes in that they are automatically exposed as properties, and they are used in the creation and copying of records.</span></span> <span data-ttu-id="4f669-159">Konstrukcja rekordu różni się także od konstrukcji klasy.</span><span class="sxs-lookup"><span data-stu-id="4f669-159">Record construction also differs from class construction.</span></span> <span data-ttu-id="4f669-160">W typie rekordu nie można zdefiniować konstruktora.</span><span class="sxs-lookup"><span data-stu-id="4f669-160">In a record type, you cannot define a constructor.</span></span> <span data-ttu-id="4f669-161">Zamiast tego stosuje się składnię konstrukcyjną opisaną w tym temacie.</span><span class="sxs-lookup"><span data-stu-id="4f669-161">Instead, the construction syntax described in this topic applies.</span></span> <span data-ttu-id="4f669-162">Klasy nie mają bezpośredniej relacji między parametrami konstruktora, polami i właściwościami.</span><span class="sxs-lookup"><span data-stu-id="4f669-162">Classes have no direct relationship between constructor parameters, fields, and properties.</span></span>
 
-<span data-ttu-id="388ee-163">Podobnie jak w przypadku typów Unii i struktury, rekordy mają semantykę równości strukturalnej.</span><span class="sxs-lookup"><span data-stu-id="388ee-163">Like union and structure types, records have structural equality semantics.</span></span> <span data-ttu-id="388ee-164">Klasy mają semantykę równości odwołań.</span><span class="sxs-lookup"><span data-stu-id="388ee-164">Classes have reference equality semantics.</span></span> <span data-ttu-id="388ee-165">Poniższy przykład kodu demonstruje ten sposób.</span><span class="sxs-lookup"><span data-stu-id="388ee-165">The following code example demonstrates this.</span></span>
+<span data-ttu-id="4f669-163">Podobnie jak w przypadku typów Unii i struktury, rekordy mają semantykę równości strukturalnej.</span><span class="sxs-lookup"><span data-stu-id="4f669-163">Like union and structure types, records have structural equality semantics.</span></span> <span data-ttu-id="4f669-164">Klasy mają semantykę równości odwołań.</span><span class="sxs-lookup"><span data-stu-id="4f669-164">Classes have reference equality semantics.</span></span> <span data-ttu-id="4f669-165">Poniższy przykład kodu demonstruje ten sposób.</span><span class="sxs-lookup"><span data-stu-id="4f669-165">The following code example demonstrates this.</span></span>
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1911.fs)]
 
-<span data-ttu-id="388ee-166">Dane wyjściowe tego kodu są następujące:</span><span class="sxs-lookup"><span data-stu-id="388ee-166">The output of this code is as follows:</span></span>
+<span data-ttu-id="4f669-166">Dane wyjściowe tego kodu są następujące:</span><span class="sxs-lookup"><span data-stu-id="4f669-166">The output of this code is as follows:</span></span>
 
 ```console
 The records are equal.
 ```
 
-<span data-ttu-id="388ee-167">Jeśli piszesz ten sam kod z klasami, obiekty obu klas byłyby nierówne, ponieważ dwie wartości przedstawiają dwa obiekty na stercie i porównywane są tylko te adresy (chyba że typ klasy zastępuje `System.Object.Equals` metodę).</span><span class="sxs-lookup"><span data-stu-id="388ee-167">If you write the same code with classes, the two class objects would be unequal because the two values would represent two objects on the heap and only the addresses would be compared (unless the class type overrides the `System.Object.Equals` method).</span></span>
+<span data-ttu-id="4f669-167">Jeśli piszesz ten sam kod z klasami, obiekty obu klas byłyby nierówne, ponieważ dwie wartości przedstawiają dwa obiekty na stercie i porównywane są tylko te adresy (chyba że typ klasy zastępuje `System.Object.Equals` metodę).</span><span class="sxs-lookup"><span data-stu-id="4f669-167">If you write the same code with classes, the two class objects would be unequal because the two values would represent two objects on the heap and only the addresses would be compared (unless the class type overrides the `System.Object.Equals` method).</span></span>
 
-<span data-ttu-id="388ee-168">Jeśli potrzebujesz równości odwołań dla rekordów, Dodaj atrybut `[<ReferenceEquality>]` powyżej rekordu.</span><span class="sxs-lookup"><span data-stu-id="388ee-168">If you need reference equality for records, add the attribute `[<ReferenceEquality>]` above the record.</span></span>
+<span data-ttu-id="4f669-168">Jeśli potrzebujesz równości odwołań dla rekordów, Dodaj atrybut `[<ReferenceEquality>]` powyżej rekordu.</span><span class="sxs-lookup"><span data-stu-id="4f669-168">If you need reference equality for records, add the attribute `[<ReferenceEquality>]` above the record.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="388ee-169">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="388ee-169">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4f669-169">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="4f669-169">See also</span></span>
 
-- [<span data-ttu-id="388ee-170">Typy F#</span><span class="sxs-lookup"><span data-stu-id="388ee-170">F# Types</span></span>](fsharp-types.md)
-- [<span data-ttu-id="388ee-171">Klasy</span><span class="sxs-lookup"><span data-stu-id="388ee-171">Classes</span></span>](classes.md)
-- [<span data-ttu-id="388ee-172">Dokumentacja języka F #</span><span class="sxs-lookup"><span data-stu-id="388ee-172">F# Language Reference</span></span>](index.md)
-- [<span data-ttu-id="388ee-173">Odwołanie — równość</span><span class="sxs-lookup"><span data-stu-id="388ee-173">Reference-Equality</span></span>](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-referenceequalityattribute.html)
-- [<span data-ttu-id="388ee-174">Dopasowanie wzorca</span><span class="sxs-lookup"><span data-stu-id="388ee-174">Pattern Matching</span></span>](pattern-matching.md)
+- [<span data-ttu-id="4f669-170">Typy F#</span><span class="sxs-lookup"><span data-stu-id="4f669-170">F# Types</span></span>](fsharp-types.md)
+- [<span data-ttu-id="4f669-171">Klasy</span><span class="sxs-lookup"><span data-stu-id="4f669-171">Classes</span></span>](classes.md)
+- [<span data-ttu-id="4f669-172">Dokumentacja języka F #</span><span class="sxs-lookup"><span data-stu-id="4f669-172">F# Language Reference</span></span>](index.md)
+- [<span data-ttu-id="4f669-173">Odwołanie — równość</span><span class="sxs-lookup"><span data-stu-id="4f669-173">Reference-Equality</span></span>](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-referenceequalityattribute.html)
+- [<span data-ttu-id="4f669-174">Dopasowanie wzorca</span><span class="sxs-lookup"><span data-stu-id="4f669-174">Pattern Matching</span></span>](pattern-matching.md)
