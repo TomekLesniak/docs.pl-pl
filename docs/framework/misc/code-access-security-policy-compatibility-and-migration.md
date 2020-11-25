@@ -1,17 +1,17 @@
 ---
 title: Zgodność i migracja zasad zabezpieczenia dostępu kodu
-description: Zapoznaj się z podsumowaniem i zobacz linki dotyczące zgodności i migracji zasad zabezpieczeń w programie .NET 4.
+description: Zapoznaj się z podsumowaniem i zobacz linki dotyczące zgodności i migracji zasad zabezpieczeń dostępu kodu w .NET Framework 4.
 ms.date: 03/30/2017
 helpviewer_keywords:
 - policy migration, compatibility
 - CLR policy migration
 ms.assetid: 19cb4d39-e38a-4262-b507-458915303115
-ms.openlocfilehash: e5affd9d16635fa28342b5b7390a083185975f2b
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 389976556175c0b6b300e75d01327d91f94f0db9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281735"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733389"
 ---
 # <a name="code-access-security-policy-compatibility-and-migration"></a>Zgodność i migracja zasad zabezpieczenia dostępu kodu
 
@@ -23,7 +23,7 @@ Ostrzeżenia i błędy można uniknąć:
 
 - [Migrowanie](#migration) do .NET Framework 4 zamienników dla przestarzałych wywołań.
 
-   \-oraz
+   \- oraz
 
 - Korzystanie z [ \<NetFx40_LegacySecurityPolicy> elementu konfiguracji](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) w celu wyboru zgodności ze starszymi zasadami CAS.
 
@@ -73,7 +73,7 @@ Przykłady są następujące:
 
 Niektóre przeciążenia ładowania zestawów generują błędy ze względu na niejawne użycie zasad CAS. Te przeciążenia mają <xref:System.Security.Policy.Evidence> parametr, który jest używany do rozpoznawania zasad CAS i zapewniają zestaw uprawnień dla zestawu.
 
-Oto kilka przykładów. Przestarzałe przeciążenia to te, które przyjmują <xref:System.Security.Policy.Evidence> jako parametr:
+Poniżej przedstawiono kilka przykładów. Przestarzałe przeciążenia to te, które przyjmują <xref:System.Security.Policy.Evidence> jako parametr:
 
 - <xref:System.Activator.CreateInstanceFrom%2A?displayProperty=nameWithType>
 
@@ -156,5 +156,5 @@ Jeśli chcesz piaskownicy zestawu, użyj <xref:System.AppDomain.CreateDomain%28S
 
 ## <a name="see-also"></a>Zobacz także
 
-- [Porady: uruchamianie częściowo zaufanego kodu w bibliotece](how-to-run-partially-trusted-code-in-a-sandbox.md)
+- [Instrukcje: uruchamianie częściowo zaufanego kodu w piaskownicy](how-to-run-partially-trusted-code-in-a-sandbox.md)
 - [Wytyczne dotyczące bezpiecznego programowania](../../standard/security/secure-coding-guidelines.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: e0667ef7-1d31-4c89-a2d3-d426f023f8d2
 topic_type:
 - apiref
-ms.openlocfilehash: 3c7c3525f2f8753241c9a206e4cf5e552bf06efe
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 0eb4e9d713581cf32cec18bb02a6bd13542e517a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503630"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733189"
 ---
 # <a name="imetadataimportgetmethodprops-method"></a>IMetaDataImport::GetMethodProps — Metoda
+
 Pobiera metadane skojarzone z metodą przywoływaną przez określony token MethodDef.  
   
 ## <a name="syntax"></a>Składnia  
@@ -43,6 +44,7 @@ HRESULT GetMethodProps (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `mb`  
  podczas Token MethodDef reprezentujący metodę zwrócenia metadanych dla.  
   
@@ -74,15 +76,16 @@ HRESULT GetMethodProps (
  określoną Wskaźnik do dowolnych flag implementacji dla metody.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataImport — Interfejs](imetadataimport-interface.md)
-- [IMetaDataImport2, interfejs](imetadataimport2-interface.md)
+- [IMetaDataImport2 — Interfejs](imetadataimport2-interface.md)

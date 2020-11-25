@@ -2,19 +2,21 @@
 title: Wnioskowanie schematu XML
 ms.date: 03/30/2017
 ms.assetid: b18e7ffd-3c04-482d-9934-ba2f6a59b2c9
-ms.openlocfilehash: d9bf14087a32ad04d9e3510c8543a3270f135653
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 9d3c3bd15637dbd875db5736aa01f3f4dd00f605
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830925"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733454"
 ---
 # <a name="inferring-an-xml-schema"></a>Wnioskowanie schematu XML
+
 Opisuje, w jaki sposób używać klasy model obiektów schematu (SOM) <xref:System.Xml.Schema.XmlSchemaInference> do wywnioskowania schematu języka definicji schematu XML (XSD) ze struktury dokumentu XML.  
   
  Klasa modelu obiektów schematu (SOM) <xref:System.Xml.Schema.XmlSchemaInference> w <xref:System.Xml.Schema?displayProperty=nameWithType> przestrzeni nazw umożliwia wywnioskowanie schematu języka definicji schematu XML (XSD) ze struktury dokumentu XML. <xref:System.Xml.Schema.XmlSchemaInference>Klasa wyprowadza schemat XML, który może sprawdzać poprawność dokumentu XML.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Wnioskowanie schematów na podstawie dokumentów XML](inferring-schemas-from-xml-documents.md)  
  Opisuje sposób użycia <xref:System.Xml.Schema.XmlSchemaInference> klasy do wnioskowania schematu ze struktury dokumentu XML.  
   

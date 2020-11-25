@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 18a3335c-8c75-476c-b6de-72c0bfedae5d
 topic_type:
 - apiref
-ms.openlocfilehash: 1f3ff3e9b68aa30f424f4b2fe6c7cacd2cddd544
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 51f16523c00cc3dd95b786f1586ccfd75ce8d5f1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84495934"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733831"
 ---
 # <a name="icorprofilerinfo4initializecurrentthread-method"></a>ICorProfilerInfo4::InitializeCurrentThread — Metoda
+
 Inicjuje bieżący wątek przed kolejnymi wywołaniami interfejsu API profilera w tym samym wątku, aby można było uniknąć zakleszczenia.  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,12 +33,14 @@ HRESULT InitializeCurrentThread ();
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  Zalecamy wywołanie `InitializeCurrentThread` w dowolnym wątku, który wywoła interfejs API profilera, gdy są zawieszone wątki. Ta metoda jest zwykle używana przez pliki do próbkowania, które tworzą własny wątek wywołujący [ICorProfilerInfo2::D ostacksnapshot](icorprofilerinfo2-dostacksnapshot-method.md) metodę, aby wykonać przeszukiwanie stosu, gdy wątek docelowy jest zawieszony. Wywołując `InitializeCurrentThread` jednokrotnie, gdy profiler najpierw tworzy wątek próbkowania, mogą one zapewnić, że inicjalizacja dla wątku środowiska CLR w przeciwnym razie może być wykonywana w trakcie pierwszego wywołania do, `DoStackSnapshot` gdy nie zostaną wstrzymane żadne inne wątki.  
   
 > [!NOTE]
-> `InitializeCurrentThread`Czy Inicjalizacja zakończyła się z wyprzedzeniem, aby zakończyć zadania, które zostały zablokowane i mogą być zakleszczenie. Wywołaj tylko wtedy, `InitializeCurrentThread` gdy nie ma żadnych zawieszonych wątków.  
+> `InitializeCurrentThread` Czy Inicjalizacja zakończyła się z wyprzedzeniem, aby zakończyć zadania, które zostały zablokowane i mogą być zakleszczenie. Wywołaj tylko wtedy, `InitializeCurrentThread` gdy nie ma żadnych zawieszonych wątków.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

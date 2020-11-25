@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 2fac66fd-6b3b-4dbd-8baf-86038bd85526
 topic_type:
 - apiref
-ms.openlocfilehash: 0b6efcbe4458977e8e938afabd7ae59171bc065a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 691cc3cf4ec8d036a4de04247f243d99daa887d4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501654"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733636"
 ---
 # <a name="iclrstrongname-interface"></a>ICLRStrongName — Interfejs
+
 Udostępnia podstawowe globalne funkcje statyczne do podpisywania zestawów o silnych nazwach. Wszystkie `ICLRStrongName` metody zwracają standardowe wartości HRESULT modelu com.  
   
 ## <a name="methods"></a>Metody  
@@ -55,18 +56,20 @@ Udostępnia podstawowe globalne funkcje statyczne do podpisywania zestawów o si
 |[StrongNameTokenFromPublicKey, metoda](iclrstrongname-strongnametokenfrompublickey-method.md)|Pobiera token reprezentujący klucz publiczny.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Wystąpienie obiektu można uzyskać, `ICLRStrongName` wywołując metodę [ICLRRuntimeInfo:: GetInterface](iclrruntimeinfo-getinterface-method.md) przy użyciu `CLSID_CLRStrongName` `IID_ICLRStrongName` parametrów i jako.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Obiekt ServiceHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)
 - [Hosting](index.md)

@@ -10,14 +10,15 @@ api_type:
 ms.assetid: aa6cf962-30ae-4cfd-8895-826deeb46a54
 topic_type:
 - apiref
-ms.openlocfilehash: a90ddd27834e7614c1827d606a9955b4d6c53127
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 60eab923aac5dea927105e8ca9fa77eb5708f5ac
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795979"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733363"
 ---
 # <a name="cordebugdecodeeventflagswindows-enumeration"></a>Wyliczenie CorDebugDecodeEventFlagsWindows
+
 Zawiera dodatkowe informacje na temat zdarzeń debugowania na platformie Windows.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,12 +36,14 @@ typedef enum CorDebugDecodeEventFlagsWindows {
 |`IS_FIRST_CHANCE`|Wskazuje, że zdarzenie debugowania jest wyjątkiem pierwszej szansy.|  
   
 ## <a name="remarks"></a>Uwagi  
- Metoda [Metoda ICorDebugProcess6::D ecodeevent](icordebugprocess6-decodeevent-method.md) zawiera `dwFlags` parametr, który dostarcza dodatkowych informacji na temat zdarzenia debugowania i którego wartość zależy od architektury docelowej. `CorDebugDecodeEventFlagsWindows` Wyliczenie może być używane z zdarzeniami debugowania na platformie Windows.  
+
+ Metoda [Metoda ICorDebugProcess6::D ecodeevent](icordebugprocess6-decodeevent-method.md) zawiera `dwFlags` parametr, który dostarcza dodatkowych informacji na temat zdarzenia debugowania i którego wartość zależy od architektury docelowej. `CorDebugDecodeEventFlagsWindows`Wyliczenie może być używane z zdarzeniami debugowania na platformie Windows.  
   
 > [!NOTE]
 > To wyliczenie jest przeznaczone do użycia tylko w scenariuszach debugowania .NET Native.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

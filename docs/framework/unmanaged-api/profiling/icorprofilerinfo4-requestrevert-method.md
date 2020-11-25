@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 70261da5-5933-4e25-9de0-ddf51cba56cc
 topic_type:
 - apiref
-ms.openlocfilehash: b85a7893cf5271c65bc842bb6ea598c825225376
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b80de5e0e03f6b3a424ac59a099e361dd6c50c86
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84495726"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733818"
 ---
 # <a name="icorprofilerinfo4requestrevert-method"></a>ICorProfilerInfo4::RequestRevert — Metoda
+
 Przywraca oryginalne wersje wszystkich wystąpień określonych funkcji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,6 +37,7 @@ HRESULT RequestRevert (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cFunctions`  
  podczas Liczba funkcji, które mają zostać przywrócone.  
   
@@ -49,6 +51,7 @@ HRESULT RequestRevert (
  określoną Tablica wartości HRESULT wymienionych w sekcji "stan HRESULT" w dalszej części tego tematu. Każde HRESULT wskazuje powodzenie lub niepowodzenie próby przywrócenia każdej funkcji określonej w tablicach równoległych `moduleIds` i `methodIds` .  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca następujące określone wartości HRESULT oraz błędy HRESULT wskazujące niepowodzenie metody.  
   
 |HRESULT|Opis|  
@@ -56,7 +59,7 @@ HRESULT RequestRevert (
 |S_OK|Podjęto próbę przywrócenia wszystkich żądań; jednak zwracana tablica stanu musi być sprawdzona, aby określić, które funkcje zostały pomyślnie przywrócone.|  
 |CORPROF_E_CALLBACK4_REQUIRED|Profiler musi zaimplementować interfejs [ICorProfilerCallback4](icorprofilercallback4-interface.md) , aby można było obsługiwać to wywołanie.|  
 |CORPROF_E_REJIT_NOT_ENABLED|Ponowna kompilacja JIT nie została włączona. Należy włączyć ponowną kompilację JIT podczas inicjowania przy użyciu metody [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) , aby ustawić `COR_PRF_ENABLE_REJIT` flagę.|  
-|E_INVALIDARG|`cFunctions`ma wartość 0 lub `moduleIds` lub `methodIds` równą `NULL` .|  
+|E_INVALIDARG|`cFunctions` ma wartość 0 lub `moduleIds` lub `methodIds` równą `NULL` .|  
 |E_OUTOFMEMORY|Środowisko CLR nie mogło wykonać żądania, ponieważ zabrakło pamięci.|  
   
 ## <a name="status-hresults"></a>Stan HRESULT  
@@ -71,9 +74,11 @@ HRESULT RequestRevert (
 |Inne|System operacyjny zwrócił błąd poza kontrolą środowiska CLR. Jeśli na przykład wywołanie systemowe w celu zmiany ochrony dostępu strony pamięci zakończy się niepowodzeniem, zostanie wyświetlony komunikat o błędzie systemu operacyjnego.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Przy następnym wywołaniu dowolnego wystąpienia funkcji revereted zostaną uruchomione oryginalne wersje funkcji. Jeśli funkcja jest już uruchomiona, zostanie zakończona wykonywanie uruchomionej wersji.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  

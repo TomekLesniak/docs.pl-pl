@@ -2,14 +2,15 @@
 title: Metoda ICorDebugProcess6::MarkDebuggerAttached
 ms.date: 03/30/2017
 ms.assetid: bf94f090-5265-4112-8e57-5b4e20e070d0
-ms.openlocfilehash: c83d6e892b89e6e50779abf9a71a2cbe9093af2c
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: c6543a89a375d4a2887dbe8cff56d66a15650811
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212854"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732596"
 ---
 # <a name="icordebugprocess6markdebuggerattached-method"></a>Metoda ICorDebugProcess6::MarkDebuggerAttached
+
 Zmienia wewnętrzny stan debugee, tak aby <xref:System.Diagnostics.Debugger.IsAttached%2A?displayProperty=nameWithType> Metoda w bibliotece klas .NET Framework zwracana `true` .  
   
 ## <a name="syntax"></a>Składnia  
@@ -21,10 +22,12 @@ HRESULT MarkDebuggerAttached(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `fIsAttached`  
- `true`Jeśli <xref:System.Diagnostics.Debugger.IsAttached%2A?displayProperty=nameWithType> Metoda powinna wskazywać, że debuger jest dołączony; `false` w przeciwnym razie.  
+ `true` Jeśli <xref:System.Diagnostics.Debugger.IsAttached%2A?displayProperty=nameWithType> Metoda powinna wskazywać, że debuger jest dołączony; `false` w przeciwnym razie.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Metoda może zwracać wartości wymienione w poniższej tabeli.  
   
 |Wartość zwracana|Opis|  
@@ -39,6 +42,7 @@ HRESULT MarkDebuggerAttached(
 > Ta metoda jest dostępna tylko z .NET Native.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -47,7 +51,7 @@ HRESULT MarkDebuggerAttached(
   
  **.NET Framework wersje:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Interfejs ICorDebugProcess6](icordebugprocess6-interface.md)
 - [Debugowanie — Interfejsy](debugging-interfaces.md)

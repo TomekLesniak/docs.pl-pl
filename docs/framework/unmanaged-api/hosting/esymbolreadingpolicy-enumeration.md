@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4dc6c80d-b694-480b-a378-d5b18420ce17
 topic_type:
 - apiref
-ms.openlocfilehash: 5c3d1d0ebc56ee93c950afb4f015c8e10ec6a0f7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 42ce1f02294db98c5c593a5f16de5226703d5f9d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616180"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733714"
 ---
 # <a name="esymbolreadingpolicy-enumeration"></a>ESymbolReadingPolicy — Wyliczenie
+
 Zawiera wartości, które ustawiają zasady odczytujące pliki bazy danych (PDB) programu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -43,14 +44,16 @@ typedef enum {
 |`eSymbolReadingNever`|Określa, że debuger nie powinien odczytywać plików PDB.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ESymbolReadingPolicy`Wyliczenie jest używane z metodą [ICLRDebugManager:: SetSymbolReadingPolicy —](iclrdebugmanager-setsymbolreadingpolicy-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorEE. dll  
+ **Biblioteka:** MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

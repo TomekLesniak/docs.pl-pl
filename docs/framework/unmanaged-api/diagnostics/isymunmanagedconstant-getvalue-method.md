@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0036fc10-e768-47a8-b9cf-bf47faf8d194
 topic_type:
 - apiref
-ms.openlocfilehash: 8e20d2e0f3d5cb6dc7444c8e78665b6c8b82d2de
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 7a1c795f4a162699078e91bcaa274253169234e7
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441477"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732843"
 ---
 # <a name="isymunmanagedconstantgetvalue-method"></a>ISymUnmanagedConstant::GetValue — Metoda
+
 Pobiera wartość stałej.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,17 +35,20 @@ HRESULT GetValue(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pValue`  
  określoną Wskaźnik do zmiennej, która otrzymuje wartość.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  S_OK, jeśli metoda się powiedzie; w przeciwnym razie E_FAIL lub inny kod błędu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [ISymUnmanagedConstant — Interfejs](isymunmanagedconstant-interface.md)
 - [GetName — Metoda](isymunmanagedconstant-getname-method.md)
-- [GetSignature, metoda](isymunmanagedconstant-getsignature-method.md)
+- [GetSignature — Metoda](isymunmanagedconstant-getsignature-method.md)

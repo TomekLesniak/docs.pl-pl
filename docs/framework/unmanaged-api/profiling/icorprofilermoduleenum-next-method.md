@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: a3cea59d-7622-4323-897a-0a464c40f77f
 topic_type:
 - apiref
-ms.openlocfilehash: 7a3ad94a4149d6ebb70e077926771e28d7f82779
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 94c2c159cf386e00dfc0d1df97536d7ade53407e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84494842"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732947"
 ---
 # <a name="icorprofilermoduleenumnext-method"></a>ICorProfilerModuleEnum::Next — Metoda
+
 Pobiera określoną liczbę modułów ciągłych z sekwencyjnego zbioru modułów, rozpoczynając od bieżącej pozycji modułu wyliczającego w sekwencji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,6 +36,7 @@ HRESULT Next([in]  ULONG      celt,
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `celt`  
  podczas Liczba modułów do pobrania.  
   
@@ -45,14 +47,16 @@ HRESULT Next([in]  ULONG      celt,
  określoną Wskaźnik do liczby elementów faktycznie zwracanych w `ids` tablicy.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca następujące określone wartości HRESULT oraz błędy HRESULT wskazujące niepowodzenie metody.  
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
-|S_OK|`celt`elementy zostały zwrócone.|  
+|S_OK|`celt` elementy zostały zwrócone.|  
 |S_FALSE|`celt`Zwrócono mniej niż elementy, co oznacza, że Wyliczenie zostało zakończone.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -63,5 +67,5 @@ HRESULT Next([in]  ULONG      celt,
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerModuleEnum, interfejs](icorprofilermoduleenum-interface.md)
+- [ICorProfilerModuleEnum — Interfejs](icorprofilermoduleenum-interface.md)
 - [Interfejsy profilowania](profiling-interfaces.md)

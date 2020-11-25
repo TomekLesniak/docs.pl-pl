@@ -5,12 +5,12 @@ helpviewer_keywords:
 - collections [.NET], generic
 - generic collections [.NET]
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
-ms.openlocfilehash: eeee207d7fe70cc736ca962ef99f3dac2295902b
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7b8b7b458a1667a1d3239ef378c729929678e8aa
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822896"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733077"
 ---
 # <a name="when-to-use-generic-collections"></a>Kiedy należy używać kolekcji ogólnych
 
@@ -62,6 +62,7 @@ W przypadku chęci niezmienności funkcjonalności w aplikacji <xref:System.Coll
 Funkcja LINQ to Objects umożliwia używanie zapytań LINQ do uzyskiwania dostępu do obiektów w pamięci, o ile typ obiektu implementuje <xref:System.Collections.IEnumerable?displayProperty=nameWithType> <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> interfejs lub. Zapytania LINQ zapewniają wspólny wzorzec dostępu do danych; są zwykle bardziej zwięzłe i czytelne niż standardowe `foreach` pętle oraz zapewniają możliwości filtrowania, porządkowania i grupowania. Zapytania LINQ mogą również zwiększyć wydajność. Aby uzyskać więcej informacji, zobacz [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)i [Parallel LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md).
 
 ## <a name="additional-functionality"></a>Dodatkowe funkcje
+
 Niektóre typy ogólne mają funkcje, które nie znajdują się w nierodzajowych typach kolekcji. Na przykład <xref:System.Collections.Generic.List%601> Klasa, która odnosi się do klasy niegenerycznej <xref:System.Collections.ArrayList> , ma wiele metod, które akceptują delegatów ogólnych, takich jak <xref:System.Predicate%601> Delegat, który umożliwia określenie metod wyszukiwania listy, <xref:System.Action%601> Delegat reprezentuje metody, które działają na każdym elemencie listy, i <xref:System.Converter%602> delegata, który umożliwia definiowanie konwersji między typami.
 
 <xref:System.Collections.Generic.List%601>Klasa pozwala określić własne <xref:System.Collections.Generic.IComparer%601> implementacje interfejsu ogólnego do sortowania i przeszukiwania listy. <xref:System.Collections.Generic.SortedDictionary%602>Klasy i <xref:System.Collections.Generic.SortedList%602> również mają tę możliwość. Ponadto klasy te umożliwiają określanie porównań podczas tworzenia kolekcji. W podobny sposób <xref:System.Collections.Generic.Dictionary%602> <xref:System.Collections.ObjectModel.KeyedCollection%602> klasy i pozwalają określić własne porównania równości.

@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 763f2375-efc6-4219-8806-a3b0567ef72b
 topic_type:
 - apiref
-ms.openlocfilehash: adde52dddb63b83dcd7ff10703a43928d9601c92
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e7292635ea0344f1c77c8d44908a9a811e464ff9
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140620"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732310"
 ---
 # <a name="strongnamecompareassemblies-function"></a>StrongNameCompareAssemblies — Funkcja
+
 Określa, czy dwa zestawy różnią się tylko sygnaturami silnej nazwy.  
   
  Ta funkcja jest przestarzała. Zamiast tego użyj metody [ICLRStrongName:: StrongNameCompareAssemblies —](../hosting/iclrstrongname-strongnamecompareassemblies-method.md) .  
@@ -37,6 +38,7 @@ BOOLEAN StrongNameCompareAssemblies (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `wszAssembly1`  
  podczas Ścieżka do pierwszego zestawu.  
   
@@ -53,23 +55,26 @@ BOOLEAN StrongNameCompareAssemblies (
 - `SN_CMP_SIGONLY` (2) — określa, że zestawy różnią się tylko sygnaturą i sumą kontrolną.  
   
 ## <a name="return-value"></a>Wartość zwracana  
- `true` po pomyślnym zakończeniu; w przeciwnym razie `false`.  
+
+ `true` Po pomyślnym zakończeniu; w przeciwnym razie `false` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** StrongName. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="remarks"></a>Uwagi  
+
  Podpis silnej nazwy zestawu składa się z nazwy tekstu, wersji, kultury i tokenu klucza publicznego zestawu.  
   
- Jeśli funkcja `StrongNameCompareAssemblies` nie zakończy się pomyślnie, wywołaj funkcję [StrongNameErrorInfo —](strongnameerrorinfo-function.md) w celu pobrania ostatniego wygenerowanego błędu.  
+ Jeśli `StrongNameCompareAssemblies` Funkcja nie zakończy się pomyślnie, wywołaj funkcję [StrongNameErrorInfo —](strongnameerrorinfo-function.md) w celu pobrania ostatniego wygenerowanego błędu.  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [StrongNameCompareAssemblies, metoda](../hosting/iclrstrongname-strongnamecompareassemblies-method.md)
-- [ICLRStrongName, interfejs](../hosting/iclrstrongname-interface.md)
+- [ICLRStrongName — Interfejs](../hosting/iclrstrongname-interface.md)

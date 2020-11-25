@@ -10,12 +10,12 @@ helpviewer_keywords:
 - culture, custom case mappings
 - culture-insensitive string operations, method overloads
 ms.assetid: 579ef891-1f83-4c63-9ebd-2f40406b5b91
-ms.openlocfilehash: 868f36a1025f0b121a8765edf50bb42679736240
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: a418432dfaba9ab070ddb6dc862dcbd798c16343
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829768"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732219"
 ---
 # <a name="performing-culture-insensitive-string-operations"></a>Wykonywanie operacji na ciągach niewrażliwych na kulturę
 
@@ -24,6 +24,7 @@ Większość metod .NET, które wykonują operacje na ciągach zależnych od kul
  Ta sekcja zawiera następujące artykuły, które przedstawiają sposób wykonywania operacji na ciągach bez uwzględniania kultur przy użyciu metod .NET, które są domyślnie zależne od kultury.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Wykonywanie niezależnych od kultury porównań ciągów](performing-culture-insensitive-string-comparisons.md)  
  Opisuje sposób użycia <xref:System.String.Compare%2A?displayProperty=nameWithType> <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metod i do wykonywania porównania ciągów niewrażliwych na kulturę.  
   
@@ -37,6 +38,7 @@ Większość metod .NET, które wykonują operacje na ciągach zależnych od kul
  Opisuje sposób użycia <xref:System.Array.Sort%2A?displayProperty=nameWithType> <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType> metod i do wykonywania operacji niewrażliwych na kulturę w tablicach.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Operacje na ciągach nieuwzględniających kultur](culture-insensitive-string-operations.md)  
  W tym artykule opisano, dlaczego należy pamiętać o kulturze podczas wykonywania operacji na ciągach i przedstawiono wskazówki dotyczące sytuacji, w których należy wykonać operacje zależne od kultury i kiedy wykonywać operacje niewrażliwe na kulturę.
 

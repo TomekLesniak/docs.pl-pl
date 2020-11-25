@@ -2,12 +2,12 @@
 title: Funkcje upraszczania programu WCF
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-ms.openlocfilehash: d582c075377cf53d75ddf1bb9f37764e24e486ec
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8a818ec0852cfae20ef23fede04b55b08a7449a5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545080"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732921"
 ---
 # <a name="wcf-simplification-features"></a>Funkcje upraszczania programu WCF
 
@@ -72,7 +72,7 @@ Poniżej znajduje się przykład tego samego pliku konfiguracji, który został 
 </configuration>
 ```
 
-## <a name="contract-first-development"></a>Kontrakt — pierwsze programowanie
+## <a name="contract-first-development"></a>Opracowywanie Contract-First
 
 Usługa WCF obsługuje teraz programowanie w pierwszej kolejności. Narzędzie svcutil.exe ma przełącznik/serviceContract, który umożliwia generowanie kontraktów usługi i danych z dokumentu WSDL.
 
@@ -88,7 +88,7 @@ Funkcja WCF oferuje tryb zgodności ASP.NET, który umożliwia deweloperom pełe
 
 - Dodano nową obsługę przesyłania strumieniowego asynchronicznego do programu WCF. Aby włączyć asynchroniczne przesyłanie strumieniowe, Dodaj  <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> zachowanie punktu końcowego do hosta usługi i ustaw jego <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> Właściwość na `true` . Pozwala to na skalowalność, gdy usługa wysyła przesyłane strumieniowo komunikaty do wielu klientów. Funkcja WCF nie blokuje już jednego wątku na klienta i zwalnia wątek, aby obsłużyć inny klient.
 
-- Usunięto ograniczenia dotyczące buforowania komunikatów, gdy usługa jest hostowana w usługach IIS. W poprzednich wersjach programu WCF podczas otrzymywania komunikatu dla usługi hostowanej przez usługi IIS, która używa transferu komunikatów przesyłania strumieniowego, ASP.NET buforuje cały komunikat przed wysłaniem go do programu WCF. Mogłoby to spowodować duże użycie pamięci. To buforowanie zostało usunięte w programie .NET 4,5, a teraz usługi WCF hostowane przez usługi IIS mogą rozpocząć przetwarzanie strumienia przychodzącego przed odebraniem całego komunikatu, co pozwoli na prawdziwe przesyłanie strumieniowe. Dzięki temu Funkcja WCF może natychmiast reagować na komunikaty i zapewnia lepszą wydajność. Ponadto nie trzeba już określać wartości dla `maxRequestLength` limitu rozmiaru ASP.NET na żądania przychodzące. Jeśli ta właściwość jest ustawiona, zostanie zignorowana. Aby uzyskać więcej informacji na temat `maxRequestLength` [ \<httpRuntime> elementu Configuration](/previous-versions/dotnet/netframework-1.1/e1f13641(v=vs.71)), zobacz. Nadal musisz skonfigurować maxAllowedContentLength, aby uzyskać więcej informacji, zobacz [limity żądań usług IIS](/previous-versions/iis/settings-schema/ms689462(v=vs.90)).
+- Usunięto ograniczenia dotyczące buforowania komunikatów, gdy usługa jest hostowana w usługach IIS. W poprzednich wersjach programu WCF podczas otrzymywania komunikatu dla usługi hostowanej przez usługi IIS, która używa transferu komunikatów przesyłania strumieniowego, ASP.NET buforuje cały komunikat przed wysłaniem go do programu WCF. Mogłoby to spowodować duże użycie pamięci. To buforowanie zostało usunięte w .NET Framework 4,5, a teraz usługi WCF hostowane przez usługi IIS mogą rozpocząć przetwarzanie strumienia przychodzącego przed odebraniem całego komunikatu, co pozwoli na prawdziwe przesyłanie strumieniowe. Dzięki temu Funkcja WCF może natychmiast reagować na komunikaty i zapewnia lepszą wydajność. Ponadto nie trzeba już określać wartości dla `maxRequestLength` limitu rozmiaru ASP.NET na żądania przychodzące. Jeśli ta właściwość jest ustawiona, zostanie zignorowana. Aby uzyskać więcej informacji na temat `maxRequestLength` [ \<httpRuntime> elementu Configuration](/previous-versions/dotnet/netframework-1.1/e1f13641(v=vs.71)), zobacz. Nadal musisz skonfigurować maxAllowedContentLength, aby uzyskać więcej informacji, zobacz [limity żądań usług IIS](/previous-versions/iis/settings-schema/ms689462(v=vs.90)).
 
 ## <a name="new-transport-default-values"></a>Nowe wartości domyślne transportu
 

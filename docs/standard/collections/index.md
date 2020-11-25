@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-ms.openlocfilehash: 3b92f3aa8c21cc3d171e14100db190d88f2c0284
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 7400d460c4d1ebf5c02d8313f33a5a63de1734d4
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823852"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733519"
 ---
 # <a name="collections-and-data-structures"></a>Kolekcje i struktury danych
 
@@ -26,6 +26,7 @@ Istnieją dwa główne typy kolekcji: Kolekcje ogólne i kolekcje inne niż ogó
 Począwszy od .NET Framework 4, kolekcje w <xref:System.Collections.Concurrent> przestrzeni nazw zapewniają wydajne, bezpieczne dla wątków operacje umożliwiające dostęp do elementów kolekcji z wielu wątków. Niezmienne klasy kolekcji w <xref:System.Collections.Immutable> przestrzeni nazw ([pakiet NuGet](https://www.nuget.org/packages/System.Collections.Immutable)) są z natury bezpieczny wątkowo, ponieważ operacje są wykonywane w odniesieniu do kopii oryginalnej kolekcji, a oryginalna kolekcja nie może być modyfikowana.
 
 <a name="BKMK_Commoncollectionfeatures"></a>
+
 ## <a name="common-collection-features"></a>Wspólne funkcje kolekcji
 
 Wszystkie kolekcje zapewniają metody dodawania, usuwania lub znajdowania elementów w kolekcji. Ponadto wszystkie kolekcje, które bezpośrednio lub pośrednio implementują <xref:System.Collections.ICollection> interfejs lub <xref:System.Collections.Generic.ICollection%601> interfejs udostępniają te funkcje:
@@ -57,6 +58,7 @@ Ponadto wiele klas kolekcji zawiera następujące funkcje:
     Typy kolekcji nieogólnej w <xref:System.Collections> przestrzeni nazw zapewniają bezpieczeństwo wątku z synchronizacją; zwykle udostępniane za pomocą <xref:System.Collections.ICollection.SyncRoot%2A>  <xref:System.Collections.ICollection.IsSynchronized%2A> elementów i. Kolekcje te nie są domyślnie bezpieczne dla wątków. Jeśli jest wymagany skalowalny i wydajny dostęp wielowątkowy do kolekcji, użyj jednej z klas w <xref:System.Collections.Concurrent> przestrzeni nazw lub Rozważ użycie niezmiennej kolekcji. Aby uzyskać więcej informacji, zobacz [kolekcje bezpieczne dla wątków](thread-safe/index.md).
 
 <a name="BKMK_Choosingacollection"></a>
+
 ## <a name="choose-a-collection"></a>Wybierz kolekcję
 
 Ogólnie rzecz biorąc, należy używać kolekcji ogólnych. W poniższej tabeli opisano niektóre typowe scenariusze zbierania danych oraz klasy kolekcji, których można użyć w tych scenariuszach. Jeśli dopiero zaczynasz kolekcje ogólne, ta tabela ułatwi wybór ogólnej kolekcji, która działa najlepiej dla danego zadania.
@@ -94,6 +96,7 @@ A `List<T>` może być efektywnie wyliczany przy użyciu `for` pętli lub `forea
 Ponadto `SortedSet<T>` ma taką samą złożoność jak `ImmutableSortedSet<T>` . Dzieje się tak, ponieważ oba używają drzew binarnych. Istotną różnicą jest oczywiście `ImmutableSortedSet<T>` użycie niezmiennego drzewa binarnego. Ponieważ `ImmutableSortedSet<T>` oferuje również <xref:System.Collections.Immutable.ImmutableSortedSet%601.Builder?displayProperty=nameWithType> klasę, która umożliwia mutację, można mieć zarówno niezmienności, jak i wydajność.
 
 <a name="BKMK_RelatedTopics"></a>
+
 ## <a name="related-topics"></a>Tematy pokrewne
 
 |Tytuł|Opis|
@@ -108,7 +111,9 @@ Ponadto `SortedSet<T>` ma taką samą złożoność jak `ImmutableSortedSet<T>` 
 |System. Collections. unzmienna|Wprowadza Niezmienne kolekcje i oferuje linki do typów kolekcji.|
 
 <a name="BKMK_Reference"></a>
+
 ## <a name="reference"></a>Tematy pomocy
+
 <xref:System.Array?displayProperty=nameWithType>
 <xref:System.Collections?displayProperty=nameWithType>
 <xref:System.Collections.Concurrent?displayProperty=nameWithType>

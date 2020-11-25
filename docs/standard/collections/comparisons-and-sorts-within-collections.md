@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-ms.openlocfilehash: 343f633b3807391b8deea28f56a5166ac3d8c8c5
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: e4d40568710498df811954c86bb36382d93057a3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94823865"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733545"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Porównywanie i sortowanie w kolekcjach
 
@@ -26,6 +26,7 @@ ms.locfileid: "94823865"
 Kolekcje zwykle wykorzystują funkcję porównującą równość i/lub funkcję porównującą porządkowania. Dwa konstrukcje są używane do porównywania.
 
 <a name="BKMK_Checkingforequality"></a>
+
 ## <a name="check-for-equality"></a>Sprawdź pod kątem równości
 
 Metody takie jak `Contains` , <xref:System.Collections.IList.IndexOf%2A> , <xref:System.Collections.Generic.List%601.LastIndexOf%2A> i `Remove` wykorzystują funkcję porównującą równość dla elementów kolekcji. Jeśli kolekcja jest ogólna, elementy są porównywane pod kątem równości zgodnie z poniższymi wskazówkami:
@@ -37,6 +38,7 @@ Metody takie jak `Contains` , <xref:System.Collections.IList.IndexOf%2A> , <xref
 Ponadto niektóre przeciążenia konstruktorów dla kolekcji słowników akceptują <xref:System.Collections.Generic.IEqualityComparer%601> implementację, która jest używana do porównywania kluczy pod kątem równości. Aby zapoznać się z przykładem, zobacz <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A> Konstruktor.
 
 <a name="BKMK_Determiningsortorder"></a>
+
 ## <a name="determine-sort-order"></a>Określ kolejność sortowania
 
 Metody takie jak `BinarySearch` i `Sort` wykorzystują funkcję porównującą porządkowanie dla elementów kolekcji. Porównania mogą znajdować się między elementami kolekcji lub między elementem a określoną wartością. Do porównywania obiektów istnieje koncepcja `default comparer` i `explicit comparer` .
@@ -54,6 +56,7 @@ Aby zapewnić jawne porównania, niektóre metody akceptują implementację **IC
 Bieżące ustawienie kultury systemu może wpływać na porównania i sortować je w obrębie kolekcji. Domyślnie porównania i sortowania w klasach **kolekcji** są zależne od kultury. Aby zignorować ustawienie kultury i w związku z tym uzyskać spójne wyniki porównania i sortowania, użyj <xref:System.Globalization.CultureInfo.InvariantCulture%2A> z przeciążeniami składowymi, które akceptują <xref:System.Globalization.CultureInfo> . Aby uzyskać więcej informacji, zobacz [wykonywanie operacji Culture-Insensitive String w kolekcjach](../globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) i [wykonywanie Culture-Insensitive operacji na ciągach w tablicach](../globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).
 
 <a name="BKMK_Equalityandsortexample"></a>
+
 ## <a name="equality-and-sort-example"></a>Przykład równości i sortowania
 
 Poniższy kod ilustruje implementację <xref:System.IEquatable%601> i <xref:System.IComparable%601> w prostym obiekcie biznesowym. Ponadto, gdy obiekt jest przechowywany na liście i posortowane, zobaczysz, że wywołanie <xref:System.Collections.Generic.List%601.Sort> metody powoduje użycie domyślnej funkcji porównującej dla `Part` typu i <xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29> metody zaimplementowane przy użyciu metody anonimowej.

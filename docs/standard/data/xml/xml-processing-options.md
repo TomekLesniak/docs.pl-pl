@@ -3,14 +3,15 @@ title: Opcje przetwarzania XML
 description: Przejrzyj opcje przetwarzania XML, w tym LINQ to XML, XmlReader, XmlWriter, XmlDocument, XPathNavigator, XslCompiledTransform, XmlLite i MSXML.
 ms.date: 03/30/2017
 ms.assetid: 33ced8ee-1745-4e71-8dee-ebe70ec067c7
-ms.openlocfilehash: a0b3c6295874e891c1271b373fb012b5f191bcfb
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 4388b815625a7ca4b26c35518fa4a58a97bc67d5
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94829404"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733038"
 ---
 # <a name="xml-processing-options"></a>Opcje przetwarzania XML
+
 Zapoznaj się z poniższymi tabelami, aby zapoznać się z listą technologii firmy Microsoft, których można użyć do przetwarzania danych XML.  
   
 ## <a name="net-framework-options"></a>Opcje .NET Framework  

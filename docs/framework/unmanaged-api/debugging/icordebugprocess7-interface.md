@@ -10,14 +10,15 @@ api_type:
 ms.assetid: 71aee5f3-5e10-44fa-be69-6d8a475f2c14
 topic_type:
 - apiref
-ms.openlocfilehash: a819ca33df962774e69dac0609df1fff2fbdecd3
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 6a868cff3a686c29bb596330aeda2955a7f8ff5c
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213663"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732570"
 ---
 # <a name="icordebugprocess7-interface"></a>Interfejs ICorDebugProcess7
+
 [Obsługiwane w .NET Framework 4.5.2 i nowszych wersjach]  
   
  Zapewnia metodę, która umożliwia skonfigurowanie debugera do obsługi aktualizacji metadanych w pamięci w procesie docelowym.  
@@ -31,6 +32,7 @@ ms.locfileid: "83213663"
 ## <a name="remarks"></a>Uwagi  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -39,7 +41,7 @@ ms.locfileid: "83213663"
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Debugowanie — Interfejsy](debugging-interfaces.md)
 - [Debugowanie](index.md)

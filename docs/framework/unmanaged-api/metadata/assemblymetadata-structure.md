@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1af98e57-9145-4d35-bb78-77d1da7c91a5
 topic_type:
 - apiref
-ms.openlocfilehash: 5c7211fc2523b70313a1e4d4d9d2da0dcecd1d32
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 8071c3f43775975de37e3255582b6fc8f13f7de3
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009434"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732791"
 ---
 # <a name="assemblymetadata-structure"></a>ASSEMBLYMETADATA — Struktura
+
 Zawiera informacje o zestawie, do którego istnieje odwołanie, w tym jego wersji oraz o poziomie wsparcia dla ustawień regionalnych, procesorów i systemów operacyjnych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -57,16 +58,17 @@ typedef struct {
 |`ulOS`|Długość `rOS` tablicy.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [Struktury metadanych](metadata-structures.md)
+- [Metadane — Struktury](metadata-structures.md)
 - [IMetaDataAssemblyEmit — Interfejs](imetadataassemblyemit-interface.md)
 - [OSINFO — Struktura](osinfo-structure.md)

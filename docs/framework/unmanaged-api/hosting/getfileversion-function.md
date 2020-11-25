@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: b3222c85-da88-4485-97d7-3a6ee3e8d358
 topic_type:
 - apiref
-ms.openlocfilehash: 2dd004a44b20d48dafc72711ac23abcb55739224
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 57b30824c7849127f48d4da61872945366e7141e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617203"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733246"
 ---
 # <a name="getfileversion-function"></a>GetFileVersion — Funkcja
+
 Pobiera informacje o wersji środowiska uruchomieniowego języka wspólnego (CLR) określonego pliku przy użyciu określonego buforu.  
   
  Ta funkcja jest przestarzała w .NET Framework 4.  
@@ -38,6 +39,7 @@ HRESULT GetFileVersion (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `szFilename`  
  podczas Ścieżka pliku, który ma zostać zbadany.  
   
@@ -51,6 +53,7 @@ HRESULT GetFileVersion (
  określoną Rozmiar zwracanych wartości (w bajtach) `szBuffer` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  

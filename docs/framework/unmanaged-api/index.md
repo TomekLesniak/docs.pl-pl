@@ -7,17 +7,19 @@ helpviewer_keywords:
 - native API reference [.NET Framework]
 - unmanaged API reference [.NET Framework]
 ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
-ms.openlocfilehash: 0153279608e2359747f1be6b9542d6906c1b3995
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 16b18f4fede11e776e5656843ed9a408dff370eb
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559307"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732752"
 ---
 # <a name="unmanaged-api-reference"></a>Niezarządzany wykaz interfejsów API
+
 Ta sekcja zawiera informacje dotyczące niezarządzanych interfejsów API, które mogą być używane przez aplikacje związane z kodem zarządzanym, takie jak hosty środowiska uruchomieniowego, kompilatory, deasemblery, elementy zasłaniające, debugery i pliki.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Standardowe typy danych](common-data-types-unmanaged-api-reference.md)  
  Wyświetla listę typowych typów danych, które są używane, szczególnie w niezarządzanych interfejsy API profilowania i debugowania.  
   
@@ -61,4 +63,5 @@ Ta sekcja zawiera informacje dotyczące niezarządzanych interfejsów API, któr
  Opisuje dwie funkcje pomocnika i interfejs używany przez eksportera biblioteki typów (Tlbexp.exe) podczas procesu konwersji zestawu na typ biblioteki.  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Przewodnik programowania](../development-guide.md)

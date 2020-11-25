@@ -5,20 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 834049f1-ab41-449e-9f10-4a1d0701bc48
-ms.openlocfilehash: 06427097e1e242171abe84ea557cdbb108d98a9d
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: af529f1c6ccfe3abe761c7707772d6f9697c179d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830223"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733428"
 ---
 # <a name="inputs-to-the-xslcompiledtransform-class"></a>Dane wejściowe klasy XslCompiledTransform
+
 <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>Metoda akceptuje trzy typy danych wejściowych dla dokumentu źródłowego: obiekt implementujący <xref:System.Xml.XPath.IXPathNavigable> interfejs, <xref:System.Xml.XmlReader> obiekt, który odczytuje dokument źródłowy lub ciąg URI.  
   
 > [!NOTE]
 > <xref:System.Xml.Xsl.XslCompiledTransform>Klasa zachowuje domyślnie biały znak. Jest to zgodne z [sekcją 3,4 zalecenia W3C XSLT 1,0](https://www.w3.org/TR/xslt.html#strip).  
   
 ## <a name="ixpathnavigable-interface"></a>IXPathNavigable, interfejs  
+
  <xref:System.Xml.XPath.IXPathNavigable>Interfejs jest implementowany w <xref:System.Xml.XmlNode> <xref:System.Xml.XPath.XPathDocument> klasach i. Klasy te reprezentują pamięć podręczną danych XML.  
   
 - <xref:System.Xml.XmlNode>Klasa jest oparta na Document Object Model W3C (dom) i oferuje możliwości edycji.  
@@ -34,6 +36,7 @@ ms.locfileid: "94830223"
  [!code-vb[XslCompiledTransform.Transform2#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform2/VB/Module1.vb#1)]  
   
 ## <a name="xmlreader-object"></a>XmlReader — obiekt  
+
  <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>Metoda jest ładowana z bieżącego węzła przez <xref:System.Xml.XmlReader> wszystkie jego elementy podrzędne. Dzięki temu można użyć części dokumentu jako dokumentu kontekstowego. Po <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> powrocie metody element <xref:System.Xml.XmlReader> jest ustawiany w następnym węźle po zakończeniu dokumentu kontekstowego. Jeśli koniec dokumentu zostanie osiągnięty, <xref:System.Xml.XmlReader> zostanie umieszczony na końcu pliku (EOF).  
   
  W poniższym przykładzie użyto <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody do przekształcenia pliku books.xml do pliku books.html przy użyciu arkusza stylów Transform. xsl. Pliki books.xml i Transform. xsl można znaleźć w tym temacie: [instrukcje: wykonywanie transformacji XSLT przy użyciu zestawu](how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  
@@ -42,6 +45,7 @@ ms.locfileid: "94830223"
  [!code-vb[XslCompiledTransform.Transform2#2](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform2/VB/Module1.vb#2)]  
   
 ## <a name="string-uri"></a>Identyfikator URI ciągu  
+
  Możesz również określić identyfikator URI dokumentu źródłowego jako dane wejściowe XSLT. <xref:System.Xml.XmlResolver>Służy do rozpoznawania identyfikatora URI. Możesz określić, <xref:System.Xml.XmlResolver> Aby użyć, przechodząc do <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. Jeśli <xref:System.Xml.XmlResolver> nie jest określony, <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> Metoda używa domyślnego ustawienia <xref:System.Xml.XmlUrlResolver> bez poświadczeń.  
   
  W poniższym przykładzie użyto <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A?displayProperty=nameWithType> metody do przekształcenia pliku books.xml do pliku books.html przy użyciu arkusza stylów Transform. xsl. Pliki books.xml i Transform. xsl można znaleźć w tym temacie: [instrukcje: wykonywanie transformacji XSLT przy użyciu zestawu](how-to-perform-an-xslt-transformation-by-using-an-assembly.md).  

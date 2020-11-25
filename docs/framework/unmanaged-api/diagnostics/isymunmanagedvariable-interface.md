@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 704c69ba-77bc-40d7-8c0c-400061686321
 topic_type:
 - apiref
-ms.openlocfilehash: d05d4451e8fb75829b22e0a1b9c9afcb0607eb8b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 93e1f8eb17f06e42ddb243f88c593979fcb28030
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83610174"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733285"
 ---
 # <a name="isymunmanagedvariable-interface"></a>ISymUnmanagedVariable — Interfejs
+
 Reprezentuje zmienną, taką jak parametr, zmienna lokalna lub pole.  
   
 ## <a name="methods"></a>Metody  
@@ -33,12 +34,13 @@ Reprezentuje zmienną, taką jak parametr, zmienna lokalna lub pole.
 |[GetAddressField3, metoda](isymunmanagedvariable-getaddressfield3-method.md)|Pobiera trzecie pole adresu dla tej zmiennej. Jego znaczenie zależy od rodzaju adresu.|  
 |[GetAddressKind, metoda](isymunmanagedvariable-getaddresskind-method.md)|Pobiera rodzaj adresu tej zmiennej.|  
 |[GetAttributes, metoda](isymunmanagedvariable-getattributes-method.md)|Pobiera flagi atrybutu dla tej zmiennej.|  
-|[GetEndOffset, metoda](isymunmanagedvariable-getendoffset-method.md)|Pobiera przesunięcie końca tej zmiennej w elemencie nadrzędnym.|  
+|[GetEndOffset — Metoda](isymunmanagedvariable-getendoffset-method.md)|Pobiera przesunięcie końca tej zmiennej w elemencie nadrzędnym.|  
 |[GetName — Metoda](isymunmanagedvariable-getname-method.md)|Pobiera nazwę tej zmiennej.|  
-|[GetSignature, metoda](isymunmanagedvariable-getsignature-method.md)|Pobiera sygnaturę tej zmiennej.|  
+|[GetSignature — Metoda](isymunmanagedvariable-getsignature-method.md)|Pobiera sygnaturę tej zmiennej.|  
 |[GetStartOffset, metoda](isymunmanagedvariable-getstartoffset-method.md)|Pobiera przesunięcie początku tej zmiennej w elemencie nadrzędnym.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Nagłówek:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Zobacz także

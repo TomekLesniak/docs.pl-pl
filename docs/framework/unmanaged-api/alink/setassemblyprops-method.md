@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: a3d7cf29-1414-49e6-8aae-9b3283c4f5f0
 topic_type:
 - apiref
-ms.openlocfilehash: 4bfad8b985a8ef059031464e99a8004842b276c0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 4b0de5f9759491f1303edc978b1548e91214daf8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445570"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733753"
 ---
 # <a name="setassemblyprops-method"></a>SetAssemblyProps — Metoda
+
 Przypisuje właściwości na poziomie zestawu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,11 +37,12 @@ HRESULT SetAssemblyProps(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `AssemblyID`  
  Identyfikator zestawu.  
   
  `FileToken`  
- Plik, który definiuje właściwość. Może mieć wartość NULL, jeśli `AssemblyID` nie wskazuje niepowiązanego modułu.  
+ Plik, który definiuje właściwość. Może mieć wartość NULL `AssemblyID` , jeśli nie wskazuje niepowiązanego modułu.  
   
  `Option`  
  Wskazuje opcję do zmodyfikowania.  
@@ -49,13 +51,15 @@ HRESULT SetAssemblyProps(
  Nowa wartość opcji.  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Zwraca S_OK, jeśli metoda zakończy się pomyślnie.  
   
 ## <a name="requirements"></a>Wymagania  
+
  Wymaga Alink. h.  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [IALink, interfejs](ialink-interface.md)
-- [IALink2, interfejs](ialink2-interface.md)
-- [ALink, interfejs API](index.md)
+- [IALink — Interfejs](ialink-interface.md)
+- [IALink2 — Interfejs](ialink2-interface.md)
+- [ALink — interfejs API](index.md)

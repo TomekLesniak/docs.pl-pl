@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: c853bb58-c9c5-476b-8e80-608aa53ea18d
 topic_type:
 - apiref
-ms.openlocfilehash: 7245a4c222e2ad3ef1854f3c9e2d0abe37e0650a
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 257761d32ff37782e01167bbbc9b12664a9d586d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009486"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732876"
 ---
 # <a name="typenamefactory-coclass"></a>TypeNameFactory — Klasa coclass
+
 Udostępnia interfejs do zarządzania dekonstrukcja nazwy typu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,17 +37,18 @@ coclass TypeNameFactory {
   
 |Interfejs|Opis|  
 |---------------|-----------------|  
-|[ITypeNameFactory, interfejs](itypenamefactory-interface.md)|Ten interfejs obsługuje infrastrukturę .NET Framework i nie jest przeznaczony do użycia bezpośrednio w kodzie.|  
+|[ITypeNameFactory — Interfejs](itypenamefactory-interface.md)|Ten interfejs obsługuje infrastrukturę .NET Framework i nie jest przeznaczony do użycia bezpośrednio w kodzie.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. idl  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Współklasy hostingu](hosting-coclasses.md)

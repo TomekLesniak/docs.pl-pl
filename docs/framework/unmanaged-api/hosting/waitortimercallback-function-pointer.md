@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1fec4aef-0a06-4df0-bae7-d31a9ef9603d
 topic_type:
 - apiref
-ms.openlocfilehash: ee5dd611888ec52e360ef45fab4c01e9c5b2d6bb
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 74256f35804ff59f04952a1ac20ac7866e8f5683
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009455"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732817"
 ---
 # <a name="waitortimercallback-function-pointer"></a>WAITORTIMERCALLBACK — Wskaźnik funkcji
+
 Wskazuje funkcję, która powiadamia hosta o <xref:System.Threading.WaitHandle> zasygnalizowaniu lub przekroczeniu limitu czasu dojścia oczekiwania ().  
   
  Ten wskaźnik funkcji został uznany za przestarzały w .NET Framework 4.  
@@ -36,6 +37,7 @@ typedef VOID (__stdcall *WAITORTIMERCALLBACK) (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `lpParameter`  
  podczas Wskaźnik do obiektu, który zawiera informacje zdefiniowane przez hosta.  
   
@@ -43,17 +45,19 @@ typedef VOID (__stdcall *WAITORTIMERCALLBACK) (
  [w] `true` Jeśli upłynął limit czasu dojścia oczekiwania lub `false` Jeśli został on zasygnalizowani.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Funkcja, do której `WAITORTIMERCALLBACK` punkty jest funkcją wywołania zwrotnego i musi być implementowana przez moduł zapisujący aplikacji hostingowej.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** MSCorWks. dll  
+ **Biblioteka:** MSCorWks.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Przestarzałe funkcje hostingu środowiska CLR](deprecated-clr-hosting-functions.md)

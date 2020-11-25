@@ -9,14 +9,15 @@ ms.date: 03/30/2017
 - hash function
 - collections [.NET], Hashtable collection type
 ms.assetid: bfc20837-3d02-4fc7-8a8f-c5215b6b7913
-ms.openlocfilehash: bb6d0802526db9b6b5673fe7d13b1f12af7acfcf
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 56e8ceff05f8f9777af370301a96cd17d0286f44
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831224"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733532"
 ---
 # <a name="hashtable-and-dictionary-collection-types"></a>Typy kolekcji tablic wartości funkcji mieszającej i słowników
+
 <xref:System.Collections.Hashtable?displayProperty=nameWithType>Klasa oraz <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> klasy i i <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> generyczne implementują <xref:System.Collections.IDictionary?displayProperty=nameWithType> interfejs. <xref:System.Collections.Generic.Dictionary%602>Klasa generyczna implementuje także <xref:System.Collections.Generic.IDictionary%602> interfejs ogólny. W związku z tym każdy element w tych kolekcjach jest parą klucz-wartość.  
   
  <xref:System.Collections.Hashtable>Obiekt składa się z zasobników zawierających elementy kolekcji. Zasobnik jest podgrupą wirtualną elementów w ramach <xref:System.Collections.Hashtable> , co sprawia, że wyszukiwanie i pobieranie jest łatwiejsze i szybsze niż w większości kolekcji. Każdy zasobnik jest skojarzony z kodem skrótu, który jest generowany przy użyciu funkcji skrótu i jest oparty na kluczu elementu.  

@@ -12,14 +12,15 @@ helpviewer_keywords:
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-ms.openlocfilehash: 2ab86a6cbf0b92ecdaf0a97041d493f9494e3225
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 1b992837bcb32537f24643ef4781b6d170a058d1
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831250"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733558"
 ---
 # <a name="commonly-used-collection-types"></a>Często używane typy kolekcji
+
 Typy kolekcji to typowe różnice między kolekcjami danych, takie jak tabele skrótów, kolejki, stosy, torby, słowniki i listy.  
   
  Kolekcje są oparte na <xref:System.Collections.ICollection> interfejsie, <xref:System.Collections.IList> interfejsie, <xref:System.Collections.IDictionary> interfejsie lub ich rodzajowych odpowiednikach. <xref:System.Collections.IList>Interfejs i <xref:System.Collections.IDictionary> interfejs są wyprowadzane z <xref:System.Collections.ICollection> interfejsu; w związku z tym wszystkie kolekcje są oparte na <xref:System.Collections.ICollection> interfejsie bezpośrednio lub pośrednio. W kolekcjach opartych na <xref:System.Collections.IList> interfejsie (takich jak <xref:System.Array> , <xref:System.Collections.ArrayList> lub <xref:System.Collections.Generic.List%601> ) lub bezpośrednio w <xref:System.Collections.ICollection> interfejsie (takich jak,,, <xref:System.Collections.Queue> <xref:System.Collections.Concurrent.ConcurrentQueue%601> <xref:System.Collections.Stack> <xref:System.Collections.Concurrent.ConcurrentStack%601> lub <xref:System.Collections.Generic.LinkedList%601> ) każdy element zawiera tylko wartość. W kolekcjach opartych na <xref:System.Collections.IDictionary> interfejsie (takich <xref:System.Collections.Hashtable> jak <xref:System.Collections.SortedList> klasy i i <xref:System.Collections.Generic.Dictionary%602> klasy <xref:System.Collections.Generic.SortedList%602> Ogólne) lub <xref:System.Collections.Concurrent.ConcurrentDictionary%602> klasy, każdy element zawiera zarówno klucz, jak i wartość.  <xref:System.Collections.ObjectModel.KeyedCollection%602>Klasa jest unikatowa, ponieważ jest to lista wartości z kluczami osadzonymi w wartościach, dlatego zachowuje się jak lista i jak w przypadku słownika.  
@@ -40,6 +41,7 @@ Typy kolekcji to typowe różnice między kolekcjami danych, takie jak tabele sk
 |[Typy ogólne](../generics/index.md)|Opisuje funkcje ogólne, w tym kolekcje ogólne, Delegaty i interfejsy udostępniane przez platformę .NET. Zawiera łącza do dokumentacji funkcji dla języków C#, Visual Basic i Visual C++ oraz do obsługi technologii, takich jak odbicie.|  
   
 ## <a name="reference"></a>Tematy pomocy  
+
  <xref:System.Collections?displayProperty=nameWithType>  
   
  <xref:System.Collections.Generic?displayProperty=nameWithType>  

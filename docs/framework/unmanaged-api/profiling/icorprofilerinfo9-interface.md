@@ -3,12 +3,12 @@ title: ICorProfilerInfo9, interfejs
 ms.date: 08/06/2019
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: f38195b1a7983e23c7f5c20055ea8c2a8bfcb7d8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3d1cdfa56e6bb20f08370aa76b87d516f7b51cda
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556853"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732960"
 ---
 # <a name="icorprofilerinfo9-interface"></a>ICorProfilerInfo9, interfejs
 
@@ -23,6 +23,7 @@ Podklasa elementu [ICorProfilerInfo8](icorprofilerinfo8-interface.md) , która d
 |[GetCodeInfo4, metoda](icorprofilerinfo9-getcodeinfo4-method.md)| Przy podanym adresie początkowym kodu natywnego program zwraca bloki pamięci wirtualnej, która przechowuje ten kod. |
 
 ## <a name="requirements"></a>Wymagania  
+
 **Platformy:** Zobacz [obsługiwane systemy operacyjne .NET Core](../../../core/install/windows.md?pivots=os-windows).  
 **Nagłówek:** CorProf. idl, CorProf. h  
 **Wersje .NET:**[!INCLUDE[net_core](../../../../includes/net-core-22-md.md)]  

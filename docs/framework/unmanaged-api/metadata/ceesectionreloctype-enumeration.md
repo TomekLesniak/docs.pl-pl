@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: 124656f6-0dad-4ceb-9043-d3869ab65cde
 topic_type:
 - apiref
-ms.openlocfilehash: 78b30f624bd71234e8f1b56600b3a23d15fdf517
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: f7aa9699e9929608c90020c6b2d66c301fc11955
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84006038"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732713"
 ---
 # <a name="ceesectionreloctype-enumeration"></a>CeeSectionRelocType — Wyliczenie
+
 Dostarcza wartości mające wpływ na typ `reloc` instrukcji emitowanej w wywołaniu [ICeeGen:: AddSectionReloc —](iceegen-addsectionreloc-method.md).  
   
 ## <a name="syntax"></a>Składnia  
@@ -69,16 +70,17 @@ typedef enum  {
 |`srRelocPtr`|Wartość wskazująca, że przed przemieszczeniem sekcji jest wskaźnik, a nie przesunięty sekcję.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [Wyliczenia metadanych](metadata-enumerations.md)
 - [ICeeGen — Interfejs](iceegen-interface.md)
-- [AddSectionReloc — Metoda](iceegen-addsectionreloc-method.md)
+- [AddSectionReloc, metoda](iceegen-addsectionreloc-method.md)

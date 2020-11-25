@@ -2,14 +2,15 @@
 title: Model SOM (XML Schema Object Model) ― omówienie
 ms.date: 03/30/2017
 ms.assetid: 896a1e12-5655-42c6-8cdd-89c12862b34b
-ms.openlocfilehash: c54f92ede64e59478a0e9bfd919666caa9481137
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 62560b641c43f2210b052e9880f2d945dbae0c6f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94819217"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733103"
 ---
 # <a name="xml-schema-object-model-overview"></a>Model SOM (XML Schema Object Model) ― omówienie
+
 Model obiektów schematu (SOM) w Microsoft .NET Framework to bogaty interfejs API, który umożliwia Programistyczne tworzenie, edytowanie i sprawdzanie poprawności schematów. Model SOM działa na dokumentach schematu XML podobnie do sposobu działania Document Object Model (DOM) w dokumentach XML. Dokumenty schematu XML są prawidłowymi plikami XML, które po załadowaniu do modelu SOM, przekazując znaczenie dotyczące struktury i ważności innych dokumentów XML, które są zgodne ze schematem.  
   
  Schemat to dokument XML, który definiuje klasę dokumentów XML, określając strukturę lub model dokumentów XML dla określonego schematu. Schemat identyfikuje ograniczenia dotyczące zawartości dokumentów XML i opisuje słownictwo (reguły lub gramatyki) zgodne dokumenty XML muszą być przestrzegane, aby można je było traktować jako schemat-prawidłowy z tym konkretnym schematem. Walidacja dokumentu XML jest procesem, który gwarantuje, że dokument jest zgodny z gramatyką określoną przez schemat.  
@@ -29,6 +30,7 @@ Model obiektów schematu (SOM) w Microsoft .NET Framework to bogaty interfejs AP
 - Dynamicznie Edytuj schemat, który może być zgodny i zapisany do użycia w walidacji dokumentów wystąpienia XML.  
   
 ## <a name="the-schema-object-model"></a>Model obiektu schematu  
+
  Model SOM zawiera rozbudowany zestaw klas w <xref:System.Xml.Schema?displayProperty=nameWithType> przestrzeni nazw odpowiadający elementom w schemacie XML. Na przykład element jest `<xsd:schema>...</xsd:schema>` mapowany do <xref:System.Xml.Schema.XmlSchema?displayProperty=nameWithType> klasy, a wszystkie informacje, które mogą być zawarte w `<xsd:schema/>` elemencie mogą być reprezentowane za pomocą <xref:System.Xml.Schema.XmlSchema> klasy. Podobnie `<xsd:element>...</xsd:element>` elementy i są `<xsd:attribute>...</xsd:attribute>` mapowane <xref:System.Xml.Schema.XmlSchemaElement?displayProperty=nameWithType> odpowiednio do klas i <xref:System.Xml.Schema.XmlSchemaAttribute?displayProperty=nameWithType> . To mapowanie będzie kontynuowane dla wszystkich elementów schematu XML tworzących model obiektów schematu XML w <xref:System.Xml.Schema> przestrzeni nazw przedstawiony na poniższym diagramie.  
   
  ![System.Xml. Model obiektów schematu](./media/xml-schema-object-model-overview/xml-schema-object-model.gif)  

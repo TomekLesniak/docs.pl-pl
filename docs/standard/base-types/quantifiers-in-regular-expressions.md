@@ -14,14 +14,15 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: 46f780dff948d290ee7906f8de7e74b03a404cc5
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 75d37527507b596d6017171279e84b8348489831
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831042"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95733584"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kwantyfikatory w wyrażeniach regularnych
+
 Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi być obecne w danych wejściowych, aby można było znaleźć dopasowanie.  W poniższej tabeli wymieniono Kwantyfikatory obsługiwane przez platformę .NET.  
   
 |Kwantyfikator zachłanne|Kwantyfikator z opóźnieniem|Opis|  
@@ -39,12 +40,14 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 > Zagnieżdżanie kwantyfikatorów (na przykład jako wzorca wyrażenia regularnego `(a*)*` ) może zwiększyć liczbę porównań, które musi wykonać aparat wyrażeń regularnych, jako funkcję wykładniczą liczby znaków w ciągu wejściowym. Aby uzyskać więcej informacji na temat tego zachowania i jego obejść [, zobacz](backtracking-in-regular-expressions.md)wycofywanie.  
   
 ## <a name="regular-expression-quantifiers"></a>Kwantyfikatory wyrażeń regularnych  
+
  W poniższych sekcjach wymieniono Kwantyfikatory obsługiwane przez wyrażenia regularne programu .NET.  
   
 > [!NOTE]
 > Jeśli znaki *, +,?, {i} są napotkane we wzorcu wyrażenia regularnego, aparat wyrażeń regularnych interpretuje je jako Kwantyfikatory lub część konstrukcji kwantyfikatora, chyba że znajdują się w [klasie znaków](character-classes-in-regular-expressions.md). Aby interpretować te jako znaki literału poza klasą znaków, należy je zmienić, poprzedzając je ukośnikiem odwrotnym. Na przykład ciąg `\*` we wzorcu wyrażenia regularnego jest interpretowany jako literał gwiazdki (" \* ").  
   
 ### <a name="match-zero-or-more-times-"></a>Dopasowanie zero lub więcej razy: *  
+
  `*`Kwantyfikator dopasowuje poprzedni element zero lub więcej razy. Jest to odpowiednik `{0,}` kwantyfikatora. `*` jest kwantyfikatorem zachłanne, którego odpowiednikiem opóźnionym jest `*?` .  
   
  Poniższy przykład ilustruje to wyrażenie regularne. Dziewięciu grup cyfr w ciągu wejściowym, pięć dopasowuje wzorzec i cztery ( `95` ,,, `929` `9219` i) nie `9919` .  
@@ -62,6 +65,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 |`\b`|Kończy na granicy wyrazu.|  
   
 ### <a name="match-one-or-more-times-"></a>Dopasowuje jeden lub więcej razy: +  
+
  `+`Kwantyfikator dopasowuje poprzedni element jeden lub więcej razy. Jest równoważne `{1,}` . `+` jest kwantyfikatorem zachłanne, którego odpowiednikiem opóźnionym jest `+?` .  
   
  Na przykład wyrażenie regularne `\ban+\w*?\b` próbuje dopasować całe wyrazy, które zaczynają się od litery, `a` po którym następuje co najmniej jedno wystąpienie litery `n` . Poniższy przykład ilustruje to wyrażenie regularne. Wyrażenie regularne pasuje do wyrazów `an` , `annual` , `announcement` , i `antique` i prawidłowo nie można dopasować `autumn` i `all` .  
@@ -79,6 +83,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 |`\b`|Kończy na granicy wyrazu.|  
   
 ### <a name="match-zero-or-one-time-"></a>Dopasowanie zero lub jeden raz:?  
+
  `?`Kwantyfikator dopasowuje poprzedni element zero lub jeden raz. Jest równoważne `{0,1}` . `?` jest kwantyfikatorem zachłanne, którego odpowiednikiem opóźnionym jest `??` .  
   
  Na przykład wyrażenie regularne `\ban?\b` próbuje dopasować całe wyrazy rozpoczynające się od litery, `a` po której następuje zero lub jedno wystąpienie litery `n` . Innymi słowy, próbuje dopasować słowa `a` i `an` . Poniższy przykład ilustruje to wyrażenie regularne.  
@@ -95,6 +100,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 |`\b`|Kończy na granicy wyrazu.|  
   
 ### <a name="match-exactly-n-times-n"></a>Dopasuj dokładnie n razy: {n}  
+
  Kwantyfikator `{` *n* `}` dopasowuje poprzedni element dokładnie *n* razy, gdzie *n* jest dowolną liczbą całkowitą. `{`*n* `}` jest kwantyfikatorem zachłanne, którego odpowiednik opóźniony to `{` *n* `}?` .  
   
  Na przykład wyrażenie regularne `\b\d+\,\d{3}\b` próbuje dopasować granicę wyrazu, po którym następuje co najmniej jedna cyfra dziesiętna, po której następują trzy cyfry dziesiętne, a po niej granicę wyrazu. Poniższy przykład ilustruje to wyrażenie regularne.  
@@ -113,6 +119,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 |`\b`|Kończy na granicy wyrazu.|  
   
 ### <a name="match-at-least-n-times-n"></a>Dopasowuje co najmniej n razy: {n,}  
+
  Kwantyfikator `{` *n* `,}` dopasowuje poprzedni element co najmniej *n* razy, gdzie *n* jest dowolną liczbą całkowitą. `{`*n* `,}` jest kwantyfikatorem zachłanne, którego odpowiednik opóźniony to `{` *n* `,}?` .  
   
  Na przykład wyrażenie regularne `\b\d{2,}\b\D+` próbuje dopasować granicę wyrazu, po którym następuje co najmniej dwie cyfry, po których następuje granica słowa i znak niebędący cyfrą. Poniższy przykład ilustruje to wyrażenie regularne. Wyrażenie regularne nie pasuje do frazy `"7 days"` , ponieważ zawiera tylko jedną cyfrę dziesiętną, ale pomyślnie dopasowuje frazy `"10 weeks and 300 years"` .  
@@ -130,6 +137,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 |`\D+`|Dopasowuje co najmniej jedną cyfrę niedziesiętną.|  
   
 ### <a name="match-between-n-and-m-times-nm"></a>Dopasowanie między n i m razy: {n, m}  
+
  Kwantyfikator `{` *n* `,` *m* `}` dopasowuje poprzedni element co najmniej *n* razy, ale nie więcej niż *m* razy, gdzie *n* i *m* są liczbami całkowitymi. `{`*n* `,` *m* `}` jest kwantyfikatorem zachłanne, którego odpowiednik opóźniony to `{` *n* `,` *m* `}?` .  
   
  W poniższym przykładzie wyrażenie regularne `(00\s){2,4}` próbuje dopasować między dwoma i czterema wystąpieniami dwóch cyfr zerowych, po których występuje spacja. Należy zauważyć, że końcowa część ciągu wejściowego zawiera ten wzorzec pięć razy, a nie maksymalnie cztery. Jednak tylko początkowa część tego podciągu (do spacji i piąta para zer) pasuje do wzorca wyrażenia regularnego.  
@@ -138,6 +146,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
  [!code-vb[RegularExpressions.Quantifiers#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#6)]  
   
 ### <a name="match-zero-or-more-times-lazy-match-"></a>Dopasowuje zero lub więcej razy (dopasowanie z opóźnieniem): *?  
+
  `*?`Kwantyfikator dopasowuje poprzedzający element zero lub więcej razy, ale tyle razy, ile to możliwe. Jest odpowiednikiem z opóźnieniem kwantyfikatora zachłanne `*` .  
   
  W poniższym przykładzie wyrażenie regularne `\b\w*?oo\w*?\b` dopasowuje wszystkie wyrazy, które zawierają ciąg `oo` .  
@@ -156,6 +165,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 |`\b`|Koniec na granicy słowa.|  
   
 ### <a name="match-one-or-more-times-lazy-match-"></a>Dopasowuje jeden lub więcej razy (dopasowanie z opóźnieniem): +?  
+
  `+?`Kwantyfikator dopasowuje poprzedni element jeden lub więcej razy, ale jak najszybciej, jak to możliwe. Jest odpowiednikiem z opóźnieniem kwantyfikatora zachłanne `+` .  
   
  Na przykład wyrażenie regularne `\b\w+?\b` dopasowuje co najmniej jeden znak rozdzielony przez granice słowa. Poniższy przykład ilustruje to wyrażenie regularne.  
@@ -164,6 +174,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
  [!code-vb[RegularExpressions.Quantifiers#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#8)]  
   
 ### <a name="match-zero-or-one-time-lazy-match-"></a>Dopasowuje zero lub jeden raz (dopasowanie z opóźnieniem):?  
+
  `??`Kwantyfikator dopasowuje poprzedni element zero lub jeden raz, ale tyle razy, ile to możliwe. Jest odpowiednikiem z opóźnieniem kwantyfikatora zachłanne `?` .  
   
  Na przykład wyrażenie regularne `^\s*(System.)??Console.Write(Line)??\(??` próbuje dopasować ciągi "Console. Write" lub "Console. WriteLine". Ciąg może również zawierać "system". przed "konsolą" i może następować nawias otwierający. Ciąg musi znajdować się na początku wiersza, chociaż może być poprzedzony białym znakiem. Poniższy przykład ilustruje to wyrażenie regularne.  
@@ -183,6 +194,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 |`\(??`|Dopasowanie do zera lub jednego wystąpienia nawiasu otwierającego.|  
   
 ### <a name="match-exactly-n-times-lazy-match-n"></a>Dopasuj dokładnie n razy (dopasowanie z opóźnieniem): {n}?  
+
  Kwantyfikator `{` *n* `}?` dopasowuje poprzedni element dokładnie `n` raz, gdzie *n* jest dowolną liczbą całkowitą. Jest to odpowiednik opóźniony kwantyfikatora zachłanne `{` *n* `}` .  
   
  W poniższym przykładzie wyrażenie regularne `\b(\w{3,}?\.){2}?\w{3,}?\b` służy do identyfikowania adresu witryny sieci Web. Należy pamiętać, że pasuje do "www.microsoft.com" i "msdn.microsoft.com", ale nie pasuje do "Website" lub "mycompany.com".  
@@ -200,11 +212,13 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 |`\b`|Zakończ dopasowanie na granicy słowa.|  
   
 ### <a name="match-at-least-n-times-lazy-match-n"></a>Dopasowuje co najmniej n razy (dopasowanie z opóźnieniem): {n,}?  
+
  Kwantyfikator `{` *n* `,}?` dopasowuje poprzedni element co najmniej `n` razy, gdzie *n* jest dowolną liczbą całkowitą, ale tyle razy, ile to możliwe. Jest to odpowiednik opóźniony kwantyfikatora zachłanne `{` *n* `,}` .  
   
  Zobacz przykład dla `{` *n* `}?` kwantyfikatora n w poprzedniej sekcji dla ilustracji. Wyrażenie regularne w tym przykładzie używa `{` *n* `,}` kwantyfikatora n, aby dopasować ciąg, który zawiera co najmniej trzy znaki, po których następuje kropka.  
   
 ### <a name="match-between-n-and-m-times-lazy-match-nm"></a>Dopasowanie między n i m razy (dopasowanie z opóźnieniem): {n, m}?  
+
  Kwantyfikator `{` *n* `,` *m* `}?` dopasowuje poprzedni element między `n` i `m` Times, gdzie *n* i *m* są liczbami całkowitymi, ale tyle razy, ile to możliwe. Jest to odpowiednik opóźniony kwantyfikatora zachłanne `{` *n* `,` *m* `}` .  
   
  W poniższym przykładzie wyrażenie regularne `\b[A-Z](\w*?\s*?){1,10}[.!?]` dopasowuje zdania zawierające od jednego do dziesięciu wyrazów. Dopasowuje wszystkie zdania w ciągu wejściowym z wyjątkiem jednego zdania zawierającego 18 wyrazów.  
@@ -223,7 +237,9 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
 |`[.!?]`|Dopasowuje dowolny z tych znaków interpunkcyjnych ".", "!" lub "?".|  
   
 <a name="Greedy"></a>
+
 ## <a name="greedy-and-lazy-quantifiers"></a>Zachłanne i Kwantyfikatory z opóźnieniem  
+
  Liczba kwantyfikatorów ma dwie wersje:  
   
 - Wersja zachłanne.  
@@ -249,6 +265,7 @@ Kwantyfikatory określają, ile wystąpień znaku, grupy lub klasy znaków musi 
  W większości przypadków wyrażenia regularne z zachłanne i kwantyfikatorów opóźnionych zwracają te same dopasowania. Najczęściej zwracają różne wyniki, gdy są używane z symbolem wieloznacznym ( `.` ), który dopasowuje dowolny znak.  
   
 ## <a name="quantifiers-and-empty-matches"></a>Kwantyfikatory i puste dopasowania  
+
  Kwantyfikatory `*` , `+` i `{` *n* `,` *m* `}` i ich odpowiedniki z opóźnieniem nigdy nie powtarzają się po pustym dopasowaniu po znalezieniu minimalnej liczby przechwytywania. Ta reguła uniemożliwia kwantyfikatorom wprowadzanie nieskończonych pętli przy pustym podrażeniu, gdy maksymalna liczba możliwych przechwycenia grupy jest nieskończona lub bliska nieskończoność.  
   
  Na przykład poniższy kod ilustruje wynik wywołania <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> metody z wzorcem wyrażenia regularnego `(a?)*` , który odpowiada zero lub jeden znak "a" zero lub więcej razy. Należy zauważyć, że pojedyncza grupa przechwytywania przechwytuje każdy "a" <xref:System.String.Empty?displayProperty=nameWithType> , ale nie ma drugiego pustego dopasowania, ponieważ pierwsze puste dopasowanie powoduje, że kwantyfikator przestanie powtarzać się.  

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5ec8cf76-3deb-4ce6-9a49-77a4c35d80b9
 topic_type:
 - apiref
-ms.openlocfilehash: 7c64823e1a5c519eb74b508af093afeb1132e608
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: cbcee923ecbb1106bb129f05d2e602a0fd17258d
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210088"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732492"
 ---
 # <a name="icordebugreferencevaluedereference-method"></a>ICorDebugReferenceValue::Dereference — Metoda
+
 Pobiera obiekt, do którego istnieje odwołanie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,13 +35,16 @@ HRESULT Dereference (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ppValue`  
  określoną Wskaźnik na adres elementu ICorDebugValue, który reprezentuje obiekt, do którego odwołuje się ten obiekt ICorDebugReferenceValue.  
   
 ## <a name="remarks"></a>Uwagi  
+
  `ICorDebugValue`Obiekt jest prawidłowy tylko wtedy, gdy jego odwołanie nie zostało jeszcze wyłączone.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  

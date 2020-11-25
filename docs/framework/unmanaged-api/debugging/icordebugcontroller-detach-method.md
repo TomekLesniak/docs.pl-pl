@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 06fae364-f2c6-4a50-aa7e-3da9f2684dc3
 topic_type:
 - apiref
-ms.openlocfilehash: 480fec4897dac73594515ba8bc0f0e96ceb79ace
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 55acb6e3ec60925cba3d8aa5328547c54f270356
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82892915"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95732674"
 ---
 # <a name="icordebugcontrollerdetach-method"></a>ICorDebugController::Detach — Metoda
+
 Odłącza debuger od domeny procesu lub aplikacji.  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,11 +33,13 @@ HRESULT Detach ();
 ```  
   
 ## <a name="remarks"></a>Uwagi  
+
  Proces lub domena aplikacji kontynuuje wykonywanie normalnie, ale obiekt "ICorDebugProcess" lub "ICorDebugAppDomain" nie jest już ważny i nie będą wykonywane żadne kolejne wywołania zwrotne.  
   
  W .NET Framework w wersji 2,0, jeśli jest włączone debugowanie niezarządzane, ta metoda zakończy się niepowodzeniem z powodu ograniczeń systemu operacyjnego.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorDebug. idl, CorDebug. h  
@@ -45,4 +48,4 @@ HRESULT Detach ();
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
