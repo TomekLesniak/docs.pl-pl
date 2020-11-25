@@ -15,17 +15,18 @@ helpviewer_keywords:
 ms.assetid: c17105bb-b49f-434e-8f9b-77f8c85b9220
 topic_type:
 - apiref
-ms.openlocfilehash: c68ec0b41bb38afc7cefaf47df718fffcf42d250
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 159ece09ae0b6a67780639da8aae8c0e4b412bb8
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842433"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95730698"
 ---
-# <a name="imanagedobjectgetserializedbuffer-method"></a><span data-ttu-id="42861-102">IManagedObject::GetSerializedBuffer — Metoda</span><span class="sxs-lookup"><span data-stu-id="42861-102">IManagedObject::GetSerializedBuffer Method</span></span>
-<span data-ttu-id="42861-103">Pobiera ciąg reprezentujący ten obiekt zarządzany.</span><span class="sxs-lookup"><span data-stu-id="42861-103">Gets the string representation of this managed object.</span></span>  
+# <a name="imanagedobjectgetserializedbuffer-method"></a><span data-ttu-id="f1419-102">IManagedObject::GetSerializedBuffer — Metoda</span><span class="sxs-lookup"><span data-stu-id="f1419-102">IManagedObject::GetSerializedBuffer Method</span></span>
+
+<span data-ttu-id="f1419-103">Pobiera ciąg reprezentujący ten obiekt zarządzany.</span><span class="sxs-lookup"><span data-stu-id="f1419-103">Gets the string representation of this managed object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="42861-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="42861-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f1419-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="f1419-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetSerializedBuffer (  
@@ -33,22 +34,25 @@ HRESULT GetSerializedBuffer (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="42861-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="42861-105">Parameters</span></span>  
- `pBSTR`  
- <span data-ttu-id="42861-106">określoną Wskaźnik do ciągu, który jest serializowanym obiektem.</span><span class="sxs-lookup"><span data-stu-id="42861-106">[out] A pointer to a string that is the serialized object.</span></span>  
-  
-## <a name="remarks"></a><span data-ttu-id="42861-107">Uwagi</span><span class="sxs-lookup"><span data-stu-id="42861-107">Remarks</span></span>  
- <span data-ttu-id="42861-108">`GetSerializedBuffer`Metoda serializować obiekt, aby można go było zorganizować dla klienta.</span><span class="sxs-lookup"><span data-stu-id="42861-108">The `GetSerializedBuffer` method serializes the object so it can be marshaled to the client.</span></span>  
-  
-## <a name="requirements"></a><span data-ttu-id="42861-109">Wymagania</span><span class="sxs-lookup"><span data-stu-id="42861-109">Requirements</span></span>  
- <span data-ttu-id="42861-110">**Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="42861-110">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
-  
- <span data-ttu-id="42861-111">**Nagłówek:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="42861-111">**Header:** MSCorEE.h</span></span>  
-  
- <span data-ttu-id="42861-112">**Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="42861-112">**Library:** Included as a resource in MSCorEE.dll</span></span>  
-  
- <span data-ttu-id="42861-113">**.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="42861-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="42861-114">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="42861-114">See also</span></span>
+## <a name="parameters"></a><span data-ttu-id="f1419-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f1419-105">Parameters</span></span>  
 
-- [<span data-ttu-id="42861-115">IManagedObject, interfejs</span><span class="sxs-lookup"><span data-stu-id="42861-115">IManagedObject Interface</span></span>](imanagedobject-interface.md)
+ `pBSTR`  
+ <span data-ttu-id="f1419-106">określoną Wskaźnik do ciągu, który jest serializowanym obiektem.</span><span class="sxs-lookup"><span data-stu-id="f1419-106">[out] A pointer to a string that is the serialized object.</span></span>  
+  
+## <a name="remarks"></a><span data-ttu-id="f1419-107">Uwagi</span><span class="sxs-lookup"><span data-stu-id="f1419-107">Remarks</span></span>  
+
+ <span data-ttu-id="f1419-108">`GetSerializedBuffer`Metoda serializować obiekt, aby można go było zorganizować dla klienta.</span><span class="sxs-lookup"><span data-stu-id="f1419-108">The `GetSerializedBuffer` method serializes the object so it can be marshaled to the client.</span></span>  
+  
+## <a name="requirements"></a><span data-ttu-id="f1419-109">Wymagania</span><span class="sxs-lookup"><span data-stu-id="f1419-109">Requirements</span></span>  
+
+ <span data-ttu-id="f1419-110">**Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f1419-110">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+  
+ <span data-ttu-id="f1419-111">**Nagłówek:** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="f1419-111">**Header:** MSCorEE.h</span></span>  
+  
+ <span data-ttu-id="f1419-112">**Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f1419-112">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+  
+ <span data-ttu-id="f1419-113">**.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f1419-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="f1419-114">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="f1419-114">See also</span></span>
+
+- [<span data-ttu-id="f1419-115">IManagedObject — Interfejs</span><span class="sxs-lookup"><span data-stu-id="f1419-115">IManagedObject Interface</span></span>](imanagedobject-interface.md)
