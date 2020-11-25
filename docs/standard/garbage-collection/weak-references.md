@@ -8,14 +8,15 @@ helpviewer_keywords:
 - weak references, long
 - garbage collection, weak references
 ms.assetid: 6a600fe5-3af3-4c64-82da-10a0a8e2d79b
-ms.openlocfilehash: 40d17009c98a73b7cb51779663360726c5fc7403
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 1eb5e57f5cc1065f1b8510e4fb0a980a85abca29
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827363"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714214"
 ---
 # <a name="weak-references"></a>Słabe odwołania
+
 Moduł wyrzucania elementów bezużytecznych nie może zebrać obiektu, który jest używany przez aplikację, gdy kod aplikacji może dotrzeć do tego obiektu. Aplikacja ma silne odwołanie do obiektu.  
   
  Słabe odwołanie umożliwia modułowi wyrzucania elementów bezużytecznych zbieranie obiektu, a jednocześnie pozwala aplikacji na dostęp do obiektu. Słabe odwołanie jest prawidłowe tylko w nieokreślonym czasie do momentu zebrania obiektu, gdy nie istnieją silne odwołania. W przypadku użycia słabego odwołania aplikacja może nadal uzyskać silne odwołanie do obiektu, co uniemożliwia jego zebranie. Jednak zawsze istnieje ryzyko, że moduł zbierający elementy bezużyteczne uzyska najpierw do obiektu przed ponownym ustanowieniem silnego odwołania.  
@@ -29,6 +30,7 @@ Moduł wyrzucania elementów bezużytecznych nie może zebrać obiektu, który j
  Aby ustanowić słabe odwołanie do obiektu, należy utworzyć <xref:System.WeakReference> wystąpienie obiektu, które ma być śledzone. Następnie ustawisz <xref:System.WeakReference.Target%2A> Właściwość na ten obiekt i ustawisz oryginalne odwołanie do obiektu `null` . Aby zapoznać się z przykładem kodu, zobacz <xref:System.WeakReference> w bibliotece klas.  
   
 ## <a name="short-and-long-weak-references"></a>Krótkie i długie słabe odwołania  
+
  Można utworzyć krótkie odwołanie słabe lub długie, słabe odwołanie:  
   
 - Wybierak  
@@ -44,6 +46,7 @@ Moduł wyrzucania elementów bezużytecznych nie może zebrać obiektu, który j
  Aby ustanowić silną referencję i ponownie użyć obiektu, należy rzutować <xref:System.WeakReference.Target%2A> Właściwość a <xref:System.WeakReference> na typ obiektu. Jeśli <xref:System.WeakReference.Target%2A> Właściwość zwraca `null` , obiekt został zebrany; w przeciwnym razie można nadal używać obiektu, ponieważ aplikacja odzyskuje do niego silne odwołanie.  
   
 ## <a name="guidelines-for-using-weak-references"></a>Wskazówki dotyczące używania słabych odwołań  
+
  Używaj długich niesłabych odwołań tylko wtedy, gdy jest to konieczne, ponieważ stan obiektu jest nieprzewidywalny po zakończeniu finalizacji.  
   
  Unikaj używania słabych odwołań do małych obiektów, ponieważ sama wartość wskaźnika może być duża lub większa.  

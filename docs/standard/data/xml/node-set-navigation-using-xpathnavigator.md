@@ -2,17 +2,19 @@
 title: Nawigacja po zestawie węzłów przy użyciu klasy XPathNavigator
 ms.date: 03/30/2017
 ms.assetid: 1a954b41-7173-40bc-8544-d430f209b1e5
-ms.openlocfilehash: cf0058f553488e453d0227291110d9edc96638f6
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 592acfb5e4065d707f4dda09f349e8b783656148
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830132"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714305"
 ---
 # <a name="node-set-navigation-using-xpathnavigator"></a>Nawigacja po zestawie węzłów przy użyciu klasy XPathNavigator
+
 Można przechodzić między węzłami w <xref:System.Xml.XPath.XPathDocument> <xref:System.Xml.XmlDocument> obiekcie lub przy użyciu metod nawigacji zestawu węzłów <xref:System.Xml.XPath.XPathNavigator> klasy. Można poruszać się we wszystkich węzłach lub na wybranym zestawie węzłów zwróconym przez jedną z metod zaznaczania <xref:System.Xml.XPath.XPathNavigator> klasy.  
   
 ## <a name="element-node-set-navigation"></a>Nawigacja zestawu węzłów elementu  
+
  <xref:System.Xml.XPath.XPathNavigator>Klasa zawiera kilka metod używanych do nawigowania po węzłach elementów. W poniższej tabeli przedstawiono dostępne metody nawigacji oraz opis sposobu ich przenoszenia; nie obejmuje to metod służących do nawigowania po węzłach atrybutów i przestrzeni nazw.  
   
  Aby uzyskać więcej informacji na temat wybierania węzłów w <xref:System.Xml.XPath.XPathNavigator> obiekcie, zobacz [Wybieranie, ocenianie i dopasowywanie danych XML przy użyciu klasy XPathNavigator](selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md). Aby uzyskać więcej informacji na temat nawigowania po węzłach atrybutów i przestrzeni nazw, zobacz [nawigowanie po węźle atrybutów i przestrzeni nazw za pomocą elementu XPathNavigator](attribute-and-namespace-node-navigation-using-xpathnavigator.md).  
@@ -31,6 +33,7 @@ Można przechodzić między węzłami w <xref:System.Xml.XPath.XPathDocument> <x
 |<xref:System.Xml.XPath.XPathNavigator.MoveToRoot%2A>|Przenosi <xref:System.Xml.XPath.XPathNavigator> do węzła głównego dokumentu XML.|  
   
 ## <a name="comments-and-processing-instruction-node-navigation"></a>Nawigacja w węźle instrukcji Comments i Processing  
+
  Następujące <xref:System.Xml.XPath.XPathNavigator> metody klasy są prawidłowe do przechodzenia do komentarzy lub przetwarzania instrukcji z innych węzłów w dokumencie XML.  
   
 - <xref:System.Xml.XPath.XPathNavigator.MoveTo%2A>  

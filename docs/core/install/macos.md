@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat wersji programu macOS, na których mo
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: 983c5d2c04b87759b898f449bc092161b03c8ace
-ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
+ms.openlocfilehash: f926479227f11def5c8bb8c6bf29ad30a04e6ed2
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594459"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715137"
 ---
 # <a name="install-net-on-macos"></a>Zainstaluj platformę .NET na macOS
 
@@ -124,7 +124,7 @@ Następnie wyodrębnij pobrany plik i użyj polecenia, `export` Aby ustawić zmi
 
 Aby wyodrębnić środowisko uruchomieniowe i udostępnić polecenie interfejsu wiersza polecenia platformy .NET w terminalu, najpierw Pobierz wydanie binarne platformy .NET. Następnie otwórz Terminal i uruchom następujące polecenia z katalogu, w którym zapisano plik. Nazwa pliku archiwum może się różnić w zależności od pobranych informacji.
 
-**Aby wyodrębnić środowisko uruchomieniowe, użyj następującego polecenia** :
+**Aby wyodrębnić środowisko uruchomieniowe, użyj następującego polecenia**:
 
 ```bash
 mkdir -p "$HOME/dotnet" && tar zxf aspnetcore-runtime-5.0.0-osx-x64.tar.gz -C "$HOME/dotnet"
@@ -132,7 +132,7 @@ export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
 ```
 
-**Użyj następującego polecenia, aby wyodrębnić zestaw SDK** :
+**Użyj następującego polecenia, aby wyodrębnić zestaw SDK**:
 
 ```bash
 mkdir -p "$HOME/dotnet" && tar zxf dotnet-sdk-5.0.100-osx-x64.tar.gz -C "$HOME/dotnet"
@@ -143,11 +143,11 @@ export PATH=$PATH:$HOME/dotnet
 > [!TIP]
 > Powyższe `export` polecenia sprawiają, że dla sesji terminala, w której został uruchomiony, są dostępne tylko polecenia interfejsu CLI platformy .NET.
 >
-> Możesz edytować profil powłoki, aby trwale dodać polecenia. Istnieje wiele różnych powłok dostępnych dla systemu Linux, a każdy z nich ma inny profil. Przykład:
+> Możesz edytować profil powłoki, aby trwale dodać polecenia. Istnieje wiele różnych powłok dostępnych dla systemu Linux, a każdy z nich ma inny profil. Na przykład:
 >
-> - **Bash Shell** : *~/.bash_profile* , *~/.bashrc.*
-> - **Powłoka Korn** : *~/.KSHRC* lub *. profile*
-> - **Powłoka Z** : *~/.zshrc* lub *. zprofile*
+> - **Bash Shell**: *~/.bash_profile*, *~/.bashrc.*
+> - **Powłoka Korn**: *~/.KSHRC* lub *. profile*
+> - **Powłoka Z**: *~/.zshrc* lub *. zprofile*
 >
 > Edytuj odpowiedni plik źródłowy dla powłoki i Dodaj `:$HOME/dotnet` na końcu istniejącej `PATH` instrukcji. Jeśli `PATH` instrukcja nie jest uwzględniona, Dodaj nowy wiersz za pomocą `export PATH=$PATH:$HOME/dotnet` .
 >
@@ -181,7 +181,7 @@ Mimo że Visual Studio Code nie jest dołączony do zautomatyzowanego Instalator
 
 [Skrypty programu dotnet-Install](../tools/dotnet-install-script.md) są używane na potrzeby automatyzacji i instalacji niebędących administratorami środowiska uruchomieniowego. Skrypt można pobrać ze [strony odniesienia do skryptu dotnet-Install](../tools/dotnet-install-script.md).
 
-Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) wersję, która jest w wersji .NET 3,1. Możesz wybrać określoną wersję, określając `current` przełącznik. Dołącz `runtime` przełącznik, aby zainstalować środowisko uruchomieniowe. W przeciwnym razie skrypt instaluje [zestaw SDK](./windows.md).
+Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) wersję, która jest platformą .net Core 3,1. Możesz wybrać określoną wersję, określając `current` przełącznik. Dołącz `runtime` przełącznik, aby zainstalować środowisko uruchomieniowe. W przeciwnym razie skrypt instaluje [zestaw SDK](./windows.md).
 
 ```bash
 ./dotnet-install.sh --channel 5.0 --runtime aspnetcore

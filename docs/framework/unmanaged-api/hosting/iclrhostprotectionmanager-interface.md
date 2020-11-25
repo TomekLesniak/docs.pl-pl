@@ -14,14 +14,15 @@ helpviewer_keywords:
 ms.assetid: ce2770ae-23d0-45d9-8bcf-46504ac5020e
 topic_type:
 - apiref
-ms.openlocfilehash: 7b1fc70380fff3c551c56043f49c2deda507e366
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: e8ead998907d55b0bfbf82e5f6f4e7c504f657ec
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703838"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714162"
 ---
 # <a name="iclrhostprotectionmanager-interface"></a>ICLRHostProtectionManager — Interfejs
+
 Umożliwia hostowi blokowanie określonych zarządzanych klas, metod, właściwości i pól z uruchamiania w częściowo zaufanym kodzie.  
   
 ## <a name="methods"></a>Metody  
@@ -32,15 +33,16 @@ Umożliwia hostowi blokowanie określonych zarządzanych klas, metod, właściwo
 |[SetProtectedCategories, metoda](iclrhostprotectionmanager-setprotectedcategories-method.md)|Określa kategorie typów zarządzanych i członków, których uruchamianie ma być blokowane w kodzie częściowo zaufanym.|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** MSCorEE. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [EApiCategories, wyliczenie](eapicategories-enumeration.md)
+- [EApiCategories — Wyliczenie](eapicategories-enumeration.md)
 - [ICLRControl — Interfejs](iclrcontrol-interface.md)

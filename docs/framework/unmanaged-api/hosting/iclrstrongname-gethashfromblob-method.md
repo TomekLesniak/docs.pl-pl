@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: f91d0f89-f356-49ac-aafb-50fad963c13d
 topic_type:
 - apiref
-ms.openlocfilehash: 081df31d1e3b1ca3345fe44b60cff6af27386953
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 6b67aed90585f57d2635bb1a22d3e009edf01159
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762126"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714812"
 ---
 # <a name="iclrstrongnamegethashfromblob-method"></a>ICLRStrongName::GetHashFromBlob — Metoda
+
 Pobiera skrót zestawu pod określonym adresem pamięci przy użyciu określonego algorytmu wyznaczania wartości skrótu.  
   
 ## <a name="syntax"></a>Składnia  
@@ -39,6 +40,7 @@ HRESULT GetHashFromBlob (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `pbBlob`  
  podczas Wskaźnik do adresu bloku pamięci, który ma zostać zmieszany.  
   
@@ -58,17 +60,19 @@ HRESULT GetHashFromBlob (
  określoną Rozmiar zwracanych wartości (w bajtach) `pbHash` .  
   
 ## <a name="return-value"></a>Wartość zwracana  
- `S_OK`Jeśli metoda została ukończona pomyślnie; w przeciwnym razie wartość HRESULT wskazująca niepowodzenie (zobacz [typowe wartości HRESULT](/windows/win32/seccrypto/common-hresult-values) dla listy).  
+
+ `S_OK` Jeśli metoda została ukończona pomyślnie; w przeciwnym razie wartość HRESULT wskazująca niepowodzenie (zobacz [typowe wartości HRESULT](/windows/win32/seccrypto/common-hresult-values) dla listy).  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Obiekt ServiceHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
-- [ICLRStrongName, interfejs](iclrstrongname-interface.md)
+- [ICLRStrongName — Interfejs](iclrstrongname-interface.md)

@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: ecf56646-7e5f-46c4-8340-f3a04e88920f
 topic_type:
 - apiref
-ms.openlocfilehash: 738c98a0a37983faa71ea6e5eeaabb20639f604a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d22d789724a62cebb0136b9b01be22d6825384ac
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503145"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714539"
 ---
 # <a name="icorprofilerfunctioncontrolsetilinstrumentedcodemap-method"></a>ICorProfilerFunctionControl::SetILInstrumentedCodeMap — Metoda
+
 Ustawia mapę kodu dla określonej funkcji przy użyciu określonych wpisów mapy typowego języka pośredniego (CIL).  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT SetILInstrumentedCodeMap(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `cILMapEntries`  
  podczas Liczba wpisów w mapie.  
   
@@ -41,9 +43,11 @@ HRESULT SetILInstrumentedCodeMap(
  podczas Przypisana przez wywołujący tablica wpisów COR_IL_MAP. Interpretacja tych wpisów jest taka sama jak w przypadku metody [ICorProfilerInfo:: SetILInstrumentedCodeMap —](icorprofilerinfo-setilinstrumentedcodemap-method.md) .  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ustawienie mapowania przez wywołanie tej metody pozwala debugerowi pobrać mapowanie przez wywołanie [ICorDebugILCode2:: GetInstrumentedILMap](../debugging/icordebugilcode2-getinstrumentedilmap-method.md). Umożliwia również debugerowi używanie mapowania wewnętrznie podczas obliczania przesunięć IL dla śladów stosu i zmiennych okresów istnienia.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** CorProf. idl, CorProf. h  
@@ -54,4 +58,4 @@ HRESULT SetILInstrumentedCodeMap(
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICorProfilerInfo, interfejs](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo — Interfejs](icorprofilerinfo-interface.md)

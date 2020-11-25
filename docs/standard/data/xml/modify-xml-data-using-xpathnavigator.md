@@ -6,14 +6,15 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 03a7c5a1-b296-4af4-b209-043c958dc0a5
-ms.openlocfilehash: 79bb23b77557a5a10f021e2167c9fa8ae3ee044a
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 10de24d97d15ed4b6de3effa21410fb22054ec68
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94830197"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714461"
 ---
 # <a name="modify-xml-data-using-xpathnavigator"></a>Modyfikowanie danych XML przy użyciu klasy XPathNavigator
+
 <xref:System.Xml.XPath.XPathNavigator>Klasa zawiera zestaw metod służących do modyfikowania węzłów i wartości w dokumencie XML. Aby można było korzystać z tych metod, <xref:System.Xml.XPath.XPathNavigator> obiekt musi być edytowalny, oznacza to, że jego <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> Właściwość musi być `true` .  
   
  <xref:System.Xml.XPath.XPathNavigator> obiekty, które mogą edytować dokument XML, są tworzone przy użyciu <xref:System.Xml.XmlDocument.CreateNavigator%2A> metody <xref:System.Xml.XmlDocument> klasy. <xref:System.Xml.XPath.XPathNavigator> obiekty utworzone przez <xref:System.Xml.XPath.XPathDocument> klasę są tylko do odczytu, a wszystkie próby użycia metod edycji <xref:System.Xml.XPath.XPathNavigator> obiektu utworzonego przez <xref:System.Xml.XPath.XPathDocument> obiekt powodują <xref:System.NotSupportedException> .  
@@ -21,6 +22,7 @@ ms.locfileid: "94830197"
  Aby uzyskać więcej informacji na temat tworzenia edytowalnych <xref:System.Xml.XPath.XPathNavigator> obiektów, zobacz [odczytywanie danych XML przy użyciu XPathDocument i XmlDocument](reading-xml-data-using-xpathdocument-and-xmldocument.md).  
   
 ## <a name="modifying-nodes"></a>Modyfikowanie węzłów  
+
  Prostą techniką zmiany wartości węzła jest użycie <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metod i <xref:System.Xml.XPath.XPathNavigator> klasy.  
   
  Poniższa tabela zawiera listę efektów tych metod dla różnych typów węzłów.  
@@ -41,6 +43,7 @@ ms.locfileid: "94830197"
  <xref:System.Xml.XPath.XPathNavigator>Klasa zawiera również zestaw metod służących do wstawiania i usuwania węzłów. Aby uzyskać więcej informacji na temat wstawiania i usuwania węzłów z dokumentu XML, zobacz temat [Wstawianie danych XML przy użyciu klasy XPathNavigator](insert-xml-data-using-xpathnavigator.md) i [usuwanie danych XML przy użyciu klasy XPathNavigator](remove-xml-data-using-xpathnavigator.md) .  
   
 ### <a name="modifying-untyped-values"></a>Modyfikowanie wartości niewpisanych  
+
  <xref:System.Xml.XPath.XPathNavigator.SetValue%2A>Metoda po prostu wstawia wartość bez typu jako `string` parametr jako wartość węzła, <xref:System.Xml.XPath.XPathNavigator> na którym znajduje się obiekt. Wartość jest wstawiana bez żadnego typu lub bez weryfikowania, czy nowa wartość jest prawidłowa zgodnie z typem węzła, jeśli dostępne są informacje o schemacie.  
   
  W poniższym przykładzie <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> Metoda jest używana do aktualizowania wszystkich `price` elementów w `contosoBooks.xml` pliku.  
@@ -54,6 +57,7 @@ ms.locfileid: "94830197"
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
 ### <a name="modifying-typed-values"></a>Modyfikowanie wpisanych wartości  
+
  Gdy typ węzła jest typem prostym schematu XML W3C, Nowa wartość wstawiona przez <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metodę jest sprawdzana względem aspektów typu prostego przed ustawieniem wartości. Jeśli nowa wartość jest nieprawidłowa w zależności od typu węzła (na przykład ustawienie wartości `-1` w elemencie, którego typem jest `xs:positiveInteger` ), powoduje wyjątek.  
   
  Poniższy przykład próbuje zmienić wartość `price` elementu pierwszego `book` elementu w `contosoBooks.xml` pliku na <xref:System.DateTime> wartość. Ponieważ typ schematu XML `price` elementu jest zdefiniowany jako `xs:decimal` w `contosoBooks.xsd` plikach, spowoduje to wyjątek.  
@@ -103,6 +107,7 @@ navigator.SetTypedValue(DateTime.Now);
  [!code-xml[XPathXMLExamples#3](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xsd#3)]  
   
 #### <a name="the-effects-of-editing-strongly-typed-xml-data"></a>Efekty edytowania danych XML o jednoznacznie określonym typie  
+
  <xref:System.Xml.XPath.XPathNavigator>Klasa używa schematu W3C XML jako podstawy do opisywania XML o jednoznacznie określonym typie. Elementy i atrybuty mogą być opatrzone adnotacją z informacjami o typie na podstawie walidacji dokumentu XML schematu W3C. Elementy, które mogą zawierać inne elementy lub atrybuty, są nazywane typami złożonymi, natomiast te, które mogą zawierać tylko tekstową zawartość, są nazywane typami prostymi.  
   
 > [!NOTE]
@@ -115,6 +120,7 @@ navigator.SetTypedValue(DateTime.Now);
  Aby uzyskać więcej informacji o walidacji schematu i <xref:System.Xml.XPath.XPathNavigator> klasie, zobacz [Walidacja schematu przy użyciu elementu XPathNavigator](schema-validation-using-xpathnavigator.md).  
   
 ### <a name="modifying-attributes"></a>Modyfikowanie atrybutów  
+
  <xref:System.Xml.XPath.XPathNavigator.SetValue%2A>Metody i <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> mogą być używane do modyfikowania węzłów atrybutów nietypów i typów, jak również inne typy węzłów wymienione w sekcji "Modyfikowanie węzłów".  
   
  Poniższy przykład zmienia wartość `genre` atrybutu pierwszego `book` elementu w `books.xml` pliku.  
@@ -152,6 +158,7 @@ Console.WriteLine(navigator.OuterXml);
  Aby uzyskać więcej informacji o <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> metodach i, zobacz sekcję "Modyfikowanie wartości niewpisanych" i "Modyfikowanie wartości wpisanych".  
   
 ## <a name="innerxml-and-outerxml-properties"></a>Właściwości InnerXml i OuterXml  
+
  <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A>Właściwości i <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> <xref:System.Xml.XPath.XPathNavigator> klasy zmieniają znaczniki XML w węzłach, <xref:System.Xml.XPath.XPathNavigator> w których obiekt jest obecnie umieszczony.  
   
  <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A>Właściwość zmienia znaczniki XML węzłów podrzędnych <xref:System.Xml.XPath.XPathNavigator> obiekt jest obecnie umieszczony w przeanalizowanej zawartości danego kodu XML `string` . Podobnie <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> właściwość zmienia znaczniki XML węzłów podrzędnych, <xref:System.Xml.XPath.XPathNavigator> w których obiekt jest obecnie umieszczony, a także bieżący węzeł.  
@@ -193,6 +200,7 @@ Console.WriteLine(navigator.OuterXml);
  [!code-xml[XPathXMLExamples#2](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
   
 ## <a name="modifying-namespace-nodes"></a>Modyfikowanie węzłów przestrzeni nazw  
+
  W Document Object Model (DOM) deklaracje przestrzeni nazw są traktowane tak, jakby były zwykłymi atrybutami, które można wstawiać, aktualizować i usuwać. <xref:System.Xml.XPath.XPathNavigator>Klasa nie zezwala na takie operacje w węzłach przestrzeni nazw, ponieważ zmiana wartości węzła przestrzeni nazw może zmienić tożsamość elementów i atrybutów w zakresie węzła przestrzeni nazw, jak pokazano w poniższym przykładzie.  
   
 ```xml  
@@ -232,9 +240,11 @@ Console.WriteLine(navigator.OuterXml);
  W powyższym przykładzie XML atrybut `a:parent-id` jest wstawiany do `parent` elementu w `http://www.contoso.com/parent-id` przestrzeni nazw. <xref:System.Xml.XPath.XPathNavigator.CreateAttribute%2A>Metoda jest używana do wstawiania atrybutu podczas umieszczania w `parent` elemencie. `http://www.contoso.com`Deklaracja przestrzeni nazw jest automatycznie wstawiana przez <xref:System.Xml.XPath.XPathNavigator> klasę, aby zachować spójność reszty dokumentu XML.  
   
 ## <a name="modifying-entity-reference-nodes"></a>Modyfikowanie węzłów odwołań do jednostek  
+
  Węzły odwołania jednostki w <xref:System.Xml.XmlDocument> obiekcie są tylko do odczytu i nie można ich edytować przy użyciu <xref:System.Xml.XPath.XPathNavigator> klas lub <xref:System.Xml.XmlNode> . Każda próba zmodyfikowania węzła odwołania do jednostki spowoduje wystąpienie elementu <xref:System.InvalidOperationException> .  
   
 ## <a name="modifying-xsinil-nodes"></a>Modyfikowanie węzłów xsi: nil  
+
  Zalecenie dotyczące schematu W3C XML wprowadza koncepcję elementu, który jest nillable. Gdy element jest nillable, możliwe jest, aby element nie miał zawartości i nadal był prawidłowy. Koncepcja elementu nillable jest podobna do koncepcji obiektu `null` . Główną różnicą jest to, że `null` nie można uzyskać dostępu do obiektu w jakikolwiek sposób, podczas gdy `xsi:nil` element ma nadal właściwości, takie jak atrybuty, do których można uzyskać dostęp, ale nie ma zawartości (elementy podrzędne lub tekst). Istnienie `xsi:nil` atrybutu o wartości `true` elementu w dokumencie XML umożliwia wskazanie, że element nie ma zawartości.  
   
  Jeśli <xref:System.Xml.XPath.XPathNavigator> obiekt jest używany do dodawania zawartości do prawidłowego elementu z `xsi:nil` atrybutem o wartości `true` , wartość `xsi:nil` atrybutu jest ustawiona na `false` .  
@@ -243,6 +253,7 @@ Console.WriteLine(navigator.OuterXml);
 > Jeśli zawartość elementu z `xsi:nil` atrybutem ustawionym na `false` jest usuwana, wartość atrybutu nie zostanie zmieniona na `true` .  
   
 ## <a name="saving-an-xml-document"></a>Zapisywanie dokumentu XML  
+
  Zapisywanie zmian wprowadzonych <xref:System.Xml.XmlDocument> w obiekcie w wyniku metod edycji opisanych w tym temacie jest wykonywane przy użyciu metod <xref:System.Xml.XmlDocument> klasy. Aby uzyskać więcej informacji na temat zapisywania zmian wprowadzonych w <xref:System.Xml.XmlDocument> obiekcie, zobacz [Zapisywanie i pisanie dokumentu](saving-and-writing-a-document.md).  
   
 ## <a name="see-also"></a>Zobacz także

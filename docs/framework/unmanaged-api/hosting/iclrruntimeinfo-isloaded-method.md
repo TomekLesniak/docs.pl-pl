@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: fdc5a3a7-71ff-4025-99a1-59e4ee0bfe1b
 topic_type:
 - apiref
-ms.openlocfilehash: 45e27ac3c2d4912d2ed3e5d43ea3020b9db5dbdc
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 66ae74deba9ceab9d1ea6b2c0b96a87bf44f32ab
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504033"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714929"
 ---
 # <a name="iclrruntimeinfoisloaded-method"></a>ICLRRuntimeInfo::IsLoaded — Metoda
+
 Wskazuje, czy środowisko uruchomieniowe języka wspólnego (CLR) skojarzone z interfejsem [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) jest załadowane do procesu. Środowisko uruchomieniowe może zostać załadowane bez również uruchamiania.  
   
 ## <a name="syntax"></a>Składnia  
@@ -34,6 +35,7 @@ HRESULT IsLoaded(
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `hndProcess`  
  podczas Dojście do procesu.  
   
@@ -41,14 +43,16 @@ HRESULT IsLoaded(
  [out] `true` Jeśli środowisko CLR jest załadowane do procesu; w przeciwnym razie `false` .  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Ta metoda zwraca następujące określone wartości HRESULT oraz błędy HRESULT wskazujące niepowodzenie metody.  
   
 |HRESULT|Opis|  
 |-------------|-----------------|  
 |S_OK|Metoda została ukończona pomyślnie.|  
-|E_POINTER|`pbLoaded`ma wartość null.|  
+|E_POINTER|`pbLoaded` ma wartość null.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Ta metoda jest zgodna z poprzednimi wersjami przy użyciu następujących funkcji i interfejsów:  
   
 - Interfejs [ICorRuntimeHost](icorruntimehost-interface.md) (w interfejsie API hostingu .NET Framework w wersji 1).  
@@ -62,16 +66,17 @@ HRESULT IsLoaded(
  Jeśli host następnie wywoła `IsLoaded` metodę w zwróconym interfejsie [ICLRRuntimeInfo](iclrruntimeinfo-interface.md) , `pbLoaded` zwraca `true` ; w przeciwnym razie zwraca `false` .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Obiekt ServiceHost. h  
   
- **Biblioteka:** Uwzględnione jako zasób w bibliotece MSCorEE. dll  
+ **Biblioteka:** Uwzględnione jako zasób w MSCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
-- [ICLRRuntimeInfo, interfejs](iclrruntimeinfo-interface.md)
-- [Hosting, interfejsy](hosting-interfaces.md)
+- [ICLRRuntimeInfo — Interfejs](iclrruntimeinfo-interface.md)
+- [Hosting — Interfejsy](hosting-interfaces.md)
 - [Hosting](index.md)

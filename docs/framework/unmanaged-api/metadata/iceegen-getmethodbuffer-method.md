@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: c7c5b39a-d4ac-41f1-9d1e-44163f563a49
 topic_type:
 - apiref
-ms.openlocfilehash: 99eef11c294dbb17b30b2ef28e65999d4d60f817
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: e9c2dab9f30be6e5eea8f6570b297f8df11b6fe6
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008332"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715334"
 ---
 # <a name="iceegengetmethodbuffer-method"></a>ICeeGen::GetMethodBuffer — Metoda
+
 Pobiera bufor odpowiedniego rozmiaru dla metody pod określonym względnym adresem wirtualnym.  
   
  Ta metoda jest przestarzała i nie powinna być używana.  
@@ -37,6 +38,7 @@ HRESULT GetMethodBuffer (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `RVA`  
  podczas Względny adres wirtualny metody, dla której ma zostać zwrócony bufor.  
   
@@ -44,14 +46,15 @@ HRESULT GetMethodBuffer (
  określoną Wskaźnik do zwróconego buforu.  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [ICeeGen — Interfejs](iceegen-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - constructs, alternation
 - .NET regular expressions, alternation constructs
 ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
-ms.openlocfilehash: 4fb9960ad3c92494cd3aa47516f6ba82ab606ee5
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 0a1b46443d5cd9f8a19f4cfb9f9b07a5e33e719e
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94825302"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714695"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Konstrukcje alternacyjne w wyrażeniach regularnych
 
@@ -30,6 +30,7 @@ Konstrukcje warunkowe modyfikują wyrażenie regularne, aby umożliwić Dopasowa
 - [Dopasowanie warunkowe oparte na prawidłowej przechwyconej grupie](#Conditional_Group)
 
 <a name="Either_Or"></a>
+
 ## <a name="pattern-matching-with-124"></a>Dopasowanie wzorca do &#124;
 
 Można użyć znaku kreski pionowej ( `|` ) w celu dopasowania do jednej z serii wzorców, gdzie `|` znak oddziela każdy wzorzec.
@@ -62,6 +63,7 @@ Wyrażenie regularne `\b(\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` jest interpretowane j
 |`\b`|Kończy dopasowanie na granicy wyrazu.|  
   
 <a name="Conditional_Expr"></a>
+
 ## <a name="conditional-matching-with-an-expression"></a>Warunkowe dopasowanie z wyrażeniem
 
 Ten element języka próbuje dopasować jeden z dwóch wzorców w zależności od tego, czy może on pasować do wzorca początkowego. Jego składnia to:  
@@ -93,6 +95,7 @@ Wzorzec wyrażenia regularnego `\b(?(\d{2}-)\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` je
 |`\b`|Dopasowuje granicę wyrazu.|  
 
 <a name="Conditional_Group"></a>
+
 ## <a name="conditional-matching-based-on-a-valid-captured-group"></a>Dopasowanie warunkowe oparte na prawidłowej przechwyconej grupie
 
 Ten element języka próbuje dopasować jeden z dwóch wzorców w zależności od tego, czy jest on zgodny z określoną grupą przechwytywania. Jego składnia to:

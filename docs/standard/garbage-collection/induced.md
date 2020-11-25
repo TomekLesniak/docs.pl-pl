@@ -4,19 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - garbage collection, forced
 ms.assetid: 019008fe-4708-4e65-bebf-04fd9941e149
-ms.openlocfilehash: 637ba9b3b73d685ee2263315a08f982d862efb35
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: 25e94221355569931a31b566a53434cbed9ea93f
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94827727"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95714240"
 ---
 # <a name="induced-collections"></a>Wywołane kolekcje
+
 W większości przypadków moduł wyrzucania elementów bezużytecznych może określić najlepszy czas wykonywania kolekcji i należy pozwolić na jego uruchomienie niezależnie. Istnieją rzadkie sytuacje, w których wymuszona kolekcja może poprawić wydajność aplikacji. W takich przypadkach można wywołać wyrzucanie elementów bezużytecznych za pomocą <xref:System.GC.Collect%2A?displayProperty=nameWithType> metody w celu wymuszenia wyrzucania elementów bezużytecznych.  
   
  Użyj <xref:System.GC.Collect%2A?displayProperty=nameWithType> metody, gdy istnieje znacząca redukcja ilości pamięci używanej w konkretnym momencie w kodzie aplikacji. Na przykład jeśli aplikacja używa złożonego okna dialogowego, które ma kilka kontrolek, wywoływanie, <xref:System.GC.Collect%2A> gdy okno dialogowe jest zamknięte, może poprawić wydajność przez natychmiastowe ododzyskiwanie pamięci używanej przez okno dialogowe. Upewnij się, że aplikacja nie powoduje zbyt częstego wyrzucania elementów bezużytecznych, ponieważ może obniżyć wydajność, jeśli moduł wyrzucania elementów bezużytecznych próbuje przejąć obiekty w nieoptymalnym czasie. Możesz podać <xref:System.GCCollectionMode.Optimized?displayProperty=nameWithType> wartość wyliczenia do <xref:System.GC.Collect%2A> metody, która ma być zbierana tylko wtedy, gdy kolekcja będzie produktywna, jak to opisano w następnej sekcji.  
   
 ## <a name="gc-collection-mode"></a>Tryb zbierania danych GC  
+
  Można użyć jednego z <xref:System.GC.Collect%2A?displayProperty=nameWithType> przeciążeń metody, które zawiera <xref:System.GCCollectionMode> wartość, aby określić zachowanie dla wymuszonej kolekcji w następujący sposób.  
   
 |`GCCollectionMode` wartościami|Opis|  
@@ -26,6 +28,7 @@ W większości przypadków moduł wyrzucania elementów bezużytecznych może ok
 |<xref:System.GCCollectionMode.Optimized>|Umożliwia modułowi wyrzucania elementów bezużytecznych ustalenie, czy bieżący czas jest optymalny do odzyskiwania obiektów.<br /><br /> Moduł wyrzucania elementów bezużytecznych może określić, że kolekcja nie będzie wystarczająco wydajna, aby mogła być uzasadniona, w takim przypadku będzie ona zwracała bez odzyskiwania obiektów.|  
   
 ## <a name="background-or-blocking-collections"></a>Kolekcje w tle lub blokujące  
+
  Można wywołać <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29?displayProperty=nameWithType> Przeciążenie metody, aby określić, czy wywołane kolekcje są blokowane, czy nie. Typ wykonywanej kolekcji zależy od kombinacji metody `mode` i `blocking` parametrów. `mode` jest elementem członkowskim <xref:System.GCCollectionMode> wyliczenia i `blocking` jest <xref:System.Boolean> wartością. Poniższa tabela zawiera podsumowanie interakcji z `mode` `blocking` argumentami i.  
   
 |`mode`|`blocking` = `true`|`blocking` = `false`|  

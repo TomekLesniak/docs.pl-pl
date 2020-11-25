@@ -15,14 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1c090153-fd5f-46c7-9cff-39a78d992c8f
 topic_type:
 - apiref
-ms.openlocfilehash: fa4f1f57cb8fe1ca81bbad6438a88bb43c48e7bf
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 076d027945dc27942e4b0989e14e86d829f76679
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008082"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95713492"
 ---
 # <a name="imetadataassemblyemitsetexportedtypeprops-method"></a>IMetaDataAssemblyEmit::SetExportedTypeProps — Metoda
+
 Modyfikuje określoną `ExportedType` strukturę metadanych.  
   
 ## <a name="syntax"></a>Składnia  
@@ -37,6 +38,7 @@ HRESULT SetExportedTypeProps (
 ```  
   
 ## <a name="parameters"></a>Parametry  
+
  `ct`  
  podczas Token metadanych określający `ExportedType` strukturę metadanych, która ma zostać zmodyfikowana.  
   
@@ -44,23 +46,25 @@ HRESULT SetExportedTypeProps (
  podczas Token, typu `File` , `AssemblyRef` lub `ExportedType` , który określa sposób implementacji tego typu.  
   
  `tkTypeDef`  
- podczas `TypeDef`Token, do którego odwołuje się plik kodu.  
+ podczas `TypeDef` Token, do którego odwołuje się plik kodu.  
   
  `dwExportedTypeFlags`  
  podczas Bitowa kombinacja wartości, które określają atrybuty typu.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Aby utworzyć `ExportedType` strukturę metadanych, użyj metody [IMetaDataAssemblyEmit::D efineexportedtype](imetadataassemblyemit-defineexportedtype-method.md) .  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Cor. h  
   
- **Biblioteka:** Używany jako zasób w bibliotece MsCorEE. dll  
+ **Biblioteka:** Używane jako zasób w MsCorEE.dll  
   
  **.NET Framework wersje:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Zobacz też
+## <a name="see-also"></a>Zobacz także
 
 - [IMetaDataAssemblyEmit — Interfejs](imetadataassemblyemit-interface.md)

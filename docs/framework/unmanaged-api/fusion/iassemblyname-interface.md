@@ -14,37 +14,39 @@ helpviewer_keywords:
 ms.assetid: f7f8e605-6b67-4151-936f-f04ecd671d90
 topic_type:
 - apiref
-ms.openlocfilehash: de49d66667033dfc6918b139f90cd5523661597f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f6feed9f59715f9a2801cd3a2a99a087957d4377
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134315"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715072"
 ---
 # <a name="iassemblyname-interface"></a>IAssemblyName — Interfejs
+
 Zapewnia metody opisujące unikatową tożsamość zestawu i pracę z nim.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Opis|  
 |------------|-----------------|  
-|[Clone, metoda](iassemblyname-clone-method.md)|Tworzy skróconą kopię tego obiektu `IAssemblyName`.|  
-|[Finalize, metoda](iassemblyname-finalize-method.md)|Umożliwia temu obiektowi `IAssemblyName` zwalnianie zasobów i wykonywanie innych operacji czyszczenia przed wywołaniem destruktora.|  
-|[GetDisplayName, metoda](iassemblyname-getdisplayname-method.md)|Pobiera nazwę zestawu, do którego odwołuje się ten obiekt `IAssemblyName`.|  
-|[GetName, metoda](iassemblyname-getname-method.md)|Pobiera prostą, niezaszyfrowaną nazwę zestawu, do którego odwołuje się ten obiekt `IAssemblyName`.|  
-|[GetProperty, metoda](iassemblyname-getproperty-method.md)|Pobiera wskaźnik do właściwości, do której odwołuje się określony `PropertyId`.|  
-|[GetVersion, metoda](iassemblyname-getversion-method.md)|Pobiera informacje o wersji zestawu, do którego odwołuje się ten obiekt `IAssemblyName`.|  
-|[IsEqual, metoda](iassemblyname-isequal-method.md)|Określa, czy określony obiekt `IAssemblyName` jest równy temu `IAssemblyName`, na podstawie określonych flag porównania.|  
-|[SetProperty, metoda](iassemblyname-setproperty-method.md)|Ustawia wartość właściwości, do której odwołuje się określony `PropertyId`.|  
+|[Clone — Metoda](iassemblyname-clone-method.md)|Tworzy skróconą kopię tego `IAssemblyName` obiektu.|  
+|[Finalize, metoda](iassemblyname-finalize-method.md)|Zezwala temu `IAssemblyName` obiektowi na zwalnianie zasobów i wykonywanie innych operacji czyszczenia przed wywołaniem destruktora.|  
+|[GetDisplayName — Metoda](iassemblyname-getdisplayname-method.md)|Pobiera nazwę zestawu, do którego odwołuje się ten `IAssemblyName` obiekt.|  
+|[GetName — Metoda](iassemblyname-getname-method.md)|Pobiera prostą, niezaszyfrowaną nazwę zestawu, do którego odwołuje się ten `IAssemblyName` obiekt.|  
+|[GetProperty — Metoda](iassemblyname-getproperty-method.md)|Pobiera wskaźnik do właściwości, do której odwołuje się określony `PropertyId` .|  
+|[GetVersion — Metoda](iassemblyname-getversion-method.md)|Pobiera informacje o wersji zestawu, do którego odwołuje się ten `IAssemblyName` obiekt.|  
+|[IsEqual, metoda](iassemblyname-isequal-method.md)|Określa, czy określony `IAssemblyName` obiekt jest równy temu `IAssemblyName` , na podstawie określonych flag porównania.|  
+|[SetProperty, metoda](iassemblyname-setproperty-method.md)|Ustawia wartość właściwości, do której odwołuje się określony `PropertyId` .|  
   
 ## <a name="requirements"></a>Wymagania  
+
  **Platformy:** Zobacz [wymagania systemowe](../../get-started/system-requirements.md).  
   
  **Nagłówek:** Fusion. h  
   
- **Wersje .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework wersje:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Zobacz także
 
 - [Interfejsy łączenia](fusion-interfaces.md)
-- [IAssemblyEnum, interfejs](iassemblyenum-interface.md)
+- [IAssemblyEnum — Interfejs](iassemblyenum-interface.md)

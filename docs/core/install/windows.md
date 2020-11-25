@@ -4,12 +4,12 @@ description: Dowiedz się więcej na temat wersji systemu Windows, na których m
 author: adegeo
 ms.author: adegeo
 ms.date: 11/10/2020
-ms.openlocfilehash: fe18cda64e0c9986884486298adf4a83b604f323
-ms.sourcegitcommit: c38bf879a2611ff46aacdd529b9f2725f93e18a9
+ms.openlocfilehash: 4d3abde965d9a2ab0f86477feeb7c10f274a4b9a
+ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594543"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95715124"
 ---
 # <a name="install-net-on-windows"></a>Instalowanie programu .NET w systemie Windows
 
@@ -30,7 +30,7 @@ Najnowsza wersja platformy .NET to 5,0.
 
 Poniższa tabela zawiera listę obecnie obsługiwanych wersji platformy .NET i wersje systemu Windows, w których są obsługiwane. Te wersje pozostają obsługiwane, dopóki wersja [platformy .NET nie osiągnie końca wsparcia](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) lub wersja [systemu Windows osiągnie koniec cyklu życia](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
-Daty końca usługi systemu Windows 10 są poddane segmentacji według wersji. W poniższej tabeli są brane pod uwagę tylko wersje **Home** , **Pro** , **Pro Education** i **Pro for Workstations** . Szczegółowe informacje znajdują się w [arkuszu faktów cyklu życia systemu Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet) .
+Daty końca usługi systemu Windows 10 są poddane segmentacji według wersji. W poniższej tabeli są brane pod uwagę tylko wersje **Home**, **Pro**, **Pro Education** i **Pro for Workstations** . Szczegółowe informacje znajdują się w [arkuszu faktów cyklu życia systemu Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet) .
 
 - ✔️ wskazuje, że wersja systemu Windows lub .NET Core jest nadal obsługiwana.
 - ❌Wskazuje, że wersja systemu Windows lub .NET Core nie jest obsługiwana w tej wersji systemu Windows.
@@ -204,7 +204,7 @@ Poprzednie wymagania są również wymagane w przypadku wystąpienia jednego z n
 
 [Skrypty dotnet-Install](../tools/dotnet-install-script.md) są używane na potrzeby automatyzacji ci i instalacji niezwiązanych z administratorami środowiska uruchomieniowego. Skrypt można pobrać ze [strony odniesienia do skryptu dotnet-Install](../tools/dotnet-install-script.md).
 
-Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) wersję, która jest w wersji .NET 3,1. Możesz wybrać określoną wersję, określając `Channel` przełącznik. Dołącz `Runtime` przełącznik, aby zainstalować środowisko uruchomieniowe. W przeciwnym razie skrypt instaluje zestaw SDK.
+Skrypt domyślnie instaluje najnowszą [LTS](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) wersję, która jest platformą .net Core 3,1. Możesz wybrać określoną wersję, określając `Channel` przełącznik. Dołącz `Runtime` przełącznik, aby zainstalować środowisko uruchomieniowe. W przeciwnym razie skrypt instaluje zestaw SDK.
 
 ```powershell
 dotnet-install.ps1 -Channel 5.0 -Runtime aspnetcore
