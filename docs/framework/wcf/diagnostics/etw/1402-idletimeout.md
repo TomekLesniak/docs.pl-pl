@@ -2,27 +2,30 @@
 title: 1402 — IdleTimeout
 ms.date: 03/30/2017
 ms.assetid: 581233aa-ce1a-49b6-9497-8bff88664036
-ms.openlocfilehash: b7e91c0b910685affdf16e36de2fce9d8067b2f5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c0e45a19da2f5ea1a0eea398dc910046b2597602
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782385"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241450"
 ---
 # <a name="1402---idletimeout"></a>1402 — IdleTimeout
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1402|  
-|słowa kluczowe|ServiceModel|  
+|ID (Identyfikator)|1402|  
+|Słowa kluczowe|Modelu|  
 |Poziom|Błąd|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane na limit czasu bezczynności.  
+
+ To zdarzenie jest emitowane po przekroczeniu limitu czasu bezczynności.  
   
-## <a name="message"></a>Komunikat  
- %1 połączenia puli klucz: %2  
+## <a name="message"></a>Wiadomość  
+
+ %1 klucz puli połączeń: %2  
   
 ## <a name="details"></a>Szczegóły

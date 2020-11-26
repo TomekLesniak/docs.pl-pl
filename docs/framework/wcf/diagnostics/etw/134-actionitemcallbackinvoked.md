@@ -2,27 +2,30 @@
 title: 134 — ActionItemCallbackInvoked
 ms.date: 03/30/2017
 ms.assetid: 9547f8a6-8f75-4c64-9d6d-391385557d8c
-ms.openlocfilehash: 7e92c02492f488e7064b248f28a8a2d3ca42ca8d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a639decea3cd1b5c35065595a5b7aa4f334acdc0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782372"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241489"
 ---
 # <a name="134---actionitemcallbackinvoked"></a>134 — ActionItemCallbackInvoked
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|134|  
-|słowa kluczowe|Wątkowość|  
+|ID (Identyfikator)|134|  
+|Słowa kluczowe|Wątkowość|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane podczas kończenia operacji We/Wy wątek wywołania wywołanie zwrotne harmonogramu.  
+
+ To zdarzenie jest emitowane, gdy wywołanie zwrotne harmonogramu wątków we/wy zostało zakończone.  
   
-## <a name="message"></a>Komunikat  
- Operacje We/Wy wątek wywołano wywołanie zwrotne harmonogramu.  
+## <a name="message"></a>Wiadomość  
+
+ Wywołano wywołanie zwrotne harmonogramu wątków we/wy.  
   
 ## <a name="details"></a>Szczegóły

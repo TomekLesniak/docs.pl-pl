@@ -2,27 +2,30 @@
 title: 4806 — DiscoveryMessageWithInvalidRelatesToOrOperationCompleted
 ms.date: 03/30/2017
 ms.assetid: 19e9a660-25f3-4332-b716-a12a59f2cbbb
-ms.openlocfilehash: 3d0d8d426b0b8b7e5a1e890847ae36957e62f028
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 46d71979e7b6bfcccc27064fd6fee626ea71dc1c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61943042"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242581"
 ---
 # <a name="4806---discoverymessagewithinvalidrelatestooroperationcompleted"></a>4806 — DiscoveryMessageWithInvalidRelatesToOrOperationCompleted
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|4806|  
-|słowa kluczowe|Odnajdywanie|  
+|ID (Identyfikator)|4806|  
+|Słowa kluczowe|Odnajdywanie|  
 |Poziom|Ostrzeżenie|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, gdy komunikat odnajdowanie zostało porzucone, klasa DiscoveryClient, ponieważ odpowiednia operacja została ukończona lub wartość relatesTo jest nieprawidłowa.  
+
+ To zdarzenie jest emitowane, gdy wiadomość odnajdowania została porzucona przez obiekt DiscoveryClient, ponieważ została ukończona odpowiadająca operacja lub wartość relatesta jest nieprawidłowa.  
   
-## <a name="message"></a>Komunikat  
- Komunikat %1 z messageId = "%2" i relatesTo = "%3" zostało porzucone, klasa DiscoveryClient, ponieważ odpowiednia operacja %4 zostało ukończone lub wartość relatesTo jest nieprawidłowa.  
+## <a name="message"></a>Wiadomość  
+
+ Komunikat %1 o atrybucie messageId równym "%2" i RelatesTo = "%3" został porzucony przez obiekt DiscoveryClient, ponieważ została ukończona odpowiadająca operacja %4 lub wartość relatesta jest nieprawidłowa.  
   
 ## <a name="details"></a>Szczegóły

@@ -2,34 +2,37 @@
 title: 219 — ServiceException
 ms.date: 03/30/2017
 ms.assetid: 81e2efac-39aa-4ed2-85a9-97eb8793b844
-ms.openlocfilehash: eb4289c0346c9e1d9481347d69db8c5f007e4325
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 832ced406b6079fad8f4b9bea512a6d390bdcc0f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61781735"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241944"
 ---
 # <a name="219---serviceexception"></a>219 — ServiceException
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|219|  
-|słowa kluczowe|EndToEndMonitoring HealthMonitoring, rozwiązywania problemów, modelu ServiceModel|  
+|ID (Identyfikator)|219|  
+|Słowa kluczowe|EndToEndMonitoring, HealthMonitoring, rozwiązywanie problemów, ServiceModel|  
 |Poziom|Błąd|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, gdy usługa WCF napotkał nieobsługiwany wyjątek. Obejmuje to nieobsługiwane wyjątki podczas aktywacji, podczas przetwarzania komunikatu, a w kodzie użytkownika.  
+
+ To zdarzenie jest emitowane, gdy usługa WCF napotka nieobsługiwany wyjątek. Obejmuje to Nieobsłużone wyjątki podczas aktywacji, podczas przetwarzania komunikatów oraz w kodzie użytkownika.  
   
-## <a name="message"></a>Komunikat  
- Wystąpił nieobsługiwany wyjątek typu "%2" podczas przetwarzania komunikatu. ToString — pełny wyjątek: %1.  
+## <a name="message"></a>Wiadomość  
+
+ Podczas przetwarzania komunikatu Wystąpił nieobsługiwany wyjątek typu "%2". Pełny wyjątek ToString: %1.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|ExceptionToString|`xs:string`|Wynik wywołania metody `ToString`() na wyjątek CLR.|  
-|ExceptionTypeName|`xs:string`|Pełna nazwa CLR typu wyjątku.|  
-|HostReference|`xs:string`|W przypadku usług hostowanych w sieci Web to pole jednoznacznie identyfikuje usługę w hierarchii w sieci Web. Jego format jest zdefiniowany jako "Ścieżka wirtualna aplikacji Nazwa witryny sieci Web&#124;ścieżka wirtualna usługi&#124;ServiceName". Przykład: 'Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'.|  
-|AppDomain|`xs:string`|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|ExceptionToString|`xs:string`|Wynik wywołania `ToString` () w wyjątku CLR.|  
+|ExceptionTypeName|`xs:string`|FullName CLR typu wyjątku.|  
+|HostReference|`xs:string`|W przypadku usług hostowanych w sieci Web to pole jednoznacznie identyfikuje usługę w hierarchii sieci Web. Jego format jest zdefiniowany jako ścieżka wirtualna aplikacji nazwa witryny sieci Web&#124;wirtualnej ścieżki usługi&#124;ServiceName '. Przykład: "Default Web site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService".|  
+|Wywołując|`xs:string`|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

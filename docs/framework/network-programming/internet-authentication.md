@@ -16,14 +16,15 @@ helpviewer_keywords:
 - NetworkCredential class, about NetworkCredential class
 - client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
-ms.openlocfilehash: a1f0829aa0e9e4bcc68168b73443578c3a34310b
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 085ca27dd0cfedc90211b21c10cc8bc5cf1ecd21
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502382"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241593"
 ---
 # <a name="internet-authentication"></a>Uwierzytelnianie internetowe
+
 <xref:System.Net>Klasy obsługują różne mechanizmy uwierzytelniania klientów, w tym standardowe metody uwierzytelniania internetowego Basic, Digest, Negotiate, NTLM i Kerberos, a także metody niestandardowe, które można utworzyć.  
   
  Poświadczenia uwierzytelniania są przechowywane w <xref:System.Net.NetworkCredential> <xref:System.Net.CredentialCache> klasach i, które implementują <xref:System.Net.ICredentials> interfejs. Gdy jedna z tych klas jest kwerendą dla poświadczeń, zwraca wystąpienie klasy **NetworkCredential** . Proces uwierzytelniania jest zarządzany przez <xref:System.Net.AuthenticationManager> klasę, a rzeczywisty proces uwierzytelniania jest wykonywany przez klasę modułu uwierzytelniania, która implementuje <xref:System.Net.IAuthenticationModule> interfejs. Aby można było użyć niestandardowego **modułu uwierzytelniania,** należy zarejestrować go. moduły dla metod uwierzytelniania podstawowa, Digest, Negotiate, NTLM i Kerberos są domyślnie zarejestrowane.  
@@ -40,7 +41,7 @@ ms.locfileid: "84502382"
   
  Niektóre schematy uwierzytelniania mogą uwierzytelniać użytkownika bez uprzedniego utworzenia żądania dla zasobu. Aplikacja może zaoszczędzić czas poprzez preuwierzytelnianie użytkownika przy użyciu zasobu, co eliminuje co najmniej jedną rundę na serwerze. Można też przeprowadzić uwierzytelnianie podczas uruchamiania programu w celu późniejszego reagowania na użytkownika. Schematy uwierzytelniania, które mogą używać wstępnego uwierzytelniania, mają ustawioną <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> Właściwość na **wartość true**.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Uwierzytelnianie podstawowe i szyfrowane](basic-and-digest-authentication.md)
 - [Uwierzytelnianie NTLM i uwierzytelnianie Kerberos](ntlm-and-kerberos-authentication.md)

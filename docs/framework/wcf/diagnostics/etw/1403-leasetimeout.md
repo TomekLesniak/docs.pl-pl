@@ -2,27 +2,30 @@
 title: 1403 — LeaseTimeout
 ms.date: 03/30/2017
 ms.assetid: 3908748b-f060-46a2-8043-49e09218d2e5
-ms.openlocfilehash: 521724d0a9312e02bd0224c8bed828089a431db5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 912c948c01bab40520d5f446b55140cf515bce4d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782320"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241412"
 ---
 # <a name="1403---leasetimeout"></a>1403 — LeaseTimeout
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1403|  
-|słowa kluczowe|ServiceModel|  
+|ID (Identyfikator)|1403|  
+|Słowa kluczowe|Modelu|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane na limit czasu dzierżawy.  
+
+ To zdarzenie jest emitowane po przekroczeniu limitu czasu dzierżawy.  
   
-## <a name="message"></a>Komunikat  
- %1 połączenia puli klucz: %2  
+## <a name="message"></a>Wiadomość  
+
+ %1 klucz puli połączeń: %2  
   
 ## <a name="details"></a>Szczegóły

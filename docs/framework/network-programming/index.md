@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Internet, .NET Framework Internet services
 - Network Resources
 ms.assetid: 8d455610-67a0-4fa8-a62f-7747064a9256
-ms.openlocfilehash: 117fce887a04def7f9b3f7654a8e9e675ea462d2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 50f23e1a343f969ad2cbb3422038921c710b2b1b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502408"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241684"
 ---
 # <a name="network-programming-in-the-net-framework"></a>Programowanie dla sieci w .NET Framework
+
 Środowisko Microsoft .NET Framework oferuje warstwowe, rozszerzalne i zarządzane wdrożenia usług internetowych, które można szybko i łatwo zintegrować ze swoimi aplikacjami. Aplikacje sieciowe mogą za pomocą podłączanych protokołów automatycznie wykorzystywać nowe protokoły internetowe albo za pośrednictwem zarządzanej implementacji interfejsu gniazd systemu Windows współpracować z siecią na poziomie gniazd.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
@@ -32,7 +33,7 @@ ms.locfileid: "84502408"
  [Korzystanie z protokołów aplikacji](using-application-protocols.md)  
  Opis zasad programowania aplikacji wykorzystujących protokoły sieciowe, takie jak TCP, UDP i HTTP.  
   
- [Protokół internetowy w wersji 6](internet-protocol-version-6.md)  
+ [Protokół IPv6](internet-protocol-version-6.md)  
  Opis zalet protokołu Internet Protocol w wersji 6 (IPv6) w porównaniu z obecną wersją pakietu Internet Protocol (IPv4), a także mechanizmów adresowania, routingu i automatycznej konfiguracji w protokole IPv6 oraz sposobów włączania i wyłączania protokołu.  
   
  [Konfigurowanie aplikacji internetowych](configuring-internet-applications.md)  
@@ -87,6 +88,7 @@ ms.locfileid: "84502408"
  Linki do pobieranych przykładów programistycznych sieci, które używają klas <xref:System.Net> w <xref:System.Net.Cache> <xref:System.Net.Configuration> <xref:System.Net.Mail> <xref:System.Net.Mime> <xref:System.Net.NetworkInformation> <xref:System.Net.PeerToPeer> <xref:System.Net.Security> <xref:System.Net.Sockets> przestrzeniach nazw,,,,,,.  
   
 ## <a name="reference"></a>Dokumentacja  
+
  <xref:System.Net?displayProperty=nameWithType>  
  Prosty interfejs programistyczny dla wielu protokołów używanych obecnie w sieciach. <xref:System.Net.WebRequest?displayProperty=nameWithType>Klasy i <xref:System.Net.WebResponse?displayProperty=nameWithType> w tej przestrzeni nazw są podstawą dla protokołów podłączanych.  
   
@@ -135,7 +137,7 @@ ms.locfileid: "84502408"
  <xref:System.Security.Authentication.ExtendedProtection.Configuration?displayProperty=nameWithType>  
  Umożliwia konfigurowanie uwierzytelniania przy użyciu mechanizmu rozszerzonej ochrony aplikacji.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Transport Layer Security (TLS) — najlepsze rozwiązania z .NET Framework](tls.md)
 - [Programowanie dla sieci — tematy z instrukcjami](network-programming-how-to-topics.md)

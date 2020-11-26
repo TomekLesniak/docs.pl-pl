@@ -1,15 +1,16 @@
 ---
-title: 'Instrukcje: Migrowanie usług sieci Web obsługujących technologię AJAX i opartych na platformie ASP.NET do programu WCF'
+title: 'Instrukcje: migrowanie usług internetowych obsługujących technologię AJAX i opartych na platformie ASP.NET do programu WCF'
 ms.date: 03/30/2017
 ms.assetid: 1428df4d-b18f-4e6d-bd4d-79ab3dd5147c
-ms.openlocfilehash: 6f356f47922945218e02271371d9ddea36ecc5a2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 89c9601ba6afcef9733d7653564a98664a1ed70f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597010"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241905"
 ---
-# <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Instrukcje: Migrowanie usług sieci Web obsługujących technologię AJAX i opartych na platformie ASP.NET do programu WCF
+# <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Instrukcje: migrowanie usług internetowych obsługujących technologię AJAX i opartych na platformie ASP.NET do programu WCF
+
 Ten temat zawiera opis procedur migrowania podstawowej usługi ASP.NET AJAX do odpowiedniej usługi Windows Communication Foundation (WCF) z obsługą technologii AJAX. Pokazano, jak utworzyć funkcjonalnie odpowiednikową wersję programu WCF usługi ASP.NET AJAX. Te dwie usługi mogą być następnie używane obok siebie lub można użyć usługi WCF w celu zastąpienia usługi ASP.NET AJAX.
 
  Migrowanie istniejącej usługi ASP.NET AJAX do usługi WCF AJAX zapewnia następujące korzyści:
@@ -28,7 +29,7 @@ Ten temat zawiera opis procedur migrowania podstawowej usługi ASP.NET AJAX do o
 
 1. Otwórz program Visual Studio 2012.
 
-2. Z menu **plik** wybierz pozycję **Nowy**, a następnie pozycję **projekt**, **a następnie kliknij**pozycję **aplikacja usługi sieci Web ASP.NET**.
+2. Z menu **plik** wybierz pozycję **Nowy**, a następnie pozycję **projekt**, **a następnie kliknij** pozycję **aplikacja usługi sieci Web ASP.NET**.
 
 3. Nazwij projekt `ASPHello` , a następnie kliknij przycisk **OK**.
 
@@ -111,6 +112,7 @@ Ten temat zawiera opis procedur migrowania podstawowej usługi ASP.NET AJAX do o
 11. `WCFHello.svc/HelloWorld` `Service1.aspx/HelloWorld` Punkty końcowe są teraz równoważne funkcjonalnie.
 
 ## <a name="example"></a>Przykład
+
  Kod, który wynika z procedur przedstawionych w tym temacie, znajduje się w poniższym przykładzie.
 
 ```csharp
@@ -193,9 +195,9 @@ d.Add("two", 2);
 
  Ten słownik jest reprezentowany w obiektach JSON, jak pokazano na poniższej liście:
 
-- [{"Key": "jeden", "value": 1}, {"Key": "dwa", "value": 2}] przez<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>
+- [{"Key": "jeden", "value": 1}, {"Key": "dwa", "value": 2}] przez <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>
 
-- {"jeden": 1, "dwa": 2} przez ASP.NET AJAX<xref:System.Web.Script.Serialization.JavaScriptSerializer>
+- {"jeden": 1, "dwa": 2} przez ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>
 
  <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>Jest to bardziej wydajne w tym sensie, że może obsługiwać słowniki, w których typ klucza nie jest ciągiem, podczas gdy <xref:System.Web.Script.Serialization.JavaScriptSerializer> nie może. Jednak ten drugi jest bardziej przyjazny dla kodu JSON.
 
@@ -204,11 +206,11 @@ d.Add("two", 2);
 |Kategoria różnic|Klasa DataContractJsonSerializer|ASP.NET AJAX klasy JavaScriptSerializer|
 |-----------------------------|--------------------------------|---------------------------------------|
 |Deserializacja pustego buforu (nowy bajt [0]) do <xref:System.Object> (lub <xref:System.Uri> lub innych klas).|SerializationException|wartość null|
-|Serializacja<xref:System.DBNull.Value>|{}(lub {"__type": "#System"})|Null|
+|Serializacja <xref:System.DBNull.Value>|{} (lub {"__type": "#System"})|Zero|
 |Serializacja prywatnych składowych typów [Serializable].|serializowana|nie Zserializowano|
 |Serializacja właściwości publicznych <xref:System.Runtime.Serialization.ISerializable> typów.|nie Zserializowano|serializowana|
 |"Rozszerzenia" JSON|Jest zgodna ze specyfikacją JSON, która wymaga cudzysłowów w nazwach elementów członkowskich obiektu ({"a": "Hello"}).|Obsługuje nazwy elementów członkowskich obiektów bez cudzysłowów ({a: "Hello"}).|
-|<xref:System.DateTime>Uniwersalny czas koordynowany (UTC)|Program nie obsługuje formatu " \\ /Date (123456789U) \\ /" lub " \\ /Date \\ (\d + (U&#124; ( \\ + \\ -[\d {4} ]))? \\ ) \\ \\ /)".|Obsługuje format " \\ /Date (123456789U) \\ /" i " \\ /Date \\ (\d + (U&#124; ( \\ + \\ -[\d {4} ]))? \\ ) \\ \\ /) "jako wartości DateTime.|
+|<xref:System.DateTime> Uniwersalny czas koordynowany (UTC)|Program nie obsługuje formatu " \\ /Date (123456789U) \\ /" lub " \\ /Date \\ (\d + (U&#124; ( \\ + \\ -[\d {4} ]))? \\ ) \\ \\ /)".|Obsługuje format " \\ /Date (123456789U) \\ /" i " \\ /Date \\ (\d + (U&#124; ( \\ + \\ -[\d {4} ]))? \\ ) \\ \\ /) "jako wartości DateTime.|
 |Reprezentacja słowników|Tablica KeyValuePair \<K,V> obsługuje typy kluczy, które nie są ciągami.|Jako rzeczywiste obiekty JSON — ale obsługuje tylko typy kluczy, które są ciągami.|
 |Znaki ucieczki|Zawsze z ukośnikiem ucieczki (/); nigdy nie zezwala na anulowanie ucieczki nieprawidłowych znaków JSON, takich jak "\n".|Za pomocą znaku ucieczki (/) dla wartości typu DateTime.|
 

@@ -2,7 +2,7 @@
   href: index.md
 - name: Typy zgodności
   href: categories.md
-- name: Odwołanie
+- name: Dokumentacja
   expanded: true
   items:
     - name: Omówienie
@@ -20,6 +20,8 @@
       items:
         - name: .NET 5.0
           items:
+            - name: Omówienie
+              href: 5.0.md
             - name: ASP.NET Core
               items:
                 - name: Aplikacje ASP.NET Core deserializują liczby ujęte w cudzysłów
@@ -180,14 +182,8 @@
                   href: cryptography/5.0/instantiating-default-implementations-of-cryptographic-abstractions-not-supported.md
                 - name: Domyślna wartość elementu FeedbackSize została zmieniona
                   href: cryptography/5.0/tripledes-default-feedback-size-change.md
-            - name: Interop
-              items:
-                - name: Obsługa środowiska WinRT została usunięta
-                  href: interop/5.0/built-in-support-for-winrt-removed.md
-                - name: Rzutowanie elementu RCW na element InterfaceIsIInspectable zgłasza wyjątek
-                  href: interop/5.0/casting-rcw-to-inspectable-interface-throws-exception.md
-                - name: Brak sondowania sufiksu A/W na platformach innych niż Windows
-                  href: interop/5.0/function-suffix-pinvoke.md
+            - name: Entity Framework Core
+              href: /ef/core/what-is-new/ef-core-5.0/breaking-changes?toc=/dotnet/core/compatibility/toc.json&bc=/dotnet/breadcrumb/toc.json
             - name: Globalizacja
               items:
                 - name: Korzystanie z bibliotek ICU w systemie Windows
@@ -196,6 +192,14 @@
                   href: globalization/5.0/uax29-compliant-grapheme-enumeration.md
                 - name: Zmieniono kategorię Unicode dla znaków łacińskich 1
                   href: globalization/5.0/unicode-categories-for-latin1-chars.md
+            - name: Interop
+              items:
+                - name: Obsługa środowiska WinRT została usunięta
+                  href: interop/5.0/built-in-support-for-winrt-removed.md
+                - name: Rzutowanie elementu RCW na element InterfaceIsIInspectable zgłasza wyjątek
+                  href: interop/5.0/casting-rcw-to-inspectable-interface-throws-exception.md
+                - name: Brak sondowania sufiksu A/W na platformach innych niż Windows
+                  href: interop/5.0/function-suffix-pinvoke.md
             - name: MSBuild
               items:
                 - name: Pliki Directory.Packages.props są importowane domyślnie
@@ -267,11 +271,11 @@
                 - name: Aplikacje WPF używają zestawu SDK Microsoft.NET
                   href: windows-forms/5.0/sdk-and-target-framework-change.md
         - name: .NET Core 3.1
-          href: 3.0-3.1.md
+          href: 3.1.md
         - name: .NET Core 3.0
-          href: 2.2-3.0.md
+          href: 3.0.md
         - name: .NET Core 2.1
-          href: 2.0-2.1.md
+          href: 2.1.md
     - name: Zmiany powodujące niezgodność według obszaru
       items:
         - name: ASP.NET Core
@@ -449,7 +453,11 @@
             - name: .NET Core 2.1–3.0
               href: cryptography.md
         - name: Entity Framework Core
-          href: /ef/core/what-is-new/ef-core-3.0/breaking-changes?toc=/dotnet/core/compatibility/toc.json&bc=/dotnet/breadcrumb/toc.json
+          items:
+            - name: EF Core 5.0
+              href: /ef/core/what-is-new/ef-core-5.0/breaking-changes?toc=/dotnet/core/compatibility/toc.json&bc=/dotnet/breadcrumb/toc.json
+            - name: EF Core 3.1
+              href: /ef/core/what-is-new/ef-core-3.x/breaking-changes?toc=/dotnet/core/compatibility/toc.json&bc=/dotnet/breadcrumb/toc.json
         - name: Globalizacja
           items:
             - name: .NET 5.0

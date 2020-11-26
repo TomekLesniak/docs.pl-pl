@@ -2,27 +2,30 @@
 title: 1417 — MaxSentMessageSizeExceeded
 ms.date: 03/30/2017
 ms.assetid: 3cb7c2f0-97bf-4ee9-a037-ed64a25a18fd
-ms.openlocfilehash: ea5535d2f8dc07c19c9cb5503edd445416dbd18e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0738db37982eed920c9736873f8de9c6b1c101fc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782255"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241346"
 ---
 # <a name="1417---maxsentmessagesizeexceeded"></a>1417 — MaxSentMessageSizeExceeded
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1417|  
-|słowa kluczowe|Limit przydziału|  
+|ID (Identyfikator)|1417|  
+|Słowa kluczowe|limit przydziału|  
 |Poziom|Błąd|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, gdy maksymalnie wysyłane przekroczył rozmiar komunikatu.  
+
+ To zdarzenie jest emitowane po przekroczeniu maksymalnego rozmiaru wysłanej wiadomości.  
   
-## <a name="message"></a>Komunikat  
+## <a name="message"></a>Wiadomość  
+
  1%  
   
 ## <a name="details"></a>Szczegóły

@@ -3,12 +3,12 @@ title: 'Niestandardowy koder komunikatów: Niestandardowy koder tekstu'
 description: Użyj tego przykładu, aby zaimplementować niestandardowy koder komunikatów tekstowych przy użyciu programu WCF. Ten koder obsługuje wszystkie kodowanie znaków obsługiwane przez platformę na potrzeby współdziałania.
 ms.date: 03/30/2017
 ms.assetid: 68ff5c74-3d33-4b44-bcae-e1d2f5dea0de
-ms.openlocfilehash: 88ddc79e6cc1df654aea851cedb0e60c6fbcd017
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 89f0bf09ba6408e24f642a67f2e7ac8243608dcb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246275"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96240969"
 ---
 # <a name="custom-message-encoder-custom-text-encoder"></a>Niestandardowy koder komunikatów: Niestandardowy koder tekstu
 
@@ -218,6 +218,7 @@ Każdy typ pochodzący od <xref:System.ServiceModel.Channels.MessageEncodingBind
 W tym przykładzie konfiguracja klienta jest konfigurowana ręcznie. Nie można użyć Svcutil.exe do wygenerowania konfiguracji klienta, ponieważ nie `CustomTextMessageBindingElement` eksportuje potwierdzenia zasad, aby opisać jego zachowanie. Należy zwykle zaimplementować <xref:System.ServiceModel.Description.IPolicyExportExtension> interfejs na elemencie powiązania niestandardowego, aby wyeksportować potwierdzenie zasad niestandardowych, który opisuje zachowanie lub możliwość implementowaną przez element powiązania. Aby zapoznać się z przykładem sposobu eksportowania potwierdzenia zasad dla elementu niestandardowego powiązania, zapoznaj się z przykładem [transport: UDP](transport-udp.md) .
 
 ## <a name="message-encoding-binding-configuration-handler"></a>Procedura obsługi konfiguracji powiązania kodowania komunikatów
+
 W poprzedniej sekcji pokazano, jak programowo używać niestandardowego kodera wiadomości tekstowych. `CustomTextMessageEncodingBindingSection`Implementacja programu obsługi konfiguracji, która pozwala określić użycie niestandardowego kodera komunikatów tekstowych w pliku konfiguracji. `CustomTextMessageEncodingBindingSection`Klasa pochodzi od <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> klasy. `BindingElementType`Właściwość informuje system konfiguracji typu elementu powiązania, który ma zostać utworzony dla tej sekcji.
 
 Wszystkie ustawienia zdefiniowane przez `CustomTextMessageBindingElement` są udostępniane jako właściwości w `CustomTextMessageEncodingBindingSection` . <xref:System.Configuration.ConfigurationPropertyAttribute>Pomaga w mapowaniu atrybutów elementu konfiguracji do właściwości i ustawiania wartości domyślnych, jeśli atrybut nie jest ustawiony. Po załadowaniu wartości z konfiguracji i zastosowaniu ich do właściwości typu <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A> Metoda zostaje wywołana, co spowoduje konwersję właściwości w konkretnym wystąpieniu elementu powiązania.

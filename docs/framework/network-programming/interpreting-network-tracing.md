@@ -10,14 +10,15 @@ helpviewer_keywords:
 - text, network tracing output
 - includehex
 ms.assetid: ad22b4b8-00af-4778-9cca-cb609ce1f8ff
-ms.openlocfilehash: 7a17e4ba14d8c5fe136667c4eb5bc5b2fd7a8242
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 63d7e36bb95054303fc4f26b0fd14dc3d10dbb7d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502369"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241567"
 ---
 # <a name="interpreting-network-tracing"></a>Interpretowanie śledzenia sieci
+
 Po włączeniu śledzenia sieci można użyć funkcji śledzenia do przechwytywania wywołań aplikacji do różnych <xref:System.Net> elementów członkowskich klasy. Dane wyjściowe tych wywołań mogą wyglądać podobnie jak w poniższych przykładach.  
   
 ```output
@@ -45,8 +46,8 @@ Po włączeniu śledzenia sieci można użyć funkcji śledzenia do przechwytywa
   
  `Connection: Close`  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Włączanie śledzenia sieci](enabling-network-tracing.md)
-- [Instrukcje: konfigurowanie śledzenia sieci](how-to-configure-network-tracing.md)
+- [Instrukcje: konfigurowanie funkcji śledzenia sieci](how-to-configure-network-tracing.md)
 - [Śledzenie sieci w .NET Framework](network-tracing.md)

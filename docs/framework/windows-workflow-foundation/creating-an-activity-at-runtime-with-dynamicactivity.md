@@ -3,18 +3,20 @@ title: Tworzenie działania w czasie wykonywania z dynamiczną
 description: Dynamiczna jest klasą zapieczętowana z konstruktorem publicznym. Użyj klasy, aby złożyć funkcję działania w czasie wykonywania przy użyciu modelu DOM działania.
 ms.date: 03/30/2017
 ms.assetid: 1af85cc6-912d-449e-90c5-c5db3eca5ace
-ms.openlocfilehash: 17ee14be7df4801018c7afd2e91f1fb07c34e8e1
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: b65d7e385690b77d44c73e7a8a4ed38b04f30ea6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421543"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242100"
 ---
 # <a name="creating-an-activity-at-runtime-with-dynamicactivity"></a>Tworzenie działania w czasie wykonywania z dynamiczną
-<xref:System.Activities.DynamicActivity>jest konkretną klasą zapieczętowana z konstruktorem publicznym. <xref:System.Activities.DynamicActivity>może służyć do łączenia funkcji działania w środowisku uruchomieniowym przy użyciu modelu DOM działania.  
+
+<xref:System.Activities.DynamicActivity> jest konkretną klasą zapieczętowana z konstruktorem publicznym. <xref:System.Activities.DynamicActivity> może służyć do łączenia funkcji działania w środowisku uruchomieniowym przy użyciu modelu DOM działania.  
   
 ## <a name="dynamicactivity-features"></a>Funkcje dynamiczne  
- <xref:System.Activities.DynamicActivity>ma dostęp do właściwości wykonywania, argumentów i zmiennych, ale nie ma dostępu do usług czasu wykonywania, takich jak planowanie działań podrzędnych lub śledzenie.  
+
+ <xref:System.Activities.DynamicActivity> ma dostęp do właściwości wykonywania, argumentów i zmiennych, ale nie ma dostępu do usług czasu wykonywania, takich jak planowanie działań podrzędnych lub śledzenie.  
   
  Właściwości najwyższego poziomu można ustawić za pomocą <xref:System.Activities.Argument> obiektów przepływu pracy. W kodzie bezwzględnym te argumenty są tworzone przy użyciu właściwości CLR dla nowego typu. W języku XAML są one deklarowane przy użyciu `x:Class` `x:Member` tagów i.  
   
@@ -28,7 +30,7 @@ ms.locfileid: "83421543"
   
 3. Kliknij prawym przyciskiem myszy pozycję Workflow1. XAML w projekcie Hello i wybierz polecenie **Usuń**.  
   
-4. Otwórz Program.cs. Dodaj następującą dyrektywę na początku pliku.  
+4. Otwórz plik Program.cs. Dodaj następującą dyrektywę na początku pliku.  
   
     ```csharp  
     using System.Collections.Generic;  
@@ -79,7 +81,7 @@ ms.locfileid: "83421543"
   
 4. Przeciągnij działanie **WriteLine** z sekcji elementy **pierwotne** przybornika na powierzchnię projektanta. Przypisz wartość `TextToWrite` do właściwości **Text** działania.  
   
-5. Otwórz Program.cs. Dodaj następującą dyrektywę na początku pliku.  
+5. Otwórz plik Program.cs. Dodaj następującą dyrektywę na początku pliku.  
   
     ```csharp  
     using System.Activities.XamlIntegration;  
@@ -93,10 +95,10 @@ ms.locfileid: "83421543"
     Console.ReadLine();  
     ```  
   
-7. Wykonaj aplikację. Okno konsoli z tekstem "Hello world!" się.  
+7. Wykonaj aplikację. Okno konsoli z tekstem "Hello world!" .  
   
 8. Kliknij prawym przyciskiem myszy plik Workflow1. XAML w **Eksplorator rozwiązań** i wybierz polecenie **Wyświetl kod**. Należy zauważyć, że Klasa Activity jest tworzona z `x:Class` i właściwość jest tworzona przy użyciu `x:Property` .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Tworzenie przepływów pracy, działań i wyrażeń przy użyciu kodu imperatywnego](authoring-workflows-activities-and-expressions-using-imperative-code.md)

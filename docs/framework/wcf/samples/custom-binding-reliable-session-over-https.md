@@ -2,15 +2,16 @@
 title: Niestandardowe powiązanie niezawodnej sesji przez protokół HTTPS
 ms.date: 03/30/2017
 ms.assetid: 16aaa80d-3ffe-47c4-8b16-ec65c4d25f8d
-ms.openlocfilehash: ab2dd4725879ba969afdae8a6423a920a9786125
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: aec9bc11fab71a8e3adfe60e0c19b0ac4a9e3699
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585301"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96241892"
 ---
 # <a name="custom-binding-reliable-session-over-https"></a>Niestandardowe powiązanie niezawodnej sesji przez protokół HTTPS
-W tym przykładzie przedstawiono sposób korzystania z zabezpieczeń transportu SSL z niezawodnymi sesjami. Niezawodne sesje programu implementują protokół obsługi komunikatów w usłudze WS-niezawodny. Można korzystać z bezpiecznej niezawodnej sesji, tworząc usługę WS-Security przez niezawodne sesje. Czasami jednak zamiast tego można użyć zabezpieczeń transportu HTTP z protokołem SSL.  
+
+W tym przykładzie przedstawiono sposób korzystania z zabezpieczeń transportu SSL z niezawodnymi sesjami. Niezawodne sesje programu implementują protokół obsługi komunikatów WS-Reliable. Można korzystać z bezpiecznej niezawodnej sesji, tworząc WS-Security za pośrednictwem niezawodnych sesji. Czasami jednak zamiast tego można użyć zabezpieczeń transportu HTTP z protokołem SSL.  
   
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).  
@@ -22,7 +23,8 @@ W tym przykładzie przedstawiono sposób korzystania z zabezpieczeń transportu 
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Custom\ReliableSessionOverHttps`  
   
 ## <a name="sample-details"></a>Przykładowe szczegóły  
- Protokół SSL gwarantuje, że pakiety są zabezpieczone. Należy pamiętać, że różni się to od zabezpieczania niezawodnej sesji przy użyciu konwersacji WS-Secure.  
+
+ Protokół SSL gwarantuje, że pakiety są zabezpieczone. Należy pamiętać, że różni się to od zabezpieczania niezawodnej sesji przy użyciu WS-Secure konwersacji.  
   
  Aby korzystać z niezawodnej sesji za pośrednictwem protokołu HTTPS, należy utworzyć niestandardowe powiązanie. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md) , który implementuje usługę kalkulatora. Niestandardowe powiązanie jest tworzone przy użyciu elementu powiązania niezawodnej sesji i [\<httpsTransport>](../../configure-apps/file-schema/wcf/httpstransport.md) . Następująca konfiguracja jest powiązaniem niestandardowym.  
   
@@ -102,7 +104,7 @@ W tym przykładzie przedstawiono sposób korzystania z zabezpieczeń transportu 
   
  Określony adres używa `https://` schematu.  
   
- Ponieważ certyfikat używany w tym przykładzie jest certyfikatem testowym utworzonym za pomocą Makecert. exe, podczas próby uzyskania dostępu do adresu https:, takiego jak, z przeglądarki, pojawia się Alert zabezpieczeń `https://localhost/servicemodelsamples/service.svc` . Aby umożliwić klientowi Windows Communication Foundation (WCF) współpracujący z certyfikatem testowym, do klienta został dodany dodatkowy kod, aby pominąć alert zabezpieczeń. Ten kod i Klasa towarzysząca nie są wymagane w przypadku korzystania z certyfikatów produkcyjnych.  
+ Ponieważ certyfikat używany w tym przykładzie jest certyfikatem testowym utworzonym przy użyciu Makecert.exe, po próbie uzyskania dostępu do adresu https:, takiego jak, z przeglądarki jest wyświetlany alert zabezpieczeń `https://localhost/servicemodelsamples/service.svc` . Aby umożliwić klientowi Windows Communication Foundation (WCF) współpracujący z certyfikatem testowym, do klienta został dodany dodatkowy kod, aby pominąć alert zabezpieczeń. Ten kod i Klasa towarzysząca nie są wymagane w przypadku korzystania z certyfikatów produkcyjnych.  
 
 ```csharp
 // This code is required only for test certificates like those created by Makecert.exe.  

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - first-chance exception notifications
 - exceptions, first chance notifications
 ms.assetid: 66f002b8-a97d-4a6e-a503-2cec01689113
-ms.openlocfilehash: e8b5ae5fb69c7befd329316aee11523f79d73fcd
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: 0b3150a52a68e078d1052a9894bb652ad35027d0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104745"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242568"
 ---
 # <a name="how-to-receive-first-chance-exception-notifications"></a>Instrukcje: Odbieranie powiadomień o wyjątkach pierwszej szansy
+
 <xref:System.AppDomain.FirstChanceException>Zdarzenie <xref:System.AppDomain> klasy pozwala otrzymać powiadomienie, że zgłoszono wyjątek, zanim środowisko uruchomieniowe języka wspólnego zacznie wyszukiwać obsługę wyjątków.
 
  Zdarzenie jest zgłaszane na poziomie domeny aplikacji. Wątek wykonywania może przechodzić przez wiele domen aplikacji, więc wyjątek, który jest nieobsługiwany w jednej domenie aplikacji, może być obsługiwany w innej domenie aplikacji. Powiadomienie odbywa się w każdej domenie aplikacji, która dodała procedurę obsługi dla zdarzenia, dopóki domena aplikacji obsłuży wyjątek.
@@ -25,7 +26,8 @@ ms.locfileid: "85104745"
 
  Aby uzyskać bardziej złożony przykład obejmujący kilka domen aplikacji, zobacz przykład <xref:System.AppDomain.FirstChanceException> zdarzenia.
 
-## <a name="receiving-first-chance-exception-notifications-in-the-default-application-domain"></a>Otrzymywanie powiadomień o wyjątkach pierwszej szansy w domenie domyślnej aplikacji
+## <a name="receiving-first-chance-exception-notifications-in-the-default-application-domain"></a>Otrzymywanie powiadomień o wyjątkach First-Chance w domyślnej domenie aplikacji
+
  W poniższej procedurze punkt wejścia dla aplikacji, `Main()` Metoda uruchamiana w domyślnej domenie aplikacji.
 
 #### <a name="to-demonstrate-first-chance-exception-notifications-in-the-default-application-domain"></a>Aby przedstawić powiadomienia o wyjątkach pierwszej szansy w domenie domyślnej aplikacji
@@ -50,7 +52,8 @@ ms.locfileid: "85104745"
      [!code-csharp[System.AppDomain.FirstChanceException_howto_simple#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto_simple/cs/example.cs#5)]
      [!code-vb[System.AppDomain.FirstChanceException_howto_simple#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto_simple/vb/example.vb#5)]
 
-## <a name="receiving-first-chance-exception-notifications-in-another-application-domain"></a>Otrzymywanie powiadomień o wyjątkach pierwszej szansy w innej domenie aplikacji
+## <a name="receiving-first-chance-exception-notifications-in-another-application-domain"></a>Otrzymywanie First-Chance powiadomienia o wyjątkach w innej domenie aplikacji
+
  Jeśli program zawiera więcej niż jedną domenę aplikacji, możesz wybrać, które domeny aplikacji mają otrzymywać powiadomienia.
 
 #### <a name="to-receive-first-chance-exception-notifications-in-an-application-domain-that-you-create"></a>Aby otrzymywać powiadomienia o wyjątkach pierwszej szansy w domenie aplikacji, którą tworzysz
@@ -85,6 +88,7 @@ ms.locfileid: "85104745"
      [!code-vb[System.AppDomain.FirstChanceException_howto#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/vb/example.vb#5)]
 
 ## <a name="example"></a>Przykład
+
  Poniższy przykład tworzy domenę aplikacji o nazwie `AD1` i dodaje procedurę obsługi zdarzeń do zdarzenia domeny aplikacji <xref:System.AppDomain.FirstChanceException> . Przykład tworzy wystąpienie `Worker` klasy w domenie aplikacji i wywołuje metodę o nazwie `Thrower` , która zgłasza <xref:System.ArgumentException> . W zależności od wartości argumentu Metoda przechwytuje wyjątek lub nie można jej obsłużyć.
 
  Za każdym razem, gdy `Thrower` Metoda zgłasza wyjątek w `AD1` , <xref:System.AppDomain.FirstChanceException> zdarzenie jest zgłaszane w `AD1` , a program obsługi zdarzeń wyświetla komunikat. Środowisko uruchomieniowe następnie szuka programu obsługi wyjątków. W pierwszym przypadku program obsługi wyjątków znajduje się w `AD1` . W drugim przypadku wyjątek jest nieobsługiwany w `AD1` , a zamiast tego jest przechwytywany w domyślnej domenie aplikacji.

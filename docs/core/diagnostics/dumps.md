@@ -2,12 +2,12 @@
 title: Zrzuty — .NET
 description: Wprowadzenie do zrzutów w programie .NET.
 ms.date: 10/12/2020
-ms.openlocfilehash: a5f12837e81edc82f420f7b325b0248f9f8989a3
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: 56cf4085d10658c828bac39be93eed3f774e00d5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96034832"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242776"
 ---
 # <a name="dumps"></a>Zrzuty
 
@@ -51,22 +51,11 @@ Może być konieczne zebranie zrzutu, gdy aplikacja nie uległa jeszcze awarii. 
 
 Aby zbierać zrzuty we własnym żądaniu, można użyć `dotnet-dump` , który jest narzędziem interfejsu wiersza polecenia do zbierania i analizowania zrzutów. Aby uzyskać więcej informacji na temat zbierania zrzutów za pomocą programu `dotnet-dump` , zobacz [zrzuty narzędzi do zbierania i analizy](dotnet-dump.md).
 
-### <a name="types-of-dumps-in-net"></a>Typy zrzutów w programie .NET
-
-Można zbierać różne typy zrzutów w zależności od przeznaczenia. Można skonfigurować przy użyciu `COMPlus_DbgMiniDumpType` zmiennej środowiskowej when lub `--type` flagi podczas korzystania z programu `dotnet-dump` . W poniższej tabeli przedstawiono typy zrzutów, które można zbierać w programie .NET.
-
-|Wartość|Nazwa|Opis|
-|-----|----|-----------|
-|1|`MiniDumpNormal`|Uwzględnij tylko te informacje, które są niezbędne do przechwytywania śladów stosu dla wszystkich istniejących wątków w procesie. Ograniczona pamięć i informacje dotyczące sterty GC.|
-|2|`MiniDumpWithPrivateReadWriteMemory`|Obejmuje sterty GC i informacje niezbędne do przechwytywania śladów stosu dla wszystkich istniejących wątków w procesie.|
-|3|`MiniDumpFilterTriage`|Uwzględnij tylko te informacje, które są niezbędne do przechwytywania śladów stosu dla wszystkich istniejących wątków w procesie. Ograniczona pamięć i informacje dotyczące sterty GC.|
-|4|`MiniDumpWithFullMemory`|Uwzględnij całą dostępną pamięć w procesie. Dane nieprzetworzonej pamięci są uwzględniane na końcu, aby struktury początkowe można mapować bezpośrednio bez informacji o pamięci nieprzetworzonej. Ta opcja może powodować bardzo duży plik.|
-
 ## <a name="analyze-dumps"></a>Analizowanie zrzutów
 
 Zrzuty mogą być analizowane przy użyciu [`dotnet-dump`](dotnet-dump.md) .
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 Dowiedz się więcej o tym, jak można wykorzystać zrzuty, aby pomóc w diagnozowaniu problemów w aplikacji .NET.
 

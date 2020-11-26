@@ -6,14 +6,15 @@ helpviewer_keywords:
 - interop events [.NET Framework]
 - ETW, interop events (CLR)
 ms.assetid: eb6eac2e-45f4-4923-a32c-38f203da66df
-ms.openlocfilehash: 9dac9bc70cd070eb3e94969ce47ce24325a6f89d
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 8e92a1492d0295fb71473843752cb4c6184d3604
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904250"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242191"
 ---
 # <a name="interop-etw-events"></a>Zdarzenia ETW międzyoperacyjności
+
 Zdarzenia międzyoperacyjności przechwytują informacje o generacji i buforowaniu klasy języka pośredniego firmy Microsoft (MSIL).  
 
 ## <a name="ilstubgenerated-event"></a>Zdarzenie ILStubGenerated
@@ -22,7 +23,7 @@ W poniższej tabeli przedstawiono słowo kluczowe i poziom. (Aby uzyskać więce
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`InteropKeyword`(0x2000)|Informacyjny (4)|  
+|`InteropKeyword` (0x2000)|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -52,7 +53,7 @@ W poniższej tabeli przedstawiono słowo kluczowe i poziom.
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`InteropKeyword`(0x2000)|Informacyjny (4)|  
+|`InteropKeyword` (0x2000)|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   

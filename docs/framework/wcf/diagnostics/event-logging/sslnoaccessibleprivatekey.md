@@ -2,24 +2,26 @@
 title: SslNoAccessiblePrivateKey
 ms.date: 03/30/2017
 ms.assetid: 90cc793e-7ac8-45b2-81b8-2976e2485734
-ms.openlocfilehash: ee4c7d73d55add300b912bbdff6ffb819349cb9f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 817b15cecbb306e008ada4c5e8dcf62382796fe0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797548"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242503"
 ---
 # <a name="sslnoaccessibleprivatekey"></a>SslNoAccessiblePrivateKey
-#C1 155  
+
+Identyfikator: 155  
   
- Obrażeń Błąd  
+ Ważność: błąd  
   
- Kategorii TransactionBridge  
+ Kategoria: TransactionBridge  
   
 ## <a name="description"></a>Opis  
+
  To zdarzenie oznacza, że certyfikat tożsamości z określoną nazwą podmiotu i odciskiem palca nie ma dostępnego klucza prywatnego. Zdarzenie Wyświetla nazwę procesu i identyfikator procesu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Rejestrowanie zdarzeń](index.md)
 - [Informacje ogólne o zdarzeniach](events-general-reference.md)

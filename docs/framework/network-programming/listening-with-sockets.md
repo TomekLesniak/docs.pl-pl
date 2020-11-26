@@ -16,14 +16,15 @@ helpviewer_keywords:
 - listening with sockets
 - Internet, sockets
 ms.assetid: 40e426cc-13db-4371-95eb-f7388bd23ebf
-ms.openlocfilehash: 0b6de67772bae397373e307ec02ce69a71b0542e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 4249948579384ec0159ba61072126944596c8f56
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502317"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96242217"
 ---
 # <a name="listening-with-sockets"></a>Nasłuchiwanie przy użyciu gniazd
+
 Odbiornik lub gniazda serwera otwierają port w sieci, a następnie czekają, aż klient nawiąże połączenie z tym portem. Chociaż istnieją inne rodziny i protokoły adresów sieciowych, w tym przykładzie pokazano, jak utworzyć usługę zdalną dla sieci TCP/IP.  
   
  Unikatowy adres usługi TCP/IP jest definiowany przez połączenie adresu IP hosta z numerem portu usługi, aby utworzyć punkt końcowy usługi. <xref:System.Net.Dns>Klasa zawiera metody, które zwracają informacje o adresach sieciowych obsługiwanych przez lokalne urządzenie sieciowe. Jeśli lokalne urządzenie sieciowe ma więcej niż jeden adres sieciowy lub jeśli system lokalny obsługuje więcej niż jedno urządzenie sieciowe, Klasa **DNS** zwraca informacje dotyczące wszystkich adresów sieciowych, a aplikacja musi wybrać właściwy adres dla usługi. Organizacja Internet Assigned Numbers Authority (IANA) definiuje numery portów dla wspólnych usług; Aby uzyskać więcej informacji, zobacz [rejestr numerów portów i protokołów transportu](https://www.iana.org/assignments/port-numbers). Inne usługi mogą mieć zarejestrowane numery portów z zakresu od 1 024 do 65 535.  
@@ -60,7 +61,7 @@ listener.Listen(100);
   
  Metoda **Listen** przyjmuje jeden parametr, który określa, ile oczekujących połączeń z **gniazdem** jest dozwolonych przed zwróceniem błędu serwera do klienta nawiązującego połączenie. W takim przypadku do 100 klientów są umieszczane w kolejce połączeń przed zwróceniem odpowiedzi serwera na numer klienta 101.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Używanie synchronicznego gniazda serwera](using-a-synchronous-server-socket.md)
 - [Używanie asynchronicznego gniazda serwera](using-an-asynchronous-server-socket.md)
