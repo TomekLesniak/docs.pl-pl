@@ -1,20 +1,21 @@
 ---
-title: 'Instrukcje: importowanie niestandardowych informacji w formacie WSDL'
+title: 'Instrukcje: importowanie niestandardowych plików WSDL'
 ms.date: 03/30/2017
 ms.assetid: ddc3718d-ce60-44f6-92af-a5c67477dd99
-ms.openlocfilehash: 614842f2d77d967e0a6d4841e5e5e4fcc8805580
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5aa554394743314a91afd6a5cdf86f9974e81f8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185546"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96249088"
 ---
-# <a name="how-to-import-custom-wsdl"></a>Instrukcje: importowanie niestandardowych informacji w formacie WSDL
-W tym temacie opisano sposób importowania niestandardowego WSDL. Aby obsłużyć niestandardowe WSDL, należy zaimplementować <xref:System.ServiceModel.Description.IWsdlImportExtension> interfejs.  
+# <a name="how-to-import-custom-wsdl"></a>Instrukcje: importowanie niestandardowych plików WSDL
+
+W tym temacie opisano sposób importowania niestandardowego WSDL. Aby obsłużyć niestandardowy WSDL, należy zaimplementować <xref:System.ServiceModel.Description.IWsdlImportExtension> interfejs.  
   
-### <a name="to-import-custom-wsdl"></a>Aby zaimportować niestandardowe WSDL  
+### <a name="to-import-custom-wsdl"></a>Aby zaimportować niestandardowy element WSDL  
   
-1. Zaimplementuj <xref:System.ServiceModel.Description.IWsdlImportExtension>plik . Zaimplementuj <xref:System.ServiceModel.Description.IWsdlImportExtension.BeforeImport%28System.Web.Services.Description.ServiceDescriptionCollection%2CSystem.Xml.Schema.XmlSchemaSet%2CSystem.Collections.Generic.ICollection%7BSystem.Xml.XmlElement%7D%29> metodę modyfikowania metadanych przed zaimportowaniem. Zaimplementuj <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportEndpoint%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> metody modyfikowania <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> kontraktów i punktów końcowych zaimportowanych z metadanych. Aby uzyskać dostęp do importowanego kontraktu lub punktu<xref:System.ServiceModel.Description.WsdlContractConversionContext> <xref:System.ServiceModel.Description.WsdlEndpointConversionContext>końcowego, użyj odpowiedniego obiektu kontekstowego ( lub ):  
+1. Implementacja <xref:System.ServiceModel.Description.IWsdlImportExtension> . Zaimplementuj <xref:System.ServiceModel.Description.IWsdlImportExtension.BeforeImport%28System.Web.Services.Description.ServiceDescriptionCollection%2CSystem.Xml.Schema.XmlSchemaSet%2CSystem.Collections.Generic.ICollection%7BSystem.Xml.XmlElement%7D%29> metodę, aby zmodyfikować metadane przed zaimportowaniem. Zaimplementuj <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportEndpoint%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> metody i, <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> Aby zmodyfikować kontrakty i punkty końcowe zaimportowane z metadanych. Aby uzyskać dostęp do zaimportowanego kontraktu lub punktu końcowego, użyj odpowiedniego obiektu kontekstu ( <xref:System.ServiceModel.Description.WsdlContractConversionContext> lub <xref:System.ServiceModel.Description.WsdlEndpointConversionContext> ):  
   
     ```csharp
     public class WsdlDocumentationImporter : IWsdlImportExtension
@@ -52,7 +53,7 @@ W tym temacie opisano sposób importowania niestandardowego WSDL. Aby obsłuży�
     }
     ```
   
-2. Skonfiguruj aplikację kliencką do używania niestandardowego importera WSDL. Należy zauważyć, że w przypadku korzystania z programu Svcutil.exe należy dodać tę konfigurację do pliku konfiguracyjnego programu Svcutil.exe (Svcutil.exe.config):  
+2. Skonfiguruj aplikację kliencką tak, aby korzystała z niestandardowego importera WSDL. Należy pamiętać, że w przypadku korzystania z Svcutil.exe należy dodać tę konfigurację do pliku konfiguracji dla Svcutil.exe (Svcutil.exe.config):  
   
     ```xml  
     <system.serviceModel>  
@@ -71,7 +72,7 @@ W tym temacie opisano sposób importowania niestandardowego WSDL. Aby obsłuży�
         </system.serviceModel>  
     ```  
   
-3. Utwórz <xref:System.ServiceModel.Description.WsdlImporter> nowe wystąpienie <xref:System.ServiceModel.Description.MetadataSet> (przechodząc w wystąpieniu, które zawiera dokumenty WSDL, które chcesz zaimportować) i zadzwoń: <xref:System.ServiceModel.Description.WsdlImporter.ImportAllContracts%2A>  
+3. Utwórz nowe <xref:System.ServiceModel.Description.WsdlImporter> wystąpienie (przekazanie <xref:System.ServiceModel.Description.MetadataSet> wystąpienia zawierającego dokumenty WSDL, które chcesz zaimportować) i Wywołaj <xref:System.ServiceModel.Description.WsdlImporter.ImportAllContracts%2A> :  
   
     ```csharp
     WsdlImporter importer = new WsdlImporter(metaDocs);

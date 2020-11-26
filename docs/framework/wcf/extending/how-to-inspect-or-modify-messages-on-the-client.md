@@ -1,27 +1,29 @@
 ---
-title: 'Instrukcje: Inspekcja lub modyfikowanie komunikatów na kliencie'
+title: 'Instrukcje: sprawdzanie lub modyfikowanie komunikatów na kliencie'
 description: Dowiedz się, jak sprawdzać lub modyfikować komunikaty przychodzące lub wychodzące przez klienta lub usługę WCF przez implementację odpowiedniego interfejsu.
 ms.date: 03/30/2017
 ms.assetid: b8256335-f1c2-419f-b862-9f220ccad84c
-ms.openlocfilehash: 6f6a3d20d7f3a9fb79de5cd3e29096e270d0f188
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 1f8b75001754739b48d10ee577ae26a175e72860
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247510"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96249049"
 ---
-# <a name="how-to-inspect-or-modify-messages-on-the-client"></a>Instrukcje: Inspekcja lub modyfikowanie komunikatów na kliencie
+# <a name="how-to-inspect-or-modify-messages-on-the-client"></a>Instrukcje: sprawdzanie lub modyfikowanie komunikatów na kliencie
+
 Możesz sprawdzić lub zmodyfikować przychodzące lub wychodzące komunikaty przez klienta WCF, implementując <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> i wstawiając go do środowiska uruchomieniowego klienta. Aby uzyskać więcej informacji, zobacz [Rozszerzanie klientów](extending-clients.md). Równoważna funkcja w usłudze to <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType> . Aby uzyskać pełny przykład kodu, zobacz przykład [inspektorów komunikatów](../samples/message-inspectors.md) .  
   
 ### <a name="to-inspect-or-modify-messages"></a>Aby sprawdzić lub zmodyfikować komunikaty  
   
 1. Zaimplementuj interfejs <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType>.  
   
-2. Zaimplementuj <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> lub w <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> zależności od zakresu, w którym ma zostać wstawiony Inspektor komunikatów klienta. <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType>umożliwia zmianę zachowania na poziomie punktu końcowego. <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType>umożliwia zmianę zachowania na poziomie kontraktu.  
+2. Zaimplementuj <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> lub w <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> zależności od zakresu, w którym ma zostać wstawiony Inspektor komunikatów klienta. <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> umożliwia zmianę zachowania na poziomie punktu końcowego. <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> umożliwia zmianę zachowania na poziomie kontraktu.  
   
 3. Wstaw zachowanie przed wywołaniem <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> lub <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> metodą w <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> . Aby uzyskać szczegółowe informacje, zobacz [Konfigurowanie i rozszerzanie środowiska uruchomieniowego za pomocą zachowań](configuring-and-extending-the-runtime-with-behaviors.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu pokazuje, w kolejności:  
   
 - Implementacja inspektora klienta.  

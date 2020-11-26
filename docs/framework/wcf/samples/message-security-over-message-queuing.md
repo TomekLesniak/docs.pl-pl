@@ -2,15 +2,16 @@
 title: Zabezpieczenia komunikatów w ramach kolejkowania komunikatów
 ms.date: 03/30/2017
 ms.assetid: 329aea9c-fa80-45c0-b2b9-e37fd7b85b38
-ms.openlocfilehash: 1733cea17c82f85751b810f4a6033caefd828e29
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1b262a5f4343e07aecf5eebda32cc995f86ec77b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558644"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248945"
 ---
 # <a name="message-security-over-message-queuing"></a>Zabezpieczenia komunikatów w ramach kolejkowania komunikatów
-Ten przykład pokazuje, jak zaimplementować aplikację, która korzysta z protokołu WS-Security z uwierzytelnianiem za pomocą certyfikatu X. 509v3 na potrzeby klienta i wymaga uwierzytelniania serwera przy użyciu certyfikatu X. 509v3 serwera za pośrednictwem usługi MSMQ. Zabezpieczenia komunikatów są czasami bardziej pożądane, aby zapewnić, że komunikaty w magazynie usługi MSMQ pozostają zaszyfrowane, a aplikacja może wykonać własne uwierzytelnianie wiadomości.
+
+Ten przykład pokazuje, jak zaimplementować aplikację, która używa WS-Security z uwierzytelnianiem za pomocą certyfikatu X. 509v3 i wymaga uwierzytelniania serwera przy użyciu certyfikatu X. 509v3 serwera za pośrednictwem usługi MSMQ. Zabezpieczenia komunikatów są czasami bardziej pożądane, aby zapewnić, że komunikaty w magazynie usługi MSMQ pozostają zaszyfrowane, a aplikacja może wykonać własne uwierzytelnianie wiadomości.
 
  Ten przykład jest oparty na przykładowym [wiązaniem usługi MSMQ](transacted-msmq-binding.md) . Komunikaty są szyfrowane i podpisane.
 
@@ -24,7 +25,7 @@ Ten przykład pokazuje, jak zaimplementować aplikację, która korzysta z proto
 
     2. Rozwiń kartę **funkcje** .
 
-    3. Kliknij prawym przyciskiem myszy pozycję **prywatne kolejki komunikatów**, a następnie wybierz kolejno pozycje **Nowa**i **prywatne**.
+    3. Kliknij prawym przyciskiem myszy pozycję **prywatne kolejki komunikatów**, a następnie wybierz kolejno pozycje **Nowa** i **prywatne**.
 
     4. Zaznacz pole **transakcyjne** .
 
@@ -83,9 +84,11 @@ Ten przykład pokazuje, jak zaimplementować aplikację, która korzysta z proto
     > Ten skrypt nie powoduje usunięcia certyfikatów usługi na kliencie podczas uruchamiania tego przykładu między komputerami. W przypadku uruchamiania przykładów programu Windows Communication Foundation (WCF), które używają certyfikatów między komputerami, należy wyczyścić certyfikaty usługi, które zostały zainstalowane w magazynie CurrentUser-TrustedPeople. Aby to zrobić, użyj następującego polecenia: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` na przykład: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` .
 
 ## <a name="requirements"></a>Wymagania
+
  Ten przykład wymaga, aby usługa MSMQ była zainstalowana i uruchomiona.
 
 ## <a name="demonstrates"></a>Demonstracje
+
  Klient szyfruje komunikat przy użyciu klucza publicznego usługi i podpisuje komunikat przy użyciu własnego certyfikatu. Usługa odczytująca komunikat z kolejki uwierzytelnia certyfikat klienta przy użyciu certyfikatu w magazynie zaufanych osób. Następnie odszyfrowuje komunikat i wysyła komunikat do operacji usługi.
 
  Ponieważ komunikat Windows Communication Foundation (WCF) jest przenoszony jako ładunek w treści wiadomości MSMQ, treść pozostaje zaszyfrowana w magazynie usługi MSMQ. Dzięki temu wiadomość jest zabezpieczona przed niechcianym ujawnieniem wiadomości. Należy zauważyć, że sama usługa MSMQ nie ma informacji o tym, czy komunikat, który jest na nim przenoszony, jest szyfrowany.
@@ -93,6 +96,7 @@ Ten przykład pokazuje, jak zaimplementować aplikację, która korzysta z proto
  W przykładzie pokazano, jak uwierzytelnianie obustronne na poziomie komunikatu może być używane z usługą MSMQ. Certyfikaty są wymieniane poza pasmem. Jest to zawsze przypadek z aplikacją umieszczoną w kolejce, ponieważ usługa i klient nie muszą działać w tym samym czasie.
 
 ## <a name="description"></a>Opis
+
  Przykładowy klient i kod usługi są takie same jak [transakcyjne powiązanie MSMQ](transacted-msmq-binding.md) przykładowe z jedną różnicą. Umowa operacji ma adnotację z poziomem ochrony, która sugeruje, że komunikat musi być podpisany i szyfrowany.
 
 ```csharp

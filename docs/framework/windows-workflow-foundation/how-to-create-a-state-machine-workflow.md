@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3ec60e8f-fad4-493e-a426-e7962d7aee8c
-ms.openlocfilehash: 8a9342c07c15d65df0310c0cb35b4b2c6f2ba686
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 9df911779422ca2710686963a040a95258db8891
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419658"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248922"
 ---
 # <a name="how-to-create-a-state-machine-workflow"></a>Instrukcje: Tworzenie przepływu pracy automatu stanów
+
 Przepływy pracy mogą być zbudowane z wbudowanych działań, a także z działań niestandardowych. W tym temacie przedstawiono procedurę tworzenia przepływu pracy korzystającego z obu wbudowanych działań, takich jak <xref:System.Activities.Statements.StateMachine> działanie, oraz działań niestandardowych z poprzednich instrukcji [: Create a Activity](how-to-create-an-activity.md) . Przepływ pracy modeluje grę z liczbą odgadnąć.  
   
 > [!NOTE]
@@ -65,7 +66,7 @@ Przepływy pracy mogą być zbudowane z wbudowanych działań, a także z dział
   
 ### <a name="to-add-the-workflow-activities"></a>Aby dodać działania przepływu pracy  
   
-1. Kliknij pozycję **State1** , aby ją zaznaczyć. W **oknie właściwości**Zmień wartość parametru **DisplayName** na `Initialize Target` .  
+1. Kliknij pozycję **State1** , aby ją zaznaczyć. W **oknie właściwości** Zmień wartość parametru **DisplayName** na `Initialize Target` .  
   
     > [!TIP]
     > Jeśli **okno właściwości** nie jest wyświetlane, wybierz pozycję **okno właściwości** w menu **Widok** .  
@@ -111,7 +112,7 @@ Przepływy pracy mogą być zbudowane z wbudowanych działań, a także z dział
   
 12. Przeciągnij działanie **FinalState** z sekcji **stan automatu** **przybornika**, umieść kursor nad **odpowiednim stanem** , a następnie upuść je na Trójkąt, który pojawia się po prawej stronie stanu " **wprowadź zgadywanie** ", aby można było utworzyć przejście między **klawiszami Enter** i **FinalState**.  
   
-13. Domyślną nazwą przejścia jest **T2**. Kliknij przejście w Projektancie przepływu pracy, aby je zaznaczyć, a następnie ustaw jego **Właściwość DisplayName** na wartość **odgadnięcia poprawne**. Następnie kliknij i wybierz **FinalState**i przeciągnij go w prawo, aby zapewnić, że istnieje pomieszczenie dla nazwy pełnego przejścia, które ma być wyświetlane bez nakładania jednego z tych dwóch stanów. Ułatwi to ukończenie pozostałych kroków samouczka.  
+13. Domyślną nazwą przejścia jest **T2**. Kliknij przejście w Projektancie przepływu pracy, aby je zaznaczyć, a następnie ustaw jego **Właściwość DisplayName** na wartość **odgadnięcia poprawne**. Następnie kliknij i wybierz **FinalState** i przeciągnij go w prawo, aby zapewnić, że istnieje pomieszczenie dla nazwy pełnego przejścia, które ma być wyświetlane bez nakładania jednego z tych dwóch stanów. Ułatwi to ukończenie pozostałych kroków samouczka.  
   
 14. Kliknij dwukrotnie nowo zmieniono nazwę **odgadnięcia odpowiednie** przejście w Projektancie przepływu pracy, aby je rozwinąć.  
   
@@ -188,7 +189,7 @@ Przepływy pracy mogą być zbudowane z wbudowanych działań, a także z dział
   
      Aby uzyskać instrukcje dotyczące sposobu uruchamiania przepływu pracy, zobacz następny temat, [jak: uruchamianie przepływu pracy](how-to-run-a-workflow.md). Jeśli wykonano już krok [jak: uruchamianie przepływu pracy](how-to-run-a-workflow.md) z innym stylem przepływu pracy i chcesz uruchomić go przy użyciu przepływu pracy automatu Stanów z tego kroku, przejdź do tematu, [Aby skompilować i uruchomić aplikację](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) w temacie [jak uruchomić przepływ pracy](how-to-run-a-workflow.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Activities.Statements.Flowchart>
 - <xref:System.Activities.Statements.FlowDecision>
