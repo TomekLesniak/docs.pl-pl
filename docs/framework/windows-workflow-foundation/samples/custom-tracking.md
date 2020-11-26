@@ -2,17 +2,19 @@
 title: Niestandardowe śledzenie
 ms.date: 03/30/2017
 ms.assetid: 2d191c9f-62f4-4c63-92dd-cda917fcf254
-ms.openlocfilehash: 87f72359e16b4268d77148ec16a626c2bac5751c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3d125c59196cb2a7d33961e0f271aab8c5663a50
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557035"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96234574"
 ---
 # <a name="custom-tracking"></a>Niestandardowe śledzenie
+
 Ten przykład pokazuje, jak utworzyć niestandardowego uczestnika śledzenia i zapisać zawartość śledzenia danych w konsoli programu. Ponadto przykład pokazuje, jak emitować <xref:System.Activities.Tracking.CustomTrackingRecord> obiekty wypełnione danymi zdefiniowanymi przez użytkownika. Uczestnik śledzenia oparty na konsoli filtruje <xref:System.Activities.Tracking.TrackingRecord> obiekty emitowane przez przepływ pracy przy użyciu obiektu profil śledzenia utworzonego w kodzie.
 
 ## <a name="sample-details"></a>Przykładowe szczegóły
+
  Windows Workflow Foundation (WF) oferuje infrastrukturę śledzenia do śledzenia wykonywania wystąpienia przepływu pracy. Środowisko uruchomieniowe śledzenia implementuje wystąpienie przepływu pracy, aby emitować zdarzenia związane z cyklem życia przepływu pracy, zdarzenia z działań przepływu pracy i niestandardowe zdarzenia śledzenia. W poniższej tabeli przedstawiono podstawowe składniki infrastruktury śledzenia.
 
 |Składnik|Opis|
@@ -33,6 +35,7 @@ Ten przykład pokazuje, jak utworzyć niestandardowego uczestnika śledzenia i z
  Uczestnik śledzenia subskrybuje podzestaw wyemitowanych <xref:System.Activities.Tracking.TrackingRecord> obiektów przy użyciu profilów śledzenia. Profil śledzenia zawiera kwerendy śledzenia, które umożliwiają subskrybowanie określonego typu rekordu śledzenia. Profile śledzenia można określić w kodzie lub w konfiguracji.
 
 ### <a name="custom-tracking-participant"></a>Uczestnik śledzenia niestandardowego
+
  Interfejs API uczestnika śledzenia umożliwia rozszerzenie środowiska uruchomieniowego śledzenia przy użyciu dostarczonego przez użytkownika uczestnika śledzenia, który może zawierać logikę niestandardową do obsługi <xref:System.Activities.Tracking.TrackingRecord> obiektów emitowanych przez środowisko uruchomieniowe przepływu pracy.
 
  Aby napisać uczestnika śledzenia, należy wdrożyć użytkownika <xref:System.Activities.Tracking.TrackingParticipant> . <xref:System.Activities.Tracking.TrackingParticipant.Track%2A>Metoda musi być implementowana przez uczestnika niestandardowego. Ta metoda jest wywoływana, gdy element <xref:System.Activities.Tracking.TrackingRecord> jest emitowany przez środowisko uruchomieniowe przepływu pracy.
@@ -108,6 +111,7 @@ invoker.Extensions.Add(customTrackingParticipant);
 ```
 
 ### <a name="emitting-custom-tracking-records"></a>Emitowanie niestandardowych rekordów śledzenia
+
  Ten przykład ilustruje również możliwość emisji <xref:System.Activities.Tracking.CustomTrackingRecord> obiektów z niestandardowego działania przepływu pracy:
 
 - <xref:System.Activities.Tracking.CustomTrackingRecord>Obiekty są tworzone i wypełniane danymi zdefiniowanymi przez użytkownika, które są wymagane do emisji z rekordem.
@@ -148,6 +152,6 @@ context.Track(customRecord);
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\CustomTracking`  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykłady monitorowania oprogramowania AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

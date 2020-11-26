@@ -12,14 +12,15 @@ helpviewer_keywords:
 - CodeDOM, creating classes
 - CodeDOM, graphs
 ms.assetid: 0ceb70fe-36e1-49bb-922b-e9f615c20a14
-ms.openlocfilehash: 3d7151d384402dba6fbb5da8fe54621346251f7b
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 7c2cda2bb7cbdb93c27aef91c08f7c7227da7eed
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865310"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235704"
 ---
 # <a name="how-to-create-a-class-using-codedom"></a>Porady: tworzenie klasy za pomocą modelu CodeDOM
+
 Poniższe procedury ilustrują sposób tworzenia i kompilowania wykresu CodeDOM, który generuje klasę zawierającą dwa pola, trzy właściwości, metodę, Konstruktor i punkt wejścia.  
   
 1. Utwórz aplikację konsolową, która będzie używać kodu CodeDOM do generowania kodu źródłowego dla klasy.  
@@ -94,6 +95,7 @@ Poniższe procedury ilustrują sposób tworzenia i kompilowania wykresu CodeDOM,
 2. Kompiluj i wykonaj klasę generującą.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu pokazuje kod z poprzednich kroków.  
   
  [!code-csharp[CodeDOM Class Sample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDOM Class Sample/CS/program.cs#1)]
@@ -117,7 +119,7 @@ The object:
   
 - Ten przykład kodu wymaga `FullTrust` pomyślnego wykonania zestawu uprawnień.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Używanie modelu CodeDOM](using-the-codedom.md)
 - [Generowanie i kompilowanie kodu źródłowego z wykresu CodeDOM](generating-and-compiling-source-code-from-a-codedom-graph.md)

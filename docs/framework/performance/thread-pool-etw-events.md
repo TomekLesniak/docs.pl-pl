@@ -6,14 +6,15 @@ helpviewer_keywords:
 - thread pool events [.NET Framework]
 - ETW, thread pool events (CLR)
 ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
-ms.openlocfilehash: d3059cec5007c24d41a4a779939d4990f19305ca
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 8b00c20e82ee1b1efa6a8a123e66a4cfc239143b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475206"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236172"
 ---
 # <a name="thread-pool-etw-events"></a>Zdarzenia ETW puli wątków
+
 Te zdarzenia zbierają informacje o wątkach procesów roboczych i we/wy.  
   
  Istnieją dwie grupy zdarzeń puli wątków:  
@@ -23,14 +24,16 @@ Te zdarzenia zbierają informacje o wątkach procesów roboczych i we/wy.
 - [Zdarzenia puli wątków we/wy](#io-thread-events), które zawierają informacje o wątkach we/wy, które są tworzone, wycofywane lub kończone w puli wątków.  
 
 ## <a name="worker-thread-pool-events"></a>Zdarzenia puli wątków roboczych
+
  Te zdarzenia odnoszą się do puli wątków roboczych środowiska uruchomieniowego i udostępniają powiadomienia dla zdarzeń wątku (na przykład podczas tworzenia lub zatrzymywania wątku). Pula wątków roboczych używa algorytmu adaptacyjnego na potrzeby kontroli współbieżności, gdzie liczba wątków jest obliczana na podstawie zmierzonej przepływności. Zdarzenia puli wątków roboczych mogą służyć do zrozumienia, w jaki sposób aplikacja korzysta z puli wątków, a wpływ niektórych obciążeń na kontrolę współbieżności.  
   
 ### <a name="threadpoolworkerthreadstart-and-threadpoolworkerthreadstop"></a>ThreadPoolWorkerThreadStart i ThreadPoolWorkerThreadStop  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom dla tych zdarzeń. (Aby uzyskać więcej informacji, zobacz [słowa kluczowe i poziomy ETW CLR](clr-etw-keywords-and-levels.md)).  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword`0x10000|Informacyjny (4)|  
+|`ThreadingKeyword` 0x10000|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -50,14 +53,16 @@ Te zdarzenia zbierają informacje o wątkach procesów roboczych i we/wy.
 |ClrInstanceID|Win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
   
 ### <a name="threadpoolworkerthreadadjustment"></a>ThreadPoolWorkerThreadAdjustment  
+
  Te zdarzenia puli wątków zawierają informacje dotyczące interpretacji i debugowania zachowania algorytmu wstrzykiwania wątku (kontrola współbieżności). Informacje są używane wewnętrznie przez pulę wątków roboczych.  
   
 #### <a name="threadpoolworkerthreadadjustmentsample"></a>ThreadPoolWorkerThreadAdjustmentSample  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword`0x10000|Informacyjny (4)|  
+|`ThreadingKeyword` 0x10000|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -73,11 +78,12 @@ Te zdarzenia zbierają informacje o wątkach procesów roboczych i we/wy.
 |ClrInstanceID|Win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
   
 #### <a name="threadpoolworkerthreadadjustmentadjustment"></a>ThreadPoolWorkerThreadAdjustmentAdjustment  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword`0x10000|Informacyjny (4)|  
+|`ThreadingKeyword` 0x10000|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -95,11 +101,12 @@ Te zdarzenia zbierają informacje o wątkach procesów roboczych i we/wy.
 |ClrInstanceID|Win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
   
 #### <a name="threadpoolworkerthreadadjustmentstats"></a>ThreadPoolWorkerThreadAdjustmentStats  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword`0x10000|Informacyjny (4)|  
+|`ThreadingKeyword` 0x10000|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -124,14 +131,16 @@ Te zdarzenia zbierają informacje o wątkach procesów roboczych i we/wy.
 |ClrInstanceID|Win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
 
 ## <a name="io-thread-events"></a>Zdarzenia wątku we/wy  
+
  Te zdarzenia puli wątków występują dla wątków w puli wątków we/wy (porty zakończenia), która jest asynchroniczna.  
   
 ### <a name="iothreadcreate_v1"></a>IOThreadCreate_V1  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword`0x10000|Informacyjny (4)|  
+|`ThreadingKeyword` 0x10000|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -148,11 +157,12 @@ Te zdarzenia zbierają informacje o wątkach procesów roboczych i we/wy.
 |ClrInstanceID|Win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
   
 ### <a name="iothreadretire_v1"></a>IOThreadRetire_V1  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword`0x10000|Informacyjny (4)|  
+|`ThreadingKeyword` 0x10000|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -169,11 +179,12 @@ Te zdarzenia zbierają informacje o wątkach procesów roboczych i we/wy.
 |ClrInstanceID|Win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
   
 ### <a name="iothreadunretire_v1"></a>IOThreadUnretire_V1  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword`0x10000|Informacyjny (4)|  
+|`ThreadingKeyword` 0x10000|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -190,11 +201,12 @@ Te zdarzenia zbierają informacje o wątkach procesów roboczych i we/wy.
 |ClrInstanceID|Win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
   
 ### <a name="iothreadterminate"></a>IOThreadTerminate  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword`0x10000|Informacyjny (4)|  
+|`ThreadingKeyword` 0x10000|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -210,6 +222,6 @@ Te zdarzenia zbierają informacje o wątkach procesów roboczych i we/wy.
 |NumRetired|win: UInt64|Liczba wycofanych wątków we/wy.|  
 |ClrInstanceID|Win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zdarzenia ETW CLR](clr-etw-events.md)

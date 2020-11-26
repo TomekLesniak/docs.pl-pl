@@ -2,27 +2,30 @@
 title: 5007 — DCResolverResolve
 ms.date: 03/30/2017
 ms.assetid: 156d92a9-1de5-4ba8-a7a3-e8bf487c5523
-ms.openlocfilehash: ed49fd308e5316f18dd0d7c9c89d2df758670a23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 391ddcd028b59e37cacfdb84d12aca2226ec751c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61957321"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235587"
 ---
 # <a name="5007---dcresolverresolve"></a>5007 — DCResolverResolve
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|5007|  
-|słowa kluczowe|Serializacja|  
+|ID (Identyfikator)|5007|  
+|Słowa kluczowe|Serializacja|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane podczas rozpoznawania nazw schematu DataContract uruchamiania rozpoznawania.  
+
+ To zdarzenie jest emitowane, gdy program rozpoznawania DataContract rozpocznie Rozwiązywanie problemów.  
   
-## <a name="message"></a>Komunikat  
- Rozpoznawanie %1 start rozpoznawania nazw schematu DataContract.  
+## <a name="message"></a>Wiadomość  
+
+ Uruchamianie programu rozpoznawania obiektów DataContract (%1).  
   
 ## <a name="details"></a>Szczegóły

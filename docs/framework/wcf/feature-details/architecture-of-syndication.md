@@ -2,14 +2,15 @@
 title: Architektura syndykacji
 ms.date: 03/30/2017
 ms.assetid: ed4ca86e-e3d8-4acb-87aa-1921fbc353be
-ms.openlocfilehash: 718778993a953ae819a2bee5a4a050a81d3a4b84
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bc8c9cfbdc4f5d8ee01dfcf5098cfbc74afc2467
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587524"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96234807"
 ---
 # <a name="architecture-of-syndication"></a>Architektura syndykacji
+
 Interfejs API zespalania został zaprojektowany z myślą o udostępnianiu modelu programowania neutralnego za pomocą formatu, który umożliwia zapisywanie w sieci zespolonej zawartości w różnych formatach. Abstrakcyjny model danych składa się z następujących klas:  
   
 - <xref:System.ServiceModel.Syndication.SyndicationCategory>  
@@ -36,6 +37,7 @@ Interfejs API zespalania został zaprojektowany z myślą o udostępnianiu model
 > Specyfikacja Atom 1,0 umożliwia określenie ułamków sekund w którymkolwiek z jego konstrukcji daty. Podczas serializacji i deserializacji implementacji programu WCF ignoruje ułamki sekund.  
   
 ## <a name="object-model"></a>Model obiektów  
+
  Model obiektów dla zespalania składa się z grup klas w poniższych tabelach.  
   
  Klasy formatowania:  

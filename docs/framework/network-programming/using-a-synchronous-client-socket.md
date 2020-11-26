@@ -18,14 +18,15 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: 945d00c6-7202-466c-9df9-140b84156d43
-ms.openlocfilehash: ef682af33c10cf06ffc398c22e4a7dc1adf8290e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: f198f283f2acfdcfbafed25baecb02a64e9d1e26
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502070"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236315"
 ---
 # <a name="using-a-synchronous-client-socket"></a>Używanie synchronicznego gniazda klienta
+
 Synchroniczne gniazdo klienta zawiesza program aplikacji podczas kończenia operacji sieciowej. Gniazda synchroniczne nie są odpowiednie dla aplikacji, które intensywnie wykorzystują sieć do ich obsługi, ale mogą zapewnić prosty dostęp do usług sieciowych dla innych aplikacji.  
   
  Aby wysłać dane, Przekaż tablicę bajtową do jednej z <xref:System.Net.Sockets.Socket> metod wysyłania danych klasy ( <xref:System.Net.Sockets.Socket.Send%2A> i <xref:System.Net.Sockets.Socket.SendTo%2A> ). Poniższy przykład koduje ciąg w buforze tablicy bajtów przy użyciu <xref:System.Text.Encoding.ASCII%2A?displayProperty=nameWithType> właściwości, a następnie przesyła bufor do urządzenia sieciowego przy użyciu metody **send** . Metoda **send** zwraca liczbę bajtów wysłanych do urządzenia sieciowego.  
@@ -71,7 +72,7 @@ s.Shutdown(SocketShutdown.Both);
 s.Close();  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Używanie asynchronicznego gniazda klienta](using-an-asynchronous-client-socket.md)
 - [Nasłuchiwanie przy użyciu gniazd](listening-with-sockets.md)

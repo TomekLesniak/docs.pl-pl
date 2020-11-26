@@ -2,24 +2,26 @@
 title: InvariantAssertionFailed
 ms.date: 03/30/2017
 ms.assetid: 96c8a97a-3c04-4c35-9302-a6648ccfe5b6
-ms.openlocfilehash: b171b27fd9cf564389347c4411f15c5c413a7236
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 90091964a77a57a66dd33d62bf70034719af35ea
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797775"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236146"
 ---
 # <a name="invariantassertionfailed"></a>InvariantAssertionFailed
-#C1 106  
+
+Identyfikator: 106  
   
- Obrażeń Błąd  
+ Ważność: błąd  
   
- Kategorii Śledzenie  
+ Kategoria: śledzenie  
   
 ## <a name="description"></a>Opis  
+
  To zdarzenie wskazuje, że niezmienna potwierdzenie ma wartość false. Zdarzenie wyświetla komunikat, nazwę procesu i identyfikator procesu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Rejestrowanie zdarzeń](index.md)
 - [Informacje ogólne o zdarzeniach](events-general-reference.md)

@@ -10,14 +10,15 @@ helpviewer_keywords:
 - profile [.NET Framework Client Profile]
 - .NET Framework Client Profile
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
-ms.openlocfilehash: e199dccd30b8648177b3da5cc173ea3a7f9a60d8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 92ade654b20c5971482464ce1cb9619c434679b6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555292"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236393"
 ---
 # <a name="net-framework-client-profile"></a>.NET Framework Client Profile
+
 Profil klienta platformy .NET to podzestaw .NET Framework, który został dostarczony z .NET Framework 4 i wcześniejszych wersji i został zoptymalizowany pod kątem aplikacji klienckich. .NET Framework jest platformą programistyczną dla systemu Windows, Windows Phone i Microsoft Azure i udostępnia zarządzane środowisko wykonywania aplikacji oraz bibliotekę klas .NET Framework. W .NET Framework 4 i starszych wersjach przedstawiono dwie opcje wdrożenia: pełny .NET Framework i profil klienta. Program Client Profile umożliwiał szybsze wdrażanie i tworzenie mniejszych pakietów instalacyjnych aplikacji, niż pełny program .NET Framework.  
   
  Począwszy od .NET Framework 4,5, profil klienta został wycofany i dostępny jest tylko pełny pakiet redystrybucyjny. Optymalizacje zapewniane przez .NET Framework 4,5, takie jak mniejszy rozmiar pobierania i szybsze wdrażanie, nie wymagały oddzielnego pakietu wdrożeniowego. Pojedynczy pakiet redystrybucyjny usprawnia proces instalacji i upraszcza opcje wdrażania aplikacji.  
@@ -26,7 +27,7 @@ Profil klienta platformy .NET to podzestaw .NET Framework, który został dostar
   
  Po zainstalowaniu .NET Framework 4,5 profil klienta .NET Framework 4 zostanie zaktualizowany do pełnej wersji .NET Framework. Informacje o instalowaniu .NET Framework 4,5 znajdują się w temacie [Install the .NET Framework for Developers](../install/guide-for-developers.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [.NET Framework profilu klienta (.NET Framework 4)](/previous-versions/dotnet/netframework-4.0/cc656912(v=vs.100))
 - [Wielowersyjność kodu Visual Studio ― Omówienie](/visualstudio/ide/visual-studio-multi-targeting-overview)

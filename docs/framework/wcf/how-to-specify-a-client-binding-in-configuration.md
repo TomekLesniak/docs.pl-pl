@@ -1,16 +1,17 @@
 ---
-title: 'Instrukcje: Określanie wiązań klienta w konfiguracji'
+title: 'Instrukcje: Określanie powiązań klienta w konfiguracji'
 description: Dowiedz się, jak określić powiązanie dla klienta WCF deklaratywnie w pliku konfiguracji. Klient uzyskuje dostęp do usługi w tym przykładzie.
 ms.date: 03/30/2017
 ms.assetid: 4a7c79aa-50ee-4991-891e-adc0599323a7
-ms.openlocfilehash: 28778b6ae853199c5d7943f329bb087760f4bb11
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: e8a552211b28c1323b2afd595c5b060db6b2824a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244494"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236510"
 ---
-# <a name="how-to-specify-a-client-binding-in-configuration"></a>Instrukcje: Określanie wiązań klienta w konfiguracji
+# <a name="how-to-specify-a-client-binding-in-configuration"></a>Instrukcje: Określanie powiązań klienta w konfiguracji
+
 W tym przykładzie aplikacja konsoli klienta zostanie utworzona w celu korzystania z usługi kalkulatora, a powiązanie dla tego klienta jest określone w konfiguracji w sposób deklaratywny. Klient uzyskuje dostęp do `CalculatorService` , który implementuje `ICalculator` interfejs, a zarówno usługa, jak i klient używają <xref:System.ServiceModel.BasicHttpBinding> klasy.  
   
  W opisanej procedurze przyjęto założenie, że usługa kalkulatora jest uruchomiona. Aby uzyskać informacje na temat sposobu tworzenia usługi, zobacz [How to: Określanie powiązania usługi w konfiguracji](how-to-specify-a-service-binding-in-configuration.md). Używa także narzędzia do [przesyłania metadanych modelu ServiceModel (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) , które zapewnia Windows Communication Foundation (WCF), aby automatycznie generować składniki klienta. Narzędzie generuje kod klienta i konfigurację w celu uzyskania dostępu do usługi.  
@@ -53,4 +54,4 @@ W tym przykładzie aplikacja konsoli klienta zostanie utworzona w celu korzystan
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Konfigurowanie usług i klientów za pomocą powiązań](using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](using-bindings-to-configure-services-and-clients.md)

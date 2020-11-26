@@ -3,17 +3,19 @@ title: Uproszczona konfiguracja
 description: Zapoznaj się z uproszczoną konfiguracją usług WCF. .NET Framework 4.6.1 zapewnia sposób zmniejszenia rozmiaru i złożoności konfiguracji usługi.
 ms.date: 03/30/2017
 ms.assetid: dcbe1f84-437c-495f-9324-2bc09fd79ea9
-ms.openlocfilehash: defaf536d5a5b9f1479271c0976b43e9b1eb5bc4
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 248fe05e5854dbbec1a66b046c4def3d11d30327
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246041"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235951"
 ---
 # <a name="simplified-configuration"></a>Uproszczona konfiguracja
-Konfigurowanie usług Windows Communication Foundation (WCF) może być złożonym zadaniem. Istnieje wiele różnych opcji i nie zawsze można łatwo określić, które ustawienia są wymagane. Pliki konfiguracji zwiększają elastyczność usług WCF, ale również są źródłem wielu trudno znaleźć problemy. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]rozwiązuje te problemy i zapewnia sposób zmniejszenia rozmiaru i złożoności konfiguracji usługi.  
+
+Konfigurowanie usług Windows Communication Foundation (WCF) może być złożonym zadaniem. Istnieje wiele różnych opcji i nie zawsze można łatwo określić, które ustawienia są wymagane. Pliki konfiguracji zwiększają elastyczność usług WCF, ale również są źródłem wielu trudno znaleźć problemy. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] rozwiązuje te problemy i zapewnia sposób zmniejszenia rozmiaru i złożoności konfiguracji usługi.  
   
 ## <a name="simplified-configuration"></a>Uproszczona konfiguracja  
+
  W obszarze pliki konfiguracji usługi WCF sekcja <`system.serviceModel`> zawiera `service` element> <dla każdej hostowanej usługi. Element <`service`> zawiera kolekcję <`endpoint` elementów>, które określają punkty końcowe uwidocznione dla każdej usługi i opcjonalnie zestaw zachowań usługi. <`endpoint` elementy> określają adres, powiązanie i kontrakt udostępniane przez punkt końcowy oraz opcjonalnie powiązania konfiguracji i punktu końcowego. Sekcja <`system.serviceModel`> zawiera również `behaviors` element> <, który umożliwia określenie zachowań usługi lub punktów końcowych. W poniższym przykładzie przedstawiono `system.serviceModel` sekcję> <w pliku konfiguracji.  
   
 ```xml  
@@ -47,7 +49,7 @@ Konfigurowanie usług Windows Communication Foundation (WCF) może być złożon
 </system.serviceModel>  
 ```  
   
- [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]ułatwia skonfigurowanie usługi WCF poprzez usunięcie wymagania dotyczącego `service` elementu> <. Jeśli nie dodasz `service` sekcji> <ani nie dodasz żadnych punktów końcowych w `service` sekcji <> i Twoja usługa nie będzie programowo definiować żadnych punktów końcowych, zestaw domyślnych punktów końcowych zostanie automatycznie dodany do usługi, po jednej dla każdego adresu podstawowego usługi i dla każdego kontraktu zaimplementowanego przez usługę. W każdym z tych punktów końcowych adres punktu końcowego odpowiada adresowi bazowemu, powiązanie jest określane przez schemat adresów bazowych, a kontrakt jest zaimplementowany przez usługę. Jeśli nie musisz określać żadnych punktów końcowych lub zachowań usług lub wprowadzić żadnych zmian w ustawieniach powiązania, nie musisz określać w ogóle pliku konfiguracji usługi. Jeśli usługa implementuje dwie kontrakty, a host włącza transporty HTTP i TCP hosta usługi, program tworzy cztery domyślne punkty końcowe, po jednym dla każdego kontraktu przy użyciu poszczególnych transportów. Aby utworzyć domyślne punkty końcowe, Host usługi musi wiedzieć, jakie powiązania mają być używane. Te ustawienia są określone w sekcji <`protocolMappings`> w `system.serviceModel` sekcji <>. `protocolMappings`Sekcja> <zawiera listę schematów protokołu transportowego mapowanych na typy powiązań. Host usługi korzysta z adresów bazowych, które są do niego przesyłane, aby określić, które powiązanie ma być używane. Poniższy przykład używa `protocolMappings` elementu> <.  
+ [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] ułatwia skonfigurowanie usługi WCF poprzez usunięcie wymagania dotyczącego `service` elementu> <. Jeśli nie dodasz `service` sekcji> <ani nie dodasz żadnych punktów końcowych w `service` sekcji <> i Twoja usługa nie będzie programowo definiować żadnych punktów końcowych, zestaw domyślnych punktów końcowych zostanie automatycznie dodany do usługi, po jednej dla każdego adresu podstawowego usługi i dla każdego kontraktu zaimplementowanego przez usługę. W każdym z tych punktów końcowych adres punktu końcowego odpowiada adresowi bazowemu, powiązanie jest określane przez schemat adresów bazowych, a kontrakt jest zaimplementowany przez usługę. Jeśli nie musisz określać żadnych punktów końcowych lub zachowań usług lub wprowadzić żadnych zmian w ustawieniach powiązania, nie musisz określać w ogóle pliku konfiguracji usługi. Jeśli usługa implementuje dwie kontrakty, a host włącza transporty HTTP i TCP hosta usługi, program tworzy cztery domyślne punkty końcowe, po jednym dla każdego kontraktu przy użyciu poszczególnych transportów. Aby utworzyć domyślne punkty końcowe, Host usługi musi wiedzieć, jakie powiązania mają być używane. Te ustawienia są określone w sekcji <`protocolMappings`> w `system.serviceModel` sekcji <>. `protocolMappings`Sekcja> <zawiera listę schematów protokołu transportowego mapowanych na typy powiązań. Host usługi korzysta z adresów bazowych, które są do niego przesyłane, aby określić, które powiązanie ma być używane. Poniższy przykład używa `protocolMappings` elementu> <.  
   
 > [!WARNING]
 > Zmiana domyślnych elementów konfiguracji, takich jak powiązania lub zachowania, może mieć wpływ na usługi zdefiniowane na niższych poziomach w hierarchii konfiguracji, ponieważ mogą one korzystać z tych domyślnych powiązań i zachowań. Z tego względu, inne zmiany powiązań domyślnych i zachowań muszą mieć świadomość, że te zmiany mogą wpływać na inne usługi w hierarchii.  

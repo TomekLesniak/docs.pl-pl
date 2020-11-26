@@ -2,14 +2,15 @@
 title: WindowsStreamSecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: 4b0508c5-669c-4fe3-9225-8a10f8ee3be4
-ms.openlocfilehash: 556df52011ced0bcad9ac2bf15b9570ce2ac7d14
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cbffbc8dcf2463a09371b7ae126d6f51afc349d4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991331"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96234782"
 ---
 # <a name="windowsstreamsecuritybindingelement"></a>WindowsStreamSecurityBindingElement
+
 WindowsStreamSecurityBindingElement  
   
 ## <a name="syntax"></a>Składnia  
@@ -22,24 +23,27 @@ class WindowsStreamSecurityBindingElement : BindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa WindowsStreamSecurityBindingElement nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa WindowsStreamSecurityBindingElement ma następującą właściwość:  
   
-### <a name="protectionlevel"></a>protectionLevel  
+### <a name="protectionlevel"></a>ProtectionLevel  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Poziom ochrony strumieniem TCP.  
+ Poziom ochrony strumienia TCP.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>

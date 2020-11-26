@@ -2,14 +2,15 @@
 title: Przykład współużytkowania portów Net.TCP
 ms.date: 03/30/2017
 ms.assetid: 03da5959-0574-4e91-8a53-05854b6c55dc
-ms.openlocfilehash: 6c196380951d0da912cd937e3ebc38a03f80489c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: fa62734ed6a4a016011c9f29b3665dae05a000c6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84584314"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235380"
 ---
 # <a name="nettcp-port-sharing-sample"></a>Przykład współużytkowania portów Net.TCP
+
 Protokół TCP/IP używa liczby 16-bitowej zwanej portem do rozróżniania połączeń z wieloma aplikacjami sieciowymi uruchomionymi na tym samym komputerze. Jeśli aplikacja nasłuchuje na porcie, cały ruch TCP dla tego portu przechodzi do tej aplikacji. Inne aplikacje nie mogą nasłuchiwać tego portu w tym samym czasie.  
   
 > [!IMPORTANT]
@@ -34,6 +35,7 @@ Unhandled Exception: System.ServiceModel.CommunicationException: The TransportMa
  Udostępnianie portów jest włączone na serwerze przez ustawienie <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> właściwości <xref:System.ServiceModel.NetTcpBinding> powiązania lub <xref:System.ServiceModel.Channels.TcpTransportBindingElement> elementu powiązania. Klient nie musi wiedzieć, jak Udostępnianie portów zostało skonfigurowane do korzystania z niego na serwerze.  
   
 ## <a name="enabling-port-sharing"></a>Włączanie udostępniania portów  
+
  Poniższy kod demonstruje włączenie udostępniania portów na serwerze. Uruchamia wystąpienie `ICalculator` usługi na stałym porcie ze losową ścieżką URI. Mimo że dwie usługi mogą współużytkować ten sam port, ich ogólne adresy punktów końcowych nadal muszą być unikatowe, aby usługa udostępniania portów NetTcp mogła kierować komunikaty do odpowiedniej aplikacji.  
 
 ```csharp
@@ -56,6 +58,7 @@ Unhandled Exception: System.ServiceModel.AddressAlreadyInUseException: There is 
 ```  
   
 ## <a name="running-the-sample"></a>Uruchamianie przykładu  
+
  Możesz użyć klienta testowego, aby sprawdzić, czy komunikaty są prawidłowo kierowane do usług udostępniających port.  
 
 ```csharp
@@ -102,14 +105,14 @@ class client
 }  
 ```
 
- Każde wystąpienie usługi drukuje swój unikatowy numer i adres. Na przykład po uruchomieniu programu Service. exe może zostać wyświetlony następujący tekst.  
+ Każde wystąpienie usługi drukuje swój unikatowy numer i adres. Na przykład po uruchomieniu service.exe może zostać wyświetlony następujący tekst.  
   
 ```console  
 Service #4381 listening on net.tcp://localhost:9000/calculator/4381.  
 Press <ENTER> to terminate service.  
 ```  
   
- Wprowadź numer usługi widoczny w tym miejscu podczas uruchamiania programu Client. exe.  
+ Wprowadź numer usługi widoczny w tym miejscu podczas uruchamiania client.exe.  
   
 ```console  
 Enter the service number to test: 4381  

@@ -2,14 +2,15 @@
 title: TransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: 54ecfbee-53c0-410c-a7fa-a98f2e40c545
-ms.openlocfilehash: bdb5ca7400a41dd724c2ad7fc76695a82874ded6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 45bfcd069391156bc85cc4c26f2b172770197a9e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61641622"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96234846"
 ---
 # <a name="transportbindingelement"></a>TransportBindingElement
+
 TransportBindingElement  
   
 ## <a name="syntax"></a>Składnia  
@@ -25,33 +26,39 @@ class TransportBindingElement : BindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
- Klasa elementu TransportBindingElement nie definiuje żadnych metod.  
+
+ Klasa TransportBindingElement nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
- Klasa elementu TransportBindingElement ma następujące właściwości:  
+
+ Klasa TransportBindingElement ma następujące właściwości:  
   
-### <a name="manualaddressing"></a>opcję manualAddressing  
+### <a name="manualaddressing"></a>Opcję ManualAddressing  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość logiczna określająca, czy użytkownik chce, aby przejąć kontrolę nad adresowaniem komunikatów.  
+ Wartość logiczna określająca, czy użytkownik chce przejąć kontrolę nad adresowaniem komunikatów.  
   
 ### <a name="maxbufferpoolsize"></a>MaxBufferPoolSize  
+
  Typ danych: sint64  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalny rozmiar puli buforów dla wiązania.  
+ Maksymalny rozmiar puli buforów dla powiązania.  
   
 ### <a name="maxreceivedmessagesize"></a>MaxReceivedMessageSize  
+
  Typ danych: sint64  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalny rozmiar komunikatu, który jest przetwarzany przez to wiązanie.  
+ Maksymalny rozmiar wiadomości przetwarzanej przez to powiązanie.  
   
 ### <a name="scheme"></a>Schemat  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -60,10 +67,10 @@ class TransportBindingElement : BindingElement
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.TransportBindingElement>

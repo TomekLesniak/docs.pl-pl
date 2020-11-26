@@ -2,22 +2,24 @@
 title: Drzewo elementów modelu programowania
 ms.date: 03/30/2017
 ms.assetid: 0229efde-19ac-4bdc-a187-c6227a7bd1a5
-ms.openlocfilehash: f14b140fdac95f3763cc5625841a725793876fa4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 059bb3edcfe41f52e2244ff6f5bf3fc78a4262bb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79142696"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235808"
 ---
 # <a name="programming-model-item-tree"></a>Drzewo elementów modelu programowania
-W tym przykładzie pokazano, jak poruszać się po <xref:System.Activities.Presentation.Model.ModelItem> drzewie przy użyciu deklaratywnego powiązania danych z widoku drzewa programu Windows Presentation Foundation (WPF).
+
+Ten przykład pokazuje, jak nawigować po <xref:System.Activities.Presentation.Model.ModelItem> drzewie przy użyciu deklaratywnego powiązania danych z widoku drzewa Windows Presentation Foundation (WPF).
 
 ## <a name="sample-details"></a>Przykładowe szczegóły
- Drzewo <xref:System.Activities.Presentation.Model.ModelItem> jest abstrakcja, który jest używany przez infrastrukturę Projektanta przepływu pracy systemu Windows, aby udostępnić dane dotyczące wystąpienia źródłowego są edytowane. Poniższa ilustracja przedstawia różne warstwy infrastruktury w projektancie przepływu pracy.
 
- ![Diagram przedstawiający architekturę projektanta przepływu pracy.](./media/programming-model-item-tree/workflow-designer-architecture.jpg)
+ <xref:System.Activities.Presentation.Model.ModelItem>Drzewo to Abstrakcja, która jest używana przez infrastrukturę Projektant przepływu pracy systemu Windows, aby uwidaczniać dane dotyczące edytowanego wystąpienia. Poniższa ilustracja przedstawia różne warstwy infrastruktury w ramach Projektant przepływu pracy.
 
- A <xref:System.Activities.Presentation.Model.ModelItem> składa się ze wskaźnika do wartości podstawowej, a także kolekcji <xref:System.Activities.Presentation.Model.ModelProperty> obiektów. Obiekt <xref:System.Activities.Presentation.Model.ModelProperty> z kolei składa się z danych, takich jak nazwa i typ właściwości, a następnie <xref:System.Activities.Presentation.Model.ModelItem>wskaźnik do wartości, która z kolei jest inny . Konwerter wartości służy do <xref:System.Activities.Presentation.Model.ModelItem>manipulowania niektórymi <xref:System.Activities.Presentation.Model.ModelProperty> s zwróconych z a, aby były wyświetlane poprawnie w widoku drzewa. Następnie w przykładzie pokazano, jak <xref:System.Activities.Presentation.Model.ModelItem> należy bezwzględnie zaprogramować względem drzewa przy użyciu składni imperatywnej, jak pokazano w poniższym przykładzie.
+ ![Diagram przedstawiający architekturę Projektant przepływu pracy.](./media/programming-model-item-tree/workflow-designer-architecture.jpg)
+
+ A <xref:System.Activities.Presentation.Model.ModelItem> składa się ze wskaźnika do podstawowej wartości, a także do kolekcji <xref:System.Activities.Presentation.Model.ModelProperty> obiektów. <xref:System.Activities.Presentation.Model.ModelProperty>Obiekt z kolei składa się z danych, takich jak nazwa i typ właściwości, a następnie wskaźnik do wartości, która z kolei jest inna <xref:System.Activities.Presentation.Model.ModelItem> . Konwerter wartości służy do manipulowania niektórymi z elementów <xref:System.Activities.Presentation.Model.ModelItem> s zwróconych z elementu, <xref:System.Activities.Presentation.Model.ModelProperty> aby były prawidłowo wyświetlane w widoku drzewa. W przykładzie pokazano, jak bezwzględnie programowo <xref:System.Activities.Presentation.Model.ModelItem> korzystać z drzewa przy użyciu bezwzględnej składni, jak pokazano w poniższym przykładzie.
 
 ```csharp
 ModelItem mi = wd.Context.Services.GetService<ModelService>().Root;
@@ -27,24 +29,24 @@ ModelItem justAdded = mp.Collection.Last();
 justAdded.Properties["DisplayName"].SetValue("new name");
 ```
 
-#### <a name="to-use-this-sample"></a>Aby użyć tej próbki
+#### <a name="to-use-this-sample"></a>Aby użyć tego przykładu
 
-1. Otwórz rozwiązanie ProgrammingModelItemTree.sln w programie Visual Studio 2010.
+1. Otwórz rozwiązanie ProgrammingModelItemTree. sln w programie Visual Studio 2010.
 
-2. Skompiluj rozwiązanie, wybierając **rozwiązanie kompilacji** z menu **Kompilacja.**
+2. Skompiluj rozwiązanie, wybierając opcję **Kompiluj rozwiązanie** w menu **kompilacja** .
 
-3. Naciśnij klawisz F5, aby uruchomić aplikację. Następnie wyświetlany jest formularz WPF.
+3. Naciśnij klawisz F5, aby uruchomić aplikację. Zostanie wyświetlony formularz WPF.
 
-4. Kliknij przycisk **Załaduj WF,** aby załadować <xref:System.Activities.Presentation.Model.ModelItem> i powiązać go z widokiem drzewa.
+4. Kliknij przycisk **Załaduj WF** , aby załadować <xref:System.Activities.Presentation.Model.ModelItem> i powiązać go z widokiem drzewa.
 
-5. Kliknięcie przycisku **Zmień drzewo elementów modelu** wykonuje poprzedni kod, aby dodać element do drzewa i ustawić właściwość.
+5. Kliknięcie przycisku **Zmień model elementu modelu** wykonuje poprzedni kod, aby dodać element do drzewa i ustawić właściwość.
 
 > [!IMPORTANT]
-> Próbki mogą być już zainstalowane na komputerze. Przed kontynuowaniem sprawdź następujący (domyślny) katalog.  
+> Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> Jeśli ten katalog nie istnieje, przejdź do [Windows Communication Foundation (WCF) i Windows Workflow Foundation (WF) Przykłady dla platformy .NET Framework 4,](https://www.microsoft.com/download/details.aspx?id=21459) aby pobrać wszystkie Windows Communication Foundation (WCF) i [!INCLUDE[wf1](../../../../includes/wf1-md.md)] przykłady. Ten przykład znajduje się w następującym katalogu.  
+> Jeśli ten katalog nie istnieje, przejdź do [przykładów Windows Communication Foundation (WCF) i Windows Workflow Foundation (WF) dla .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) , aby pobrać wszystkie Windows Communication Foundation (WCF) i [!INCLUDE[wf1](../../../../includes/wf1-md.md)] przykłady. Ten przykład znajduje się w następującym katalogu.  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\ProgrammingModelItemTree`  
   

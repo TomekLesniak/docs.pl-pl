@@ -2,30 +2,32 @@
 title: Lista działań
 ms.date: 03/30/2017
 ms.assetid: 5540e185-ce8e-4db3-83b0-2b9f5bf71829
-ms.openlocfilehash: 8d43cc878d54efbd4908f92c3405bef2c7956f94
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d28ae2e4750c718c35105d090aff8d085025b9d6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602170"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236094"
 ---
 # <a name="activity-list"></a>Lista działań
+
 W tym temacie wymieniono wszystkie działania zdefiniowane przez Windows Communication Foundation (WCF).  
   
 > [!NOTE]
-> Możesz również programowo definiować działania, aby grupować ślady użytkowników. Aby uzyskać więcej informacji, zobacz [emitowanie śladów kodu użytkownika](emitting-user-code-traces.md).  
+> Możesz również programowo definiować działania, aby grupować ślady użytkowników. Aby uzyskać więcej informacji, zobacz [emitowanie User-Code śladów](emitting-user-code-traces.md).  
   
 ## <a name="servicemodel-activities"></a>Działania ServiceModel  
+
  W poniższej tabeli wymieniono wszystkie działania dotyczące głównych scenariuszy użycia.  
   
 |Etykieta|Nazwa działania|Typ działania|Opis|  
 |-----------|-------------------|-------------------|-----------------|  
 |A, M|Działanie otoczenia|Nie dotyczy (to nie jest kontrolowane przez ServiceModel)|Działanie, którego identyfikator jest ustawiony w protokole TLS przed dowolnymi wywołaniami kodu ServiceModel (po stronie klienta lub po stronie serwera).<br /><br /> Przykład: działanie, gdzie Open jest wywoływane na kliencie WCF lub ServiceHost. Open jest wywoływana.|  
 |B|Konstrukcja<br /><br /> Endpoint. ContractType: ' [Type] '.|Konstrukcja||  
-|C|Otwarcie<br /><br /> [ClientBase&#124;ChannelFactory]. ContractType: ' [Type] '.|Otwarcie||  
+|C|Otwórz<br /><br /> [ClientBase&#124;ChannelFactory]. ContractType: ' [Type] '.|Otwórz||  
 |I|Zamknij [ClientBase&#124;ChannelFactory]. ContractType: ' [Type] '.|Zamknij||  
 |M|Konstruowanie ServiceHost. ServiceType: "[Type]".|Konstrukcja||  
-|N|Otwórz element ServiceHost. ServiceType: "[Type]".|Otwarcie||  
+|N|Otwórz element ServiceHost. ServiceType: "[Type]".|Otwórz||  
 |Z|Zamknij element ServiceHost. ServiceType: "[Type]".|Zamknij||  
 |O|Nasłuchiwanie na "[address]".|ListenAt|To i następne działanie są specyficzne dla transportu. Działanie ListenAt reprezentuje zawartość, która jest mapowana na adres, w którym odbiornik kanału nasłuchuje. W przypadku usługi MSMQ jest to kolejka, ponieważ kolejka mapuje na jeden adres. To działanie nasłuchuje połączeń przychodzących w przypadku transportów ukierunkowanych na połączenia w przypadku komunikatów usługi MSMQ w przypadku usługi MSMQ. To działanie jest tworzone podczas działania ServiceHost. Open () i zawiera ślady związane z tworzeniem i usuwaniem odbiornika, a także transferem do wszystkich działań ReceiveBytes.|  
 |P|Odbieraj bajty na połączeniu "[address]". Odbierz komunikat usługi MSMQ.|ReceiveBytes|W tym działaniu dane, które ostatecznie otrzymają komunikat WCF, są przetwarzane. Przychodzące bajty są oczekiwane w przypadku transportu zorientowanego na połączenia lub http. W przypadku protokołu TCP/nazwanego potoku okres istnienia tego działania to okres istnienia połączenia, który jest tworzony podczas tworzenia połączenia. W przypadku protokołu HTTP jest okres istnienia żądania komunikatu i jest tworzony podczas wysyłania wiadomości. To działanie zawiera ślady związane z tworzeniem i usuwaniem połączenia, jeśli ma zastosowanie, a także transferem do wszystkich działań przetwarzania komunikatów (obiektów).<br /><br /> W przypadku usługi MSMQ jest to działanie, w którym zostanie pobrany komunikat usługi MSMQ.|  
@@ -34,6 +36,7 @@ W tym temacie wymieniono wszystkie działania zdefiniowane przez Windows Communi
 |T|Wykonanie operacji "[IContract. Operation]".|ExecuteUserCode|Po stronie usługi wykonaj kod użytkownika. To działanie zapewnia granicę odróżnić kodu ServiceHost z kodu dostarczonego przez użytkownika.|  
   
 ## <a name="security-activities"></a>Działania dotyczące zabezpieczeń  
+
  W poniższej tabeli wymieniono wszystkie działania związane z zabezpieczeniami.  
   
 |Nazwa działania|Typ działania|Opis|  
@@ -46,9 +49,10 @@ W tym temacie wymieniono wszystkie działania zdefiniowane przez Windows Communi
 |Nazwa działania|Typ działania|Opis|  
 |-------------------|-------------------|-----------------|  
 |Utwórz wystąpienie modelu COM+|TransferToCOMPlus|1 wystąpienie działania dla każdego wywołania modelu COM+ z kodu WCF|  
-|Wykonaj model COM+\<operation>|TransferToCOMPlus|1 wystąpienie działania dla każdego wywołania modelu COM+ z kodu WCF|  
+|Wykonaj model COM+ \<operation>|TransferToCOMPlus|1 wystąpienie działania dla każdego wywołania modelu COM+ z kodu WCF|  
   
 ## <a name="wmi-activities"></a>Działania usługi WMI  
+
  W poniższej tabeli wymieniono wszystkie działania związane z usługą WMI.  
   
 |Nazwa działania|Typ działania|Opis|  

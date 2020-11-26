@@ -9,32 +9,39 @@ helpviewer_keywords:
 - claims [WCF]
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
-ms.openlocfilehash: 0d5687f8ac5021c008254f0f5cc453eda5e538c7
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: c1e17d5a8d9374acdc420a6af65c797f09db352e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245131"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96234859"
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Zarządzanie oświadczeniami i autoryzacją za pomocą modelu tożsamości
+
 Autoryzacja to proces określania, które jednostki mają uprawnienia do zmiany, wyświetlania lub dostępu do zasobu komputera. Na przykład w firmie tylko kierownicy mogą uzyskać dostęp do plików ich pracowników. Windows Communication Foundation (WCF) obsługuje dwa mechanizmy przetwarzania autoryzacji. Pierwszy mechanizm pozwala kontrolować autoryzację przy użyciu istniejących konstrukcji środowiska uruchomieniowego języka wspólnego (CLR). Drugi jest modelem opartym na oświadczeniach znanym jako *model tożsamości*. Usługa WCF używa modelu tożsamości do tworzenia oświadczeń z komunikatów przychodzących; Klasy modelu tożsamości można rozszerzyć, aby obsługiwać nowe typy roszczeń dla niestandardowych schematów autoryzacji. W tym temacie przedstawiono przegląd najważniejszych koncepcji programistycznych dotyczących modelu tożsamości, a także listę najważniejszych klas używanych przez funkcję.  
   
 ## <a name="identity-model-scenarios"></a>Scenariusze dotyczące modelu tożsamości  
+
  Poniższe scenariusze przedstawiają użycie modelu tożsamości.  
   
 ### <a name="scenario-1-supporting-identity-role-and-group-claims"></a>Scenariusz 1: Obsługa tożsamości, ról i oświadczeń grup  
+
  Użytkownicy wysyłają komunikaty do usługi sieci Web. Wymagania dotyczące kontroli dostępu usługi sieci Web używają tożsamości, ról lub grup. Nadawca wiadomości jest mapowany na zestaw ról lub grup. Informacje o roli lub grupie są używane do przeprowadzania kontroli dostępu.  
   
 ### <a name="scenario-2-supporting-rich-claims"></a>Scenariusz 2: obsługa rozbudowanych oświadczeń  
+
  Użytkownicy wysyłają komunikaty do usługi sieci Web. Wymagania dotyczące kontroli dostępu usługi sieci Web wymagają bardziej zaawansowanego modelu niż tożsamości, ról lub grup. Usługa sieci Web określa, czy dany użytkownik ma dostęp do konkretnego chronionego zasobu przy użyciu rozbudowanego modelu opartego na oświadczeniach. Na przykład jeden użytkownik może mieć możliwość odczytywania określonych informacji, takich jak informacje o wynagrodzeniu, do których inni użytkownicy nie mają dostępu.  
   
 ### <a name="scenario-3-mapping-disparate-claims"></a>Scenariusz 3. Mapowanie różnych oświadczeń  
+
  Użytkownik wysyła komunikat do usługi sieci Web. Użytkownik może określić swoje poświadczenia na wiele różnych sposobów: certyfikat X. 509, token nazwy użytkownika lub token Kerberos. Usługa sieci Web jest wymagana do sprawdzenia kontroli dostępu w taki sam sposób, niezależnie od typu poświadczeń użytkownika. Jeśli dodatkowe typy poświadczeń są obsługiwane w miarę upływu czasu, system powinien odpowiednio się rozwijać.  
   
 ### <a name="scenario-4-determining-access-to-multiple-resources"></a>Scenariusz 4: Określanie dostępu do wielu zasobów  
+
  Usługa sieci Web próbuje uzyskać dostęp do wielu zasobów. Usługa określa, które chronione zasoby, do których dany użytkownik ma dostęp, porównując oświadczenia powiązane z użytkownikiem z oświadczeniami wymaganymi w celu uzyskania dostępu do zasobu.  
   
 ## <a name="identity-model-terms"></a>Warunki modelu tożsamości  
+
  Poniższa lista definiuje kluczowe terminy używane do opisywania koncepcji modelu tożsamości.  
   
  Zasady autoryzacji  
@@ -74,6 +81,7 @@ Autoryzacja to proces określania, które jednostki mają uprawnienia do zmiany,
  Coś, w którym zażądano prawa.  
   
 ## <a name="claims"></a>Oświadczenia  
+
  Model tożsamości to system oparty na oświadczeniach. Oświadczenia opisują możliwości związane z niektórymi jednostkami w systemie, często użytkownika tego systemu. Zestaw oświadczeń skojarzonych z daną jednostką może być uważany za klucz. Określone oświadczenia definiują kształt tego klucza, podobnie jak klucz fizyczny używany do otwierania blokady w drzwiach. Oświadczenia są używane w celu uzyskania dostępu do zasobów. Dostęp do danego chronionego zasobu jest określany przez porównanie oświadczeń wymaganych do uzyskania dostępu do tego zasobu z oświadczeniami skojarzonymi z jednostką próbującą uzyskać dostęp.  
   
  Element Claim jest wyrażeniem po prawej stronie względem określonej wartości. Prawo może wyglądać podobnie jak "read", "Write" lub "Execute". Wartością może być baza danych, plik, Skrzynka pocztowa lub właściwość. Oświadczenia mają również typ oświadczenia. Kombinacja typu "typ" i "Right" zapewnia mechanizm określania możliwości w odniesieniu do wartości. Na przykład, zgłoszenie typu "plik" z prawej strony "Odczyt" przez wartość "Biography.doc" wskazuje, że jednostka, z którą jest skojarzone takie zastrzeżenie, ma dostęp do odczytu do Biography.doc pliku. Zgłoszenie typu "name" z prawej strony "PossessProperty" na wartość "Martin" wskazuje, że jednostka, z którą jest skojarzone takie zgłoszenie, posiada właściwość Name o wartości "Martin".  
@@ -81,12 +89,15 @@ Autoryzacja to proces określania, które jednostki mają uprawnienia do zmiany,
  Chociaż różne typy i prawa są zdefiniowane jako część modelu tożsamości, system jest rozszerzalny, co pozwala różnym systemom, które są tworzone w oparciu o infrastrukturę modelu tożsamości, w celu zdefiniowania dodatkowych typów i praw dostępu zgodnie z potrzebami.  
   
 ### <a name="identity-claims"></a>Oświadczenia tożsamości  
+
  Jedną z nich jest prawo tożsamość. Oświadczenia, które posiadały to prawo, składają instrukcję dotyczącą tożsamości jednostki. Na przykład oświadczenie typu "główna nazwa użytkownika" (UPN) o wartości " someone@example.com " i po prawej stronie tożsamości wskazuje konkretną tożsamość w określonej domenie.  
   
 #### <a name="system-identity-claim"></a>Systemowe zgłoszenie tożsamości  
+
  Model tożsamości definiuje jedno zgłoszenie tożsamości: System. Wystąpienie tożsamości systemowej wskazuje, że jednostką jest bieżąca aplikacja lub system.  
   
 ### <a name="sets-of-claims"></a>Zestawy oświadczeń  
+
  Model oświadczeń reprezentujący tożsamość jest ważny, ponieważ oświadczenia są zawsze wystawiane przez niektóre jednostki w systemie, nawet jeśli ta jednostka jest ostatecznie pewną koncepcją "samodzielne". Oświadczenia są pogrupowane jako zbiór, a każdy zestaw ma wystawcę. Wystawcy jest tylko zestaw oświadczeń. Takie relacje cykliczne muszą ostatecznie kończyć się, a każdy zestaw roszczeń może być własnym wystawcą.  
   
  Na poniższej ilustracji przedstawiono przykład trzech zestawów oświadczeń, w których jeden zestaw oświadczeń ma, jako wystawcy, inny zestaw oświadczeń, który z kolei ma ustawione oświadczenie systemowe jako wystawca. W związku z tym zestawy oświadczeń tworzą hierarchię, która może być arbitralnie głęboka.  
@@ -100,9 +111,11 @@ Autoryzacja to proces określania, które jednostki mają uprawnienia do zmiany,
  Z wyjątkiem zestawu roszczeń, który jest jego własnym wystawcą, model tożsamości nie zapewnia żadnej obsługi zestawów roszczeń do tworzenia pętli. W związku z tym, gdy zestaw roszczeń A jest wystawiony przez zestaw roszczeń B, który jest wystawiony przez zestaw roszczeń A, może nigdy nie wystąpić. Ponadto model tożsamości nie zapewnia żadnej obsługi dla zestawów roszczeń mających wiele wystawców. Jeśli co najmniej jeden wystawca musi wydać określony zestaw oświadczeń, należy użyć wielu zestawów oświadczeń, z których każda zawiera te same oświadczenia, ale mają różne wystawcy.  
   
 ### <a name="the-origin-of-claims"></a>Pochodzenie oświadczeń  
+
  Oświadczenia mogą pochodzić z różnych źródeł. Jednym ze wspólnych źródeł oświadczeń są poświadczenia prezentowane przez użytkownika, na przykład w ramach wiadomości wysyłanej do usługi sieci Web. System weryfikuje takie oświadczenia i staje się częścią zestawu oświadczeń skojarzonych z użytkownikiem. Inne składniki systemu mogą również być źródłami oświadczeń, w tym z systemem operacyjnym, stosem sieci, środowiskiem uruchomieniowym lub aplikacją. Ponadto usługi zdalne mogą również być źródłem oświadczeń.  
   
 ### <a name="authorization-policies"></a>Zasady autoryzacji  
+
  W modelu tożsamości oświadczenia są generowane w ramach procesu oceny zasad autoryzacji. Zasady autoryzacji badają (prawdopodobnie pusty) zestaw istniejących oświadczeń i mogą zdecydować się na dodanie dodatkowych oświadczeń na podstawie już obecnych oświadczeń i dodatkowych informacji. Zapewnia to podstawę mapowania między oświadczeniami. Obecność lub brak oświadczeń w systemie ma wpływ na zachowanie zasad autoryzacji w odniesieniu do tego, czy dodaje dodatkowe oświadczenia.  
   
  Na przykład zasady autoryzacji mają dostęp do bazy danych, która zawiera DataUrodzenia różnych jednostek korzystających z systemu. Zasady autoryzacji używają tych informacji w celu dodania do kontekstu żądania "Over18". Należy zauważyć, że to Over18 nie ujawnia żadnych informacji o jednostce innej niż fakt, że jest ona w wieku powyżej 18 lat. Należy zauważyć, że interpretacja "Over18" jest zależna od poznania semantyki tego żądania. Zasady autoryzacji, które dodaliśmy do żądania, rozumieją te semantykę na pewnym poziomie. Kod, który następnie sprawdza oświadczenia wynikające z oceny zasad, również jest informowany o tych semantyki.  
@@ -111,24 +124,30 @@ Autoryzacja to proces określania, które jednostki mają uprawnienia do zmiany,
   
  W danym systemie może istnieć wiele zasad autoryzacji.  
   
-### <a name="a-key-making-machine"></a>Komputer służący do tworzenia kluczy  
+### <a name="a-key-making-machine"></a>Maszyna Key-Making  
+
  Ocenianie grupy skojarzonych zasad autoryzacji jest podobne do korzystania z komputera, który tworzy klucze. Zasady autoryzacji są oceniane i są generowane zestawy oświadczeń, tworząc kształt klucza. Po zakończeniu kształtu klucza można go użyć do próby otwarcia niektórych blokad. Kształt klucza jest przechowywany w "kontekście autoryzacji", który jest tworzony przez Menedżera autoryzacji.  
   
 ### <a name="authorization-context"></a>Kontekst autoryzacji  
+
  Menedżer autoryzacji ocenia różne zasady autoryzacji zgodnie z opisem, a wynik jest kontekstem autoryzacji (zestawem zestawów roszczeń i niektórymi skojarzonymi właściwościami). Kontekst autoryzacji można sprawdzić, aby określić, jakie oświadczenia są obecne w tym kontekście, relacje między tymi różnymi oświadczeniami (na przykład zestaw oświadczeń wystawiających) i ostatecznie porównać je z pewnymi wymaganiami, które muszą spełniać, aby uzyskać dostęp do zasobu.  
   
 ### <a name="locks"></a>Blokady  
+
  Jeśli kontekst autoryzacji (zestaw oświadczeń) jest kluczem, wymagania, które muszą zostać spełnione, aby udzielić dostępu do określonego chronionego zasobu stanowią blokadę, którą musi dopasować klucz. Model tożsamości nie prace prowadzone, w jaki sposób te wymagania są wyrażane, ale w przypadku opartego na oświadczeniach charakteru systemu, obejmują porównanie oświadczeń w kontekście autoryzacji z określonym zestawem wymaganych oświadczeń.  
   
 ### <a name="a-recap"></a>Podsumowanie  
+
  Model tożsamości jest oparty na koncepcji oświadczeń. Oświadczenia są pogrupowane w zestawy i agregowane w kontekście autoryzacji. Kontekst autoryzacji zawiera zestaw oświadczeń i jest wynikiem oceny jednej lub większej liczby zasad autoryzacji skojarzonych z Menedżerem autoryzacji. Te zestawy roszczeń można sprawdzić w celu ustalenia, czy zostały spełnione wymagania dotyczące dostępu. Na poniższej ilustracji przedstawiono relacje między tymi różnymi koncepcjami modelu tożsamości.  
   
  ![Zarządzanie oświadczeniami i autoryzacją](media/xsi-recap.gif "xsi_recap")  
   
 ## <a name="wcf-and-identity-model"></a>WCF i model tożsamości  
- Usługa WCF używa infrastruktury modelu tożsamości jako podstawy do wykonywania autoryzacji. W programie WCF <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> Klasa umożliwia określenie zasad *autoryzacji* w ramach usługi. Takie zasady autoryzacji są nazywane *zewnętrznymi zasadami autoryzacji*i mogą wykonywać przetwarzanie roszczeń na podstawie lokalnych zasad lub interakcji z usługą zdalną. Menedżer autoryzacji reprezentowany przez <xref:System.ServiceModel.ServiceAuthorizationManager> klasę ocenia zewnętrzne zasady autoryzacji wraz z zasadami autoryzacji, które rozpoznają różne typy poświadczeń (tokeny) i wypełniają informacje o nazwie *kontekstu autoryzacji* z oświadczeniami właściwymi dla wiadomości przychodzącej. Kontekst autoryzacji jest reprezentowany przez <xref:System.IdentityModel.Policy.AuthorizationContext> klasę.  
+
+ Usługa WCF używa infrastruktury modelu tożsamości jako podstawy do wykonywania autoryzacji. W programie WCF <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> Klasa umożliwia określenie zasad *autoryzacji* w ramach usługi. Takie zasady autoryzacji są nazywane *zewnętrznymi zasadami autoryzacji* i mogą wykonywać przetwarzanie roszczeń na podstawie lokalnych zasad lub interakcji z usługą zdalną. Menedżer autoryzacji reprezentowany przez <xref:System.ServiceModel.ServiceAuthorizationManager> klasę ocenia zewnętrzne zasady autoryzacji wraz z zasadami autoryzacji, które rozpoznają różne typy poświadczeń (tokeny) i wypełniają informacje o nazwie *kontekstu autoryzacji* z oświadczeniami właściwymi dla wiadomości przychodzącej. Kontekst autoryzacji jest reprezentowany przez <xref:System.IdentityModel.Policy.AuthorizationContext> klasę.  
   
 ## <a name="identity-model-programming"></a>Programowanie modelu tożsamości  
+
  W poniższej tabeli opisano model obiektów używany do programowania rozszerzeń modelu tożsamości. Wszystkie te klasy istnieją w <xref:System.IdentityModel.Policy> <xref:System.IdentityModel.Claims> przestrzeni nazw lub.  
   
 |Klasa|Opis|  
@@ -152,6 +171,7 @@ Autoryzacja to proces określania, które jednostki mają uprawnienia do zmiany,
 |<xref:System.ServiceModel.ServiceSecurityContext>|Klasa, która dostarcza kontekst zabezpieczeń, w tym kontekst autoryzacji, dla aktualnie uruchomionej (lub o uruchamianej) operacji. Wystąpienie tej klasy jest częścią <xref:System.ServiceModel.OperationContext> .|  
   
 ### <a name="significant-members"></a>Znaczące elementy członkowskie  
+
  Następujące składowe są często używane do tworzenia nowych typów roszczeń.  
   
 |Członek|Opis|  
@@ -175,9 +195,9 @@ Autoryzacja to proces określania, które jednostki mają uprawnienia do zmiany,
 - [Oświadczenia i tokeny](claims-and-tokens.md)
 - [Oświadczenia i odmawianie dostępu do zasobów](claims-and-denying-access-to-resources.md)
 - [Tworzenie oświadczenia i wartości zasobów](claim-creation-and-resource-values.md)
-- [Instrukcje: Tworzenie oświadczenia niestandardowego](../extending/how-to-create-a-custom-claim.md)
-- [Porady: Porównywanie oświadczeń](../extending/how-to-compare-claims.md)
-- [Instrukcje: Tworzenie niestandardowych zasad autoryzacji](../extending/how-to-create-a-custom-authorization-policy.md)
+- [Instrukcje: tworzenie oświadczenia niestandardowego](../extending/how-to-create-a-custom-claim.md)
+- [Instrukcje: porównywanie oświadczeń](../extending/how-to-compare-claims.md)
+- [Instrukcje: tworzenie niestandardowych zasad autoryzacji](../extending/how-to-create-a-custom-authorization-policy.md)
 - [Instrukcje: tworzenie menedżera autoryzacji niestandardowej dla usługi](../extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
 - [Przegląd zabezpieczeń](security-overview.md)
 - [Autoryzacja](authorization-in-wcf.md)
