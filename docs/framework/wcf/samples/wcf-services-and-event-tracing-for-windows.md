@@ -2,14 +2,15 @@
 title: Usługi i śledzenie zdarzeń programu WCF dla systemu Windows
 ms.date: 03/30/2017
 ms.assetid: eda4355d-0bd0-4dc9-80a2-d2c832152272
-ms.openlocfilehash: 38e26c369d17f4aa9ccb39d2ae649facffe65418
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b5fcfb34843d1168511141b4ce2b4f956559290a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552969"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247840"
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a>Usługi i śledzenie zdarzeń programu WCF dla systemu Windows
+
 Ten przykład pokazuje, jak używać śledzenia analitycznego w Windows Communication Foundation (WCF) do emisji zdarzeń w usłudze śledzenie zdarzeń systemu Windows (ETW). Ślady analityczne to zdarzenia emitowane w kluczowych punktach w stosie WCF, które umożliwiają rozwiązywanie problemów z usługami WCF w środowisku produkcyjnym.
 
  Śledzenie analityczne w usługach WCF to śledzenie, które można włączyć w środowisku produkcyjnym z minimalnym wpływem na wydajność. Te ślady są emitowane jako zdarzenia do sesji ETW.
@@ -87,6 +88,6 @@ Ten przykład pokazuje, jak używać śledzenia analitycznego w Windows Communic
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTracing`  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykłady monitorowania oprogramowania AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

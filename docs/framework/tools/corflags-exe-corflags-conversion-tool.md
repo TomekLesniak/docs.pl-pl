@@ -7,14 +7,15 @@ helpviewer_keywords:
 - CorFlags.exe
 - portable executable files, CorFlags section
 ms.assetid: ef900f8f-71ca-4dde-9b8c-95ddb0d7d89c
-ms.openlocfilehash: da5efadd63cc03f6f6e4eecf3115865ca3643b39
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 3f9f2a71a7a33de13264ce60fa7ff6ea5832aace
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87167223"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247190"
 ---
 # <a name="corflagsexe-corflags-conversion-tool"></a>CorFlags.exe (Narzędzie konwersji CorFlags)
+
 Narzędzie do konwersji CorFlags pozwala na konfigurowanie sekcji CorFlags w nagłówku przenośnego obrazu wykonywalnego.  
   
  To narzędzie jest instalowane automatycznie z programem Visual Studio. Aby uruchomić narzędzie, użyj wiersz polecenia dla deweloperów dla programu Visual Studio (lub wiersza polecenia programu Visual Studio w systemie Windows 7). Aby uzyskać więcej informacji, zobacz [wiersza polecenia](developer-command-prompt-for-vs.md).  
@@ -49,9 +50,10 @@ CorFlags.exe assembly [options]
 |`-UpgradeCLRHeader`|Uaktualnienia wersję nagłówka CLR do 2.5. **Uwaga:**  Zestawy muszą mieć wersję nagłówka CLR równą 2,5 lub większą do uruchomienia natywnie.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli nie określono opcji, narzędzie konwersji CorFlags wyświetla flagi dla określonego zestawu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Narzędzia](index.md)
 - [Aplikacje 64-bitowe](../64-bit-apps.md)

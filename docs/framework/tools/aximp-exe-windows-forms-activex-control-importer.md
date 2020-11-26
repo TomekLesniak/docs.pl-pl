@@ -9,14 +9,15 @@ helpviewer_keywords:
 - Aximp.exe
 - Windows Forms ActiveX Control Importer
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
-ms.openlocfilehash: d4fd6762195078963b43392178996a61f90feb94
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 97e5201aecc540594aa154bb5a2e93e85c925570
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87167339"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247346"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (Importer kontrolki ActiveX formularzy systemu Windows)
+
 Importer formantów ActiveX konwertuje definicje typów w bibliotece typów modelu COM dla formantu ActiveX na formant programu Windows Forms.  
   
  Windows Forms można hostować tylko kontrolki Windows Forms, czyli klasy, które pochodzą z <xref:System.Windows.Forms.Control> . Program Aximp.exe generuje klasę otoki dla formantu ActiveX, którą można obsługiwać w programie Windows Form. Dzięki temu można korzystać z metodologii obsługi w czasie projektowania i programowania, która jest stosowana do innych formantów programu Windows Forms.  
@@ -58,7 +59,7 @@ aximp [options]{file.dll | file.ocx}
   
  serwer proxy środowiska uruchomieniowego języka wspólnego dla typów COM: *ProgID*. dll  
   
- Windows Forms proxy dla formantów ActiveX (gdzie AX oznacza ActiveX): AX*ProgID*. dll  
+ Windows Forms proxy dla formantów ActiveX (gdzie AX oznacza ActiveX): AX *ProgID*. dll  
   
 > [!NOTE]
 > Jeśli nazwa składowej formantu ActiveX pasuje do nazwy zdefiniowanej w programie .NET Framework, program Aximp.exe poprzedzi nazwę składowej prefiksem „Ctl”, gdy będzie tworzyć klasę pochodną AxHost. Na przykład jeśli formant ActiveX ma składową o nazwie Layout, jej nazwa w klasie pochodnej AxHost zostanie zmieniona na CtlLayout, ponieważ zdarzenie Layout jest zdefiniowane w programie .NET Framework.  
@@ -72,13 +73,14 @@ aximp [options]{file.dll | file.ocx}
  Użycie programu Aximp.exe z biblioteką shdocvw.dll w celu utworzenia formantu platformy .NET, który będzie używany podczas tworzenia aplikacji, także może powodować problemy. W tym przypadku aplikacja będzie ładować obie wersje biblioteki shdocvw.dll (systemową i wygenerowaną) i może nadać priorytet wersji systemowej. Gdy w takiej sytuacji użytkownik podejmie próbę załadowania strony sieci Web w formancie ActiveX WebBrowser, może zostać wyświetlone okno dialogowe Otwieranie/Zapisywanie. Gdy użytkownik kliknie przycisk **Otwórz**, zostanie otwarta strona sieci Web w programie Internet Explorer. Dzieje się tak tylko na komputerach, na których jest używany program Internet Explorer w wersji 6 lub starszy. Aby zapobiec temu problemowi, należy użyć zarządzanego <xref:System.Windows.Forms.WebBrowser> formantu lub użyć programu Visual Studio do wygenerowania zarządzanych shdocvw.dll zgodnie z opisem w [instrukcje: Dodawanie odwołań do bibliotek typów](../interop/how-to-add-references-to-type-libraries.md).  
   
 ## <a name="example"></a>Przykład  
+
  Następujące polecenie generuje MediaPlayer.dll i AxMediaPlayer.dll dla kontrolki Media Player `msdxm.ocx` .  
   
 ```console
 aximp c:\systemroot\system32\msdxm.ocx  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Narzędzia](index.md)
 - [Ildasm.exe (IL dezasembler)](ildasm-exe-il-disassembler.md)

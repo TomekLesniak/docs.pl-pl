@@ -2,19 +2,21 @@
 title: Migrowanie usług sieci Web programu WSE 3.0 do usługi WCF
 ms.date: 03/30/2017
 ms.assetid: 7bc5fff7-a2b2-4dbc-86cc-ecf73653dcdc
-ms.openlocfilehash: c7feac0a44883e8019acfeaa288752fb051c667f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 84d227a46c4d17291ccf35a759018ffbe6f48b82
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554094"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248165"
 ---
 # <a name="migrating-wse-30-web-services-to-wcf"></a>Migrowanie usług sieci Web programu WSE 3.0 do usługi WCF
+
 Zalety migrowania usług sieci Web WSE 3,0 do Windows Communication Foundation (WCF) obejmują lepszą wydajność i obsługę dodatkowych transportów, dodatkowych scenariuszy zabezpieczeń i specyfikacji WS-*. Usługa sieci Web, która jest migrowana z WSE 3,0 do WCF, może mieć nawet 200% do 400% wydajności. Aby uzyskać więcej informacji na temat transportów obsługiwanych przez program WCF, zobacz [Wybieranie transportu](choosing-a-transport.md). Listę scenariuszy obsługiwanych przez funkcję WCF można znaleźć w temacie [typowe scenariusze zabezpieczeń](common-security-scenarios.md). Lista specyfikacji obsługiwanych przez usługę WCF znajduje się w temacie [Przewodnik współdziałania protokołów usług sieci Web](web-services-protocols-interoperability-guide.md).  
   
  Poniższe sekcje zawierają wskazówki dotyczące migrowania określonej funkcji usługi sieci Web WSE 3,0 do programu WCF.  
   
 ## <a name="general"></a>Ogólne  
+
  Aplikacje WSE 3,0 i WCF obejmują współdziałanie na poziomie przewodu oraz wspólny zestaw terminologii. Aplikacje WSE 3,0 i WCF są współdziałające w oparciu o zestaw specyfikacji WS-*, które są obsługiwane przez obie te funkcje. Po opracowaniu aplikacji WSE 3,0 lub WCF istnieje wspólny zestaw terminologii, takich jak nazwy zatwierdzeń zabezpieczeń gotowe w WSE i trybach uwierzytelniania.  
   
  Chociaż istnieje wiele podobnych aspektów między modelami programowania WCF i ASP.NET lub WSE 3,0, są one różne. Aby uzyskać szczegółowe informacje o modelu programowania WCF, zobacz podstawowe informacje o [cyklu programowania](../basic-programming-lifecycle.md).  
@@ -25,6 +27,7 @@ Zalety migrowania usług sieci Web WSE 3,0 do Windows Communication Foundation (
 ## <a name="security"></a>Zabezpieczenia  
   
 ### <a name="wse-30-web-services-that-are-secured-using-a-policy-file"></a>Usługi sieci Web WSE 3,0 zabezpieczone przy użyciu pliku zasad  
+
  Usługi WCF mogą korzystać z pliku konfiguracji w celu zabezpieczenia usługi i ten mechanizm jest podobny do pliku zasad WSE 3,0. W WSE 3,0 w przypadku zabezpieczania usługi sieci Web przy użyciu pliku zasad należy użyć potwierdzenia zabezpieczeń gotowe lub potwierdzenia zasad niestandardowych. Potwierdzenia zabezpieczeń gotowe są mapowane blisko trybu uwierzytelniania elementu powiązania zabezpieczeń programu WCF. Nie tylko są tryby uwierzytelniania WCF i potwierdzenia zabezpieczeń WSE 3,0 gotowe o nazwie identycznej lub podobnej, jednak zabezpieczają komunikaty przy użyciu tych samych typów poświadczeń. Na przykład `usernameForCertificate` potwierdzenie zabezpieczeń gotowe w WSE 3,0 jest mapowane na `UsernameForCertificate` tryb uwierzytelniania w programie WCF. W poniższym przykładzie kodu pokazano, jak minimalne zasady, które korzystają z `usernameForCertificate` potwierdzenia zabezpieczeń gotowe w WSE 3,0, są mapowane do `UsernameForCertificate` trybu uwierzytelniania w programie WCF w ramach niestandardowego powiązania.  
   
  **WSE 3,0**  
@@ -50,7 +53,7 @@ Zalety migrowania usług sieci Web WSE 3,0 do Windows Communication Foundation (
 </customBinding>  
 ```  
   
- Aby przeprowadzić migrację ustawień zabezpieczeń usługi sieci Web WSE 3,0, które są określone w pliku zasad do WCF, należy utworzyć niestandardowe powiązanie w pliku konfiguracji, a potwierdzenie zabezpieczeń gotowe musi być ustawione na równoważny tryb uwierzytelniania. Dodatkowo niestandardowe powiązanie musi być skonfigurowane tak, aby korzystało z protokołu WS-Addressing z sierpnia 2004, gdy klienci WSE 3,0 komunikują się z usługą. Gdy migrowana usługa WCF nie wymaga komunikacji z klientami z systemem WSE 3,0 i musi zachować tylko parzystość zabezpieczeń, należy rozważyć użycie powiązań zdefiniowanych przez system w programie WCF z odpowiednimi ustawieniami zabezpieczeń zamiast tworzenia niestandardowego powiązania.  
+ Aby przeprowadzić migrację ustawień zabezpieczeń usługi sieci Web WSE 3,0, które są określone w pliku zasad do WCF, należy utworzyć niestandardowe powiązanie w pliku konfiguracji, a potwierdzenie zabezpieczeń gotowe musi być ustawione na równoważny tryb uwierzytelniania. Dodatkowo powiązanie niestandardowe należy skonfigurować tak, aby używało specyfikacji WS-Addressing sierpnia 2004, gdy klienci z programem WSE 3,0 komunikują się z usługą. Gdy migrowana usługa WCF nie wymaga komunikacji z klientami z systemem WSE 3,0 i musi zachować tylko parzystość zabezpieczeń, należy rozważyć użycie powiązań zdefiniowanych przez system w programie WCF z odpowiednimi ustawieniami zabezpieczeń zamiast tworzenia niestandardowego powiązania.  
   
  W poniższej tabeli wymieniono mapowanie między plikiem zasad WSE 3,0 i równoważnym powiązaniem niestandardowym w programie WCF.  
   
@@ -66,9 +69,11 @@ Zalety migrowania usług sieci Web WSE 3,0 do Windows Communication Foundation (
  Aby uzyskać więcej informacji na temat tworzenia powiązań niestandardowych w programie WCF, zobacz [niestandardowe powiązania](../extending/custom-bindings.md).  
   
 ### <a name="wse-30-web-services-that-are-secured-using-application-code"></a>Usługi sieci Web WSE 3,0, które są zabezpieczone za pomocą kodu aplikacji  
+
  Niezależnie od tego, czy jest używany WSE 3,0 czy WCF, wymagania dotyczące zabezpieczeń można określić w kodzie aplikacji, a nie w konfiguracji. W WSE 3,0 jest to realizowane przez utworzenie klasy, która dziedziczy z `Policy` klasy, a następnie poprzez dodanie wymagań przez wywołanie `Add` metody. Aby uzyskać więcej informacji na temat określania wymagań dotyczących zabezpieczeń w kodzie, zobacz [How to: Secure a Web Service bez using a File Policy](/previous-versions/dotnet/netframework-2.0/aa528763(v=msdn.10)). W programie WCF, aby określić wymagania dotyczące zabezpieczeń w kodzie, Utwórz wystąpienie <xref:System.ServiceModel.Channels.BindingElementCollection> klasy i Dodaj wystąpienie elementu <xref:System.ServiceModel.Channels.SecurityBindingElement> do <xref:System.ServiceModel.Channels.BindingElementCollection> . Wymagania dotyczące potwierdzenia zabezpieczeń są ustawiane przy użyciu metod pomocnika trybu uwierzytelniania statycznego <xref:System.ServiceModel.Channels.SecurityBindingElement> klasy. Aby uzyskać więcej informacji na temat określania wymagań w zakresie zabezpieczeń w kodzie za pomocą programu WCF, zobacz [How to: Create a Custom Binding using the elementu SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md) i [How to: Create a elementu SecurityBindingElement for a Mode Authentication tryb](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
   
 ### <a name="wse-30-custom-policy-assertion"></a>Potwierdzenie zasad niestandardowych WSE 3,0  
+
  W WSE 3,0 istnieją dwa typy potwierdzeń zasad niestandardowych: te, które zabezpieczają komunikat protokołu SOAP i te, które nie zabezpieczają wiadomości protokołu SOAP. Zasady potwierdzają, że bezpieczne komunikaty protokołu SOAP pochodzą z `SecurityPolicyAssertion` klasy WSE 3,0, a koncepcyjne odpowiednik w WCF jest <xref:System.ServiceModel.Channels.SecurityBindingElement> klasą.  
   
  Ważną kwestią jest to, że potwierdzenia zabezpieczeń w WSE 3,0 gotowe są podzbiorem trybów uwierzytelniania programu WCF. Jeśli utworzono potwierdzenie zasad niestandardowych w programie WSE 3,0, może istnieć odpowiedni tryb uwierzytelniania WCF. Na przykład WSE 3,0 nie dostarcza potwierdzenia zabezpieczeń CertificateOverTransport, który jest odpowiednikiem `UsernameOverTransport` zabezpieczenia gotowe, ale używa certyfikatu X. 509 na potrzeby uwierzytelniania klientów. Jeśli zdefiniowano własne potwierdzenie zasad niestandardowych w tym scenariuszu, usługa WCF przetworzy prostą migrację. Funkcja WCF definiuje tryb uwierzytelniania w tym scenariuszu, dlatego można skorzystać z metod pomocnika trybu uwierzytelniania statycznego w celu skonfigurowania programu WCF <xref:System.ServiceModel.Channels.SecurityBindingElement> .  
@@ -78,15 +83,18 @@ Zalety migrowania usług sieci Web WSE 3,0 do Windows Communication Foundation (
  Aby przekonwertować niestandardowe potwierdzenie zasad, które nie zabezpiecza wiadomości protokołu SOAP, zobacz [filtrowanie](filtering.md) i przykład [niestandardowego interceptora komunikatów](../samples/custom-message-interceptor.md).  
   
 ### <a name="wse-30-custom-security-token"></a>Niestandardowy token zabezpieczający WSE 3,0  
+
  Model programowania WCF służący do tworzenia tokenów niestandardowych jest inny niż WSE 3,0. Aby uzyskać szczegółowe informacje na temat tworzenia tokenów niestandardowych w programie WSE, zobacz [Tworzenie niestandardowych tokenów zabezpieczających](/previous-versions/dotnet/netframework-2.0/aa529304(v=msdn.10)). Aby uzyskać szczegółowe informacje na temat tworzenia tokenu niestandardowego w programie WCF, zobacz [How to: Create a Custom Token](../extending/how-to-create-a-custom-token.md).  
   
 ### <a name="wse-30-custom-token-manager"></a>Menedżer niestandardowych tokenów WSE 3,0  
+
  Model programowania służący do tworzenia niestandardowego menedżera tokenów różni się od programu WCF niż WSE 3,0. Aby uzyskać szczegółowe informacje na temat sposobu tworzenia niestandardowego menedżera tokenów i innych składników, które są wymagane dla niestandardowego tokenu zabezpieczającego, zobacz [How to: Create a Custom Token](../extending/how-to-create-a-custom-token.md).  
   
 > [!NOTE]
 > Jeśli utworzono niestandardowy `UsernameToken` Menedżer tokenów zabezpieczających, WCF oferuje łatwiejszy mechanizm określania logiki uwierzytelniania niż tworzenie niestandardowego menedżera tokenów zabezpieczeń. Aby uzyskać więcej informacji, zobacz [How to: use Custom nazwa użytkownika i walidacja hasła](how-to-use-a-custom-user-name-and-password-validator.md).  
   
 ### <a name="wse-30-web-services-that-use-mtom-encoded-soap-messages"></a>Usługi sieci Web WSE 3,0 korzystające z zakodowanych komunikatów SOAP  
+
  Podobnie jak w przypadku aplikacji WSE 3, aplikacja WCF może określić kodowanie komunikatów MTOM w konfiguracji. Aby przeprowadzić migrację tego ustawienia, należy dodać [\<mtomMessageEncoding>](../../configure-apps/file-schema/wcf/mtommessageencoding.md) do powiązania dla usługi. Poniższy przykład kodu demonstruje, jak Kodowanie MTOM jest określone w WSE 3,0 dla usługi, która jest równoważna w WCF.  
   
  **WSE 3,0**  
@@ -107,7 +115,7 @@ Zalety migrowania usług sieci Web WSE 3,0 do Windows Communication Foundation (
 </customBinding>  
 ```  
   
-## <a name="messaging"></a>Obsługa komunikatów  
+## <a name="messaging"></a>Obsługa wiadomości  
   
 ### <a name="wse-30-applications-that-use-the-wse-messaging-api"></a>Aplikacje WSE 3,0 korzystające z interfejsu API obsługi komunikatów WSE  
 
@@ -116,14 +124,16 @@ Zalety migrowania usług sieci Web WSE 3,0 do Windows Communication Foundation (
 ## <a name="transports"></a>Transporty  
   
 ### <a name="tcp"></a>TCP  
+
  Domyślnie klienci WSE 3,0 i usługi sieci Web, które wysyłają komunikaty protokołu SOAP przy użyciu transportu TCP, nie współpracują z klientami i usługami sieci Web WCF. Niezgodność wynika z różnic w obciążeniu ramek używanych w protokole TCP i ze względów wydajnościowych. Jednak Przykładowa procedura WCF zawiera szczegółowe informacje dotyczące implementowania niestandardowej sesji protokołu TCP, która współdziała z WSE 3,0. Aby uzyskać szczegółowe informacje na temat tego przykładu, zobacz [transport: WSE 3,0 TCP współdziałanie](../samples/transport-wse-3-0-tcp-interoperability.md).  
   
  Aby określić, że aplikacja WCF używa transportu TCP, użyj [\<netTcpBinding>](../../configure-apps/file-schema/wcf/nettcpbinding.md) .  
   
 ### <a name="custom-transport"></a>Transport niestandardowy  
+
  Odpowiednikiem WSE 3,0 Custom transport in WCF jest rozszerzenie kanału. Aby uzyskać szczegółowe informacje na temat tworzenia rozszerzenia kanału, zobacz [Rozszerzanie warstwy kanału](../extending/extending-the-channel-layer.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Podstawowy cykl życia programowania](../basic-programming-lifecycle.md)
 - [Powiązania niestandardowe](../extending/custom-bindings.md)

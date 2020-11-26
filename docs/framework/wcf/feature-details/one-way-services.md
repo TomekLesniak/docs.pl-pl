@@ -6,14 +6,15 @@ helpviewer_keywords:
 - WCF [WCF], one-way service contracts
 - service contracts [WCF], defining one-way
 ms.assetid: 19053a36-4492-45a3-bfe6-0365ee0205a3
-ms.openlocfilehash: 0d69af40e4b9a0133e44b64b45466f9aac84ffe2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c4b69d68c52e9f199348544e5838babc9f4d8c2c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598752"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248087"
 ---
 # <a name="one-way-services"></a>Usługi jednokierunkowe
+
 Domyślnym zachowaniem operacji usługi jest wzorzec żądanie-odpowiedź. W wzorcu żądanie-odpowiedź klient czeka na komunikat odpowiedzi, nawet jeśli operacja usługi jest reprezentowana w kodzie jako `void` Metoda. Z jednokierunkową operacją jest przesyłany tylko jeden komunikat. Odbiorca nie wysyła komunikatu odpowiedzi ani nie oczekuje takiego nadawcy.  
   
  Użyj wzorca projektowego jednokierunkowego:  
@@ -43,7 +44,8 @@ public interface IOneWayCalculator
   
  Pełny przykład można znaleźć w przykładach [jednokierunkowych](../samples/one-way.md) .  
   
-## <a name="clients-blocking-with-one-way-operations"></a>Klienci blokujący operacje jednokierunkowe  
+## <a name="clients-blocking-with-one-way-operations"></a>Klienci blokujący operacje One-Way  
+
  Należy pamiętać, że podczas gdy pewne aplikacje jednokierunkowe zwracają się zaraz po zapisaniu danych wychodzących do połączenia sieciowego, w kilku scenariuszach implementacja powiązania lub usługi może spowodować, że klient programu WCF będzie blokował przy użyciu operacji jednokierunkowych. W aplikacjach klienckich WCF obiekt klienta WCF nie zwraca do momentu zapisania danych wychodzących do połączenia sieciowego. Dotyczy to wszystkich wzorców wymiany komunikatów, w tym operacji jednokierunkowych; oznacza to, że wszelkie problemy z zapisywaniem danych w transporcie uniemożliwiają zwrócenie przez klienta. W zależności od tego problemu wynikiem może być wyjątek lub opóźnienie wysyłania komunikatów do usługi.  
   
  Na przykład jeśli transport nie może znaleźć punktu końcowego, <xref:System.ServiceModel.EndpointNotFoundException?displayProperty=nameWithType> wyjątek jest zgłaszany bez opóźnień. Istnieje również możliwość, że usługa nie będzie mogła odczytywać danych z sieci z jakiegoś powodu, co zapobiega zwracaniu przez nie operacji wysyłania przez klienta. W takich przypadkach, jeśli zostanie <xref:System.ServiceModel.Channels.Binding.SendTimeout%2A?displayProperty=nameWithType> przekroczony okres powiązania transportu klienta, <xref:System.TimeoutException?displayProperty=nameWithType> jest zgłaszany, ale nie do czasu przekroczenia limitu czasu. Możliwe jest również wyzwolenie tego wielu komunikatów w usłudze, że usługa nie może przetworzyć ich poza określonym punktem. W tym przypadku jest to również blok klienta jednokierunkowego do momentu, gdy usługa będzie mogła przetwarzać komunikaty lub do momentu wyrzucania wyjątku.  

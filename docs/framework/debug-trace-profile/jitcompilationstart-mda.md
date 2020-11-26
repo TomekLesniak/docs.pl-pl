@@ -8,37 +8,43 @@ helpviewer_keywords:
 - JitCompilationStart MDA
 - managed debugging assistants (MDAs), JIT compilation
 ms.assetid: 5ffd2857-d0ba-4342-9824-9ffe04ec135d
-ms.openlocfilehash: 13e20c1a940b7bfa777245ba35f3cc1b003d15b2
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 228226d90e70d296681e48ffe85dada8eb18209a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325530"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247372"
 ---
 # <a name="jitcompilationstart-mda"></a>jitCompilationStart MDA
 
 `jitCompilationStart`Asystent debugowania zarządzanego (MDA) jest aktywowany do raportowania, gdy kompilator just in Time (JIT) rozpocznie Kompilowanie funkcji.  
   
 ## <a name="symptoms"></a>Objawy  
+
  Rozmiar zestawu roboczego rośnie dla programu, który jest już w formacie obrazu natywnego, ponieważ mscorjit.dll jest ładowany do procesu.  
   
 ## <a name="cause"></a>Przyczyna  
+
 Nie wszystkie zestawy, od których zależy program, zostały wygenerowane w formacie natywnym lub zestaw nie został poprawnie zarejestrowany.  
 
 ## <a name="resolution"></a>Rozwiązanie  
+
  Włączenie tego MDA umożliwia zidentyfikowanie, która funkcja jest skompilowana w trybie JIT. Upewnij się, że zestaw, który zawiera funkcję, jest generowany w formacie natywnym i poprawnie zarejestrowany.
   
 ## <a name="effect-on-the-runtime"></a>Wpływ na środowisko uruchomieniowe  
+
  To zdarzenie jest rejestrowane tuż przed użyciem metody z kompilacją JIT, dlatego włączenie tego elementu MDA ma znaczny wpływ na wydajność. Jeśli metoda jest wbudowana, to MDA nie będzie generować osobnego komunikatu.  
   
 ## <a name="output"></a>Dane wyjściowe  
+
  Poniższy przykład kodu pokazuje przykładowe dane wyjściowe. W takim przypadku dane wyjściowe pokazują, że w teście zestawu Metoda "m" w klasie "ns2.CO" została skompilowana JIT.  
   
 ```output
 method name="Test!ns2.C0::m"  
 ```  
   
-## <a name="configuration"></a>Konfiguracja  
+## <a name="configuration"></a>Konfigurowanie  
+
  Poniższy plik konfiguracji przedstawia różne filtry, które mogą być stosowane do filtrowania metod zgłaszanych podczas pierwszego kompilowania JIT. Możesz określić, że wszystkie metody mają być zgłaszane przez ustawienie wartości atrybutu Name na \* .  
   
 ```xml  
@@ -60,6 +66,7 @@ method name="Test!ns2.C0::m"
 ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu jest przeznaczony do użycia w poprzednim pliku konfiguracyjnym.  
   
 ```csharp

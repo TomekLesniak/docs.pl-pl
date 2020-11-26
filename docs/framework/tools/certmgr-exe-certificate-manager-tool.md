@@ -14,14 +14,15 @@ helpviewer_keywords:
 - CTLs
 - certificate revocation lists
 ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
-ms.openlocfilehash: 43ab281e6ec28ff23ea584b03fd4278c6682e33e
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 30a35ded6fc86af6dc6dd4bf19cdf60f66570e0c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87167269"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247255"
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (Menedżer certyfikatów)
+
 Narzędzie Menedżer certyfikatów (Certmgr.exe) zarządza certyfikatami, listami zaufania certyfikatów (CTL) oraz listami odwołania certyfikatów (CRL).  
   
  Menedżer certyfikatów jest instalowany automatycznie z programem Visual Studio. Aby uruchomić narzędzie, należy użyć [wiersza polecenia](developer-command-prompt-for-vs.md).  
@@ -54,24 +55,25 @@ Narzędzie Menedżer certyfikatów (Certmgr.exe) zarządza certyfikatami, listam
 |------------|-----------------|  
 |**/Add**|Dodaje certyfikaty oraz listy CTL i CRL do magazynu certyfikatów.|  
 |**/All**|Dodaje wszystkie wpisy, gdy są używane z **/Add**. Usuwa wszystkie wpisy, gdy są używane z **/del**. Wyświetla wszystkie wpisy, gdy są używane bez opcji **/Add** lub **/del** . Opcja **/All** nie może być używana z **/Put**.|  
-|**/c**|Dodaje certyfikaty, gdy jest używany z **/Add**. Usuwa certyfikaty, gdy są używane z **/del**. Zapisuje certyfikaty, gdy są używane z **/Put**. Wyświetla certyfikaty, gdy jest używana bez opcji **/Add**, **/del**lub **/Put** .|  
-|**/CRL**|Dodaje listy CRL, gdy jest używana z opcją **/Add**. Usuwa listy CRL, gdy są używane z **/del**. Zapisuje listy CRL, gdy są używane z **/Put**. Wyświetla listę CRL, gdy jest używana bez opcji **/Add**, **/del**lub **/Put** .|  
-|**/CTL**|Dodaje listy CTL, gdy jest używana z opcją **/Add**. Usuwa listy CTL, gdy jest używana z **/del**. Zapisuje listy CTL, gdy jest używana z **/Put**. Wyświetla listę CTL, gdy jest używana bez opcji **/Add**, **/del**lub **/Put** .|  
+|**/c**|Dodaje certyfikaty, gdy jest używany z **/Add**. Usuwa certyfikaty, gdy są używane z **/del**. Zapisuje certyfikaty, gdy są używane z **/Put**. Wyświetla certyfikaty, gdy jest używana bez opcji **/Add**, **/del** lub **/Put** .|  
+|**/CRL**|Dodaje listy CRL, gdy jest używana z opcją **/Add**. Usuwa listy CRL, gdy są używane z **/del**. Zapisuje listy CRL, gdy są używane z **/Put**. Wyświetla listę CRL, gdy jest używana bez opcji **/Add**, **/del** lub **/Put** .|  
+|**/CTL**|Dodaje listy CTL, gdy jest używana z opcją **/Add**. Usuwa listy CTL, gdy jest używana z **/del**. Zapisuje listy CTL, gdy jest używana z **/Put**. Wyświetla listę CTL, gdy jest używana bez opcji **/Add**, **/del** lub **/Put** .|  
 |**/del**|Usuwa certyfikaty oraz listy CTL i CRL z magazynu certyfikatów.|  
 |**/e** — *EncodingType*|Określa typ kodowania certyfikatu. Wartość domyślna to `X509_ASN_ENCODING`.|  
 |**/F** *flagiDW*|Określa flagę otwarcia magazynu. Jest to parametr *flagiDW* przesłany do **CertOpenStore**. Wartość domyślna to CERT_SYSTEM_STORE_CURRENT_USER. Ta opcja jest uwzględniana tylko wtedy, gdy jest używana opcja **/y** .|  
 |**/h**[**ELP**]|Wyświetla składnię polecenia i opcje narzędzia.|  
 |**/n** *nam*|Określa wspólną nazwę certyfikatu do dodania, usunięcia lub zapisania. Tej opcji można używać tylko z certyfikatami; nie można używać jej z listami CTL i CRL.|  
-|**/Put**|Zapisuje certyfikat X.509, listę CTL lub CRL z magazynu certyfikatów w pliku. Plik jest zapisywany w formacie X.509. Aby zapisać plik w formacie PKCS #7, można użyć opcji **/7** z opcją **/Put** . Po opcji **/Put** należy wykonać polecenie **/c**, **/CTL**lub **/CRL**. Opcja **/All** nie może być używana z **/Put**.|  
-|**/r** *Lokalizacja* /r|Określa lokalizację w rejestrze magazynu systemowego. Ta opcja jest uwzględniana tylko wtedy, gdy określono opcję **/s** . *Lokalizacja* musi mieć jedną z następujących wartości:<br /><br /> -   `currentUser`wskazuje, że magazyn certyfikatów jest pod kluczem HKEY_CURRENT_USER. Jest to opcja domyślna.<br />-   `localMachine`wskazuje, że magazyn certyfikatów jest pod kluczem HKEY_LOCAL_MACHINE.|  
+|**/Put**|Zapisuje certyfikat X.509, listę CTL lub CRL z magazynu certyfikatów w pliku. Plik jest zapisywany w formacie X.509. Aby zapisać plik w formacie PKCS #7, można użyć opcji **/7** z opcją **/Put** . Po opcji **/Put** należy wykonać polecenie **/c**, **/CTL** lub **/CRL**. Opcja **/All** nie może być używana z **/Put**.|  
+|**/r** *Lokalizacja* /r|Określa lokalizację w rejestrze magazynu systemowego. Ta opcja jest uwzględniana tylko wtedy, gdy określono opcję **/s** . *Lokalizacja* musi mieć jedną z następujących wartości:<br /><br /> -   `currentUser` wskazuje, że magazyn certyfikatów jest pod kluczem HKEY_CURRENT_USER. Jest to opcja domyślna.<br />-   `localMachine` wskazuje, że magazyn certyfikatów jest pod kluczem HKEY_LOCAL_MACHINE.|  
 |**/s**|Wskazuje, że magazyn certyfikatów jest magazynem systemowym. Jeśli ta opcja nie zostanie określona, magazyn jest uznawany za **StoreFile**.|  
 |**/SHA1** *sha1Hash*|Określa skrót SHA1 certyfikatu, listy CTL lub CRL do dodania, usunięcia lub zapisania.|  
-|**przełącznika**|Określa tryb pełny; wyświetla szczegółowe informacje dotyczące certyfikatu oraz list CTL i CRL. Tej opcji nie można używać z opcjami **/Add**, **/del**i **/Put** .|  
+|**przełącznika**|Określa tryb pełny; wyświetla szczegółowe informacje dotyczące certyfikatu oraz list CTL i CRL. Tej opcji nie można używać z opcjami **/Add**, **/del** i **/Put** .|  
 |**/y** — *dostawca*|Określa nazwę dostawcy magazynu.|  
 |**/7**|Zapisuje magazyn docelowy jako obiekt w formacie PKCS #7.|  
 |**/?**|Wyświetla składnię polecenia i opcje narzędzia.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Program Certmgr.exe wykonuje następujące podstawowe funkcje:  
   
 - Wyświetla na konsoli certyfikaty oraz listy CTL i CRL.  
@@ -94,6 +96,7 @@ Narzędzie Menedżer certyfikatów (Certmgr.exe) zarządza certyfikatami, listam
  Aby uzyskać więcej informacji o certyfikatach, zobacz [Praca z certyfikatami](../wcf/feature-details/working-with-certificates.md).  
   
 ## <a name="examples"></a>Przykłady  
+
  Następujące polecenie wyświetla domyślny magazyn systemowy o nazwie `my` z pełnymi danymi wyjściowymi.  
   
 ```console  
@@ -136,7 +139,7 @@ certmgr /del /all /ctl /s my newStore.str
 certmgr /put /c /s my newFile  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Narzędzia](index.md)
 - [Makecert.exe (narzędzie tworzenia certyfikatów)](/windows/desktop/SecCrypto/makecert)

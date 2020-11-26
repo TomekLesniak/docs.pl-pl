@@ -2,17 +2,19 @@
 title: Aplikacje klienckie warstwy środkowej
 ms.date: 03/30/2017
 ms.assetid: f9714a64-d0ae-4a98-bca0-5d370fdbd631
-ms.openlocfilehash: c50223a55765f211dae710f96bffa7716ce36b32
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 5019215567f4c9127f2e53fd4cdf0d4a67b84d17
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598817"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96248256"
 ---
 # <a name="middle-tier-client-applications"></a>Aplikacje klienckie warstwy środkowej
+
 W tym temacie omówiono różne problemy specyficzne dla aplikacji klienckich warstwy środkowej, które używają Windows Communication Foundation (WCF).  
   
-## <a name="increasing-middle-tier-client-performance"></a>Zwiększenie wydajności klienta warstwy środkowej  
+## <a name="increasing-middle-tier-client-performance"></a>Zwiększanie wydajności klienta Middle-Tier  
+
  W porównaniu z poprzednimi technologiami komunikacyjnymi, takimi jak usługi sieci Web przy użyciu ASP.NET, tworzenie wystąpienia klienta WCF może być bardziej skomplikowane ze względu na rozbudowany zestaw funkcji WCF. Na przykład po <xref:System.ServiceModel.ChannelFactory%601> otwarciu obiektu można ustanowić bezpieczną sesję z usługą, a także procedurę, która wydłuża czas uruchamiania dla wystąpienia klienta. Zazwyczaj te dodatkowe funkcje funkcji nie wpływają na aplikacje klienckie znacznie, ponieważ klient WCF wykonuje kilka wywołań, a następnie zamyka je.  
   
  Aplikacje klienckie warstwy środkowej mogą jednak szybko tworzyć wiele obiektów klienta programu WCF i w efekcie zwiększyć wymagania dotyczące inicjacji. Istnieją dwa główne podejścia do zwiększania wydajności aplikacji warstwy środkowej podczas wywoływania usług:  
@@ -33,7 +35,7 @@ W tym temacie omówiono różne problemy specyficzne dla aplikacji klienckich wa
   
  Aby zapoznać się z przykładem, w którym przedstawiono najlepsze rozwiązania dotyczące ponownego korzystania z klienta dla wielu żądań, zobacz [powiązanie danych w kliencie ASP.NET](../samples/data-binding-in-an-aspnet-client.md).  
   
- Ponadto można zwiększyć wydajność uruchamiania dla klientów korzystających z typów danych, które można serializować przy użyciu <xref:System.Xml.Serialization.XmlSerializer> generowania i kompilowania kodu serializacji dla tych typów danych w czasie wykonywania, co może spowodować spowolnienie wydajności. [Narzędzie do przesyłania metadanych modelu ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) może zwiększyć wydajność uruchamiania tych aplikacji, generując wymagany kod serializacji z skompilowanych zestawów dla aplikacji. Aby uzyskać więcej informacji, zobacz [How to: ulepszanie czasu uruchamiania aplikacji klienckich WCF przy użyciu elementu XmlSerializer](startup-time-of-wcf-client-applications-using-the-xmlserializer.md).  
+ Ponadto można zwiększyć wydajność uruchamiania dla klientów korzystających z typów danych, które można serializować przy użyciu <xref:System.Xml.Serialization.XmlSerializer> generowania i kompilowania kodu serializacji dla tych typów danych w czasie wykonywania, co może spowodować spowolnienie wydajności. [Narzędzie do przesyłania metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) może zwiększyć wydajność uruchamiania tych aplikacji, generując wymagany kod serializacji z skompilowanych zestawów dla aplikacji. Aby uzyskać więcej informacji, zobacz [How to: ulepszanie czasu uruchamiania aplikacji klienckich WCF przy użyciu elementu XmlSerializer](startup-time-of-wcf-client-applications-using-the-xmlserializer.md).  
   
 ## <a name="see-also"></a>Zobacz też
 

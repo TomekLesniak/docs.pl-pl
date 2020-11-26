@@ -2,17 +2,19 @@
 title: Pojęcia kanałów równorzędnych
 ms.date: 03/30/2017
 ms.assetid: 379c2c0b-a44f-4423-9480-4739e7f18614
-ms.openlocfilehash: c9a63784b685ce57a7878934ddd042afd70c32b9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2da4e9bab4f77773e1f28ccb7f45c1bedaadfb81
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84576346"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96247957"
 ---
 # <a name="peer-channel-concepts"></a>Pojęcia kanałów równorzędnych
+
 W tej sekcji objaśniono krótko pojęcia dotyczące kanału równorzędnego Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Siatki elementów równorzędnych](peer-meshes.md): opisuje właściwości siatek utworzonych przy użyciu kanału równorzędnego.  
   
  [Węzły równorzędne](peer-nodes.md): zawiera opis węzłów równorzędnych.  
