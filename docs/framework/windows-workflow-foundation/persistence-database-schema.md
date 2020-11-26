@@ -2,32 +2,34 @@
 title: Schemat bazy danych stanów trwałych
 ms.date: 03/30/2017
 ms.assetid: 34f69f4c-df81-4da7-b281-a525a9397a5c
-ms.openlocfilehash: 04b57789e7c1ab6bfebd9c9b345ee0fb7dfb3e66
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f0ee076aa327f298007dfb18af324fb81c309067
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558241"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246098"
 ---
 # <a name="persistence-database-schema"></a>Schemat bazy danych stanów trwałych
+
 W tym temacie opisano widoki publiczne obsługiwane przez magazyn wystąpień przepływu pracy SQL.  
   
 ## <a name="instances-view"></a>Widok wystąpień  
+
  Widok **wystąpienia** zawiera ogólne informacje o wszystkich wystąpieniach przepływu pracy w bazie danych.  
   
 |Nazwa kolumny|Typ kolumny|Opis|  
 |-----------------|-----------------|-----------------|  
 |InstanceId|UniqueIdentifier|Identyfikator wystąpienia przepływu pracy.|  
-|PendingTimer|Data i godzina|Wskazuje, że przepływ pracy jest blokowany na działanie opóźnienia i zostanie wznowiony po wygaśnięciu czasomierza. Ta wartość może być równa null, jeśli przepływ pracy nie zostanie zablokowany, oczekując na wygaśnięcie czasomierza.|  
-|CreationTime|Data i godzina|Wskazuje, kiedy przepływ pracy został utworzony.|  
-|LastUpdatedTime|Data i godzina|Wskazuje czas, w którym przepływ pracy został utrwalony w bazie danych.|  
+|PendingTimer|DateTime|Wskazuje, że przepływ pracy jest blokowany na działanie opóźnienia i zostanie wznowiony po wygaśnięciu czasomierza. Ta wartość może być równa null, jeśli przepływ pracy nie zostanie zablokowany, oczekując na wygaśnięcie czasomierza.|  
+|CreationTime|DateTime|Wskazuje, kiedy przepływ pracy został utworzony.|  
+|LastUpdatedTime|DateTime|Wskazuje czas, w którym przepływ pracy został utrwalony w bazie danych.|  
 |ServiceDeploymentId|BigInt|Działa jako klucz obcy w widoku [ServiceDeployments]. Jeśli bieżące wystąpienie przepływu pracy jest wystąpieniem usługi hostowanej w sieci Web, ta kolumna ma wartość, w przeciwnym razie jest ustawiona na wartość NULL.|  
 |SuspensionExceptionName|Nvarchar (450)|Wskazuje typ wyjątku (np. InvalidOperationException), który spowodował wstrzymanie przepływu pracy.|  
 |SuspensionReason|Nvarchar (max)|Wskazuje, dlaczego wystąpienie przepływu pracy zostało zawieszone. Jeśli wyjątek spowodował wstrzymanie wystąpienia, ta kolumna zawiera komunikat skojarzony z wyjątkiem.<br /><br /> Jeśli wystąpienie zostało wstrzymane ręcznie, ta kolumna zawiera powód określony przez użytkownika do zawieszania wystąpienia.|  
 |ActiveBookmarks|Nvarchar (max)|Jeśli wystąpienie przepływu pracy jest bezczynne, ta właściwość wskazuje, w jakich zakładkach wystąpienie jest zablokowane. Jeśli wystąpienie nie jest bezczynne, ta kolumna ma wartość NULL.|  
 |CurrentMachine|Nvarchar (128)|Wskazuje, że nazwa komputera ma obecnie załadowane wystąpienie przepływu pracy w pamięci.|  
 |LastMachine|Nvarchar (450)|Wskazuje ostatni komputer, który załadował wystąpienie przepływu pracy.|  
-|ExecutionStatus|Nvarchar (450)|Wskazuje bieżący stan wykonywania przepływu pracy. Możliwe stany to **wykonywanie**, **bezczynne**i **zamknięte**.|  
+|ExecutionStatus|Nvarchar (450)|Wskazuje bieżący stan wykonywania przepływu pracy. Możliwe stany to **wykonywanie**, **bezczynne** i **zamknięte**.|  
 |IsInitialized|Bit|Wskazuje, czy wystąpienie przepływu pracy zostało zainicjowane. Zainicjowane wystąpienie przepływu pracy to wystąpienie przepływu pracy, które zostało utrwalone co najmniej raz.|  
 |Issuspended|Bit|Wskazuje, czy wystąpienie przepływu pracy zostało zawieszone.|  
 |IsCompleted|Bit|Wskazuje, czy wystąpienie przepływu pracy zostało zakończone. **Uwaga:**  IIf Właściwość **InstanceCompletionAction** jest ustawiona na **DeleteAll**, wystąpienia są usuwane z widoku po zakończeniu.|  
@@ -47,6 +49,7 @@ W tym temacie opisano widoki publiczne obsługiwane przez magazyn wystąpień pr
 > Widok **wystąpień** zawiera również wyzwalacz usuwania. Użytkownicy z odpowiednimi uprawnieniami mogą wykonywać instrukcje usuwania względem tego widoku, który wymusił wymuszenie usunięcia wystąpień przepływu pracy z bazy danych. Zalecamy usunięcie bezpośrednio z widoku tylko w ostatnim przypadku, ponieważ usunięcie wystąpienia z poniżej środowiska uruchomieniowego przepływu pracy może spowodować niezamierzone konsekwencje. Zamiast tego należy użyć punktu końcowego zarządzania wystąpieniem przepływu pracy, aby zakończyć działanie wystąpienia przepływu pracy. Jeśli chcesz usunąć dużą liczbę wystąpień z widoku, upewnij się, że nie ma aktywnych środowisk uruchomieniowych, które mogą działać na tych wystąpieniach.  
   
 ## <a name="servicedeployments-view"></a>Widok ServiceDeployments  
+
  Widok **ServiceDeployments** zawiera informacje o wdrożeniu dla wszystkich hostowanych usług przepływu pracy w sieci Web (IIS/was). Każde wystąpienie przepływu pracy, które jest hostowane w sieci Web, będzie zawierało element **ServiceDeploymentId** , który odwołuje się do wiersza w tym widoku.  
   
 |Nazwa kolumny|Typ kolumny|Opis|  
@@ -65,6 +68,7 @@ W tym temacie opisano widoki publiczne obsługiwane przez magazyn wystąpień pr
 2. Każda próba usunięcia wiersza ServiceDeployment, do którego odwołuje się wpisy w widoku **wystąpień** , spowoduje, że nie będzie to miało znaczenia. Można usunąć tylko wiersze ServiceDeployment z odwołaniami do zera.  
   
 ## <a name="instancepromotedproperties-view"></a>Widok InstancePromotedProperties  
+
  Widok **InstancePromotedProperties** zawiera informacje o wszystkich podwyższonych właściwościach, które są określone przez użytkownika. Awansowana funkcja właściwości jako właściwość pierwszej klasy, której użytkownik może używać w zapytaniach do pobierania wystąpień.  Na przykład użytkownik może dodać promocję PurchaseOrder, która zawsze przechowuje koszt zamówienia w kolumnie **wartość1** . Umożliwi to użytkownikowi wykonywanie zapytań dotyczących wszystkich zamówień zakupu, których koszt przekracza określoną wartość.  
   
 |Typ kolumny|Typ kolumny|Opis|  

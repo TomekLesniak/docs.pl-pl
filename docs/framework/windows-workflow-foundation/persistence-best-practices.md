@@ -2,17 +2,19 @@
 title: Najlepsze rozwiązania w zakresie stanów trwałych
 ms.date: 03/30/2017
 ms.assetid: 6974c5a4-1af8-4732-ab53-7d694608a3a0
-ms.openlocfilehash: b0276bdfd6dcf2e12357224d9a92484a5da9eac3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 950a5d5c742b7882db93d71f3e7f205009f2a863
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558254"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246150"
 ---
 # <a name="persistence-best-practices"></a>Najlepsze rozwiązania w zakresie stanów trwałych
+
 W tym dokumencie opisano najlepsze rozwiązania dotyczące projektowania i konfigurowania przepływu pracy związane z trwałością przepływu pracy.  
   
 ## <a name="design-and-implementation-of-durable-workflows"></a>Projektowanie i wdrażanie trwałych przepływów pracy  
+
  Ogólnie rzecz biorąc przepływy pracy działają w krótkich okresach, które są przeplatane z czasem, w którym przepływ pracy jest bezczynny, ponieważ oczekuje na zdarzenie. To zdarzenie może być takie jak komunikat lub czasomierz wygasania. Aby można było zwolnić wystąpienie przepływu pracy, gdy stanie się bezczynna, Host usługi musi utrzymywać wystąpienie przepływu pracy. Jest to możliwe tylko wtedy, gdy wystąpienie przepływu pracy nie znajduje się w strefie no-utrwalania (na przykład oczekiwanie na zakończenie transakcji lub oczekiwanie na asynchroniczne wywołanie zwrotne). Aby zezwolić na zwalnianie wystąpienia bezczynnego przepływu pracy, autor przepływu pracy powinien używać zakresów transakcji i działań asynchronicznych tylko dla działań krótkoterminowych. W szczególności autor powinien utrzymywać opóźnienia w tych strefach nietrwałych, tak jak to możliwe.  
   
  Przepływ pracy można utrwalać tylko wtedy, gdy wszystkie typy danych używane przez przepływ pracy są serializowane. Ponadto typy niestandardowe używane w utrwalonych przepływach pracy muszą być serializowane, <xref:System.Runtime.Serialization.NetDataContractSerializer> aby były utrwalane przez <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> .  
@@ -24,6 +26,7 @@ W tym dokumencie opisano najlepsze rozwiązania dotyczące projektowania i konfi
  Sieć szkieletowa aplikacji systemu Windows Server znacznie upraszcza konfigurację i użycie trwałości. Aby uzyskać więcej informacji, zobacz [trwałość sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677272(v=azure.10))  
   
 ## <a name="configuration-of-scalability-parameters"></a>Konfiguracja parametrów skalowalności  
+
  Wymagania dotyczące skalowalności i wydajności określają ustawienia następujących parametrów:  
   
 - <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A>  
@@ -35,6 +38,7 @@ W tym dokumencie opisano najlepsze rozwiązania dotyczące projektowania i konfi
  Parametry te należy ustawić w następujący sposób zgodnie z bieżącym scenariuszem.  
   
 ### <a name="scenario-a-small-number-of-workflow-instances-that-require-optimal-response-time"></a>Scenariusz: niewielka liczba wystąpień przepływów pracy, które wymagają optymalnego czasu odpowiedzi  
+
  W tym scenariuszu wszystkie wystąpienia przepływu pracy powinny pozostawać w stanie bezczynności. Ustaw <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> na dużą wartość. Użycie tego ustawienia uniemożliwia przechodzenie wystąpienia przepływu pracy między komputerami. Tego ustawienia należy używać tylko w przypadku, gdy co najmniej jeden z następujących warunków jest spełniony:  
   
 - Wystąpienie przepływu pracy odbiera pojedynczy komunikat w okresie istnienia.  
@@ -46,14 +50,17 @@ W tym dokumencie opisano najlepsze rozwiązania dotyczące projektowania i konfi
  Użyj <xref:System.Activities.Statements.Persist> działań lub ustaw <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A> wartość 0, aby włączyć odzyskiwanie wystąpienia przepływu pracy po awarii hosta usługi lub komputera.  
   
 ### <a name="scenario-workflow-instances-are-idle-for-long-periods-of-time"></a>Scenariusz: wystąpienia przepływu pracy są bezczynne przez długi okres czasu  
+
  W tym scenariuszu należy ustawić wartość <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> 0, aby zwolnić zasoby tak szybko, jak to możliwe.  
   
 ### <a name="scenario-workflow-instances-receive-multiple-messages-in-a-short-period-of-time"></a>Scenariusz: wystąpienia przepływu pracy odbierają wiele komunikatów w krótkim czasie  
+
  W tym scenariuszu Ustaw <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> na 60 sekund, jeśli te komunikaty są odbierane przez ten sam komputer. Zapobiega to szybkiemu wyładowaniu i ładowaniu wystąpienia przepływu pracy. Nie zachowuje to również wystąpienia w pamięci zbyt długo.  
   
  Ustaw wartość <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> na 0 i ustaw wartość <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior.InstanceLockedExceptionAction%2A> BasicRetry lub AggressiveRetry, jeśli te komunikaty mogą być odbierane przez różne komputery. Pozwala to na załadowanie wystąpienia przepływu pracy przez inny komputer.  
   
 ### <a name="scenario-workflow-uses-delay-activities-with-short-durations"></a>Scenariusz: przepływ pracy używa opóźnień z krótkimi czasami trwania  
+
  W tym scenariuszu <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> regularnie sonduje bazę danych trwałości dla wystąpień, które powinny zostać załadowane ze względu na działanie wygasłe <xref:System.Activities.Statements.Delay> . Jeśli <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> odnajdzie czasomierz, który wygaśnie w następnym interwale sondowania, magazyn wystąpień przepływu pracy SQL skraca interwał sondowania. Następne sondowanie będzie odbywać się po wygaśnięciu czasomierza. W ten sposób magazyn wystąpień przepływu pracy SQL osiąga dużą dokładność czasomierzy, które są uruchamiane dłużej niż interwał sondowania, który jest ustawiany przez <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A> . Aby włączyć czas przetwarzania krótszych opóźnień, wystąpienie przepływu pracy musi pozostawać w pamięci dla co najmniej jednego interwału sondowania.  
   
  Ustaw wartość <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A> 0, aby zapisać czas wygaśnięcia dla bazy danych trwałości.  
@@ -63,6 +70,7 @@ W tym dokumencie opisano najlepsze rozwiązania dotyczące projektowania i konfi
  Nie zalecamy zredukowania, <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A> ponieważ prowadzi to do zwiększonego obciążenia bazy danych trwałości. Każdy host usługi, który używa <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> sondowania bazy danych jeden raz na okres wykrywania. Ustawienie <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A> zbyt małego interwału czasu może spowodować spadek wydajności systemu, jeśli liczba hostów usług jest duża.  
   
 ## <a name="configuring-the-sql-workflow-instance-store"></a>Konfigurowanie magazynu wystąpień przepływu pracy SQL  
+
  Magazyn wystąpień przepływu pracy SQL zawiera następujące parametry konfiguracji:  
   
  <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.InstanceEncodingOption%2A>  

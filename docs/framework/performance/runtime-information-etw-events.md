@@ -6,14 +6,15 @@ helpviewer_keywords:
 - runtime information events [.NET Framework]
 - ETW, runtime information events
 ms.assetid: 68b4edbc-7f3b-45f6-ab75-4fd066d6af9a
-ms.openlocfilehash: 385519229bdb76841cdf592d95e96d2288ec5e1a
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 354740b36ccab742022058288da84b22d460edc5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474231"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96245617"
 ---
 # <a name="runtime-information-etw-events"></a>Informacje o zdarzeniach ETW środowiska uruchomieniowego
+
 Te zdarzenia ETW rejestrują informacje o środowisku uruchomieniowym, w tym jednostki SKU, numer wersji, sposób aktywowania środowiska uruchomieniowego, parametry wiersza polecenia, z których uruchomiono, identyfikator GUID (jeśli dotyczy) i inne istotne informacje. Jeśli w ramach procesu jest wykonywanych wiele środowisk uruchomieniowych, informacje zawarte w tych zdarzeniach (ClrInstanceID) ułatwiają odróżnienie środowiska uruchomieniowego.  
   
  W poniższej tabeli przedstawiono dwa zdarzenia dotyczące informacji o środowisku uruchomieniowym. Zdarzenia mogą być zgłaszane pod dowolnym słowem kluczowym lub maską. (Aby uzyskać więcej informacji, zobacz [słowa kluczowe i poziomy ETW CLR](clr-etw-keywords-and-levels.md)).  
@@ -43,6 +44,6 @@ Te zdarzenia ETW rejestrują informacje o środowisku uruchomieniowym, w tym jed
 |ComObjectGUID|win: identyfikator GUID|Wartość inna niż null tylko wtedy, gdy Startupmode = 0x08.|  
 |RuntimeDLLPath|win: UnicodeString|Ścieżka do pliku CLR. dll, który został załadowany do procesu.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zdarzenia ETW CLR](clr-etw-events.md)

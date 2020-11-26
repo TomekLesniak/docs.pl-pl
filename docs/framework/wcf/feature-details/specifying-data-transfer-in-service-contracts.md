@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF], data transfer
 ms.assetid: 7c5a26c8-89c9-4bcb-a4bc-7131e6d01f0c
-ms.openlocfilehash: ae05fb5ea0ee4962d9889e2a29399a3913a0d9d5
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 30cdae7e15b80ca826eeea652566a535271477d9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600299"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246397"
 ---
 # <a name="specifying-data-transfer-in-service-contracts"></a>Określanie transferu danych w kontraktach usług
+
 Windows Communication Foundation (WCF) można traktować jako infrastrukturę obsługi komunikatów. Operacje usługi mogą odbierać komunikaty, przetwarzać je i wysyłać do nich komunikaty. Komunikaty są opisane przy użyciu kontraktów operacji. Rozważmy na przykład następujący kontrakt.  
   
 ```csharp  
@@ -40,6 +41,7 @@ End Interface
  W tym temacie wyjaśniono różne sposoby opisywania komunikatów przez kontrakt operacji.  
   
 ## <a name="describing-messages-by-using-parameters"></a>Opisywanie komunikatów przy użyciu parametrów  
+
  Najprostszym sposobem opisywania wiadomości jest użycie listy parametrów i wartości zwracanej. W poprzednim przykładzie `fromCity` `toCity` Parametry i parametrów zostały użyte do opisania komunikatu żądania, a wartość zwracana zmiennoprzecinkowa została użyta do opisania komunikatu odpowiedzi. Jeśli wartość zwracana jest zbyt mała, aby opisać komunikat odpowiedzi, można użyć parametrów out. Na przykład następująca operacja zawiera `fromCity` i `toCity` w jego komunikacie żądania oraz liczbę wraz z walutą w swojej wiadomości odpowiedzi:  
   
 ```csharp  
@@ -141,6 +143,7 @@ public float GetAirfare(
 ```  
   
 ## <a name="describing-empty-messages"></a>Opisywanie pustych wiadomości  
+
  Pusty komunikat żądania może być opisany przez brak parametrów wejściowych lub referencyjnych. Na przykład w języku C#:  
   
  `[OperationContract]`  
@@ -180,6 +183,7 @@ Sub SetLightbulbStatus(isOne As Boolean)
  `SetTemperatureStatus`Operacja zwraca pusty komunikat. Może zwrócić błąd zamiast tego, jeśli wystąpił problem podczas przetwarzania komunikatu wejściowego. `SetLightbulbStatus`Operacja nie zwraca żadnej wartości. Nie ma możliwości komunikacji z warunkiem błędu z tej operacji.  
   
 ## <a name="describing-messages-by-using-message-contracts"></a>Opisywanie komunikatów przy użyciu kontraktów komunikatów  
+
  Możesz chcieć użyć jednego typu do reprezentowania całej wiadomości. Chociaż istnieje możliwość użycia w tym celu kontraktu danych, zalecanym sposobem wykonania tej czynności jest użycie kontraktu komunikatu — pozwala to uniknąć niepotrzebnych poziomów zawijania w wynikowym kodzie XML. Ponadto kontrakty komunikatów umożliwiają większą kontrolę nad wynikowymi komunikatami. Na przykład można zdecydować, które fragmenty informacji powinny znajdować się w treści wiadomości, a które powinny znajdować się w nagłówkach wiadomości. W poniższym przykładzie przedstawiono użycie kontraktów komunikatów.  
   
 ```csharp  
@@ -246,6 +250,7 @@ End Class
  W poprzednim przykładzie <xref:System.Runtime.Serialization.DataContractSerializer> Klasa jest nadal używana domyślnie. <xref:System.Xml.Serialization.XmlSerializer>Klasy można również używać z kontraktami komunikatów. W tym celu Zastosuj <xref:System.ServiceModel.XmlSerializerFormatAttribute> atrybut do operacji lub kontraktu, a następnie użyj typów zgodnych z <xref:System.Xml.Serialization.XmlSerializer> klasą w nagłówkach wiadomości i elementach członkowskich treści.  
   
 ## <a name="describing-messages-by-using-streams"></a>Opisywanie komunikatów przy użyciu strumieni  
+
  Innym sposobem opisywania komunikatów w operacjach jest użycie <xref:System.IO.Stream> klasy lub jednej z jej klas pochodnych w kontrakcie operacji lub jako element członkowski treści kontraktu wiadomości (musi to być jedyny element członkowski w tym przypadku). W przypadku wiadomości przychodzących typ musi być `Stream` — nie można używać klas pochodnych.  
   
  Zamiast wywoływania serializatora program WCF pobiera dane ze strumienia i umieszcza je bezpośrednio w wiadomości wychodzącej lub pobiera dane z wiadomości przychodzącej i umieszcza je bezpośrednio w strumieniu. Poniższy przykład pokazuje użycie strumieni.  
@@ -304,6 +309,7 @@ End Class
  Aby uzyskać więcej informacji, zobacz [dane dotyczące dużych ilości danych i przesyłania strumieniowego](large-data-and-streaming.md).  
   
 ## <a name="using-the-message-class"></a>Używanie klasy Message  
+
  Aby uzyskać pełną kontrolę programistyczną nad komunikatami wysyłanymi lub odbieranymi, można użyć <xref:System.ServiceModel.Channels.Message> klasy bezpośrednio, jak pokazano w poniższym przykładowym kodzie.  
   
 ```csharp  
@@ -319,6 +325,7 @@ Sub LogMessage(m As Message)
  Jest to zaawansowany scenariusz, który opisano szczegółowo w temacie [using the Message Class](using-the-message-class.md).  
   
 ## <a name="describing-fault-messages"></a>Opisywanie komunikatów o błędach  
+
  Oprócz komunikatów, które są opisane przez wartość zwracaną i parametry wyjściowe lub odwołania, każda operacja, która nie jest jednokierunkowa, może zwracać co najmniej dwie możliwe komunikaty: normalny komunikat odpowiedzi i komunikat o błędzie. Rozważmy następujący kontrakt operacji.  
   
 ```csharp  
@@ -373,6 +380,7 @@ End Class
  Nie można użyć <xref:System.Xml.Serialization.XmlSerializer> klasy do opisywania błędów. <xref:System.ServiceModel.XmlSerializerFormatAttribute>Nie ma wpływu na kontrakty błędów.  
   
 ## <a name="using-derived-types"></a>Używanie typów pochodnych  
+
  Możesz chcieć użyć typu podstawowego w operacji lub w kontrakcie komunikatu, a następnie użyć typu pochodnego podczas rzeczywistego wywoływania operacji. W takim przypadku należy użyć <xref:System.ServiceModel.ServiceKnownTypeAttribute> atrybutu lub innego mechanizmu alternatywnego, aby zezwolić na korzystanie z typów pochodnych. Rozważ wykonanie poniższej operacji.  
   
 ```csharp  
@@ -430,16 +438,19 @@ End Class
  Można zastosować <xref:System.ServiceModel.ServiceKnownTypeAttribute> atrybut do operacji lub do całej usługi. Akceptuje typ lub nazwę metody do wywołania, aby uzyskać listę znanych typów, podobnie jak <xref:System.Runtime.Serialization.KnownTypeAttribute> atrybut. Aby uzyskać więcej informacji, zobacz [znane typy kontraktu danych](data-contract-known-types.md).  
   
 ## <a name="specifying-the-use-and-style"></a>Określanie użycia i stylu  
+
  Podczas opisywania usług przy użyciu Web Services Description Language (WSDL) dwa powszechnie używane style to dokumenty i zdalne wywoływanie procedur (RPC). W stylu dokumentu cała treść komunikatu jest opisana przy użyciu schematu, a WSDL opisuje różne części treści komunikatów, odwołując się do elementów w tym schemacie. W stylu RPC, WSDL odwołuje się do typu schematu dla każdej części wiadomości zamiast elementu. W niektórych przypadkach trzeba ręcznie wybrać jeden z tych stylów. Można to zrobić, stosując <xref:System.ServiceModel.DataContractFormatAttribute> atrybut i ustawiając `Style` Właściwość (gdy <xref:System.Runtime.Serialization.DataContractSerializer> jest używana) lub ustawiając `Style` <xref:System.ServiceModel.XmlSerializerFormatAttribute> atrybut (w przypadku używania <xref:System.Xml.Serialization.XmlSerializer> ).  
   
- Ponadto program <xref:System.Xml.Serialization.XmlSerializer> obsługuje dwie formy serializowanych danych XML: `Literal` i `Encoded` . `Literal`jest to najczęściej zaakceptowany formularz i jest jedynym formularzem <xref:System.Runtime.Serialization.DataContractSerializer> obsługiwanym przez program. `Encoded`jest starszym formularzem opisanym w sekcji 5 specyfikacji protokołu SOAP i nie jest zalecany w przypadku nowych usług. Aby przełączyć do `Encoded` trybu, należy ustawić `Use` właściwość atrybutu na <xref:System.ServiceModel.XmlSerializerFormatAttribute> `Encoded` .  
+ Ponadto program <xref:System.Xml.Serialization.XmlSerializer> obsługuje dwie formy serializowanych danych XML: `Literal` i `Encoded` . `Literal` jest to najczęściej zaakceptowany formularz i jest jedynym formularzem <xref:System.Runtime.Serialization.DataContractSerializer> obsługiwanym przez program. `Encoded` jest starszym formularzem opisanym w sekcji 5 specyfikacji protokołu SOAP i nie jest zalecany w przypadku nowych usług. Aby przełączyć do `Encoded` trybu, należy ustawić `Use` właściwość atrybutu na <xref:System.ServiceModel.XmlSerializerFormatAttribute> `Encoded` .  
   
  W większości przypadków nie należy zmieniać ustawień domyślnych `Style` `Use` właściwości i.  
   
 ## <a name="controlling-the-serialization-process"></a>Kontrolowanie procesu serializacji  
+
  Aby dostosować sposób serializacji danych, można wykonać kilka czynności.  
   
 ### <a name="changing-server-serialization-settings"></a>Zmienianie ustawień serializacji serwera  
+
  Gdy wartość domyślna <xref:System.Runtime.Serialization.DataContractSerializer> jest używana, można kontrolować pewne aspekty procesu serializacji w usłudze, stosując <xref:System.ServiceModel.ServiceBehaviorAttribute> atrybut do usługi. W `MaxItemsInObjectGraph` celu ustawienia limitu przydziału, który ogranicza maksymalną liczbę obiektów deserializacji, można użyć właściwości <xref:System.Runtime.Serialization.DataContractSerializer> . Możesz użyć właściwości, `IgnoreExtensionDataObject` Aby wyłączyć funkcję zaokrąglania wersji. Aby uzyskać więcej informacji na temat przydziałów, zobacz [zagadnienia dotyczące zabezpieczeń danych](security-considerations-for-data.md). Aby uzyskać więcej informacji na temat rundy, zobacz [Kontrakty danych zgodne z przekazywaniem dalej](forward-compatible-data-contracts.md).  
   
 ```csharp  
@@ -464,6 +475,7 @@ End Interface
 ```  
   
 ### <a name="serialization-behaviors"></a>Zachowania serializacji  
+
  W programie WCF dostępne są dwa zachowania, <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> a <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> które są automatycznie zasilane w zależności od tego, który serializator jest używany dla danej operacji. Ponieważ te zachowania są stosowane automatycznie, zazwyczaj nie trzeba ich znać.  
   
  Jednak `DataContractSerializerOperationBehavior` ma `MaxItemsInObjectGraph` właściwości, i, `IgnoreExtensionDataObject` `DataContractSurrogate` których można użyć do dostosowania procesu serializacji. Pierwsze dwie właściwości mają takie samo znaczenie jak omówione w poprzedniej sekcji. Możesz użyć `DataContractSurrogate` właściwości, aby włączyć surogaty kontraktu danych, który jest zaawansowanym mechanizmem do dostosowywania i rozszerzania procesu serializacji. Aby uzyskać więcej informacji, zobacz [surogaty kontraktu danych](../extending/data-contract-surrogates.md).  
@@ -533,6 +545,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
  W przypadku przypadków hostowanych w sieci Web należy utworzyć nową `ServiceHost` klasę pochodną i użyć fabryki hosta usługi, aby ją podłączyć.  
   
 ### <a name="controlling-serialization-settings-in-configuration"></a>Kontrolowanie ustawień serializacji w konfiguracji  
+
  `MaxItemsInObjectGraph`I `IgnoreExtensionDataObject` można ją kontrolować za pomocą konfiguracji przy użyciu `dataContractSerializer` punktu końcowego lub zachowania usługi, jak pokazano w poniższym przykładzie.  
   
 ```xml  
@@ -558,6 +571,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
 ```  
   
 ### <a name="shared-type-serialization-object-graph-preservation-and-custom-serializers"></a>Serializacja typu udostępnionego, zachowywania grafu obiektów i serializatorów niestandardowych  
+
  <xref:System.Runtime.Serialization.DataContractSerializer>Serializacji używające nazw kontraktów danych, a nie nazw typów .NET. Jest to zgodne z architekturą zorientowaną na usługę założenia i umożliwia zapewnienie doskonałej elastyczności — typy .NET mogą ulec zmianie bez wpływu na umowę sieciową. W rzadkich przypadkach możesz chcieć serializować rzeczywiste nazwy typu .NET, co wprowadza ścisłe sprzężenie między klientem a serwerem, podobnie jak technologia komunikacji zdalnej .NET Framework. Nie jest to zalecane rozwiązanie, z wyjątkiem rzadkich przypadków, które zazwyczaj występują podczas migracji do programu WCF z .NET Framework komunikacji zdalnej. W takim przypadku należy użyć <xref:System.Runtime.Serialization.NetDataContractSerializer> klasy zamiast <xref:System.Runtime.Serialization.DataContractSerializer> klasy.  
   
  <xref:System.Runtime.Serialization.DataContractSerializer>Zwykle wykonuje serializacji grafów obiektów jako drzewa obiektów. Oznacza to, że jeśli ten sam obiekt jest odwołuje się więcej niż raz, jest serializowany więcej niż jeden raz. Rozważmy na przykład `PurchaseOrder` wystąpienie mające dwa pola typu Address o nazwie `billTo` i `shipTo` . Jeśli oba pola są ustawione na to samo wystąpienie adresu, istnieją dwa identyczne wystąpienia adresów po serializacji i deserializacji. Jest to realizowane z powodu braku interoperacyjności standardowej do reprezentowania grafów obiektów w kodzie XML (z wyjątkiem starszej wersji protokołu SOAP, która jest dostępna w systemie <xref:System.Xml.Serialization.XmlSerializer> , zgodnie z opisem w poprzedniej sekcji w systemach `Style` i `Use` ). Serializacja grafów obiektów jako drzew ma pewne wady, na przykład wykresy z odwołaniami cyklicznymi nie mogą być serializowane. Czasami konieczne jest przełączenie na prawdziwą Serializacja grafu obiektów, nawet jeśli nie jest to możliwe. Można to zrobić przy użyciu <xref:System.Runtime.Serialization.DataContractSerializer> konstrukcji z `preserveObjectReferences` parametrem ustawionym na `true` .  
@@ -578,4 +592,4 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
 
 - [Używanie klasy XmlSerializer](using-the-xmlserializer-class.md)
 - [Instrukcje: włączanie przesyłania strumieniowego](how-to-enable-streaming.md)
-- [Instrukcje: Tworzenie podstawowego kontraktu danych dla klasy lub struktury](how-to-create-a-basic-data-contract-for-a-class-or-structure.md)
+- [Instrukcje: tworzenie podstawowego kontraktu danych dla klasy lub struktury](how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

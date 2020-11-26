@@ -2,24 +2,25 @@
 title: Protokoły transakcyjne wersja 1.0
 ms.date: 03/30/2017
 ms.assetid: 034679af-0002-402e-98a8-ef73dcd71bb6
-ms.openlocfilehash: 9e21da0dfdda514e60b6f53090f5225b57aa1b75
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: 7b1cfc21a1361cee3027fd5a61ec61a4a0a998b7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90720377"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246241"
 ---
 # <a name="transaction-protocols-version-10"></a>Protokoły transakcyjne wersja 1.0
-Windows Communication Foundation (WCF) w wersji 1 implementuje wersję 1,0 transakcji WS-i protokołów koordynacyjnych WS-AT. Aby uzyskać więcej informacji na temat wersji 1,1, zobacz [Protokoły transakcji](transaction-protocols.md).  
+
+Windows Communication Foundation (WCF) w wersji 1 implementuje wersję 1,0 WS-Atomic transakcji i protokołów WS-Coordination. Aby uzyskać więcej informacji na temat wersji 1,1, zobacz [Protokoły transakcji](transaction-protocols.md).  
   
 |Specyfikacja/dokument|Łącze|  
 |-----------------------------|----------|  
-|Usługa WS-koordynacja|<http://specs.xmlsoap.org/ws/2004/10/wscoor/wscoor.pdf>|  
-|Protokół WS-AtomicTransaction|<http://specs.xmlsoap.org/ws/2004/10/wsat/wsat.pdf>|  
+|WS-Coordination|<http://specs.xmlsoap.org/ws/2004/10/wscoor/wscoor.pdf>|  
+|WS-AtomicTransaction|<http://specs.xmlsoap.org/ws/2004/10/wsat/wsat.pdf>|  
   
  Współdziałanie z tymi specyfikacjami protokołu jest wymagane na dwóch poziomach: między aplikacjami i menedżerami transakcji (patrz poniższy rysunek). Specyfikacja zawiera szczegółowe informacje o formatach komunikatów i wymianie komunikatów dla obu poziomów współdziałania. Niektóre zabezpieczenia, niezawodność i kodowanie dla wymiany między aplikacjami mają zastosowanie w przypadku regularnego wymiany aplikacji. Jednak pomyślne współdziałanie między menedżerami transakcji wymaga zawarcia umowy w ramach określonego powiązania, ponieważ zazwyczaj nie jest ona konfigurowana przez użytkownika.  
   
- W tym temacie opisano kompozycję specyfikacji transakcji WS-AT (WS-AT) z zabezpieczeniami i opisano bezpieczne powiązanie używane do komunikacji między menedżerami transakcji. Podejście opisane w tym dokumencie zostało pomyślnie przetestowane z innymi implementacjami WS-AT i WS-koordynacyjnych, w tym IBM, IONA, Sun Microsystems i innych.  
+ W tym temacie opisano kompozycję specyfikacji transakcji WS-Atomic (WS-AT) z zabezpieczeniami i opisano bezpieczne powiązanie używane do komunikacji między menedżerami transakcji. Podejście opisane w tym dokumencie zostało pomyślnie przetestowane z innymi implementacjami WS-AT i WS-Coordination, w tym IBM, IONA, Sun Microsystems i innych.  
   
  Na poniższej ilustracji przedstawiono współdziałanie między dwoma menedżerami transakcji, menedżerem transakcji 1 i menedżerem transakcji 2 oraz dwiema aplikacjami, aplikacjami 1 i aplikacją 2:  
   
@@ -41,7 +42,7 @@ Windows Communication Foundation (WCF) w wersji 1 implementuje wersję 1,0 trans
 |10. Rejestr (trwałe)|21. zatwierdzone (2PC)|  
 |11. RegisterResponse|22. zatwierdzone (2PC)|  
   
- W tym dokumencie opisano kompozycję specyfikacji WS-AtomicTransaction z zabezpieczeniami i opisano bezpieczne powiązanie używane do komunikacji między menedżerami transakcji. Podejście opisane w tym dokumencie zostało pomyślnie przetestowane z innymi implementacjami WS-AT i WS-koordynacyjnych.  
+ W tym dokumencie opisano kompozycję specyfikacji WS-AtomicTransaction z zabezpieczeniami i opisano bezpieczne powiązania używane do komunikacji między menedżerami transakcji. Podejście opisane w tym dokumencie zostało pomyślnie przetestowane z innymi implementacjami WS-AT i WS-koordynacyjnych.  
   
  Ilustracja i tabela przedstawiają cztery klasy komunikatów z punktu widzenia zabezpieczeń:  
   
@@ -68,14 +69,17 @@ Windows Communication Foundation (WCF) w wersji 1 implementuje wersję 1,0 trans
 |XSD|`http://www.w3.org/2001/XMLSchema`|  
   
 ## <a name="transaction-manager-bindings"></a>Powiązania Menedżera transakcji  
- R1001: menedżerowie transakcji muszą używać protokołu SOAP 1,1 i WS-Addressing 2004/08 dla transakcji WS-i wymiany komunikatów z obsługą protokołu WS-AT.  
+
+ R1001: menedżerowie transakcji muszą używać protokołu SOAP 1,1 i WS-Addressing 2004/08 do WS-Atomic transakcji i wymiany komunikatów WS-Coordination.  
   
  Komunikaty aplikacji nie są ograniczone do tych powiązań i są opisane w dalszej części.  
   
 ### <a name="transaction-manager-https-binding"></a>Powiązanie HTTPS Menedżera transakcji  
+
  Powiązanie HTTPS Menedżera transakcji polega wyłącznie na zabezpieczeniach transportu, aby zapewnić bezpieczeństwo i ustanowić relację zaufania między każdą parę nadawcy-odbiornik w drzewie transakcji.  
   
 #### <a name="https-transport-configuration"></a>Konfiguracja transportu HTTPS  
+
  Certyfikaty X. 509 są używane do ustanowienia tożsamości Menedżera transakcji. Wymagane jest uwierzytelnianie klient/serwer, a autoryzacja klienta/serwera jest pozostawiana jako szczegóły implementacji:  
   
 - R1111: certyfikat X. 509 przedstawiony w sieci musi mieć nazwę podmiotu zgodną z w pełni kwalifikowaną nazwą domeny (FQDN) maszyny źródłowej.  
@@ -83,34 +87,40 @@ Windows Communication Foundation (WCF) w wersji 1 implementuje wersję 1,0 trans
 - B1112: usługa DNS musi być funkcjonalna między poszczególnymi parami nadawcy a odbiornikiem w systemie dla nazwy podmiotu X. 509.  
   
 #### <a name="activation-and-registration-binding-configuration"></a>Konfiguracja powiązania aktywacji i rejestracji  
- Funkcja WCF wymaga powiązania dwustronnego żądania/odpowiedzi z korelacją za pośrednictwem protokołu HTTPS. (Aby uzyskać więcej informacji na temat korelacji i opisów wzorców wymiany komunikatów żądania/odpowiedzi, zobacz temat transakcja WS-niepodzielna, sekcja 8.)  
+
+ Funkcja WCF wymaga powiązania dwustronnego żądania/odpowiedzi z korelacją za pośrednictwem protokołu HTTPS. (Aby uzyskać więcej informacji na temat korelacji i opisów wzorców wymiany komunikatów żądania/odpowiedzi, zobacz WS-Atomic Transaction, sekcja 8.)  
   
 #### <a name="2pc-protocol-binding-configuration"></a>Konfiguracja powiązania protokołu 2PC  
+
  Usługa WCF obsługuje jednokierunkowe komunikaty (Datagram) za pośrednictwem protokołu HTTPS. Korelacja wśród komunikatów jest pozostawiana jako szczegóły implementacji.  
   
  B2131: implementacje muszą obsługiwać `wsa:ReferenceParameters` zgodnie z opisem w WS-Addressing, aby osiągnąć korelację komunikatów 2PC programu WCF.  
   
 ### <a name="transaction-manager-mixed-security-binding"></a>Mieszane powiązanie zabezpieczeń programu Transaction Manager  
- Jest to alternatywne powiązanie (w trybie mieszanym), które korzysta z zabezpieczeń transportu połączonej z modelem tokenów wystawionych przez usługę WS-koordynacyjny do celów ustanowienia tożsamości.  Aktywacja i rejestracja są jedynymi elementami, które różnią się między dwoma powiązaniami.  
+
+ Jest to alternatywne powiązanie (w trybie mieszanym), które korzysta z zabezpieczeń transportu połączonej z WS-Coordination modelem tokenów wystawionych na potrzeby określania tożsamości.  Aktywacja i rejestracja są jedynymi elementami, które różnią się między dwoma powiązaniami.  
   
 #### <a name="https-transport-configuration"></a>Konfiguracja transportu HTTPS  
+
  Certyfikaty X. 509 są używane do ustanowienia tożsamości Menedżera transakcji. Wymagane jest uwierzytelnianie klient/serwer, a autoryzacja klienta/serwera jest pozostawiana jako szczegóły implementacji.  
   
 #### <a name="activation-message-binding-configuration"></a>Konfiguracja powiązania komunikatów aktywacji  
+
  Komunikaty o aktywacji zwykle nie uczestniczą w współdziałaniu, ponieważ zazwyczaj występują między aplikacją a jej lokalnym menedżerem transakcji.  
   
- B1221: WCF używa dupleksowego powiązania HTTPS (opisanego w [protokole obsługi komunikatów](messaging-protocols.md)) dla komunikatów aktywacji. Komunikaty Request i reply są skorelowane przy użyciu protokołu WS-Addressing 2004/08.  
+ B1221: WCF używa dupleksowego powiązania HTTPS (opisanego w [protokole obsługi komunikatów](messaging-protocols.md)) dla komunikatów aktywacji. Komunikaty Request i reply są skorelowane przy użyciu WS-Addressing 2004/08.  
   
- Specyfikacja transakcji WS-niepodzielna, sekcja 8, opis dalszych szczegółowych informacji o korelacji i wzorcach wymiany komunikatów.  
+ WS-Atomic Specyfikacja transakcji sekcja 8 zawiera szczegółowe informacje o korelacji i wzorcach wymiany komunikatów.  
   
-- R1222: po odebraniu `CreateCoordinationContext` , koordynator musi wydać `SecurityContextToken` ze skojarzonym kluczem tajnym `STx` . Ten token jest zwracany w `t:IssuedTokens` nagłówku następującej specyfikacji WS-Trust.  
+- R1222: po odebraniu `CreateCoordinationContext` , koordynator musi wydać `SecurityContextToken` ze skojarzonym kluczem tajnym `STx` . Ten token jest zwracany w `t:IssuedTokens` nagłówku zgodnie ze specyfikacją WS-Trust.  
   
 - R1223: Jeśli aktywacja odbywa się w istniejącym kontekście koordynacji, `t:IssuedTokens` Nagłówek z `SecurityContextToken` skojarzonym z istniejącym kontekstem musi przepływać w `CreateCoordinationContext` komunikacie.  
   
  W `t:IssuedTokens` celu dołączenia do wiadomości wychodzącej należy wygenerować nowy nagłówek `wscoor:CreateCoordinationContextResponse` .  
   
 #### <a name="registration-message-binding-configuration"></a>Konfiguracja powiązania komunikatu rejestracji  
- B1231: WCF używa dupleksowego powiązania HTTPS (opisanego w [protokole obsługi komunikatów](messaging-protocols.md)). Komunikaty Request i reply są skorelowane przy użyciu protokołu WS-Addressing 2004/08.  
+
+ B1231: WCF używa dupleksowego powiązania HTTPS (opisanego w [protokole obsługi komunikatów](messaging-protocols.md)). Komunikaty Request i reply są skorelowane przy użyciu WS-Addressing 2004/08.  
   
  WS-AtomicTransaction, sekcja 8, zawiera szczegółowe informacje o korelacji i opisach wzorców wymiany komunikatów.  
   
@@ -119,11 +129,13 @@ Windows Communication Foundation (WCF) w wersji 1 implementuje wersję 1,0 trans
  `wsse:Timestamp`Element musi być podpisany przy użyciu `SecurityContextToken STx` wystawionego elementu. Podpis jest dowodem posiadania tokenu powiązanego z określoną transakcją i jest używany do uwierzytelniania uczestnika rejestracji w transakcji. Wiadomość RegistrationResponse jest wysyłana z powrotem za pośrednictwem protokołu HTTPS.  
   
 #### <a name="2pc-protocol-binding-configuration"></a>Konfiguracja powiązania protokołu 2PC  
+
  Usługa WCF obsługuje jednokierunkowe komunikaty (Datagram) za pośrednictwem protokołu HTTPS. Korelacja wśród komunikatów jest pozostawiana jako szczegóły implementacji.  
   
  B2131: implementacje muszą obsługiwać `wsa:ReferenceParameters` zgodnie z opisem w WS-Addressing, aby osiągnąć korelację komunikatów 2PC programu WCF.  
   
 ## <a name="application-message-exchange"></a>Wymiana komunikatów aplikacji  
+
  Aplikacje mogą korzystać z dowolnego określonego powiązania dla komunikatów aplikacji do aplikacji, o ile powiązanie spełnia następujące wymagania dotyczące zabezpieczeń:  
   
 - R2001: komunikaty między aplikacjami muszą przepływać z `t:IssuedTokens` nagłówka wraz z `CoordinationContext` nagłówkiem komunikatu.  
@@ -137,6 +149,7 @@ Windows Communication Foundation (WCF) w wersji 1 implementuje wersję 1,0 trans
 ## <a name="message-examples"></a>Przykłady komunikatów  
   
 ### <a name="createcoordinationcontext-requestresponse-messages"></a>Komunikaty żądania/odpowiedzi CreateCoordinationContext  
+
  Poniższe komunikaty obserwują wzorzec żądania/odpowiedzi.  
   
 #### <a name="createcoordinationcontext"></a>CreateCoordinationContext  
@@ -248,6 +261,7 @@ Windows Communication Foundation (WCF) w wersji 1 implementuje wersję 1,0 trans
 ```  
   
 ### <a name="registration-messages"></a>Komunikaty rejestracji  
+
  Następujące komunikaty są komunikatami rejestracji.  
   
 #### <a name="register"></a>Zarejestruj  
@@ -348,6 +362,7 @@ Windows Communication Foundation (WCF) w wersji 1 implementuje wersję 1,0 trans
 ```  
   
 ### <a name="two-phase-commit-protocol-messages"></a>Komunikaty protokołu zatwierdzania dwóch faz  
+
  Następujący komunikat odnosi się do protokołu zatwierdzania dwufazowego (2PC).  
   
 #### <a name="commit"></a>Zatwierdzenie  
@@ -374,6 +389,7 @@ Windows Communication Foundation (WCF) w wersji 1 implementuje wersję 1,0 trans
 ```  
   
 ### <a name="application-messages"></a>Komunikaty aplikacji  
+
  Następujące komunikaty są komunikatami aplikacji.  
   
 #### <a name="application-message-request"></a>Komunikat aplikacji — żądanie  

@@ -2,14 +2,15 @@
 title: Kontrakt błędu
 ms.date: 03/30/2017
 ms.assetid: b31b140e-dc3b-408b-b3c7-10b6fe769725
-ms.openlocfilehash: 5081284075ffa31c947a0e63f915a721ea5983c0
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 898692119e3e71b1c5aeedcd65674a49842ef110
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600506"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96245214"
 ---
 # <a name="fault-contract"></a>Kontrakt błędu
+
 Przykładowa umowa dotycząca błędu demonstruje sposób komunikacji z klientem informacji o błędach z usługi. Przykład jest oparty na [wprowadzenie](getting-started-sample.md), z dodatkowym kodem dodanym do usługi w celu przekonwertowania wewnętrznego wyjątku na błąd. Klient próbuje wykonać dzielenie przez zero w celu wymuszenia błędu w usłudze.  
   
 > [!NOTE]
@@ -98,7 +99,7 @@ catch (FaultException<MathFault> e)
 }  
 ```  
   
- Domyślnie szczegóły nieoczekiwanych wyjątków nie są wysyłane do klienta, aby zapobiec szczegółom implementacji usługi z ucieczki bezpiecznej granicy usługi. `FaultContract`zapewnia sposób opisywania błędów w kontrakcie i oznaczania niektórych typów wyjątków zgodnie z potrzebami do przesyłania danych do klienta. `FaultException<T>`zapewnia mechanizm czasu wykonywania do wysyłania błędów do odbiorców.  
+ Domyślnie szczegóły nieoczekiwanych wyjątków nie są wysyłane do klienta, aby zapobiec szczegółom implementacji usługi z ucieczki bezpiecznej granicy usługi. `FaultContract` zapewnia sposób opisywania błędów w kontrakcie i oznaczania niektórych typów wyjątków zgodnie z potrzebami do przesyłania danych do klienta. `FaultException<T>` zapewnia mechanizm czasu wykonywania do wysyłania błędów do odbiorców.  
   
  Jednak podczas debugowania warto zobaczyć wewnętrzne szczegóły błędu usługi. Aby wyłączyć wcześniej opisane bezpieczne zachowanie, można wskazać, że szczegóły każdego nieobsługiwanego wyjątku na serwerze powinny być dołączone do błędu wysyłanego do klienta programu. Jest to realizowane przez ustawienie <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> `true` . Można ustawić ją w kodzie lub w konfiguracji, jak pokazano w poniższym przykładzie.  
   

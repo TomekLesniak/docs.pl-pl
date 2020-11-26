@@ -7,17 +7,19 @@ helpviewer_keywords:
 - programming [WF]
 - WF [WF], programming
 ms.assetid: f62354e2-6a2b-4e8c-a4bc-533fb96267a4
-ms.openlocfilehash: 33c656ed453a1a2df6916c691245e01bbf7c6f33
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: bf2aa8d755303acab168f306cead1b496c87eff1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421452"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246085"
 ---
 # <a name="windows-workflow-foundation-programming"></a>Programowanie w programie Windows Workflow Foundation
+
 Ta sekcja zawiera zestaw tematów, które należy zrozumieć, aby stać się programistą Windows Workflow Foundation (WF).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Projektowanie przepływów pracy](designing-workflows.md)  
  Tematy opisujące model kontroli przepływu używany podczas tworzenia przepływu pracy.  
   

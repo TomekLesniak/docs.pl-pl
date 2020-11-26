@@ -2,27 +2,30 @@
 title: 3821 — RoutingServiceCloseFailed
 ms.date: 03/30/2017
 ms.assetid: 584cc4d0-6c9e-4dce-b1d1-5bcc9a41011b
-ms.openlocfilehash: 7596affcc5f98953502b03866a5a7d6e41f89ffb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e26b2adeda1842fbca27ab9b821cacb79e953ebd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61748593"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96245318"
 ---
 # <a name="3821---routingserviceclosefailed"></a>3821 — RoutingServiceCloseFailed
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|3821|  
-|słowa kluczowe|RoutingServices|  
+|ID (Identyfikator)|3821|  
+|Słowa kluczowe|RoutingServices|  
 |Poziom|Ostrzeżenie|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, gdy usługa routingu nie powiodło się podczas zamykania klienta ruchu wychodzącego.  
+
+ To zdarzenie jest emitowane, gdy usługa routingu zakończyła się niepowodzeniem podczas zamykania klienta wychodzącego.  
   
-## <a name="message"></a>Komunikat  
- Usługa routingu nie powiodło się podczas zamykania wychodzącego klienta "%1".  
+## <a name="message"></a>Wiadomość  
+
+ Wystąpił błąd usługi routingu podczas zamykania klienta wychodzącego ' %1 '.  
   
 ## <a name="details"></a>Szczegóły

@@ -1,18 +1,19 @@
 ---
-title: 'Instrukcje: Wymiana komunikatów z punktami końcowymi programu WCF i aplikacjami do obsługi kolejek komunikatów'
+title: 'Instrukcje: wymiana komunikatów z punktami końcowymi programu WCF i aplikacjami do obsługi kolejek komunikatów'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 62210fd8-a372-4d55-ab9b-c99827d1885e
-ms.openlocfilehash: 0775de90903aed27a8d0006614a4b6f2d857eee3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8f8baf345059c01b0fef3b61ef85556151269118
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597101"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96246423"
 ---
-# <a name="how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications"></a>Instrukcje: Wymiana komunikatów z punktami końcowymi programu WCF i aplikacjami do obsługi kolejek komunikatów
+# <a name="how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications"></a>Instrukcje: wymiana komunikatów z punktami końcowymi programu WCF i aplikacjami do obsługi kolejek komunikatów
+
 Istniejące aplikacje usługi kolejkowania komunikatów (MSMQ) można zintegrować z aplikacjami Windows Communication Foundation (WCF) przy użyciu powiązania integracji usługi MSMQ w celu konwertowania komunikatów usługi MSMQ do i z komunikatów WCF. Pozwala to na wywoływanie aplikacji odbiornika usługi MSMQ z klientów WCF, a także wywoływanie usług WCF z aplikacji nadawcy usługi MSMQ.  
   
  W tej sekcji wyjaśniono, jak używać funkcji <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> komunikacji w kolejce między (1) klientem programu WCF i usługą aplikacji MSMQ zapisaną przy użyciu funkcji system. Messaging i (2) klienta aplikacji usługi MSMQ i usługi WCF.  
@@ -61,7 +62,7 @@ Istniejące aplikacje usługi kolejkowania komunikatów (MSMQ) można zintegrowa
 ## <a name="see-also"></a>Zobacz też
 
 - [Omówienie kolejek](queues-overview.md)
-- [Instrukcje: wymiana komunikatów znajdujących się w kolejce z punktami końcowymi WCF](how-to-exchange-queued-messages-with-wcf-endpoints.md)
+- [Instrukcje: wymiana zakolejkowanych komunikatów z punktami końcowymi WCF](how-to-exchange-queued-messages-with-wcf-endpoints.md)
 - [Wysyłanie komunikatów z usługi WCF do usługi kolejkowania komunikatów](../samples/wcf-to-message-queuing.md)
 - [Instalowanie usługi kolejkowania komunikatów (MSMQ)](../samples/installing-message-queuing-msmq.md)
 - [Obsługa kolejek komunikatów programu Windows Communication Foundation](../samples/message-queuing-to-wcf.md)
