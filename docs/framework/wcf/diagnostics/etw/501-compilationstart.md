@@ -2,27 +2,30 @@
 title: 501 — CompilationStart
 ms.date: 03/30/2017
 ms.assetid: 5d4a214f-e242-4475-8bc9-02409190dc2c
-ms.openlocfilehash: 0b3fb07da3fa3350503541fe442e333055326b73
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 532e3a4eb62d8f97ff7ac544091e526a32a2fe22
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62048819"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96235496"
 ---
-# <a name="501---compilationstart"></a><span data-ttu-id="24d44-102">501 — CompilationStart</span><span class="sxs-lookup"><span data-stu-id="24d44-102">501 - CompilationStart</span></span>
-## <a name="properties"></a><span data-ttu-id="24d44-103">Właściwości</span><span class="sxs-lookup"><span data-stu-id="24d44-103">Properties</span></span>  
+# <a name="501---compilationstart"></a><span data-ttu-id="8b99f-102">501 — CompilationStart</span><span class="sxs-lookup"><span data-stu-id="8b99f-102">501 - CompilationStart</span></span>
+
+## <a name="properties"></a><span data-ttu-id="8b99f-103">Właściwości</span><span class="sxs-lookup"><span data-stu-id="8b99f-103">Properties</span></span>  
   
 |||  
 |-|-|  
-|<span data-ttu-id="24d44-104">Identyfikator</span><span class="sxs-lookup"><span data-stu-id="24d44-104">ID</span></span>|<span data-ttu-id="24d44-105">501</span><span class="sxs-lookup"><span data-stu-id="24d44-105">501</span></span>|  
-|<span data-ttu-id="24d44-106">słowa kluczowe</span><span class="sxs-lookup"><span data-stu-id="24d44-106">Keywords</span></span>|<span data-ttu-id="24d44-107">WebHost</span><span class="sxs-lookup"><span data-stu-id="24d44-107">WebHost</span></span>|  
-|<span data-ttu-id="24d44-108">Poziom</span><span class="sxs-lookup"><span data-stu-id="24d44-108">Level</span></span>|<span data-ttu-id="24d44-109">Informacje</span><span class="sxs-lookup"><span data-stu-id="24d44-109">Information</span></span>|  
-|<span data-ttu-id="24d44-110">Kanał</span><span class="sxs-lookup"><span data-stu-id="24d44-110">Channel</span></span>|<span data-ttu-id="24d44-111">Microsoft-Windows-Application Server-Applications/Debug</span><span class="sxs-lookup"><span data-stu-id="24d44-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
+|<span data-ttu-id="8b99f-104">ID (Identyfikator)</span><span class="sxs-lookup"><span data-stu-id="8b99f-104">ID</span></span>|<span data-ttu-id="8b99f-105">501</span><span class="sxs-lookup"><span data-stu-id="8b99f-105">501</span></span>|  
+|<span data-ttu-id="8b99f-106">Słowa kluczowe</span><span class="sxs-lookup"><span data-stu-id="8b99f-106">Keywords</span></span>|<span data-ttu-id="8b99f-107">WebHost</span><span class="sxs-lookup"><span data-stu-id="8b99f-107">WebHost</span></span>|  
+|<span data-ttu-id="8b99f-108">Poziom</span><span class="sxs-lookup"><span data-stu-id="8b99f-108">Level</span></span>|<span data-ttu-id="8b99f-109">Informacje</span><span class="sxs-lookup"><span data-stu-id="8b99f-109">Information</span></span>|  
+|<span data-ttu-id="8b99f-110">Kanał</span><span class="sxs-lookup"><span data-stu-id="8b99f-110">Channel</span></span>|<span data-ttu-id="8b99f-111">Microsoft-Windows-Application Server — aplikacje/debugowanie</span><span class="sxs-lookup"><span data-stu-id="8b99f-111">Microsoft-Windows-Application Server-Applications/Debug</span></span>|  
   
-## <a name="description"></a><span data-ttu-id="24d44-112">Opis</span><span class="sxs-lookup"><span data-stu-id="24d44-112">Description</span></span>  
- <span data-ttu-id="24d44-113">To zdarzenie jest emitowane, kiedy rozpoczyna się kompilacja elementu servicehost.</span><span class="sxs-lookup"><span data-stu-id="24d44-113">This event is emitted when the servicehost compilation begins.</span></span>  
+## <a name="description"></a><span data-ttu-id="8b99f-112">Opis</span><span class="sxs-lookup"><span data-stu-id="8b99f-112">Description</span></span>  
+
+ <span data-ttu-id="8b99f-113">To zdarzenie jest emitowane po rozpoczęciu kompilacji ServiceHost.</span><span class="sxs-lookup"><span data-stu-id="8b99f-113">This event is emitted when the servicehost compilation begins.</span></span>  
   
-## <a name="message"></a><span data-ttu-id="24d44-114">Komunikat</span><span class="sxs-lookup"><span data-stu-id="24d44-114">Message</span></span>  
- <span data-ttu-id="24d44-115">Rozpocznij kompilację.</span><span class="sxs-lookup"><span data-stu-id="24d44-115">Begin compilation.</span></span>  
+## <a name="message"></a><span data-ttu-id="8b99f-114">Wiadomość</span><span class="sxs-lookup"><span data-stu-id="8b99f-114">Message</span></span>  
+
+ <span data-ttu-id="8b99f-115">Rozpocznij kompilację.</span><span class="sxs-lookup"><span data-stu-id="8b99f-115">Begin compilation.</span></span>  
   
-## <a name="details"></a><span data-ttu-id="24d44-116">Szczegóły</span><span class="sxs-lookup"><span data-stu-id="24d44-116">Details</span></span>
+## <a name="details"></a><span data-ttu-id="8b99f-116">Szczegóły</span><span class="sxs-lookup"><span data-stu-id="8b99f-116">Details</span></span>
