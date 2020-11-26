@@ -133,7 +133,7 @@ items:
             href: ../core/tutorials/index.md
   - name: Co nowego
     items:
-      - name: Co nowego w wersji .NET 5
+      - name: Co nowego w platformie .NET w wersji 5.0
         href: ../core/dotnet-five.md
       - name: Co nowego w programie .NET Core 3.1
         href: ../core/whats-new/dotnet-core-3-1.md
