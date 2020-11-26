@@ -4,10 +4,10 @@ description: Opisuje obsługę odrzutów języka C#, które są nieprzypisanymi,
 ms.technology: csharp-fundamentals
 ms.date: 09/22/2020
 ms.openlocfilehash: baa7c559095460cf747cb5c8f7ad581270893bd7
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "95698809"
 ---
 # <a name="discards---c-guide"></a>Odrzuty — Przewodnik C#
@@ -69,19 +69,19 @@ Możesz użyć odrzucania autonomicznego, aby wskazać dowolną zmienną, która
 
 Należy pamiętać, że `_` jest również prawidłowym identyfikatorem. Gdy jest używana poza obsługiwanym kontekstem, `_` jest traktowana jako odrzucona, ale jako prawidłowa zmienna. Jeśli identyfikator o nazwie `_` znajduje się już w zakresie, użycie `_` jako odrzucanie autonomiczne może skutkować:
 
-- Przypadkowe modyfikacje wartości zmiennej w zakresie `_` przez przypisanie jej wartości zamierzonego odrzucenia. Na przykład:
+- Przypadkowe modyfikacje wartości zmiennej w zakresie `_` przez przypisanie jej wartości zamierzonego odrzucenia. Przykład:
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#1)]
 
-- Błąd kompilatora dotyczący naruszania bezpieczeństwa typów. Na przykład:
+- Błąd kompilatora dotyczący naruszania bezpieczeństwa typów. Przykład:
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#2)]
 
-- Błąd kompilatora CS0136, "lokalny lub parametr o nazwie" \_ "nie może zostać zadeklarowany w tym zakresie, ponieważ ta nazwa jest używana w otaczającym zakresie lokalnym w celu zdefiniowania lokalnego lub parametru". Na przykład:
+- Błąd kompilatora CS0136, "lokalny lub parametr o nazwie" \_ "nie może zostać zadeklarowany w tym zakresie, ponieważ ta nazwa jest używana w otaczającym zakresie lokalnym w celu zdefiniowania lokalnego lub parametru". Przykład:
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#3)]
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dekonstrukcja krotek i innych typów](deconstruct.md)
 - [`is` kodu](language-reference/keywords/is.md)

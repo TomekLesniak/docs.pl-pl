@@ -10,10 +10,10 @@ helpviewer_keywords:
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
 ms.openlocfilehash: 5af40da18895d47933cb809d710e31a40f14513b
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91152432"
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile (opcje kompilatora C#)
@@ -44,7 +44,7 @@ Określa nazwę pliku zawierającego klucz kryptograficzny.
   
  Należy pamiętać, że plik klucza może zawierać tylko klucz publiczny.  
   
- Aby uzyskać więcej informacji, zobacz [Tworzenie i używanie zestawów o silnych nazwach](../../../standard/assembly/create-use-strong-named.md) oraz [opóźnienie podpisywania zestawu](../../../standard/assembly/delay-sign.md).  
+ Aby uzyskać więcej informacji, zobacz [Tworzenie i używanie zestawów Strong-Named](../../../standard/assembly/create-use-strong-named.md) i [opóźnianie podpisywania zestawu](../../../standard/assembly/delay-sign.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Aby ustawić tę opcję kompilatora w środowisku programowania Visual Studio  
   

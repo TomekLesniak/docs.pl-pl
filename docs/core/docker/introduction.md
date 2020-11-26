@@ -4,10 +4,10 @@ description: Ten artykuł zawiera wprowadzenie i Omówienie platformy Docker w k
 ms.date: 03/20/2019
 ms.custom: mvc
 ms.openlocfilehash: 6303c16e914c86f3a431a9e5367e6feb8ff88c9e
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "95724745"
 ---
 # <a name="introduction-to-net-and-docker"></a>Wprowadzenie do platform .NET i Docker
@@ -26,7 +26,7 @@ Obraz to uporządkowana kolekcja zmian systemu plików, która stanowi podstawę
 
 Ponieważ kontenery są tworzone na podstawie obrazów, obrazy mają zestaw parametrów uruchomieniowych (takich jak uruchamianie pliku wykonywalnego), które są uruchamiane podczas uruchamiania kontenera.
 
-### <a name="containers"></a>Containers
+### <a name="containers"></a>Kontenery
 
 Kontener jest wystąpieniem możliwy do uruchomienia obrazu. Podczas kompilowania obrazu należy wdrożyć swoją aplikację i zależności. Następnie można utworzyć wystąpienie wielu kontenerów, każdy odizolowany od siebie nawzajem. Każde wystąpienie kontenera ma własny interfejs systemu plików, pamięci i interfejsu sieciowego.
 

@@ -10,10 +10,10 @@ helpviewer_keywords:
 - /nostdlib compiler option [C#]
 ms.assetid: ec197989-fa49-4725-a455-e06b551eb65f
 ms.openlocfilehash: 214918b32f1f1276eb936e66daba3d372a1e9228
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89125101"
 ---
 # <a name="-nostdlib-c-compiler-options"></a>-nostdlib (opcje kompilatora C#)
@@ -35,7 +35,7 @@ Jeśli nie określisz opcji **-nostdlib**, mscorlib.dll jest zaimportowana do pr
 ### <a name="to-set-this-compiler-option-in-visual-studio"></a>Aby ustawić tę opcję kompilatora w programie Visual Studio
 
 > [!NOTE]
-> Poniższe instrukcje dotyczą tylko programu Visual Studio 2015 (i jego wcześniejszych wersji). Właściwość kompilacji **mscorlib.dllnie ** istnieje w nowszych wersjach programu Visual Studio.
+> Poniższe instrukcje dotyczą tylko programu Visual Studio 2015 (i jego wcześniejszych wersji). Właściwość kompilacji **mscorlib.dllnie** istnieje w nowszych wersjach programu Visual Studio.
 
 1. Otwórz stronę **Właściwości** dla projektu.
 

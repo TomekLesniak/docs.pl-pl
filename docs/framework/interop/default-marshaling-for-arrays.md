@@ -10,10 +10,10 @@ helpviewer_keywords:
 - arrays, interop marshaling
 ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
 ms.openlocfilehash: 6bfe95576a6460efac75fd392e24acf42e36f2de
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "90555266"
 ---
 # <a name="default-marshaling-for-arrays"></a>Organizowanie domyślne dotyczące tablic
@@ -119,7 +119,7 @@ void New2([MarshalAs(UnmanagedType.LPArray,
    ArraySubType=UnmanagedType.LPWStr, SizeConst=10)] String[] ar);  
 ```  
   
- Chociaż atrybuty **size_is** lub **length_is** można zastosować do tablicy źródła w języku definicji interfejsu (IDL), aby przekazać rozmiar do klienta, kompilator Microsoft Interface Definition Language (MIDL) nie propaguje tych informacji do biblioteki typów. Bez znajomości rozmiaru usługa Marshaling Interop nie może zorganizować elementów tablicy. W związku z tym tablice o zmiennej długości są importowane jako argumenty odwołania. Na przykład:  
+ Chociaż atrybuty **size_is** lub **length_is** można zastosować do tablicy źródła w języku definicji interfejsu (IDL), aby przekazać rozmiar do klienta, kompilator Microsoft Interface Definition Language (MIDL) nie propaguje tych informacji do biblioteki typów. Bez znajomości rozmiaru usługa Marshaling Interop nie może zorganizować elementów tablicy. W związku z tym tablice o zmiennej długości są importowane jako argumenty odwołania. Przykład:  
   
  **Niezarządzany podpis**  
   
@@ -159,7 +159,7 @@ void New3(ref String ar);
        [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=0)] int[] ar );  
     ```  
   
-- Zdefiniuj rozmiar tablicy jako stałą. Na przykład:  
+- Zdefiniuj rozmiar tablicy jako stałą. Przykład:  
   
     ```vb  
     Sub [New](\<MarshalAs(UnmanagedType.LPArray, SizeConst:=128)> _  
@@ -190,7 +190,7 @@ void New3(ref String ar);
  Istnieje ograniczenie dotyczące automatyzacji OLE odnoszące się do tablic struktur, które zawierają LPSTR lub LPWSTR.  W związku z tym pola **String** muszą być organizowane jako **UnmanagedType. BSTR**. W przeciwnym razie zostanie zgłoszony wyjątek.  
   
 ### <a name="element_type_szarray"></a>ELEMENT_TYPE_SZARRAY  
- Gdy metoda zawierająca parametr **ELEMENT_TYPE_SZARRAY** (tablica Jednowymiarowa) jest eksportowana z zestawu .NET do biblioteki typów, parametr array jest konwertowany na typ **SAFEARRAY** danego typu. Te same reguły konwersji mają zastosowanie do typów elementów tablicy. Zawartość tablicy zarządzanej jest automatycznie kopiowana z pamięci zarządzanej do elementu **SAFEARRAY**. Na przykład:  
+ Gdy metoda zawierająca parametr **ELEMENT_TYPE_SZARRAY** (tablica Jednowymiarowa) jest eksportowana z zestawu .NET do biblioteki typów, parametr array jest konwertowany na typ **SAFEARRAY** danego typu. Te same reguły konwersji mają zastosowanie do typów elementów tablicy. Zawartość tablicy zarządzanej jest automatycznie kopiowana z pamięci zarządzanej do elementu **SAFEARRAY**. Przykład:  
   
 #### <a name="managed-signature"></a>Sygnatura zarządzana  
   
@@ -213,7 +213,7 @@ HRESULT New([in] SAFEARRAY( BSTR ) ar);
   
  Ranga tablic bezpiecznych jest zawsze 1, a dolna granica jest zawsze równa 0. Rozmiar jest określany w czasie wykonywania przez rozmiar przesyłanej tablicy zarządzanej.  
   
- Tablica może być również organizowana jako tablica w stylu C przy użyciu <xref:System.Runtime.InteropServices.MarshalAsAttribute> atrybutu. Na przykład:  
+ Tablica może być również organizowana jako tablica w stylu C przy użyciu <xref:System.Runtime.InteropServices.MarshalAsAttribute> atrybutu. Przykład:  
   
 #### <a name="managed-signature"></a>Sygnatura zarządzana  
   
@@ -248,7 +248,7 @@ HRESULT New(LPStr ar[]);
  Chociaż Organizator ma informacje o długości wymaganej do zorganizowania tablicy, Długość tablicy jest zwykle przekazywany jako oddzielny argument, aby przekazać długość do elementu wywoływanego.  
   
 ### <a name="element_type_array"></a>ELEMENT_TYPE_ARRAY  
- Gdy metoda zawierająca parametr **ELEMENT_TYPE_ARRAY** zostanie wyeksportowana z zestawu .NET do biblioteki typów, parametr array jest konwertowany na typ **SAFEARRAY** danego typu. Zawartość tablicy zarządzanej jest automatycznie kopiowana z pamięci zarządzanej do elementu **SAFEARRAY**. Na przykład:  
+ Gdy metoda zawierająca parametr **ELEMENT_TYPE_ARRAY** zostanie wyeksportowana z zestawu .NET do biblioteki typów, parametr array jest konwertowany na typ **SAFEARRAY** danego typu. Zawartość tablicy zarządzanej jest automatycznie kopiowana z pamięci zarządzanej do elementu **SAFEARRAY**. Przykład:  
   
 #### <a name="managed-signature"></a>Sygnatura zarządzana  
   
@@ -271,7 +271,7 @@ HRESULT New([in] SAFEARRAY( BSTR ) ar);
   
  Ranga, rozmiar i granice bezpiecznych tablic są określane w czasie wykonywania przez charakterystykę zarządzanej tablicy.  
   
- Tablica może być również organizowana jako tablica w stylu C przez zastosowanie <xref:System.Runtime.InteropServices.MarshalAsAttribute> atrybutu. Na przykład:  
+ Tablica może być również organizowana jako tablica w stylu C przez zastosowanie <xref:System.Runtime.InteropServices.MarshalAsAttribute> atrybutu. Przykład:  
   
 #### <a name="managed-signature"></a>Sygnatura zarządzana  
   
@@ -311,7 +311,7 @@ void New(long [][][] ar );
 ```  
   
 ### <a name="element_type_class-systemarray"></a>ELEMENT_TYPE_CLASS \<System.Array>  
- Gdy metoda zawierająca <xref:System.Array?displayProperty=nameWithType> parametr zostanie wyeksportowana z zestawu .NET do biblioteki typów, parametr array jest konwertowany na interfejs **_Array** . Zawartość tablicy zarządzanej jest dostępna tylko za pomocą metod i właściwości interfejsu **_Array** . Element **System. Array** może być również zorganizowany jako **SAFEARRAY** przy użyciu <xref:System.Runtime.InteropServices.MarshalAsAttribute> atrybutu. Gdy jest zorganizowany jako bezpieczna tablica, elementy tablicy są organizowane jako warianty. Na przykład:  
+ Gdy metoda zawierająca <xref:System.Array?displayProperty=nameWithType> parametr zostanie wyeksportowana z zestawu .NET do biblioteki typów, parametr array jest konwertowany na interfejs **_Array** . Zawartość tablicy zarządzanej jest dostępna tylko za pomocą metod i właściwości interfejsu **_Array** . Element **System. Array** może być również zorganizowany jako **SAFEARRAY** przy użyciu <xref:System.Runtime.InteropServices.MarshalAsAttribute> atrybutu. Gdy jest zorganizowany jako bezpieczna tablica, elementy tablicy są organizowane jako warianty. Przykład:  
   
 #### <a name="managed-signature"></a>Sygnatura zarządzana  
   
@@ -359,7 +359,7 @@ public struct MyStruct {
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Domyślne zachowanie marshalingu](default-marshaling-behavior.md)
 - [Typy kopiowalne i niekopiowalne](blittable-and-non-blittable-types.md)

@@ -17,10 +17,10 @@ helpviewer_keywords:
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
 ms.openlocfilehash: b985c85e2fddce459ed68b3d07ba7d54a8b2d0a7
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89125608"
 ---
 # <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Porada: ustawianie zmiennych środowiskowych dla wiersza polecenia programu Visual Studio

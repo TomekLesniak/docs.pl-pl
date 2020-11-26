@@ -7,10 +7,10 @@ helpviewer_keywords:
 - command line [C#]
 ms.assetid: 66e70056-dd20-453c-a9b3-507e0478b015
 ms.openlocfilehash: 9ffd164602862fce7f5e4f0982d3eda7cb403e60
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "89125933"
 ---
 # <a name="command-line-build-with-cscexe"></a>Kompilacja w wierszu polecenia z csc.exe
@@ -58,13 +58,13 @@ Kompilator języka C# używa następujących reguł, gdy interpretuje argumenty 
 
 ## <a name="sample-command-lines-for-the-c-compiler"></a>Przykładowe wiersze poleceń dla kompilatora C#
 
-- Kompiluje *File.exe*tworzenia *File.cs* :
+- Kompiluje *File.exe* tworzenia *File.cs* :
 
   ```console
   csc File.cs
   ```
 
-- Kompiluje *File.dll*tworzenia *File.cs* :
+- Kompiluje *File.dll* tworzenia *File.cs* :
 
   ```console
   csc -target:library File.cs
@@ -103,7 +103,7 @@ Nie ma plików obiektów (*. obj*) utworzonych w wyniku wywoływania kompilatora
 - [Opcje kompilatora C#](./index.md)
 - [Opcje kompilatora C# w porządku alfabetycznym](./listed-alphabetically.md)
 - [Opcje kompilatora C# w rozbiciu na kategorie](./listed-by-category.md)
-- [Main () i argumenty wiersza polecenia](../../programming-guide/main-and-command-args/index.md)
+- [Main () i Command-Line argumenty](../../programming-guide/main-and-command-args/index.md)
 - [Argumenty wiersza poleceń](../../programming-guide/main-and-command-args/command-line-arguments.md)
 - [Wyświetlanie argumentów wiersza polecenia](../../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
 - [Main() — Zwracane wartości](../../programming-guide/main-and-command-args/main-return-values.md)

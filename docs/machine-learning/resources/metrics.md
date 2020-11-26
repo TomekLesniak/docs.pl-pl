@@ -3,10 +3,10 @@ title: Metryki ML.NET
 description: Informacje o metrykach, które są używane do oceny wydajności modelu ML.NET
 ms.date: 12/17/2019
 ms.openlocfilehash: 046e0a3feea2da702dfef5ca9ce4f498fce5fb26
-ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91804825"
 ---
 # <a name="evaluate-your-mlnet-model-with-metrics"></a>Oceń model ML.NET przy użyciu metryk
@@ -23,14 +23,14 @@ Na przykład dla zadania klasyfikacji model jest oceniany przez zmierzenie, jak 
 |-----------|-----------------------|-----------|
 | **Odpowiedni** |  [Dokładność](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification) jest proporcją prawidłowych prognoz z zestawem danych testowych. Jest to stosunek liczby poprawnych prognoz do całkowitej liczby próbek wejściowych. Działa dobrze, jeśli istnieje podobna liczba próbek należących do każdej klasy.| **Im bliżej 1,00, tym lepiej**. Ale dokładnie 1,00 wskazuje na problem (często: wyciek etykiet/obiektu docelowego, nadmierne dopasowanie lub testowanie przy użyciu danych szkoleniowych). Gdy dane testowe są niezrównoważone (gdy większość wystąpień należy do jednej z klas), zestaw danych jest mały lub wyniki zbliżają się do 0,00 lub 1,00, a dokładność nie przechwytuje skuteczności klasyfikatora i należy sprawdzić dodatkowe metryki. |
 | **AUC** |    [aucROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) lub *obszar pod krzywą* mierzy obszar pod krzywą utworzoną przez wyczyszczenie prawdziwej dodatniej stawki w porównaniu z fałszywą dodatnią częstotliwością.  |   **Im bliżej 1,00, tym lepiej**. Aby model mógł zostać akceptowalny, powinien być większy niż 0,50. Model z AUCem 0,50 lub mniej to bezwartościowe. |
-| **AUCPR** | aucPR lub *obszar pod krzywą krzywej odwołania z dokładnością*: użyteczna miara sukcesu w przypadku, gdy klasy są niezrównoważone (zestawy danych o wysokim stopniu skośnym). |  **Im bliżej 1,00, tym lepiej**. Wysokie wyniki zbliżone do 1,00 pokazują, że klasyfikator zwraca dokładne wyniki (wysoka precyzja), a także zwraca większość pozytywnych wyników (wysoki stopień odwołania). |
+| **AUCPR** | aucPR lub *obszar pod krzywą Precision-Recall krzywą*: przydatny pomiar sukcesu w przypadku, gdy klasy są niezrównoważone (zestawy danych o wysokim stopniu skośnym). |  **Im bliżej 1,00, tym lepiej**. Wysokie wyniki zbliżone do 1,00 pokazują, że klasyfikator zwraca dokładne wyniki (wysoka precyzja), a także zwraca większość pozytywnych wyników (wysoki stopień odwołania). |
 | **F1-Score** | [Wynik F1](https://en.wikipedia.org/wiki/F1_score) jest znany również jako współczynnik *f-Score lub f-Measure*. Jest to średnia harmoniczna precyzji i odwołania. Wynik F1 jest przydatny, gdy chcesz uzyskać równowagę między dokładnością a odwołaniem.| **Im bliżej 1,00, tym lepiej**.  Wynik F1 osiąga swoją najlepszą wartość w 1,00 i najgorszy wynik o godzinie 0,00. Informuje o tym, jak precyzyjnym klasyfikatorem jest. |
 
 Aby uzyskać więcej informacji na temat metryk klasyfikacji danych binarnych, przeczytaj następujące artykuły:
 
 - [Dokładność, precyzja, odwołanie lub F1?](https://towardsdatascience.com/accuracy-precision-recall-or-f1-331fb37c5cb9)
 - [Klasa metryk klasyfikacji binarnej](xref:Microsoft.ML.Data.BinaryClassificationMetrics)
-- [Relacja między krzywą precyzji i odwołania ROC](http://pages.cs.wisc.edu/~jdavis/davisgoadrichcamera2.pdf)
+- [Relacja między krzywymi Precision-Recall i ROC](http://pages.cs.wisc.edu/~jdavis/davisgoadrichcamera2.pdf)
 
 ## <a name="evaluation-metrics-for-multi-class-classification"></a>Metryki oceny dla klasyfikacji wieloklasowej
 
@@ -59,7 +59,7 @@ Aby uzyskać więcej informacji na temat metryk klasyfikacji wieloklasowej, prze
 
 Zadania regresji i rekomendacji przewidują liczbę. W przypadku regresji liczba może być dowolną właściwością wyjściową, która ma wpływ na właściwości wejściowe. W przypadku rekomendacji liczba jest zwykle wartością klasyfikacji (na przykład z zakresu od 1 do 5) lub zaleceniem tak/nie (reprezentowanym odpowiednio przez 1 i 0).
 
-| Metryka   |      Opis      |  Szukać |
+| Metric   |      Opis      |  Szukać |
 |----------|-----------------------|-----------|
 | **R-kwadratowy** |  Oznaczenie [R-kwadratowe (R2)](https://en.wikipedia.org/wiki/Coefficient_of_determination)lub *współczynnik wyznaczania* reprezentuje potęgę modelu jako wartość z przedziału od-inf do 1,00. 1,00 oznacza, że istnieje idealne dopasowanie, a dopasowanie może być niezadowalające, aby wyniki mogły być ujemne. Wynik 0,00 oznacza, że model zgadywaniu oczekiwanej wartości dla etykiety. R2 mierzy, jak zamknąć rzeczywiste wartości danych testowych do wartości przewidywanych. | **Im bliżej 1,00, tym lepsza jakość**. Niemniej jednak czasami małe wartości (na przykład 0,50) mogą być całkowicie normalne lub wystarczające dla danego scenariusza, a wysokie wartości R-kwadrat nie zawsze są dobre i są podejrzane. |
 | **Bezwzględna utrata** |  [Bezwzględne](https://en.wikipedia.org/wiki/Mean_absolute_error) lub *średnie bezwzględne błędy (Mae)* mierzą, jak blisko prognoz są rzeczywiste wyniki. Jest to średnia ze wszystkich błędów modelu, gdzie błąd modelu to bezwzględna odległość między przewidywalną wartością etykiety a poprawną wartością etykiety. Ten błąd przewidywania jest obliczany dla każdego rekordu zestawu danych testowych. Na koniec wartość średnia jest obliczana dla wszystkich zarejestrowanych błędów bezwzględnych.| **Im bliżej 0,00, tym lepsza jakość.** Średni błąd bezwzględny używa takiej samej skali, jak dane są mierzone (nie jest znormalizowany do określonego zakresu). Bezwzględne, kwadratowe straty i straty RMS mogą być używane tylko w celu porównania między modelami dla tego samego zestawu danych lub zestawu danych o podobnym rozkładzie wartości etykiety. |
@@ -76,7 +76,7 @@ Aby uzyskać więcej informacji na temat metryk regresji, przeczytaj następują
 
 ## <a name="evaluation-metrics-for-clustering"></a>Metryki oceny dla klastra
 
-| Metryka   |      Opis      |  Szukać |
+| Metric   |      Opis      |  Szukać |
 |----------|-----------------------|-----------|
 |**Średnia odległość**|Średnia odległość między punktami danych a centrum przypisanego do niego klastra. Średnia odległość to miara bliskości punktów danych do centroids klastra. Jest to miara, w jaki sposób "ciasne" klastra jest.|Wartości bliżej **0** są lepsze. Im bliżej średniej wartości, tym bardziej klastrowane są dane. Należy pamiętać, że ta Metryka zmniejszy się, jeśli liczba klastrów zostanie zwiększona, a w skrajnym przypadku (gdzie każdy odrębny punkt danych jest własnym klastrem) będzie równa zero.
 |**Indeks Davies Bouldin**|Średni stosunek odległości między klastrami i między nimi. Im ściślejszy klaster, a inne klastry to, tym niższa wartość to.|Wartości bliżej **0** są lepsze. Klastry, które są dalej i mniej rozpraszane, spowodują lepszy wynik.|
@@ -84,14 +84,14 @@ Aby uzyskać więcej informacji na temat metryk regresji, przeczytaj następują
 
 ## <a name="evaluation-metrics-for-ranking"></a>Metryki oceny na potrzeby klasyfikowania
 
-| Metryka   |      Opis      |  Szukać |
+| Metric   |      Opis      |  Szukać |
 |----------|-----------------------|-----------|
-|**Obniżone zyski zbiorcze**|Rabat skumulowany (DCG) jest miarą jakości rankingu. Pochodzi ona z dwóch założeń. Jeden: wysoce istotne elementy są bardziej przydatne, gdy pojawiają się wyższe w kolejności klasyfikacji. Dwie: użyteczność śledzi istotność, im wyższa wartość istotności, tym bardziej użyteczny element. Łączny zysk z rabatem jest obliczany dla konkretnej pozycji w kolejności klasyfikacji. Sumuje ocenę przydatności podzieloną przez LOGARYTM indeksu klasyfikacji do pozycji zainteresowania. Jest on obliczany przy użyciu $ \ sum_ {i = 0} ^ {p} \frac {rel_i} {\ log_ {e} {i + 1}} $ oceny przydatności są dostarczane do algorytmu szkoleniowego klasyfikacji jako etykiety prawdy. Jedna wartość DCG jest dostarczana dla każdej pozycji w tabeli klasyfikacji, dlatego nazwa otrzymuje **zyski**zbiorcze. |**Wyższe wartości są lepsze**|
+|**Obniżone zyski zbiorcze**|Rabat skumulowany (DCG) jest miarą jakości rankingu. Pochodzi ona z dwóch założeń. Jeden: wysoce istotne elementy są bardziej przydatne, gdy pojawiają się wyższe w kolejności klasyfikacji. Dwie: użyteczność śledzi istotność, im wyższa wartość istotności, tym bardziej użyteczny element. Łączny zysk z rabatem jest obliczany dla konkretnej pozycji w kolejności klasyfikacji. Sumuje ocenę przydatności podzieloną przez LOGARYTM indeksu klasyfikacji do pozycji zainteresowania. Jest on obliczany przy użyciu $ \ sum_ {i = 0} ^ {p} \frac {rel_i} {\ log_ {e} {i + 1}} $ oceny przydatności są dostarczane do algorytmu szkoleniowego klasyfikacji jako etykiety prawdy. Jedna wartość DCG jest dostarczana dla każdej pozycji w tabeli klasyfikacji, dlatego nazwa otrzymuje **zyski** zbiorcze. |**Wyższe wartości są lepsze**|
 |**Znormalizowane zyski skumulowane z rabatem**|Normalizacja DCG umożliwia porównywanie metryk w przypadku list klasyfikacji o różnych długościach|**Wartości bliżej 1 są lepsze**|
 
 ## <a name="evaluation-metrics-for-anomaly-detection"></a>Metryki oceny na potrzeby wykrywania anomalii
 
-| Metryka   |      Opis      |  Szukać |
+| Metric   |      Opis      |  Szukać |
 |----------|-----------------------|-----------|
 |**Obszar pod krzywą ROC**|Obszar pod krzywą operatora odbiornika mierzy, jak dobrze model oddziela anomalie i zwykłe punkty danych.|**Wartości bliżej 1 są lepsze**. Tylko wartości większe niż 0,5 wykazują skuteczność modelu. Wartości 0,5 lub poniżej wskazują, że model nie jest lepszy niż losowo przydzielać dane do anomalii i zwykłych kategorii|
 |**Częstotliwość wykrywania z fałszywą liczbą dodatnią**|Częstotliwość wykrycia z fałszywą liczbą dodatnią jest stosunkiem liczby prawidłowo zidentyfikowanych anomalii do całkowitej liczby anomalii w zestawie testów, indeksowanych przez każdy fałszywy wynik. Oznacza to, że istnieje wartość współczynnika wykrycia z fałszywą liczbą dodatnią dla każdego elementu fałszywie dodatnich.|**Wartości bliżej 1 są lepsze**. Jeśli nie ma żadnych fałszywie dodatnich, ta wartość jest równa 1|

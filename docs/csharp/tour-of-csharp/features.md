@@ -3,10 +3,10 @@ title: Samouczek dotyczący głównych obszarów języka C#
 description: Jesteś nowym w języku C#? Poznaj podstawy języka.
 ms.date: 08/06/2020
 ms.openlocfilehash: a73399643ada05a4bfb17fadd17bf3267514e99d
-ms.sourcegitcommit: 48466b8fb7332ececff5dc388f19f6b3ff503dd4
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "93400751"
 ---
 # <a name="major-language-areas"></a>Główne obszary języka
@@ -36,7 +36,7 @@ Typ elementu tablicy może być dowolnego typu, łącznie z typem tablicy. Tabli
 
 Pierwszy wiersz tworzy tablicę z trzema elementami, każdy typ `int[]` i każdy z początkową wartością `null` . Kolejne wiersze inicjują następnie trzy elementy z odwołaniami do poszczególnych wystąpień tablicy o różnej długości.
 
-`new`Operator zezwala na określenie wartości początkowych elementów tablicy przy użyciu _*_inicjatora tablicy_*_ , który jest listą wyrażeń pisanych ogranicznikami `{` i `}` . Poniższy przykład przydziela i inicjuje `int[]` z trzema elementami.
+`new`Operator zezwala na określenie wartości początkowych elementów tablicy przy użyciu _*_inicjatora tablicy_*_, który jest listą wyrażeń pisanych ogranicznikami `{` i `}` . Poniższy przykład przydziela i inicjuje `int[]` z trzema elementami.
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="InitializeArray":::
 

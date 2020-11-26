@@ -3,10 +3,10 @@ title: Typowe kolekcje schematów
 ms.date: 03/30/2017
 ms.assetid: 50127ced-2ac8-4d7a-9cd1-5c98c655ff03
 ms.openlocfilehash: f822de27e53554aba4011a701f59a8feda847c67
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91203816"
 ---
 # <a name="common-schema-collections"></a>Typowe kolekcje schematów
@@ -79,7 +79,7 @@ Typowe kolekcje schematów to kolekcje schematów zaimplementowane przez każdeg
 |IsLiteralSupported|bool|true — typ danych może być wyrażony jako literał<br /><br /> false — typ danych nie może być wyrażony jako literał|  
 |LiteralPrefix|ciąg|Prefiks zastosowany do danego literału.|  
 |LiteralSuffix|ciąg|Sufiks stosowany do danego literału.|  
-|NativeDataType|String|NativeDataType to OLE DB określona kolumna do uwidaczniania typu OLE DB danych.|  
+|NativeDataType|Ciąg|NativeDataType to OLE DB określona kolumna do uwidaczniania typu OLE DB danych.|  
   
 ## <a name="restrictions"></a>Ograniczenia  
 

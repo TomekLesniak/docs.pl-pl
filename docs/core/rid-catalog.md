@@ -3,10 +3,10 @@ title: Wykaz identyfikatorów środowiska uruchomieniowego platformy .NET Core (
 description: Dowiedz się więcej o identyfikatorze środowiska uruchomieniowego (RID) i sposobie używania identyfikatorów RID w programie .NET Core.
 ms.date: 02/22/2019
 ms.openlocfilehash: 096ce8e33a82df3b9de682ed16e10fbe9f07fd03
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "90538227"
 ---
 # <a name="net-core-rid-catalog"></a>Katalog programu .NET Core RID
@@ -35,7 +35,7 @@ Identyfikatory RID reprezentujące konkretne systemy operacyjne zwykle są zgodn
 
 - `[architecture]` jest architekturą procesora. Na przykład: `x86` , `x64` , `arm` lub `arm64` .
 
-- `[additional qualifiers]` dalsze odróżnienie różnych platform. Na przykład: `aot`.
+- `[additional qualifiers]` dalsze odróżnienie różnych platform. Przykład: `aot`.
 
 ## <a name="rid-graph"></a>Wykres RID
 
@@ -148,6 +148,6 @@ macOS RID używają starszej marki "OSX". Wyświetlane są tylko typowe wartośc
 
 Aby uzyskać więcej informacji, zobacz [zależności i wymagania dotyczące platformy .NET Core](./install/macos.md#dependencies).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Identyfikatory środowiska uruchomieniowego](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/readme.md)

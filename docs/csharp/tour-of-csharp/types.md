@@ -3,10 +3,10 @@ title: 'Definiowanie typów i ich członków — Przewodnik po języku C #'
 description: Bloki konstrukcyjne programów są typami. Dowiedz się, jak tworzyć klasy, struktury, interfejsy i inne w języku C#.
 ms.date: 08/06/2020
 ms.openlocfilehash: efd353fe8c1e6a57952bcb2586a05ad38ecd52b9
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "88559118"
 ---
 # <a name="types-and-members"></a>Typy i elementy członkowskie
@@ -36,11 +36,11 @@ Pamięć zajęta przez obiekt jest automatycznie odzyskiwana, gdy obiekt nie jes
 
 ### <a name="type-parameters"></a>Parametry typu
 
-Klasy ogólne definiują [***parametry typu***](../programming-guide/generics/index.md). Parametry typu są lista nazw parametrów typu ujętych w nawiasy ostre. Parametry typu są zgodne z nazwą klasy. Parametry typu mogą być następnie używane w treści deklaracji klasy do definiowania elementów członkowskich klasy. W poniższym przykładzie parametry typu `Pair` są `TFirst` i `TSecond` :
+Klasy ogólne definiują [ * **parametry typu** _](../programming-guide/generics/index.md). Parametry typu są lista nazw parametrów typu ujętych w nawiasy ostre. Parametry typu są zgodne z nazwą klasy. Parametry typu mogą być następnie używane w treści deklaracji klasy do definiowania elementów członkowskich klasy. W poniższym przykładzie parametry typu `Pair` są `TFirst` i `TSecond` :
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="DefinePairClass":::
 
-Typ klasy zadeklarowanej do wykonania parametrów typu jest nazywany *typem klasy generycznej*. Typy struktur, interfejsów i delegatów mogą być również rodzajowe.
+Typ klasy zadeklarowanej do wykonania parametrów typu jest nazywany typem klasy _generic *. Typy struktur, interfejsów i delegatów mogą być również rodzajowe.
 Gdy używana jest Klasa generyczna, należy podać argumenty typu dla każdego z parametrów typu:
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="CreatePairObject":::
@@ -61,15 +61,15 @@ Niejawna konwersja istnieje z typu klasy do dowolnego z jego typów klas podstaw
 
 ## <a name="structs"></a>Struktury
 
-Klasy definiują typy obsługujące dziedziczenie i polimorfizm. Umożliwiają one tworzenie zaawansowanych zachowań opartych na hierarchiach klas pochodnych. Z kolei typy [***struktur***](../language-reference/builtin-types/struct.md) są prostszymi typami, których głównym celem jest przechowywanie wartości danych. Struktury nie mogą deklarować typu podstawowego; niejawnie pochodzą od <xref:System.ValueType?displayProperty=nameWithType> . Nie można wyprowadzić innych `struct` typów z `struct` typu. Są one niejawnie zapieczętowane.
+Klasy definiują typy obsługujące dziedziczenie i polimorfizm. Umożliwiają one tworzenie zaawansowanych zachowań opartych na hierarchiach klas pochodnych. Z kolei typy [ * **struct** _](../language-reference/builtin-types/struct.md) to prostsze typy, których głównym celem jest przechowywanie wartości danych. Struktury nie mogą deklarować typu podstawowego; niejawnie pochodzą od <xref:System.ValueType?displayProperty=nameWithType> . Nie można wyprowadzić innych `struct` typów z `struct` typu. Są one niejawnie zapieczętowane.
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="PointStruct":::
 
 ## <a name="interfaces"></a>Interfejsy
 
-[***Interfejs***](../programming-guide/interfaces/index.md) definiuje kontrakt, który może być zaimplementowany przez klasy i struktury. Interfejs może zawierać metody, właściwości, zdarzenia i indeksatory. Interfejs zazwyczaj nie dostarcza implementacji elementów członkowskich, które definiuje — tylko określa elementy członkowskie, które muszą być dostarczone przez klasy lub struktury, które implementują interfejs.
+[_*_Interfejs_*_](../programming-guide/interfaces/index.md) definiuje kontrakt, który może być zaimplementowany przez klasy i struktury. Interfejs może zawierać metody, właściwości, zdarzenia i indeksatory. Interfejs zazwyczaj nie dostarcza implementacji elementów członkowskich, które definiuje — tylko określa elementy członkowskie, które muszą być dostarczone przez klasy lub struktury, które implementują interfejs.
 
-Interfejsy mogą wykorzystywać ***wielokrotne dziedziczenie***. W poniższym przykładzie interfejs `IComboBox` dziedziczy z obu `ITextBox` i `IListBox` .
+Interfejsy mogą wykorzystywać _*_wielokrotne dziedziczenie_*_. W poniższym przykładzie interfejs `IComboBox` dziedziczy z obu `ITextBox` i `IListBox` .
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="FirstInterfaces":::
 
@@ -83,7 +83,7 @@ Gdy Klasa lub struktura implementuje określony interfejs, wystąpienia tej klas
 
 ## <a name="enums"></a>Wyliczenia
 
-Typ [***wyliczeniowy***](../language-reference/builtin-types/enum.md) definiuje zestaw wartości stałych. Poniżej `enum` deklarują stałe, które definiują różne warzywa główne:
+Typ [_*_wyliczeniowy_*_](../language-reference/builtin-types/enum.md) definiuje zestaw wartości stałych. Poniżej `enum` deklarują stałe, które definiują różne warzywa główne:
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="EnumDeclaration":::
 
@@ -97,13 +97,13 @@ W poniższym przykładzie przedstawiono deklaracje obu powyższych typów wylicz
 
 ## <a name="nullable-types"></a>Typy dopuszczające wartości null
 
-Zmienne dowolnego typu mogą być deklarowane jako ***niedopuszczające wartości null*** lub ***dopuszczające wartości null***. Zmienna dopuszczający wartości null może zawierać dodatkową `null` wartość wskazującą brak wartości. Typy wartości null (struktury lub wyliczenia) są reprezentowane przez <xref:System.Nullable%601?displayProperty=nameWithType> . Typy referencyjne niedopuszczające wartości null i dopuszczające wartość null są reprezentowane przez odpowiedni typ referencyjny. Rozróżnienie jest reprezentowane przez metadane odczytywane przez kompilator i niektóre biblioteki. Kompilator zawiera ostrzeżenia, gdy odwołania do wartości null są wyłączane bez uprzedniego sprawdzenia ich wartości `null` . Kompilator zawiera również ostrzeżenia, gdy do odwołań nie dopuszczających wartości null są przypisywane wartości, które mogą być `null` . Poniższy przykład deklaruje ***wartość null int***, inicjując ją do `null` . Następnie ustawia wartość na `5` . Pokazuje to samo pojęcie z ***niezerowym ciągiem***. Aby uzyskać więcej informacji, zobacz [typy wartości null](../language-reference/builtin-types/nullable-value-types.md) i [typy referencyjne dopuszczające wartość null](../nullable-references.md).
+Zmienne dowolnego typu mogą być deklarowane jako _*_niedopuszczające wartości null_*_ lub _*_dopuszczające wartości null_*_. Zmienna dopuszczający wartości null może zawierać dodatkową `null` wartość wskazującą brak wartości. Typy wartości null (struktury lub wyliczenia) są reprezentowane przez <xref:System.Nullable%601?displayProperty=nameWithType> . Typy referencyjne niedopuszczające wartości null i dopuszczające wartość null są reprezentowane przez odpowiedni typ referencyjny. Rozróżnienie jest reprezentowane przez metadane odczytywane przez kompilator i niektóre biblioteki. Kompilator zawiera ostrzeżenia, gdy odwołania do wartości null są wyłączane bez uprzedniego sprawdzenia ich wartości `null` . Kompilator zawiera również ostrzeżenia, gdy do odwołań nie dopuszczających wartości null są przypisywane wartości, które mogą być `null` . Poniższy przykład deklaruje _*_wartość null int_*_, inicjując ją do `null` . Następnie ustawia wartość na `5` . Pokazuje to samo pojęcie z _*_niezerowym ciągiem_*_. Aby uzyskać więcej informacji, zobacz [typy wartości null](../language-reference/builtin-types/nullable-value-types.md) i [typy referencyjne dopuszczające wartość null](../nullable-references.md).
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="DeclareNullable":::
 
 ## <a name="tuples"></a>Krotki
 
-C# obsługuje [***krotki***](../language-reference/builtin-types/value-tuples.md), które zapewniają zwięzłą składnię do grupowania wielu elementów danych w lekkiej strukturze danych. Tworzysz wystąpienie krotki przez zadeklarowanie typów i nazw członków między `(` i `)` , jak pokazano w następującym przykładzie:
+Język C# [obsługuje *_krotki_* * _](../language-reference/builtin-types/value-tuples.md), które zapewnia zwięzłą składnię do grupowania wielu elementów danych w lekkiej strukturze danych. Tworzysz wystąpienie krotki przez zadeklarowanie typów i nazw członków między `(` i `)` , jak pokazano w następującym przykładzie:
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="DeclareTuples":::
 

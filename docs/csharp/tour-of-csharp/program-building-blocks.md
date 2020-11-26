@@ -3,10 +3,10 @@ title: Bloki konstrukcyjne programów C# "
 description: Dowiedz się więcej o elementach członkowskich, wyrażeniach i instrukcjach języka C#. Typy zawierają składowe, które są zapisywane. Te elementy członkowskie są kompilowane z instrukcji i wyrażeń.
 ms.date: 08/06/2020
 ms.openlocfilehash: e4350f2c2b6005fb59dd868f0f7f628bd07b0053
-ms.sourcegitcommit: ffd4d5e824db6c5f0c3521c0e802fd9e8f0edcbe
+ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "93342699"
 ---
 # <a name="program-building-blocks"></a>Bloki konstrukcyjne programu
@@ -20,15 +20,15 @@ Członkami elementu `class` są _*_statyczne elementy członkowskie_*_ i _*_wyst
 Poniższa lista zawiera przegląd rodzajów elementów członkowskich, które może zawierać Klasa.
 
 - _ * Stałe * *: wartości stałe skojarzone z klasą
-- **Pola** : zmienne, które są skojarzone z klasą
-- **Metody** : akcje, które mogą być wykonywane przez klasę
-- **Właściwości** : akcje skojarzone z odczytem i pisaniem nazwanych właściwości klasy
-- **Indeksatory** : akcje skojarzone z wystąpieniami indeksowania klasy, takimi jak tablica
-- **Zdarzenia** : powiadomienia, które mogą być generowane przez klasę
-- **Operatory** : konwersje i operatory wyrażeń obsługiwane przez klasę
-- **Konstruktory** : akcje wymagane do zainicjowania wystąpień klasy lub samej klasy
-- **Finalizatory** : akcje wykonywane przed wystąpieniem klasy są trwale odrzucone
-- **Typy** : typy zagnieżdżone zadeklarowane przez klasę
+- **Pola**: zmienne, które są skojarzone z klasą
+- **Metody**: akcje, które mogą być wykonywane przez klasę
+- **Właściwości**: akcje skojarzone z odczytem i pisaniem nazwanych właściwości klasy
+- **Indeksatory**: akcje skojarzone z wystąpieniami indeksowania klasy, takimi jak tablica
+- **Zdarzenia**: powiadomienia, które mogą być generowane przez klasę
+- **Operatory**: konwersje i operatory wyrażeń obsługiwane przez klasę
+- **Konstruktory**: akcje wymagane do zainicjowania wystąpień klasy lub samej klasy
+- **Finalizatory**: akcje wykonywane przed wystąpieniem klasy są trwale odrzucone
+- **Typy**: typy zagnieżdżone zadeklarowane przez klasę
 
 ## <a name="accessibility"></a>Ułatwienia dostępu
 
@@ -59,7 +59,7 @@ Jak pokazano w poprzednim przykładzie *pola tylko do odczytu* mogą być zadekl
 
 *Metoda* to element członkowski implementujący obliczenia lub akcję, które mogą być wykonywane przez obiekt lub klasę. *Metody statyczne* są dostępne za pomocą klasy. *Metody wystąpienia* są dostępne za pomocą wystąpień klasy.
 
-Metody mogą mieć listę *parametrów* reprezentujących wartości lub odwołania do zmiennych, które są przenoszone do metody. Metody mają *zwracany typ* , który określa typ wartości obliczanej i zwracanej przez metodę. Zwracany typ metody to `void` Jeśli nie zwraca wartości.
+Metody mogą mieć listę *parametrów* reprezentujących wartości lub odwołania do zmiennych, które są przenoszone do metody. Metody mają *zwracany typ*, który określa typ wartości obliczanej i zwracanej przez metodę. Zwracany typ metody to `void` Jeśli nie zwraca wartości.
 
 Podobnie jak typy, metody mogą także mieć zestaw parametrów typu, dla których argumenty typu muszą być określone, gdy wywoływana jest metoda. W przeciwieństwie do typów, argumenty typu często można wywnioskować na podstawie argumentów wywołania metody i nie muszą być jawnie określone.
 
@@ -189,7 +189,7 @@ W przeciwieństwie do innych elementów członkowskich, konstruktory wystąpień
 
 *Właściwości* są naturalnym rozszerzeniem pól. Oba są nazwanymi członkami ze skojarzonymi typami, a składnia dostępu do pól i właściwości jest taka sama. Jednak w przeciwieństwie do pól właściwości nie oznacza lokalizacji magazynu. Zamiast tego właściwości mają metody *dostępu* określające instrukcje wykonywane, gdy ich wartości są odczytywane lub zapisywane.
 
-Właściwość jest zadeklarowana jako pole, z tą różnicą, że deklaracja kończy się metodą dostępu get lub zestawem akcesora zapisanym między ogranicznikami `{` i `}` zamiast kończyć się średnikiem. Właściwość, która ma zarówno metodę dostępu get, jak i zestaw akcesora zestawu jest *właściwością do odczytu i zapisu* , właściwość, która ma tylko metodę dostępu get, jest *właściwością tylko do odczytu* , a właściwość, która ma tylko metodę dostępu zestawu, jest *właściwością tylko do zapisu*.
+Właściwość jest zadeklarowana jako pole, z tą różnicą, że deklaracja kończy się metodą dostępu get lub zestawem akcesora zapisanym między ogranicznikami `{` i `}` zamiast kończyć się średnikiem. Właściwość, która ma zarówno metodę dostępu get, jak i zestaw akcesora zestawu jest *właściwością do odczytu i zapisu*, właściwość, która ma tylko metodę dostępu get, jest *właściwością tylko do odczytu*, a właściwość, która ma tylko metodę dostępu zestawu, jest *właściwością tylko do zapisu*.
 
 Metoda dostępu get odpowiada metodzie bez parametrów z wartością zwracaną typu właściwości. Metoda dostępu zestawu odpowiada metodzie z pojedynczym parametrem o nazwie Value i bez zwracanego typu. Metoda dostępu get oblicza wartość właściwości. Metoda dostępu set udostępnia nową wartość właściwości. Gdy właściwość jest obiektem docelowym przypisania lub operandem `++` lub `--` , metoda dostępu set jest wywoływana. W innych przypadkach, w których właściwość jest przywoływana, metoda dostępu get jest wywoływana.
 
@@ -251,8 +251,8 @@ Gdy wyrażenie zawiera wiele operatorów, *pierwszeństwo* operatorów kontroluj
 
 Gdy operand występuje między dwoma operatorami o takim samym priorytecie, *łączność* operatorów kontroluje kolejność wykonywania operacji:
 
-* Z wyjątkiem operatorów przypisania i łączenia wartości null wszystkie operatory binarne są z *lewej strony skojarzenia* , co oznacza, że operacje są wykonywane od lewej do prawej. Na przykład, `x + y + z` jest oceniane jako `(x + y) + z` .
-* Operatory przypisania, przeciąganie wartości null `??` i `??=` operatory, a operator warunkowy `?:` są z *prawej strony skojarzenia* , co oznacza, że operacje są wykonywane od prawej do lewej. Na przykład, `x = y = z` jest oceniane jako `x = (y = z)` .
+* Z wyjątkiem operatorów przypisania i łączenia wartości null wszystkie operatory binarne są z *lewej strony skojarzenia*, co oznacza, że operacje są wykonywane od lewej do prawej. Na przykład, `x + y + z` jest oceniane jako `(x + y) + z` .
+* Operatory przypisania, przeciąganie wartości null `??` i `??=` operatory, a operator warunkowy `?:` są z *prawej strony skojarzenia*, co oznacza, że operacje są wykonywane od prawej do lewej. Na przykład, `x = y = z` jest oceniane jako `x = (y = z)` .
 
 Pierwszeństwo i łączność można kontrolować za pomocą nawiasów. Na przykład program `x + y * z` najpierw mnoży `y` przez, `z` a następnie dodaje wynik do `x` , ale `(x + y) * z` najpierw dodaje `x` i `y` i następnie mnoży wynik przez `z` .
 
