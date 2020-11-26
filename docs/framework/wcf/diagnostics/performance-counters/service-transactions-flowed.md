@@ -1,16 +1,18 @@
 ---
-title: 'Usługa: Przepływ transakcji'
+title: 'Usługa: Przekazane transakcje'
 ms.date: 03/30/2017
 ms.assetid: 7c564d7d-60d3-45a4-a9a1-c78f62ace57f
-ms.openlocfilehash: 0c4c863e5beb9cdacdfcd49ad4ad19cca0edb85d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8ec5953ec1aa6664138168628933c6a8c65d709a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61998182"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236822"
 ---
-# <a name="service-transactions-flowed"></a><span data-ttu-id="07af0-102">Usługa: Przepływ transakcji</span><span class="sxs-lookup"><span data-stu-id="07af0-102">Service: Transactions Flowed</span></span>
-<span data-ttu-id="07af0-103">Nazwa komputera: Przepływ transakcji.</span><span class="sxs-lookup"><span data-stu-id="07af0-103">Counter Name: Transactions Flowed.</span></span>  
+# <a name="service-transactions-flowed"></a><span data-ttu-id="1e3d4-102">Usługa: Przekazane transakcje</span><span class="sxs-lookup"><span data-stu-id="1e3d4-102">Service: Transactions Flowed</span></span>
+
+<span data-ttu-id="1e3d4-103">Nazwa licznika: przepływają transakcje.</span><span class="sxs-lookup"><span data-stu-id="1e3d4-103">Counter Name: Transactions Flowed.</span></span>  
   
-## <a name="description"></a><span data-ttu-id="07af0-104">Opis</span><span class="sxs-lookup"><span data-stu-id="07af0-104">Description</span></span>  
- <span data-ttu-id="07af0-105">Liczba transakcji przekazane do operacji w tej usłudze.</span><span class="sxs-lookup"><span data-stu-id="07af0-105">Number of transactions flowed to operations in this service.</span></span>
+## <a name="description"></a><span data-ttu-id="1e3d4-104">Opis</span><span class="sxs-lookup"><span data-stu-id="1e3d4-104">Description</span></span>  
+
+ <span data-ttu-id="1e3d4-105">Liczba transakcji przepływających na operacje w tej usłudze.</span><span class="sxs-lookup"><span data-stu-id="1e3d4-105">Number of transactions flowed to operations in this service.</span></span>
