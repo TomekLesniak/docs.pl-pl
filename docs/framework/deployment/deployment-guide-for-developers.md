@@ -6,14 +6,15 @@ helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 5b9d22062d273404c7451beb44e56d3fa5c4aa1d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 950ff048a918a52e6c64d8cc15e1ef0f80233b88
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558748"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238655"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>.NET Framework Przewodnik wdrażania dla deweloperów
+
 Ten temat zawiera informacje dla deweloperów, którzy chcą zainstalować dowolną wersję .NET Framework z .NET Framework 4,5 do [!INCLUDE[net_current](../../../includes/net-current-version.md)] aplikacji.
 
 Pakiety i pakiety językowe pakietu redystrybucyjnego można pobrać dla .NET Framework ze stron pobierania:
@@ -65,7 +66,7 @@ Gdy wszystko będzie gotowe do opublikowania aplikacji na serwerze sieci Web lub
 
 ||Instalator sieci Web|Instalator w trybie offline|
 |-|-------------------|-----------------------|
-|Wymagane jest połączenie z Internetem?|Yes|Nie|
+|Wymagane jest połączenie z Internetem?|Tak|Nie|
 |Rozmiar pobieranych plików|Mniejsze (dotyczy tylko Instalatora platformy docelowej) *|Krocz|
 |Pakiety językowe|Uwzględnione * *|Należy [zainstalować oddzielnie](#chain_langpack), chyba że jest używany pakiet przeznaczony dla wszystkich systemów operacyjnych|
 |Metoda wdrażania|Obsługuje wszystkie metody:<br /><br />- [ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />- [Wizard](#installshield-deployment)<br />- [Instalator Windows XML (WiX)](#wix)<br />- [Instalacja ręczna](#installing_manually)<br />- [Konfiguracja niestandardowa (tworzenie łańcucha)](#chaining)|Obsługuje wszystkie metody:<br /><br /> - [ClickOnce](#clickonce-deployment)<br />- [InstallAware](#installaware-deployment)<br />- [Wizard](#installshield-deployment)<br />- [Instalator Windows XML (WiX)](#wix)<br />- [Instalacja ręczna](#installing_manually)<br />- [Konfiguracja niestandardowa (tworzenie łańcucha)](#chaining)|
@@ -176,7 +177,7 @@ Na przykład jeśli program wykonywalny jest Contoso.exe i chcesz dyskretnie zai
 
 `dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso`
 
-Aby dostosować instalację, można użyć dodatkowych opcji wiersza polecenia. Na przykład:
+Aby dostosować instalację, można użyć dodatkowych opcji wiersza polecenia. Przykład:
 
 - Aby umożliwić użytkownikom Zamykanie uruchomionych .NET Framework aplikacji w celu minimalizowania ponownych uruchomień systemu, należy ustawić tryb pasywny i użyć `/showrmui` opcji w następujący sposób:
 
@@ -254,13 +255,13 @@ Instalator .NET Framework zapisuje klucze rejestru po pomyślnym zakończeniu in
 
 ### <a name="detecting-the-language-packs"></a>Wykrywanie pakietów językowych
 
-Można sprawdzić, czy określony pakiet językowy jest instalowany, sprawdzając folder HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full \\ *LCID* w rejestrze dla wartości typu DWORD o nazwie `Release` . (Należy zauważyć, że polecenie "NET Framework Setup" nie zaczyna się od kropki). *LCID* określa identyfikator ustawień regionalnych; listę tych elementów można znaleźć w sekcji [obsługiwane języki](#supported-languages) .
+Można sprawdzić, czy określony pakiet językowy jest instalowany, sprawdzając folder HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\\ *LCID* w rejestrze dla wartości typu DWORD o nazwie `Release` . (Należy zauważyć, że polecenie "NET Framework Setup" nie zaczyna się od kropki). *LCID* określa identyfikator ustawień regionalnych; listę tych elementów można znaleźć w sekcji [obsługiwane języki](#supported-languages) .
 
 Na przykład w celu wykrycia, czy pełny japoński pakiet językowy (LCID = 1041) jest zainstalowany, Pobierz następującą nazwaną wartość z rejestru:
 
 | | |
 |-|-|
-| Klucz | HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041 |
+| Klucz | HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041 |
 | Nazwa | Release |
 | Typ | DWORD |
 
@@ -378,7 +379,7 @@ W poniższej tabeli wymieniono pakiety językowe .NET Framework dostępne dla .N
 |1038|Węgierski|Węgry|
 |1040|Włoski (Włochy)|it|
 |1041|japoński|ja|
-|1042|koreański|Ko|
+|1042|Koreański|Ko|
 |1043|Holenderski (Holandia)|nl|
 |1044|Norweski (Bokmål)|nie|
 |1045|Polski|zysków|
@@ -390,7 +391,7 @@ W poniższej tabeli wymieniono pakiety językowe .NET Framework dostępne dla .N
 |2070|Portugalski (Portugalia)|pt-PT|
 |3082|Hiszpański — Hiszpania (nowoczesny)|es|
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przewodnik wdrażania dla administratorów](guide-for-administrators.md)
 - [Wymagania systemowe](../get-started/system-requirements.md)

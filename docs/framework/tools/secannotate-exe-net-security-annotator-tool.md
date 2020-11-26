@@ -6,14 +6,15 @@ helpviewer_keywords:
 - SecAnnotate.exe
 - Security Annotator tool
 ms.assetid: 8104d208-7813-4a1d-8a75-58f9a7bcb8c9
-ms.openlocfilehash: 408a3064b67cae2d75c80881f918c774e05866e6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: cfa7ec7cb0ff174a820afcdcbdb1eb461510fc05
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558384"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238538"
 ---
 # <a name="secannotateexe-net-security-annotator-tool"></a>SecAnnotate.exe (Narzędzie adnotacji dotyczące zabezpieczeń w programach .NET)
+
 Narzędzie do dodawania adnotacji zabezpieczeń .NET (SecAnnotate.exe) jest aplikacją wiersza polecenia, która identyfikuje `SecurityCritical` i `SecuritySafeCritical` części jednego lub kilku zestawów.  
   
  Rozszerzenie programu Visual Studio, [Dodawanie adnotacji do zabezpieczeń](https://marketplace.visualstudio.com/items?itemName=sheldonb.SecurityAnnotator), udostępnia graficzny interfejs użytkownika do SecAnnotate.exe i umożliwia uruchamianie narzędzia z programu Visual Studio.  
@@ -49,6 +50,7 @@ SecAnnotate.exe [parameters] [assemblies]
 |`/y:`*katalog*<br /><br /> lub<br /><br /> `/symbolpath:`*katalog*|Uwzględnia określony katalog podczas wyszukiwania plików symboli w trakcie oznaczania adnotacjami.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Parametry i zestawy można także podać w pliku odpowiedzi, który jest określany w wierszu polecenia i poprzedzany znakiem (@). Każdy wiersz w pliku odpowiedzi musi zawierać pojedynczy parametr lub nazwę zestawu.  
   
  Aby uzyskać więcej informacji na temat adnotacji zabezpieczeń .NET, zobacz wpis [przy użyciu SecAnnotate, aby analizować zestawy pod kątem naruszeń przejrzystości w blogu dotyczącym](/archive/blogs/shawnfa/using-secannotate-to-analyze-your-assemblies-for-transparency-violations-an-example) zabezpieczeń platformy .NET.  

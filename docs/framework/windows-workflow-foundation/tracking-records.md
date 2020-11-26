@@ -2,17 +2,19 @@
 title: Rekordy śledzenia
 ms.date: 03/30/2017
 ms.assetid: 51adbda3-bd8b-4892-a8ea-d343186472d2
-ms.openlocfilehash: 498d62fb1d3cc1386ea3bf57de431c57b18b7dda
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0344c802ef779d1f13f58c35c2f0e4fa67a37578
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551304"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238109"
 ---
 # <a name="tracking-records"></a>Rekordy śledzenia
+
 Środowisko uruchomieniowe przepływu pracy jest Instrumentacją do emisji rekordów śledzenia w celu wykonania wystąpienia przepływu pracy.  
   
 ## <a name="tracking-records"></a>Rekordy śledzenia  
+
  W poniższej tabeli przedstawiono szczegółowe informacje o rekordach śledzenia, które są emitowane przez środowisko uruchomieniowe przepływu pracy.  
   
 |Rekord śledzenia|Opis|  
@@ -60,7 +62,7 @@ ms.locfileid: "90551304"
   
 5. <xref:System.Activities.Tracking.WorkflowInstanceRecord> wskazuje, że przepływ pracy został ukończony.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Monitorowanie aplikacji sieci szkieletowej systemu Windows Server](/previous-versions/appfabric/ee677251(v=azure.10))
 - [Monitorowanie aplikacji przy użyciu sieci szkieletowej aplikacji](/previous-versions/appfabric/ee677276(v=azure.10))

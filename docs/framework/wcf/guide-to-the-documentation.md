@@ -5,14 +5,15 @@ helpviewer_keywords:
 - WCF [WCF], documentation
 - Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-ms.openlocfilehash: 705e571e11fa7c8276fcb48d15ed0160fbda2bc5
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 10a4fe88c9d49d49338776db83abc1201ada8a95
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628764"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238148"
 ---
 # <a name="guide-to-the-documentation"></a>Przewodnik po dokumentacji
+
 W tym miejscu przedstawiono wskazówki dotyczące dokumentacji Windows Communication Foundation (WCF). Połączone dokumenty są zalecanymi punktami początkowymi pogrupowanymi według określonych zainteresowań i poziomów wiedzy.  
   
 ## <a name="new-to-windows-communication-foundation-programming"></a>Nowość w celu Windows Communication Foundation programowania  
@@ -25,7 +26,7 @@ W tym miejscu przedstawiono wskazówki dotyczące dokumentacji Windows Communica
   
 - Aby wyświetlić przykłady grafiki dotyczące konfiguracji zabezpieczeń klienta/serwera, zobacz [typowe scenariusze zabezpieczeń](./feature-details/common-security-scenarios.md).  
   
-## <a name="programming-in-depth"></a>Szczegółowe programowanie  
+## <a name="programming-in-depth"></a>In-Depth programowania  
   
 - Jeśli wszystko jest gotowe do rozpoczęcia opracowywania aplikacji, zobacz [podstawowe programowanie WCF](basic-wcf-programming.md).  
   
@@ -38,6 +39,7 @@ W tym miejscu przedstawiono wskazówki dotyczące dokumentacji Windows Communica
 - Konfiguracja przy użyciu plików XML jest podstawowym sposobem programowania usług i klientów programu WCF. Aby uzyskać dokumentację referencyjną dla elementów XML używanych w plikach konfiguracyjnych, zobacz [Schemat konfiguracji WCF](../configure-apps/file-schema/wcf/index.md).  
   
 ## <a name="troubleshooting"></a>Rozwiązywanie problemów  
+
  Informacje o rozwiązywaniu typowych problemów z programem WCF można znaleźć w temacie [Rozwiązywanie problemów z usługą WCF](wcf-troubleshooting-quickstart.md)  
   
 ## <a name="using-windows-communication-foundation-with-other-technologies"></a>Używanie Windows Communication Foundation z innymi technologiami  
@@ -57,7 +59,8 @@ W tym miejscu przedstawiono wskazówki dotyczące dokumentacji Windows Communica
 - Aby używać usługi WCF do korzystania z usług Web Services Extensions (WSE) 3,0, zobacz [How to: Access a WSE 3,0 Service](./feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md).  
   
 ## <a name="ws--protocols-supported-in-windows-communication-foundation"></a>Protokoły WS-* obsługiwane w Windows Communication Foundation  
- Aby wyświetlić listę protokołów obsługiwanych przez powiązania dostarczone przez system, zobacz [Protokoły usług sieci Web obsługiwane przez powiązania współdziałania dostarczone przez system](./feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md). Aby wyświetlić listę powiązań dostarczanych przez system, zobacz [powiązania dostarczone przez system](system-provided-bindings.md).  
+
+ Aby wyświetlić listę protokołów obsługiwanych przez powiązania dostarczone przez system, zobacz temat [usługi sieci Web obsługiwane przez powiązania System-Provided współdziałania](./feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md). Aby wyświetlić listę powiązań dostarczanych przez system, zobacz [powiązania dostarczone przez system](system-provided-bindings.md).  
   
 ## <a name="see-also"></a>Zobacz też
 

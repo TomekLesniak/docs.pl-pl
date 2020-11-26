@@ -2,17 +2,19 @@
 title: 'Usługa: Niepowodzenia uwierzytelniania i weryfikacji zabezpieczeń na sekundę'
 ms.date: 03/30/2017
 ms.assetid: 4af18009-e778-490b-9ba6-e76485285830
-ms.openlocfilehash: f6dbf7f6da208bde3a9a380d50fd6caf68576f25
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f66e6b90622cf181229938bc4fd877a98cd23a48
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90535914"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96236887"
 ---
 # <a name="service-security-validation-and-authentication-failures-per-second"></a>Usługa: Niepowodzenia uwierzytelniania i weryfikacji zabezpieczeń na sekundę
+
 Nazwa licznika: Błędy walidacji zabezpieczeń i uwierzytelniania na sekundę.  
   
 ## <a name="description"></a>Opis  
+
  Ten licznik jest zwiększany za każdym razem, gdy komunikat zostanie odrzucony z powodu problemu z zabezpieczeniami, którego nie dotyczy licznik "wywołania zabezpieczeń bez autoryzacji". Takie problemy obejmują:  
   
 - Nie można odczytać z komunikatu tokenu klienta.  

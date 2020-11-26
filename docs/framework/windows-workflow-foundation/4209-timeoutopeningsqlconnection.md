@@ -2,32 +2,35 @@
 title: 4209 — TimeoutOpeningSqlConnection
 ms.date: 03/30/2017
 ms.assetid: f0e56518-9758-41dc-a760-50d1a10fba6e
-ms.openlocfilehash: d61d710959f99dbc8a91441766a690eb7e9a365c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9aa8cdffebb0cdf8b1e8225a394edf78ecf032b9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774273"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238681"
 ---
 # <a name="4209---timeoutopeningsqlconnection"></a>4209 — TimeoutOpeningSqlConnection
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|4209|  
-|słowa kluczowe|WFInstanceStore|  
+|ID (Identyfikator)|4209|  
+|Słowa kluczowe|WFInstanceStore|  
 |Poziom|Błąd|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że limit czasu podczas próby otwarcia połączenia SQL.  
+
+ Wskazuje, że podczas próby otwarcia połączenia SQL został przekroczony limit czasu.  
   
-## <a name="message"></a>Komunikat  
- Limit czasu podczas próby otwarcia połączenia SQL. Operacja nie została ukończona w ciągu przydzielonego limitu czasu %1. Czas przydzielony na tę operację mógł stanowić część większego limitu czasu.  
+## <a name="message"></a>Wiadomość  
+
+ Przekroczono limit czasu podczas próby otwarcia połączenia SQL. Operacja nie została ukończona w wyznaczonym limicie czasu wynoszącym %1. Czas przydzielony na tę operację mógł być częścią dłuższego limitu czasu.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|limit czasu|xs:String|Limit czasu otwierania połączenia SQL.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Limit czasu|XS: ciąg|Wartość limitu czasu dla otwierania połączenia SQL.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

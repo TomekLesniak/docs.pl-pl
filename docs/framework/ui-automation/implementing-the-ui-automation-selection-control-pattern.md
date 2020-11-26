@@ -7,14 +7,15 @@ helpviewer_keywords:
 - UI Automation, Selection control pattern
 - control patterns, Selection
 ms.assetid: 449c3068-a5d6-4f66-84c6-1bcc7dd4d209
-ms.openlocfilehash: d3854a401ae6179be4e4e75d86964108d83b0ccf
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 7ce6b9765dfd15be320f01151ca0b91393508e55
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87163589"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96237511"
 ---
 # <a name="implementing-the-ui-automation-selection-control-pattern"></a>Implementacja wzorca formantu wyboru automatyzacji interfejsu użytkownika
+
 > [!NOTE]
 > Ta dokumentacja jest przeznaczona dla .NET Framework deweloperów, którzy chcą korzystać z zarządzanych [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klas zdefiniowanych w <xref:System.Windows.Automation> przestrzeni nazw. Aby uzyskać najnowsze informacje na temat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , zobacz [interfejs API usługi Windows Automation: Automatyzacja interfejsu użytkownika](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -23,7 +24,9 @@ ms.locfileid: "87163589"
  <xref:System.Windows.Automation.SelectionPattern>Wzorzec kontrolki służy do obsługi kontrolek, które działają jako kontenery dla kolekcji elementów podrzędnych, które można wybrać. Elementy podrzędne tego elementu muszą implementować <xref:System.Windows.Automation.Provider.ISelectionItemProvider> . Aby zapoznać się z przykładami formantów implementujących ten wzorzec kontrolek, zobacz [Mapowanie wzorców formantów dla klientów automatyzacji interfejsu użytkownika](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>
+
 ## <a name="implementation-guidelines-and-conventions"></a>Wytyczne i konwencje dotyczące implementacji  
+
  Podczas implementowania wzorca kontroli zaznaczania należy zwrócić uwagę na następujące wytyczne i konwencje:  
   
 - Kontrolki implementujące <xref:System.Windows.Automation.Provider.ISelectionProvider> zezwolenie na wybranie jednego lub wielu elementów podrzędnych. Na przykład pole listy, widok listy i widok drzewa obsługują wiele zaznaczeń, natomiast Grupa przycisków kombi, suwak i przycisk radiowy obsługują pojedyncze zaznaczenie.  
@@ -38,7 +41,9 @@ Przykład mapowania ciągu próbnika kolorów
 - Menu nie są obsługiwane <xref:System.Windows.Automation.SelectionPattern> . Jeśli pracujesz z elementami menu, które zawierają zarówno grafikę, jak i tekst (takie jak elementy **okienka podglądu** w menu **Widok** w programie Microsoft Outlook) i chcesz przekazać stan, należy zaimplementować <xref:System.Windows.Automation.Provider.IToggleProvider> .  
   
 <a name="Required_Members_for_ISelectionProvider"></a>
+
 ## <a name="required-members-for-iselectionprovider"></a>Wymagane elementy członkowskie dla ISelectionProvider  
+
  Dla interfejsu wymagane są następujące właściwości, metody i zdarzenia <xref:System.Windows.Automation.Provider.ISelectionProvider> .  
   
 |Wymagane elementy członkowskie|Typ|Uwagi|  
@@ -46,12 +51,14 @@ Przykład mapowania ciągu próbnika kolorów
 |<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|Właściwość|Powinien obsługiwać zdarzenia zmiany właściwości przy użyciu <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A> i <xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A> .|  
 |<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>|Właściwość|Powinien obsługiwać zdarzenia zmiany właściwości przy użyciu <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A> i <xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A> .|  
 |<xref:System.Windows.Automation.Provider.ISelectionProvider.GetSelection%2A>|Metoda|Brak|  
-|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Wydarzenie|Uruchamiany, gdy zaznaczenie w kontenerze znacząco uległo zmianie i wymaga wysyłania większej liczby zdarzeń dodawania i usuwania niż na <xref:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit> stałe.|  
+|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Zdarzenie|Uruchamiany, gdy zaznaczenie w kontenerze znacząco uległo zmianie i wymaga wysyłania większej liczby zdarzeń dodawania i usuwania niż na <xref:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit> stałe.|  
   
  <xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>Właściwości i <xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A> mogą być dynamiczne. Na przykład stan początkowy kontrolki może nie mieć żadnych elementów zaznaczonych domyślnie, co oznacza, że <xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A> jest `false` . Jednak po zaznaczeniu elementu kontrolka musi zawsze mieć wybrany co najmniej jeden element. Podobnie, w rzadkich przypadkach, formant może zezwolić na wybranie wielu elementów podczas inicjalizacji, ale w dalszym ciągu zezwala na tylko pojedyncze wybory.  
   
 <a name="Exceptions"></a>
+
 ## <a name="exceptions"></a>Wyjątki  
+
  Dostawcy muszą zgłosić następujące wyjątki.  
   
 |Typ wyjątku|Warunek|  
@@ -59,7 +66,7 @@ Przykład mapowania ciągu próbnika kolorów
 |<xref:System.Windows.Automation.ElementNotEnabledException>|Jeśli formant nie jest włączony.|  
 |<xref:System.InvalidOperationException>|Jeśli kontrolka jest ukryta.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wzorce formantów automatyzacji interfejsu użytkownika — omówienie](ui-automation-control-patterns-overview.md)
 - [Obsługa wzorców formantów dostawcy automatyzacji interfejsu użytkownika](support-control-patterns-in-a-ui-automation-provider.md)

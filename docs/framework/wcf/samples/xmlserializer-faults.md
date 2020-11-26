@@ -2,14 +2,15 @@
 title: Błędy klasy XmlSerializer
 ms.date: 03/30/2017
 ms.assetid: c6b80f14-64f4-4162-ae76-71664cf42fd3
-ms.openlocfilehash: ce5aa6d2c579d4776f9505ae694768203e48eecf
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1eefa37d6d11e232bd4d0914eedab3ebb66b92ef
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84584067"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96237654"
 ---
 # <a name="xmlserializer-faults"></a>Błędy klasy XmlSerializer
+
 <xref:System.Xml.Serialization.XmlSerializer>Przykładowa umowa dotycząca błędu demonstruje sposób przekazywania informacji o błędach z usługi do klienta przy użyciu programu <xref:System.Xml.Serialization.XmlSerializer> . Przykład jest oparty na [wprowadzenie](getting-started-sample.md), z dodatkowym kodem dodanym do usługi w celu przekonwertowania wewnętrznego wyjątku na błąd. Klient próbuje wykonać dzielenie przez zero w celu wymuszenia błędu w usłudze.  
   
 > [!NOTE]
@@ -37,7 +38,7 @@ public interface ICalculator
 }  
 ```  
   
- Podczas generowania kodu dla serwera proxy klienta należy zastosować flagę **/UseSerializerForFaults** do [Narzędzia Narzędzia metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).  
+ Podczas generowania kodu dla serwera proxy klienta należy zastosować flagę **/UseSerializerForFaults** do [Narzędzia Narzędzia metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Aby skonfigurować, skompilować i uruchomić przykład  
   

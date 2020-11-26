@@ -2,24 +2,26 @@
 title: MessageLoggingOn
 ms.date: 03/30/2017
 ms.assetid: b6252ce4-395f-4b9a-a58c-7de8c81c7c5a
-ms.openlocfilehash: 23b5cb4a77cd199348f95f466e5ae3beda305c04
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5aaba7c2985d2de3f1b89b4f25609912f3e8ae8a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797720"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96237056"
 ---
 # <a name="messageloggingon"></a>MessageLoggingOn
-#C1 116  
+
+Identyfikator: 116  
   
- Obrażeń Błąd  
+ Ważność: błąd  
   
- Kategorii Modelu  
+ Kategoria: ServiceModel  
   
 ## <a name="description"></a>Opis  
+
  Rejestrowanie komunikatów zostało włączone. Poufne informacje mogą być rejestrowane, nawet jeśli zostały zaszyfrowane w sieci. Na przykład treść wiadomości. W tym zdarzeniu znajduje się lista AppID, wyjątek, nazwa procesu i identyfikator procesu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Rejestrowanie zdarzeń](index.md)
 - [Informacje ogólne o zdarzeniach](events-general-reference.md)

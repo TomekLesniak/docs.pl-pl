@@ -7,14 +7,15 @@ helpviewer_keywords:
 - UI Automation, Selection Item control pattern
 - control patterns, Selection Item
 ms.assetid: 76b0949a-5b23-4cfc-84cc-154f713e2e12
-ms.openlocfilehash: 671a18d43a297026e4264cc35412fb9d233b2f33
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 13bc993f5a18eb6b7dcd96a2a70bc55f5f5cad3e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551507"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96237459"
 ---
 # <a name="implementing-the-ui-automation-selectionitem-control-pattern"></a>Implementacja wzorca formantu SelectionItem dla automatyzacji interfejsu użytkownika
+
 > [!NOTE]
 > Ta dokumentacja jest przeznaczona dla .NET Framework deweloperów, którzy chcą korzystać z zarządzanych [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klas zdefiniowanych w <xref:System.Windows.Automation> przestrzeni nazw. Aby uzyskać najnowsze informacje na temat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , zobacz [interfejs API usługi Windows Automation: Automatyzacja interfejsu użytkownika](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -23,13 +24,17 @@ ms.locfileid: "90551507"
  <xref:System.Windows.Automation.SelectionItemPattern>Wzorzec kontrolki służy do obsługi kontrolek, które działają jako osoby indywidualnej, do wyboru elementów podrzędnych formantów kontenera, które implementują <xref:System.Windows.Automation.Provider.ISelectionProvider> . Aby zapoznać się z przykładami formantów implementujących wzorzec kontrolki SelectionItem dla, zobacz [Mapowanie wzorców formantów dla klientów automatyzacji interfejsu użytkownika](control-pattern-mapping-for-ui-automation-clients.md)  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>
+
 ## <a name="implementation-guidelines-and-conventions"></a>Wytyczne i konwencje dotyczące implementacji  
+
  Podczas implementowania wzorca kontrolki elementu zaznaczania należy zwrócić uwagę na następujące wytyczne i konwencje:  
   
 - Kontrolki pojedynczego wyboru, które zarządzają kontrolkami podrzędnymi, które implementują <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot> , takie jak suwak **rozdzielczości ekranu** w oknie dialogowym **właściwości wyświetlania** , powinny implementować i <xref:System.Windows.Automation.Provider.ISelectionProvider> ich elementy podrzędne powinny implementować zarówno <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> , jak i <xref:System.Windows.Automation.Provider.ISelectionItemProvider> .  
   
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>
+
 ## <a name="required-members-for-iselectionitemprovider"></a>Wymagane elementy członkowskie dla ISelectionItemProvider  
+
  Do zaimplementowania są wymagane następujące właściwości, metody i zdarzenia <xref:System.Windows.Automation.Provider.ISelectionItemProvider> .  
   
 |Wymagane elementy członkowskie|Typ elementu członkowskiego|Uwagi|  
@@ -37,19 +42,21 @@ ms.locfileid: "90551507"
 |<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|Właściwość|Brak|  
 |<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>|Właściwość|Brak|  
 |<xref:System.Windows.Automation.Provider.ISelectionProvider.GetSelection%2A>|Metoda|Brak|  
-|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Wydarzenie|Uruchamiany, gdy zaznaczenie w kontenerze znacząco uległo zmianie i wymaga wysyłania więcej <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> i <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> zdarzeń niż na <xref:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit> stałe.|  
+|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Zdarzenie|Uruchamiany, gdy zaznaczenie w kontenerze znacząco uległo zmianie i wymaga wysyłania więcej <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> i <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> zdarzeń niż na <xref:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit> stałe.|  
   
 - Jeśli wynik a, a <xref:System.Windows.Automation.SelectionItemPattern.Select%2A> <xref:System.Windows.Automation.SelectionItemPattern.AddToSelection%2A> lub <xref:System.Windows.Automation.SelectionItemPattern.RemoveFromSelection%2A> jest pojedynczym zaznaczonym elementem, <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> powinien zostać podniesiony; w przeciwnym razie Wyślij <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent> /  <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> zgodnie z potrzebami.  
   
 <a name="Exceptions"></a>
+
 ## <a name="exceptions"></a>Wyjątki  
+
  Dostawcy muszą zgłosić następujące wyjątki.  
   
 |Typ wyjątku|Warunek|  
 |--------------------|---------------|  
 |<xref:System.InvalidOperationException>|Gdy podejmowana jest jakakolwiek z następujących prób:<br /><br /> -   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A>jest wywoływana dla kontenera pojedynczego wyboru <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty>  =  `true` , gdzie i element jest już zaznaczony.<br />-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A>jest wywoływana w kontenerze wielokrotnego wyboru <xref:System.Windows.Automation.SelectionPattern.IsSelectionRequiredProperty>  =  `true` , gdzie jest zaznaczony tylko jeden element.<br />-   <xref:System.Windows.Automation.Provider.ISelectionItemProvider.AddToSelection%2A>jest wywoływana dla kontenera pojedynczego wyboru <xref:System.Windows.Automation.SelectionPattern.CanSelectMultipleProperty>  =  `false` , gdzie i inny element jest już zaznaczony.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wzorce formantów automatyzacji interfejsu użytkownika — omówienie](ui-automation-control-patterns-overview.md)
 - [Obsługa wzorców formantów dostawcy automatyzacji interfejsu użytkownika](support-control-patterns-in-a-ui-automation-provider.md)

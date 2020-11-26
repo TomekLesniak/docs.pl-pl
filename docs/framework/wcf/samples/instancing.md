@@ -5,14 +5,15 @@ helpviewer_keywords:
 - service behaviors, instancing sample
 - Instancing Sample [Windows Communication Foundation]
 ms.assetid: c290fa54-f6ae-45a1-9186-d9504ebc6ee6
-ms.openlocfilehash: 1cfaa0db5b81858b733343f17cae71e5815ef60b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 55042af1e6eec1fe4b3e2cf07d03596e4793575f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596632"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96237758"
 ---
 # <a name="instancing"></a>Tworzenie wystąpienia
+
 Przykładowa funkcja tworzenia wystąpień pokazuje ustawienie zachowania tworzenia wystąpienia, które określa sposób, w jaki wystąpienie klasy usługi jest tworzone w odpowiedzi na żądania klientów. Przykład jest oparty na [wprowadzenie](getting-started-sample.md), który implementuje `ICalculator` kontrakt usługi. Ten przykład definiuje nowy kontrakt, `ICalculatorInstance` który dziedziczy z `ICalculator` . Kontrakt określony przez `ICalculatorInstance` zawiera trzy dodatkowe operacje umożliwiające sprawdzenie stanu wystąpienia usługi. Zmieniając ustawienie tworzenia wystąpienia, można obserwować zmianę zachowania przez uruchomienie klienta.  
   
  W tym przykładzie klient jest aplikacją konsolową (. exe), a usługa jest hostowana przez Internet Information Services (IIS).  

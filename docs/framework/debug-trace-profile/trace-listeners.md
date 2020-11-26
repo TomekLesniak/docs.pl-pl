@@ -15,17 +15,18 @@ helpviewer_keywords:
 - tracing [.NET Framework], trace listeners
 - logs, trace listeners
 ms.assetid: 444b0d33-67ea-4c36-9e94-79c50f839025
-ms.openlocfilehash: d08f86c782284a296090cf63e4b03c8d446a95fc
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 8cd79d21d66d23f834b7ef0012d8360884028ac6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803526"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238122"
 ---
 # <a name="trace-listeners"></a>Obiekty nasłuchujące śledzenia
+
 W przypadku korzystania z **funkcji trace**, **Debug** i <xref:System.Diagnostics.TraceSource> , musisz mieć mechanizm zbierania i rejestrowania wysyłanych komunikatów. Komunikaty śledzenia są odbierane przez *odbiorniki*. Odbiornik ma na celu zbierania, przechowywania i komunikatów śledzenia, które trasy. Odbiorniki bezpośrednie dane wyjściowe śledzenia do odpowiedniego obiektu docelowego, takie jak dziennik, okno lub PLiku tekstowego.  
   
- Odbiorniki są dostępne dla **debugowania**, **śledzenia**i <xref:System.Diagnostics.TraceSource> klas, z których każdy może wysyłać dane wyjściowe do różnych obiektów odbiornika. Poniżej przedstawiono najczęściej używane wstępnie zdefiniowane detektory:  
+ Odbiorniki są dostępne dla **debugowania**, **śledzenia** i <xref:System.Diagnostics.TraceSource> klas, z których każdy może wysyłać dane wyjściowe do różnych obiektów odbiornika. Poniżej przedstawiono najczęściej używane wstępnie zdefiniowane detektory:  
   
 - <xref:System.Diagnostics.TextWriterTraceListener>Przekierowuje dane wyjściowe do wystąpienia <xref:System.IO.TextWriter> klasy lub do elementu, który jest <xref:System.IO.Stream> klasą. Może również zapisywać w konsoli lub w pliku, ponieważ są to <xref:System.IO.Stream> klasy.  
   
@@ -72,14 +73,15 @@ System.Diagnostics.Trace.Listeners.Add(
    new System.Diagnostics.TextWriterTraceListener(Console.Out));  
 ```  
   
-## <a name="developer-defined-listeners"></a>Detektory zdefiniowane przez dewelopera  
+## <a name="developer-defined-listeners"></a>Developer-Defined detektory  
+
  Można zdefiniować własne detektory, dziedzicząc klasę bazową **TraceListener** i zastępując jej metody przy użyciu dostosowanych metod. Aby uzyskać więcej informacji na temat tworzenia detektorów zdefiniowanych przez dewelopera, zobacz sekcję <xref:System.Diagnostics.TraceListener> w temacie .NET Framework Reference.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - <xref:System.Diagnostics.EventLogTraceListener>
 - <xref:System.Diagnostics.DefaultTraceListener>
 - <xref:System.Diagnostics.TraceListener>
-- [Śledzenie i instrumentacja aplikacji](tracing-and-instrumenting-applications.md)
+- [Śledzenie i instrumentowanie aplikacji](tracing-and-instrumenting-applications.md)
 - [Przełączniki śledzenia](trace-switches.md)

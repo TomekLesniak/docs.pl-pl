@@ -13,15 +13,16 @@ helpviewer_keywords:
 - trace switches
 - trace switches, creating custom
 ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
-ms.openlocfilehash: 29de46afa2a96dd7011cec40f4f76e7bfb8ee454
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: dfbff0a78b3c6c1318224ccc9608c1b816f9d5f1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803539"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238057"
 ---
 # <a name="trace-switches"></a>Przełączniki śledzenia
-Przełączniki śledzenia umożliwiają włączenie, wyłączenie i filtrowanie danych wyjściowych śledzenia. Są to obiekty istniejące w kodzie i można je skonfigurować zewnętrznie za pomocą pliku. config. Istnieją trzy typy przełączników śledzenia podane w .NET Framework: <xref:System.Diagnostics.BooleanSwitch> Klasa, <xref:System.Diagnostics.TraceSwitch> Klasa i <xref:System.Diagnostics.SourceSwitch> Klasa. <xref:System.Diagnostics.BooleanSwitch>Klasa działa jako przełącznik przełącznika, włączając lub wyłączając różne instrukcje śledzenia. <xref:System.Diagnostics.TraceSwitch>Klasy i <xref:System.Diagnostics.SourceSwitch> umożliwiają włączenie przełącznika śledzenia dla określonego poziomu śledzenia, tak aby można było <xref:System.Diagnostics.Trace> <xref:System.Diagnostics.TraceSource> znaleźć komunikaty określone dla tego poziomu i wszystkie poziomy poniżej. Jeśli wyłączysz przełącznik, komunikaty śledzenia nie będą wyświetlane. Wszystkie te klasy pochodzą od abstrakcyjnej (**MustInherit**) **przełącznika**klasy, tak jak w przypadku wszystkich przełączników opracowanych przez użytkownika.  
+
+Przełączniki śledzenia umożliwiają włączenie, wyłączenie i filtrowanie danych wyjściowych śledzenia. Są to obiekty istniejące w kodzie i można je skonfigurować zewnętrznie za pomocą pliku. config. Istnieją trzy typy przełączników śledzenia podane w .NET Framework: <xref:System.Diagnostics.BooleanSwitch> Klasa, <xref:System.Diagnostics.TraceSwitch> Klasa i <xref:System.Diagnostics.SourceSwitch> Klasa. <xref:System.Diagnostics.BooleanSwitch>Klasa działa jako przełącznik przełącznika, włączając lub wyłączając różne instrukcje śledzenia. <xref:System.Diagnostics.TraceSwitch>Klasy i <xref:System.Diagnostics.SourceSwitch> umożliwiają włączenie przełącznika śledzenia dla określonego poziomu śledzenia, tak aby można było <xref:System.Diagnostics.Trace> <xref:System.Diagnostics.TraceSource> znaleźć komunikaty określone dla tego poziomu i wszystkie poziomy poniżej. Jeśli wyłączysz przełącznik, komunikaty śledzenia nie będą wyświetlane. Wszystkie te klasy pochodzą od abstrakcyjnej (**MustInherit**) **przełącznika** klasy, tak jak w przypadku wszystkich przełączników opracowanych przez użytkownika.  
   
  Przełączniki śledzenia mogą być przydatne do filtrowania informacji. Na przykład możesz chcieć zobaczyć każdy komunikat śledzenia w module dostępu do danych, ale tylko komunikaty o błędach w pozostałej części aplikacji. W takim przypadku należy użyć jednego przełącznika śledzenia dla modułu dostępu do danych i jednego przełącznika dla pozostałej części aplikacji. Przy użyciu pliku. config aby skonfigurować przełączniki do odpowiednich ustawień, można kontrolować, jakie typy komunikatów śledzenia zostały odebrane. Aby uzyskać więcej informacji, zobacz [jak: Tworzenie, inicjowanie i konfigurowanie przełączników śledzenia](how-to-create-initialize-and-configure-trace-switches.md).  
   
@@ -30,6 +31,7 @@ Przełączniki śledzenia umożliwiają włączenie, wyłączenie i filtrowanie 
  Aby użyć przełącznika, należy najpierw utworzyć obiekt Switch z klasy **BooleanSwitch** , klasy **TraceSwitch** lub klasy Switch zdefiniowanej przez dewelopera. Aby uzyskać więcej informacji na temat tworzenia przełączników zdefiniowanych przez dewelopera, zobacz <xref:System.Diagnostics.Switch> klasę w .NET Framework odwołanie. Następnie należy ustawić wartość konfiguracji określającą, kiedy ma być używany obiekt przełącznika. Następnie przetestuj ustawienia obiektu Switch w różnych metodach śledzenia **śledzenia** (lub **debugowania**).  
   
 ## <a name="trace-levels"></a>Poziomy śledzenia  
+
  Jeśli używasz **TraceSwitch**, istnieją dodatkowe zagadnienia. Obiekt **TraceSwitch** ma cztery właściwości, które zwracają wartości **logiczne** wskazujące, czy przełącznik jest ustawiony na co najmniej na określonym poziomie:  
   
 - <xref:System.Diagnostics.TraceSwitch.TraceError%2A?displayProperty=nameWithType>  
@@ -79,11 +81,12 @@ MessageBox.Show(myTraceSwitch.TraceWarning.ToString());
 MessageBox.Show(myTraceSwitch.TraceVerbose.ToString());  
 ```  
   
-## <a name="developer-defined-switches"></a>Przełączniki zdefiniowane przez dewelopera  
+## <a name="developer-defined-switches"></a>Przełączniki Developer-Defined  
+
  Oprócz zapewniania **BooleanSwitch** i **TraceSwitch**, można definiować własne przełączniki, dziedzicząc klasę **Switch** i zastępując metody klasy bazowej przy użyciu dostosowanych metod. Aby uzyskać więcej informacji na temat tworzenia przełączników zdefiniowanych przez dewelopera, zobacz <xref:System.Diagnostics.Switch> klasę w .NET Framework odwołanie.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Obiekty nasłuchujące śledzenia](trace-listeners.md)
-- [Porady: dodawanie instrukcji śledzenia do kodu aplikacji](how-to-add-trace-statements-to-application-code.md)
-- [Śledzenie i instrumentacja aplikacji](tracing-and-instrumenting-applications.md)
+- [Instrukcje: Dodawanie instrukcji śledzenia do kodu aplikacji](how-to-add-trace-statements-to-application-code.md)
+- [Śledzenie i instrumentowanie aplikacji](tracing-and-instrumenting-applications.md)

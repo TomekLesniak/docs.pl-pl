@@ -2,19 +2,20 @@
 title: Instrukcje dotyczące hostowania internetowej usługi informacyjnej
 ms.date: 03/30/2017
 ms.assetid: 959a21c8-9d9d-4757-b255-4e57793ae9d6
-ms.openlocfilehash: 226b47bfd90dc4cffb0a364a804016043cc25d02
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 151c5ba8dd79e8554e7d79fb5b8182740b0be18e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929111"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96237693"
 ---
 # <a name="internet-information-service-hosting-instructions"></a>Instrukcje dotyczące hostowania internetowej usługi informacyjnej
+
 Aby uruchomić przykłady, które są hostowane przez Internet Information Services (IIS), należy upewnić się, że usługi IIS są prawidłowo zainstalowane i uruchomione.  
   
 ### <a name="to-install-iis-version-75-on-windows-server-2008-r2"></a>Aby zainstalować usługi IIS w wersji 7,5 w systemie Windows Server 2008 R2  
   
-1. W obszarze **Menedżer serwera**wybierz pozycję **role.** W obszarze **Podsumowanie ról**kliknij pozycję **Dodaj role**.  
+1. W obszarze **Menedżer serwera** wybierz pozycję **role.** W obszarze **Podsumowanie ról** kliknij pozycję **Dodaj role**.  
   
 2. Kliknij przycisk **dalej** , aby wyświetlić okno dialogowe **Wybieranie ról serwera** .  
   
@@ -22,7 +23,7 @@ Aby uruchomić przykłady, które są hostowane przez Internet Information Servi
   
 4. Zaznacz pole wyboru **serwer sieci Web (IIS)** . Jeśli zostanie wyświetlony monit o zainstalowanie dodatkowych usług ról i funkcji, kliknij przycisk **Dodaj wymagane funkcje**. Kliknij dwukrotnie przycisk **dalej** , aby wyświetlić okno dialogowe **Wybieranie usług ról** dla roli Serwer sieci Web (IIS).  
   
-5. Rozwiń węzeł **Narzędzia do zarządzania**, a następnie rozwiń pozycję Zgodność z zarządzaniem **usługami IIS**w wersji 6. Wybierz pozycję **Narzędzia obsługi skryptów w usługach IIS 6**. Jeśli zostanie wyświetlony monit o zainstalowanie dodatkowych usług ról i funkcji, kliknij przycisk **Dodaj wymagane usługi ról**. Kliknij przycisk **Dalej**.  
+5. Rozwiń węzeł **Narzędzia do zarządzania**, a następnie rozwiń pozycję Zgodność z **zarządzaniem usługami IIS** w wersji 6. Wybierz pozycję **Narzędzia obsługi skryptów w usługach IIS 6**. Jeśli zostanie wyświetlony monit o zainstalowanie dodatkowych usług ról i funkcji, kliknij przycisk **Dodaj wymagane usługi ról**. Kliknij przycisk **Dalej**.  
   
 6. Jeśli podsumowanie wybranych opcji jest poprawne, kliknij przycisk **Instaluj**.  
   
@@ -30,11 +31,11 @@ Aby uruchomić przykłady, które są hostowane przez Internet Information Servi
   
 ### <a name="to-install-iis-version-75-on-windows-7"></a>Aby zainstalować usługi IIS w wersji 7,5 w systemie Windows 7  
   
-1. Kliknij przycisk **Start**, a następnie kliknij pozycję **Panel sterowania**.  
+1. Kliknij przycisk **Start**, a następnie kliknij przycisk **Panelu sterowania**.  
   
 2. Otwórz grupę **programy** .  
   
-3. W obszarze **programy i funkcje**kliknij pozycję **Włącz lub wyłącz funkcje systemu Windows**.  
+3. W obszarze **programy i funkcje** kliknij pozycję **Włącz lub wyłącz funkcje systemu Windows**.  
   
 4. Zostanie wyświetlone okno dialogowe **Kontrola konta użytkownika** . Kliknij przycisk **Kontynuuj**.  
   
@@ -46,7 +47,7 @@ Aby uruchomić przykłady, które są hostowane przez Internet Information Servi
   
 8. Upewnij się, że wybrano następujące elementy:  
   
-    1. **Rozszerzalność platformy .NET**  
+    1. **Rozszerzenia architektury .NET**  
   
     2. **ASP.NET**  
   
@@ -54,11 +55,11 @@ Aby uruchomić przykłady, które są hostowane przez Internet Information Servi
   
     4. **Filtry ISAPI**  
   
-9. W obszarze elementu **World Wide Web usługach**rozwiń węzeł **wspólne funkcje http**.  
+9. W obszarze elementu **World Wide Web usługach** rozwiń węzeł **wspólne funkcje http**.  
   
 10. Upewnij się, że jest zaznaczona **Zawartość statyczna** .  
   
-11. W obszarze elementu **World Wide Web usługach**rozwiń węzeł **zabezpieczenia**.  
+11. W obszarze elementu **World Wide Web usługach** rozwiń węzeł **zabezpieczenia**.  
   
 12. Upewnij się, że wybrano **uwierzytelnianie systemu Windows** .  
   
@@ -72,7 +73,7 @@ Aby uruchomić przykłady, które są hostowane przez Internet Information Servi
   
 ### <a name="to-install-iis-version-70-on-windows-server-2008"></a>Aby zainstalować usługi IIS w wersji 7,0 w systemie Windows Server 2008  
   
-1. W obszarze **Menedżer serwera**wybierz pozycję **role**. W obszarze **Podsumowanie ról**kliknij pozycję **Dodaj role**.  
+1. W obszarze **Menedżer serwera** wybierz pozycję **role**. W obszarze **Podsumowanie ról** kliknij pozycję **Dodaj role**.  
   
 2. Kliknij przycisk **dalej** , aby wyświetlić okno dialogowe **Wybieranie ról serwera** .  
   
@@ -80,7 +81,7 @@ Aby uruchomić przykłady, które są hostowane przez Internet Information Servi
   
 4. Zaznacz pole wyboru **serwer sieci Web (IIS)** . Jeśli zostanie wyświetlony monit o zainstalowanie dodatkowych usług ról i funkcji, kliknij przycisk **Dodaj wymagane funkcje**. Kliknij dwukrotnie przycisk **dalej** , aby wyświetlić okno dialogowe **Wybieranie usług ról** dla roli Serwer sieci Web (IIS).  
   
-5. Rozwiń węzeł **Narzędzia do zarządzania**, a następnie rozwiń pozycję Zgodność z zarządzaniem **usługami IIS**w wersji 6. Wybierz pozycję **Narzędzia obsługi skryptów w usługach IIS 6**. Jeśli zostanie wyświetlony monit o zainstalowanie dodatkowych usług ról i funkcji, kliknij przycisk **Dodaj wymagane usługi ról**. Kliknij przycisk **Dalej**.  
+5. Rozwiń węzeł **Narzędzia do zarządzania**, a następnie rozwiń pozycję Zgodność z **zarządzaniem usługami IIS** w wersji 6. Wybierz pozycję **Narzędzia obsługi skryptów w usługach IIS 6**. Jeśli zostanie wyświetlony monit o zainstalowanie dodatkowych usług ról i funkcji, kliknij przycisk **Dodaj wymagane usługi ról**. Kliknij przycisk **Dalej**.  
   
 6. Jeśli podsumowanie wybranych opcji jest poprawne, kliknij przycisk **Instaluj**.  
   
@@ -88,11 +89,11 @@ Aby uruchomić przykłady, które są hostowane przez Internet Information Servi
   
 ### <a name="to-install-iis-version-70-on-windows-vista"></a>Aby zainstalować usługi IIS w wersji 7,0 w systemie Windows Vista  
   
-1. Kliknij przycisk Start, a następnie kliknij pozycję Panel sterowania.  
+1. Kliknij przycisk Start, a następnie kliknij przycisk Panelu sterowania.  
   
 2. Wybierz grupę **programy** .  
   
-3. W obszarze **programy i funkcje**kliknij pozycję **Włącz lub wyłącz funkcje systemu Windows**.  
+3. W obszarze **programy i funkcje** kliknij pozycję **Włącz lub wyłącz funkcje systemu Windows**.  
   
 4. Zostanie wyświetlone okno dialogowe **Kontrola konta użytkownika** . Kliknij przycisk **Kontynuuj**.  
   
@@ -104,7 +105,7 @@ Aby uruchomić przykłady, które są hostowane przez Internet Information Servi
   
 8. Upewnij się, że wybrano następujące elementy:  
   
-    1. **Rozszerzalność platformy .NET**  
+    1. **Rozszerzenia architektury .NET**  
   
     2. **ASP.NET**  
   
@@ -114,11 +115,11 @@ Aby uruchomić przykłady, które są hostowane przez Internet Information Servi
   
 9. Rozwiń element zatytułowany **Narzędzia do zarządzania siecią Web**, a następnie wybierz pozycję **Konsola zarządzania usługami IIS**.  
   
-10. W obszarze elementu **World Wide Web usługach**rozwiń węzeł **wspólne funkcje http**.  
+10. W obszarze elementu **World Wide Web usługach** rozwiń węzeł **wspólne funkcje http**.  
   
 11. Upewnij się, że jest zaznaczona **Zawartość statyczna** .  
   
-12. W obszarze elementu **World Wide Web usługach**rozwiń węzeł **zabezpieczenia**.  
+12. W obszarze elementu **World Wide Web usługach** rozwiń węzeł **zabezpieczenia**.  
   
 13. Upewnij się, że wybrano **uwierzytelnianie systemu Windows** .  
   
@@ -144,7 +145,7 @@ Aby uruchomić przykłady, które są hostowane przez Internet Information Servi
   
 2. W oknie dialogowym **Dodawanie lub usuwanie programów** kliknij pozycję **Dodaj/Usuń składniki systemu Windows**.  
   
-3. W **Kreatorze składników systemu Windows**zaznacz pole wyboru **Internet Information Services (IIS)** , a następnie kliknij przycisk **dalej**.  
+3. W **Kreatorze składników systemu Windows** zaznacz pole wyboru **Internet Information Services (IIS)** , a następnie kliknij przycisk **dalej**.  
   
 4. Jeśli zostanie wyświetlone okno dialogowe **wymagające plików** , włóż dysk instalacyjny systemu operacyjnego, przejdź do folderu i386, a następnie kliknij przycisk **OK**.  
   
@@ -163,7 +164,7 @@ Aby uruchomić przykłady, które są hostowane przez Internet Information Servi
 4. Zostanie wyświetlona strona sieci Web z tekstem "Hello world".  
   
 > [!NOTE]
-> Za każdym razem, gdy instalujesz nową wersję .NET Framework, należy ponownie zarejestrować program aspnet_isapi jako rozszerzenie usługi sieci Web dla usług IIS. Aby to zrobić, wydaj `aspnet_regiis –I –enable` polecenie.  
+> Za każdym razem, gdy instalujesz nową wersję .NET Framework, musisz ponownie zarejestrować aspnet_isapi jako rozszerzenie usługi sieci Web dla usług IIS. Aby to zrobić, wydaj `aspnet_regiis –I –enable` polecenie.  
   
 ## <a name="sample-code"></a>Przykładowy kod  
   

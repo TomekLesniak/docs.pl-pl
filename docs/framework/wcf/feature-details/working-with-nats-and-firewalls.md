@@ -5,19 +5,21 @@ helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-ms.openlocfilehash: bab29d738c7562753a826b47c03867eeebac4372
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 185be9f6e33fcf107226e98d96d6be5c562384d8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558982"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238330"
 ---
 # <a name="working-with-nats-and-firewalls"></a>Praca z translatorami adresów sieciowych i zaporami
+
 Klient i serwer połączenia sieciowego często nie mają bezpośredniego i otwartej ścieżki do komunikacji. Pakiety są filtrowane, kierowane, analizowane i przekształcane zarówno na maszynach końcowych, jak i na maszynach pośrednich w sieci. Translacji adresów sieciowych (NAT) i zapory są typowymi przykładami aplikacji pośrednich, które mogą uczestniczyć w komunikacji sieciowej.  
   
  Transporty usługi Windows Communication Foundation (WCF) i wzorce wymiany komunikatów (MEPs) reagują inaczej w zależności od obecności translatorów adresów sieciowych i zapór. W tym temacie opisano sposób, w jaki translatory adresów sieciowych i zapory funkcjonują w ramach wspólnych topologii sieci. Zalecenia dotyczące konkretnych kombinacji transportów WCF i MEPs mają na celu zwiększenie niezawodności aplikacji do translatorów adresów sieciowych i zapór w sieci.  
   
 ## <a name="how-nats-affect-communication"></a>Wpływ komunikacji między translatorami adresów sieciowych  
+
  Utworzono translator adresów sieciowych w celu umożliwienia kilku komputerom współdzielenia jednego zewnętrznego adresu IP. Mapowanie NAT dla ponownego mapowania portów mapuje wewnętrzny adres IP i port dla połączenia z zewnętrznym adresem IP z nowym numerem portu. Nowy numer portu umożliwia translacji adresów sieciowych w celu skorelowania ruchu zwrotnego z oryginalną komunikacją. Wielu użytkowników domowych ma teraz adres IP, który jest tylko prywatnie rutowany i polega na translatorze adresów sieciowych w celu zapewnienia globalnego routingu pakietów.  
   
  Translator adresów sieciowych nie zapewnia granicy zabezpieczeń. Jednak typowe konfiguracje NAT uniemożliwiają bezpośrednią Readresowanie maszyn wewnętrznych. Obejmuje to ochronę maszyn wewnętrznych przed niektórymi niechcianymi połączeniami i utrudnia zapisywanie aplikacji serwera, które muszą asynchronicznie wysyłać dane z powrotem do klienta. Translator adresów sieciowych ponownie zapisuje adresy w pakietach, aby się upewnić, że połączenia są pochodziły z maszyn translatora adresów sieciowych. Powoduje to, że serwer kończy się niepowodzeniem podczas próby otwarcia połączenia z powrotem do klienta programu. Jeśli serwer używa znanego adresu klienta, nie powiedzie się, ponieważ adres klienta nie może być kierowany publicznie. Jeśli serwer używa adresu NAT, połączenie nie powiedzie się, ponieważ żadna aplikacja nie nasłuchuje na tym komputerze.  
@@ -25,6 +27,7 @@ Klient i serwer połączenia sieciowego często nie mają bezpośredniego i otwa
  Niektóre NAT obsługują konfigurację reguł przekazywania, aby umożliwić maszynom zewnętrznym łączenie się z konkretną maszyną wewnętrzną. Instrukcje dotyczące konfigurowania reguł przekazywania różnią się między różnymi translatorami adresów sieciowych i zaproszenie użytkowników końcowych o zmianę konfiguracji NAT nie są zalecane w przypadku większości aplikacji. Wielu użytkowników końcowych nie może lub nie chce zmieniać konfiguracji NAT dla określonej aplikacji.  
   
 ## <a name="how-firewalls-affect-communication"></a>Jak zapory wpływają na komunikację  
+
  *Zapora* to oprogramowanie lub sprzęt, które stosuje reguły do ruchu przechodzącego przez, aby zdecydować, czy zezwalać na przesyłanie lub odmawiać. Zapory można skonfigurować do badania strumieni ruchu przychodzącego i/lub wychodzącego. Zapora zapewnia granicę zabezpieczeń sieci na granicy sieci lub na hoście punktu końcowego. Użytkownicy biznesowi tradycyjnie zachowały swoje serwery za zaporą, aby zapobiec złośliwym atakom. Od momentu wprowadzenia zapory osobistej w systemie Windows XP z dodatkiem SP2 liczba użytkowników domowych znajdujących się za zaporą została znacznie zwiększona. Dzięki temu jedno lub oba punkty końcowe połączenia mają zaporę sprawdzającą pakiety.  
   
  Zapory różnią się znacznie pod względem ich złożoności i możliwości testowania pakietów. Proste zapory stosują reguły oparte na adresach źródłowych i docelowych oraz portach w pakietach. Inteligentne zapory mogą również sprawdzić zawartość pakietów, aby podejmować decyzje. Te zapory są dostępne w wielu różnych konfiguracjach i często są używane w przypadku wyspecjalizowanych aplikacji.  
@@ -36,6 +39,7 @@ Klient i serwer połączenia sieciowego często nie mają bezpośredniego i otwa
  Teredo to technologia przejściowa IPv6, która umożliwia bezpośrednie adresowanie maszyn za translatorem adresów sieciowych. Teredo korzysta z serwera, który może być publicznie i globalnie kierowany do anonsowania potencjalnych połączeń. Serwer Teredo zapewnia klientowi aplikacji i serwerowi wspólny punkt spotkania, w którym mogą wymieniać informacje o połączeniu. Komputery następnie żądają tymczasowego adresu Teredo, a pakiety są tunelowane za pomocą istniejącej sieci. Obsługa protokołu Teredo w programie WCF wymaga włączenia obsługi protokołów IPv6 i Teredo w systemie operacyjnym. System Windows XP i nowsze systemy operacyjne obsługują protokół Teredo. System Windows Vista i nowsze systemy operacyjne obsługują protokół IPv6 domyślnie i wymagają, aby użytkownik mógł włączyć protokół Teredo. Systemy Windows XP z dodatkiem SP2 i Windows Server 2003 wymagają od użytkownika włączenia protokołów IPv6 i Teredo. Aby uzyskać więcej informacji, zobacz [Omówienie protokołu Teredo](/previous-versions/windows/it-pro/windows-xp/bb457011(v=technet.10)).  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>Wybór wzorca transportu i wymiany komunikatów  
+
  Wybór transportu i unikatowy MEP jest procesem trzech etapów:  
   
 1. Analizuj adresowanie maszyn punktu końcowego. Serwery korporacyjne często mają bezpośredni adres, podczas gdy użytkownicy końcowi często mają adres blokowany przez NAT. Jeśli oba punkty końcowe znajdują się za translatorem adresów sieciowych, takich jak scenariusze komunikacji równorzędnej między użytkownikami końcowymi, może być potrzebna technologia, taka jak Teredo, aby zapewnić adresowanie.  

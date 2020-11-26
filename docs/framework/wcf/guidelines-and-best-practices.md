@@ -8,18 +8,20 @@ helpviewer_keywords:
 - WCF, best practices
 - Windows Communication Foundation, guidelines
 ms.assetid: 5098ba46-6e8d-4e02-b0c5-d737f9fdad84
-ms.openlocfilehash: 37e014aad44cf15e04ed3aa03a8367f5a44ceb96
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: eeca4ee47db2aef139567e37cba60cab863e6d53
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319809"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238135"
 ---
 # <a name="guidelines-and-best-practices"></a>Wskazówki i najlepsze rozwiązania
+
 Ta sekcja zawiera tematy, które zawierają wskazówki dotyczące tworzenia aplikacji Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
- [Najlepsze rozwiązania: przechowywanie wersji kontraktów danych](best-practices-data-contract-versioning.md)  
+
+ [Najlepsze rozwiązania: Przechowywanie wersji kontraktów danych](best-practices-data-contract-versioning.md)  
  Wyjaśnia, jak i kiedy tworzyć Kontrakty danych, które nie są przerywane podczas tworzenia przyszłych wersji.  
   
  [Przechowywanie wersji usługi](service-versioning.md)  
@@ -34,19 +36,21 @@ Ta sekcja zawiera tematy, które zawierają wskazówki dotyczące tworzenia apli
  [Wdrażanie aplikacji WCF za pomocą technologii ClickOnce](deploying-wcf-applications-with-clickonce.md)  
  Opisuje kwestie, które należy wykonać podczas korzystania z funkcji ClickOnce.  
   
-## <a name="reference"></a>Tematy pomocy  
+## <a name="reference"></a>Dokumentacja  
+
  <xref:System.ServiceModel>  
   
  <xref:System.Runtime.Serialization>  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Omówienie pojęć](conceptual-overview.md)  
   
  [Podstawy programowania przy użyciu programu WCF](basic-wcf-programming.md)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Co to jest program Windows Communication Foundation](whats-wcf.md)
-- [Przykłady Windows Communication Foundation (WCF)](./samples/index.md)
+- [Windows Communication Foundation (WCF) — przykłady](./samples/index.md)
 - [Omówienie pojęć](conceptual-overview.md)
 - [Kompilowanie klientów](building-clients.md)

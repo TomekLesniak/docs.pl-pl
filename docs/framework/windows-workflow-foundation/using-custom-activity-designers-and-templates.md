@@ -2,30 +2,33 @@
 title: Używanie niestandardowych szablonów i projektantów działań
 ms.date: 03/30/2017
 ms.assetid: 1aab82e7-7f89-4255-be46-526b09ceeb8b
-ms.openlocfilehash: eb00a2927c8521e68bc2c5fc73bc2aab55d7d868
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 92e199a8592fd79a454ecee083d55b7642f829d2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669592"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238642"
 ---
 # <a name="using-custom-activity-designers-and-templates"></a>Używanie niestandardowych szablonów i projektantów działań
-Ta sekcja zawiera tematy dotyczące tworzenia działań niestandardowych szablonów i projektantów działań niestandardowych.  
+
+Ta sekcja zawiera tematy opisujące sposób tworzenia niestandardowych projektantów działań i szablonów działań niestandardowych.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Instrukcje: Tworzenie niestandardowego projektanta działań](how-to-create-a-custom-activity-designer.md)  
- W tym artykule opisano jak utworzyć projektanta działań niestandardowych w przypadku projektantów, dostarczone przez przepływ pracy nie są odpowiednie do zadania projektowania.  
+ Opisuje sposób tworzenia niestandardowego projektanta działań, gdy projektanci dostarczani przez przepływ pracy nie są odpowiednie do zadań projektowania.  
   
  [Instrukcje: Tworzenie niestandardowego szablonu działań](how-to-create-a-custom-activity-template.md)  
- W tym artykule opisano sposób użycia szablonów niestandardowych działań do działań należy wstępnie skonfigurować tak, aby użytkownicy muszą utworzyć każde działanie indywidualnie i skonfigurować ich właściwości i inne ustawienia ręcznie.  
+ Opisuje, jak używać niestandardowych szablonów działań do prekonfiguracji działań, aby użytkownicy nie musieli tworzyć poszczególnych działań osobno i konfigurować ich właściwości oraz inne ustawienia ręcznie.  
   
  [Używanie kontekstu edycyjnego ModelItem](using-the-modelitem-editing-context.md)  
- Opisuje sposób użycia funkcji Kontekst edycyjny elementu modelu, aby umożliwić projektanta do interakcji z hostem.  
+ Opisuje, jak używać funkcji kontekstu edycji ModelItem, aby umożliwić projektantowi współdziałanie z hostem.  
   
- [Powiązanie niestandardowych właściwości działań z kontrolką projektanta](binding-a-custom-activity-property-to-a-designer-control.md)  
- W tym artykule opisano, jak powiązać kontrolce listview z właściwością działania w projektancie.  
+ [Wiązanie niestandardowych właściwości działań z kontrolką projektanta](binding-a-custom-activity-property-to-a-designer-control.md)  
+ Opisuje sposób powiązania kontrolki ListView z właściwością działania w projektancie.  
   
-## <a name="reference"></a>Tematy pomocy  
+## <a name="reference"></a>Dokumentacja  
+
  <xref:System.Activities.Presentation.ActivityDesigner>  
   
  <xref:System.Activities.Presentation.View.ExpressionTextBox>  
@@ -37,7 +40,9 @@ Ta sekcja zawiera tematy dotyczące tworzenia działań niestandardowych szablon
  <xref:System.Activities.Presentation.Model.ModelTreeManager>  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Rehostowanie projektanta przepływu pracy](rehosting-the-workflow-designer.md)  
   
 ## <a name="external-resources"></a>Zasoby zewnętrzne  
+
  [Działania niestandardowe](./samples/custom-activities.md)

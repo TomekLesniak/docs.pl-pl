@@ -6,14 +6,15 @@ helpviewer_keywords:
 - Sign tool
 - SignTool.exe
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
-ms.openlocfilehash: ff330691483b56740ee72e280c1471af4282c638
-ms.sourcegitcommit: 74d05613d6c57106f83f82ce8ee71176874ea3f0
+ms.openlocfilehash: 46a7453ff7de0329d9cd7f671dcaa0a3e3e0e54c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93282253"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238473"
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (Narzędzie podpisu)
+
 Narzędzie podpisywania to narzędzie wiersza polecenia, które cyfrowo podpisuje pliki, weryfikuje podpisy w plikach i oznacza pliki znacznikami czasu.  
   
  To narzędzie jest instalowane automatycznie z programem Visual Studio. Aby uruchomić narzędzie, użyj wiersz polecenia dla deweloperów dla programu Visual Studio (lub wiersza polecenia programu Visual Studio w systemie Windows 7). Aby uzyskać więcej informacji, zobacz [wiersza polecenia](developer-command-prompt-for-vs.md).
@@ -55,7 +56,9 @@ signtool [command] [options] [file_name | ...]
 |**opcją**|Wyświetla informacje debugowania.|  
   
 <a name="catdb"></a>
+
 ## <a name="catdb-command-options"></a>Opcje polecenia catdb  
+
  Poniższa tabela zawiera listę opcji, które mogą być używane z `catdb` poleceniem.  
   
 |Opcja polecenia Catdb|Opis|  
@@ -66,7 +69,9 @@ signtool [command] [options] [file_name | ...]
 |`/u`|Określa, że dla dodawanych plików wykazów unikatowe nazwy są generowane automatycznie. W razie potrzeby nazwy plików wykazów są zmieniane, aby zapobiec konfliktom nazw z istniejącymi plikami wykazów. Jeśli ta opcja nie jest określona, narzędzie podpisywania zastępuje wszelkie istniejące wykazy, które mają taką samą nazwę jak wykaz dodawany.|  
   
 <a name="sign"></a>
+
 ## <a name="sign-command-options"></a>Podpisz opcje polecenia  
+
  Poniższa tabela zawiera listę opcji, które mogą być używane z `sign` poleceniem.  
   
 |Opcja polecenia Sign|Opis|  
@@ -103,7 +108,9 @@ signtool [command] [options] [file_name | ...]
  Aby zapoznać się z przykładami użycia, zobacz [Używanie narzędzia SignTool do podpisywania pliku](/windows/desktop/SecCrypto/using-signtool-to-sign-a-file).  
   
 <a name="TimeStamp"></a>
+
 ## <a name="timestamp-command-options"></a>Opcje polecenia sygnatury czasowej  
+
  Poniższa tabela zawiera listę opcji, które mogą być używane z `TimeStamp` poleceniem.  
   
 |Opcja polecenia TimeStamp|Opis|  
@@ -117,6 +124,7 @@ signtool [command] [options] [file_name | ...]
  Przykład użycia można znaleźć w temacie [Dodawanie sygnatur czasowych do wcześniej podpisanych plików](/windows/desktop/SecCrypto/adding-time-stamps-to-previously-signed-files).  
   
 <a name="Verify"></a>
+
 ## <a name="verify-command-options"></a>Sprawdź opcje polecenia  
   
 |Opcja polecenia Verify|Opis|  
@@ -132,7 +140,7 @@ signtool [command] [options] [file_name | ...]
 |`/hash` ( `SHA1`&#124;`SHA256` )|Określa opcjonalny algorytm wyznaczania wartości skrótu, który ma być używany podczas wyszukiwania pliku w wykazie.|  
 |`/kp`|Określa, że weryfikacja powinna być wykonywana przy użyciu zasad podpisywania sterowników trybu jądra.|  
 |`/ms`|Używa wielu semantyk weryfikacji. Jest to domyślne zachowanie wywołania [WinVerifyTrust](/windows/desktop/api/wintrust/nf-wintrust-winverifytrust) w systemie Windows 8 i nowszych.|  
-|`/o` *Wersja*|Weryfikuje plik na podstawie wersji systemu operacyjnego. *Wersja* ma następującą postać: *PlatformID* : *VerMajor*. *Szkodniki*. *BuildNumber*. *PlatformID* reprezentuje wartość podstawową <xref:System.PlatformID> elementu członkowskiego wyliczenia. **Ważne:**  `/o` Zalecane jest użycie przełącznika. Jeśli `/o` nie jest określony, SignTool.exe może zwracać nieoczekiwane wyniki. Jeśli na przykład nie zostanie uwzględniony `/o` przełącznik, wykazy systemowe, które poprawnie weryfikują się w starszym systemie operacyjnym, mogą nie zostać prawidłowo zweryfikowane w nowszej wersji systemu operacyjnego.|  
+|`/o` *Wersja*|Weryfikuje plik na podstawie wersji systemu operacyjnego. *Wersja* ma następującą postać: *PlatformID*:*VerMajor*. *Szkodniki*. *BuildNumber*. *PlatformID* reprezentuje wartość podstawową <xref:System.PlatformID> elementu członkowskiego wyliczenia. **Ważne:**  `/o` Zalecane jest użycie przełącznika. Jeśli `/o` nie jest określony, SignTool.exe może zwracać nieoczekiwane wyniki. Jeśli na przykład nie zostanie uwzględniony `/o` przełącznik, wykazy systemowe, które poprawnie weryfikują się w starszym systemie operacyjnym, mogą nie zostać prawidłowo zweryfikowane w nowszej wersji systemu operacyjnego.|  
 |`/p7`|Weryfikuje pliki PKCS #7. Żadne z istniejących zasad nie są używane do weryfikacji plików PKCS #7. Podpis jest sprawdzany i zostaje utworzony łańcuch dla certyfikatu podpisywania.|  
 |`/pa`|Określa, że mają być używane domyślne zasady weryfikacji Authenticode. Jeśli ta `/pa` opcja nie jest określona, narzędzie podpisywania używa zasad weryfikacji sterowników systemu Windows. Tej opcji nie można używać z `catdb` opcjami.|  
 |`/pg`*PolicyGUID*|Określa zasady weryfikacji według identyfikatora GUID. *PolicyGUID* odnosi się do Identyfikator akcji zasad weryfikacji. Tej opcji nie można używać z `catdb` opcjami.|  
@@ -143,6 +151,7 @@ signtool [command] [options] [file_name | ...]
  Aby zapoznać się z przykładami użycia, zobacz [Używanie narzędzia SignTool do weryfikowania podpisu pliku](/windows/desktop/SecCrypto/using-signtool-to-verify-a-file-signature).  
   
 ## <a name="return-value"></a>Wartość zwracana  
+
  Kończąc działanie, narzędzie podpisywania zwraca jeden z poniższych kodów zakończenia.  
   
 |Kod zakończenia|Opis|  
@@ -152,6 +161,7 @@ signtool [command] [options] [file_name | ...]
 |2|Wykonanie zostało ukończone, ale zostały wygenerowane ostrzeżenia.|  
 
 ## <a name="examples"></a>Przykłady  
+
  Poniższe polecenie dodaje plik wykazu MyCatalogFileName.cat do bazy danych składników systemu i sterowników. `/u`Opcja w razie potrzeby generuje unikatową nazwę, aby zapobiec zastąpieniu istniejącego pliku wykazu o nazwie `MyCatalogFileName.cat` .  
   
 ```console  
@@ -218,7 +228,7 @@ signtool verify /a SystemFile.dll
 signtool verify /c MyCatalog.cat SystemFile.dll  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Narzędzia](index.md)
 - [Wiersze poleceń](developer-command-prompt-for-vs.md)

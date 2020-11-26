@@ -2,14 +2,15 @@
 title: 'Instrukcje: tworzenie usługi przyjmującej dowolne dane w modelu programowania REST programu WCF'
 ms.date: 03/30/2017
 ms.assetid: e566c15a-b600-4e4a-be3a-4af43e767dae
-ms.openlocfilehash: d908651f7815c102b45ea106f5bec4c07d869950
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9c9899705861cc1cf2cda2559c30a0a60d8cc635
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601338"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96237836"
 ---
 # <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>Instrukcje: tworzenie usługi przyjmującej dowolne dane w modelu programowania REST programu WCF
+
 Czasami deweloperzy muszą mieć pełną kontrolę nad sposobem zwracania danych z operacji usługi. Dzieje się tak w przypadku, gdy operacja usługi musi zwrócić dane w formacie nieobsługiwany byWCF. W tym temacie omówiono korzystanie z modelu programowania REST WCF w celu utworzenia usługi, która odbiera dowolne dane.  
   
 ### <a name="to-implement-the-service-contract"></a>Aby zaimplementować kontrakt usługi  
@@ -124,6 +125,7 @@ Czasami deweloperzy muszą mieć pełną kontrolę nad sposobem zwracania danych
     ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej znajduje się kompletna lista kodu dla tego przykładu.  
   
 ```csharp  
@@ -191,7 +193,7 @@ namespace ReceiveRawData
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
   
-- Podczas kompilowania kodu referencyjnego system. ServiceModel. dll i system. ServiceModel. Web. dll  
+- Podczas kompilowania odwołania kodu System.ServiceModel.dll i System.ServiceModel.Web.dll  
   
 ## <a name="see-also"></a>Zobacz też
 

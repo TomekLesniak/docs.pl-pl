@@ -11,12 +11,12 @@ helpviewer_keywords:
 - PEverify.exe
 - PE files, PEVerify
 ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
-ms.openlocfilehash: 478c04a45c7f9d3ad568a6bc4a12a89fe786583a
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: c859aa4e2e3ae95c5c72aed930a9bc4a05add296
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325621"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238590"
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (Narzędzie PEVerify)
 
@@ -55,15 +55,17 @@ peverify filename [options]
 |**/?**|Wyświetla składnię polecenia i opcje narzędzia.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Środowisko uruchomieniowe języka wspólnego opiera się na wykonywaniu kodu aplikacji bezpiecznego pod kątem typów, aby ułatwić wymuszanie stosowania mechanizmów zabezpieczeń i izolacji. Zwykle kod, który nie jest [typu](../../standard/security/key-security-concepts.md#type-safety-and-security) "nie sprawdza się", nie może zostać uruchomiony, chociaż można ustawić zasady zabezpieczeń, aby zezwalać na wykonywanie kodu zaufanego, ale niemożliwego do zweryfikowania.  
   
- Jeśli nie określono opcji **/MD** ani **/Il** , Peverify.exe wykonuje oba typy kontroli. Peverify.exe wykonuje najpierw testy **/MD** . W przypadku braku błędów **/Il** są przeprowadzane sprawdzenia. W przypadku określenia zarówno **/MD** , jak i **/Il**testy **/Il** są wykonywane nawet wtedy, gdy w metadanych występują błędy. W takim przypadku, jeśli nie występują błędy metadanych, **PEVerify** *filename* jest równoważne **PEVerify** *filename* **/MD** **/Il**.  
+ Jeśli nie określono opcji **/MD** ani **/Il** , Peverify.exe wykonuje oba typy kontroli. Peverify.exe wykonuje najpierw testy **/MD** . W przypadku braku błędów **/Il** są przeprowadzane sprawdzenia. W przypadku określenia zarówno **/MD** , jak i **/Il** testy **/Il** są wykonywane nawet wtedy, gdy w metadanych występują błędy. W takim przypadku, jeśli nie występują błędy metadanych, **PEVerify** *filename* jest równoważne **PEVerify** *filename* **/MD** **/Il**.  
   
  Peverify.exe wykonuje kompleksową weryfikację MSIL na podstawie analizy przepływu danych oraz listy kilkuset reguł poprawności metadanych. Aby uzyskać szczegółowe informacje na temat sprawdzanych Peverify.exe, zobacz "Specyfikacja walidacji metadanych" i "Specyfikacja zestawu instrukcji MSIL" w folderze przewodnika deweloperów narzędzi w Windows SDK.  
   
 .NET Framework w wersji 2,0 lub nowszej obsługuje sprawdzone `byref` zwroty określone przy użyciu następujących instrukcji MSIL: `dup` ,,,, `ldsflda` `ldflda` `ldelema` `call` i `unbox` .  
   
 ## <a name="examples"></a>Przykłady  
+
  Następujące polecenie wykonuje sprawdzanie poprawności metadanych i weryfikację bezpieczeństwa typów MSIL dla metod zaimplementowanych w zestawie `myAssembly.exe` .  
   
 ```console  
@@ -121,6 +123,6 @@ peverify myAssembly.exe /break=100 /ignore@ignoreErrors.rsp
 ## <a name="see-also"></a>Zobacz też
 
 - [Narzędzia](index.md)
-- [Pisanie kodu z bezpiecznym typem](../misc/code-access-security-basics.md#typesafe_code)
+- [Pisanie kodu Type-Safe sprawdzane](../misc/code-access-security-basics.md#typesafe_code)
 - [Bezpieczeństwo i zabezpieczenia typów](../../standard/security/key-security-concepts.md#type-safety-and-security)
 - [Wiersze poleceń](developer-command-prompt-for-vs.md)
