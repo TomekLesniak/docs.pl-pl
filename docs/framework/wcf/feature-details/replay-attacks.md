@@ -2,17 +2,19 @@
 title: Ataki oparte na metodzie powtórzeń
 ms.date: 03/30/2017
 ms.assetid: 7a17e040-93cd-4432-81b9-9f62fec78c8f
-ms.openlocfilehash: 47a4726859605415b4e3e1b4d523f2f8059a3989
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4325b3747074f13cf02752f99b25fa02e4117b4c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586302"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239084"
 ---
 # <a name="replay-attacks"></a>Ataki oparte na metodzie powtórzeń
+
 *Ataku powtarzania* występuje, gdy osoba atakująca kopiuje strumień komunikatów między dwiema stronami i odtwarza strumień do co najmniej jednej ze stron. O ile nie zostanie to skorygowane, komputery, które podlegają atakom, przetwarzają strumień jako wiarygodne wiadomości, co skutkuje zakresem nieprawidłowych skutków, takich jak nadmiarowe zamówienia elementu.  
   
 ## <a name="bindings-may-be-subject-to-reflection-attacks"></a>Powiązania mogą podlegać atakom odbicia  
+
  *Ataki odbicia* to odtwarzanie komunikatów z powrotem do nadawcy tak, jakby znajdowały się one w odbiorcy jako odpowiedź. Standardowe *wykrywanie powtarzania* w mechanizmie Windows Communication Foundation (WCF) nie obsługuje tego automatycznie.  
   
  Ataki odbicia są domyślnie zmniejszane, ponieważ model usługi WCF dodaje podpisany identyfikator wiadomości do żądania komunikatów i oczekuje podpisanego `relates-to` nagłówka w komunikatach odpowiedzi. W związku z tym komunikat żądania nie może zostać odtworzony jako odpowiedź. W scenariuszach z bezpiecznym niezawodnym komunikatem (RM) ataki na odbicie są ograniczane, ponieważ:  
@@ -23,11 +25,12 @@ ms.locfileid: "84586302"
   
 - W przypadku sekwencji dupleksowych dwa identyfikatory sekwencji muszą być unikatowe. W związku z tym nie można odtworzyć wychodzącego komunikatu sekwencji jako wiadomości przychodzącej sekwencji (wszystkie nagłówki sekwencji i treści są również podpisane).  
   
- Jedynymi powiązaniami, które są podatne na ataki odbicia, są te bez adresów WS-Addressing: niestandardowe powiązania, które mają wyłączone adresy WS-Addressing i używają zabezpieczeń opartych na kluczach symetrycznych. Program nie <xref:System.ServiceModel.BasicHttpBinding> korzysta z protokołu WS-Addressing domyślnie, ale nie korzysta z zabezpieczeń opartych na kluczach symetrycznych w taki sposób, aby mógł on być narażony na ataki.  
+ Jedyne powiązania, które są podatne na ataki odbicia, są takie same, jak w przypadku adresów WS-Addressing: niestandardowe powiązania, które mają WS-Addressing wyłączone i używają zabezpieczeń opartych na kluczach symetryczne. Program nie <xref:System.ServiceModel.BasicHttpBinding> używa WS-Addressing domyślnie, ale nie korzysta z zabezpieczeń opartych na kluczach symetrycznych w taki sposób, aby mógł on być narażony na ataki.  
   
  Środki zaradcze dla powiązań niestandardowych nie ustanawiają kontekstu zabezpieczeń ani nie wymagają nagłówków WS-Addressing.  
   
 ## <a name="web-farm-attacker-replays-request-to-multiple-nodes"></a>Farma sieci Web: osoba atakująca odtwarza żądanie do wielu węzłów  
+
  Klient korzysta z usługi, która jest zaimplementowana w kolektywie serwerów sieci Web. Osoba atakująca odtwarza żądanie, które zostało wysłane do jednego węzła w farmie, do innego węzła w farmie. Ponadto, jeśli usługa zostanie ponownie uruchomiona, pamięć podręczna powtarzania zostanie opróżniona, co umożliwi atakującemu odtworzenie żądania. (Pamięć podręczna zawiera używane, wcześniej widoczne wartości sygnatur komunikatów i uniemożliwia ponowne odtwarzanie, aby te sygnatury mogły być używane tylko raz. Pamięć podręczna powtarzania nie jest udostępniana w kolektywie serwerów sieci Web.  
   
  Środki zaradcze obejmują:  
@@ -39,8 +42,8 @@ ms.locfileid: "84586302"
 ## <a name="see-also"></a>Zobacz też
 
 - [Zagadnienia dotyczące zabezpieczeń](security-considerations-in-wcf.md)
-- [Ujawnianie informacji](information-disclosure.md)
-- [Podniesienie uprawnień](elevation-of-privilege.md)
-- [Odmowa usługi](denial-of-service.md)
-- [Manipulowanie](tampering.md)
+- [Information Disclosure (ujawnienie informacji)](information-disclosure.md)
+- [Elevation of Privilege (podniesienie uprawnień)](elevation-of-privilege.md)
+- [Denial of Service (odmowa usługi)](denial-of-service.md)
+- [Tampering (manipulowanie)](tampering.md)
 - [Nieobsługiwane scenariusze](unsupported-scenarios.md)

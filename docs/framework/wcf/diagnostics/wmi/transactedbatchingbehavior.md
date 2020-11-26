@@ -2,14 +2,15 @@
 title: TransactedBatchingBehavior
 ms.date: 03/30/2017
 ms.assetid: 2d03e6ae-f06c-4ada-b279-e01838b2ecdc
-ms.openlocfilehash: 0b083e46b3f53a0080308deccc0e37768af40fe3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 152886180842d3da301f74286b0d41a98c39da54
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61641726"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239150"
 ---
 # <a name="transactedbatchingbehavior"></a>TransactedBatchingBehavior
+
 TransactedBatchingBehavior  
   
 ## <a name="syntax"></a>Składnia  
@@ -22,12 +23,15 @@ class TransactedBatchingBehavior : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa TransactedBatchingBehavior nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa TransactedBatchingBehavior ma następującą właściwość:  
   
 ### <a name="maxbatchsize"></a>MaxBatchSize  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
@@ -36,10 +40,10 @@ class TransactedBatchingBehavior : Behavior
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Description.TransactedBatchingBehavior>

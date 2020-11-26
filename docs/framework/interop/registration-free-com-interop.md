@@ -11,14 +11,15 @@ helpviewer_keywords:
 - object activation
 - registration-free COM interop, about registration-free COM interop
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
-ms.openlocfilehash: c6a4dfc54152ade6136e4292bbd1c4522553d491
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: f61ad954215aecfc9380a47de788d36f327ab0b3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281605"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239539"
 ---
 # <a name="registration-free-com-interop"></a>Współdziałanie z modelem COM bez rejestrowania
+
 Niezależna od rejestracji międzyoperacyjność modelu COM aktywuje składnik bez używania rejestru systemu Windows do przechowywania informacji o zestawie. Zamiast rejestrować składnik na komputerze podczas wdrażania, można tworzyć pliki manifestu w stylu Win32 w czasie projektowania, które zawierają informacje o powiązaniu i aktywacji. Te pliki manifestu, a nie klucze rejestru, kierują aktywację obiektu.  
   
  Korzystanie z aktywacji bezpłatnej do rejestracji dla zestawów zamiast rejestrowania ich podczas wdrażania oferuje dwie zalety:  
@@ -36,7 +37,7 @@ Niezależna od rejestracji międzyoperacyjność modelu COM aktywuje składnik b
     |Typ zestawu|System operacyjny|Wersja programu .NET Framework|  
     |-------------------|----------------------|----------------------------|  
     |COM obok siebie|Microsoft Windows XP|Niewymagane.|  
-    |. Oparte na sieci|Windows XP z dodatkiem SP2|.NET Framework w wersji 1,1 lub nowszej.|  
+    |Oparte na platformie .NET|Windows XP z dodatkiem SP2|.NET Framework w wersji 1,1 lub nowszej.|  
   
      Rodzina systemów Windows Server 2003 obsługuje również niezależną od rejestracji międzyoperacyjność COM dla programu. Zestawy oparte na sieci.  
   
@@ -53,6 +54,6 @@ Niezależna od rejestracji międzyoperacyjność modelu COM aktywuje składnik b
     > [!NOTE]
     > Wykonywanie równoczesne jest funkcją .NET Framework, która umożliwia obsługę wielu wersji środowiska uruchomieniowego oraz wielu wersji aplikacji i składników, które używają wersji środowiska uruchomieniowego, do uruchamiania na tym samym komputerze w tym samym czasie. Wykonywanie równoczesne i zestawy równoległe są różnymi mechanizmami zapewniania funkcji równoległych.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Instrukcje: Konfigurowanie aktywacji bez rejestracji składników COM opartych na platformie .NET Framework](configure-net-framework-based-com-components-for-reg.md)

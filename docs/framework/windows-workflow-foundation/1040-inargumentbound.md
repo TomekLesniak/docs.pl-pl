@@ -2,36 +2,39 @@
 title: 1040 — InArgumentBound
 ms.date: 03/30/2017
 ms.assetid: 7dfaad1b-36c0-4575-84c1-31d63b0eaf5d
-ms.openlocfilehash: 984372c07ccfb11f2f05d5488fa5ffc95075db41
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 04a61892ea817d5168ccbfccf68c0b74ee43e983
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62009750"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238954"
 ---
 # <a name="1040---inargumentbound"></a>1040 — InArgumentBound
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1040|  
-|słowa kluczowe|WFActivities|  
+|ID (Identyfikator)|1040|  
+|Słowa kluczowe|WFActivities|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że In argument została powiązana.  
+
+ Wskazuje, że argument in został powiązany.  
   
-## <a name="message"></a>Komunikat  
- Argument "%1" w działaniu "%2", DisplayName: "%3", InstanceId: "%4" została powiązana z wartością: %5.  
+## <a name="message"></a>Wiadomość  
+
+ Argument in "%1" w działaniu "%2", nazwa wyświetlana: "%3", identyfikator wystąpienia: "%4", został powiązany z wartością: %5.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|InArgument|xs:String|Nazwa InArgument.|  
-|Działanie|xs:String|Nazwa typu działania.|  
-|Nazwa wyświetlana|xs:String|Nazwa wyświetlana działania.|  
-|InstanceId|xs:String|Identyfikator wystąpienia działania.|  
-|Wartość|xs:String|Wartość powiązana InArgument.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Brak argumentu|XS: ciąg|Nazwa argumentu.|  
+|Działanie|XS: ciąg|Nazwa typu działania.|  
+|Nazwa wyświetlana|XS: ciąg|Nazwa wyświetlana działania.|  
+|InstanceId|XS: ciąg|Identyfikator wystąpienia działania.|  
+|Wartość|XS: ciąg|Wartość powiązana z nieargumentem.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

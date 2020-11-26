@@ -2,34 +2,37 @@
 title: 1012 — StartExecuteActivityWorkItem
 ms.date: 03/30/2017
 ms.assetid: 29e9b1c6-c5d7-4b58-b59d-a06a923d3c80
-ms.openlocfilehash: d6b330bc454c39584e5027f757fd9d9d3434d941
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b9cfceb12d56f93c0f9726849e34f4333f1399ac
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924582"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239643"
 ---
 # <a name="1012---startexecuteactivityworkitem"></a>1012 — StartExecuteActivityWorkItem
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1012|  
-|słowa kluczowe|WFRuntime|  
+|ID (Identyfikator)|1012|  
+|Słowa kluczowe|WFRuntime|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że ExecuteActivityWorkItem Trwa uruchamianie wykonywania.  
+
+ Wskazuje, że roboczego ExecuteActivityWorkItem rozpoczyna wykonywanie.  
   
-## <a name="message"></a>Komunikat  
- Rozpoczynanie wykonywania ExecuteActivityWorkItem dla działania "%1", DisplayName: "%2", InstanceId: "%3".  
+## <a name="message"></a>Wiadomość  
+
+ Rozpoczynanie wykonywania elementu roboczego ExecuteActivityWorkItem dla działania "%1", nazwa wyświetlana: %2, identyfikator wystąpienia: %3.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|Działanie|xs:String|Nazwa typu działania.|  
-|Nazwa wyświetlana|xs:String|Nazwa wyświetlana działania.|  
-|InstanceId|xs:String|Identyfikator wystąpienia działania.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Działanie|XS: ciąg|Nazwa typu działania.|  
+|Nazwa wyświetlana|XS: ciąg|Nazwa wyświetlana działania.|  
+|InstanceId|XS: ciąg|Identyfikator wystąpienia działania.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

@@ -10,26 +10,29 @@ helpviewer_keywords:
 - providers, UI Automation
 - UI Automation, clients
 ms.assetid: 69eebd8b-39ed-40e7-93cc-4457c4caf746
-ms.openlocfilehash: 4f51a31a433986822a9dba22bf8f17ade00bbb76
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 8a97c4bfbe361eafc11cd920b032424f67c3a5fb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87168098"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96240449"
 ---
 # <a name="ui-automation-events-overview"></a>Przegląd zdarzeń automatyzacji interfejsu użytkownika
+
 > [!NOTE]
 > Ta dokumentacja jest przeznaczona dla .NET Framework deweloperów, którzy chcą korzystać z zarządzanych [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klas zdefiniowanych w <xref:System.Windows.Automation> przestrzeni nazw. Aby uzyskać najnowsze informacje na temat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , zobacz [interfejs API usługi Windows Automation: Automatyzacja interfejsu użytkownika](/windows/win32/winauto/entry-uiauto-win32).  
   
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]Powiadamianie o zdarzeniach jest kluczową funkcją dla technologii pomocniczych, takich jak czytniki ekranu i programy powiększające. Ci klienci automatyzacji interfejsu użytkownika śledzą zdarzenia, które są zgłaszane przez dostawców automatyzacji interfejsu użytkownika, gdy coś się dzieje w programie [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] i używają tych informacji do powiadamiania użytkowników końcowych.  
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] Powiadamianie o zdarzeniach jest kluczową funkcją dla technologii pomocniczych, takich jak czytniki ekranu i programy powiększające. Ci klienci automatyzacji interfejsu użytkownika śledzą zdarzenia, które są zgłaszane przez dostawców automatyzacji interfejsu użytkownika, gdy coś się dzieje w programie [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] i używają tych informacji do powiadamiania użytkowników końcowych.  
   
  Ulepszona wydajność dzięki umożliwieniu aplikacjom dostawcy w celu selektywnego zgłaszania zdarzeń, w zależności od tego, czy klienci są subskrybowani do tych zdarzeń, czy nie w ogóle, jeśli żaden klient nie nasłuchuje żadnych zdarzeń.  
   
 <a name="Types_of_Events"></a>
+
 ## <a name="types-of-events"></a>Typy zdarzeń  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]zdarzenia znajdują się w następujących kategoriach.  
+
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] zdarzenia znajdują się w następujących kategoriach.  
   
-|Wydarzenie|Opis|  
+|Zdarzenie|Opis|  
 |-----------|-----------------|  
 |Zmiana właściwości|Uruchamiany, gdy zmieni się Właściwość [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] elementu lub wzorca kontrolki. Na przykład jeśli klient musi monitorować formant pola wyboru aplikacji, może zarejestrować się, aby nasłuchiwać zdarzenia zmiany właściwości <xref:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState%2A> . Gdy pole wyboru jest zaznaczone lub niezaznaczone, dostawca zgłasza zdarzenie i klient może działać w razie potrzeby.|  
 |Akcja elementu|Uruchamiany, gdy zmieni się [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] wynik od użytkownika końcowego lub działania programistycznego, na przykład gdy przycisk zostanie kliknięty lub wywołany przez <xref:System.Windows.Automation.InvokePattern> .|  
@@ -40,7 +43,7 @@ ms.locfileid: "87168098"
   
  Następujące zdarzenia mogą zostać zgłoszone nawet wtedy, gdy stan interfejsu użytkownika nie został zmieniony.  
   
-- `AutomationPropertyChangedEvent`(w zależności od właściwości, która została zmieniona)  
+- `AutomationPropertyChangedEvent` (w zależności od właściwości, która została zmieniona)  
   
 - `ElementSelectedEvent`  
   
@@ -49,8 +52,10 @@ ms.locfileid: "87168098"
 - `TextChangedEvent`  
   
 <a name="UI_Automation_Event_Identifiers"></a>
+
 ## <a name="ui-automation-event-identifiers"></a>Identyfikatory zdarzeń automatyzacji interfejsu użytkownika  
- [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)]zdarzenia są identyfikowane przez <xref:System.Windows.Automation.AutomationEvent> obiekty. <xref:System.Windows.Automation.AutomationIdentifier.Id%2A>Właściwość zawiera wartość, która jednoznacznie identyfikuje rodzaj zdarzenia.  
+
+ [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] zdarzenia są identyfikowane przez <xref:System.Windows.Automation.AutomationEvent> obiekty. <xref:System.Windows.Automation.AutomationIdentifier.Id%2A>Właściwość zawiera wartość, która jednoznacznie identyfikuje rodzaj zdarzenia.  
   
  Możliwe wartości dla <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> są podane w poniższej tabeli wraz z typem używanym dla argumentów zdarzeń. Należy zauważyć, że identyfikatory używane przez klientów i dostawców są identycznie nazwanymi polami z różnych klas.  
   
@@ -64,7 +69,9 @@ ms.locfileid: "87168098"
 |<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.WindowPatternIdentifiers.WindowClosedEvent?displayProperty=nameWithType>|<xref:System.Windows.Automation.WindowClosedEventArgs>|  
   
 <a name="UI_Automation_Event_Arguments"></a>
+
 ## <a name="ui-automation-event-arguments"></a>Argumenty zdarzeń automatyzacji interfejsu użytkownika  
+
  Poniższe klasy hermetyzują argumenty zdarzenia.  
   
 |Klasa|Opis|  
@@ -82,7 +89,7 @@ ms.locfileid: "87168098"
   
  Aby uzyskać listę identyfikatorów zdarzeń, zobacz [zdarzenia automatyzacji interfejsu użytkownika dla klientów](ui-automation-events-for-clients.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Właściwości zdarzeń automatyzacji interfejsu użytkownika dla klientów](ui-automation-events-for-clients.md)
 - [Implementacja dostawcy automatyzacji interfejsu użytkownika po stronie serwera](server-side-ui-automation-provider-implementation.md)

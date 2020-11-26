@@ -7,14 +7,15 @@ helpviewer_keywords:
 - Range Value control pattern
 - UI Automation, Range Value control pattern
 ms.assetid: 225feaa4-918e-418b-938e-7389338d0a69
-ms.openlocfilehash: ccb6aeb5f8451975d7e2e9649bbb82c0c3ae23d5
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 9b5bfd571b078b7aeab149f5371004ac832fadcc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164074"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239565"
 ---
 # <a name="implementing-the-ui-automation-rangevalue-control-pattern"></a>Implementacja wzorca formantu RangeValue dla automatyzacji interfejsu użytkownika
+
 > [!NOTE]
 > Ta dokumentacja jest przeznaczona dla .NET Framework deweloperów, którzy chcą korzystać z zarządzanych [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klas zdefiniowanych w <xref:System.Windows.Automation> przestrzeni nazw. Aby uzyskać najnowsze informacje na temat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , zobacz [interfejs API usługi Windows Automation: Automatyzacja interfejsu użytkownika](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -23,7 +24,9 @@ ms.locfileid: "87164074"
  <xref:System.Windows.Automation.RangeValuePattern>Wzorzec kontrolki służy do obsługi kontrolek, które mogą być ustawione na wartość z zakresu. Aby zapoznać się z przykładami formantów implementujących ten wzorzec kontrolek, zobacz [Mapowanie wzorców formantów dla klientów automatyzacji interfejsu użytkownika](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>
+
 ## <a name="implementation-guidelines-and-conventions"></a>Wytyczne i konwencje dotyczące implementacji  
+
  Podczas implementowania wzorca kontroli wartości zakresu należy zwrócić uwagę na następujące wytyczne i konwencje:  
   
 - Kontrolki umożliwiają rekalibrację obsługiwanych właściwości na podstawie ustawień regionalnych lub preferencji użytkownika. Przykładem jest kontrolka termometru, którą można ustawić, aby wyświetlić temperaturę w stopniach Fahrenheita lub Celsjusza.  
@@ -34,6 +37,7 @@ ms.locfileid: "87164074"
 Przykład paska postępu, gdzie wartość jest typu Integer, a wartości właściwości minimum i maksimum są znormalizowane odpowiednio do 0 i 100.  
   
 <a name="Required_Members_for_the_IRangeValueProvider"></a>
+
 ## <a name="required-members-for-irangevalueprovider"></a>Wymagane elementy członkowskie dla IRangeValueProvider  
   
 |Wymagany element członkowski|Typ elementu członkowskiego|Uwagi|  
@@ -49,14 +53,16 @@ Przykład paska postępu, gdzie wartość jest typu Integer, a wartości właśc
  Ten wzorzec kontrolki nie ma skojarzonych zdarzeń.  
   
 <a name="Exceptions"></a>
+
 ## <a name="exceptions"></a>Wyjątki  
+
  Dostawcy muszą zgłosić następujące wyjątki.  
   
 |Typ wyjątku|Warunek|  
 |--------------------|---------------|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A>jest wywoływana z wartością, która jest większa <xref:System.Windows.Automation.RangeValuePattern.MaximumProperty> lub mniejsza niż <xref:System.Windows.Automation.RangeValuePattern.MinimumProperty> .|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A> jest wywoływana z wartością, która jest większa <xref:System.Windows.Automation.RangeValuePattern.MaximumProperty> lub mniejsza niż <xref:System.Windows.Automation.RangeValuePattern.MinimumProperty> .|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wzorce formantów automatyzacji interfejsu użytkownika — omówienie](ui-automation-control-patterns-overview.md)
 - [Obsługa wzorców formantów dostawcy automatyzacji interfejsu użytkownika](support-control-patterns-in-a-ui-automation-provider.md)

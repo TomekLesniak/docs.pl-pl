@@ -6,32 +6,34 @@ helpviewer_keywords:
 - loader events [.NET Framework]
 - ETW, loader events (CLR)
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
-ms.openlocfilehash: 8220e8e773409be76bc7522d57551f1bddb90e5d
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 7de4ad48ae275b4119f05a5269e9819c201027fd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474361"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96240592"
 ---
 # <a name="loader-etw-events"></a>Zdarzenia ETW modułu ładującego
+
 Te zdarzenia zbierają informacje dotyczące ładowania i zwalniania domen aplikacji, zestawów i modułów.  
   
  Wszystkie zdarzenia modułu ładującego są wywoływane za pomocą `LoaderKeyword` słowa kluczowego (0x8). `DCStart` `DCEnd` Zdarzenia i są wywoływane w `LoaderRundownKeyword` (0x8) z `StartRundown` / `EndRundown` włączony. (Aby uzyskać więcej informacji, zobacz [słowa kluczowe i poziomy ETW CLR](clr-etw-keywords-and-levels.md)).  
 
 ## <a name="application-domain-events"></a>Zdarzenia domeny aplikacji
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Zdarzenie|Poziom|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword`0x8|`AppDomainLoad_V1` i `AppDomainUnLoad_V1`|Informacyjny (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|Informacyjny (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `EndRundownKeyword`|`AppDomainDCEnd_V1`|Informacyjny (4)|  
+|`LoaderKeyword` 0x8|`AppDomainLoad_V1` i `AppDomainUnLoad_V1`|Informacyjny (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|Informacyjny (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`AppDomainDCEnd_V1`|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
 |Zdarzenie|Identyfikator zdarzenia|Opis|  
 |-----------|--------------|-----------------|  
-|`AppDomainLoad_V1`(zarejestrowane dla wszystkich domen aplikacji)|156|Uruchamiany zawsze, gdy domena aplikacji zostanie utworzona w okresie istnienia procesu.|  
+|`AppDomainLoad_V1` (zarejestrowane dla wszystkich domen aplikacji)|156|Uruchamiany zawsze, gdy domena aplikacji zostanie utworzona w okresie istnienia procesu.|  
 |`AppDomainUnLoad_V1`|157|Uruchamiany zawsze, gdy domena aplikacji zostanie zniszczona w okresie istnienia procesu.|  
 |`AppDomainDCStart_V1`|157|Wylicza domeny aplikacji podczas początkowego uwalniania.|  
 |`AppDomainDCEnd_V1`|158|Wylicza domeny aplikacji podczas końcowego uwalniania.|  
@@ -47,13 +49,14 @@ Te zdarzenia zbierają informacje dotyczące ładowania i zwalniania domen aplik
 |ClrInstanceID|win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
 
 ## <a name="clr-loader-assembly-events"></a>Zdarzenia zestawu modułu ładującego CLR  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Zdarzenie|Poziom|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword`0x8|`AssemblyLoad` i `AssemblyUnload`|Informacyjny (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|Informacyjny (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `EndRundownKeyword`|`AssemblyDCEnd`|Informacyjny (4)|  
+|`LoaderKeyword` 0x8|`AssemblyLoad` i `AssemblyUnload`|Informacyjny (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|Informacyjny (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`AssemblyDCEnd`|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -76,13 +79,14 @@ Te zdarzenia zbierają informacje dotyczące ładowania i zwalniania domen aplik
 |ClrInstanceID|win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|
 
 ## <a name="module-events"></a>Zdarzenia modułu
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Zdarzenie|Poziom|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword`0x8|`ModuleLoad_V2` i `ModuleUnload_V2`|Informacyjny (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|Informacyjny (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `EndRundownKeyword`|`ModuleDCEnd_V2`|Informacyjny (4)|  
+|`LoaderKeyword` 0x8|`ModuleLoad_V2` i `ModuleUnload_V2`|Informacyjny (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|Informacyjny (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`ModuleDCEnd_V2`|Informacyjny (4)|  
 ||||  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
@@ -121,13 +125,14 @@ Te zdarzenia zbierają informacje dotyczące ładowania i zwalniania domen aplik
 - Nazwy pól zaczynające się od ciągu "NativePdb" odnoszą się do pliku PDB programu NGen wygenerowanego przez wywołanie `NGEN createPDB` . Ten plik PDB używa natywnego formatu PDB i opisuje sposób, w jaki elementy z oryginalnego zarządzanego kodu źródłowego, takie jak pliki, numery wierszy i nazwy symboli, są mapowane na elementy natywne, które są kompilowane w module NGen.  
 
 ## <a name="clr-domain-module-events"></a>Zdarzenia modułu CLR Domain
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Zdarzenie|Poziom|  
 |-----------------------------------|-----------|-----------|  
-|`LoaderKeyword`0x8|`DomainModuleLoad_V1`|Informacyjny (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|Informacyjny (4)|  
-|`LoaderRundownKeyword`(0x8) +<br /><br /> `EndRundownKeyword`|`DomainModuleDCEnd_V1`|Informacyjny (4)|  
+|`LoaderKeyword` 0x8|`DomainModuleLoad_V1`|Informacyjny (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|Informacyjny (4)|  
+|`LoaderRundownKeyword` (0x8) +<br /><br /> `EndRundownKeyword`|`DomainModuleDCEnd_V1`|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -151,6 +156,7 @@ Te zdarzenia zbierają informacje dotyczące ładowania i zwalniania domen aplik
 |ClrInstanceID|win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
 
 ## <a name="module-range-events"></a>Zdarzenia zakresu modułu
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Zdarzenie|Poziom|  
@@ -180,12 +186,13 @@ Te zdarzenia zbierają informacje dotyczące ładowania i zwalniania domen aplik
 |RangeBegin2|win: UnicodeString||  
   
 ### <a name="remarks"></a>Uwagi  
+
  Jeśli załadowany obraz NGen w procesie .NET Framework został zoptymalizowany pod kątem IBC, `ModuleRange` zdarzenie zawierające zakresy aktywne w obrazie NGEN jest rejestrowane wraz z `moduleID` i `ClrInstanceID` .  Jeśli obraz NGen nie jest zoptymalizowany pod kątem IBC, to zdarzenie nie jest rejestrowane. Aby określić nazwę modułu, to zdarzenie musi być sortowane przy użyciu zdarzeń ETW ładowania modułu.  
   
- Rozmiar ładunku dla tego zdarzenia to zmienna; `Count`pole wskazuje liczbę przesunięć zakresu zawartych w zdarzeniu.  To zdarzenie należy posortować wraz ze zdarzeniem systemu Windows, `IStart` Aby określić rzeczywiste zakresy. Zdarzenie ładowania obrazu systemu Windows jest rejestrowane za każdym razem, gdy obraz zostanie załadowany i zawiera adres wirtualny załadowanego obrazu.  
+ Rozmiar ładunku dla tego zdarzenia to zmienna; `Count` pole wskazuje liczbę przesunięć zakresu zawartych w zdarzeniu.  To zdarzenie należy posortować wraz ze zdarzeniem systemu Windows, `IStart` Aby określić rzeczywiste zakresy. Zdarzenie ładowania obrazu systemu Windows jest rejestrowane za każdym razem, gdy obraz zostanie załadowany i zawiera adres wirtualny załadowanego obrazu.  
   
  Zdarzenia zakresu modułów są uruchamiane na dowolnym poziomie ETW większym lub równym 4 i są klasyfikowane jako zdarzenia informacyjne.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zdarzenia ETW CLR](clr-etw-events.md)

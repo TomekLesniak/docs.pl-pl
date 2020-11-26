@@ -2,27 +2,30 @@
 title: 710 — HttpContextBeforeProcessAuthentication
 ms.date: 03/30/2017
 ms.assetid: a2e20c23-e54c-4774-8809-dfdc92f7eff9
-ms.openlocfilehash: 36c9b666adef6c908dcec27788968f00a43b0888
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a07877e3efb81e9a648c00083871495d02c17f30
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61753312"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239188"
 ---
 # <a name="710---httpcontextbeforeprocessauthentication"></a>710 — HttpContextBeforeProcessAuthentication
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|710|  
-|słowa kluczowe|ServiceModel|  
+|ID (Identyfikator)|710|  
+|Słowa kluczowe|Modelu|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane po uruchomieniu uwierzytelniania w przypadku wysyłania komunikatu.  
+
+ To zdarzenie jest emitowane podczas uruchamiania uwierzytelniania komunikatów.  
   
-## <a name="message"></a>Komunikat  
- Rozpocznij uwierzytelniania w przypadku wysyłania komunikatu  
+## <a name="message"></a>Wiadomość  
+
+ Rozpocznij uwierzytelnianie na potrzeby wysyłania komunikatów  
   
 ## <a name="details"></a>Szczegóły

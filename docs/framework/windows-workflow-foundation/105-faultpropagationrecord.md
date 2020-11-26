@@ -2,47 +2,50 @@
 title: 105 — FaultPropagationRecord
 ms.date: 03/30/2017
 ms.assetid: 168473b1-b1e5-4e9f-8a2a-35bbdb2ef531
-ms.openlocfilehash: c48f42a91ad9a15b49aad8c1ab684f2348954174
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3390a77f16cc52e52ea1b3e4c1a34d0f44795abb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924205"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96238915"
 ---
 # <a name="105---faultpropagationrecord"></a>105 — FaultPropagationRecord
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
 |Id|105|  
-|słowa kluczowe|EndToEndMonitoring, rozwiązywania problemów, HealthMonitoring, WFTracking|  
+|Słowa kluczowe|EndToEndMonitoring, rozwiązywanie problemów, HealthMonitoring, WFTracking|  
 |Poziom|Ostrzeżenie|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane przez uczestnika śledzenia zdarzeń systemu Windows, gdy działanie z wystąpieniem przepływu pracy emituje FaultPropagationRecord.  
+
+ To zdarzenie jest emitowane przez uczestnika śledzenia funkcji ETW, gdy działanie z wystąpieniem przepływu pracy emituje FaultPropagationRecord.  
   
-## <a name="message"></a>Komunikat  
- TrackRecord = FaultPropagationRecord, InstanceID = %1, RecordNumber = %2, EventTime = %3, FaultSourceActivityName = %4, FaultSourceActivityId = %5, FaultSourceActivityInstanceId = %6, FaultSourceActivityTypeName = %7, FaultHandlerActivityName = %8,  FaultHandlerActivityId = %9, FaultHandlerActivityInstanceId = % 10, FaultHandlerActivityTypeName = % 11, błąd = 12, IsFaultSource % = % 13, adnotacje = % 14, ProfileName = % 15  
+## <a name="message"></a>Wiadomość  
+
+ TrackRecord = FaultPropagationRecord, identyfikator wystąpienia = %1, RecordNumber = %2, EventTime = %3, FaultSourceActivityName = %4, FaultSourceActivityId = %5, FaultSourceActivityInstanceId = %6, FaultSourceActivityTypeName = %7, FaultHandlerActivityName = %8, FaultHandlerActivityId = %9, FaultHandlerActivityInstanceId = %10, FaultHandlerActivityTypeName = %11, błąd = %12, IsFaultSource = %13, adnotacje = %14, ProfileName = %15  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|InstanceId|xs:GUID|Identyfikator wystąpienia przepływu pracy|  
-|RecordNumber|xs:long|Numer sekwencyjny emitowany rekordu|  
-|eventTime|xs:dateTime|Godzina w formacie UTC zdarzenia został wyemitowany|  
-|FaultSourceActivityName|xs:String|Nazwa działania, które są emitowane usterki|  
-|FaultSourceActivityId|xs:String|Identyfikator działania, które są emitowane usterki|  
-|FaultSourceActivityInstanceId|xs:String|Identyfikator wystąpienia działania, które są emitowane usterki|  
-|FaultSourceActivityTypeName|xs:String|Typ działania, które są emitowane usterki|  
-|FaultHandlerActivityName|xs:String|Nazwa wyświetlana działanie procedury obsługi błędów|  
-|FaultHandlerActivityId|xs:String|Identyfikator działanie procedury obsługi błędów|  
-|FaultHandlerActivityInstanceId|xs:String|Identyfikator wystąpienia działanie procedury obsługi błędów|  
-|FaultHandlerActivityTypeName|xs:String|Typ działania obsługi błędów|  
-|Błędów|xs:String|Szczegółowe informacje o błędzie|  
-|IsFaultSource|xs:unsignedByte|Wskazuje, jeśli zdarzenie został wyemitowany ze źródła błędów|  
-|Adnotacje|xs:String|Adnotacje, które zostały dodane do tego zdarzenia.  Wartości są przechowywane w elemencie xml w formacie \<elementy >\< nazwa elementu = "annotationName" type="System.String" > annotationValue\</item > \< /elementy >.  Jeśli nie określono bez adnotacji, a następnie ciąg zawiera \<elementów / >. Rozmiar zdarzenia ETW jest ograniczona przez rozmiar buforu ETW lub max ładunek zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limit ETW, a następnie zdarzenie zostanie obcięta przez usunięcie adnotacje i zastępując wartość symbolu adnotacji z \<elementy >...  \< /elementy >.|  
-|ProfileName|xs:String|Nazwa lub profilu śledzenia, które spowodowały to zdarzenie jest emitowane|  
-|HostReference|xs:String|Dla usług sieci web hostowanych w tym polu jednoznacznie identyfikuje usługę w hierarchii w sieci web.  Jego format jest zdefiniowany jako "Ścieżka wirtualna aplikacji Nazwa witryny sieci Web&#124;ścieżka wirtualna usługi&#124;ServiceName" przykład: 'Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|InstanceId|XS: GUID|Identyfikator wystąpienia przepływu pracy|  
+|RecordNumber|XS: Long|Numer sekwencji emitowanego rekordu|  
+|EventTime|XS: dateTime|Czas w formacie UTC, gdy zdarzenie zostało wyemitowane|  
+|FaultSourceActivityName|XS: ciąg|Nazwa działania, które emituje błąd|  
+|FaultSourceActivityId|XS: ciąg|Identyfikator działania, które emituje błąd|  
+|FaultSourceActivityInstanceId|XS: ciąg|Identyfikator wystąpienia działania, które emituje błąd|  
+|FaultSourceActivityTypeName|XS: ciąg|Typ działania, które emituje błąd|  
+|FaultHandlerActivityName|XS: ciąg|Nazwa wyświetlana działania procedury obsługi błędów|  
+|FaultHandlerActivityId|XS: ciąg|Identyfikator działania programu obsługi błędów|  
+|FaultHandlerActivityInstanceId|XS: ciąg|Identyfikator wystąpienia działania programu obsługi błędów|  
+|FaultHandlerActivityTypeName|XS: ciąg|Typ działania programu obsługi błędów|  
+|Powodu|XS: ciąg|Szczegóły błędu|  
+|IsFaultSource|XS: unsignedByte|Wskazuje, czy zdarzenie zostało wyemitowane ze źródła błędu|  
+|Adnotacje|XS: ciąg|Adnotacje, które zostały dodane do tego zdarzenia.  Wartości są przechowywane w elemencie XML w formacie \<items> \< item  name = "annotationName" type="System.String"> annotationValue \</item> \</items> .  Jeśli adnotacje nie są określone, ciąg zawiera \<items/> . Rozmiar zdarzenia ETW jest ograniczony przez rozmiar buforu ETW lub maksymalny ładunek dla zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limity ETW, zdarzenie jest obcinane przez upuszczenie adnotacji i zamianę wartości adnotacji na \<items> ... \</items>|  
+|ProfileName|XS: ciąg|Nazwa lub profil śledzenia, który spowodował wyemitowanie tego zdarzenia|  
+|HostReference|XS: ciąg|W przypadku usług hostowanych w sieci Web to pole jednoznacznie identyfikuje usługę w hierarchii sieci Web.  Jego format jest zdefiniowany jako ścieżka wirtualna aplikacji nazwa witryny sieci Web&#124;wirtualnej ścieżki usługi&#124;ServiceName ' przykład: ' domyślna witryna sieci Web/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService '|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

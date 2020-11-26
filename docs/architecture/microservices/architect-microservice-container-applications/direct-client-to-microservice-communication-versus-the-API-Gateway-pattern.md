@@ -2,12 +2,12 @@
 title: Wzorzec bramy interfejsu API w porównaniu z bezpośrednią komunikacją klient-do-mikrousług
 description: Zapoznaj się z różnicami i wykorzystaniem wzorca usługi API Gateway oraz bezpośredniej komunikacji klient-do-mikrousług.
 ms.date: 01/07/2019
-ms.openlocfilehash: 90761605dde197e44658e3ba0b0a3a2c06b5942c
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 88cea3b7c2fdd09bec605431308df8783c343332
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91152705"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96240605"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Wzorzec bramy interfejsu API w porównaniu z bezpośrednią komunikacją klient-do-mikrousług
 
@@ -113,7 +113,7 @@ Aby uzyskać więcej informacji, zobacz [wzorzec agregacji bramy](/azure/archite
 - Równoważenie obciążenia
 - Rejestrowanie, śledzenie, korelacja
 - Nagłówki, ciągi zapytań i przekształcenia oświadczeń
-- Listy dozwolonych IP
+- Allowlisting IP
 
 Aby uzyskać więcej informacji, zobacz [wzorzec odciążania bramy](/azure/architecture/patterns/gateway-offloading).
 
@@ -121,10 +121,10 @@ Aby uzyskać więcej informacji, zobacz [wzorzec odciążania bramy](/azure/arch
 
 W zależności od implementacji można uzyskać wiele dodatkowych zagadnień związanych z obcinaniem, które są oferowane przez bramy interfejsu API. Będziemy tutaj eksplorować następujące informacje:
 
-- [Usługa Azure API Management](https://azure.microsoft.com/services/api-management/)
+- [API Management platformy Azure](https://azure.microsoft.com/services/api-management/)
 - [Ocelot](https://github.com/ThreeMammals/Ocelot)
 
-### <a name="azure-api-management"></a>Usługa Azure API Management
+### <a name="azure-api-management"></a>Azure API Management
 
 [API Management platformy Azure](https://azure.microsoft.com/services/api-management/) (jak pokazano na rysunku 4-14) nie tylko rozwiązuje potrzeby bramy interfejsu API, ale udostępnia funkcje, takie jak gromadzenie szczegółowych informacji z interfejsów API. W przypadku korzystania z rozwiązania do zarządzania INTERFEJSami API Brama interfejsu API jest tylko składnikiem tego pełnego rozwiązania do zarządzania interfejsem API.
 

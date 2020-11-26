@@ -2,21 +2,22 @@
 title: CustomChannelsTester
 ms.date: 03/30/2017
 ms.assetid: ee1fa307-98b1-4647-8860-2e9217ba6082
-ms.openlocfilehash: 9123167e0f97592592765f7b4a4aa768064fc173
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e095221e1f17cdf4a63c2fe86d5ba050e354e471
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596607"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96240696"
 ---
 # <a name="customchannelstester"></a>CustomChannelsTester
+
 `CustomChannelsTester`To narzędzie, którego można użyć do testowania niestandardowych implementacji kanałów w oparciu o zestaw wstępnie zdefiniowanych kontraktów usługi. Można wybrać zestaw umów usługi i przekazać go do narzędzia przy użyciu pliku XML. Narzędzie generuje następnie usługę i klienta, który wykonuje niestandardowe implementacje kanałów podczas wymiany komunikatów.  
   
 ### <a name="to-build-the-tool"></a>Aby skompilować narzędzie  
   
 1. Aby skompilować rozwiązanie, postępuj zgodnie z instrukcjami w temacie [Tworzenie przykładów Windows Communication Foundation](building-the-samples.md).  
   
-2. Kompilowanie rozwiązania generuje trzy pliki: CustomChannelsTester. exe, TestSpec. XML i SampleRun. cmd. Plik SampleRun. cmd zawiera przykładowy wiersz polecenia, który pokazuje, jak używać tego narzędzia do testowania [transportu: przykład protokołu UDP](transport-udp.md) .  
+2. Kompilowanie rozwiązania generuje trzy pliki: CustomChannelsTester.exe, TestSpec.xml i SampleRun. cmd. Plik SampleRun. cmd zawiera przykładowy wiersz polecenia, który pokazuje, jak używać tego narzędzia do testowania [transportu: przykład protokołu UDP](transport-udp.md) .  
   
 ### <a name="to-run-the-tool"></a>Aby uruchomić narzędzie  
   
@@ -28,7 +29,7 @@ ms.locfileid: "84596607"
   
      Korzystanie z tej `/binding` opcji jest wymagane.  
   
-     `/dll`jest wymagana, jeśli "Binding" nie jest powiązaniem dostarczonym przez system Windows Communication Foundation (WCF).  
+     `/dll` jest wymagana, jeśli "Binding" nie jest powiązaniem dostarczonym przez system Windows Communication Foundation (WCF).  
   
      Parametr `/testspec` jest opcjonalny.  
   
@@ -36,7 +37,7 @@ ms.locfileid: "84596607"
   
      Wykonuje klienta i serwer i zwraca wyniki.  
   
-     Poniżej znajduje się przykładowy kod XML opisujący specyfikacje testu (TestSpec. xml):  
+     Poniżej znajduje się przykładowy kod XML opisujący specyfikacje testu (testspec.xml):  
   
     ```xml  
     <TestSpec xmlns="http://WCF/TestSpec" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"

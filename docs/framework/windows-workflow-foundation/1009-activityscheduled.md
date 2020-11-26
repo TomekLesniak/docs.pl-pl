@@ -2,37 +2,40 @@
 title: 1009 — ActivityScheduled
 ms.date: 03/30/2017
 ms.assetid: 307e38b6-d47e-47a4-9708-e74d8314b1a1
-ms.openlocfilehash: 0e3ea53a7b0509fcb8b73b61193742d615ac7e91
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 812531d4206dfee20f183b9461330e71263b0bf8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924660"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96239773"
 ---
 # <a name="1009---activityscheduled"></a>1009 — ActivityScheduled
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1009|  
-|słowa kluczowe|WFRuntime|  
+|ID (Identyfikator)|1009|  
+|Słowa kluczowe|WFRuntime|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
+
  Wskazuje, że działanie jest zaplanowane do wykonania.  
   
-## <a name="message"></a>Komunikat  
- Nadrzędne działanie "%1", DisplayName: "%2", InstanceId: "%3" podrzędnych zaplanowanego działania "%4" DisplayName: '%5', InstanceId: '%6'.  
+## <a name="message"></a>Wiadomość  
+
+ Działanie nadrzędne ' %1 ', nazwa wyświetlana: ' %2 ', identyfikator wystąpienia: ' %3 ' zaplanowane działanie podrzędne ' %4 ', DisplayName: ' %5 ', identyfikator wystąpienia: ' %6 '.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|Działanie nadrzędne|xs:String|Nazwa typu działania nadrzędnego.|  
-|ParentDisplayName|xs:String|Nazwa wyświetlana działania nadrzędnego.|  
-|ParentInstanceId|xs:String|Identyfikator wystąpienia działanie nadrzędne.|  
-|ChildActivity|xs:String|Nazwa typu działania podrzędnego zaplanowane.|  
-|ChildDisplayName|xs:String|Nazwa wyświetlana działania podrzędnego zaplanowane.|  
-|ChildInstanceId|xs:String|Identyfikator wystąpienia działania podrzędnego zaplanowane.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Element nadrzędny|XS: ciąg|Nazwa typu działania nadrzędnego.|  
+|ParentDisplayName|XS: ciąg|Nazwa wyświetlana działania nadrzędnego.|  
+|ParentInstanceId|XS: ciąg|Identyfikator wystąpienia działania nadrzędnego.|  
+|Tabela podrzędna|XS: ciąg|Nazwa typu zaplanowanego działania podrzędnego.|  
+|ChildDisplayName|XS: ciąg|Nazwa wyświetlana zaplanowanego działania podrzędnego.|  
+|ChildInstanceId|XS: ciąg|Identyfikator wystąpienia zaplanowanego działania podrzędnego.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|
