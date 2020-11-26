@@ -2,14 +2,15 @@
 title: Śledzenie danych analitycznych programu WCF
 ms.date: 03/30/2017
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-ms.openlocfilehash: 13c66fbe1b59158cb9d2ba3829bb12f1180ad576
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 490c67c92407626a67ea8561a378ef3e70266fe2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552982"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243673"
 ---
 # <a name="wcf-analytic-tracing"></a>Śledzenie danych analitycznych programu WCF
+
 Ten przykład pokazuje, jak dodać własne zdarzenia śledzenia do strumienia śladów analitycznych, które Windows Communication Foundation (WCF) zapisu w funkcji ETW w programie [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] . Śledzenie analityczne ma na celu ułatwienie wglądu w swoje usługi bez konieczności ponoszenia dużej wydajności. Ten przykład pokazuje, jak używać <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> interfejsów API do pisania zdarzeń, które integrują się z usługami WCF.  
   
  Aby uzyskać więcej informacji na temat <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> interfejsów API, zobacz <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> .  
@@ -17,9 +18,11 @@ Ten przykład pokazuje, jak dodać własne zdarzenia śledzenia do strumienia ś
  Aby dowiedzieć się więcej na temat śledzenia zdarzeń w systemie Windows, zobacz [ulepszanie debugowania i dostrajania wydajności za pomocą funkcji ETW](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw).  
   
 ## <a name="disposing-eventprovider"></a>EventProvider usuwania  
+
  Ten przykład używa <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType> klasy, która implementuje <xref:System.IDisposable?displayProperty=nameWithType> . Podczas wdrażania śledzenia dla usługi WCF prawdopodobnie można używać <xref:System.Diagnostics.Eventing.EventProvider> zasobów przez okres istnienia usługi. Z tego powodu, i dla czytelności, ten przykład nigdy nie usuwa opakowanej <xref:System.Diagnostics.Eventing.EventProvider> . Jeśli z jakiegoś powodu usługa ma inne wymagania dotyczące śledzenia i musisz usunąć ten zasób, należy zmodyfikować ten przykład zgodnie z najlepszymi rozwiązaniami dotyczącymi usuwania niezarządzanych zasobów. Aby uzyskać więcej informacji o usuwaniu niezarządzanych zasobów, zobacz [implementowanie metody Dispose](../../../standard/garbage-collection/implementing-dispose.md).  
   
-## <a name="self-hosting-vs-web-hosting"></a>Samodzielne hosting a hosting w sieci Web  
+## <a name="self-hosting-vs-web-hosting"></a>Self-Hosting a hosting w sieci Web  
+
  W przypadku usług hostowanych w sieci Web dane śledzenia analityczne programu WCF zawierają pole o nazwie "HostReference", które służy do identyfikowania usługi emitującej dane śledzenia. Rozszerzone ślady użytkownika mogą uczestniczyć w tym modelu, a w tym przykładzie przedstawiono najlepsze rozwiązania w zakresie tego działania. Format odwołania do hosta sieci Web, gdy znak potoku "&#124;" rzeczywiście pojawia się w ciągu wynikiem może być jednym z następujących:  
   
 - Jeśli aplikacja nie znajduje się w katalogu głównym.  
@@ -33,9 +36,10 @@ Ten przykład pokazuje, jak dodać własne zdarzenia śledzenia do strumienia ś
  W przypadku usług samodzielnych dane śledzenia analityczne WCF nie wypełniają pola "HostReference". `WCFUserEventProvider`Klasa w tym przykładzie zachowuje spójność, gdy jest używana przez usługę samodzielną.  
   
 ## <a name="custom-event-details"></a>Szczegóły zdarzenia niestandardowego  
+
  Manifest dostawcy zdarzeń ETW WCF definiuje trzy zdarzenia, które są przeznaczone do emitowania przez autorów usług WCF z poziomu kodu usługi. W poniższej tabeli przedstawiono podział trzech zdarzeń.  
   
-|Wydarzenie|Opis|Identyfikator zdarzenia|  
+|Zdarzenie|Opis|Identyfikator zdarzenia|  
 |-----------|-----------------|--------------|  
 |UserDefinedInformationEventOccurred|Emituj to zdarzenie, gdy coś uwagi wystąpi w usłudze, która nie jest problemem. Na przykład można wyemitować zdarzenie po pomyślnym wykonaniu wywołania do bazy danych.|301|  
 |UserDefinedWarningOccurred|Emituj to zdarzenie, gdy wystąpi problem, który może spowodować wystąpienie błędu w przyszłości. Można na przykład wyemitować zdarzenie ostrzeżenia, gdy wywołanie do bazy danych zakończy się niepowodzeniem, ale było możliwe odzyskanie ich przez powracanie do nadmiarowego magazynu danych.|302|  
@@ -106,7 +110,8 @@ Ten przykład pokazuje, jak dodać własne zdarzenia śledzenia do strumienia ś
 4. Kliknij przycisk **Wyczyść** , aby wyczyścić zdarzenia.  
   
 ## <a name="known-issue"></a>Znany problem  
- Istnieje znany problem w **Podgląd zdarzeń** , w którym może nie można zdekodować zdarzeń ETW. Może zostać wyświetlony komunikat o błędzie: "Opis identyfikatora zdarzenia \<id> ze źródła Microsoft-Windows-Application Server-aplikacje nie mogą zostać znalezione. Składnik, który wywołuje to zdarzenie, nie jest zainstalowany na komputerze lokalnym lub instalacja jest uszkodzona. Można zainstalować lub naprawić składnik na komputerze lokalnym ". Jeśli ten błąd wystąpi, wybierz pozycję **Odśwież** z menu **Akcje** . Zdarzenie powinno zostać następnie odpowiednio zdekodowane.  
+
+ Istnieje znany problem w **Podgląd zdarzeń** , w którym może nie można zdekodować zdarzeń ETW. Może zostać wyświetlony komunikat o błędzie informujący o tym, że nie można znaleźć opisu identyfikatora zdarzenia \<id> ze źródła Microsoft-Windows-Application Server-Applications. Składnik, który wywołuje to zdarzenie, nie jest zainstalowany na komputerze lokalnym lub instalacja jest uszkodzona. Można zainstalować lub naprawić składnik na komputerze lokalnym ". Jeśli ten błąd wystąpi, wybierz pozycję **Odśwież** z menu **Akcje** . Zdarzenie powinno zostać następnie odpowiednio zdekodowane.  
   
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).  
@@ -117,6 +122,6 @@ Ten przykład pokazuje, jak dodać własne zdarzenia śledzenia do strumienia ś
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTrace`  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykłady monitorowania oprogramowania AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

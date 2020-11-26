@@ -1,5 +1,5 @@
 ---
-title: 'Instrukcje: Tworzenie kontraktu dwukierunkowego'
+title: 'Instrukcje: tworzenie kontraktu dwukierunkowego'
 description: Dowiedz się, jak utworzyć umowę dupleksową, która umożliwia klientom i serwerom programu WCF wzajemne komunikowanie się ze sobą. Można inicjować wywołania do drugiego.
 ms.date: 03/30/2017
 dev_langs:
@@ -8,14 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - duplex contracts [WCF]
 ms.assetid: 500a75b6-998a-47d5-8e3b-24e3aba2a434
-ms.openlocfilehash: 9320e5b36b8faba3602fbe1df1b95c05dcc7fa7e
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: cce1784865a1599e69c3f604c288ef62c9c43652
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247094"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243719"
 ---
-# <a name="how-to-create-a-duplex-contract"></a>Instrukcje: Tworzenie kontraktu dwukierunkowego
+# <a name="how-to-create-a-duplex-contract"></a>Instrukcje: tworzenie kontraktu dwukierunkowego
+
 W tym temacie przedstawiono podstawowe kroki tworzenia metod, które korzystają z dwukierunkowego kontraktu. Umowa dupleksowa umożliwia klientom i serwerom komunikowanie się ze sobą niezależnie, aby można było inicjować wywołania do drugiego. Umowa dupleksowa to jeden z trzech wzorców komunikatów dostępnych dla usług Windows Communication Foundation (WCF). Pozostałe dwa wzorce komunikatów to jednokierunkowe i odpowiedzi na żądanie. Umowa dupleksowa składa się z 2 1ych umów między klientem a serwerem i nie wymaga, aby wywołania metod były skorelowane. Tego rodzaju kontraktu należy używać, gdy usługa musi wysyłać zapytania do klienta, aby uzyskać więcej informacji lub jawnie podnieść zdarzenia na kliencie. Aby uzyskać więcej informacji na temat tworzenia aplikacji klienckiej dla kontraktu dupleksowego, zobacz [jak: dostęp do usług za pomocą kontraktu dupleksowego](how-to-access-services-with-a-duplex-contract.md). Aby uzyskać przykład roboczy, zobacz [dwustronny](../samples/duplex.md) przykład.  
   
 ### <a name="to-create-a-duplex-contract"></a>Aby utworzyć umowę dupleksową  
@@ -57,6 +58,7 @@ W tym temacie przedstawiono podstawowe kroki tworzenia metod, które korzystają
 3. Wywołaj metody zdefiniowane przez interfejs wywołania zwrotnego.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu ilustruje komunikację dupleksową. Kontrakt usługi zawiera operacje usługi do przeniesienia do przodu i do tyłu. Kontrakt klienta zawiera operację usługi do raportowania jej pozycji.  
   
  [!code-csharp[S_WS_DualHttp#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ws_dualhttp/cs/service.cs#5)]

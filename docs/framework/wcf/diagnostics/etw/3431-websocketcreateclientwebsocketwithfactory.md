@@ -2,27 +2,30 @@
 title: 3431 — WebSocketCreateClientWebSocketWithFactory
 ms.date: 03/30/2017
 ms.assetid: 8311f19c-970f-436a-b985-0dc8bcac85c0
-ms.openlocfilehash: baecf62bf96a90e8b86f4a3487404e6328578d75
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d55997ef50fdaeb1919868e7e9a20c45e72a5e6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61999911"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244018"
 ---
 # <a name="3431---websocketcreateclientwebsocketwithfactory"></a>3431 — WebSocketCreateClientWebSocketWithFactory
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|3431|  
-|słowa kluczowe|HTTP|  
+|ID (Identyfikator)|3431|  
+|Słowa kluczowe|HTTP|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, podczas tworzenia klienta protokołu WebSocket.  
+
+ To zdarzenie jest emitowane podczas tworzenia protokołu WebSocket klienta.  
   
-## <a name="message"></a>Komunikat  
- Tworzenie klienta protokołu WebSocket za pomocą fabryki typu "%1".  
+## <a name="message"></a>Wiadomość  
+
+ Tworzenie obiektu WebSocket klienta za pomocą fabryki typu ' %1 '.  
   
 ## <a name="details"></a>Szczegóły

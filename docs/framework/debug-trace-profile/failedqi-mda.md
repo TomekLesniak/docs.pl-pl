@@ -9,17 +9,19 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), failed QueryInterface
 - managed debugging assistants (MDAs), failed QueryInterface
 ms.assetid: 902dc863-34b3-477c-b433-b8a6bb6133c6
-ms.openlocfilehash: 2d7f14c67d47e58bcb88eab4621df63d7c598a7a
-ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
+ms.openlocfilehash: bbd8d5644f8620444d80845b9920b925b6891176
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415943"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244330"
 ---
 # <a name="failedqi-mda"></a>failedQI MDA
+
 `failedQI`Asystent debugowania zarządzanego (MDA) jest uaktywniany, gdy środowisko uruchomieniowe wywołuje `QueryInterface` wskaźnik interfejsu com w imieniu otoki (RCW) środowiska uruchomieniowego, a `QueryInterface` wywołanie kończy się niepowodzeniem.  
   
 ## <a name="symptoms"></a>Objawy  
+
  Rzutowanie otoki RCW kończy się niepowodzeniem lub wywołanie modelu COM z otoki RCW nieoczekiwanie zakończyło się niepowodzeniem.  
   
 ## <a name="cause"></a>Przyczyna  
@@ -31,15 +33,18 @@ ms.locfileid: "85415943"
 - Serwer proxy należący do OLE zwrócił błąd HRESULT.  
   
 ## <a name="resolution"></a>Rozwiązanie  
+
  Zapoznaj się z dokumentacją MSDN dotyczącą reguł COM.  
   
 ## <a name="effect-on-the-runtime"></a>Wpływ na środowisko uruchomieniowe  
+
  Jeśli `QueryInterface` wywołanie zakończy się niepowodzeniem, kontekst jest przełączany, a `QueryInterface` wywołanie zostanie ponowione, aby sprawdzić, czy wystąpił błąd w nieprawidłowym kontekście.  
   
 ## <a name="output"></a>Dane wyjściowe  
+
  Zarządzana nazwa interfejsu, identyfikator GUID interfejsu i HRESULT błędu.  
   
-## <a name="configuration"></a>Konfiguracja  
+## <a name="configuration"></a>Konfigurowanie  
   
 ```xml  
 <mdaConfig>  

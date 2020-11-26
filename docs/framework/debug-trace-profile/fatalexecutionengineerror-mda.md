@@ -13,23 +13,27 @@ helpviewer_keywords:
 - FatalExecutionEngineError MDA
 - managed debugging assistants (MDAs), fatal errors
 ms.assetid: 8b559e44-2393-4e4e-8160-7558d37a4a89
-ms.openlocfilehash: 0806d2eaa1752c88bebd03304fbe5c8094416a48
-ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
+ms.openlocfilehash: a9347338d53755b74b3ff291f75cb6b221134130
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415930"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244278"
 ---
 # <a name="fatalexecutionengineerror-mda"></a>fatalExecutionEngineError MDA
+
 `fatalExecutionEngineError`Asystent debugowania zarządzanego (MDA) jest uaktywniany w przypadku wykrycia błędu krytycznego w środowisku uruchomieniowym języka wspólnego (CLR). Proces zostanie zakończony.  
   
 ## <a name="symptoms"></a>Objawy  
+
  Nieoczekiwane zakończenie procesu. Nie można ustalić innych objawów, ponieważ awaria środowiska CLR może wystąpić z różnych powodów.  
   
 ## <a name="cause"></a>Przyczyna  
+
  Środowisko CLR zostało uszkodzone w sposób krytyczny. Jest to najczęściej spowodowane uszkodzeniem danych, które może być spowodowane przez wiele problemów, takich jak wywołania źle sformułowanej platformy wywołania funkcji i przekazywanie nieprawidłowych danych do środowiska CLR.  
   
 ## <a name="resolution"></a>Rozwiązanie  
+
  Włączenie dodatkowych MDA może pomóc w zidentyfikowaniu problemu. Następujący MDA może być szczególnie przydatny w diagnozowaniu problemu:  
   
 - [invalidOverlappedToPinvoke](invalidoverlappedtopinvoke-mda.md)  
@@ -57,12 +61,14 @@ ms.locfileid: "85415930"
 - [invalidGCHandleCookie](invalidgchandlecookie-mda.md)  
   
 ## <a name="effect-on-the-runtime"></a>Wpływ na środowisko uruchomieniowe  
+
  To zdarzenie MDA nie ma wpływu na zachowanie środowiska uruchomieniowego.  
   
 ## <a name="output"></a>Dane wyjściowe  
+
  Adres funkcji CLR, która spowodowała błąd krytyczny, identyfikator wątku, w którym wystąpił błąd, oraz kod błędu.  
   
-## <a name="configuration"></a>Konfiguracja  
+## <a name="configuration"></a>Konfigurowanie  
   
 ```xml  
 <mdaConfig>  

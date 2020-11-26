@@ -2,14 +2,15 @@
 title: Walidacja klienta
 ms.date: 03/30/2017
 ms.assetid: f0c1f805-1a81-4d0d-a112-bf5e2e87a631
-ms.openlocfilehash: 6678ef7232b115f2bcb80b5f64621866f82b1f29
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: dee57e039d4510673b7205fd44fa300b24ac1df5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553535"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243316"
 ---
 # <a name="client-validation"></a>Walidacja klienta
+
 Usługi często publikują metadane, aby umożliwić automatyczne generowanie i Konfigurowanie typów serwerów proxy klienta. Gdy usługa nie jest zaufana, aplikacje klienckie powinny sprawdzić, czy metadane są zgodne z zasadami aplikacji klienta dotyczącymi zabezpieczeń, transakcji, typu kontraktu usługi i tak dalej. Poniższy przykład pokazuje, jak napisać zachowanie punktu końcowego klienta, które sprawdza poprawność punktu końcowego usługi, aby upewnić się, że punkt końcowy usługi jest bezpieczny do użycia.  
   
  Usługa udostępnia cztery punkty końcowe usługi. Pierwszy punkt końcowy używa WSDualHttpBinding, drugi punkt końcowy używa uwierzytelniania NTLM, trzeci punkt końcowy włącza przepływ transakcji, a czwarty punkt końcowy używa uwierzytelniania opartego na certyfikatach.  
@@ -63,6 +64,6 @@ Usługi często publikują metadane, aby umożliwić automatyczne generowanie i 
     > [!NOTE]
     > Ten skrypt nie powoduje usunięcia certyfikatów usługi na kliencie podczas uruchamiania tego przykładu między komputerami. W przypadku uruchamiania przykładów WCF, które używają certyfikatów między komputerami, należy wyczyścić certyfikaty usługi, które zostały zainstalowane w magazynie CurrentUser-TrustedPeople. Aby to zrobić, użyj następującego polecenia: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>. For example: certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com` .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Używanie metadanych](../feature-details/using-metadata.md)

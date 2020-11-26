@@ -2,14 +2,15 @@
 title: Hostowanie w aplikacji usługi systemu Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: cb952cfcd670a790033fbec70de00a4db2541237
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9f5c78adad34b5fed53a50e85f0361eef469de99
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555851"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243075"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostowanie w aplikacji usługi systemu Windows
+
 Usługi systemu Windows (znane wcześniej jako usługi systemu Windows NT) oferują model procesu szczególnie odpowiedni dla aplikacji, które muszą się znajdować w długim, uruchomionym pliku wykonywalnym i nie mogą wyświetlać żadnych form interfejsu użytkownika. Okres istnienia aplikacji usługi systemu Windows jest zarządzany przez menedżera kontroli usług (SCM), który pozwala uruchamiać, zatrzymywać i wstrzymywać aplikacje usług systemu Windows. Proces usługi systemu Windows można skonfigurować do automatycznego uruchamiania podczas uruchamiania komputera, co sprawia, że jest to odpowiednie środowisko hostingu dla aplikacji "zawsze włączone". Aby uzyskać więcej informacji o aplikacjach usług systemu Windows, zobacz [aplikacje usług systemu Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
   
  Aplikacje, które obsługują długotrwałe usługi Windows Communication Foundation (WCF), współdzielą wiele cech z usługami systemu Windows. W szczególności usługi WCF są długotrwałymi plikami wykonywalnymi serwera, które nie współdziałają bezpośrednio z użytkownikiem i w związku z tym nie implementują żadnej formy interfejsu użytkownika. W związku z tym hosting usług WCF w ramach aplikacji usługi systemu Windows to jedna z opcji tworzenia niezawodnych, długotrwałych aplikacji WCF.  
@@ -36,7 +37,7 @@ Usługi systemu Windows (znane wcześniej jako usługi systemu Windows NT) oferu
   
      Aplikacje usług systemu Windows obsługujące usługi WCF są wdrażane i zarządzane w taki sam sposób, jak aplikacje usług systemu Windows, które nie korzystają z programu WCF.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceProcess>
 - [Przewodnik: tworzenie aplikacji usługowej systemu Windows w Projektancie składników](https://go.microsoft.com/fwlink/?LinkId=94875)

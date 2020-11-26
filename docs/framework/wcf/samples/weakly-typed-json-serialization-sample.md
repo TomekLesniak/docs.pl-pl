@@ -2,14 +2,15 @@
 title: Przykład serializacji kodu JSON ze słabą kontrolą typów
 ms.date: 03/30/2017
 ms.assetid: 0b30e501-4ef5-474d-9fad-a9d559cf9c52
-ms.openlocfilehash: a503878f1cbb60090b648da8dfec741edbf02d1b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 65330e77622920f02b12bd69348aa635529e030e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602326"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244434"
 ---
 # <a name="weakly-typed-json-serialization-sample"></a>Przykład serializacji kodu JSON ze słabą kontrolą typów
+
 Podczas serializowania typu zdefiniowanego przez użytkownika do określonego formatu sieci lub deserializacji formatu sieci z powrotem do typu zdefiniowanego przez użytkownika, dany typ zdefiniowany przez użytkownika musi być dostępny zarówno dla usługi, jak i dla klienta. Zwykle w tym celu <xref:System.Runtime.Serialization.DataContractAttribute> atrybut jest stosowany do tych typów zdefiniowanych przez użytkownika, a <xref:System.Runtime.Serialization.DataMemberAttribute> atrybut jest stosowany do ich członków. Ten mechanizm stosuje się również podczas pracy z obiektami JavaScript Object Notation (JSON), zgodnie z opisem w temacie [How to: deserializacji i deserializacji danych JSON](../feature-details/how-to-serialize-and-deserialize-json-data.md).  
   
  W niektórych scenariuszach usługa Windows Communication Foundation (WCF) lub klient musi mieć dostęp do obiektów JSON generowanych przez usługę lub klienta poza kontrolą dewelopera. Ponieważ więcej usług sieci Web publicznie uwidacznia interfejsy API JSON, może być niepraktyczne, aby deweloper programu WCF konstruuje lokalne typy zdefiniowane przez użytkownika, w którym można deserializować dowolne obiekty JSON. Ten przykład zapewnia mechanizm, który umożliwia deweloperom WCF współpracę z deserializowanymi, dowolnymi obiektami JSON bez tworzenia typów zdefiniowanych przez użytkownika. Nazywa się to *słabo wpisaną Serializacja* obiektów JSON, ponieważ typ, do którego deserializacji obiektu JSON nie jest znany w czasie kompilacji.  
@@ -58,7 +59,7 @@ Podczas serializowania typu zdefiniowanego przez użytkownika do określonego fo
   
  Może to być uciążliwe, szczególnie jeśli klient musi obsługiwać więcej niż jeden typ obiektu JSON.  
   
- `JsonObject`Typ dostarczony przez ten przykład wprowadza nieprawidłową reprezentację deserializowanego obiektu JSON. `JsonObject`opiera się na naturalnym mapowaniu między obiektami JSON i słownikami .NET Framework, a mapowanie między tablicami JSON i tablicami .NET Framework. Poniższy kod przedstawia `JsonObject` Typ.  
+ `JsonObject`Typ dostarczony przez ten przykład wprowadza nieprawidłową reprezentację deserializowanego obiektu JSON. `JsonObject` opiera się na naturalnym mapowaniu między obiektami JSON i słownikami .NET Framework, a mapowanie między tablicami JSON i tablicami .NET Framework. Poniższy kod przedstawia `JsonObject` Typ.  
   
 ```csharp  
 // Instantiation of JsonObject json omitted  

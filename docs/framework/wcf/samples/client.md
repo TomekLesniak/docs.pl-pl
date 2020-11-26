@@ -2,17 +2,19 @@
 title: Klient
 ms.date: 03/30/2017
 ms.assetid: fabb0c70-b79b-4e58-a5d3-9705de85ee5b
-ms.openlocfilehash: 8f2d93458c2bec16b737d8bfcbd423494941dc3e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b9887d6200a0101be2185b5bc2fdcc969fc7c69e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585288"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243303"
 ---
 # <a name="client"></a>Klient
+
 Ta sekcja zawiera przykłady przedstawiające aplikacje klienckie Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Współdziałanie klienta](client-interoperability.md)  
  Pokazuje współdziałanie między programem WCF i innymi technologiami.  
   
@@ -32,4 +34,4 @@ Ta sekcja zawiera przykłady przedstawiające aplikacje klienckie Windows Commun
  Pokazuje, jak nie należy używać instrukcji "Using" języka C# do automatycznego czyszczenia zasobów przy użyciu klienta z określonym typem.  
   
  [Klient z typowaniem](typed-client.md)  
- Pokazuje, jak uzyskać informacje od klienta z określonym typem wygenerowanego przez [Narzędzie narzędzia metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).
+ Pokazuje, jak uzyskać informacje od klienta z określonym typem wygenerowanego przez [Narzędzie narzędzia metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).

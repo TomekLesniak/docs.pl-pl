@@ -2,14 +2,15 @@
 title: Śledzenie
 ms.date: 03/30/2017
 ms.assetid: 2649eae2-dbf8-421c-9cfb-cfa9e01de87f
-ms.openlocfilehash: 569a97dc21a434cd711ad4c735f828df588f3af7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 10b9be028710cdda378aeef0ca235a00aa451e08
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84578984"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243914"
 ---
 # <a name="tracing"></a>Śledzenie
+
 Windows Communication Foundation (WCF) udostępnia instrumentację aplikacji i dane diagnostyczne na potrzeby monitorowania i analizy błędów. Możesz użyć śledzenia zamiast debugera, aby zrozumieć, jak działa aplikacja, lub przyczynę błędu. Możesz również skorelować błędy i przetwarzanie między składnikami, aby zapewnić kompleksowe środowisko pracy.  
   
  Usługa WCF wyprowadza następujące dane do śledzenia diagnostycznego:  
@@ -19,6 +20,7 @@ Windows Communication Foundation (WCF) udostępnia instrumentację aplikacji i d
 - Zdarzenia błędów systemu Windows, gdy funkcja śledzenia działa nieprawidłowo.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Konfigurowanie śledzenia](configuring-tracing.md)  
   
  W tym temacie opisano, jak można skonfigurować śledzenie na różnych poziomach zgodnie z konkretną potrzebami.  

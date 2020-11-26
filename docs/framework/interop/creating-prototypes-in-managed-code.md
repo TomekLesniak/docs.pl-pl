@@ -18,14 +18,15 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-ms.openlocfilehash: e83979e5843c52fc3a446a5b669ae8822b32ddad
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4260bc8b3f9a2550faa28dd4d35842327b4e5935
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555591"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244109"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Tworzenie prototypów w kodzie zarządzanym
+
 W tym temacie opisano, jak uzyskać dostęp do funkcji niezarządzanych i wprowadzono kilka pól atrybutów, które umożliwiają dodawanie adnotacji do definicji metody w kodzie zarządzanym. Przykłady, które demonstrują sposób konstruowania. Deklaracje oparte na sieci, które mają być używane z wywołaniem platformy, można znaleźć w temacie [kierowanie danych za pomocą wywołania platformy](marshaling-data-with-platform-invoke.md).  
   
  Aby można było uzyskać dostęp do niezarządzanej funkcji DLL z kodu zarządzanego, należy znać nazwę funkcji i nazwę biblioteki DLL, która go wyeksportuje. Korzystając z tych informacji, można rozpocząć pisanie zarządzanej definicji dla niezarządzanej funkcji, która jest zaimplementowana w bibliotece DLL. Ponadto można dostosować sposób, w jaki wywołanie platformy tworzy funkcję i kierowanie danych do i z funkcji.  
@@ -34,6 +35,7 @@ W tym temacie opisano, jak uzyskać dostęp do funkcji niezarządzanych i wprowa
 > Funkcje interfejsu API systemu Windows, które przydzielą ciąg, umożliwiają zwolnienie ciągu przy użyciu metody takiej jak `LocalFree` . Wywołanie platformy obsługuje takie parametry inaczej. W przypadku wywołań wywołania platformy należy `IntPtr` zamiast typu wprowadzić parametr `String` . Użyj metod dostarczonych przez <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> klasę, aby ręcznie przekonwertować typ na ciąg i zwolnić go ręcznie.  
   
 ## <a name="declaration-basics"></a>Podstawowe informacje o deklaracji  
+
  Zarządzane definicje funkcji niezarządzanych są zależne od języka, co jest widoczne w poniższych przykładach. Aby zapoznać się z bardziej kompletnymi przykładami kodu, zobacz [przykładowe wywołania platformy](platform-invoke-examples.md).  
   
 ```vb
@@ -84,6 +86,7 @@ extern "C" int MessageBox(
 ```
   
 ## <a name="adjusting-the-definition"></a>Dostosowywanie definicji  
+
  Niezależnie od tego, czy ustawisz je jawnie, czy nie, pola atrybutów są w pracy definiujące zachowanie kodu zarządzanego. Wywołanie platformy działa zgodnie z wartościami domyślnymi ustawionymi w różnych polach, które istnieją jako metadane w zestawie. To zachowanie domyślne można zmienić, dostosowując wartości jednego lub kilku pól. W wielu przypadkach należy użyć, <xref:System.Runtime.InteropServices.DllImportAttribute> Aby ustawić wartość.  
   
  W poniższej tabeli przedstawiono kompletny zestaw pól atrybutów odnoszących się do wywołania platformy. Dla każdego pola tabela zawiera wartość domyślną i link do informacji na temat sposobu użycia tych pól do definiowania niezarządzanych funkcji DLL.  
@@ -102,9 +105,11 @@ extern "C" int MessageBox(
  Aby uzyskać szczegółowe informacje referencyjne, zobacz <xref:System.Runtime.InteropServices.DllImportAttribute> .  
   
 ## <a name="platform-invoke-security-considerations"></a>Zagadnienia dotyczące zabezpieczeń wywołania platformy  
- `Assert` `Deny` `PermitOnly` Elementy członkowskie <xref:System.Security.Permissions.SecurityAction> wyliczenia są określane jako *Modyfikatory*przeszukiwania stosu. Te elementy członkowskie są ignorowane, jeśli są używane jako atrybuty deklaracyjne w deklaracjach wywołania platformy i instrukcjach języka definicji interfejsu COM (IDL).  
+
+ `Assert` `Deny` `PermitOnly` Elementy członkowskie <xref:System.Security.Permissions.SecurityAction> wyliczenia są określane jako *Modyfikatory* przeszukiwania stosu. Te elementy członkowskie są ignorowane, jeśli są używane jako atrybuty deklaracyjne w deklaracjach wywołania platformy i instrukcjach języka definicji interfejsu COM (IDL).  
   
 ### <a name="platform-invoke-examples"></a>Przykłady wywołań platformy  
+
  Przykłady wywołania platformy w tej sekcji ilustrują użycie `RegistryPermission` atrybutu za pomocą modyfikatorów przeszukiwania stosu.  
   
  W poniższym przykładzie <xref:System.Security.Permissions.SecurityAction> `Assert` `Deny` `PermitOnly` modyfikatory, i są ignorowane.  
@@ -184,6 +189,7 @@ class PInvokeScenario
 ```  
   
 #### <a name="com-interop-examples"></a>Przykłady międzyoperacyjności modelu COM  
+
  Przykłady międzyoperacyjności modelu COM w tej sekcji ilustrują użycie `RegistryPermission` atrybutu za pomocą modyfikatorów przeszukiwania stosu.  
   
  Poniższe deklaracje interfejsu COM międzyoperacyjnych ignorują `Assert` `Deny` modyfikatory, i, `PermitOnly` podobnie jak w przypadku wywołania platform w poprzedniej sekcji.  
@@ -230,7 +236,7 @@ interface IDemandStubsItf
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wykorzystywanie niezarządzanych funkcji DLL](consuming-unmanaged-dll-functions.md)
 - [Określanie punktu wejścia](specifying-an-entry-point.md)

@@ -8,14 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - message security [WCF], programming overview
 ms.assetid: 739ec222-4eda-4cc9-a470-67e64a7a3f10
-ms.openlocfilehash: a473a2bb3582274baddf7595ac396a0f833f8daf
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4ffbf6a05abd3ed9ebcea4b2e85f0dc305a4f2db
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90535901"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244772"
 ---
 # <a name="programming-wcf-security"></a>Programowanie zabezpieczeń WCF
+
 W tym temacie opisano podstawowe zadania programistyczne służące do tworzenia aplikacji Secure Windows Communication Foundation (WCF). W tym temacie omówiono jedynie uwierzytelnianie, poufność i integralność, nazywane zbiorczo *zabezpieczeniami transferu*. Ten temat nie obejmuje autoryzacji (kontrola dostępu do zasobów lub usług); Aby uzyskać informacje na temat autoryzacji, zobacz [autoryzacja](authorization-in-wcf.md).  
   
 > [!NOTE]
@@ -24,6 +25,7 @@ W tym temacie opisano podstawowe zadania programistyczne służące do tworzenia
  Programowanie zabezpieczeń WCF opiera się na trzech krokach: tryb zabezpieczeń, typ poświadczeń klienta oraz wartości poświadczeń. Kroki te można wykonać za pomocą kodu lub konfiguracji.  
   
 ## <a name="setting-the-security-mode"></a>Ustawianie trybu zabezpieczeń  
+
  Poniżej objaśniono ogólne kroki programowania z trybem zabezpieczeń w programie WCF:  
   
 1. Wybierz jedno ze wstępnie zdefiniowanych powiązań odpowiednie dla wymagań aplikacji. Aby uzyskać listę opcji powiązań, zobacz [powiązania dostarczone przez system](../system-provided-bindings.md). Domyślnie niemal każde powiązanie ma włączone zabezpieczenia. Jedynym wyjątkiem jest <xref:System.ServiceModel.BasicHttpBinding> Klasa (przy użyciu konfiguracji, a [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) ).  
@@ -55,6 +57,7 @@ W tym temacie opisano podstawowe zadania programistyczne służące do tworzenia
      Bezpieczna sesja odbywa się, gdy klient i usługa tworzą kanał przy użyciu klucza symetrycznego (zarówno klient, jak i serwer używają tego samego klucza dla długości konwersacji, dopóki okno dialogowe nie zostanie zamknięte).  
   
 ## <a name="setting-the-client-credential-type"></a>Ustawianie typu poświadczeń klienta  
+
  W razie potrzeby wybierz odpowiedni typ poświadczeń klienta. Aby uzyskać więcej informacji, zobacz [Wybieranie typu poświadczeń](selecting-a-credential-type.md). Dostępne są następujące typy poświadczeń klienta:  
   
 - `Windows`  
@@ -92,18 +95,20 @@ W tym temacie opisano podstawowe zadania programistyczne służące do tworzenia
  [!code-vb[c_WsHttpService#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wshttpservice/vb/source.vb#1)]  
   
 ## <a name="setting-service-credential-values"></a>Ustawianie wartości poświadczeń usługi  
+
  Po wybraniu typu poświadczeń klienta należy ustawić rzeczywiste poświadczenia usługi i klienta, które mają być używane. W usłudze poświadczenia są ustawiane za pomocą <xref:System.ServiceModel.Description.ServiceCredentials> klasy i zwracane przez <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> Właściwość <xref:System.ServiceModel.ServiceHostBase> klasy. Powiązanie w użyciu sugeruje typ poświadczeń usługi, wybrany tryb zabezpieczeń i typ poświadczenia klienta. Poniższy kod ustawia certyfikat dla poświadczenia usługi.  
   
  [!code-csharp[c_tcpService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_tcpservice/cs/source.cs#3)]
  [!code-vb[c_tcpService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_tcpservice/vb/source.vb#3)]  
   
 ## <a name="setting-client-credential-values"></a>Ustawianie wartości poświadczeń klienta  
+
  Na kliencie Ustaw wartości poświadczeń klienta przy użyciu <xref:System.ServiceModel.Description.ClientCredentials> klasy i zwrócone przez <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> Właściwość <xref:System.ServiceModel.ClientBase%601> klasy. Poniższy kod służy do ustawiania certyfikatu jako poświadczenia na kliencie przy użyciu protokołu TCP.  
   
  [!code-csharp[c_TcpClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_tcpclient/cs/source.cs#1)]
  [!code-vb[c_TcpClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_tcpclient/vb/source.vb#1)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Podstawy programowania przy użyciu programu WCF](../basic-wcf-programming.md)
 - [Typowe scenariusze zabezpieczeń](common-security-scenarios.md)

@@ -2,20 +2,21 @@
 title: Instrukcje dotyczące konfigurowania katalogów wirtualnych
 ms.date: 03/30/2017
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
-ms.openlocfilehash: 2d9443431601ffc712da40bd1c085f595471336b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: dba6547888935ccf36ec0924fd3c95e8fbda5688
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602365"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243654"
 ---
 # <a name="virtual-directory-setup-instructions"></a>Instrukcje dotyczące konfigurowania katalogów wirtualnych
+
 Przykłady Windows Communication Foundation (WCF) są przeznaczone do udostępniania wspólnego katalogu wirtualnego o nazwie servicemodelsamples, który jest mapowany do folderu%SystemDrive%\inetpub\wwwroot\servicemodelsamples.  
   
 > [!NOTE]
 > Dysk% SystemDrive% jest zwykle C: lub D:, w zależności od lokalizacji dysku, w której zainstalowano Internet Information Services (IIS).  
   
- Pliki Setupvroot. bat i cleanupvroot. bat można uruchomić z [procedury konfiguracji jednorazowej dla przykładów Windows Communication Foundation,](one-time-setup-procedure-for-the-wcf-samples.md) aby utworzyć katalog wirtualny. Jeśli wolisz ręcznie utworzyć katalog wirtualny, Użyj poniższych procedur.  
+ Aby utworzyć katalog wirtualny, można uruchomić Setupvroot.bat i Cleanupvroot.bat pliki z [procedury konfiguracji jednorazowej dla przykładów Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md) . Jeśli wolisz ręcznie utworzyć katalog wirtualny, Użyj poniższych procedur.  
   
 ## <a name="procedures"></a>Procedury  
   

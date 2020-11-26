@@ -5,14 +5,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: 860806fb6406b8ada075b449616f84a360e9ef3a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3c0549d93d7898b1d49b31c1a5fde4af71c4d5a9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555825"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96243010"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hosting w Usłudze aktywacji procesów systemu Windows
+
 Usługa aktywacji procesów systemu Windows (WAS) zarządza aktywacją i okresem istnienia procesów roboczych, które zawierają aplikacje obsługujące usługi Windows Communication Foundation (WCF). Proces WAS przetwarza model procesów usług IIS 6,0 dla serwera HTTP, usuwając zależność od protokołu HTTP. Dzięki temu usługi WCF mogą korzystać zarówno z protokołu HTTP, jak i protokołów innych niż HTTP, takich jak net. TCP, w środowisku hostingu obsługującym aktywację opartą na komunikatach i oferują możliwość hostowania dużej liczby aplikacji na danym komputerze.  
   
  Aby uzyskać więcej informacji na temat tworzenia usługi WCF działającej w środowisku hostingu, zobacz [How to: hosting a usługi WCF w usłudze was](how-to-host-a-wcf-service-in-was.md).  
@@ -29,6 +30,7 @@ Usługa aktywacji procesów systemu Windows (WAS) zarządza aktywacją i okresem
 [System Windows Server AppFabric](/previous-versions/appfabric/ff384253(v=azure.10)) współpracuje z usługami IIS 7,0 i usługą aktywacji procesów systemu Windows (was), aby zapewnić rozbudowane środowisko hostingu aplikacji dla usług NET4 WCF i WF. Te korzyści obejmują proces zarządzania cyklem życia procesów, odtwarzania procesów, hostingu udostępnionego, szybkiej ochrony przed awariami, oddzielania procesów, aktywacji na żądanie i monitorowania kondycji. Aby uzyskać szczegółowe informacje, zobacz temat [funkcje hostingu platformy AppFabric](/previous-versions/appfabric/ee677189(v=azure.10)) i [pojęcia hostingu platformy AppFabric](/previous-versions/appfabric/ee677371(v=azure.10)).  
   
 ## <a name="elements-of-the-was-addressing-model"></a>Elementy modelu adresu  
+
  Aplikacje mają adresy Uniform Resource Identifier (URI), które są jednostkami kodu, których okres istnienia i środowisko wykonawcze są zarządzane przez serwer. Pojedyncze wystąpienie serwera może być w domu z wieloma różnymi aplikacjami. Serwery organizują aplikacje w grupy o nazwie *Lokacje*. W obrębie lokacji aplikacje są uporządkowane w sposób hierarchiczny, który odzwierciedla strukturę identyfikatorów URI, które pełnią rolę adresów zewnętrznych.  
   
  Adresy aplikacji mają dwie części: podstawowy prefiks identyfikatora URI i specyficzny dla aplikacji adres względny (Path), który udostępnia adres zewnętrzny dla aplikacji po połączeniu ze sobą. Podstawowy prefiks identyfikatora URI jest konstruowany z powiązania witryny i jest używany dla wszystkich aplikacji w lokacji. Następnie adresy aplikacji są tworzone przez pobranie fragmentów ścieżek specyficznych dla aplikacji (takich jak "/applicationOne") i dołączenie ich do podstawowego prefiksu URI (na przykład "net. TCP://localhost"), aby dotrzeć do pełnego identyfikatora URI aplikacji.  
@@ -47,9 +49,10 @@ Usługa aktywacji procesów systemu Windows (WAS) zarządza aktywacją i okresem
 - `net.tcp://contoso.com/Billing/GetOrders.svc/SecureEndpoint`
   
 ## <a name="the-was-runtime"></a>Środowisko uruchomieniowe zostało uruchomione  
+
  Aplikacje są zorganizowane w lokacjach na potrzeby adresowania i zarządzania. W czasie wykonywania aplikacje są również pogrupowane w pule aplikacji. Pula aplikacji może mieć wiele różnych aplikacji z wielu różnych lokacji programu. Wszystkie aplikacje wewnątrz puli aplikacji korzystają ze wspólnego zestawu właściwości czasu wykonywania. Na przykład wszystkie są uruchamiane w tej samej wersji środowiska uruchomieniowego języka wspólnego (CLR) i wszystkie mają wspólną tożsamość procesu. Każda pula aplikacji odpowiada wystąpieniu procesu roboczego (w3wp.exe). Każda aplikacja zarządzana działająca w ramach udostępnionej puli aplikacji jest odizolowana od innych aplikacji za pomocą elementu AppDomain środowiska CLR.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Architektura aktywacji WAS](was-activation-architecture.md)
 - [Konfigurowanie usługi WAS do użycia z programem WCF](configuring-the-wpa--service-for-use-with-wcf.md)

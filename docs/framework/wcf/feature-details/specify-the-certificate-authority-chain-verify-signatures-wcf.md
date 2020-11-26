@@ -5,14 +5,15 @@ helpviewer_keywords:
 - certificates [WCF], specifying the certificate authority certificate chain
 - certificates [WCF], verifying signatures
 ms.assetid: 7c719355-aa41-4567-80d0-5115a8cf73fd
-ms.openlocfilehash: 103d68d4ccb4cc243d28037260c1f9f380485ff6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0a03902c9a0d36ebd6e2c38f4a827737cacec447
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600312"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96245035"
 ---
 # <a name="how-to-specify-the-certificate-authority-certificate-chain-used-to-verify-signatures-wcf"></a>Instrukcje: Określanie łańcucha certyfikatu urzędu certyfikacji służącego do weryfikowania podpisów (WCF)
+
 Gdy Windows Communication Foundation (WCF) odbiera komunikat protokołu SOAP podpisany przy użyciu certyfikatu X. 509, domyślnie weryfikuje, czy certyfikat X. 509 został wystawiony przez zaufany urząd certyfikacji. Jest to realizowane przez wyszukanie magazynu certyfikatów i określenie, czy certyfikat dla tego urzędu certyfikacji został wystawiony jako zaufany. Aby umożliwić programowi WCF przeznaczenie tego ustalenia, łańcuch certyfikatów urzędu certyfikacji musi być zainstalowany w prawidłowym magazynie certyfikatów.  
   
 ### <a name="to-install-a-certification-authority-certificate-chain"></a>Aby zainstalować łańcuch certyfikatów urzędu certyfikacji  

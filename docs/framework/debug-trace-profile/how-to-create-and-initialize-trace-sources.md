@@ -1,5 +1,5 @@
 ---
-title: 'Porady: tworzenie i inicjowanie źródeł śledzenia'
+title: 'Instrukcje: Tworzenie i inicjowanie źródeł śledzenia'
 description: Utwórz i zainicjuj źródła śledzenia przy użyciu klasy TraceSource na platformie .NET. Ta klasa zawiera metody śledzenia zdarzeń i danych oraz wystawiające ślady informacyjne.
 ms.date: 03/30/2017
 dev_langs:
@@ -10,14 +10,16 @@ helpviewer_keywords:
 - initializing trace sources
 - configuration files [.NET Framework], trace sources
 ms.assetid: f88dda6f-5fda-45be-9b3c-745a9b708c4d
-ms.openlocfilehash: 55d7854bff991ba185d3f5d6e4c6e7222c9e3039
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 3c3624dce9e860a46a9c8c9e9075a03a7c47cb8d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051275"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244135"
 ---
-# <a name="how-to-create-and-initialize-trace-sources"></a>Porady: tworzenie i inicjowanie źródeł śledzenia
-<xref:System.Diagnostics.TraceSource>Klasa jest używana przez aplikacje do tworzenia śladów, które mogą być skojarzone z aplikacją. <xref:System.Diagnostics.TraceSource>oferuje metody śledzenia, które umożliwiają łatwe śledzenie zdarzeń, danych śledzenia i wystawianie śladów informacyjnych. Dane wyjściowe śledzenia z <xref:System.Diagnostics.TraceSource> można utworzyć i zainicjować przy użyciu plików konfiguracyjnych lub bez nich. Ten temat zawiera instrukcje dotyczące obu tych opcji. Zaleca się jednak używanie plików konfiguracji w celu ułatwienia ponownej konfiguracji śladów generowanych przez źródła śledzenia w czasie wykonywania.  
+# <a name="how-to-create-and-initialize-trace-sources"></a>Instrukcje: Tworzenie i inicjowanie źródeł śledzenia
+
+<xref:System.Diagnostics.TraceSource>Klasa jest używana przez aplikacje do tworzenia śladów, które mogą być skojarzone z aplikacją. <xref:System.Diagnostics.TraceSource> oferuje metody śledzenia, które umożliwiają łatwe śledzenie zdarzeń, danych śledzenia i wystawianie śladów informacyjnych. Dane wyjściowe śledzenia z <xref:System.Diagnostics.TraceSource> można utworzyć i zainicjować przy użyciu plików konfiguracyjnych lub bez nich. Ten temat zawiera instrukcje dotyczące obu tych opcji. Zaleca się jednak używanie plików konfiguracji w celu ułatwienia ponownej konfiguracji śladów generowanych przez źródła śledzenia w czasie wykonywania.  
   
 ### <a name="to-create-and-initialize-a-trace-source-using-a-configuration-file"></a>Aby utworzyć i zainicjować Źródło śledzenia przy użyciu pliku konfiguracji  
   
@@ -76,10 +78,10 @@ ms.locfileid: "86051275"
      [!code-csharp[TraceSourceExample2#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tracesourceexample2/cs/program.cs#1)]
      [!code-vb[TraceSourceExample2#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tracesourceexample2/vb/program.vb#1)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - <xref:System.Diagnostics.ConsoleTraceListener>
 - <xref:System.Diagnostics.EventTypeFilter>
-- [Śledzenie i instrumentacja aplikacji](tracing-and-instrumenting-applications.md)
+- [Śledzenie i instrumentowanie aplikacji](tracing-and-instrumenting-applications.md)

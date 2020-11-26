@@ -2,14 +2,15 @@
 title: Obsługa komunikatów zanieczyszczonych
 ms.date: 03/30/2017
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-ms.openlocfilehash: d219c18bb072684deb6cc1d8a2d17b1989762151
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9aeb404cea18a7dd6a9c416c0728d9905c0d782d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84590569"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96244824"
 ---
 # <a name="poison-message-handling"></a>Obsługa komunikatów zanieczyszczonych
+
 *Trująca wiadomość* jest komunikatem, który przekroczył maksymalną liczbę prób dostarczenia do aplikacji. Taka sytuacja może wystąpić, gdy aplikacja oparta na kolejce nie może przetworzyć komunikatu z powodu błędów. Aby spełnić wymagania dotyczące niezawodności, aplikacja umieszczona w kolejce odbiera komunikaty w ramach transakcji. Przerwanie transakcji, w której otrzymano komunikat w kolejce, pozostawia komunikat w kolejce, aby komunikat został ponowiony w ramach nowej transakcji. Jeśli problem, który spowodował przerwanie transakcji, nie zostanie poprawiony, aplikacja otrzymująca może zostać zablokowana w pętli, która odbiera i przerywa ten sam komunikat do momentu przekroczenia maksymalnej liczby prób dostarczenia i zatrucia wyników komunikatów.  
   
  Komunikat może być skażony z wielu powodów. Najczęstszymi przyczynami są specyficzne dla aplikacji. Na przykład, jeśli aplikacja odczytuje komunikat z kolejki i wykonuje przetwarzanie bazy danych, aplikacja może nie można uzyskać blokady bazy danych, powodując przerwanie transakcji. Ponieważ transakcja bazy danych została przerwana, komunikat pozostaje w kolejce, co powoduje, że aplikacja może ponownie odczytać komunikat po raz drugi i podjąć kolejną próbę uzyskania blokady bazy danych. Komunikaty mogą również stać się trujące, jeśli zawierają nieprawidłowe informacje. Na przykład zamówienie zakupu może zawierać nieprawidłowy numer klienta. W takich przypadkach aplikacja może dobrowolnie przerwać transakcję i wymusić, aby komunikat stał się skażonym komunikatem.  
@@ -17,13 +18,14 @@ ms.locfileid: "84590569"
  W rzadkich przypadkach komunikaty mogą nie być wysyłane do aplikacji. Warstwa Windows Communication Foundation (WCF) może znaleźć problem z komunikatem, na przykład jeśli komunikat ma złą ramkę, dołączono do niego nieprawidłowe poświadczenia wiadomości lub nieprawidłowy nagłówek akcji. W takich przypadkach aplikacja nigdy nie otrzymuje komunikatu; Jednak komunikat nadal może stać się skażony i być przetwarzany ręcznie.  
   
 ## <a name="handling-poison-messages"></a>Obsługa skażonych komunikatów  
+
  W programie WCF Obsługa skażonych komunikatów zapewnia mechanizm do otrzymywania aplikacji, które nie mogą być wysyłane do aplikacji lub komunikatów wysyłanych do aplikacji, ale nie można ich przetworzyć z powodu powodów specyficznych dla aplikacji. Skonfiguruj obsługę skażonych komunikatów z następującymi właściwościami w każdym z dostępnych w kolejce powiązań:  
   
 - `ReceiveRetryCount`. Wartość całkowita wskazująca maksymalną liczbę ponownych prób dostarczenia komunikatu z kolejki aplikacji do aplikacji. Wartość domyślna to 5. Jest to wystarczające w przypadkach, gdy natychmiastowa ponowna próba rozwiązuje problem, na przykład przez tymczasowe zakleszczenie w bazie danych.  
   
-- `MaxRetryCycles`. Wartość całkowita, która wskazuje maksymalną liczbę ponownych prób. Cykl ponowień polega na przesłaniu komunikatu z kolejki aplikacji do podrzędnej kolejki ponownych prób i po skonfigurowaniu opóźnienia z powrotem z kolejki ponownych prób w kolejce aplikacji w celu ponowienia próby dostarczenia. Wartość domyślna to 2. W systemie Windows Vista komunikat próbuje maksymalnie ( `ReceiveRetryCount` + 1) * ( `MaxRetryCycles` + 1) razy. `MaxRetryCycles`jest ignorowany w systemach Windows Server 2003 i Windows XP.  
+- `MaxRetryCycles`. Wartość całkowita, która wskazuje maksymalną liczbę ponownych prób. Cykl ponowień polega na przesłaniu komunikatu z kolejki aplikacji do podrzędnej kolejki ponownych prób i po skonfigurowaniu opóźnienia z powrotem z kolejki ponownych prób w kolejce aplikacji w celu ponowienia próby dostarczenia. Wartość domyślna to 2. W systemie Windows Vista komunikat próbuje maksymalnie ( `ReceiveRetryCount` + 1) * ( `MaxRetryCycles` + 1) razy. `MaxRetryCycles` jest ignorowany w systemach Windows Server 2003 i Windows XP.  
   
-- `RetryCycleDelay`. Opóźnienie między cyklami ponawiania prób. Wartość domyślna to 30 minut. `MaxRetryCycles`i `RetryCycleDelay` razem zapewniają mechanizm rozwiązywania problemu, gdy ponowna próba po okresowym opóźnieniu rozwiązuje problem. Na przykład obsługuje zablokowany zestaw wierszy w SQL Server oczekujące zatwierdzenie transakcji.  
+- `RetryCycleDelay`. Opóźnienie między cyklami ponawiania prób. Wartość domyślna to 30 minut. `MaxRetryCycles` i `RetryCycleDelay` razem zapewniają mechanizm rozwiązywania problemu, gdy ponowna próba po okresowym opóźnieniu rozwiązuje problem. Na przykład obsługuje zablokowany zestaw wierszy w SQL Server oczekujące zatwierdzenie transakcji.  
   
 - `ReceiveErrorHandling`. Wyliczenie, które wskazuje akcję, która ma zostać podjęta dla komunikatu o niepomyślnym dostarczeniu po próbie przeprowadzenia maksymalnej liczby ponownych prób. Wartości mogą być błędne, porzucane, odrzucane i przenoszone. Opcja domyślna to Fault.  
   
@@ -60,6 +62,7 @@ Poniżej przedstawiono maksymalną liczbę prób dostarczenia komunikatu:
 > Można zmienić właściwości w tych powiązaniach na podstawie wymagań usługi WCF. Cały mechanizm obsługi skażonych komunikatów jest lokalny dla aplikacji odbiorczej. Ten proces jest niewidoczny dla aplikacji wysyłającej, chyba że aplikacja otrzymująca ostatecznie zatrzyma się i wyśle negatywną potwierdzenie z powrotem do nadawcy. W takim przypadku wiadomość zostanie przeniesiona do kolejki utraconych wiadomości nadawcy.  
   
 ## <a name="best-practice-handling-msmqpoisonmessageexception"></a>Najlepsze rozwiązanie: Obsługa MsmqPoisonMessageException —  
+
  Gdy usługa określa, że komunikat jest trująca, transport umieszczony w kolejce zgłasza, <xref:System.ServiceModel.MsmqPoisonMessageException> że zawiera `LookupId` komunikat trujący.  
   
  Aplikacja do odbioru może zaimplementować <xref:System.ServiceModel.Dispatcher.IErrorHandler> interfejs w celu obsługi wszystkich błędów wymaganych przez aplikację. Aby uzyskać więcej informacji, zobacz [Rozszerzanie kontroli nad obsługą błędów i raportowaniem](../samples/extending-control-over-error-handling-and-reporting.md).  
@@ -80,21 +83,26 @@ Poniżej przedstawiono maksymalną liczbę prób dostarczenia komunikatu:
 
  Ponadto, jeśli `ReceiveErrorHandling` jest ustawiona na `Fault` , `ServiceHost` błędy podczas napotkania skażonego komunikatu. Można podłączyć do uszkodzonego zdarzenia i zamknąć usługę, podejmować działania naprawcze i ponownie uruchomić. Na przykład, w odniesieniu `LookupId` do, można zauważyć, że w przypadku <xref:System.ServiceModel.MsmqPoisonMessageException> `IErrorHandler` awarii hosta usługi, możesz użyć `System.Messaging` interfejsu API, aby odebrać komunikat z kolejki za pomocą polecenia, `LookupId` Aby usunąć komunikat z kolejki i zapisać go w zewnętrznym magazynie lub innej kolejce. Następnie można ponownie uruchomić polecenie, `ServiceHost` Aby wznowić normalne przetwarzanie. [Obsługa skażonych komunikatów w usłudze MSMQ 4,0](../samples/poison-message-handling-in-msmq-4-0.md) ilustruje to zachowanie.  
   
-## <a name="transaction-time-out-and-poison-messages"></a>Przekroczenie limitu czasu transakcji i skażonych komunikatów  
+## <a name="transaction-time-out-and-poison-messages"></a>Transakcja Time-Out i skażonych komunikatów  
+
  Klasa błędów może wystąpić między kanałem transportu umieszczonym w kolejce a kodem użytkownika. Te błędy mogą być wykrywane przez warstwy między, takie jak warstwa zabezpieczeń wiadomości lub logika wysyłania usługi. Na przykład brakuje brakującego certyfikatu X. 509 w warstwie zabezpieczeń protokołu SOAP, a brakująca akcja to przypadki, w których komunikat jest wysyłany do aplikacji. W takim przypadku model usługi porzuca komunikat. Ponieważ komunikat jest odczytywany w transakcji i nie można dostarczyć wyniku dla tej transakcji, transakcja zostanie ostatecznie przesunięta w dół, zostanie przerwana, a komunikat zostanie umieszczony w kolejce. Innymi słowy, w przypadku niektórych klas błędów, transakcja nie jest natychmiast przerywana, ale czeka na przełączenie transakcji. Limit czasu transakcji można zmodyfikować dla usługi przy użyciu programu <xref:System.ServiceModel.ServiceBehaviorAttribute> .  
   
- Aby zmienić limit czasu transakcji na poziomie całego komputera, należy zmodyfikować plik Machine. config i ustawić odpowiedni limit czasu transakcji. Należy pamiętać, że w zależności od czasu ustawionego w transakcji transakcja jest ostatecznie przerywana i wraca do kolejki, a jej licznik przerwań jest zwiększany. Po pewnym czasie wiadomość jest trująca i odpowiednia Dyspozycja zostanie wprowadzona zgodnie z ustawieniami użytkownika.  
+ Aby zmienić limit czasu transakcji na poziomie całego komputera, należy zmodyfikować plik machine.config i ustawić odpowiedni limit czasu transakcji. Należy pamiętać, że w zależności od czasu ustawionego w transakcji transakcja jest ostatecznie przerywana i wraca do kolejki, a jej licznik przerwań jest zwiększany. Po pewnym czasie wiadomość jest trująca i odpowiednia Dyspozycja zostanie wprowadzona zgodnie z ustawieniami użytkownika.  
   
 ## <a name="sessions-and-poison-messages"></a>Sesje i trujące komunikaty  
+
  Sesja przeprowadzi te same procedury obsługi ponowień i komunikatów trujących jako jeden komunikat. Właściwości wymienione wcześniej dla trujących komunikatów mają zastosowanie do całej sesji. Oznacza to, że cała sesja jest ponawiana i przechodzi do ostatniej kolejki trujących komunikatów lub kolejki utraconych wiadomości nadawcy, jeśli komunikat zostanie odrzucony.  
   
 ## <a name="batching-and-poison-messages"></a>Przetwarzanie wsadowe i trujące komunikaty  
+
  Jeśli komunikat przejdzie do trującej wiadomości i jest częścią partii, cała partia jest wycofywana, a kanał powróci do odczytu jednej wiadomości w danym momencie. Aby uzyskać więcej informacji o przetwarzaniu wsadowym, zobacz Tworzenie [wsadowe komunikatów w transakcji](batching-messages-in-a-transaction.md)  
   
 ## <a name="poison-message-handling-for-messages-in-a-poison-queue"></a>Obsługa komunikatów trujących dla komunikatów w kolejce trującej  
- Obsługa komunikatów trujących nie kończy się, gdy wiadomość zostanie umieszczona w kolejce trujących komunikatów. Komunikaty w kolejce trujących komunikatów muszą być nadal odczytywane i obsługiwane. Można użyć podzestawu ustawień obsługi komunikatów trujących podczas odczytu komunikatów z podkolejki trującej. Odpowiednie ustawienia to `ReceiveRetryCount` i `ReceiveErrorHandling` . Można ustawić wartość `ReceiveErrorHandling` Drop, Reject lub Fault. `MaxRetryCycles`jest ignorowany i występuje wyjątek, jeśli `ReceiveErrorHandling` jest ustawiony do przenoszenia.  
+
+ Obsługa komunikatów trujących nie kończy się, gdy wiadomość zostanie umieszczona w kolejce trujących komunikatów. Komunikaty w kolejce trujących komunikatów muszą być nadal odczytywane i obsługiwane. Można użyć podzestawu ustawień obsługi komunikatów trujących podczas odczytu komunikatów z podkolejki trującej. Odpowiednie ustawienia to `ReceiveRetryCount` i `ReceiveErrorHandling` . Można ustawić wartość `ReceiveErrorHandling` Drop, Reject lub Fault. `MaxRetryCycles` jest ignorowany i występuje wyjątek, jeśli `ReceiveErrorHandling` jest ustawiony do przenoszenia.  
   
 ## <a name="windows-vista-windows-server-2003-and-windows-xp-differences"></a>Różnice w systemach Windows Vista, Windows Server 2003 i Windows XP  
+
  Jak wspomniano wcześniej, nie wszystkie ustawienia obsługi komunikatów trujących dotyczą systemu Windows Server 2003 i Windows XP. Następujące kluczowe różnice między usługą kolejkowania komunikatów w systemie Windows Server 2003, Windows XP i Windows Vista mają zastosowanie do obsługi komunikatów trujących:  
   
 - Usługa kolejkowania komunikatów w systemie Windows Vista obsługuje podkolejki, a systemy Windows Server 2003 i Windows XP nie obsługują kolejek. Kolejki podrzędne są używane w obsłudze komunikatów trujących. Kolejki ponawiania prób i kolejka Trująca są podkolejkami do kolejki aplikacji utworzonej na podstawie ustawień obsługi komunikatów trujących. `MaxRetryCycles`Określa liczbę podkolejek ponowień do utworzenia. W związku z tym, gdy działa w systemie Windows Server 2003 lub Windows XP, `MaxRetryCycles` są ignorowane i `ReceiveErrorHandling.Move` nie jest dozwolone.  
