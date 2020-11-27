@@ -15,14 +15,15 @@ helpviewer_keywords:
 - network
 - WPAD (Web Proxy Auto-Discovery)
 ms.assetid: fcd9c3bd-93de-4c92-8ff3-837327ad18de
-ms.openlocfilehash: dbd5d7fa671ae5ec3b7dc00205f0c9d8381bb3ce
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8d1b904a8acc6d3960a076c54c2d5f5de54820c0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502703"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250635"
 ---
 # <a name="automatic-proxy-detection"></a>Automatyczne wykrywanie serwera proxy
+
 Automatyczne wykrywanie serwera proxy to proces, za pomocą którego serwer proxy sieci Web jest identyfikowany przez system i używany do wysyłania żądań w imieniu klienta. Ta funkcja jest nazywana również autowykrywaniem serwera proxy sieci Web (WPAD). Gdy automatyczne wykrywanie serwera proxy jest włączone, system próbuje zlokalizować skrypt konfiguracji serwera proxy, który jest odpowiedzialny za zwracanie zestawu serwerów proxy, których można użyć dla żądania. Jeśli zostanie znaleziony skrypt konfiguracji serwera proxy, skrypt zostanie pobrany, skompilowany i uruchomiony na komputerze lokalnym, gdy informacje o serwerze proxy, strumieniu żądania lub odpowiedzi zostaną uzyskane dla żądania, które używa <xref:System.Net.WebProxy> wystąpienia.  
   
  Automatyczne wykrywanie serwera proxy jest wykonywane przez <xref:System.Net.WebProxy> klasę i może korzystać z ustawień na poziomie żądania, ustawień w plikach konfiguracji i ustawień określonych przy użyciu okna dialogowego **sieci lokalnej (LAN)** programu Internet Explorer.  
@@ -68,8 +69,8 @@ Public Shared Sub DisableForMyRequest(ByVal resource As Uri)
   
  Żądania, które nie mają serwera proxy, używają domyślnego serwera proxy domeny aplikacji, który jest dostępny we <xref:System.Net.WebRequest.DefaultWebProxy%2A> właściwości.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Net.WebProxy>
 - <xref:System.Net.WebRequest>
-- [\<system.Net>— Element (Ustawienia sieci)](../configure-apps/file-schema/network/system-net-element-network-settings.md)
+- [\<system.Net> — Element (Ustawienia sieci)](../configure-apps/file-schema/network/system-net-element-network-settings.md)

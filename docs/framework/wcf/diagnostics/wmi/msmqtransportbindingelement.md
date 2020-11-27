@@ -2,14 +2,15 @@
 title: MsmqTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: 1c89f073-9ed3-4025-a8c5-13535a0f526b
-ms.openlocfilehash: 706cec5c414197ebabda7939728b95be32582e0f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6590c5188e4e1758987a75fbd007099703ea6bc5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963309"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250427"
 ---
 # <a name="msmqtransportbindingelement"></a>MsmqTransportBindingElement
+
 MsmqTransportBindingElement  
   
 ## <a name="syntax"></a>Składnia  
@@ -24,38 +25,43 @@ class MsmqTransportBindingElement : MsmqBindingElementBase
 ```  
   
 ## <a name="methods"></a>Metody  
- Klasa elementem MsmqTransportBindingElement nie definiuje żadnych metod.  
+
+ Klasa MsmqTransportBindingElement nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
- Klasa elementem MsmqTransportBindingElement ma następujące właściwości:  
+
+ Klasa MsmqTransportBindingElement ma następujące właściwości:  
   
 ### <a name="maxpoolsize"></a>MaxPoolSize  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalny rozmiar puli, która zawiera obiekty wewnętrzne wiadomości usługi MSMQ.  
+ Maksymalny rozmiar puli zawierającej wewnętrzne obiekty wiadomości MSMQ.  
   
 ### <a name="queuetransferprotocol"></a>QueueTransferProtocol  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość wyliczenia, która wskazuje kanał transportowy komunikacji z obsługą kolejek, który używa tego powiązania.  
+ Wartość wyliczenia wskazująca transport kanału komunikacyjnego znajdującego się w kolejce, który jest wykorzystywany przez to powiązanie.  
   
 ### <a name="useactivedirectory"></a>UseActiveDirectory  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Zwraca wartość logiczną wskazującą, czy adresy kolejki powinny być konwertowane przy użyciu usługi Active Directory.  
+ Zwraca wartość logiczną wskazującą, czy adresy kolejek mają być konwertowane przy użyciu Active Directory.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.MsmqTransportBindingElement>

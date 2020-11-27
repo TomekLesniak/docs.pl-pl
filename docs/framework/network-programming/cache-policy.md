@@ -11,14 +11,15 @@ helpviewer_keywords:
 - content cache policies
 - expired content
 ms.assetid: 1a7e04ec-7872-41c2-96c6-52566dcb412b
-ms.openlocfilehash: d63d2b6bf8426968d2120647c8ecea2b7602825a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5492fd9f7b27f7546b951710e4b3e099a1d6664d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502668"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250596"
 ---
 # <a name="cache-policy"></a>Zasady pamięci podręcznej
+
 Zasady pamięci podręcznej definiują reguły, które są używane do określenia, czy żądanie może być spełnione przy użyciu buforowanej kopii żądanego zasobu. Aplikacje określają wymagania dotyczące pamięci podręcznej klienta dla Aktualności, ale obowiązujące zasady pamięci podręcznej określają wymagania dotyczące pamięci podręcznej klienta, wymagania dotyczące wygaśnięcia zawartości serwera i wymagania dotyczące ponownego sprawdzania poprawności serwera. Interakcja z wymaganiami zasad i serwera pamięci podręcznej klienta zawsze polega na najbardziej nieodpowiedniej zasadzie pamięci podręcznej, aby zapewnić, że najnowsza zawartość jest zwracana do aplikacji klienckiej.  
   
  Zasady pamięci podręcznej są oparte na lokalizacji lub czasie. Zasady pamięci podręcznej oparte na lokalizacji określają świeżość buforowanych wpisów na podstawie lokalizacji, z której można pobrać żądany zasób. Zasady pamięci podręcznej oparte na czasie definiują świeżość buforowanych wpisów przy użyciu czasu pobrania zasobu, nagłówki zwrócone z zasobem i bieżący czas. Większość aplikacji może korzystać z domyślnych zasad pamięci podręcznej opartych na czasie, które implementują Zasady buforowania określone w dokumencie RFC 2616, dostępne w witrynie [Internet Engineering Task Force (IETF)](https://www.ietf.org/) .  
@@ -39,7 +40,7 @@ Zasady pamięci podręcznej definiują reguły, które są używane do określen
   
  Przykłady kodu, które demonstrują tworzenie i Używanie zasad pamięci podręcznej, można znaleźć [w temacie Konfigurowanie buforowania w aplikacjach sieciowych](configuring-caching-in-network-applications.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zarządzanie pamięcią podręczną dla aplikacji sieciowych](cache-management-for-network-applications.md)
 - [Zasady pamięci podręcznej oparte na lokalizacji](location-based-cache-policies.md)

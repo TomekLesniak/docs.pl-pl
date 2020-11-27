@@ -2,14 +2,15 @@
 title: Klasa MissingRuntimeArtifactException (architektura .NET Native)
 ms.date: 03/30/2017
 ms.assetid: d5b3d13e-689f-4584-8ba6-44f5167a8590
-ms.openlocfilehash: 7a69add45202b3ad838de592fadc82a84fa0ba5d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2618af8e122964d64126f945c337101cb5bbe5ae
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79180969"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250908"
 ---
 # <a name="missingruntimeartifactexception-class-net-native"></a>Klasa MissingRuntimeArtifactException (architektura .NET Native)
+
 **Aplikacje .NET dla systemu Windows 10, tylko .NET Native**  
   
  Wyjątek, który jest generowany, gdy jest dostępny metadanych typu lub elementu członkowskiego typu, ale jego implementacja została usunięta.  
@@ -20,6 +21,7 @@ ms.locfileid: "79180969"
 > `MissingRuntimeArtifactException`Klasa jest przeznaczona wyłącznie do użytku wewnętrznego w łańcuchu narzędzi .NET Native. Nie jest on przeznaczony do użycia w kodzie innej firmy ani nie powinien obsługiwać wyjątku w kodzie aplikacji. Zamiast tego należy wyeliminować wyjątek poprzez dodanie wpisów do [pliku dyrektywy środowiska uruchomieniowego](runtime-directives-rd-xml-configuration-file-reference.md). Aby uzyskać więcej informacji, zobacz sekcję: Uwagi.  
   
 ## <a name="syntax"></a>Składnia  
+
  [!code-csharp[ProjectN#22](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missingruntimeartifactexception_syntax1.cs#22)]  
   
  Należy zauważyć, że `MissingRuntimeArtifactException` Klasa pochodzi od <xref:System.MemberAccessException> .  
@@ -61,24 +63,25 @@ ms.locfileid: "79180969"
   
 ## <a name="events"></a>Zdarzenia  
   
-|Wydarzenie|Opis|  
+|Zdarzenie|Opis|  
 |-----------|-----------------|  
 |`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|Występuje, gdy wyjątek jest serializowany w celu utworzenia obiektu stanu wyjątku, który zawiera serializowane dane dotyczące wyjątku. (Odziedziczone z <xref:System.Exception?displayProperty=nameWithType> .)|  
   
 ## <a name="usage-details"></a>Szczegóły użycia  
+
  `MissingRuntimeArtifactException`Wyjątek jest zgłaszany, gdy podejmowana jest próba utworzenia wystąpienia typu lub wywołania elementu członkowskiego typu, chociaż istnieją metadane typu lub elementu członkowskiego. jego implementacja została usunięta.  
   
- Czy metadane i kod implementacji do dynamicznego wykonywania metody są dostępne dla aplikacji w czasie wykonywania jest zdefiniowany przez dyrektywy środowiska uruchomieniowego (XML Configuration), \* . Rd. XML. Aby zapobiec zgłaszaniu tego wyjątku przez aplikację, należy zmodyfikować \* plik RD. XML, aby upewnić się, że metadane wymagane przez typ lub składową typu są obecne w czasie wykonywania. Aby uzyskać informacje o formacie \* pliku Rd. XML, zobacz [Dokumentacja pliku konfiguracji dyrektywy środowiska uruchomieniowego (RD. xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
+ Czy metadane i kod implementacji do dynamicznego wykonywania metody są dostępne dla aplikacji w czasie wykonywania jest zdefiniowany przez dyrektywy środowiska uruchomieniowego (konfiguracja XML), \*.rd.xml. Aby zapobiec zgłaszaniu tego wyjątku przez aplikację, należy zmodyfikować \*.rd.xml, aby upewnić się, że metadane wymagane przez typ lub składową typu są obecne w czasie wykonywania. Aby uzyskać informacje o formacie \* pliku.rd.xml, zobacz [Dokumentacja pliku konfiguracji dyrektywy środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
 > [!IMPORTANT]
-> Ponieważ ten wyjątek wskazuje, że kod implementacji wymagany przez aplikację nie jest dostępny w czasie wykonywania, nie należy obsługiwać tego wyjątku w `try` / `catch` bloku. Zamiast tego należy zdiagnozować przyczynę wyjątku i wyeliminować go przy użyciu pliku dyrektywy środowiska uruchomieniowego. Zwykle eliminujesz ten wyjątek, określając odpowiednie `Activate` `Dynamic` zasady lub zasad dla elementu programu w pliku dyrektywy środowiska uruchomieniowego ( \* plik. Rd. xml). Aby uzyskać wpis, który można dodać do pliku dyrektywy środowiska uruchomieniowego, który eliminuje wyjątek, można użyć jednego z dwóch narzędzi do rozwiązywania problemów:  
+> Ponieważ ten wyjątek wskazuje, że kod implementacji wymagany przez aplikację nie jest dostępny w czasie wykonywania, nie należy obsługiwać tego wyjątku w `try` / `catch` bloku. Zamiast tego należy zdiagnozować przyczynę wyjątku i wyeliminować go przy użyciu pliku dyrektywy środowiska uruchomieniowego. Zwykle eliminujesz ten wyjątek, określając odpowiednie `Activate` `Dynamic` zasady lub zasad dla elementu programu w pliku dyrektywy środowiska uruchomieniowego ( \* plik.rd.xml). Aby uzyskać wpis, który można dodać do pliku dyrektywy środowiska uruchomieniowego, który eliminuje wyjątek, można użyć jednego z dwóch narzędzi do rozwiązywania problemów:  
 >
 > - [Narzędzie do rozwiązywania problemów z MissingMetadataException](https://dotnet.github.io/native/troubleshooter/type.html) dla typów.  
 > - [Narzędzie do rozwiązywania problemów z MissingMetadataException](https://dotnet.github.io/native/troubleshooter/method.html) .  
   
  `MissingRuntimeArtifactException`Klasa nie zawiera żadnych unikatowych elementów członkowskich; wszystkie jej elementy członkowskie są dziedziczone z klasy podstawowej, <xref:System.MemberAccessException> .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Ustawienia zasad dyrektyw środowiska uruchomieniowego](runtime-directive-policy-settings.md)

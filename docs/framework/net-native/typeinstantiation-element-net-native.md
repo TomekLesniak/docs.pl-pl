@@ -1,15 +1,16 @@
 ---
-title: <TypeInstantiation>— Element (.NET Native)
+title: <TypeInstantiation> — Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: a5eada64-075b-4162-9655-ded84e4681f2
-ms.openlocfilehash: 9069856b3d8739724d148b5eea5d4188c8b8b9e1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a1db497762b3dc8c135154086d72fb3ac92ff5a4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128682"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250752"
 ---
-# <a name="typeinstantiation-element-net-native"></a>\<TypeInstantiation>— Element (.NET Native)
+# <a name="typeinstantiation-element-net-native"></a>\<TypeInstantiation> — Element (.NET Native)
+
 Stosuje zasady odbicia środowiska uruchomieniowego do skonstruowanego typu ogólnego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -30,6 +31,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do skonstruowanego typu ogó
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -92,11 +94,13 @@ Stosuje zasady odbicia środowiska uruchomieniowego do skonstruowanego typu ogó
 |`<TypeInstantiation>`|Stosuje zasady odbicia do skonstruowanego typu ogólnego i wszystkich jego członków.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Atrybuty odbicia, serializacji i międzyoperacyjności są opcjonalne. Jednak musi być obecny co najmniej jeden.  
   
  Jeśli `<TypeInstantiation>` element jest elementem podrzędnym [\<Assembly>](assembly-element-net-native.md) [\<Namespace>](namespace-element-net-native.md) elementu,, lub [\<Type>](type-element-net-native.md) , zastępuje ustawienia zasad zdefiniowane przez element nadrzędny. Jeśli [\<Type>](type-element-net-native.md) element definiuje odpowiadającą definicję typu ogólnego, `<TypeInstantiation>` element zastępuje zasady odbicia w czasie wykonywania tylko dla wystąpień określonego konstruowanego typu ogólnego.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład używa odbicia w celu pobrania definicji typu ogólnego z konstruowanego <xref:System.Collections.Generic.Dictionary%602> obiektu. Używa również odbicia do wyświetlania informacji o <xref:System.Type> obiektach, które reprezentują skonstruowane typy ogólne i definicje typów ogólnych. Zmienna `b` w przykładzie jest <xref:Windows.UI.Xaml.Controls.TextBlock> kontrolką.  
   
  [!code-csharp[ProjectN_Reflection#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/makegenerictype1.cs#2)]  
@@ -114,7 +118,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do skonstruowanego typu ogó
 </Directives>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy dyrektyw środowiska uruchomieniowego](runtime-directive-elements.md)

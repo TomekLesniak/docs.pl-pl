@@ -2,17 +2,19 @@
 title: Zmienianie nazwy usługi WCF
 ms.date: 03/30/2017
 ms.assetid: 14235a65-b1c5-409d-b6cc-a979acd54bbd
-ms.openlocfilehash: 1179e7b235130e1967c79843b7a11f55622a01fb
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 25f9201253f02f368ccf95ddf1f7a7d78d2e1b2f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86052055"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96249725"
 ---
 # <a name="renaming-a-wcf-service"></a>Zmienianie nazwy usługi WCF
+
 W tym temacie opisano, jak można zmienić nazwę usługi Windows Communication Foundation (WCF).  
   
 ## <a name="renaming-a-wcf-service"></a>Zmienianie nazwy usługi WCF  
+
  Aby zmienić nazwę usługi w szablonie Windows Communication Foundation (WCF), wykonaj następujące czynności:  
   
 - Zmień nazwę klasy implementującej usługę.  
@@ -28,7 +30,7 @@ W tym temacie opisano, jak można zmienić nazwę usługi Windows Communication 
 </system.servicemodel>  
 ```  
   
-- Jeśli usługa jest hostowana w sieci, używa pliku * \* SVC* . Otwórz plik SVC i zmodyfikuj nazwę usługi, jak pokazano w poniższym przykładzie. Ten krok nie jest konieczny w przypadku aplikacji samodzielnych, ponieważ nie ma pliku SVC.  
+- Jeśli usługa jest hostowana w sieci, używa pliku *\* SVC* . Otwórz plik SVC i zmodyfikuj nazwę usługi, jak pokazano w poniższym przykładzie. Ten krok nie jest konieczny w przypadku aplikacji samodzielnych, ponieważ nie ma pliku SVC.  
   
 ```aspx-csharp
 <%@ ServiceHost Service="WcfService.NewName">  

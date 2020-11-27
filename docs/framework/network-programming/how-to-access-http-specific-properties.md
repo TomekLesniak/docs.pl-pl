@@ -5,15 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f8848c7e-f5c5-4d42-b86d-9951ff8f4146
-ms.openlocfilehash: 68ad6b2c55cd5cc467e53441caa778ea10b994fb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ea709bba17d4e2f00b760c8713f9e8100496f0bf
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180851"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250518"
 ---
 # <a name="how-to-access-http-specific-properties"></a>Instrukcje: dostęp do właściwości specyficznych dla protokołu HTTP
-W tym przykładzie pokazano, jak wyłączyć zachowanie **http keep-alive** i uzyskać numer wersji protokołu z serwera sieci Web.  
+
+Ten przykład pokazuje, jak wyłączyć zachowanie **Keep-Alive** protokołu HTTP i uzyskać numer wersji protokołu z serwera sieci Web.  
   
 ## <a name="example"></a>Przykład  
   
@@ -45,12 +46,13 @@ HttpWResp.Close();
 ```  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
+
  Ten przykład wymaga:  
   
-- Odwołania do **System.Net** obszaru nazw.  
+- Odwołania do przestrzeni nazw **System.NET** .  
   
 ## <a name="see-also"></a>Zobacz też
 
 - [Dostęp do Internetu za pośrednictwem serwera proxy](accessing-the-internet-through-a-proxy.md)
 - [Korzystanie z protokołów aplikacji](using-application-protocols.md)
-- [Protokół HTTP](http.md)
+- [HTTP](http.md)

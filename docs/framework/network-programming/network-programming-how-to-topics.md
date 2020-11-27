@@ -8,14 +8,15 @@ helpviewer_keywords:
 - networking how-tos [.NET Framework]
 - network
 ms.assetid: 8fd6c675-9ea6-4fad-a412-e2c2c1f233d8
-ms.openlocfilehash: f091f0f675fcf22cb7c6be83a5766fcc8d279be7
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 96511c44507706b616c1542a534a52b02070efc9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502278"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250232"
 ---
 # <a name="network-programming-how-to-topics"></a>Programowanie dla sieci — tematy z instrukcjami
+
 Poniższa lista zawiera linki do tematów, które znajdują się w dokumentacji koncepcyjnej dotyczącej programowania w sieci.  
   
  **Żądanie danych:**  
@@ -52,7 +53,7 @@ Poniższa lista zawiera linki do tematów, które znajdują się w dokumentacji 
   
  **Śledzenie sieci:**  
   
-- [Instrukcje: konfigurowanie śledzenia sieci](how-to-configure-network-tracing.md)  
+- [Instrukcje: konfigurowanie funkcji śledzenia sieci](how-to-configure-network-tracing.md)  
   
  **Konfigurowanie buforowania:**  
   
@@ -60,7 +61,7 @@ Poniższa lista zawiera linki do tematów, które znajdują się w dokumentacji 
   
 - [Instrukcje: określanie zasad pamięci podręcznej na podstawie czasu domyślnego dla aplikacji](how-to-set-the-default-time-based-cache-policy-for-an-application.md)  
   
-- [Instrukcje: dostosowywanie zasad pamięci podręcznej na podstawie czasu](how-to-customize-a-time-based-cache-policy.md)  
+- [Instrukcje: Dostosowywanie zasad pamięci podręcznej Time-Based](how-to-customize-a-time-based-cache-policy.md)  
   
 - [Instrukcje: ustawianie zasad pamięci podręcznej dla żądania](how-to-set-cache-policy-for-a-request.md)  
   
@@ -76,10 +77,10 @@ Poniższa lista zawiera linki do tematów, które znajdują się w dokumentacji 
   
 - [Instrukcje: uzyskiwanie informacji o interfejsie i protokole](how-to-get-interface-and-protocol-information.md)  
   
-- [Instrukcje: polecenie ping do hosta](how-to-ping-a-host.md)  
+- [Instrukcje: pingowanie hosta](how-to-ping-a-host.md)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Programowanie dla sieci w programie .NET Framework](index.md)
+- [Programowanie dla sieci w .NET Framework](index.md)
 - [Przykłady programowania sieciowego](network-programming-samples.md)
 - [Przykłady sieci dla platformy .NET w galerii kodu MSDN](https://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)

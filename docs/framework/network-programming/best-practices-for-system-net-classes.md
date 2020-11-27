@@ -11,14 +11,15 @@ helpviewer_keywords:
 - best practices, data requests
 - receiving data, best practices
 ms.assetid: 716decc6-5952-47b7-9c5a-ba6fc5698684
-ms.openlocfilehash: 583fa5e57c7c4d60252dddfd425596e7acad7c0d
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 170e8cfe0a7d7c911122dafe18b8a5081ceb3d2d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502681"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250778"
 ---
 # <a name="best-practices-for-systemnet-classes"></a>Najlepsze rozwiązania dotyczące klas System.Net
+
 Poniższe zalecenia ułatwią korzystanie z klas zawartych w programie w <xref:System.Net> celu uzyskania najlepszej korzyści:  
   
 - W przypadku najlepszych rozwiązań Transport Layer Security (TLS) zobacz [Transport Layer Security (TLS) Best Practices with .NET Framework](tls.md).
@@ -33,6 +34,6 @@ Poniższe zalecenia ułatwią korzystanie z klas zawartych w programie w <xref:S
   
 - Podczas uzyskiwania dostępu do witryn, które wymagają poświadczeń, należy użyć <xref:System.Net.CredentialCache> klasy do utworzenia pamięci podręcznej poświadczeń, a nie dostarczenia ich do każdego żądania. Klasa **CredentialCache** przeszukuje pamięć podręczną, aby znaleźć odpowiednie poświadczenia do zaprezentowania z żądaniem, co uwalnia z odpowiedzialności za tworzenie i prezentowanie poświadczeń na podstawie adresu URL.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Programowanie dla sieci w programie .NET Framework](index.md)
+- [Programowanie dla sieci w .NET Framework](index.md)

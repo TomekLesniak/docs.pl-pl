@@ -1,15 +1,16 @@
 ---
-title: <Assembly>— Element (.NET Native)
+title: <Assembly> — Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: cfe629eb-1106-4113-86e1-052f402d8d8b
-ms.openlocfilehash: f3cf65b185b1db3289a0dbb785c2b91431951cc2
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9d1556d8d414386d3f350a96396381bd7b66ffc5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79181077"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96251129"
 ---
-# <a name="assembly-element-net-native"></a>\<Assembly>— Element (.NET Native)
+# <a name="assembly-element-net-native"></a>\<Assembly> — Element (.NET Native)
+
 Stosuje zasady odbicia środowiska uruchomieniowego do wszystkich typów w określonym zestawie.  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,6 +30,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do wszystkich typów w okre�
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -51,7 +53,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do wszystkich typów w okre�
   
 |Wartość|Opis|  
 |-----------|-----------------|  
-|*assembly_name*|Prosta nazwa zestawu bez rozszerzenia pliku. Ten atrybut odpowiada <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> właściwości. Na przykład nazwa zestawu o nazwie Extensions. dll ma wartość "Extensions".<br /><br /> Możesz również określić ciąg literału, `*Application*` Aby zastosować zasady do wszystkich zestawów w pakiecie aplikacji, niezależnie od tego, czy te zestawy zostały załadowane. `*Application*`nie stosuje zasad do .NET Framework zestawów.|  
+|*assembly_name*|Prosta nazwa zestawu bez rozszerzenia pliku. Ten atrybut odpowiada <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> właściwości. Na przykład nazwa zestawu o nazwie Extensions.dll to "Extensions".<br /><br /> Możesz również określić ciąg literału, `*Application*` Aby zastosować zasady do wszystkich zestawów w pakiecie aplikacji, niezależnie od tego, czy te zestawy zostały załadowane. `*Application*` nie stosuje zasad do .NET Framework zestawów.|  
   
 ## <a name="all-other-attributes"></a>Wszystkie inne atrybuty  
   
@@ -75,6 +77,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do wszystkich typów w okre�
 |[\<Library>](library-element-net-native.md)|Definiuje zestaw zawierający typy i elementy członkowskie typu, których metadane są dostępne do odbicia w czasie wykonywania. [\<Library>](library-element-net-native.md)Element może mieć zero lub jeden `<Assembly>` element.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<Assembly>`Element definiuje zasady środowiska uruchomieniowego dla wszystkich typów w zestawie. Różni się od [\<Library>](library-element-net-native.md) elementu, który określa bibliotekę, ale zależy od elementów podrzędnych, aby zdefiniować zasady odbicia środowiska uruchomieniowego. `<Assembly>`Element ma zastosowanie do wszystkich typów w zestawie, chyba że zostaną zastąpione przez element podrzędny.  
   
  Poniższy przykład pokazuje, jak można zastosować zasady środowiska uruchomieniowego do wszystkich typów w zestawach w pakiecie aplikacji, przypisując `Name` atrybutowi wartość "* aplikacja \* ". `<Assembly>`Element musi być elementem podrzędnym [\<Application>](application-element-net-native.md) elementu.  
@@ -89,7 +92,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do wszystkich typów w okre�
   
  `Activate`Atrybuty, `Browse` , `Dynamic` i `Serialize` są opcjonalne. Jednak `<Assembly>` element musi zawierać co najmniej jeden z tych atrybutów.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Ustawienia zasad dyrektyw środowiska uruchomieniowego](runtime-directive-policy-settings.md)
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)

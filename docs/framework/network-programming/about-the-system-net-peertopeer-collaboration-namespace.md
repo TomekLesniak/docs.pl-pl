@@ -2,42 +2,44 @@
 title: Przestrzeń nazw System.Net.PeerToPeer.Collaboration — informacje
 ms.date: 03/30/2017
 ms.assetid: b5d8c1c1-6844-4947-9759-c7f1b564bded
-ms.openlocfilehash: f0c9ecaacc1d875aac8eed61a85ca7579f5cb8a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 54eaf1a99aab8b1db61f4b46237d57104c9d1a44
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "64649528"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250713"
 ---
 # <a name="about-the-systemnetpeertopeercollaboration-namespace"></a>Przestrzeń nazw System.Net.PeerToPeer.Collaboration — informacje
-Obszar <xref:System.Net.PeerToPeer.Collaboration> nazw udostępnia klasy i interfejsy API, które są używane do implementowania działań współpracy równorzędnej przy użyciu infrastruktury współpracy peer-to-peer.  
+
+<xref:System.Net.PeerToPeer.Collaboration>Przestrzeń nazw zawiera klasy i interfejsy API, które są używane do implementowania działań współpracy równorzędnej przy użyciu infrastruktury współpracy równorzędnej.  
   
 ## <a name="classes"></a>Klasy  
- Główne klasy używane w implementacji działania współpracy peer-to-peer są:  
+
+ Główne klasy używane w implementacji działania dotyczącego współpracy równorzędnej są następujące:  
   
-- Program <xref:System.Net.PeerToPeer.Collaboration.ContactManager>, który może służyć do przechowywania kontaktów równorzędnych.  
+- <xref:System.Net.PeerToPeer.Collaboration.ContactManager>, Który może być używany do przechowywania kontaktów równorzędnych.  
   
-- W <xref:System.Net.PeerToPeer.Collaboration.PeerApplication> którym można współpracować, takich jak gra, klient czatu lub rozwiązanie konferencyjne.  
+- , <xref:System.Net.PeerToPeer.Collaboration.PeerApplication> W którym można współpracować, takich jak rozwiązanie do gier, klienta czatu lub konferencji.  
   
-- Elementy równorzędne, które będą współpracować w działaniu.  Te elementy równorzędne mogą być reprezentowane jako <xref:System.Net.PeerToPeer.Collaboration.PeerContact> <xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>, lub <xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint> obiekty.  
+- Elementy równorzędne, które będą współpracować w działaniu.  Te elementy równorzędne mogą być reprezentowane <xref:System.Net.PeerToPeer.Collaboration.PeerContact> jako <xref:System.Net.PeerToPeer.Collaboration.PeerNearMe> obiekty, lub <xref:System.Net.PeerToPeer.Collaboration.PeerEndPoint> .  
   
-- Sama klasa <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> statyczna, która określa, które aplikacje są dostępne i które elementy równorzędne uczestniczą w nich.  
+- <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration>Sama klasa statyczna, która określa, które aplikacje są dostępne i które z nich uczestniczą.  
   
- Metody <xref:System.Net.PeerToPeer.Collaboration.PeerContact.Invite%2A> są używane do zapraszania rysów do sesji współpracy.  Wywołujący element równorzędny może subskrybować innego elementu równorzędnego dla zdarzeń, które sygnalizują aktualizacje informacji o aplikacji, obiekcie lub obecności powiązanych z sesją współpracy. Klasy obecności określają, czy <xref:System.Net.PeerToPeer.Collaboration.Peer> a jest <xref:System.Net.PeerToPeer.Collaboration.PeerScope> dostępny do współpracy, a klasa jest używana <xref:System.Net.PeerToPeer.Collaboration.PeerScope.Internet> do <xref:System.Net.PeerToPeer.Collaboration.PeerScope.NearMe>określania, ile <xref:System.Net.PeerToPeer.Collaboration.PeerScope.None>uczestnictwa jest dozwolone dla elementu równorzędnego: (globalny), , (podsieć) lub .  
+ <xref:System.Net.PeerToPeer.Collaboration.PeerContact.Invite%2A>Metody są używane do zapraszania elementów równorzędnych do sesji współpracy.  Wywołujący element równorzędny może subskrybować innego elementu równorzędnego dla zdarzeń, które sygnalizują aktualizacje aplikacji, obiektów lub informacji o obecności powiązane z sesją współpracy. Klasy obecności określają, czy <xref:System.Net.PeerToPeer.Collaboration.Peer> jest dostępna do współpracy, a <xref:System.Net.PeerToPeer.Collaboration.PeerScope> Klasa jest używana do określenia, jak dużo udziału jest dozwolony dla elementu równorzędnego:  <xref:System.Net.PeerToPeer.Collaboration.PeerScope.Internet> (globalna), <xref:System.Net.PeerToPeer.Collaboration.PeerScope.NearMe> , (Subnet) lub <xref:System.Net.PeerToPeer.Collaboration.PeerScope.None> .  
   
- Sesja współpracy składa się z czterech kroków:  
+ Sesja współpracy obejmuje cztery kroki:  
   
-- Odnajdywanie. Odnajdowanie lub publikowanie aplikacji, rysów i informacji o obecności.  Na przykład znajdź inne osoby w podsieci lokalnej, które mają zainstalowane te same gry.  
+- Odnajdowa. Odnajdywanie lub publikowanie aplikacji, elementów równorzędnych i informacji o obecności.  Na przykład Znajdź inne osoby w podsieci lokalnej, na których zainstalowano te same gry.  
   
-- Zaproszenie. Wysyłanie i akceptowanie bezpiecznych zaproszeń dla <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> zdalnych elementów równorzędnych do rozpoczynania lub dołączania do sesji.  
+- Zaproszenie. Wyślij i zaakceptuj bezpieczne zaproszenia dla zdalnych elementów równorzędnych w celu uruchomienia lub dołączenia <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> sesji.  
   
-- Zarządzanie kontaktami. Dodaj odnalezione elementy <xref:System.Net.PeerToPeer.Collaboration.ContactManager>równorzędne jako kontakt do pliku .  
+- Zarządzanie kontaktami. Dodawanie odnalezionych elementów równorzędnych jako kontaktów do <xref:System.Net.PeerToPeer.Collaboration.ContactManager> .  
   
-- Komunikacji. Po ustanowieniu komunikacji należy <xref:System.Net> użyć interfejsów <xref:System.Net.PeerToPeer> API, interfejsu API lub klas kanału równorzędnego fundacji komunikacji systemu Windows dla komunikacji wielopartyjnej.  
+- Zawiadomienia. Podczas ustanawiania komunikacji należy używać <xref:System.Net> interfejsów API, <xref:System.Net.PeerToPeer> interfejsu api lub Windows Communication Foundation klas kanałów równorzędnych w przypadku komunikacji wieloczęściowej.  
   
- Na przykład element równorzędny hosta rozpoczyna <xref:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContact%2A> sesję współpracy i wykorzystuje metodę dodawania zdalnego elementu równorzędnego i jednego z jego lokalnych elementów równorzędnych do Menedżera kontaktów elementu równorzędnego hosta.  Następnie trzej użytkownicy wezmą udział we własnej prywatnej sesji współpracy.  
+ Na przykład element równorzędny hosta uruchamia sesję współpracy i wykorzystuje <xref:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContact%2A> metodę dodawania zdalnego elementu równorzędnego i jednego z jego lokalnych elementów równorzędnych do Menedżera kontaktów elementu równorzędnego hosta.  Trze użytkownicy będą następnie uczestniczyć we własnej prywatnej sesji współpracy.  
   
- Typowe aplikacje P2P to: połączenia konferencyjne do wspólnego robienia notatek lub tablicowania, aplikacje czatu bezserwerowe, interaktywne reklamy i sesje gier online.  
+ Typowe aplikacje P2P to: wywołania konferencji do współpracy z notatkami i tworzenia notatek, aplikacji do rozmów bezserwerowych, reklam interaktywnych i sesji gier online.  
   
 ## <a name="see-also"></a>Zobacz też
 

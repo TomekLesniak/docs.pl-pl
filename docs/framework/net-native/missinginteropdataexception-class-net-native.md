@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: eab4bcf8-9f5f-4731-87d8-842748a6062a
-ms.openlocfilehash: faf14245cd9dd7aa4bf8e89d5a05901279956509
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: bbbb484e5cb8060568b321a2a41474d60c9f87f6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128268"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250921"
 ---
 # <a name="missinginteropdataexception-class-net-native"></a>Klasa MissingInteropDataException (architektura .NET Native)
+
 **Aplikacje .NET dla systemu Windows 10, tylko .NET Native**  
   
  Wyjątek, który jest generowany, gdy wywoływana jest metoda ręcznego kierowania, ale nie można odnaleźć metadanych dla typu przez analizę statyczną lub plik dyrektywy środowiska uruchomieniowego.  
@@ -23,6 +24,7 @@ ms.locfileid: "73128268"
 > `MissingInteropDataException`Klasa jest przeznaczona wyłącznie do użytku wewnętrznego w łańcuchu narzędzi .NET Native. Nie jest on przeznaczony do użycia w kodzie innej firmy ani nie powinien obsługiwać wyjątku w kodzie aplikacji. Zamiast tego należy wyeliminować wyjątek poprzez dodanie wpisów do [pliku dyrektywy środowiska uruchomieniowego](runtime-directives-rd-xml-configuration-file-reference.md). Aby uzyskać więcej informacji, zobacz sekcję: Uwagi.  
   
 ## <a name="syntax"></a>Składnia  
+
  [!code-csharp[ProjectN#21](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missinginteropdataexception_syntax1.cs#21)]
  [!code-vb[ProjectN#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/projectn/vb/missinginteropdataexception_syntax1.vb#21)]  
   
@@ -63,21 +65,22 @@ ms.locfileid: "73128268"
   
 ## <a name="events"></a>Zdarzenia  
   
-|Wydarzenie|Opis|  
+|Zdarzenie|Opis|  
 |-----------|-----------------|  
 |`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|Występuje, gdy wyjątek jest serializowany w celu utworzenia obiektu stanu wyjątku, który zawiera serializowane dane dotyczące wyjątku. (Odziedziczone z <xref:System.Exception?displayProperty=nameWithType> .)|  
   
 ## <a name="usage-details"></a>Szczegóły użycia  
+
  `MissingInteropDataException`Wyjątek jest zgłaszany, gdy wywołanie metody do składnika com lub środowisko wykonawcze systemu Windows nie może zostać wykonane pomyślnie, ponieważ informacje o typie są niedostępne.  
   
- Metadane dostępne dla aplikacji w czasie wykonywania są zdefiniowane przez dyrektywy środowiska uruchomieniowego (XML Configuration), \* . Rd. XML. Aby zapobiec zgłaszaniu tego wyjątku przez aplikację, należy zmodyfikować ten plik w celu zdefiniowania metadanych, które muszą być obecne w czasie wykonywania. Najczęściej można rozwiązać ten problem, dodając `MarshalObject` `MarshalDelegate` atrybut, lub `MarshalStructure` do odpowiedniego elementu programu w pliku dyrektywy środowiska uruchomieniowego. Aby uzyskać informacje o formacie tego pliku, zobacz [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (RD. xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
+ Metadane dostępne dla aplikacji w czasie wykonywania są zdefiniowane w plikach dyrektywy środowiska uruchomieniowego (konfiguracja XML), \*.rd.xml. Aby zapobiec zgłaszaniu tego wyjątku przez aplikację, należy zmodyfikować ten plik w celu zdefiniowania metadanych, które muszą być obecne w czasie wykonywania. Najczęściej można rozwiązać ten problem, dodając `MarshalObject` `MarshalDelegate` atrybut, lub `MarshalStructure` do odpowiedniego elementu programu w pliku dyrektywy środowiska uruchomieniowego. Aby uzyskać informacje o formacie tego pliku, zobacz [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
 > [!IMPORTANT]
 > Ponieważ ten wyjątek wskazuje, że metadane potrzebne przez aplikację nie są dostępne w czasie wykonywania, nie należy obsługiwać tego wyjątku w `try` / `catch` bloku. Zamiast tego należy zdiagnozować przyczynę wyjątku i wyeliminować go przez dodanie odpowiedniego wpisu do pliku dyrektywy środowiska uruchomieniowego.  
   
  `MissingInteropDataException`Klasa zawiera pojedynczy unikatowy element członkowski, `MissingType` Właściwość, która wskazuje typ, którego metadane są zbędne dla pomyślnego wywołania metody. Wszystkie pozostałe elementy członkowskie są dziedziczone z klasy podstawowej, <xref:System.Exception?displayProperty=nameWithType> .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Exception?displayProperty=nameWithType>
 - [Klasa MissingMetadataException](missingmetadataexception-class-net-native.md)

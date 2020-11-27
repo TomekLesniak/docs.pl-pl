@@ -1,15 +1,16 @@
 ---
-title: <Property>— Element (.NET Native)
+title: <Property> — Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: ad4ba56d-3bcb-4c10-ba90-1cc66e2175a1
-ms.openlocfilehash: b9bc89804a872dddf1a56c2a3dadc9c3df4f5fd1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a0bdf95a1d1cadf7423f8c6595add13eda4d0d9a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128211"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250856"
 ---
-# <a name="property-element-net-native"></a>\<Property>— Element (.NET Native)
+# <a name="property-element-net-native"></a>\<Property> — Element (.NET Native)
+
 Stosuje zasady odbicia środowiska uruchomieniowego do właściwości.  
   
 ## <a name="syntax"></a>Składnia  
@@ -22,6 +23,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do właściwości.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -46,6 +48,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do właściwości.
 |*policy_setting*|Ustawienie, które ma zostać zastosowane do tego typu zasad dla właściwości. Możliwe wartości to `Auto` , `Excluded` , `Included` , i `Required` . Aby uzyskać więcej informacji, zobacz [Ustawienia zasad dyrektywy środowiska uruchomieniowego](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -56,10 +59,12 @@ Stosuje zasady odbicia środowiska uruchomieniowego do właściwości.
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Stosuje zasady odbicia do skonstruowanego typu ogólnego i wszystkich jego członków.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli zasady właściwości nie są jawnie zdefiniowane, dziedziczy zasad środowiska uruchomieniowego jego elementu nadrzędnego.  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład używa odbicia, aby utworzyć wystąpienie `Book` obiektu i wyświetlić jego wartości właściwości. Oryginalny plik default. Rd. XML dla projektu jest wyświetlany w następujący sposób:  
+
+ Poniższy przykład używa odbicia, aby utworzyć wystąpienie `Book` obiektu i wyświetlić jego wartości właściwości. Oryginalny plik default.rd.xml projektu jest wyświetlany w następujący sposób:  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -81,7 +86,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do właściwości.
   
 - Definiowanie `Dynamic` zasad dla `Book` typu w jego [\<Type>](type-element-net-native.md) elemencie.  
   
-- Dodając zagnieżdżony [\<Property>](property-element-net-native.md) element dla każdej właściwości, której ma dotyczyć metoda pobierająca, jako następujący domyślny plik. Rd. XML.  
+- Dodając zagnieżdżony [\<Property>](property-element-net-native.md) element dla każdej właściwości, której ma dotyczyć metoda pobierająca, jak w poniższym pliku default.rd.xml.  
   
     ```xml  
     <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -97,7 +102,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do właściwości.
     </Directives>  
     ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy dyrektyw środowiska uruchomieniowego](runtime-directive-elements.md)

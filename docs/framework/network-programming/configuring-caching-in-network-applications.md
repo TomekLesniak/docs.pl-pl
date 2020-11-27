@@ -4,25 +4,26 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - cache [.NET Framework], configuring
 ms.assetid: 3f694a1c-de5d-47cf-a6eb-cfc369fb8a9f
-ms.openlocfilehash: d8ff64e4ab42283732d7f632efab6b4e9afad0a0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 63340e6d7d8ef6b695050e24bc47cf1f0b9244c0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71048704"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250583"
 ---
 # <a name="configuring-caching-in-network-applications"></a>Konfigurowanie pamięci podręcznej w aplikacjach sieciowych
-Aby skonfigurować buforowanie, należy określić zasady pamięci <xref:System.Net.WebRequest> podręcznej na poziomie aplikacji lub poziomu. W poniższych tematach przedstawiono przykłady kodu, które pokazują konfigurowanie aplikacji i żądań do korzystania z buforowania.  
+
+Aby skonfigurować buforowanie, należy określić zasady pamięci podręcznej na poziomie aplikacji lub <xref:System.Net.WebRequest> poziomu. W poniższych tematach przedstawiono przykłady kodu, które pokazują, jak skonfigurować aplikacje i żądania do korzystania z pamięci podręcznej.  
   
 - [Instrukcje: określanie zasad pamięci podręcznej na podstawie lokalizacji dla aplikacji](how-to-set-a-location-based-cache-policy-for-an-application.md)  
   
 - [Instrukcje: określanie zasad pamięci podręcznej na podstawie czasu domyślnego dla aplikacji](how-to-set-the-default-time-based-cache-policy-for-an-application.md)  
   
-- [Instrukcje: dostosowywanie zasad pamięci podręcznej na podstawie czasu](how-to-customize-a-time-based-cache-policy.md)  
+- [Instrukcje: Dostosowywanie zasad pamięci podręcznej Time-Based](how-to-customize-a-time-based-cache-policy.md)  
   
 - [Instrukcje: ustawianie zasad pamięci podręcznej dla żądania](how-to-set-cache-policy-for-a-request.md)  
   
- Można również skonfigurować zasady pamięci podręcznej przy użyciu plików konfiguracyjnych aplikacji lub komputera. Aby uzyskać więcej informacji, zobacz &#124; [ \<requestCaching> Element (Ustawienia sieciowe)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
+ Zasady pamięci podręcznej można także skonfigurować przy użyciu plików konfiguracji aplikacji lub komputera. Aby uzyskać więcej informacji, zobacz &#124; [ \<requestCaching> element (Ustawienia sieci)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
   
 ## <a name="see-also"></a>Zobacz też
 

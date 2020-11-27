@@ -2,17 +2,19 @@
 title: Interfejsy API, które działają na podstawie odbicia
 ms.date: 03/30/2017
 ms.assetid: f9532629-6594-4a41-909f-d083f30a42f3
-ms.openlocfilehash: 1d8daceb6b744b984f86b011ad7952d0da583a79
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2c361962f4570200d63037a68ef39b0c982bd5f7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79181092"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96251142"
 ---
 # <a name="apis-that-rely-on-reflection"></a>Interfejsy API, które działają na podstawie odbicia
-W niektórych przypadkach użycie odbicia w kodzie nie jest oczywiste i dlatego łańcuch narzędzi .NET Native nie zachowuje metadanych wymaganych w czasie wykonywania. W tym temacie opisano niektóre typowe interfejsy API lub typowe wzorce programowania, które nie są uważane za część interfejsu API odbicia, ale które polegają na pomyślnym wykonaniu odbicia. Jeśli używasz ich w kodzie źródłowym, możesz dodać informacje o nich do pliku dyrektywy środowiska uruchomieniowego (. Rd. xml), tak aby wywołania tych interfejsów API nie zgłaszają wyjątku [MissingMetadataException](missingmetadataexception-class-net-native.md) ani innego wyjątku w czasie wykonywania.  
+
+W niektórych przypadkach użycie odbicia w kodzie nie jest oczywiste i dlatego łańcuch narzędzi .NET Native nie zachowuje metadanych wymaganych w czasie wykonywania. W tym temacie opisano niektóre typowe interfejsy API lub typowe wzorce programowania, które nie są uważane za część interfejsu API odbicia, ale które polegają na pomyślnym wykonaniu odbicia. Jeśli używasz ich w kodzie źródłowym, możesz dodać informacje o nich do pliku dyrektywy środowiska uruchomieniowego (.rd.xml), tak aby wywołania tych interfejsów API nie zgłaszają wyjątku [MissingMetadataException](missingmetadataexception-class-net-native.md) ani innego wyjątku w czasie wykonywania.  
   
 ## <a name="typemakegenerictype-method"></a>Type. MakeGenericType, Metoda  
+
  Można dynamicznie utworzyć wystąpienie typu ogólnego `AppClass<T>` , wywołując <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> metodę przy użyciu kodu w następujący sposób:  
   
  [!code-csharp[ProjectN#1](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/type_makegenerictype1.cs#1)]  
@@ -41,15 +43,16 @@ Nie można wykonać tej operacji, ponieważ metadane następującego typu zosta�
  Każde różne wystąpienie `AppClass<T>` tego typu wymaga oddzielnej dyrektywy, jeśli jest tworzona przy użyciu <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> metody i nie jest używana statycznie.  
   
 ## <a name="methodinfomakegenericmethod-method"></a>MethodInfo. MakeGenericMethod — Metoda  
+
  Dana Klasa `Class1` z metodą generyczną `GetMethod<T>(T t)` `GetMethod` może być wywoływana poprzez odbicie przy użyciu kodu w następujący sposób:  
   
  [!code-csharp[ProjectN#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/makegenericmethod1.cs#2)]  
   
  Aby pomyślnie uruchomić, ten kod wymaga kilku elementów metadanych:  
   
-- `Browse`metadane dla typu, którego Metoda ma zostać wywołana.  
+- `Browse` metadane dla typu, którego Metoda ma zostać wywołana.  
   
-- `Browse`metadane dla metody, która ma zostać wywołana.  Jeśli jest to metoda publiczna, Dodawanie publicznych `Browse` metadanych dla typu zawierającego zawiera również metodę.  
+- `Browse` metadane dla metody, która ma zostać wywołana.  Jeśli jest to metoda publiczna, Dodawanie publicznych `Browse` metadanych dla typu zawierającego zawiera również metodę.  
   
 - Dynamiczne metadane dla metody, która ma zostać wywołana, tak aby delegat wywołania odbicia nie został usunięty przez łańcuch narzędzi .NET Native. Jeśli brakuje metadanych dynamicznych dla metody, następujący wyjątek jest zgłaszany, gdy wywoływana jest <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> Metoda:  
   
@@ -68,6 +71,7 @@ Nie można wykonać tej operacji, ponieważ metadane następującego typu zosta�
  `MethodInstantiation`Dyrektywa jest wymagana dla każdego innego wystąpienia metody, która jest wywoływana dynamicznie, i `Arguments` jest aktualizowana w celu odzwierciedlenia każdego innego argumentu tworzenia wystąpienia.  
   
 ## <a name="arraycreateinstance-and-typemaketypearray-methods"></a>Array. CreateInstance i Type. MakeTypeArray, metody  
+
  Poniższy przykład wywołuje <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> metody i dla typu, `Class1` .  
   
  [!code-csharp[ProjectN#3](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/array1.cs#3)]  
@@ -82,13 +86,13 @@ App1.Class1[]
 Unfortunately, no further information is available.  
 ```  
   
- `Browse`metadane dla typu tablicy są wymagane do dynamicznego tworzenia wystąpienia.  Następująca dyrektywa środowiska uruchomieniowego umożliwia dynamiczne tworzenie wystąpień `Class1[]` .  
+ `Browse` metadane dla typu tablicy są wymagane do dynamicznego tworzenia wystąpienia.  Następująca dyrektywa środowiska uruchomieniowego umożliwia dynamiczne tworzenie wystąpień `Class1[]` .  
   
 ```xml  
 <Type Name="App1.Class1[]" Browse="Required Public" />  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie](getting-started-with-net-native.md)
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)

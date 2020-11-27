@@ -2,14 +2,15 @@
 title: MustUnderstandBehavior
 ms.date: 03/30/2017
 ms.assetid: 911ed04a-c4b8-4c72-a5c3-fc7b4e3b4348
-ms.openlocfilehash: 7e6a96c217b038e870b4e865315766afa3b3c757
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9cac7192d5c34de55fe0bd6a4921a41387e985f8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963166"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250440"
 ---
 # <a name="mustunderstandbehavior"></a>MustUnderstandBehavior
+
 MustUnderstandBehavior  
   
 ## <a name="syntax"></a>Składnia  
@@ -22,24 +23,27 @@ class MustUnderstandBehavior : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa MustUnderstandBehavior nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa MustUnderstandBehavior ma następującą właściwość:  
   
 ### <a name="validatemustunderstand"></a>ValidateMustUnderstand  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Gdy `true`, wszystkich nagłówków protokołu SOAP z `MustUnderstand` atrybutów, które nie są obsługiwane, że zachowanie, aby zgłosić wyjątek.  
+ Gdy `true` wszystkie nagłówki protokołu SOAP z `MustUnderstand` atrybutem, który nie jest obsługiwany, powodują zgłoszenie wyjątku.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Description.MustUnderstandBehavior>

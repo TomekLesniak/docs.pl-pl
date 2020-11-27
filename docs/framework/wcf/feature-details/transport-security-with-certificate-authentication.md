@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 dev_langs:
 - csharp
 ms.assetid: 3d726b71-4d8b-4581-a3bb-02b9af51d11b
-ms.openlocfilehash: 38f7d310be41455dd12460fdfa93d7e624d10c2a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d3f2a10bb6b355e82f94b8cc793c93ce4634c7d2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545223"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96251831"
 ---
 # <a name="transport-security-with-certificate-authentication"></a>Zabezpieczanie transportu przy użyciu uwierzytelniania certyfikatów
 
@@ -27,12 +27,13 @@ W tym artykule omówiono użycie certyfikatów X. 509 na potrzeby uwierzytelnian
 |Tryb zabezpieczeń|Transport|  
 |Współdziałanie|Z istniejącymi klientami i usługami sieci Web.|  
 |Uwierzytelnianie (serwer)<br /><br /> Uwierzytelnianie (klient)|Tak (przy użyciu certyfikatu SSL)<br /><br /> Tak (przy użyciu certyfikatu X. 509)|  
-|Integralność danych|Yes|  
-|Poufność danych|Yes|  
+|Integralność danych|Tak|  
+|Poufność danych|Tak|  
 |Transport|HTTPS|  
 |Wiązanie|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="configure-the-service"></a>Konfigurowanie usługi  
+
  Ponieważ usługa w tym scenariuszu jest hostowana w usługach IIS, jest ona konfigurowana przy użyciu pliku web.config. Poniższy web.config przedstawia sposób konfigurowania programu pod kątem <xref:System.ServiceModel.WSHttpBinding> używania poświadczeń klienta transportowego i X. 509.  
   
 ```xml  
@@ -64,6 +65,7 @@ W tym artykule omówiono użycie certyfikatów X. 509 na potrzeby uwierzytelnian
 ```  
   
 ## <a name="configure-the-client"></a>Konfigurowanie klienta programu  
+
  Klienta można skonfigurować w kodzie lub w pliku app.config. Poniższy przykład pokazuje, jak skonfigurować klienta w kodzie.  
   
 ```csharp
@@ -139,7 +141,7 @@ cc.Close();
 <startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup></configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przegląd zabezpieczeń](security-overview.md)
 - [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

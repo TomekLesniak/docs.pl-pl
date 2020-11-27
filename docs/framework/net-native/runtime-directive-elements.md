@@ -2,15 +2,16 @@
 title: Elementy dyrektyw środowiska uruchomieniowego
 ms.date: 03/30/2017
 ms.assetid: 3fe5848c-ecd7-4136-970b-8e48d250bde6
-ms.openlocfilehash: c900516382c8e526a6b0021bb2b681486283f3ab
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 96bce89c02ad17d1b30eda66237f69a15123dcd3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128167"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250804"
 ---
 # <a name="runtime-directive-elements"></a>Elementy dyrektyw środowiska uruchomieniowego
-Format pliku dyrektyw środowiska uruchomieniowego (RD. xml) obsługuje następujące elementy dyrektywy środowiska uruchomieniowego. Zobacz sekcję [dyrektywy środowiska uruchomieniowego informacje o pliku konfiguracyjnym](runtime-directives-rd-xml-configuration-file-reference.md) dla reprezentacji hierarchicznej.  
+
+Format pliku dyrektyw środowiska uruchomieniowego (rd.xml) obsługuje następujące elementy dyrektywy Runtime. Zobacz sekcję [dyrektywy środowiska uruchomieniowego informacje o pliku konfiguracyjnym (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md) dla reprezentacji hierarchicznej.  
   
  [\<Application>](application-element-net-native.md)  
  Stosuje zasady odbicia środowiska uruchomieniowego do wszystkich typów używanych przez aplikację i służy jako kontener dla typów i składowych dla całej aplikacji, których metadane są dostępne do odbicia w czasie wykonywania. Jest to element podrzędny [\<Directives>](directives-element-net-native.md) elementu.  
@@ -66,6 +67,6 @@ Format pliku dyrektyw środowiska uruchomieniowego (RD. xml) obsługuje następu
  [\<TypeParameter>](typeparameter-element-net-native.md)  
  Stosuje zasady środowiska uruchomieniowego do typu reprezentowanego przez <xref:System.Type> argument przesłany do metody.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Dokumentacja pliku konfiguracji usług Rd. XML](runtime-directives-rd-xml-configuration-file-reference.md)
+- [ Dokumentacja pliku konfiguracjird.xml](runtime-directives-rd-xml-configuration-file-reference.md)

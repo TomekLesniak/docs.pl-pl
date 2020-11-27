@@ -10,14 +10,15 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, asynchronous client sockets
 ms.assetid: d4ac53a0-b50b-4232-9726-d47d25fcc38a
-ms.openlocfilehash: c0bcf4becf8193f3bd6bc728dc6d7e96276dddf2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2ab53ef5973091d8828260aa82d287ce4a2455eb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502733"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250700"
 ---
 # <a name="asynchronous-client-socket-example"></a>Przykład asynchronicznego gniazda klienta
+
 Poniższy przykładowy program tworzy klienta, który nawiązuje połączenie z serwerem. Klient jest oparty na gnieździe asynchronicznym, więc wykonywanie aplikacji klienckiej nie jest wstrzymane, gdy serwer zwróci odpowiedź. Aplikacja wysyła ciąg do serwera, a następnie wyświetla ciąg zwracany przez serwer w konsoli programu.  
   
 ```vb  
@@ -322,7 +323,7 @@ public class AsynchronousClient {
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykład asynchronicznego gniazda serwera](asynchronous-server-socket-example.md)
 - [Używanie synchronicznego gniazda serwera](using-a-synchronous-server-socket.md)
