@@ -10,15 +10,16 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, asynchronous client sockets
 ms.assetid: d4ac53a0-b50b-4232-9726-d47d25fcc38a
-ms.openlocfilehash: c0bcf4becf8193f3bd6bc728dc6d7e96276dddf2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 2ab53ef5973091d8828260aa82d287ce4a2455eb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502733"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250700"
 ---
-# <a name="asynchronous-client-socket-example"></a><span data-ttu-id="9e688-104">Przykład asynchronicznego gniazda klienta</span><span class="sxs-lookup"><span data-stu-id="9e688-104">Asynchronous Client Socket Example</span></span>
-<span data-ttu-id="9e688-105">Poniższy przykładowy program tworzy klienta, który nawiązuje połączenie z serwerem.</span><span class="sxs-lookup"><span data-stu-id="9e688-105">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="9e688-106">Klient jest oparty na gnieździe asynchronicznym, więc wykonywanie aplikacji klienckiej nie jest wstrzymane, gdy serwer zwróci odpowiedź.</span><span class="sxs-lookup"><span data-stu-id="9e688-106">The client is built with an asynchronous socket, so execution of the client application is not suspended while the server returns a response.</span></span> <span data-ttu-id="9e688-107">Aplikacja wysyła ciąg do serwera, a następnie wyświetla ciąg zwracany przez serwer w konsoli programu.</span><span class="sxs-lookup"><span data-stu-id="9e688-107">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  
+# <a name="asynchronous-client-socket-example"></a><span data-ttu-id="aca03-104">Przykład asynchronicznego gniazda klienta</span><span class="sxs-lookup"><span data-stu-id="aca03-104">Asynchronous Client Socket Example</span></span>
+
+<span data-ttu-id="aca03-105">Poniższy przykładowy program tworzy klienta, który nawiązuje połączenie z serwerem.</span><span class="sxs-lookup"><span data-stu-id="aca03-105">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="aca03-106">Klient jest oparty na gnieździe asynchronicznym, więc wykonywanie aplikacji klienckiej nie jest wstrzymane, gdy serwer zwróci odpowiedź.</span><span class="sxs-lookup"><span data-stu-id="aca03-106">The client is built with an asynchronous socket, so execution of the client application is not suspended while the server returns a response.</span></span> <span data-ttu-id="aca03-107">Aplikacja wysyła ciąg do serwera, a następnie wyświetla ciąg zwracany przez serwer w konsoli programu.</span><span class="sxs-lookup"><span data-stu-id="aca03-107">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  
   
 ```vb  
 Imports System  
@@ -322,8 +323,8 @@ public class AsynchronousClient {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="9e688-108">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="9e688-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="aca03-108">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="aca03-108">See also</span></span>
 
-- [<span data-ttu-id="9e688-109">Przykład asynchronicznego gniazda serwera</span><span class="sxs-lookup"><span data-stu-id="9e688-109">Asynchronous Server Socket Example</span></span>](asynchronous-server-socket-example.md)
-- [<span data-ttu-id="9e688-110">Używanie synchronicznego gniazda serwera</span><span class="sxs-lookup"><span data-stu-id="9e688-110">Using a Synchronous Server Socket</span></span>](using-a-synchronous-server-socket.md)
-- [<span data-ttu-id="9e688-111">Przykłady kodu gniazd</span><span class="sxs-lookup"><span data-stu-id="9e688-111">Socket Code Examples</span></span>](socket-code-examples.md)
+- [<span data-ttu-id="aca03-109">Przykład asynchronicznego gniazda serwera</span><span class="sxs-lookup"><span data-stu-id="aca03-109">Asynchronous Server Socket Example</span></span>](asynchronous-server-socket-example.md)
+- [<span data-ttu-id="aca03-110">Używanie synchronicznego gniazda serwera</span><span class="sxs-lookup"><span data-stu-id="aca03-110">Using a Synchronous Server Socket</span></span>](using-a-synchronous-server-socket.md)
+- [<span data-ttu-id="aca03-111">Przykłady kodu gniazd</span><span class="sxs-lookup"><span data-stu-id="aca03-111">Socket Code Examples</span></span>](socket-code-examples.md)

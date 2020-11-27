@@ -4,17 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Network
 ms.assetid: fd88d26c-4063-495e-a253-736ac3e6b23f
-ms.openlocfilehash: b2b2f4f0bfa8b026bbd5dce8e25919a4a7fc7036
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6e94914ec6312fad9a22cdbb4d145ed131d233da
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180813"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96250531"
 ---
-# <a name="how-to-get-interface-and-protocol-information"></a><span data-ttu-id="3d285-102">Instrukcje: uzyskiwanie informacji o interfejsie i protokole</span><span class="sxs-lookup"><span data-stu-id="3d285-102">How to: Get Interface and Protocol Information</span></span>
-<span data-ttu-id="3d285-103">W tym przykładzie pokazano, jak odczytać statystyki TCP interfejsu sieciowego.</span><span class="sxs-lookup"><span data-stu-id="3d285-103">This sample shows how to read the TCP statistics of a network interface.</span></span>  
+# <a name="how-to-get-interface-and-protocol-information"></a><span data-ttu-id="52537-102">Instrukcje: uzyskiwanie informacji o interfejsie i protokole</span><span class="sxs-lookup"><span data-stu-id="52537-102">How to: Get Interface and Protocol Information</span></span>
+
+<span data-ttu-id="52537-103">Ten przykład pokazuje, jak odczytać statystykę TCP interfejsu sieciowego.</span><span class="sxs-lookup"><span data-stu-id="52537-103">This sample shows how to read the TCP statistics of a network interface.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3d285-104">Przykład</span><span class="sxs-lookup"><span data-stu-id="3d285-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="52537-104">Przykład</span><span class="sxs-lookup"><span data-stu-id="52537-104">Example</span></span>  
   
 ```csharp
 public static void ShowTcpStatistics(NetworkInterfaceComponent version)  
@@ -69,7 +70,8 @@ public static void ShowTcpStatistics(NetworkInterfaceComponent version)
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="3d285-105">Kompilowanie kodu</span><span class="sxs-lookup"><span data-stu-id="3d285-105">Compiling the Code</span></span>  
- <span data-ttu-id="3d285-106">Ten przykład wymaga:</span><span class="sxs-lookup"><span data-stu-id="3d285-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="52537-105">Kompilowanie kodu</span><span class="sxs-lookup"><span data-stu-id="52537-105">Compiling the Code</span></span>  
+
+ <span data-ttu-id="52537-106">Ten przykład wymaga:</span><span class="sxs-lookup"><span data-stu-id="52537-106">This example requires:</span></span>  
   
-- <span data-ttu-id="3d285-107">Odwołania do **System.Net** obszaru nazw.</span><span class="sxs-lookup"><span data-stu-id="3d285-107">References to the **System.Net** namespace.</span></span>
+- <span data-ttu-id="52537-107">Odwołania do przestrzeni nazw **System.NET** .</span><span class="sxs-lookup"><span data-stu-id="52537-107">References to the **System.Net** namespace.</span></span>
