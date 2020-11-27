@@ -4,20 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-ms.openlocfilehash: 3fb4b31038845d223248e72d32b3e7413f2aef63
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b75f5c2a64b7184959e929439893b33193aa7bae
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597179"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257473"
 ---
 # <a name="how-to-configure-com-service-settings"></a>Instrukcje: konfigurowanie ustawień usługi COM+
-Gdy interfejs aplikacji zostanie dodany lub usunięty przy użyciu narzędzia konfiguracji usługi COM+, konfiguracja usługi sieci Web jest aktualizowana w pliku konfiguracyjnym aplikacji. W trybie hostowanym modelu COM+ plik Application. config jest umieszczany w katalogu głównym aplikacji (domyślnie są to aplikacje%PROGRAMFILES%\ComPlus \\ {AppID}). W każdym z trybów hostowanych w sieci Web plik Web. config znajduje się w określonym katalogu wirtualnym.  
+
+Gdy interfejs aplikacji zostanie dodany lub usunięty przy użyciu narzędzia konfiguracji usługi COM+, konfiguracja usługi sieci Web jest aktualizowana w pliku konfiguracyjnym aplikacji. W trybie hostowanym modelu COM+ plik Application.config jest umieszczany w katalogu głównym aplikacji (domyślnie są to aplikacje%PROGRAMFILES%\ComPlus \\ {AppID}). W każdym z trybów hostowanych w sieci Web plik Web.config jest umieszczany w określonym katalogu.  
   
 > [!NOTE]
 > Podpisywanie komunikatów należy używać do ochrony przed manipulacją komunikatów między klientem a serwerem. Ponadto w celu ochrony przed ujawnieniem informacji z komunikatów między klientem a serwerem należy użyć szyfrowania z warstwy komunikatów lub transportu. Podobnie jak w przypadku usług Windows Communication Foundation (WCF), należy użyć ograniczania przepustowości, aby ograniczyć liczbę współbieżnych wywołań, połączeń, wystąpień i oczekujących operacji. Pozwala to zapobiec nadmiernemu zużyciu zasobów. Zachowanie ograniczania jest określone za poorednictwem ustawień pliku konfiguracji usługi.  
   
 ## <a name="example"></a>Przykład  
+
  Rozważmy składnik implementujący następujący interfejs:  
   
 ```csharp

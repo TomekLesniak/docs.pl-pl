@@ -2,15 +2,16 @@
 title: 'Instrukcje: konfigurowanie śledzenia za pomocą elementu WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: ed1485fe-7529-4351-bca3-8bb915260b17
-ms.openlocfilehash: 54594a8f464e77062c658606db6bc941e319f71d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cf30ace90f86e282d72c4da5f2c3707905360aeb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599103"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257356"
 ---
 # <a name="how-to-configure-tracking-with-workflowservicehost"></a>Instrukcje: konfigurowanie śledzenia za pomocą elementu WorkflowServiceHost
-W tym temacie wyjaśniono, jak skonfigurować śledzenie dla [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] przepływu pracy hostowanego w programie <xref:System.ServiceModel.Activities.WorkflowServiceHost> . Jest ona konfigurowana za pośrednictwem pliku Web. config przez określenie zachowania usługi.  
+
+W tym temacie wyjaśniono, jak skonfigurować śledzenie dla [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] przepływu pracy hostowanego w programie <xref:System.ServiceModel.Activities.WorkflowServiceHost> . Jest ona konfigurowana za pośrednictwem pliku Web.config przez określenie zachowania usługi.  
   
 ### <a name="configure-tracking-in-configuration"></a>Konfiguruj śledzenie w konfiguracji  
   

@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f450f5d4-3547-47ec-9320-2809e6a12634
-ms.openlocfilehash: 1edbfe2d0d25ea9f2145f879673fc9f0a6ee7f96
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f9cd297b479a07f2330eabbaaf81605a3874ec25
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547196"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257224"
 ---
 # <a name="intranet-unsecured-client-and-service"></a>Niezabezpieczony klient i usługa w intranecie
+
 Na poniższej ilustracji przedstawiono prostą usługę Windows Communication Foundation (WCF) opracowaną w celu zapewnienia informacji o bezpiecznej sieci prywatnej do aplikacji WCF. Zabezpieczenia nie są wymagane, ponieważ dane mają niską ważność, Sieć powinna być zabezpieczona w sposób niebezpieczny lub zabezpieczenia są udostępniane przez warstwę poniżej infrastruktury WCF.  
   
  ![Scenariusz niezabezpieczonego klienta i usługi w intranecie.](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
@@ -28,6 +29,7 @@ Na poniższej ilustracji przedstawiono prostą usługę Windows Communication Fo
 |Poufność|Brak|  
   
 ## <a name="service"></a>Usługa  
+
  Poniższy kod i konfiguracja są przeznaczone do niezależnego uruchamiania. Wykonaj jedną z następujących czynności:  
   
 - Tworzenie usługi autonomicznej przy użyciu kodu bez konfiguracji.  
@@ -35,12 +37,14 @@ Na poniższej ilustracji przedstawiono prostą usługę Windows Communication Fo
 - Utwórz usługę przy użyciu podanej konfiguracji, ale nie Definiuj żadnych punktów końcowych.  
   
 ### <a name="code"></a>Kod  
+
  Poniższy kod pokazuje, jak utworzyć punkt końcowy bez zabezpieczeń:  
   
  [!code-csharp[C_UnsecuredService#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredservice/cs/source.cs#2)]
  [!code-vb[C_UnsecuredService#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredservice/vb/source.vb#2)]  
   
-### <a name="configuration"></a>Konfiguracja  
+### <a name="configuration"></a>Konfigurowanie  
+
  Poniższy kod konfiguruje ten sam punkt końcowy przy użyciu konfiguracji:  
   
 ```xml  
@@ -71,22 +75,25 @@ Na poniższej ilustracji przedstawiono prostą usługę Windows Communication Fo
 ```  
   
 ## <a name="client"></a>Klient  
+
  Poniższy kod i konfiguracja są przeznaczone do niezależnego uruchamiania. Wykonaj jedną z następujących czynności:  
   
 - Utwórz klienta autonomicznego przy użyciu kodu (i kodu klienta).  
   
-- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Na przykład:  
+- Utwórz klienta, który nie definiuje żadnych adresów punktów końcowych. Zamiast tego należy użyć konstruktora klienta, który przyjmuje nazwę konfiguracji jako argument. Przykład:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Kod  
+
  Poniższy kod przedstawia podstawowy klient WCF, który uzyskuje dostęp do niezabezpieczonego punktu końcowego przy użyciu protokołu TCP.  
   
  [!code-csharp[C_UnsecuredClient#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#2)]
  [!code-vb[C_UnsecuredClient#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#2)]  
   
-### <a name="configuration"></a>Konfiguracja  
+### <a name="configuration"></a>Konfigurowanie  
+
  Następujący kod konfiguracji ma zastosowanie do klienta programu:  
   
 ```xml  
@@ -112,7 +119,7 @@ Na poniższej ilustracji przedstawiono prostą usługę Windows Communication Fo
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.NetTcpBinding>
 - [Przegląd zabezpieczeń](security-overview.md)

@@ -10,26 +10,31 @@ helpviewer_keywords:
 - CER calls
 - managed debugging assistants (MDAs), CER calls
 ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
-ms.openlocfilehash: fab0686b1c7d2fbb1485f6e4b82d008495a553cd
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: c3e8060702239c6f87659f48658160e46491542f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803563"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257096"
 ---
 # <a name="virtualcercall-mda"></a>virtualCERCall MDA
+
 `virtualCERCall`Asystent debugowania zarządzanego (MDA) jest uaktywniany jako ostrzeżenie wskazujące, że lokacja wywołania w ramach wykresu wywołania ograniczonego wykonania (CER) odwołuje się do wirtualnego elementu docelowego, czyli wywołania wirtualnego do niekońcowej metody wirtualnej lub wywołania przy użyciu interfejsu. Środowisko uruchomieniowe języka wspólnego (CLR) nie może przewidzieć metody docelowej tych wywołań z poziomu języka pośredniego i analizy metadanych. W związku z tym drzewo wywołań nie może zostać przygotowane jako część wykresu CER, a przerwania wątku w tym poddrzewie nie mogą zostać automatycznie zablokowane. To zdarzenie powoduje ostrzeganie o przypadkach, w których może być konieczne rozszerzenie CER, za pomocą jawnych wywołań <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> metody, gdy dodatkowe informacje wymagane do obliczenia obiektu docelowego wywołania są znane w czasie wykonywania.  
   
 ## <a name="symptoms"></a>Objawy  
+
  CERs, które nie są uruchamiane, gdy wątek zostanie przerwany lub domena aplikacji jest zwolniona.  
   
 ## <a name="cause"></a>Przyczyna  
+
  CER zawiera wywołanie metody wirtualnej, która nie może zostać przygotowana automatycznie.  
   
 ## <a name="resolution"></a>Rozwiązanie  
+
  Wywołanie <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> metody wirtualnej.  
   
 ## <a name="effect-on-the-runtime"></a>Wpływ na środowisko uruchomieniowe  
+
  To zdarzenie MDA nie ma wpływu na środowisko CLR.  
   
 ## <a name="output"></a>Dane wyjściowe  

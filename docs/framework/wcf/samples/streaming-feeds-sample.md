@@ -2,14 +2,15 @@
 title: Przykład strumieniowych kanałów informacyjnych
 ms.date: 03/30/2017
 ms.assetid: 1f1228c0-daaa-45f0-b93e-c4a158113744
-ms.openlocfilehash: 551a97f3cc54915a831fc28eca6ae0ff23101e0b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 735a72cba3c953ea4774d89751dad3216aa44400
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84589789"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257187"
 ---
 # <a name="streaming-feeds-sample"></a>Przykład strumieniowych kanałów informacyjnych
+
 Ten przykład pokazuje, jak zarządzać źródłami zespolonymi zawierającymi dużą liczbę elementów. Na serwerze przykład pokazuje, jak opóźnić tworzenie pojedynczych <xref:System.ServiceModel.Syndication.SyndicationItem> obiektów w kanale informacyjnym do momentu, gdy element zostanie zapisany do strumienia sieciowego.  
   
  Na kliencie przykład pokazuje, jak niestandardowe elementy formatujące źródło danych zespolonych mogą być używane do odczytywania poszczególnych elementów ze strumienia sieciowego, dzięki czemu odczytywane źródło danych nigdy nie jest w pełni buforowane w pamięci.  
@@ -19,6 +20,7 @@ Ten przykład pokazuje, jak zarządzać źródłami zespolonymi zawierającymi d
  Demonstracja wykorzystuje Iteratory języka Visual C# (przy użyciu `yield return` konstrukcji słowa kluczowego). Aby uzyskać więcej informacji na temat iteratorów, zobacz temat "Używanie iteratorów" w witrynie MSDN.  
   
 ## <a name="service"></a>Usługa  
+
  Usługa implementuje podstawową umowę, <xref:System.ServiceModel.Web.WebGetAttribute> która składa się z jednej operacji, jak pokazano w poniższym kodzie.  
   
 ```csharp  
@@ -68,6 +70,7 @@ public Atom10FeedFormatter StreamedFeed()
  W efekcie strumień elementu nigdy nie jest w pełni buforowany do pamięci. Możesz obsłużyć to zachowanie, ustawiając punkt przerwania w `yield return` instrukcji wewnątrz `ItemGenerator.GenerateItems()` metody i zwracając uwagę, że ten punkt przerwania jest wyświetlany po raz pierwszy od momentu, gdy usługa zwróci wynik `StreamedFeed()` metody.  
   
 ## <a name="client"></a>Klient  
+
  Klient w tym przykładzie używa niestandardowej <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> implementacji, która opóźnia materializację poszczególnych elementów w kanale informacyjnym zamiast buforowania ich do pamięci. Wystąpienie niestandardowe `StreamedAtom10FeedFormatter` jest używane w następujący sposób.  
   
 ```csharp  
