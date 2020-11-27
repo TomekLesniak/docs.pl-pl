@@ -131,21 +131,37 @@ items:
                 displayName: 'tutorials, visual studio for mac, vs for mac'
           - name: Więcej samouczków
             href: ../core/tutorials/index.md
-  - name: Co nowego
+  - name: Co nowego w .NET?
     items:
-      - name: Co nowego w platformie .NET w wersji 5.0
-        href: ../core/dotnet-five.md
-      - name: Co nowego w programie .NET Core 3.1
-        href: ../core/whats-new/dotnet-core-3-1.md
-      - name: Co nowego w programie .NET Core 3.0
-        href: ../core/whats-new/dotnet-core-3-0.md
-      - name: Co nowego w programie .NET Core 2.2
+      - name: .NET 5.0
+        items:
+          - name: Co nowego?
+            href: ../core/dotnet-five.md
+          - name: Fundamentalne zmiany
+            href: ../core/compatibility/5.0.md
+      - name: .NET Core 3.1
+        items:
+          - name: Co nowego?
+            href: ../core/whats-new/dotnet-core-3-1.md
+          - name: Fundamentalne zmiany
+            href: ../core/compatibility/3.1.md?toc=/dotnet/fundamentals/toc.json&bc=/dotnet/breadcrumb/toc.json
+      - name: .NET Core 3.0
+        items:
+          - name: Co nowego?
+            href: ../core/whats-new/dotnet-core-3-0.md
+          - name: Fundamentalne zmiany
+            href: ../core/compatibility/3.0.md?toc=/dotnet/fundamentals/toc.json&bc=/dotnet/breadcrumb/toc.json
+      - name: .NET Core 2.2
         href: ../core/whats-new/dotnet-core-2-2.md
-      - name: Co nowego w programie .NET Core 2.1
-        href: ../core/whats-new/dotnet-core-2-1.md
-      - name: Co nowego w programie .NET Core 2.0
+      - name: .NET Core 2.1
+        items:
+          - name: Co nowego?
+            href: ../core/whats-new/dotnet-core-2-1.md
+          - name: Fundamentalne zmiany
+            href: ../core/compatibility/2.1.md?toc=/dotnet/fundamentals/toc.json&bc=/dotnet/breadcrumb/toc.json
+      - name: .NET Core 2.0
         href: ../core/whats-new/dotnet-core-2-0.md
-      - name: Co nowego na platformie .NET Standard
+      - name: .NET Standard
         href: ../standard/whats-new/whats-new-in-dotnet-standard.md
   - name: Narzędzia i diagnostyka
     items:
@@ -317,9 +333,9 @@ items:
                   - name: Microsoft.NET.Sdk
                     href: ../core/project-sdk/msbuild-props.md
                   - name: Microsoft.NET.Sdk.Web
-                    href: /aspnet/core/razor-pages/web-sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
+                    href: /aspnet/core/razor-pages/web-sdk?toc=/dotnet/fundamentals/toc.json&bc=/dotnet/breadcrumb/toc.json
                   - name: Microsoft.NET.Sdk.Razor
-                    href: /aspnet/core/razor-pages/sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
+                    href: /aspnet/core/razor-pages/sdk?toc=/dotnet/fundamentals/toc.json&bc=/dotnet/breadcrumb/toc.json
           - name: Platformy docelowe
             href: ../standard/frameworks.md
           - name: Dodatki do formatu csproj
@@ -429,7 +445,7 @@ items:
           - name: Omówienie
             href: code-analysis/overview.md
             displayName: 'code analysis, analyzers'
-          - name: Konfigurowanie
+          - name: Konfiguracja
             items:
               - name: Opcje ogólne
                 href: code-analysis/configuration-options.md
