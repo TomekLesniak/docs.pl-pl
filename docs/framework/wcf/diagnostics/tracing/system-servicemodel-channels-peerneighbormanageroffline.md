@@ -2,17 +2,19 @@
 title: System.ServiceModel.Channels.PeerNeighborManagerOffline
 ms.date: 03/30/2017
 ms.assetid: 15b19e0f-cee5-49ff-8498-f404c39b712f
-ms.openlocfilehash: ea461dba433cf6607b972696220c88bd27e5664b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 739d02610d821076d60255683d7dd84ae71eaf23
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596054"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280935"
 ---
 # <a name="systemservicemodelchannelspeerneighbormanageroffline"></a>System.ServiceModel.Channels.PeerNeighborManagerOffline
+
 Węzeł równorzędny jest teraz w trybie offline, co oznacza, że nie ma obecnie połączonych sąsiadów.  
   
 ## <a name="description"></a>Opis  
+
  Ślad ten występuje po usunięciu sąsiada z listy sąsiadów węzła lokalnego.  
   
 ## <a name="see-also"></a>Zobacz też

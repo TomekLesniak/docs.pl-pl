@@ -1,5 +1,5 @@
 ---
-title: 'Instrukcje: Udostępnianie certyfikatów X.509 w architekturze WCF'
+title: 'Instrukcje: udostępnianie certyfikatów X.509 w architekturze WCF'
 description: Dowiedz się, jak udostępnić certyfikat X. 509 dla programu WCF. Kod aplikacji musi określać nazwę i lokalizację magazynu certyfikatów. Mogą istnieć inne wymagania.
 ms.date: 03/30/2017
 dev_langs:
@@ -10,14 +10,15 @@ helpviewer_keywords:
 - certificates [WCF], making X.509 certificates accessible to WCF
 - X.509 certificates [WCF], making accessible to WCF
 ms.assetid: a54e407c-c2b5-4319-a648-60e43413664b
-ms.openlocfilehash: 5cc1118640bcf1262d88cb8cdb39939ae315cae3
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 06a6167f0ad352955eb6b764ef8bfdb1394f4ed9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246873"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279743"
 ---
-# <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>Instrukcje: Udostępnianie certyfikatów X.509 w architekturze WCF
+# <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>Instrukcje: udostępnianie certyfikatów X.509 w architekturze WCF
+
 Aby udostępnić certyfikat X. 509 dla Windows Communication Foundation (WCF), kod aplikacji musi określać nazwę i lokalizację magazynu certyfikatów. W pewnych okolicznościach tożsamość procesu musi mieć dostęp do pliku, który zawiera klucz prywatny skojarzony z certyfikatem X. 509. Aby uzyskać klucz prywatny skojarzony z certyfikatem X. 509 w magazynie certyfikatów, WCF musi mieć odpowiednie uprawnienia. Domyślnie tylko właściciel i konto systemowe mogą uzyskać dostęp do klucza prywatnego certyfikatu.  
   
 ### <a name="to-make-x509-certificates-accessible-to-wcf"></a>Aby udostępnić certyfikaty X. 509 dla usługi WCF  

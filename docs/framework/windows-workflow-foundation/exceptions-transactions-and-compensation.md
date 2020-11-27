@@ -4,28 +4,30 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], error handling
 ms.assetid: 694db4f9-7387-4b13-8f9f-b923b18c7490
-ms.openlocfilehash: c4d66e252561ad7b896ff8092e80013c51bd463c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2d8574c0f0f6bd3f66214367c1ed15292adc24a9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774013"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280250"
 ---
 # <a name="exceptions-transactions-and-compensation"></a>Wyjątki, transakcje i kompensacja
-[!INCLUDE[wf1](../../../includes/wf1-md.md)] udostępnia kilka różnych mechanizmów obsługi błędów czasu wykonywania w przepływach pracy. Przepływy pracy można użyć kombinacji programów obsługi wyjątków, transakcje, anulowanie i rekompensaty do obsługi i powrócić do poprawnego działania z warunków błędów.  
+
+[!INCLUDE[wf1](../../../includes/wf1-md.md)] Program udostępnia kilka różnych mechanizmów obsługi warunków błędów czasu wykonywania w przepływach pracy. Przepływy pracy mogą używać kombinacji obsługi wyjątków, transakcji, anulowania i kompensacji, aby bezpiecznie obsługiwać i odzyskiwać z warunków błędów.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Wyjątki](exceptions.md)  
- Pokazuje sposób użycia <xref:System.Activities.Statements.TryCatch> działania, aby obsłużyć wyjątki w przepływie pracy.  
+ Pokazuje, jak używać <xref:System.Activities.Statements.TryCatch> działania do obsługi wyjątków w przepływie pracy.  
   
  [Transakcje](workflow-transactions.md)  
- Pokazuje sposób użycia <xref:System.Activities.Statements.TransactionScope> działania, aby móc używać transakcji w przepływie pracy.  
+ Pokazuje, jak używać <xref:System.Activities.Statements.TransactionScope> działania do korzystania z transakcji w przepływie pracy.  
   
  [Kompensacja](compensation.md)  
- W tym artykule opisano rekompensaty w przepływach pracy i pokazuje, jak używać takich jak działania Kompensacja <xref:System.Activities.Statements.CompensableActivity>, <xref:System.Activities.Statements.Compensate>, i <xref:System.Activities.Statements.Confirm>.  
+ Opisuje kompensację przepływów pracy i pokazuje, jak używać działań związanych z kompensacją, takich jak <xref:System.Activities.Statements.CompensableActivity> , <xref:System.Activities.Statements.Compensate> i <xref:System.Activities.Statements.Confirm> .  
   
  [Anulowanie](modeling-cancellation-behavior-in-workflows.md)  
- W tym artykule opisano sposób wykonywania anulowania obsługi w przepływach pracy za pomocą wbudowanych działań, a także działania niestandardowe.  
+ Opisuje, jak przeprowadzić obsługę anulowania w przepływach pracy przy użyciu wbudowanych działań, a także działań niestandardowych.  
   
  [Debugowanie przepływów pracy](debugging-workflows.md)  
  Opisuje sposób debugowania przepływów pracy.

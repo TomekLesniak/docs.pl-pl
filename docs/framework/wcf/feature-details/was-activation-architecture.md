@@ -2,17 +2,19 @@
 title: Architektura aktywacji WAS
 ms.date: 03/30/2017
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
-ms.openlocfilehash: 77cebede5827016c5c9660663c0491614ba0ef19
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 46f9f9b0e951d363200cf41b5119b13ca921a3b5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545985"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281641"
 ---
 # <a name="was-activation-architecture"></a>Architektura aktywacji WAS
+
 W tym temacie wyszczególniono i omówiono składniki usługi aktywacji procesów systemu Windows (nazywanej także usługą WAS).  
   
 ## <a name="activation-components"></a>Składniki aktywacji  
+
  Składa się z kilku składników architektury:  
   
 - Adaptery odbiornika. Usługi systemu Windows, które odbierają komunikaty z określonych protokołów sieciowych i komunikują się z usługą, przekierować komunikaty przychodzące do poprawnego procesu roboczego.  
@@ -30,6 +32,7 @@ W tym temacie wyszczególniono i omówiono składniki usługi aktywacji procesó
  ![Zrzut ekranu przedstawiający architekturę WAS.](./media/was-activation-architecture/windows-process-application-service-architecture.gif)  
   
 ### <a name="listener-adapters"></a>Adaptery odbiornika  
+
  Adaptery odbiorników to pojedyncze usługi systemu Windows, które implementują logikę komunikacji sieciowej służącą do odbierania komunikatów przy użyciu protokołu sieciowego, na którym nasłuchuje. W poniższej tabeli przedstawiono karty odbiorników dla protokołów Windows Communication Foundation (WCF).  
   
 |Nazwa usługi adaptera odbiornika|Protokół|Uwagi|  
@@ -59,6 +62,7 @@ W tym temacie wyszczególniono i omówiono składniki usługi aktywacji procesó
 ```  
   
 ### <a name="protocol-handlers"></a>Programy obsługi protokołów  
+
  Procedury obsługi protokołu i protokołów AppDomain dla określonych protokołów są rejestrowane w pliku Web.config na poziomie komputera.  
   
 ```xml  
@@ -85,7 +89,7 @@ W tym temacie wyszczególniono i omówiono składniki usługi aktywacji procesó
 </system.web>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Konfigurowanie usługi WAS do użycia z programem WCF](configuring-the-wpa--service-for-use-with-wcf.md)
 - [Funkcje hostingu sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677189(v=azure.10))

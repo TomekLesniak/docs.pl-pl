@@ -1,25 +1,26 @@
 ---
-title: Wyrażenia - WF
+title: Wyrażenia — WF
 ms.date: 03/30/2017
 ms.assetid: c42341a9-43a1-462c-bffb-c5de004aa428
-ms.openlocfilehash: 93fe449e8fa6c50f715d842c2ef6a9ecbd31aff2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1dca2090dda981fabb27d3e5f2dff78051d7af24
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79182937"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280224"
 ---
 # <a name="expressions"></a>Wyrażenia
 
-Wyrażenie Fundacji przepływu pracy systemu Windows (WF) jest dowolnym działaniem, które zwraca wynik. Wszystkie działania wyrażenia pochodzą pośrednio z <xref:System.Activities.Activity%601> <xref:System.Activities.OutArgument> , <xref:System.Activities.Activity%601.Result%2A> który zawiera właściwość o nazwie jako wartość zwracana działania. [!INCLUDE[wf1](../../../includes/wf1-md.md)]łączy się z szeroką gamą działań <xref:System.Activities.Expressions.VariableValue%601> <xref:System.Activities.Expressions.VariableReference%601>ekspresji, od prostych, takich jak i , które <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> zapewniają <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> dostęp do zmiennej pojedynczego przepływu pracy za pośrednictwem działań operatora, do złożonych działań, takich jak i które oferują dostęp do pełnej szerokości języka Visual Basic, aby uzyskać wynik. Dodatkowe działania wyrażenia można tworzyć, <xref:System.Activities.CodeActivity%601> wyprowadzając z pliku . <xref:System.Activities.NativeActivity%601>
+Wyrażenie Windows Workflow Foundation (WF) to wszelkie działania zwracające wynik. Wszystkie działania wyrażeń są wyprowadzane pośrednio z <xref:System.Activities.Activity%601> , która zawiera <xref:System.Activities.OutArgument> Właściwość o nazwie <xref:System.Activities.Activity%601.Result%2A> jako wartość zwracana działania. [!INCLUDE[wf1](../../../includes/wf1-md.md)] jest dostarczany z szerokim zakresem działań związanych z wyrażeniami prostymi, <xref:System.Activities.Expressions.VariableValue%601> <xref:System.Activities.Expressions.VariableReference%601> takimi jak i, które zapewniają dostęp do zmiennej pojedynczego przepływu pracy przez działania operatorów, do złożonych działań, takich jak <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> i <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> oferujących dostęp do pełnej gamy Visual Basic języka w celu uzyskania wyniku. Dodatkowe działania dotyczące wyrażeń można tworzyć poprzez wyprowadzanie z <xref:System.Activities.CodeActivity%601> lub <xref:System.Activities.NativeActivity%601> .
 
 ## <a name="using-expressions"></a>Używanie wyrażeń
- Projektant przepływu pracy <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> używa i dla wszystkich wyrażeń <xref:Microsoft.CSharp.Activities.CSharpReference%601> w projektach języka Visual Basic i <xref:Microsoft.CSharp.Activities.CSharpValue%601> dla wyrażeń w projektach przepływu pracy języka C#.
+
+ Projektant przepływu pracy używa <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> i <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> dla wszystkich wyrażeń w projektach Visual Basic i <xref:Microsoft.CSharp.Activities.CSharpValue%601> i <xref:Microsoft.CSharp.Activities.CSharpReference%601> dla wyrażeń w projektach przepływu pracy w języku C#.
 
 > [!NOTE]
-> Obsługa wyrażeń języka C# w projektach przepływu pracy została wprowadzona w .NET Framework 4.5. Aby uzyskać więcej informacji, zobacz [Wyrażenia języka C#](csharp-expressions.md).
+> Obsługa wyrażeń języka C# w projektach przepływu pracy została wprowadzona w .NET Framework 4,5. Aby uzyskać więcej informacji, zobacz [wyrażenia języka C#](csharp-expressions.md).
 
- Przepływy pracy tworzone przez projektanta są zapisywane w języku XAML, gdzie wyrażenia są wyświetlane ujęte w nawiasach kwadratowych, jak w poniższym przykładzie.
+ Przepływy pracy utworzone przez projektanta są zapisywane w języku XAML, gdzie wyrażenia są ujęte w nawiasy kwadratowe, jak w poniższym przykładzie.
 
 ```xml
 <Sequence xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -40,7 +41,7 @@ Wyrażenie Fundacji przepływu pracy systemu Windows (WF) jest dowolnym działan
 </Sequence>
 ```
 
- Podczas definiowania przepływu pracy w kodzie można użyć żadnych działań wyrażeń. Poniższy przykład pokazuje użycie kompozycji działań operatora, aby dodać trzy liczby:
+ Podczas definiowania przepływu pracy w kodzie, można użyć dowolnego działania wyrażeń. W poniższym przykładzie pokazano sposób użycia kompozycji działań operatora w celu dodania trzech liczb:
 
 ```csharp
 Variable<int> a = new Variable<int>("a", 1);
@@ -69,7 +70,7 @@ Sequence w = new Sequence
 };
 ```
 
- Ten sam przepływ pracy można wyrazić bardziej zwartą przy użyciu wyrażeń lambda języka C#, jak pokazano w poniższym przykładzie:
+ Ten sam przepływ pracy można wyrazić bardziej kompaktowo, używając wyrażeń lambda języka C#, jak pokazano w następującym przykładzie:
   
 ```csharp
 Variable<int> a = new Variable<int>("a", 1);
@@ -90,9 +91,9 @@ Sequence w = new Sequence
 };
 ```
 
-## <a name="extending-available-expressions-with-custom-expression-activities"></a>Rozszerzanie dostępnych wyrażeń za pomocą działań wyrażenia niestandardowego
+## <a name="extending-available-expressions-with-custom-expression-activities"></a>Rozszerzanie dostępnych wyrażeń z niestandardowymi działaniami wyrażeń
 
- Wyrażenia w [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] są rozszerzalne, co pozwala na dodatkowe działania wyrażenia, które mają być tworzone. W poniższym przykładzie pokazano działanie, które zwraca sumę trzech wartości całkowitych.
+ Wyrażenia w programie [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] mają rozszerzalny Zezwalanie na tworzenie dodatkowych działań wyrażeń. Poniższy przykład pokazuje działanie zwracające sumę trzech wartości całkowitych.
 
 ```csharp
 using System;
@@ -119,7 +120,7 @@ namespace ExpressionsDemo
 }
 ```
 
- Za pomocą tego nowego działania można przepisać poprzedni przepływ pracy, który dodał trzy wartości, jak pokazano w poniższym przykładzie:
+ Przy użyciu tego nowego działania można ponownie napisać poprzedni przepływ pracy, który dodał trzy wartości, jak pokazano w następującym przykładzie:
 
 ```csharp
 Variable<int> a = new Variable<int>("a", 1);
@@ -146,4 +147,4 @@ Sequence w = new Sequence
 };
 ```
 
- Aby uzyskać więcej informacji na temat używania wyrażeń w kodzie, zobacz [Tworzenie przepływów pracy, działań i wyrażeń przy użyciu kodu imperatywu](authoring-workflows-activities-and-expressions-using-imperative-code.md).
+ Aby uzyskać więcej informacji na temat używania wyrażeń w kodzie, zobacz [Tworzenie przepływów pracy, działań i wyrażeń przy użyciu kodu](authoring-workflows-activities-and-expressions-using-imperative-code.md).

@@ -2,14 +2,15 @@
 title: Magazyny wystąpień
 ms.date: 03/30/2017
 ms.assetid: f2629668-0923-4987-b943-67477131c1e0
-ms.openlocfilehash: 26e0c28fe3061306a00e75b0498ef0781b7013c6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0e3cc0c6c635d9c42b4242581ce039b186116113
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555799"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279873"
 ---
 # <a name="instance-stores"></a>Magazyny wystąpień
+
 Magazyn wystąpień jest logicznym kontenerem wystąpień. Miejsce, w którym są przechowywane dane wystąpienia i metadane. Magazyn wystąpień nie implikuje dedykowanego magazynu fizycznego. Magazyn wystąpień może zawierać trwałe informacje w bazie danych SQL Server lub nietrwałe informacje o stanie w pamięci. Program [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] jest dostarczany z magazynem wystąpień przepływu pracy SQL, który jest konkretną implementacją magazynu wystąpień, dzięki czemu przepływy pracy mogą utrwalać dane wystąpienia i metadane w bazie danych SQL Server 2005 lub SQL Server 2008. Ponadto program Windows Server App Fabric oferuje konkretną implementację magazynu wystąpień. Aby uzyskać więcej informacji, zobacz temat [Magazyn wystąpień, zapytanie i dostawcy kontroli usługi Windows Server App Fabric](/previous-versions/appfabric/ff383417(v=azure.10)).  
   
  Trwałość interfejsu API to interfejs między hostem i magazynem wystąpień, który umożliwia hostowi wysyłanie żądań poleceń (na przykład <xref:System.Activities.DurableInstancing.LoadWorkflowCommand> i <xref:System.Activities.DurableInstancing.SaveWorkflowCommand> ) do magazynu wystąpień. Konkretna implementacja tego interfejsu API jest nazywana dostawcą trwałości. Dostawca trwałości odbiera żądania od hosta i modyfikuje magazyn wystąpień.  

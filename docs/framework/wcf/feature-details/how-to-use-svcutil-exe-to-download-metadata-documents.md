@@ -3,15 +3,16 @@ title: 'Instrukcje: używanie programu Svcutil.exe do pobierania dokumentów met
 description: Dowiedz się, jak używać Svcutil.exe do pobierania metadanych z uruchomionych usług i zapisywania metadanych w plikach lokalnych.
 ms.date: 03/30/2017
 ms.assetid: 15524274-3167-4627-b722-d6cedb9fa8c6
-ms.openlocfilehash: 6877d860a4465947268d6535b9edeb9856d4d689
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 449dd3023b5d688ed0de22e3651cccf16bee0c52
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554309"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280679"
 ---
 # <a name="how-to-use-svcutilexe-to-download-metadata-documents"></a>Instrukcje: używanie programu Svcutil.exe do pobierania dokumentów metadanych
-Za pomocą Svcutil.exe można pobrać metadane z uruchomionych usług i zapisać metadane w plikach lokalnych. W przypadku schematów adresów URL protokołu HTTP i HTTPS Svcutil.exe próbuje pobrać metadane przy użyciu protokołu WS-MetadataExchange i [odnajdywania usług sieci Web XML](/previous-versions/dotnet/netframework-4.0/fxx6cfx2(v=vs.100)). W przypadku wszystkich innych schematów adresów URL Svcutil.exe używa tylko protokołu WS-MetadataExchange.  
+
+Za pomocą Svcutil.exe można pobrać metadane z uruchomionych usług i zapisać metadane w plikach lokalnych. W przypadku schematów adresów URL protokołu HTTP i HTTPS Svcutil.exe próbuje pobrać metadane przy użyciu WS-MetadataExchange i [odnajdywania usług sieci Web XML](/previous-versions/dotnet/netframework-4.0/fxx6cfx2(v=vs.100)). W przypadku wszystkich innych schematów adresów URL Svcutil.exe używa tylko protokołu WS-MetadataExchange.  
   
  Domyślnie Svcutil.exe używa powiązań zdefiniowanych w <xref:System.ServiceModel.Description.MetadataExchangeBindings> klasie. Aby skonfigurować powiązanie używane dla protokołu WS-MetadataExchange, należy zdefiniować punkt końcowy klienta w pliku konfiguracyjnym dla Svcutil.exe (svcutil.exe.config), który używa `IMetadataExchange` kontraktu i ma taką samą nazwę jak schemat Uniform Resource Identifier (URI) adresu punktu końcowego metadanych.  
   
@@ -41,12 +42,13 @@ Za pomocą Svcutil.exe można pobrać metadane z uruchomionych usług i zapisać
  Aby uzyskać więcej opcji dotyczących używania tego narzędzia do pobierania metadanych, zobacz [Narzędzie narzędzia metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 ## <a name="example"></a>Przykład  
+
  Następujące polecenie pobiera dokumenty metadanych z uruchomionej usługi.  
   
 ```console
 svcutil /t:metadata http://service/metadataEndpoint  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Narzędzie do obsługi metadanych elementu ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)

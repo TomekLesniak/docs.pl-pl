@@ -3,20 +3,22 @@ title: Projektowanie i implementowanie niestandardowych działań
 description: Ten artykuł zawiera zasoby służące do tworzenia niestandardowych działań w programie Workflow Foundation przez tworzenie działań złożonych lub tworzenie nowych typów działań.
 ms.date: 03/30/2017
 ms.assetid: 4e30e63d-6e33-4842-a7a4-ce807cef1fad
-ms.openlocfilehash: 9c184bff9518bb5581f3bf4cd408db224736192b
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: cb6e189cf5f59630ce8d89610eb0c2fc2acc92a7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419996"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280393"
 ---
 # <a name="designing-and-implementing-custom-activities"></a>Projektowanie i implementowanie niestandardowych działań
+
 Działania niestandardowe w programie [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] są tworzone przez umieszczenie działań dostarczonych przez system w działaniach złożonych lub przez utworzenie nowych typów, które pochodzą z <xref:System.Activities.CodeActivity> , <xref:System.Activities.AsyncCodeActivity> lub <xref:System.Activities.NativeActivity> . W tej sekcji opisano sposób tworzenia działań niestandardowych przy użyciu dowolnej metody.  
   
 > [!IMPORTANT]
 > Działania niestandardowe domyślnie są wyświetlane w Projektancie przepływu pracy jako prosty prostokąt z nazwą działania. Aby zapewnić niestandardową reprezentację działania w Projektancie przepływów pracy, należy również utworzyć projektanta niestandardowego. Aby uzyskać więcej informacji, zobacz [Używanie niestandardowych projektantów i szablonów działań](using-custom-activity-designers-and-templates.md).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Opcje tworzenia działań](activity-authoring-options-in-wf.md)  
  Omówienie stylów tworzenia dostępnych w programie [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] .  
   

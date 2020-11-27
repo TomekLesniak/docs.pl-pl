@@ -7,21 +7,23 @@ helpviewer_keywords:
 - WCF, features
 - Windows Communication Foundation, features
 ms.assetid: 9b4368ca-0bd3-40dc-a539-bcd5779cee5f
-ms.openlocfilehash: 308a32c73d33a4da2fd841ca7c330a42deb7d324
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 30b8acb3b89b8c28be0b8d0b4ce5a1d1d734b055
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246639"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280432"
 ---
 # <a name="wcf-feature-details"></a>Szczegóły funkcji WCF
+
 Windows Communication Foundation (WCF) umożliwia szeroką kontrolę nad funkcjami obsługi wiadomości w aplikacji. W tematach w tej sekcji przedstawiono szczegółowe informacje o dostępnych funkcjach. Aby uzyskać więcej informacji na temat programowania podstawowego, zobacz [podstawowe programowanie WCF](../basic-wcf-programming.md).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Usługi przepływu pracy](workflow-services.md)  
  Opisuje sposób tworzenia i konfigurowania usług przepływu pracy.  
   
- [Punkty końcowe: Adresy, powiązania i kontrakty](endpoints-addresses-bindings-and-contracts.md)  
+ [Punkty końcowe: adresy, wiązania i kontrakty](endpoints-addresses-bindings-and-contracts.md)  
  Opisuje sposób kontrolowania wielu aspektów usługi.  
   
  [Transfer i serializacja danych](data-transfer-and-serialization.md)  
@@ -67,12 +69,13 @@ Windows Communication Foundation (WCF) umożliwia szeroką kontrolę nad funkcja
  Opisuje obsługę asynchronicznych ASP.NET JavaScript i XML (AJAX) oraz formatu danych JavaScript Object Notation (JSON), aby umożliwić usługom WCF udostępnianie operacji klientom AJAX.  
   
  [Odnajdywanie w programie WCF](wcf-discovery.md)  
- W tym artykule opisano obsługę włączania usług w czasie wykonywania w sposób międzyoperacyjny przy użyciu protokołu WS-Discovery.  
+ W tym artykule opisano wsparcie umożliwiające odnajdywanie usług w środowisku uruchomieniowym w sposób współdziałający przy użyciu protokołu WS-Discovery.  
   
  [Routing](routing.md)  
  Opisuje usługę routingu.  
   
 ## <a name="reference"></a>Dokumentacja  
+
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Channels>  
@@ -82,4 +85,5 @@ Windows Communication Foundation (WCF) umożliwia szeroką kontrolę nad funkcja
  <xref:System.ServiceModel.Routing>  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Podstawy programowania przy użyciu programu WCF](../basic-wcf-programming.md)

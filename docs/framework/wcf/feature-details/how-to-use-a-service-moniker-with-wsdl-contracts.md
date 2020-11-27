@@ -1,15 +1,16 @@
 ---
-title: 'Instrukcje: Używanie krótkiej nazwy z kontraktami WSDL'
+title: 'Instrukcje: używanie krótkiej nazwy usługi z kontraktami WSDL'
 ms.date: 03/30/2017
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
-ms.openlocfilehash: 70d7e9ff45616f832597ebc48db00198967935c6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6b1a6c905008b0232a098f253b9007e5147d71a2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601143"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280887"
 ---
-# <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>Instrukcje: Używanie krótkiej nazwy z kontraktami WSDL
+# <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>Instrukcje: używanie krótkiej nazwy usługi z kontraktami WSDL
+
 Istnieją sytuacje, w których można chcieć korzystać z całkowicie niezależnego klienta międzyoperacyjnego modelu COM. Usługa, która ma zostać wywołana, może nie ujawniać punktu końcowego MEX, a Biblioteka DLL klienta WCF nie może być zarejestrowana na potrzeby współdziałania z modelem COM. W takich przypadkach można utworzyć plik WSDL opisujący usługę i przekazać go do monikera usługi WCF. W tym temacie opisano sposób wywoływania przykładu Wprowadzenie WCF przy użyciu monikera WSDL programu WCF.  
   
 ### <a name="using-the-wsdl-service-moniker"></a>Używanie monikera usługi WSDL  
@@ -22,9 +23,9 @@ Istnieją sytuacje, w których można chcieć korzystać z całkowicie niezależ
   
      [!code-csharp[S_WSDL_Client#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_wsdl_client/cs/service.cs#0)]  
   
-4. Dodawanie powiązania przestrzeni nazw do pliku App. config usługi:  
+4. Dodaj przestrzeń nazw powiązania do App.config usługi:  
 
-5. Utwórz plik WSDL, aby można było odczytać aplikację. Ponieważ przestrzenie nazw zostały dodane w krokach 3 i 4, można użyć programu IE do zapytania o cały opis WSDL usługi, przechodząc do tematu `http://localhost/ServiceModelSamples/Service.svc?wsdl` . Następnie można zapisać plik z programu Internet Explorer jako serviceWsdl. XML. Jeśli nie określisz przestrzeni nazw w krokach 3 i 4, dokument WSDL zwrócony z zapytania o powyższy adres URL nie będzie kompletny w języku WSDL. Zwrócony dokument WSDL będzie zawierać kilka instrukcji importu, które zaimportują inne dokumenty WSDL. Trzeba będzie przejść przez każdą instrukcję importu i utworzyć kompletny dokument WSDL, łącząc element WSDL zwrócony z usługi z zaimportowanym WSDL.  
+5. Utwórz plik WSDL, aby można było odczytać aplikację. Ponieważ przestrzenie nazw zostały dodane w krokach 3 i 4, można użyć programu IE do zapytania o cały opis WSDL usługi, przechodząc do tematu `http://localhost/ServiceModelSamples/Service.svc?wsdl` . Następnie można zapisać plik z programu Internet Explorer jako serviceWSDL.xml. Jeśli nie określisz przestrzeni nazw w krokach 3 i 4, dokument WSDL zwrócony z zapytania o powyższy adres URL nie będzie kompletny w języku WSDL. Zwrócony dokument WSDL będzie zawierać kilka instrukcji importu, które zaimportują inne dokumenty WSDL. Trzeba będzie przejść przez każdą instrukcję importu i utworzyć kompletny dokument WSDL, łącząc element WSDL zwrócony z usługi z zaimportowanym WSDL.  
   
 6. Otwórz Visual Basic 6,0 i Utwórz nowy plik w standardowym pliku. exe. Dodaj przycisk do formularza i kliknij dwukrotnie przycisk, aby dodać następujący kod do procedury obsługi kliknięcia:  
   
@@ -57,4 +58,4 @@ Istnieją sytuacje, w których można chcieć korzystać z całkowicie niezależ
 ## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie](../samples/getting-started-sample.md)
-- [Omówienie integracji z aplikacjami COM](integrating-with-com-applications-overview.md)
+- [Przegląd integrowania z aplikacjami modelu COM](integrating-with-com-applications-overview.md)

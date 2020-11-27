@@ -9,20 +9,22 @@ helpviewer_keywords:
 - TextPattern class
 - classes, TextPattern
 ms.assetid: ca6ac045-7b21-4487-9379-59aa20909670
-ms.openlocfilehash: fa145607c1e3286870c0cc07f2ecb12583900440
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 6f6a002e531f634d11057e80430745995827e9d7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924815"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281160"
 ---
 # <a name="ui-automation-text-pattern-how-to-topics"></a>Wzorce tekstu automatyzacji interfejsu użytkownika — Tematy porad
+
 > [!NOTE]
 > Ta dokumentacja jest przeznaczona dla .NET Framework deweloperów, którzy chcą korzystać z zarządzanych [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klas zdefiniowanych w <xref:System.Windows.Automation> przestrzeni nazw. Aby uzyskać najnowsze informacje na temat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , zobacz [interfejs API usługi Windows Automation: Automatyzacja interfejsu użytkownika](/windows/win32/winauto/entry-uiauto-win32).  
   
  Ta sekcja zawiera tematy objaśniające, jak używać wzorca tekstu automatyzacji interfejsu użytkownika.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Dodawanie zawartości do pola tekstowego przy użyciu automatyzacji interfejsu użytkownika](add-content-to-a-text-box-using-ui-automation.md)  
  [Znajdowanie i wyróżnianie tekstu przy użyciu automatyzacji interfejsu użytkownika](find-and-highlight-text-using-ui-automation.md)  
  [Uzyskiwanie atrybutów tekstu przy użyciu automatyzacji interfejsu użytkownika](obtain-text-attributes-using-ui-automation.md)  

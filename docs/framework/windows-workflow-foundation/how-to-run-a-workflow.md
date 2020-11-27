@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
-ms.openlocfilehash: 86062dd5147e6e354833928fd98bd1f6b5de9114
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 7f76ed5ad1a76a155489339a9febf12eefd64ae8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421504"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279990"
 ---
 # <a name="how-to-run-a-workflow"></a>Instrukcje: Uruchamianie przepływu pracy
+
 Ten temat jest kontynuacją samouczka Windows Workflow Foundation Wprowadzenie i zawiera opis sposobu tworzenia hosta przepływu pracy i uruchamiania przepływu pracy zdefiniowanego w poprzednich tematach [: tworzenie przepływu](how-to-create-a-workflow.md) pracy.
 
 > [!NOTE]
@@ -63,7 +64,7 @@ Ten temat jest kontynuacją samouczka Windows Workflow Foundation Wprowadzenie i
     WorkflowInvoker.Invoke(workflow1);
     ```
 
-     Ten wygenerowany kod hostingu używa <xref:System.Activities.WorkflowInvoker> . <xref:System.Activities.WorkflowInvoker>zapewnia prostą metodę wywoływania przepływu pracy tak, jakby była wywołaniem metody i może być używana tylko dla przepływów pracy, które nie używają trwałości. <xref:System.Activities.WorkflowApplication>zapewnia bogatszy model służący do wykonywania przepływów pracy, które obejmują powiadomienia o zdarzeniach cyklu życia, kontroli wykonywania, wznawianiu zakładek i trwałości. W tym przykładzie użyto zakładek i <xref:System.Activities.WorkflowApplication> jest on używany do hostowania przepływu pracy. Dodaj następującą `using` instrukcję lub **Imports** w górnej części **program.cs** lub **Module1. vb** poniżej istniejących instrukcji **using** lub **Imports** .
+     Ten wygenerowany kod hostingu używa <xref:System.Activities.WorkflowInvoker> . <xref:System.Activities.WorkflowInvoker> zapewnia prostą metodę wywoływania przepływu pracy tak, jakby była wywołaniem metody i może być używana tylko dla przepływów pracy, które nie używają trwałości. <xref:System.Activities.WorkflowApplication> zapewnia bogatszy model służący do wykonywania przepływów pracy, które obejmują powiadomienia o zdarzeniach cyklu życia, kontroli wykonywania, wznawianiu zakładek i trwałości. W tym przykładzie użyto zakładek i <xref:System.Activities.WorkflowApplication> jest on używany do hostowania przepływu pracy. Dodaj następującą `using` instrukcję lub **Imports** w górnej części **program.cs** lub **Module1. vb** poniżej istniejących instrukcji **using** lub **Imports** .
 
     ```vb
     Imports NumberGuessWorkflowActivities
@@ -100,7 +101,7 @@ Ten temat jest kontynuacją samouczka Windows Workflow Foundation Wprowadzenie i
      [!code-csharp[CFX_WF_GettingStarted#6](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#6)]
      [!code-vb[CFX_WF_GettingStarted#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#6)]
 
-     Ten słownik zawiera jeden element z kluczem `MaxNumber` . Klucze w słowniku wejściowym odnoszą się do argumentów wejściowych w głównym działaniu przepływu pracy. `MaxNumber`jest używany przez przepływ pracy do określenia górnej granicy dla losowo wygenerowanego numeru.
+     Ten słownik zawiera jeden element z kluczem `MaxNumber` . Klucze w słowniku wejściowym odnoszą się do argumentów wejściowych w głównym działaniu przepływu pracy. `MaxNumber` jest używany przez przepływ pracy do określenia górnej granicy dla losowo wygenerowanego numeru.
 
 ### <a name="to-retrieve-output-arguments-of-a-workflow"></a>Aby pobrać argumenty wyjściowe przepływu pracy
 
@@ -138,7 +139,7 @@ Ten temat jest kontynuacją samouczka Windows Workflow Foundation Wprowadzenie i
      [!code-csharp[CFX_WF_GettingStarted#11](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#11)]
      [!code-vb[CFX_WF_GettingStarted#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#11)]
 
-## <a name="to-build-and-run-the-application"></a><a name="BKMK_ToRunTheApplication"></a>Aby skompilować i uruchomić aplikację
+## <a name="to-build-and-run-the-application"></a><a name="BKMK_ToRunTheApplication"></a> Aby skompilować i uruchomić aplikację
 
 1. Kliknij prawym przyciskiem myszy pozycję **NumberGuessWorkflowHost** w **Eksplorator rozwiązań** i wybierz pozycję **Ustaw jako projekt startowy**.
 
@@ -152,6 +153,7 @@ Ten temat jest kontynuacją samouczka Windows Workflow Foundation Wprowadzenie i
      Aby uzyskać instrukcje dotyczące sposobu dodawania trwałości do aplikacji przepływu pracy, zobacz następny temat [: Tworzenie i uruchamianie długotrwałego przepływu pracy](how-to-create-and-run-a-long-running-workflow.md).
 
 ## <a name="example"></a>Przykład
+
  Poniższy przykład to kompletna lista kodu dla `Main` metody.
 
 > [!NOTE]

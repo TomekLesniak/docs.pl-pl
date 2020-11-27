@@ -1,15 +1,16 @@
 ---
-title: 'Instrukcje: używanie filtrów'
+title: 'Instrukcje: Używanie filtrów'
 ms.date: 03/30/2017
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
-ms.openlocfilehash: 434171138e75a0f4c336cd80cc2beb574b10001e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 149c0809820d6a4a9c8dabfb545258b9a3ffb40b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598895"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96280848"
 ---
-# <a name="how-to-use-filters"></a>Instrukcje: używanie filtrów
+# <a name="how-to-use-filters"></a>Instrukcje: Używanie filtrów
+
 W tym temacie przedstawiono podstawowe kroki wymagane do utworzenia konfiguracji routingu korzystającej z wielu filtrów. W tym przykładzie komunikaty są kierowane do dwóch implementacji usługi kalkulatora, regularCalc i roundingCalc. Obie implementacje obsługują te same operacje; Jednak jedna usługa zaokrągla wszystkie obliczenia do najbliższej wartości całkowitej przed zwróceniem. Aplikacja kliencka musi być w stanie wskazać, czy ma być używana zaokrąglana wersja usługi. Jeśli preferencja usługi nie jest określona, komunikat jest równoważony między obiema usługami. Operacje udostępniane przez obie usługi są następujące:  
   
 - Dodaj  
@@ -226,6 +227,7 @@ W tym temacie przedstawiono podstawowe kroki wymagane do utworzenia konfiguracji
     ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej znajduje się kompletna lista plików konfiguracyjnych.  
   
 ```xml  

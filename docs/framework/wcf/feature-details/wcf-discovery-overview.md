@@ -2,17 +2,19 @@
 title: Omówienie odnajdywania WCF
 ms.date: 03/30/2017
 ms.assetid: 84fad0e4-23b1-45b5-a2d4-c9cdf90bbb22
-ms.openlocfilehash: 8b4dda410b9ca7d7d3ff76795753811a80a617ec
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5876605f5096bfb75c18680faaef4ba0cd15c082
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554622"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281420"
 ---
 # <a name="wcf-discovery-overview"></a>Omówienie odnajdywania WCF
+
 Interfejsy API odnajdywania zapewniają ujednolicony model programowania dla publikacji dynamicznej i odnajdywania usług sieci Web przy użyciu protokołu WS-Discovery. Te interfejsy API umożliwiają usługom publikowanie samych opublikowanych usług i klientów. Po przeprowadzeniu odnajdywania usługi Usługa może wysyłać komunikaty dotyczące anonsów, a także nasłuchiwać żądań odnajdywania i odpowiadać na nie. Odnajdywane usługi mogą wysyłać wiadomości Hello w celu ogłoszenia ich przybycia do sieci i bye komunikaty, aby ogłosić wychodzące z sieci. Aby znaleźć usługę, klienci wysyłają `Probe` żądanie zawierające określone kryteria, takie jak typ kontraktu usługi, słowa kluczowe i zakres w sieci. Usługi odbierają `Probe` żądanie i określają, czy pasują do kryteriów. Jeśli usługa jest zgodna, reaguje, wysyłając wiadomość z `ProbeMatch` powrotem do klienta przy użyciu informacji niezbędnych do skontaktowania się z usługą. Klienci mogą również wysyłać `Resolve` żądania, które umożliwiają znalezienie usług, które mogły zmienić adres punktu końcowego. Zgodne usługi odpowiadają na `Resolve` żądania przez wysłanie `ResolveMatch` komunikatu z powrotem do klienta.  
   
 ## <a name="ad-hoc-and-managed-modes"></a>Tryby ad hoc i zarządzane  
+
  Interfejs API odnajdowania obsługuje dwa różne tryby: zarządzane i ad hoc. W trybie zarządzanym istnieje scentralizowany serwer o nazwie serwer proxy odnajdywania, który przechowuje informacje o dostępnych usługach. Serwer proxy odnajdywania można wypełnić informacjami o usługach na różne sposoby. Na przykład usługi mogą wysyłać komunikaty anonsu podczas uruchamiania do serwera proxy odnajdywania lub serwer proxy może odczytywać dane z bazy danych lub pliku konfiguracji, aby określić, które usługi są dostępne. Sposób wypełnienia serwera proxy odnajdywania jest całkowicie do dewelopera. Klienci używają serwera proxy odnajdywania do pobierania informacji o dostępnych usługach. Gdy klient wyszukuje usługę, wysyła `Probe` komunikat do serwera proxy odnajdywania, a serwer proxy określa, czy dowolna z usług, których zna, jest zgodna z usługą wyszukiwaną przez klienta. Jeśli jest zgodny z serwerem proxy odnajdywania, wysyła `ProbeMatch` odpowiedź z powrotem do klienta. Klient może następnie skontaktować się bezpośrednio z usługą przy użyciu informacji o usłudze zwróconych z serwera proxy. Kluczową zasadami związanymi z trybem zarządzanym jest to, że żądania odnajdowania są wysyłane do jednego urzędu, a serwer proxy odnajdywania. .NET Framework zawiera kluczowe składniki, które umożliwiają tworzenie własnego serwera proxy. Klienci i usługi mogą lokalizować serwer proxy przez wiele metod:  
   
 - Serwer proxy może odpowiadać na komunikaty ad hoc.  
@@ -24,9 +26,11 @@ Interfejsy API odnajdywania zapewniają ujednolicony model programowania dla pub
  W trybie ad hoc nie istnieje scentralizowany serwer. Wszystkie komunikaty odnajdowania, takie jak anonsy usług i żądania klientów, są wysyłane w sposób multiemisyjny. Domyślnie .NET Framework zawiera obsługę odnajdywania ad hoc za pośrednictwem protokołu UDP. Na przykład jeśli usługa jest skonfigurowana do wysyłania powiadomienia o powitaniu podczas uruchamiania, wysyła je za pośrednictwem dobrze znanego adresu multiemisji przy użyciu protokołu UDP. Klienci muszą aktywnie słuchać tych anonsów i przetwarzać je odpowiednio. Gdy klient wysyła `Probe` komunikat dla usługi, jest wysyłany przez sieć przy użyciu protokołu multiemisji. Każda usługa, która odbiera żądanie, określa, czy pasuje do kryteriów w `Probe` komunikacie i reaguje bezpośrednio na klienta z `ProbeMatch` komunikatem, jeśli usługa jest zgodna z kryteriami określonymi w `Probe` komunikacie.  
   
 ## <a name="benefits-of-using-wcf-discovery"></a>Zalety korzystania z funkcji odnajdywania WCF  
- Ponieważ Odnajdywanie WCF jest implementowane za pomocą protokołu WS-Discovery, może współdziałać z innymi klientami, usługami i serwerami proxy, które również implementują usługę WS-Discovery. Funkcja odnajdywania WCF została utworzona na podstawie istniejących interfejsów API WCF, co ułatwia dodawanie funkcji odnajdywania do istniejących usług i klientów. Możliwość odnajdowania usług może być łatwo dodawana za pomocą ustawień konfiguracji aplikacji. Ponadto funkcja odnajdywania w programie WCF obsługuje również korzystanie z protokołu odnajdywania w różnych transportach, takich jak peer, nadawanie nazw i HTTP. Funkcja odnajdywania WCF zapewnia obsługę zarządzanego trybu działania, w którym jest używany serwer proxy odnajdywania. Może to zmniejszyć obciążenie sieci, ponieważ komunikaty są wysyłane bezpośrednio do serwera proxy odnajdywania zamiast wysyłania komunikatów multiemisji do całej sieci. Funkcja odnajdywania WCF umożliwia również większą elastyczność pracy z usługami sieci Web. Można na przykład zmienić adres usługi bez konieczności ponownego konfigurowania klienta lub usługi. Gdy klient musi uzyskać dostęp do usługi, może wydać `Probe` komunikat przez `Find` żądanie i oczekiwać, że usługa odpowie z bieżącym adresem. Funkcja odnajdywania WCF umożliwia klientowi wyszukanie usługi na podstawie różnych kryteriów, takich jak typy kontraktów, elementy powiązania, przestrzeń nazw, zakres i słowa kluczowe lub numery wersji. Funkcja odnajdywania WCF umożliwia wykrywanie środowiska uruchomieniowego i czasu projektowania. Dodawanie odnajdywania do aplikacji może służyć do włączania innych scenariuszy, takich jak odporność na uszkodzenia i konfiguracja samoobsługi.  
+
+ Ponieważ Odnajdywanie WCF jest implementowane przy użyciu protokołu WS-Discovery, współdziała z innymi klientami, usługami i serwerami proxy, które implementują WS-Discovery. Funkcja odnajdywania WCF została utworzona na podstawie istniejących interfejsów API WCF, co ułatwia dodawanie funkcji odnajdywania do istniejących usług i klientów. Możliwość odnajdowania usług może być łatwo dodawana za pomocą ustawień konfiguracji aplikacji. Ponadto funkcja odnajdywania w programie WCF obsługuje również korzystanie z protokołu odnajdywania w różnych transportach, takich jak peer, nadawanie nazw i HTTP. Funkcja odnajdywania WCF zapewnia obsługę zarządzanego trybu działania, w którym jest używany serwer proxy odnajdywania. Może to zmniejszyć obciążenie sieci, ponieważ komunikaty są wysyłane bezpośrednio do serwera proxy odnajdywania zamiast wysyłania komunikatów multiemisji do całej sieci. Funkcja odnajdywania WCF umożliwia również większą elastyczność pracy z usługami sieci Web. Można na przykład zmienić adres usługi bez konieczności ponownego konfigurowania klienta lub usługi. Gdy klient musi uzyskać dostęp do usługi, może wydać `Probe` komunikat przez `Find` żądanie i oczekiwać, że usługa odpowie z bieżącym adresem. Funkcja odnajdywania WCF umożliwia klientowi wyszukanie usługi na podstawie różnych kryteriów, takich jak typy kontraktów, elementy powiązania, przestrzeń nazw, zakres i słowa kluczowe lub numery wersji. Funkcja odnajdywania WCF umożliwia wykrywanie środowiska uruchomieniowego i czasu projektowania. Dodawanie odnajdywania do aplikacji może służyć do włączania innych scenariuszy, takich jak odporność na uszkodzenia i konfiguracja samoobsługi.  
   
 ## <a name="service-publication"></a>Publikacja usługi  
+
  Aby umożliwić odnajdywanie usługi, <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> należy dodać do hosta usługi, a punkt końcowy odnajdywania musi zostać dodany w celu określenia miejsca, w którym mają być nasłuchiwani komunikaty odnajdowania. Poniższy przykład kodu pokazuje, jak można zmodyfikować usługę samoobsługową, aby umożliwić jej odnajdowanie.  
   
 ```csharp  
@@ -58,6 +62,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), base
  Aby <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> można było odnaleźć usługę, należy dodać wystąpienie do opisu usługi. <xref:System.ServiceModel.Discovery.DiscoveryEndpoint>Należy dodać wystąpienie do hosta usługi, aby poinformować usługę, gdzie ma być nasłuchiwanie żądań odnajdywania. W tym przykładzie zostanie <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> dodany (pochodzący z <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> ), aby określić, że usługa powinna nasłuchiwać żądań odnajdywania za pośrednictwem transportu multiemisji UDP. Służy <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> do odnajdywania ad hoc, ponieważ wszystkie komunikaty są wysyłane w sposób multiemisyjny.  
   
 ## <a name="announcement"></a>Instruktaż  
+
  Domyślnie publikacja usługi nie wysyła komunikatów anonsu. Usługa musi być skonfigurowana do wysyłania komunikatów anonsu. Zapewnia to dodatkową elastyczność dla modułów zapisujących usługi, ponieważ mogą one ogłosić usługę niezależnie od nasłuchiwania komunikatów odnajdywania. Anons usługi może również służyć jako mechanizm rejestrowania usług przy użyciu serwera proxy odnajdywania lub innych rejestrów usług. Poniższy kod przedstawia sposób konfigurowania usługi do wysyłania komunikatów anonsów za pośrednictwem powiązania UDP.  
   
 ```csharp  
@@ -92,6 +97,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), base
 ```  
   
 ## <a name="service-discovery"></a>Odnajdywanie usług  
+
  Aplikacja kliencka może używać <xref:System.ServiceModel.Discovery.DiscoveryClient> klasy do znajdowania usług. Deweloper tworzy wystąpienie <xref:System.ServiceModel.Discovery.DiscoveryClient> klasy, która przekazuje w punkcie końcowym odnajdywania, który określa, gdzie należy wysyłać `Probe` lub `Resolve` wiadomości. Klient następnie wywołuje <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> , aby określić kryteria wyszukiwania w ramach <xref:System.ServiceModel.Discovery.FindCriteria> wystąpienia. W przypadku znalezienia pasujących usług <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> zwraca kolekcję <xref:System.ServiceModel.Discovery.EndpointDiscoveryMetadata> . Poniższy kod pokazuje, jak wywołać `Find` metodę, a następnie nawiązać połączenie z odnalezioną usługą.  
   
 ```csharp  
@@ -144,10 +150,12 @@ class Client
 ```  
   
 ## <a name="discovery-and-message-level-security"></a>Odnajdywanie i zabezpieczenia na poziomie komunikatów  
+
  W przypadku korzystania z zabezpieczeń na poziomie komunikatów należy określić <xref:System.ServiceModel.EndpointIdentity> punkt końcowy odnajdowania usług i dopasowanie do <xref:System.ServiceModel.EndpointIdentity> punktu końcowego odnajdywania klienta. Aby uzyskać więcej informacji na temat zabezpieczeń na poziomie komunikatów, zobacz [zabezpieczenia komunikatów](message-security-in-wcf.md).  
   
 ## <a name="discovery-and-web-hosted-services"></a>Odnajdywanie i usługi hostowane w sieci Web  
- Aby można było odnajdować usługi WCF, muszą one być uruchomione. Usługi WCF hostowane w usługach IIS lub nie zostały uruchomione do momentu otrzymania przez program IIS/odebrania komunikatu powiązanego z usługą, więc nie można ich odnaleźć domyślnie.  Dostępne są dwie opcje umożliwiające odnajdywanie usług hostowanych w sieci Web:  
+
+ Aby można było odnajdować usługi WCF, muszą one być uruchomione. Usługi WCF hostowane w usługach IIS lub nie zostały uruchomione do momentu otrzymania przez program IIS/odebrania komunikatu powiązanego z usługą, więc nie można ich odnaleźć domyślnie.  Dostępne są dwie opcje umożliwiające odnajdywanie Web-Hosted usług:  
   
 1. Korzystanie z funkcji Autostart systemu Windows Server AppFabric  
   
