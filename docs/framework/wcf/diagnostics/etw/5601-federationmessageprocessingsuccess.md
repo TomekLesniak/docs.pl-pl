@@ -2,27 +2,30 @@
 title: 5601 — FederationMessageProcessingSuccess
 ms.date: 03/30/2017
 ms.assetid: 767591c3-2674-4d7e-a61b-e76da3b159ae
-ms.openlocfilehash: 2fdfa11d9be34563850028722e0c967ac10207b1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4f5991ae737b51dd3ca7124a2003321c7fee1729
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61767432"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96276363"
 ---
 # <a name="5601---federationmessageprocessingsuccess"></a>5601 — FederationMessageProcessingSuccess
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|5601|  
-|słowa kluczowe|Zabezpieczenia|  
+|ID (Identyfikator)|5601|  
+|Słowa kluczowe|Zabezpieczenia|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane podczas przetwarzania komunikatu Federacji zakończyło się pomyślnie.  
+
+ To zdarzenie jest emitowane, gdy przetwarzanie komunikatu federacyjnego zakończyło się pomyślnie.  
   
-## <a name="message"></a>Komunikat  
- Przetwarzanie komunikatów Federacji zakończyło się pomyślnie.  
+## <a name="message"></a>Wiadomość  
+
+ Przetwarzanie komunikatu federacyjnego zakończyło się pomyślnie.  
   
 ## <a name="details"></a>Szczegóły

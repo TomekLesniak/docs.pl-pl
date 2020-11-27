@@ -2,36 +2,39 @@
 title: 1021 — ScheduleBookmarkWorkItem
 ms.date: 03/30/2017
 ms.assetid: 2e0da311-b219-4637-9460-90cdafcc4ecd
-ms.openlocfilehash: abc026165568d05faef619da28c94f27f37eea27
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 42ed23654622e29df8ffc210c8d5ba572fa69fd4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924426"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275352"
 ---
 # <a name="1021---schedulebookmarkworkitem"></a>1021 — ScheduleBookmarkWorkItem
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1021|  
-|słowa kluczowe|WFRuntime|  
+|ID (Identyfikator)|1021|  
+|Słowa kluczowe|WFRuntime|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że BookmarkWorkItem została zaplanowana.  
+
+ Wskazuje, że zaplanowano BookmarkWorkItem.  
   
-## <a name="message"></a>Komunikat  
- BookmarkWorkItem została zaplanowana dla działania "%1", DisplayName: "%2", InstanceId: "%3".  Nazwa_zakładki: %4, BookmarkScope: %5.  
+## <a name="message"></a>Wiadomość  
+
+ BookmarkWorkItem zaplanowano dla działania %1, nazwa wyświetlana: %2, identyfikator wystąpienia: %3.  Zakładkaname: %4, obiektem BookmarkScope: %5.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|Działanie|xs:String|Nazwa typu działania.|  
-|Nazwa wyświetlana|xs:String|Nazwa wyświetlana działania.|  
-|InstanceId|xs:String|Identyfikator wystąpienia działania.|  
-|BookmarkName|xs:String|Nazwa zakładki.|  
-|BookmarkScope|xs:String|Zakres zakładki.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Działanie|XS: ciąg|Nazwa typu działania.|  
+|Nazwa wyświetlana|XS: ciąg|Nazwa wyświetlana działania.|  
+|InstanceId|XS: ciąg|Identyfikator wystąpienia działania.|  
+|Zakładkaname|XS: ciąg|Nazwa zakładki.|  
+|Obiektem BookmarkScope|XS: ciąg|Zakres zakładki.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

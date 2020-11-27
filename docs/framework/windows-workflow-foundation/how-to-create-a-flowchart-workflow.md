@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 185d7aea-68a6-4bd8-adde-45050f33170a
-ms.openlocfilehash: 6b3fa423200f5c5cfece60f07372ce9678fc0072
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: f8e0703591629a72e0a8f6eeb05dd9d19c8c4c91
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419710"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275830"
 ---
 # <a name="how-to-create-a-flowchart-workflow"></a>Instrukcje: Tworzenie przepływu pracy schematu blokowego
+
 Przepływy pracy mogą być zbudowane z wbudowanych działań, a także z działań niestandardowych. W tym temacie przedstawiono procedurę tworzenia przepływu pracy korzystającego z obu wbudowanych działań, takich jak <xref:System.Activities.Statements.Flowchart> działanie, oraz działań niestandardowych z poprzednich instrukcji [: Create a Activity](how-to-create-an-activity.md) . Przepływ pracy modeluje grę z liczbą odgadnąć.  
   
 > [!NOTE]
@@ -100,9 +101,9 @@ Przepływy pracy mogą być zbudowane z wbudowanych działań, a także z dział
   
 5. Przeciągnij działanie **Przypisz** z sekcji elementy **pierwotne** w **przyborniku** i połącz je przy użyciu jednej z metod opisanych w poprzednim kroku, tak aby była niższa od działania **monitu** .  
   
-6. Wpisz `Turns` w polu **do** i `Turns + 1` w polu **wprowadź wyrażenie języka C#** lub **wprowadź wyrażenie w języku VB** .  
+6. Wpisz `Turns` w polu **do** i `Turns + 1` w polu **wprowadź wyrażenie języka C#**  lub **wprowadź wyrażenie w języku VB** .  
   
-7. Przeciągnij element **FlowDecision** z sekcji **Flowchart** w **przyborniku** i połącz go pod działaniem **Assign** . W **oknie właściwości**wpisz następujące wyrażenie w polu wartość właściwości **warunek** .  
+7. Przeciągnij element **FlowDecision** z sekcji **Flowchart** w **przyborniku** i połącz go pod działaniem **Assign** . W **oknie właściwości** wpisz następujące wyrażenie w polu wartość właściwości **warunek** .  
   
     ```vb  
     Guess = Target  
@@ -117,7 +118,7 @@ Przepływy pracy mogą być zbudowane z wbudowanych działań, a także z dział
     > [!TIP]
     > Jeśli nie widzisz etykiet **prawda** i **Fałsz** w **FlowDecision**, umieść wskaźnik myszy nad **FlowDecisionem**.  
   
-9. Kliknij drugie działanie **FlowDecision** , aby je wybrać. W **oknie właściwości**wpisz następujące wyrażenie w polu wartość właściwości **warunek** .  
+9. Kliknij drugie działanie **FlowDecision** , aby je wybrać. W **oknie właściwości** wpisz następujące wyrażenie w polu wartość właściwości **warunek** .  
   
     ```text
     Guess < Target
@@ -151,7 +152,7 @@ Przepływy pracy mogą być zbudowane z wbudowanych działań, a także z dział
   
      Aby uzyskać instrukcje dotyczące sposobu uruchamiania przepływu pracy, zobacz następny temat, [jak: uruchamianie przepływu pracy](how-to-run-a-workflow.md). Jeśli zostały już wykonane kroki [: uruchamianie przepływu pracy](how-to-run-a-workflow.md) z innym stylem przepływu pracy i chcesz uruchomić go za pomocą przepływu pracy Flowchart z tego kroku, przejdź do tematu, [Aby skompilować i uruchomić aplikację](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) w temacie [jak uruchomić przepływ pracy](how-to-run-a-workflow.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Activities.Statements.Flowchart>
 - <xref:System.Activities.Statements.FlowDecision>

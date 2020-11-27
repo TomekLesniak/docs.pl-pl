@@ -2,12 +2,12 @@
 title: 'Instrukcje: zastępowanie rezerwacji adresu URL programu WCF ograniczoną rezerwacją'
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-ms.openlocfilehash: a7025636bb1ca2ef250d7d25634bda961f2db09d
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 52dc74ea1f8e86d6a92a2894b888b8d150ebf47c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811616"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96276064"
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Instrukcje: zastępowanie rezerwacji adresu URL programu WCF ograniczoną rezerwacją
 
@@ -36,6 +36,7 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
 3. Jeśli rezerwacja zostanie pomyślnie usunięta, zostanie wyświetlony następujący komunikat. **Pomyślnie usunięto rezerwację adresu URL**  
   
 ## <a name="creating-a-new-security-group-and-new-restricted-url-reservation"></a>Tworzenie nowej grupy zabezpieczeń i zastrzeżenia adresu URL z ograniczeniami  
+
  Aby zastąpić rezerwację adresu URL programu WCF ograniczoną rezerwacją, należy najpierw utworzyć nową grupę zabezpieczeń. Można to zrobić na jeden z dwóch sposobów: w wierszu polecenia lub w konsoli zarządzania komputerem. Wystarczy wykonać tę czynność.  
   
 ### <a name="to-create-a-new-security-group-from-a-command-prompt"></a>Aby utworzyć nową grupę zabezpieczeń z wiersza polecenia  

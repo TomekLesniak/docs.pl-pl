@@ -2,14 +2,15 @@
 title: Wybieranie filtra
 ms.date: 03/30/2017
 ms.assetid: 67ab5af9-b9d9-4300-b3b1-41abb5a1fd10
-ms.openlocfilehash: 2f96e7001a41682ef595d003e87daa06d0244f3b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f783b6416f2330d272c4c756a3ca0cd332f3c6e7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559392"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96276103"
 ---
 # <a name="choosing-a-filter"></a>Wybieranie filtra
+
 Podczas konfigurowania usługi routingu ważne jest, aby wybrać poprawne filtry komunikatów i skonfigurować je w taki sposób, aby umożliwiały dokładne dopasowanie do odbieranych komunikatów. Jeśli wybrane filtry są zbyt szerokie w dopasowaniach lub są nieprawidłowo skonfigurowane, komunikaty są kierowane nieprawidłowo. Jeśli filtry są zbyt restrykcyjne, może nie mieć dostępnych prawidłowych tras dla niektórych komunikatów.
 
 ## <a name="filter-types"></a>Typy filtrów
@@ -144,7 +145,7 @@ Ponieważ zapytania XPath często zawierają unikatowe przestrzenie nazw, które
 
 Aby uzyskać więcej informacji na temat projektowania zapytań XPath, zobacz [składnia XPath](/previous-versions/dotnet/netframework-4.0/ms256471(v=vs.100)).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Filtry komunikatów](message-filters.md)
 - [Instrukcje: Używanie filtrów](how-to-use-filters.md)

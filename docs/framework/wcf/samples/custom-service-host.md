@@ -2,14 +2,15 @@
 title: Niestandardowy host usługi
 ms.date: 03/30/2017
 ms.assetid: fe16ff50-7156-4499-9c32-13d8a79dc100
-ms.openlocfilehash: 8302c3c829883da954d200526ca641eb4c169f98
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 56846f4021b2a0be1801decedb02c4c637847d07
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86052029"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275596"
 ---
 # <a name="custom-service-host"></a>Niestandardowy host usługi
+
 Ten przykład pokazuje, jak używać niestandardowych pochodnych <xref:System.ServiceModel.ServiceHost> klasy w celu zmiany zachowania usługi w czasie wykonywania. Takie podejście umożliwia użycie alternatywnej alternatywy do konfigurowania dużej liczby usług w typowy sposób. W przykładzie pokazano również, jak użyć <xref:System.ServiceModel.Activation.ServiceHostFactory> klasy do użycia niestandardowego ServiceHost w środowisku usług Internet Information Services (IIS) lub Windows Process Activation Service (was).  
   
 > [!IMPORTANT]
@@ -22,6 +23,7 @@ Ten przykład pokazuje, jak używać niestandardowych pochodnych <xref:System.Se
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Hosting\CustomServiceHost`  
   
 ## <a name="about-the-scenario"></a>Informacje o tym scenariuszu
+
  Aby zapobiec przypadkowemu ujawnieniu potencjalnie poufnych metadanych usługi, konfiguracja domyślna dla usług Windows Communication Foundation (WCF) wyłącza Publikowanie metadanych. To zachowanie jest zabezpieczone domyślnie, ale oznacza to, że nie można użyć narzędzia do importowania metadanych (takiego jak Svcutil.exe) do wygenerowania kodu klienta wymaganego do wywołania usługi, chyba że zachowanie publikowania metadanych usługi jest jawnie włączone w konfiguracji.  
   
  Włączenie publikowania metadanych dla dużej liczby usług obejmuje dodanie tych samych elementów konfiguracji do poszczególnych usług, co skutkuje znaczną ilością informacji o konfiguracji, które są zasadniczo takie same. Alternatywnie, aby skonfigurować poszczególne usługi indywidualnie, można napisać bezwzględny kod, który umożliwia Publikowanie metadanych jednokrotnie, a następnie ponownie wykorzystać ten kod dla kilku różnych usług. Jest to realizowane przez utworzenie nowej klasy, która pochodzi od <xref:System.ServiceModel.ServiceHost> i przesłania `ApplyConfiguration` metodę (), aby bezwzględnie dodać zachowanie publikowania metadanych.  
@@ -30,6 +32,7 @@ Ten przykład pokazuje, jak używać niestandardowych pochodnych <xref:System.Se
 > Dla jasności ten przykład pokazuje, jak utworzyć niezabezpieczony punkt końcowy publikowania metadanych. Takie punkty końcowe są potencjalnie dostępne dla anonimowych użytkowników nieuwierzytelnionych i należy zachować ostrożność przed wdrożeniem takich punktów końcowych, aby upewnić się, że można publicznie odzamknąć metadane usługi.  
   
 ## <a name="implementing-a-custom-servicehost"></a>Implementowanie niestandardowego ServiceHost
+
  <xref:System.ServiceModel.ServiceHost>Klasa uwidacznia kilka przydatnych metod wirtualnych, które dziedziczą mogą przesłonić, aby zmienić zachowanie usługi w czasie wykonywania. Na przykład `ApplyConfiguration` Metoda () odczytuje informacje o konfiguracji usługi z magazynu konfiguracji i odpowiednio zmienia hosta <xref:System.ServiceModel.Description.ServiceDescription> . Domyślna implementacja odczytuje konfigurację z pliku konfiguracyjnego aplikacji. Implementacje niestandardowe mogą przesłonić `ApplyConfiguration` (), aby jeszcze bardziej zmienić <xref:System.ServiceModel.Description.ServiceDescription> używany kod, lub nawet całkowicie zastąpić domyślny magazyn konfiguracji. Na przykład, aby odczytać konfigurację punktu końcowego usługi z bazy danych zamiast pliku konfiguracji aplikacji.  
   
  W tym przykładzie chcemy utworzyć niestandardowy ServiceHost, który dodaje ServiceMetadataBehavior (co umożliwia Publikowanie metadanych), nawet jeśli to zachowanie nie zostanie jawnie dodane w pliku konfiguracji usługi. Aby to osiągnąć, Utwórz nową klasę, która dziedziczy z <xref:System.ServiceModel.ServiceHost> i przesłonięcia `ApplyConfiguration` ().  
@@ -111,6 +114,7 @@ foreach (Uri baseAddress in this.BaseAddresses)
 ```  
   
 ## <a name="using-a-custom-servicehost-in-self-host"></a>Używanie niestandardowego ServiceHost na własnym hoście  
+
  Teraz, gdy zakończymy implementację niestandardowej ServiceHost, możemy użyć jej do dodania zachowania publikowania metadanych do dowolnej usługi przez hostowanie tej usługi w ramach naszego wystąpienia `SelfDescribingServiceHost` . Poniższy kod przedstawia sposób korzystania z niego w scenariuszu z własnym hostem.  
   
 ```csharp
@@ -122,6 +126,7 @@ host.Open();
  Nasz Host niestandardowy nadal odczytuje konfigurację punktu końcowego usługi z pliku konfiguracyjnego aplikacji, tak jakby używała domyślnej <xref:System.ServiceModel.ServiceHost> klasy do hostowania usługi. Jednak ze względu na to, że dodaliśmy logikę umożliwiającą opublikowanie metadanych w ramach naszego hosta niestandardowego, nie należy jawnie włączać zachowania publikowania metadanych w konfiguracji. Takie podejście ma różne zalety podczas kompilowania aplikacji, która zawiera kilka usług i chcesz włączyć Publikowanie metadanych na każdym z nich bez konieczności pisania tych samych elementów konfiguracji w porównaniu do i więcej.  
   
 ## <a name="using-a-custom-servicehost-in-iis-or-was"></a>Używanie niestandardowego ServiceHost w usługach IIS lub  
+
  Używanie niestandardowego hosta usługi w scenariuszach z własnym hostem jest proste, ponieważ jest to kod aplikacji, który jest ostatecznie odpowiedzialny za tworzenie i otwieranie wystąpienia hosta usługi. Jednak w usługach IIS lub w środowisku macierzystym Infrastruktura WCF tworzy dynamicznie wystąpienie hosta usługi w odpowiedzi na komunikaty przychodzące. Niestandardowe hosty usługi mogą być również używane w tym środowisku hostingu, ale wymagają one dodatkowego kodu w formie obiektu ServiceHostFactory. Poniższy kod przedstawia pochodne <xref:System.ServiceModel.Activation.ServiceHostFactory> zwracające wystąpienia naszych niestandardowych `SelfDescribingServiceHost` .  
   
 ```csharp
@@ -154,6 +159,7 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
  W tym miejscu dodaliśmy dodatkowy `Factory` atrybut do `@ServiceHost` dyrektywy i przeszedł nazwę typu CLR fabryki niestandardowej jako wartość atrybutu. Gdy usługi IIS lub otrzymali komunikat dla tej usługi, infrastruktura hostingu WCF najpierw tworzy wystąpienie obiektu ServiceHostFactory, a następnie uruchamia wystąpienie samego hosta usługi przez wywołanie `ServiceHostFactory.CreateServiceHost()` .  
   
 ## <a name="running-the-sample"></a>Uruchamianie przykładowej aplikacji  
+
  Mimo że ten przykład zapewnia w pełni funkcjonalną implementację klienta i usługi, punkt przykładu ilustruje sposób zmiany zachowania w czasie wykonywania usługi za pomocą niestandardowego hosta. wykonaj następujące czynności:  
   
 ### <a name="observe-the-effect-of-the-custom-host"></a>Obserwuj efekt hosta niestandardowego
@@ -176,4 +182,4 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Instrukcje: hostowanie usługi WCF w programie IIS](../feature-details/how-to-host-a-wcf-service-in-iis.md)
+- [Instrukcje: hostowanie usługi WCF w usługach IIS](../feature-details/how-to-host-a-wcf-service-in-iis.md)

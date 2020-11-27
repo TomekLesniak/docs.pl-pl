@@ -2,44 +2,47 @@
 title: 103 — ActivityStateRecord
 ms.date: 03/30/2017
 ms.assetid: 57636a9a-561e-44aa-aef9-1f1894aaa6dd
-ms.openlocfilehash: 38cec570cffebf6af6d35df481cbec8c7dca8cd1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 02c33f02b7650c9f9b7527c319de3b58980fdd6c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924387"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275079"
 ---
 # <a name="103---activitystaterecord"></a>103 — ActivityStateRecord
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
 |Id|103|  
-|słowa kluczowe|EndToEndMonitoring, rozwiązywania problemów, HealthMonitoring, WFTracking|  
+|Słowa kluczowe|EndToEndMonitoring, rozwiązywanie problemów, HealthMonitoring, WFTracking|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane przez uczestnika śledzenia zdarzeń systemu Windows podczas działania w ramach wystąpienie przepływu pracy emituje ActivityStateRecord  
+
+ To zdarzenie jest emitowane przez uczestnika śledzenia funkcji ETW, gdy działanie w wystąpieniu przepływu pracy emituje ActivityStateRecord  
   
-## <a name="message"></a>Komunikat  
- TrackRecord = ActivityStateRecord, InstanceID = %1, RecordNumber = %2, EventTime = %3, stan = %4, Nazwa = %5, identyfikator działania = %6, ActivityInstanceId = %7, ActivityTypeName = %8, argumenty = %9, zmienne = % 10, adnotacje = % 11, ProfileName = % 12  
+## <a name="message"></a>Wiadomość  
+
+ TrackRecord = ActivityStateRecord, InstanceID = %1, RecordNumber = %2, EventTime = %3, State = %4, Name = %5, ActivityId = %6, ActivityInstanceId = %7, ActivityTypeName = %8, argumenty = %9, zmienne = %10, adnotacje = %11, ProfileName = %12  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|InstanceId|xs:GUID|Identyfikator wystąpienia przepływu pracy|  
-|RecordNumber|xs:long|Numer sekwencyjny emitowany rekordu|  
-|eventTime|xs:dateTime|Godzina w formacie UTC zdarzenia został wyemitowany|  
-|Stan|xs:String|Stan działania|  
-|Nazwa|xs:String|Nazwa wyświetlana działania, które są emitowane zdarzenia|  
-|Identyfikator działania|xs:String|Identyfikator działania emitowanie działania|  
-|ActivityInstanceId|xs:String|Identyfikator wystąpienia działania emitowanie działania|  
-|ActivityTypeName|xs:String|Nazwa typu emitowanie działania|  
-|Argumenty|xs:String|Argumenty, które były śledzone przy użyciu tego zdarzenia.  Wartości są przechowywane w elemencie xml w formacie \<elementy >\< nazwa elementu = "argumentName" type="System.String" > argumentValue\</item > \< /elementy >.  Jeśli żadne argumenty były śledzone, a następnie ciąg zawiera \<elementów / >. Rozmiar zdarzenia ETW jest ograniczona przez rozmiar buforu ETW lub max ładunek zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limit ETW, a następnie zdarzenie zostanie obcięta przez usunięcie adnotacje i zastępując wartość symbolu adnotacji z \<elementy >...  \< /elementy >.  Następujące typy są przechowywane jako ich wartość zwracana przez ToString(); String,char,bool,int,short,Long,uint,ushort,ulong,system.Single,float,Double,system.GUID,system.DateTimeOffset,system.DateTime.  Wszystkie inne typy są serializowane, za pomocą System.Runtime.Serialization.NetDataContractSerializer.|  
-|Zmienne|xs:String|Zmienne, które były śledzone przy użyciu tego zdarzenia.  Wartości są przechowywane w elemencie xml w formacie \<elementy >\< nazwa elementu = "nazwa_zmiennej" type="System.String" > variableValue\</item > \< /elementy >.  Jeśli zmienne nie były śledzone, a następnie ciąg zawiera \<elementów / >. Rozmiar zdarzenia ETW jest ograniczona przez rozmiar buforu ETW lub max ładunek zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limit ETW, a następnie zdarzenie zostanie obcięta przez usunięcie adnotacje i zastąpienie wartości zmiennych z \<elementy >...  \< /elementy >.  Następujące typy są przechowywane jako ich wartość zwracana przez ToString(); String,char,bool,int,short,Long,uint,ushort,ulong,system.Single,float,Double,system.GUID,system.DateTimeOffset,system.DateTime.  Wszystkie inne typy są serializowane, za pomocą System.Runtime.Serialization.NetDataContractSerializer.|  
-|Adnotacje|xs:String|Adnotacje, które zostały dodane do tego zdarzenia.  Wartości są przechowywane w elemencie xml w formacie \<elementy >\< nazwa elementu = "annotationName" type="System.String" > annotationValue\</item > \< /elementy >.  Jeśli nie określono bez adnotacji, a następnie ciąg zawiera \<elementów / >. Rozmiar zdarzenia ETW jest ograniczona przez rozmiar buforu ETW lub max ładunek zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limit ETW, a następnie zdarzenie zostanie obcięta przez usunięcie adnotacje i zastępując wartość symbolu adnotacji z \<elementy >...  \< /elementy >.|  
-|ProfileName|xs:String|Nazwa lub profilu śledzenia, które spowodowały to zdarzenie jest emitowane|  
-|HostReference|xs:String|Dla usług sieci web hostowanych w tym polu jednoznacznie identyfikuje usługę w hierarchii w sieci web.  Jego format jest zdefiniowany jako "Ścieżka wirtualna aplikacji Nazwa witryny sieci Web&#124;ścieżka wirtualna usługi&#124;ServiceName" przykład: 'Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|InstanceId|XS: GUID|Identyfikator wystąpienia przepływu pracy|  
+|RecordNumber|XS: Long|Numer sekwencji emitowanego rekordu|  
+|EventTime|XS: dateTime|Czas w formacie UTC, gdy zdarzenie zostało wyemitowane|  
+|Stan|XS: ciąg|Stan działania|  
+|Nazwa|XS: ciąg|Nazwa wyświetlana działania, które emituje zdarzenie|  
+|ActivityId|XS: ciąg|Identyfikator działania emitowania działania|  
+|ActivityInstanceId|XS: ciąg|Identyfikator wystąpienia działania emitującego działanie|  
+|ActivityTypeName|XS: ciąg|Nazwa typu emitowanego działania|  
+|Argumenty|XS: ciąg|Argumenty, które były śledzone przy użyciu tego zdarzenia.  Wartości są przechowywane w elemencie XML w formacie \<items> \< item  name = "argumentName" type="System.String"> ArgumentValue \</item> \</items> .  Jeśli żadne argumenty nie zostały śledzone, ciąg zawiera \<items/> . Rozmiar zdarzenia ETW jest ograniczony przez rozmiar buforu ETW lub maksymalny ładunek dla zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limity ETW, zdarzenie jest obcinane przez upuszczenie adnotacji i zamianę wartości adnotacji na \<items> ... \</items>  Następujące typy są przechowywane jako ich wartości zwracane przez ToString (); ciąg, char, bool, int, Short, Long, uint, UShort, ULONG, system. Single, float, Double, system. GUID, system. DateTimeOffset, system. DateTime.  Wszystkie inne typy są serializowane przy użyciu funkcji system. Runtime. Serialization. NetDataContractSerializer.|  
+|Zmienne|XS: ciąg|Zmienne, które były śledzone przy użyciu tego zdarzenia.  Wartości są przechowywane w elemencie XML w formacie \<items> \< item  name = "variableName" type="System.String"> VariableValue \</item> \</items> .  Jeśli żadne zmienne nie zostały śledzone, ciąg zawiera \<items/> . Rozmiar zdarzenia ETW jest ograniczony przez rozmiar buforu ETW lub maksymalny ładunek dla zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limity ETW, zdarzenie jest obcinane przez upuszczenie adnotacji i zamianę wartości zmiennych na \<items> ... \</items>  Następujące typy są przechowywane jako ich wartości zwracane przez ToString (); ciąg, char, bool, int, Short, Long, uint, UShort, ULONG, system. Single, float, Double, system. GUID, system. DateTimeOffset, system. DateTime.  Wszystkie inne typy są serializowane przy użyciu funkcji system. Runtime. Serialization. NetDataContractSerializer.|  
+|Adnotacje|XS: ciąg|Adnotacje, które zostały dodane do tego zdarzenia.  Wartości są przechowywane w elemencie XML w formacie \<items> \< item  name = "annotationName" type="System.String"> annotationValue \</item> \</items> .  Jeśli adnotacje nie są określone, ciąg zawiera \<items/> . Rozmiar zdarzenia ETW jest ograniczony przez rozmiar buforu ETW lub maksymalny ładunek dla zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limity ETW, zdarzenie jest obcinane przez upuszczenie adnotacji i zamianę wartości adnotacji na \<items> ... \</items>|  
+|ProfileName|XS: ciąg|Nazwa lub profil śledzenia, który spowodował wyemitowanie tego zdarzenia|  
+|HostReference|XS: ciąg|W przypadku usług hostowanych w sieci Web to pole jednoznacznie identyfikuje usługę w hierarchii sieci Web.  Jego format jest zdefiniowany jako ścieżka wirtualna aplikacji nazwa witryny sieci Web&#124;wirtualnej ścieżki usługi&#124;ServiceName ' przykład: ' domyślna witryna sieci Web/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService '|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

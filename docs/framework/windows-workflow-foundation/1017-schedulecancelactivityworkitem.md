@@ -2,34 +2,37 @@
 title: 1017 — ScheduleCancelActivityWorkItem
 ms.date: 03/30/2017
 ms.assetid: 864546ab-d65c-4989-8fcb-537ba03a3cdd
-ms.openlocfilehash: 186b012cdd554ec7dd0d195b460619cca04eddcb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6aed9773aa45251075520a0f955e9d71234f1357
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924491"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275622"
 ---
 # <a name="1017---schedulecancelactivityworkitem"></a>1017 — ScheduleCancelActivityWorkItem
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1017|  
-|słowa kluczowe|WFRuntime|  
+|ID (Identyfikator)|1017|  
+|Słowa kluczowe|WFRuntime|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że CancelActivityWorkItem została zaplanowana.  
+
+ Wskazuje, że zaplanowano roboczego cancelactivityworkitem.  
   
-## <a name="message"></a>Komunikat  
- CancelActivityWorkItem została zaplanowana dla działania "%1", DisplayName: "%2", InstanceId: "%3".  
+## <a name="message"></a>Wiadomość  
+
+ Roboczego cancelactivityworkitem zaplanowano dla działania %1, nazwa wyświetlana: %2, identyfikator wystąpienia: %3.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|Działanie|xs:String|Nazwa typu działania.|  
-|Nazwa wyświetlana|xs:String|Nazwa wyświetlana działania.|  
-|InstanceId|xs:String|Identyfikator wystąpienia działania.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Działanie|XS: ciąg|Nazwa typu działania.|  
+|Nazwa wyświetlana|XS: ciąg|Nazwa wyświetlana działania.|  
+|InstanceId|XS: ciąg|Identyfikator wystąpienia działania.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

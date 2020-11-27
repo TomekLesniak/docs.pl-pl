@@ -2,24 +2,26 @@
 title: StartErrorPublish
 ms.date: 03/30/2017
 ms.assetid: d261929a-bd41-4611-8951-d1fb16bda0bc
-ms.openlocfilehash: f4b8e11803dee757130e34726a384eb59af4e51c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6cddac71a26b1bb1920c1d3294678ba13838ee99
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797545"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96276246"
 ---
 # <a name="starterrorpublish"></a>StartErrorPublish
-#C1 158  
+
+Identyfikator: 158  
   
- Obrażeń Błąd  
+ Ważność: błąd  
   
- Kategorii SMSvcHost  
+ Kategoria: SMSvcHost  
   
 ## <a name="description"></a>Opis  
+
  To zdarzenie oznacza, że uruchomienie usługi NT nie powiodło się. Nie można opublikować punktu końcowego nasłuchiwania. Zdarzenie Wyświetla nazwę procesu i identyfikator procesu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Rejestrowanie zdarzeń](index.md)
 - [Informacje ogólne o zdarzeniach](events-general-reference.md)

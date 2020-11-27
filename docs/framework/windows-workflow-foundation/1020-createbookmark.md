@@ -2,36 +2,39 @@
 title: 1020 — CreateBookmark
 ms.date: 03/30/2017
 ms.assetid: 4bee948d-816f-4803-85cc-3883b5e23d10
-ms.openlocfilehash: 2a382a2f12f4800cd70286a553af253e2af64c9b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8c9c20fd4fb74f80779c1d2ef8f29ac3d44050d9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924751"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275378"
 ---
 # <a name="1020---createbookmark"></a>1020 — CreateBookmark
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1020|  
-|słowa kluczowe|WFRuntime|  
+|ID (Identyfikator)|1020|  
+|Słowa kluczowe|WFRuntime|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że utworzono zakładki działania.  
+
+ Wskazuje, że utworzono zakładkę dla działania.  
   
-## <a name="message"></a>Komunikat  
- Zakładka została utworzona dla działania "%1", DisplayName: "%2", InstanceId: "%3".  Nazwa_zakładki: %4, BookmarkScope: %5.  
+## <a name="message"></a>Wiadomość  
+
+ Utworzono zakładkę dla działania %1, nazwa wyświetlana: %2, identyfikator wystąpienia: %3.  Zakładkaname: %4, obiektem BookmarkScope: %5.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|Działanie|xs:String|Nazwa typu działania.|  
-|Nazwa wyświetlana|xs:String|Nazwa wyświetlana działania.|  
-|InstanceId|xs:String|Identyfikator wystąpienia działania.|  
-|BookmarkName|xs:String|Nazwa zakładki.|  
-|BookmarkScope|xs:String|Zakres zakładki.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Działanie|XS: ciąg|Nazwa typu działania.|  
+|Nazwa wyświetlana|XS: ciąg|Nazwa wyświetlana działania.|  
+|InstanceId|XS: ciąg|Identyfikator wystąpienia działania.|  
+|Zakładkaname|XS: ciąg|Nazwa zakładki.|  
+|Obiektem BookmarkScope|XS: ciąg|Zakres zakładki.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

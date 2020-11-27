@@ -2,12 +2,12 @@
 title: Przykład rozszerzeń o jednoznacznie określonym typie
 ms.date: 03/30/2017
 ms.assetid: 02220f11-1a83-441c-9e5a-85f9a9367572
-ms.openlocfilehash: e8c3bf202a1fb76d383f0a3fe15084d19a1d51fb
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e5b74188d4c9c333858c60ff95a2a90b0e2e9418
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600883"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275934"
 ---
 # <a name="strongly-typed-extensions-sample"></a>Przykład rozszerzeń o jednoznacznie określonym typie
 
@@ -18,6 +18,7 @@ W przykładzie zastosowano <xref:System.ServiceModel.Syndication.SyndicationFeed
  Przykładem tego przykładu jest zaimplementowanie elementu Extension zdefiniowanego w proponowanym rozszerzeniu RFC. Jest to przeznaczone tylko do celów demonstracyjnych, a ten przykład nie jest pełną implementacją proponowanej specyfikacji.  
   
 ## <a name="sample-xml"></a>Przykładowy kod XML  
+
  Poniższy przykład kodu XML przedstawia wpis Atom 1,0 z dodatkowym `<in-reply-to>` elementem rozszerzenia.  
   
 ```xml  
@@ -44,6 +45,7 @@ W przykładzie zastosowano <xref:System.ServiceModel.Syndication.SyndicationFeed
  `<in-reply-to>`Element określa trzy wymagane atrybuty (i), a jednocześnie `ref` `type` `href` umożliwia również obecność dodatkowych atrybutów rozszerzenia i elementów rozszerzenia.  
   
 ## <a name="modeling-the-in-reply-to-element"></a>Modelowanie elementu w odpowiedzi  
+
  W tym przykładzie `<in-reply-to>` element jest modelowany jako CLR, który implementuje <xref:System.Xml.Serialization.IXmlSerializable> , co umożliwia korzystanie z programu z <xref:System.Runtime.Serialization.DataContractSerializer> . Implementuje także niektóre metody i właściwości umożliwiające dostęp do danych elementu, jak pokazano w poniższym przykładowym kodzie.  
   
 ```csharp  
@@ -186,6 +188,7 @@ public void WriteXml(System.Xml.XmlWriter writer)
 ```  
   
 ## <a name="threadedfeed-and-threadeditem"></a>ThreadedFeed i ThreadedItem  
+
  W przykładzie, `SyndicationItems` z `InReplyTo` rozszerzeniami są modelowane przez `ThreadedItem` klasę. Podobnie `ThreadedFeed` Klasa jest klasą, `SyndicationFeed` której elementy to wszystkie wystąpienia `ThreadedItem` .  
   
  `ThreadedFeed`Klasa dziedziczy z `SyndicationFeed` i przesłonięcia, `OnCreateItem` Aby zwrócić `ThreadedItem` . Implementuje także metodę uzyskiwania dostępu do `Items` kolekcji jako `ThreadedItems` , jak pokazano w poniższym kodzie.  

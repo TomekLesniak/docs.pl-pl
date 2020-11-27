@@ -2,37 +2,40 @@
 title: 1015 — StartCompletionWorkItem
 ms.date: 03/30/2017
 ms.assetid: 96fd1d4e-c5d0-46ad-8a71-4b4b49ac7262
-ms.openlocfilehash: 6a2d4c866ec7d43e8ae40b5616a97c3b7adf1843
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c0d8572f192a8faa22327fd671cd9ea49c5054ca
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032269"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96275547"
 ---
 # <a name="1015---startcompletionworkitem"></a>1015 — StartCompletionWorkItem
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1015|  
-|słowa kluczowe|WFRuntime|  
+|ID (Identyfikator)|1015|  
+|Słowa kluczowe|WFRuntime|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że CompletionWorkItem Trwa uruchamianie wykonywania.  
+
+ Wskazuje, że CompletionWorkItem rozpoczyna wykonywanie.  
   
-## <a name="message"></a>Komunikat  
- Rozpoczynanie wykonywania CompletionWorkItem dla nadrzędnego działania "%1", DisplayName: "%2", InstanceId: "%3". Ukończono %4, DisplayName: '%5', InstanceId: '%6'.  
+## <a name="message"></a>Wiadomość  
+
+ Rozpoczynanie wykonywania elementu CompletionWorkItem dla działania nadrzędnego "%1", nazwa wyświetlana: %2, identyfikator wystąpienia: %3. Działanie zakończone ' %4 ', nazwa wyświetlana: ' %5 ', identyfikator wystąpienia: ' %6 '.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|Działanie nadrzędne|xs:String|Nazwa typu działania nadrzędnego.|  
-|ParentDisplayName|xs:String|Nazwa wyświetlana działania nadrzędnego.|  
-|ParentInstanceId|xs:String|Identyfikator wystąpienia działanie nadrzędne.|  
-|CompletedActivity|xs:String|Nazwa typu zakończonego działania.|  
-|CompletedActivityDisplayName|xs:String|Nazwa wyświetlana zakończonego działania.|  
-|CompletedActivityInstanceId|xs:String|Identyfikator wystąpienia zakończonego działania.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Element nadrzędny|XS: ciąg|Nazwa typu działania nadrzędnego.|  
+|ParentDisplayName|XS: ciąg|Nazwa wyświetlana działania nadrzędnego.|  
+|ParentInstanceId|XS: ciąg|Identyfikator wystąpienia działania nadrzędnego.|  
+|Zakończenie|XS: ciąg|Nazwa typu działania zakończonego.|  
+|CompletedActivityDisplayName|XS: ciąg|Nazwa wyświetlana działania zakończonego.|  
+|CompletedActivityInstanceId|XS: ciąg|Identyfikator wystąpienia ukończonego działania.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|
