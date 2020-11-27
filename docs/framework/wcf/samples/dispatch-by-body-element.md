@@ -2,17 +2,18 @@
 title: Wysyłanie według elementu treści
 ms.date: 03/30/2017
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
-ms.openlocfilehash: 19913cdaa47d766f62a313e216a653ac69633a99
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ddff361179c2ef071ca4df076e78b238de9041a1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594702"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292600"
 ---
 # <a name="dispatch-by-body-element"></a>Wysyłanie według elementu treści
+
 Ten przykład pokazuje, jak zaimplementować alternatywny algorytm przypisywania komunikatów przychodzących do operacji.  
   
- Domyślnie Dyspozytor modelu usług wybiera odpowiednią metodę obsługi dla komunikatu przychodzącego na podstawie nagłówka "Akcja" WS-Addressing "lub równoważne informacje w żądaniu protokołu HTTP SOAP.  
+ Domyślnie Dyspozytor modelu usług wybiera odpowiednią metodę obsługi dla komunikatu przychodzącego na podstawie nagłówka "Action" komunikatu "WS-Addressing" lub równoważnych informacji w żądaniu protokołu HTTP SOAP.  
   
  Niektóre stosy usług sieci Web SOAP 1,1, które nie są zgodne z wytycznymi dotyczącymi profilu WS-I Basic 1,1 nie wysyłają komunikatów na podstawie identyfikatora URI akcji, ale raczej na podstawie kwalifikowanej nazwy XML pierwszego elementu wewnątrz treści protokołu SOAP. Podobnie po stronie klienta te stosy mogą wysyłać komunikaty z pustym lub dowolnym nagłówkiem HTTP SoapAction, który był dozwolony przez specyfikację protokołu SOAP 1,1.  
   
@@ -34,7 +35,7 @@ class DispatchByBodyElementOperationSelector : IDispatchOperationSelector
 }
 ```  
   
- <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector>implementacje są bardzo proste, ponieważ istnieje tylko jedna metoda w interfejsie: <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> . Zadaniem tej metody jest zbadanie komunikatu przychodzącego i zwrócenie ciągu, który jest równy nazwie metody w kontrakcie usługi dla bieżącego punktu końcowego.  
+ <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> implementacje są bardzo proste, ponieważ istnieje tylko jedna metoda w interfejsie: <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A> . Zadaniem tej metody jest zbadanie komunikatu przychodzącego i zwrócenie ciągu, który jest równy nazwie metody w kontrakcie usługi dla bieżącego punktu końcowego.  
   
  W tym przykładzie selektor operacji uzyskuje <xref:System.Xml.XmlDictionaryReader> dla treści wiadomości przychodzącej przy użyciu <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> . Ta metoda już umieszcza czytnik w pierwszym elemencie podrzędnym treści wiadomości, dzięki czemu można uzyskać nazwę bieżącego elementu i identyfikator URI przestrzeni nazw, a następnie połączyć je w `XmlQualifiedName` celu wyszukania odpowiedniej operacji ze słownika przechowywanego przez selektor operacji.  
   
@@ -70,6 +71,7 @@ private Message CreateMessageCopy(Message message,
 ```  
   
 ## <a name="adding-an-operation-selector-to-a-service"></a>Dodawanie selektora operacji do usługi  
+
  Selektory operacji wysyłania usług są rozszerzeniami do dyspozytora Windows Communication Foundation (WCF). W przypadku wybierania metod w kanale wywołania zwrotnego w ramach kontraktów dupleksowych istnieją również selektory operacji klienta, które działają bardzo podobnie do selektorów operacji wysyłania opisanych tutaj, ale które nie zostały jawnie omówione w tym przykładzie.  
   
  Takie jak większość rozszerzeń modelu usług, selektory operacji wysyłania są dodawane do dyspozytora przy użyciu zachowań. *Zachowanie* jest obiektem konfiguracji, który dodaje jeden lub więcej rozszerzeń do środowiska uruchomieniowego wysyłania (lub do środowiska uruchomieniowego klienta) lub w inny sposób zmienia jego ustawienia.  
@@ -118,6 +120,7 @@ public void ApplyDispatchBehavior(ContractDescription contractDescription, Servi
 ```  
   
 ## <a name="implementing-the-service"></a>Implementowanie usługi  
+
  Zachowanie zaimplementowane w tym przykładzie bezpośrednio wpływa na sposób interpretowania i wysyłania komunikatów z sieci, która jest funkcją kontraktu usługi. W związku z tym zachowanie powinno być zadeklarowane na poziomie kontraktu usługi w każdej implementacji usługi, która wybierze jej użycie.  
   
  Przykładowa usługa projektu stosuje `DispatchByBodyElementBehaviorAttribute` zachowanie kontraktu do `IDispatchedByBody` kontraktu usługi i etykiety każdej z tych dwóch operacji `OperationForBodyA()` oraz `OperationForBodyB()` z `DispatchBodyElementAttribute` zachowaniem operacji. W przypadku otwarcia hosta usługi dla usługi implementującej ten kontrakt te metadane są pobierane przez konstruktora dyspozytora zgodnie z wcześniejszym opisem.  
@@ -143,6 +146,7 @@ public interface IDispatchedByBody
  Przykładowa implementacja usługi jest prosta. Każda metoda zawija odebrany komunikat do komunikatu odpowiedzi i odsyła go z powrotem do klienta.  
   
 ## <a name="running-and-building-the-sample"></a>Uruchamianie i Tworzenie przykładu  
+
  Po uruchomieniu przykładu zawartość treści odpowiedzi operacji zostanie wyświetlona w oknie konsoli klienta podobne do następujących (sformatowane) danych wyjściowych.  
   
  Klient wysyła trzy komunikaty do usługi, której treść składa się `bodyA` , `bodyB` i `bodyX` odpowiednio. Jak można wywnioskować na podstawie poprzedniego opisu i podanego kontraktu usługi, komunikat przychodzący do `bodyA` elementu jest wysyłany do `OperationForBodyA()` metody. Ze względu na to, że dla komunikatu z elementem Body nie istnieje jawny cel wysyłania `bodyX` , komunikat jest wysyłany do `DefaultOperation()` . Każda operacja usługi zawija treść otrzymanego komunikatu do elementu specyficznego dla metody i zwraca go, co jest gotowe do skorelowania komunikatów wejściowych i wyjściowych w tym przykładzie:  

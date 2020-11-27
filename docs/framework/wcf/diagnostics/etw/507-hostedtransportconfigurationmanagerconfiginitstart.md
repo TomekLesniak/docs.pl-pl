@@ -2,27 +2,30 @@
 title: 507 — HostedTransportConfigurationManagerConfigInitStart
 ms.date: 03/30/2017
 ms.assetid: cf8956cd-2f97-4536-af17-1f42618b4f11
-ms.openlocfilehash: a73b443bc36dc30cb66beb5a6f41917eb9401736
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dabc50b801ad2b062a0b2c9d2d2afe75c885ee5a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762934"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292444"
 ---
 # <a name="507---hostedtransportconfigurationmanagerconfiginitstart"></a>507 — HostedTransportConfigurationManagerConfigInitStart
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|507|  
-|słowa kluczowe|WebHost|  
+|ID (Identyfikator)|507|  
+|Słowa kluczowe|WebHost|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane przy uruchamianiu HostedTransportConfigurationManager inicjowania.  
+
+ To zdarzenie jest emitowane po rozpoczęciu inicjowania obiektu hostedtransportconfigurationmanager.  
   
-## <a name="message"></a>Komunikat  
- HostedTransportConfigurationManager rozpocząć inicjowanie konfiguracji.  
+## <a name="message"></a>Wiadomość  
+
+ Obiektu hostedtransportconfigurationmanager rozpoczęcie inicjowania konfiguracji.  
   
 ## <a name="details"></a>Szczegóły
