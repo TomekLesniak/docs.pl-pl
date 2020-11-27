@@ -11,14 +11,15 @@ helpviewer_keywords:
 - global assembly cache, about
 - access control lists [.NET Framework]
 ms.assetid: cf5eacd0-d3ec-4879-b6da-5fd5e4372202
-ms.openlocfilehash: 7f08bb4cf279924b12432f259dae8ce5a8474285
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: 57d18c01bd6261e8207d8ad3849a3a7da9a24b6c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104913"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264611"
 ---
 # <a name="global-assembly-cache"></a>Global Assembly Cache
+
 Każdy komputer, na którym jest zainstalowany środowisko uruchomieniowe języka wspólnego, ma pamięć podręczną kodu całego komputera o nazwie globalna pamięć podręczna zestawów. Globalna pamięć podręczna zestawów przechowuje zestawy specjalnie wyznaczonych do współużytkowania przez kilka aplikacji na komputerze.  
   
  Zestawy należy udostępniać, instalując je w globalnej pamięci podręcznej zestawów tylko wtedy, gdy jest to konieczne. Ogólnie rzecz biorąc, Zachowaj zależności zestawów jako prywatne i lokalizowanie zestawów w katalogu aplikacji, o ile udostępnianie zestawu nie jest jawnie wymagane. Ponadto nie trzeba instalować zestawów w globalnej pamięci podręcznej zestawów, aby umożliwić ich dostęp do międzyoperacyjności modelu COM lub kodu niezarządzanego.  

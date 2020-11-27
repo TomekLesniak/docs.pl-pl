@@ -1,18 +1,19 @@
 ---
-title: 'Instrukcje: Wymiana komunikatów znajdujących się w kolejce z punktami końcowymi WCF'
+title: 'Instrukcje: wymiana zakolejkowanych komunikatów z punktami końcowymi WCF'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 938e7825-f63a-4c3d-b603-63772fabfdb3
-ms.openlocfilehash: 7da7ba1b680bae2b29eeff8fe669e097ea8eda32
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3f69286a2b4d4ec55f18931f9156c20a38da9c34
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595378"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265430"
 ---
-# <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>Instrukcje: Wymiana komunikatów znajdujących się w kolejce z punktami końcowymi WCF
+# <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>Instrukcje: wymiana zakolejkowanych komunikatów z punktami końcowymi WCF
+
 Kolejki zapewniają niezawodne komunikaty między klientem a usługą Windows Communication Foundation (WCF), nawet jeśli usługa nie jest dostępna w chwili komunikacji. Poniższe procedury przedstawiają sposób zapewnienia trwałej komunikacji między klientem a usługą przy użyciu standardowego powiązania kolejkowanego w kolejce podczas implementowania usługi WCF.  
   
  W tej sekcji wyjaśniono, jak używać <xref:System.ServiceModel.NetMsmqBinding> w kolejce komunikacji między klientem programu WCF a usługą WCF.  
@@ -50,7 +51,7 @@ Kolejki zapewniają niezawodne komunikaty między klientem a usługą Windows Co
   
 ### <a name="to-create-a-client-for-the-queued-service"></a>Aby utworzyć klienta dla usługi w kolejce  
   
-1. Poniższy przykład pokazuje, jak uruchomić aplikację hostingu i użyć narzędzia Svcutil. exe, aby utworzyć klienta WCF.  
+1. Poniższy przykład pokazuje, jak uruchomić aplikację hostingu i utworzyć klienta WCF przy użyciu narzędzia Svcutil.exe.  
   
     ```console
     svcutil http://localhost:8000/ServiceModelSamples/service  
@@ -64,7 +65,8 @@ Kolejki zapewniają niezawodne komunikaty między klientem a usługą Windows Co
      [!code-vb[S_Msmq_Transacted#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/client.vb#8)]  
   
 ## <a name="example"></a>Przykład  
- Poniższe przykłady przedstawiają kod usługi, aplikację hostingu, plik App. config oraz kod klienta uwzględniony w tym przykładzie.  
+
+ Poniższe przykłady przedstawiają kod usługi, aplikację hostingu, plik App.config i kod klienta uwzględniony w tym przykładzie.  
   
  [!code-csharp[S_Msmq_Transacted#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/service.cs#9)]
  [!code-vb[S_Msmq_Transacted#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/service.vb#9)]  

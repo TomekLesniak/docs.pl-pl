@@ -2,17 +2,19 @@
 title: KnownAssemblyAttribute
 ms.date: 03/30/2017
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-ms.openlocfilehash: 12f28f44b408dde1ea04d6b84e663206cb4437df
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2faeeaab98a4adeec38ed9c03dc9e01ec2a3aaea
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555409"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264949"
 ---
 # <a name="knownassemblyattribute"></a>KnownAssemblyAttribute
+
 Ten przykład pokazuje, jak procesy serializacji i deserializacji można dostosować za pomocą <xref:System.Runtime.Serialization.DataContractResolver> klasy. Ten przykład pokazuje, jak dynamicznie dodawać znane typy podczas serializacji i deserializacji.  
   
 ## <a name="sample-details"></a>Przykładowe szczegóły  
+
  Ten przykład składa się z czterech projektów. Jeden z nich odpowiada usłudze, która jest hostowana przez usługi IIS, która definiuje następujący kontrakt usługi.  
   
 ```csharp
@@ -348,7 +350,7 @@ Lists combined:
   
 1. Kliknij prawym przyciskiem myszy rozwiązanie **KnownAssemblyAttribute** i wybierz polecenie **Właściwości**.  
   
-2. W obszarze **wspólne właściwości**wybierz pozycję **projekt startowy**, a następnie kliknij pozycję **wiele projektów startowych**.  
+2. W obszarze **wspólne właściwości** wybierz pozycję **projekt startowy**, a następnie kliknij pozycję **wiele projektów startowych**.  
   
 3. Dodaj akcję **Uruchom** do projektów **usługi** i **klienta** .  
   

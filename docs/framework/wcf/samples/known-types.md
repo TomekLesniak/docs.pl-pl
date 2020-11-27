@@ -2,14 +2,15 @@
 title: Znane typy
 ms.date: 03/30/2017
 ms.assetid: 88d83720-ca38-4b2c-86a6-f149ed1d89ec
-ms.openlocfilehash: dae271384905df890b2f42196d6e0aadad66be6f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e3f1365d69e218042e3a7c8f1c7f023d9ed7bafb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591842"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263818"
 ---
 # <a name="known-types"></a>Znane typy
+
 Ten przykład pokazuje, jak określić informacje o typach pochodnych w kontrakcie danych. Kontrakty danych umożliwiają przekazywanie danych strukturalnych do i z usług. W programowaniu zorientowanym na obiekt, typ, który dziedziczy z innego typu, może być użyty zamiast oryginalnego typu. W programowaniu zorientowanym na usługę, schematy, a nie typy, są przekazywane i w związku z tym relacja między typami nie jest zachowywana. Ten <xref:System.Runtime.Serialization.KnownTypeAttribute> atrybut umożliwia uwzględnienie informacji o typach pochodnych w kontrakcie danych. Jeśli ten mechanizm nie jest używany, nie można wysłać ani odebrać typu pochodnego, gdzie oczekiwany jest typ podstawowy.  
   
 > [!NOTE]
@@ -114,7 +115,7 @@ public class DataContractCalculatorService : IDataContractCalculator
 }  
 ```  
   
- Na kliencie zarówno kontrakt usługi, jak i kontrakt danych są zdefiniowane w pliku źródłowym generatedClient.cs, który jest generowany przez [Narzędzie narzędzia metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) z metadanych usługi. Ponieważ <xref:System.Runtime.Serialization.KnownTypeAttribute> atrybut jest określony w kontrakcie danych usługi, klient może odbierać zarówno `ComplexNumber` klasy, jak i przy `ComplexNumberWithMagnitude` użyciu usługi. Klient wykrywa, czy pobrano `ComplexNumberWithMagnitude` i wygenerował odpowiednie dane wyjściowe:  
+ Na kliencie zarówno kontrakt usługi, jak i kontrakt danych są zdefiniowane w pliku źródłowym generatedClient.cs, który jest generowany przez [Narzędzie narzędzia metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) z metadanych usługi. Ponieważ <xref:System.Runtime.Serialization.KnownTypeAttribute> atrybut jest określony w kontrakcie danych usługi, klient może odbierać zarówno `ComplexNumber` klasy, jak i przy `ComplexNumberWithMagnitude` użyciu usługi. Klient wykrywa, czy pobrano `ComplexNumberWithMagnitude` i wygenerował odpowiednie dane wyjściowe:  
   
 ```csharp
 // Create a client  

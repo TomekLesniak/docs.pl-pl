@@ -17,14 +17,15 @@ helpviewer_keywords:
 - sockets, client sockets
 - client sockets
 ms.assetid: 81de9f59-8177-4d98-b25d-43fc32a98383
-ms.openlocfilehash: 1dc02d0b3651d5766d1d30752566217d8417af0c
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 6982d09c20cd0d7e9d27fc63880b39e0982c86ef
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502005"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265196"
 ---
 # <a name="using-client-sockets"></a>Używanie gniazd klientów
+
 Aby można było zainicjować konwersację za pomocą programu <xref:System.Net.Sockets.Socket> , należy utworzyć potok danych między aplikacją a urządzeniem zdalnym. Chociaż istnieją inne rodziny i protokoły adresów sieciowych, w tym przykładzie pokazano, jak utworzyć połączenie TCP/IP z usługą zdalną.  
   
  Protokół TCP/IP używa adresu sieciowego i numeru portu usługi do unikatowego identyfikowania usługi. Adres sieciowy identyfikuje określone urządzenie w sieci; Numer portu identyfikuje konkretną usługę na tym urządzeniu, z którą ma zostać nawiązane połączenie. Kombinacja adresu sieciowego i portu usługi nosi nazwę punktu końcowego, który jest reprezentowany w .NET Framework przez <xref:System.Net.EndPoint> klasę. Element podrzędny **punktu końcowego** jest zdefiniowany dla każdej obsługiwanej rodziny adresów; w przypadku rodziny adresów IP Klasa jest <xref:System.Net.IPEndPoint> .  
@@ -78,7 +79,7 @@ try {
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Używanie synchronicznego gniazda klienta](using-a-synchronous-client-socket.md)
 - [Używanie asynchronicznego gniazda klienta](using-an-asynchronous-client-socket.md)

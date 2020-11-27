@@ -18,14 +18,15 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 813489a9-3efd-41b6-a33f-371d55397676
-ms.openlocfilehash: 8b85afb3ffdf69973eff37ccbb067b470ed44e3a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 6800a1973d9eb65bbb7520f9db7a8f431656c685
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502031"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265209"
 ---
 # <a name="using-an-asynchronous-server-socket"></a>Używanie asynchronicznego gniazda serwera
+
 Asynchroniczne gniazda serwera używają .NET Framework asynchronicznego modelu programowania do przetwarzania żądań obsługi sieci. <xref:System.Net.Sockets.Socket>Klasa jest zgodna ze standardowym wzorcem nazewnictwa asynchronicznego .NET Framework, na przykład <xref:System.Net.Sockets.Socket.Accept%2A> metoda synchroniczna odnosi się do metod asynchronicznych <xref:System.Net.Sockets.Socket.BeginAccept%2A> i <xref:System.Net.Sockets.Socket.EndAccept%2A> .  
   
  Asynchroniczne gniazdo serwera wymaga metody do rozpoczęcia akceptowania żądań połączenia z sieci, metody wywołania zwrotnego do obsługi żądań połączeń i rozpoczęcia odbierania danych z sieci oraz metody wywołania zwrotnego, która ma kończyć pobieranie danych. Wszystkie te metody zostały omówione w dalszej części tej sekcji.  
@@ -269,7 +270,7 @@ public static void ReadCallback(IAsyncResult ar)
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Używanie synchronicznego gniazda serwera](using-a-synchronous-server-socket.md)
 - [Przykład asynchronicznego gniazda serwera](asynchronous-server-socket-example.md)

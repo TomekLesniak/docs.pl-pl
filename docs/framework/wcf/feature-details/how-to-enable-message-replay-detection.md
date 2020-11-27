@@ -10,14 +10,15 @@ helpviewer_keywords:
 - WCF, custom bindings
 - WCF, security
 ms.assetid: 8b847e91-69a3-49e1-9e5f-0c455e50d804
-ms.openlocfilehash: c99500a3d4dc0bd8abe7062f23e064d395cadf36
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4a4d304a1316fe534e09f02ac1cd2900bf798011
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557882"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265534"
 ---
 # <a name="how-to-enable-message-replay-detection"></a>Instrukcje: włączanie wykrywania powtarzania komunikatu
+
 Ataku powtarzania występuje, gdy osoba atakująca kopiuje strumień komunikatów między dwiema stronami i odtwarza strumień do co najmniej jednej ze stron. O ile nie zostanie to skorygowane, komputery, które podlegają atakom, przetworzyją strumień jako wiarygodne komunikaty, co skutkuje zakresem nieprawidłowych skutków, takich jak nadmiarowe zamówienia elementu.  
   
  Aby uzyskać więcej informacji na temat wykrywania powtarzania wiadomości, zobacz [wykrywanie powtarzania komunikatów](/previous-versions/msp-n-p/ff649371(v=pandp.10)).  
@@ -75,15 +76,18 @@ Ataku powtarzania występuje, gdy osoba atakująca kopiuje strumień komunikató
     ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład tworzy <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> metodę i ustawia właściwości powtarzania powiązania.  
   
  [!code-csharp[c_ReplayDetection#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_replaydetection/cs/source.cs#1)]
  [!code-vb[c_ReplayDetection#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_replaydetection/vb/source.vb#1)]  
   
 ## <a name="scope-of-replay-message-security-only"></a>Zakres powtarzania: tylko zabezpieczenia wiadomości  
+
  Należy zauważyć, że poniższe procedury dotyczą tylko trybu zabezpieczeń wiadomości. W przypadku transportu i transportu z trybami poświadczeń wiadomości mechanizmy transportu wykrywają odtwarzanie.  
   
 ## <a name="secure-conversation-notes"></a>Uwagi dotyczące bezpiecznej konwersacji  
+
  W przypadku powiązań umożliwiających bezpieczne konwersacje można dostosować te ustawienia zarówno dla kanału aplikacji, jak i dla powiązania inicjowania bezpiecznego konwersacji. Można na przykład wyłączyć odtwarzanie dla kanału aplikacji, ale włączyć je dla kanału ładowania początkowego, który nawiązuje bezpieczną konwersację.  
   
  Jeśli nie używasz sesji bezpiecznych konwersacji, wykrywanie powtarzania nie gwarantuje wykrywania operacji odtwarzania w scenariuszach farmy serwerów i podczas odtwarzania procesu. Dotyczy to następujących powiązań dostarczonych przez system:  
@@ -102,7 +106,7 @@ Ataku powtarzania występuje, gdy osoba atakująca kopiuje strumień komunikató
   
 - <xref:System.ServiceModel.Channels>  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.LocalClientSecuritySettings>
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>

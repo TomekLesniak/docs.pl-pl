@@ -18,14 +18,15 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: fd85bc88-e06c-467d-a30d-9fd7cffcfca1
-ms.openlocfilehash: 9cf46e9519bcecf4d7a20ff99b86fa5f66af2087
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: af5379533e51e7488d673359dc24268c6329c082
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502044"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265222"
 ---
 # <a name="using-an-asynchronous-client-socket"></a>Używanie asynchronicznego gniazda klienta
+
 Asynchroniczne gniazdo klienta nie wstrzymuje aplikacji podczas oczekiwania na ukończenie operacji sieciowych. Zamiast tego używa standardowego modelu programowania .NET Framework, aby przetwarzać połączenie sieciowe w jednym wątku, gdy aplikacja nadal działa w oryginalnym wątku. Gniazda asynchroniczne są odpowiednie dla aplikacji, które intensywnie wykorzystują sieć lub nie mogą czekać na ukończenie operacji sieciowych przed kontynuowaniem.  
   
  <xref:System.Net.Sockets.Socket>Klasa jest zgodna ze wzorcem nazewnictwa .NET Framework dla metod asynchronicznych, na przykład <xref:System.Net.Sockets.Socket.Receive%2A> metoda synchroniczna odnosi się do metod asynchronicznych <xref:System.Net.Sockets.Socket.BeginReceive%2A> i <xref:System.Net.Sockets.Socket.EndReceive%2A> .  
@@ -34,7 +35,7 @@ Asynchroniczne gniazdo klienta nie wstrzymuje aplikacji podczas oczekiwania na u
   
  Gniazda asynchroniczne używają wielu wątków z puli wątków systemowych do przetwarzania połączeń sieciowych. Jeden wątek jest odpowiedzialny za Inicjowanie wysyłania lub otrzymywania danych; inne wątki ukończą połączenie z urządzeniem sieciowym i wysyłają lub odbierają dane. W poniższych przykładach wystąpienia <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> klasy są używane do wstrzymania wykonywania głównego wątku i sygnału, gdy wykonanie może być kontynuowane.  
   
- W poniższym przykładzie, aby połączyć gniazdo asynchroniczne z urządzeniem sieciowym, `Connect` Metoda inicjuje **gniazdo** , a następnie wywołuje <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=nameWithType> metodę, przekazując zdalny punkt końcowy reprezentujący urządzenie sieciowe, metodę połączenia wywołania zwrotnego i obiekt stanu ( **gniazdo**klienta), który jest używany do przekazywania informacji o stanie między wywołaniami asynchronicznymi. Przykład implementuje metodę, `Connect` Aby połączyć określone **gniazdo** z określonym punktem końcowym. Przyjęto założenie, że Global **ManualResetEvent** o nazwie `connectDone` .  
+ W poniższym przykładzie, aby połączyć gniazdo asynchroniczne z urządzeniem sieciowym, `Connect` Metoda inicjuje **gniazdo** , a następnie wywołuje <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=nameWithType> metodę, przekazując zdalny punkt końcowy reprezentujący urządzenie sieciowe, metodę połączenia wywołania zwrotnego i obiekt stanu ( **gniazdo** klienta), który jest używany do przekazywania informacji o stanie między wywołaniami asynchronicznymi. Przykład implementuje metodę, `Connect` Aby połączyć określone **gniazdo** z określonym punktem końcowym. Przyjęto założenie, że Global **ManualResetEvent** o nazwie `connectDone` .  
   
 ```vb  
 Public Shared Sub Connect(remoteEP As EndPoint, client As Socket)  
@@ -286,7 +287,7 @@ private static void ReceiveCallback( IAsyncResult ar ) {
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Używanie synchronicznego gniazda klienta](using-a-synchronous-client-socket.md)
 - [Nasłuchiwanie przy użyciu gniazd](listening-with-sockets.md)

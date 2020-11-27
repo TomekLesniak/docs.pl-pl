@@ -2,14 +2,15 @@
 title: Wystawca uwierzytelnienia tokenów
 ms.date: 03/30/2017
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
-ms.openlocfilehash: a493ea48d9d339c0bc1a4b191b084374ad5f2dc4
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ab3f8486229416465d7eca0b9413475d81318d32
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90548595"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264637"
 ---
 # <a name="token-authenticator"></a>Wystawca uwierzytelnienia tokenów
+
 Ten przykład pokazuje, jak zaimplementować niestandardowy wystawca uwierzytelnienia tokenów. Wystawca uwierzytelnienia w programie Windows Communication Foundation (WCF) służy do sprawdzania poprawności tokenu użytego w komunikacie, weryfikowania, czy jest on spójny, i uwierzytelniania tożsamości skojarzonej z tokenem.
 
  Niestandardowe wystawcy tokenów są przydatne w różnych przypadkach, takich jak:
@@ -119,6 +120,7 @@ static void Main()
 ```
 
 ## <a name="custom-token-authenticator"></a>Niestandardowe wystawcy uwierzytelniania tokenów
+
  Aby utworzyć niestandardowy wystawca uwierzytelnienia tokenów, wykonaj następujące kroki:
 
 1. Napisz niestandardowy wystawca uwierzytelnienia.
@@ -293,6 +295,7 @@ static void DisplayIdentityInformation()
  Po uruchomieniu przykładu żądania operacji i odpowiedzi są wyświetlane w oknie konsoli klienta. Naciśnij klawisz ENTER w oknie klienta, aby zamknąć klienta programu.
 
 ## <a name="setup-batch-file"></a>Plik wsadowy konfiguracji
+
  Plik wsadowy Setup.bat dołączony do tego przykładu umożliwia skonfigurowanie serwera z odpowiednimi certyfikatami w celu uruchomienia aplikacji samohostowanej wymagającej zabezpieczeń opartych na certyfikatach serwera. Ten plik wsadowy należy zmodyfikować, aby mógł działać na różnych komputerach lub działać w nieobsługiwanym przypadku.
 
  Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, dzięki czemu można je zmodyfikować do uruchamiania w odpowiedniej konfiguracji.

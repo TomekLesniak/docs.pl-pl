@@ -2,14 +2,15 @@
 title: Przykład rozszerzeń z typowaniem luźnym
 ms.date: 03/30/2017
 ms.assetid: 56ce265b-8163-4b85-98e7-7692a12c4357
-ms.openlocfilehash: 0a08ca19e5e6bff7223d45726617d2c2163ca3df
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 94e01970502223febd3ff03e30be7b17d9019d93
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591868"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264895"
 ---
 # <a name="loosely-typed-extensions-sample"></a>Przykład rozszerzeń z typowaniem luźnym
+
 Model obiektów zespolonych zapewnia rozbudowaną obsługę pracy z danymi rozszerzenia — informacje, które znajdują się w reprezentacji XML zespolonego źródła danych, ale nie są jawnie uwidocznione przez klasy takie jak <xref:System.ServiceModel.Syndication.SyndicationFeed> i <xref:System.ServiceModel.Syndication.SyndicationItem> . Ten przykład ilustruje podstawowe techniki pracy z danymi rozszerzenia.  
   
  W przykładzie zastosowano <xref:System.ServiceModel.Syndication.SyndicationFeed> klasę do celów przykładu. Wzorce przedstawione w tym przykładzie mogą jednak być używane ze wszystkimi klasami zespalania, które obsługują dane rozszerzenia:  
@@ -25,6 +26,7 @@ Model obiektów zespolonych zapewnia rozbudowaną obsługę pracy z danymi rozsz
  <xref:System.ServiceModel.Syndication.SyndicationLink>  
   
 ## <a name="sample-xml"></a>Przykładowy kod XML  
+
  W przypadku odwołania do tego przykładu jest używany następujący dokument XML.  
   
 ```xml  
@@ -56,15 +58,16 @@ w.w3.org/2001/XMLSchema" xmlns="">
   
 - `myAttribute`Atrybut `<feed>` elementu.  
   
-- `<simpleString>`postaci.  
+- `<simpleString>` postaci.  
   
-- `<DataContractExtension>`postaci.  
+- `<DataContractExtension>` postaci.  
   
-- `<XmlSerializerExtension>`postaci.  
+- `<XmlSerializerExtension>` postaci.  
   
-- `<xElementExtension>`postaci.  
+- `<xElementExtension>` postaci.  
   
 ## <a name="writing-extension-data"></a>Zapisywanie danych rozszerzenia  
+
  Rozszerzenia atrybutów są tworzone przez dodanie wpisów do <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> kolekcji, jak pokazano w poniższym przykładowym kodzie.  
   
 ```csharp  
@@ -102,6 +105,7 @@ feed.ElementExtensions.Add(new XElement("xElementExtension",
 ```  
   
 ## <a name="reading-extension-data"></a>Odczytywanie danych rozszerzenia  
+
  Wartości rozszerzeń atrybutów można uzyskać, wyszukując atrybut w <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> kolekcji, <xref:System.Xml.XmlQualifiedName> tak jak pokazano w poniższym przykładowym kodzie.  
   
 ```csharp  

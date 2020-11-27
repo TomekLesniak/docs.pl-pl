@@ -16,14 +16,15 @@ helpviewer_keywords:
 - receiving data, Secure Sockets Layer
 - Internet, Secure Sockets Layer
 ms.assetid: 6e4289e6-d1b7-4e82-ab0d-e83e3b6063ed
-ms.openlocfilehash: 67330962382e768849cbf67d5f412ea80f65569d
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 1309e9dc594869cec7bce81ef666d9f5e06f13b9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501992"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265183"
 ---
 # <a name="using-secure-sockets-layer"></a>Używanie protokołu Secure Sockets Layer
+
 <xref:System.Net>Klasy używają SSL (SSL) do szyfrowania połączenia dla kilku protokołów sieciowych.  
   
  W przypadku połączeń HTTP <xref:System.Net.WebRequest> klasy i <xref:System.Net.WebResponse> używają protokołu SSL do komunikowania się z hostami sieci Web, które obsługują protokół SSL. Decyzja o użyciu protokołu SSL jest podejmowana przez <xref:System.Net.WebRequest> klasę w oparciu o identyfikator URI, który został podany. Jeśli identyfikator URI zaczyna się od ciągu "https:", używany jest protokół SSL. Jeśli identyfikator URI zaczyna się od "http:", używane jest nieszyfrowane połączenie.  
@@ -59,12 +60,13 @@ FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 ```  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
+
  Ten przykład wymaga:  
   
 - Odwołania do przestrzeni nazw **System.NET** .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zabezpieczenia w programowaniu sieciowym](security-in-network-programming.md)
-- [Programowanie dla sieci w programie .NET Framework](index.md)
+- [Programowanie dla sieci w .NET Framework](index.md)
 - [Wybór i sprawdzanie poprawności certyfikatu](certificate-selection-and-validation.md)

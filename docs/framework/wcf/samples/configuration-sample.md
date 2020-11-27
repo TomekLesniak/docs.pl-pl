@@ -2,14 +2,15 @@
 title: Konfiguracja — przykład
 ms.date: 03/30/2017
 ms.assetid: 75515b4a-8d70-44c8-99e0-7423df41380e
-ms.openlocfilehash: 6d84085d06da117ebf13fa4bb714513aacc3abd6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 927aab30ab122d281b4f3577ec05a2035c08f2fc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594728"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264338"
 ---
 # <a name="configuration-sample"></a>Konfiguracja — przykład
+
 Ten przykład ilustruje użycie pliku konfiguracji w celu odnalezienia usługi.  
   
 > [!NOTE]
@@ -25,6 +26,7 @@ Ten przykład ilustruje użycie pliku konfiguracji w celu odnalezienia usługi.
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Configuration`  
   
 ## <a name="service-configuration"></a>Konfiguracja usługi  
+
  Plik konfiguracji w tym przykładzie ilustruje dwie funkcje:  
   
 - Umożliwienie odnajdywania usługi w warstwie Standardowa <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> .  
@@ -155,6 +157,7 @@ Ten przykład ilustruje użycie pliku konfiguracji w celu odnalezienia usługi.
 ```  
   
 ## <a name="client-configuration"></a>Konfiguracja klienta  
+
  W pliku konfiguracyjnym aplikacji dla klienta programu `standardEndpoint` Typ `dynamicEndpoint` jest używany do korzystania z odnajdywania, jak pokazano w poniższym fragmencie kodu.  
   
 ```xml  
@@ -169,7 +172,7 @@ Ten przykład ilustruje użycie pliku konfiguracji w celu odnalezienia usługi.
 </client>  
 ```  
   
- Gdy klient korzysta z programu `dynamicEndpoint` , środowisko uruchomieniowe automatycznie wykonuje odnajdywanie. Podczas odnajdywania są używane różne ustawienia, takie jak te zdefiniowane w `discoveryClientSettings` sekcji, które określają typ punktu końcowego odnajdywania do użycia:  
+ Gdy klient korzysta z programu `dynamicEndpoint` , środowisko uruchomieniowe automatycznie wykonuje odnajdywanie. Podczas odnajdywania są używane różne ustawienia, takie jak te zdefiniowane w  `discoveryClientSettings` sekcji, które określają typ punktu końcowego odnajdywania do użycia:  
   
 ```xml  
 <endpoint kind="udpDiscoveryEndpoint" endpointConfiguration="adhocDiscoveryEndpointConfiguration" />  

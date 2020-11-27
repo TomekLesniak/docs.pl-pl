@@ -2,27 +2,30 @@
 title: 62326 — HttpHandlerPickedForUrl
 ms.date: 03/30/2017
 ms.assetid: edb9fb88-dfb0-486c-971d-26735d80dc0d
-ms.openlocfilehash: a40835d0a9b33301a89bb804dee5326a4e8cfd02
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fb25fae173d690fe43431a617fe60c17b079a04b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61999482"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265170"
 ---
 # <a name="62326---httphandlerpickedforurl"></a>62326 — HttpHandlerPickedForUrl
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|62326|  
-|słowa kluczowe|WebHost|  
+|ID (Identyfikator)|62326|  
+|Słowa kluczowe|WebHost|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, jeśli program obsługi protokołu HTTP zostało pobrane do obsługi wszystkich żądań wykonanych w odniesieniu do tego adresu URL.  
+
+ To zdarzenie jest emitowane, gdy program obsługi protokołu HTTP zostanie pobrany do obsługi wszystkich żądań wysyłanych do tego adresu URL.  
   
-## <a name="message"></a>Komunikat  
- Dokument XAML hostów adresu url "%1" z elementem głównym typu "%2". Typ programu obsługi HTTP "%3" jest pobierany do obsługi wszystkich żądań wykonanych w odniesieniu do tego adresu url.  
+## <a name="message"></a>Wiadomość  
+
+ Adres URL ' %1 ' zawiera dokument XAML z typem elementu głównego ' %2 '. Typ procedury obsługi HTTP ' %3 ' jest wybrany do obsługi wszystkich żądań wysyłanych do tego adresu URL.  
   
 ## <a name="details"></a>Szczegóły

@@ -2,21 +2,23 @@
 title: Kontrakty komunikatów
 ms.date: 03/30/2017
 ms.assetid: e3df7c11-c653-4796-be47-26b09c35b691
-ms.openlocfilehash: 5467ee9ff807bca79330054c30ad424ea479a6a3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e00720674a384e2b0ac1cdb5aeab84f9b2c91209
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591686"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264702"
 ---
 # <a name="message-contracts"></a>Kontrakty komunikatów
+
 Ta sekcja zawiera przykłady demonstrujące kontrakty dotyczące komunikatów w programie Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Domyślny kontrakt komunikatów](default-message-contract.md)  
  Demonstruje usługę, w której do i z operacji usługi jest przesyłany niestandardowy komunikat zdefiniowany przez użytkownika.  
   
- Żądanie nietypu-odpowiedź  
+ Request-Reply niewpisany  
  Demonstruje sposób definiowania kontraktów operacji, które używają klasy Message.  
   
  [Nieopakowane komunikaty](unwrapped-messages.md)  

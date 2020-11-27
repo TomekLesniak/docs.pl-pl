@@ -3,14 +3,15 @@ title: Testowy klient WCF (WcfTestClient.exe)
 description: Dowiedz się więcej o kliencie testowym WCF, który zapewnia bezproblemowe Testowanie usług w połączeniu z hostem usługi WCF. Przesyłaj wartości testów klienta i wyświetlaj odpowiedzi na usługi.
 ms.date: 03/30/2017
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
-ms.openlocfilehash: 4f636698c538809f89ee356159839a37b73adb57
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: f583d20edf7eeea87ae1dbf63a3cadef05912833
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245664"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96264130"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>Testowy klient WCF (WcfTestClient.exe)
+
 Windows Communication Foundation (WCF) Test Client (WcfTestClient.exe) to narzędzie graficznego interfejsu użytkownika, które umożliwia użytkownikom wprowadzanie parametrów testowych, przesyłanie tych danych do usługi i wyświetlanie odpowiedzi, którą usługa odsyła z powrotem. Zapewnia bezproblemowe środowisko testowania usług w połączeniu z hostem usługi WCF.
 
 Zazwyczaj można znaleźć klienta testowego WCF (WcfTestClient.exe) w następującej lokalizacji: `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` — społeczność może być jednym z "Enterprise", "Professional" lub "Community" w zależności od tego, jaki poziom programu Visual Studio jest zainstalowany.
@@ -33,7 +34,7 @@ Można również użyć klienta testowego WCF do ułatwienia debugowania projekt
 
 Możesz również wywołać klienta testowego WCF (WcfTestClient.exe) poza programem Visual Studio, aby przetestować dowolną usługę w Internecie. Aby zlokalizować narzędzie, przejdź do następującej lokalizacji:
 
-`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE`(w przypadku, gdy społeczność może być jednym z "Enterprise", "Professional" lub "Community") w zależności od tego, jaki poziom programu Visual Studio jest zainstalowany na komputerze)
+`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` (w przypadku, gdy społeczność może być jednym z "Enterprise", "Professional" lub "Community") w zależności od tego, jaki poziom programu Visual Studio jest zainstalowany na komputerze)
 
 Aby użyć narzędzia, kliknij dwukrotnie nazwę pliku, aby otworzyć ją z tej lokalizacji, lub uruchom ją z wiersza polecenia.
 
@@ -88,9 +89,9 @@ W lewym okienku kliknij prawym przyciskiem myszy **plik konfiguracyjny** i wybie
 
 Po zapisaniu pliku w Edytorze konfiguracji usługi Klient testowy programu WCF wyświetli komunikat ostrzegawczy informujący o tym, że plik został zmodyfikowany poza programem i pyta, czy chcesz go załadować ponownie.
 
-W przypadku wybrania opcji **tak**zawartość konfiguracji na karcie "Client.dll.config" odzwierciedla zmiany wprowadzone w edytorze.
+W przypadku wybrania opcji **tak** zawartość konfiguracji na karcie "Client.dll.config" odzwierciedla zmiany wprowadzone w edytorze.
 
-W przypadku wybrania opcji **nie**zawartość konfiguracji na karcie "Client.dll.config" pozostaje niezmieniona, a zmodyfikowana zawartość jest automatycznie zapisywana w pliku źródłowym.
+W przypadku wybrania opcji **nie** zawartość konfiguracji na karcie "Client.dll.config" pozostaje niezmieniona, a zmodyfikowana zawartość jest automatycznie zapisywana w pliku źródłowym.
 
 #### <a name="restore-to-default-configuration"></a>Przywróć konfigurację domyślną
 
@@ -145,7 +146,7 @@ Podczas generowania serwera proxy, kompilowania danych binarnych lub wywołania 
 
 Domyślnie klient testowy WCF przechowuje wygenerowany kod klienta i pliki konfiguracji w folderze "%appdata%\Local\temp\Test Client projects". Ten folder jest usuwany po zakończeniu działania klienta testowego WCF. Jeśli plik konfiguracji jest modyfikowany w kliencie testowym WCF i opcja **zawsze Generuj ponownie konfigurację podczas uruchamiania usług** jest wyłączona, zmodyfikowany plik jest kopiowany do folderu "CachedConfig" w obszarze "Moje Documents\Test projekty klienta" przy użyciu mapowania (Metadata-Address-to-File-Name) jako indeksu.
 
-Możesz również uruchomić klienta testowego WCF w wierszu polecenia, użyj przełącznika, `/ProjectPath` Aby określić nową ścieżkę do przechowywania wygenerowanych plików, lub Użyj przełącznika, `/RestoreProjectPath` Aby przywrócić domyślną lokalizację. Składnia jest następująca:
+Możesz również uruchomić klienta testowego WCF w wierszu polecenia, użyj przełącznika, `/ProjectPath` Aby określić nową ścieżkę do przechowywania wygenerowanych plików, lub Użyj przełącznika, `/RestoreProjectPath` Aby przywrócić domyślną lokalizację. Składnia wygląda następująco:
 
 `wcfTestClient.exe /ProjectPath [desired location]`
 

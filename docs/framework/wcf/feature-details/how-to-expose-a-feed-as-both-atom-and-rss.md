@@ -5,19 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fe374932-67f5-487d-9325-f868812b92e4
-ms.openlocfilehash: e4ce1fa7b494c2317a1bddc57ee6b150c84b9a96
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1b03434e4f9552b714b40d54ba36c8468d0e2ccd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593149"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265365"
 ---
 # <a name="how-to-expose-a-feed-as-both-atom-and-rss"></a>Instrukcje: udostępnianie kanału informacyjnego w formatach Atom i RSS
+
 Windows Communication Foundation (WCF) umożliwia utworzenie usługi, która uwidacznia zespolone źródło danych. W tym temacie omówiono sposób tworzenia usługi zespolonej, która uwidacznia zespolone źródło danych za pomocą Atom 1,0 i RSS 2,0. Ta usługa ujawnia jeden punkt końcowy, który może zwracać format zespolony. Dla uproszczenia Usługa używana w tym przykładzie jest samodzielna. W środowisku produkcyjnym usługi tego typu byłyby hostowane w usługach IIS lub WAS. Aby uzyskać więcej informacji na temat różnych opcji hostingu WCF, zobacz [hosting](hosting.md).  
   
 ### <a name="to-create-a-basic-syndication-service"></a>Aby utworzyć podstawową usługę zespalania  
   
-1. Zdefiniuj kontrakt usługi przy użyciu interfejsu oznaczonego <xref:System.ServiceModel.Web.WebGetAttribute> atrybutem. Każda operacja, która jest udostępniana jako zespolone źródło danych, zwraca <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> obiekt. Zwróć uwagę na parametry <xref:System.ServiceModel.Web.WebGetAttribute> . `UriTemplate`Określa adres URL służący do wywoływania tej operacji usługi. Ciąg dla tego parametru zawiera literały i zmienną w nawiasach klamrowych ({*Format*}). Ta zmienna odpowiada `format` parametrowi operacji usługi. Aby uzyskać więcej informacji, zobacz <xref:System.UriTemplate>. `BodyStyle`wpływa na to, w jaki sposób wiadomości wysyłane i odbierane przez tę operację usługi są zapisywane. <xref:System.ServiceModel.Web.WebMessageBodyStyle.Bare>Określa, że dane wysyłane do i z tej operacji usługi nie są opakowane przez zdefiniowane przez infrastrukturę elementy XML. Aby uzyskać więcej informacji, zobacz <xref:System.ServiceModel.Web.WebMessageBodyStyle>.  
+1. Zdefiniuj kontrakt usługi przy użyciu interfejsu oznaczonego <xref:System.ServiceModel.Web.WebGetAttribute> atrybutem. Każda operacja, która jest udostępniana jako zespolone źródło danych, zwraca <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> obiekt. Zwróć uwagę na parametry <xref:System.ServiceModel.Web.WebGetAttribute> . `UriTemplate` Określa adres URL służący do wywoływania tej operacji usługi. Ciąg dla tego parametru zawiera literały i zmienną w nawiasach klamrowych ({*Format*}). Ta zmienna odpowiada `format` parametrowi operacji usługi. Aby uzyskać więcej informacji, zobacz <xref:System.UriTemplate>. `BodyStyle` wpływa na to, w jaki sposób wiadomości wysyłane i odbierane przez tę operację usługi są zapisywane. <xref:System.ServiceModel.Web.WebMessageBodyStyle.Bare> Określa, że dane wysyłane do i z tej operacji usługi nie są opakowane przez zdefiniowane przez infrastrukturę elementy XML. Aby uzyskać więcej informacji, zobacz <xref:System.ServiceModel.Web.WebMessageBodyStyle>.  
   
      [!code-csharp[htAtomRss#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/program.cs#0)]
      [!code-vb[htAtomRss#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatomrss/vb/program.vb#0)]  
@@ -88,12 +89,14 @@ Windows Communication Foundation (WCF) umożliwia utworzenie usługi, która uwi
      [!code-vb[htAtomRss#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatomrss/vb/snippets.vb#11)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej znajduje się pełna lista kodów dla tego przykładu.  
   
  [!code-csharp[htAtomRss#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/program.cs#12)]  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
- Podczas kompilowania powyższego kodu odwołuje się do System. ServiceModel. dll i system. ServiceModel. Web. dll.  
+
+ Podczas kompilowania powyższego kodu odwołuje się System.ServiceModel.dll i System.ServiceModel.Web.dll.  
   
 ## <a name="see-also"></a>Zobacz też
 
