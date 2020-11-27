@@ -2,17 +2,19 @@
 title: Współdziałanie i integracja
 ms.date: 03/30/2017
 ms.assetid: 0d925119-01a1-45c2-9ea0-23061323ad33
-ms.openlocfilehash: 97244ce44a67d653b820d7e14bcb50555e5cbb60
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 23d87cd98f42ee713f741057d2d60cea8513cc87
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84592661"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96260295"
 ---
 # <a name="interoperability-and-integration"></a>Współdziałanie i integracja
+
 Ta sekcja obejmuje współdziałanie i integrację z usługą Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Przewodnik dotyczący współpracy protokołów usług sieci Web](web-services-protocols-interoperability-guide.md)  
  Funkcja WCF jest wbudowana w celu współdziałania z usługami sieci Web, które obsługują zestaw specyfikacji znanych jako specyfikacje usług sieci Web. W tym temacie wymieniono obsługiwane specyfikacje i powiązania, które je obsługują.  
   
@@ -34,20 +36,22 @@ Ta sekcja obejmuje współdziałanie i integrację z usługą Windows Communicat
  [Współdziałanie z usługami ASP.NET w sieci Web](interop-with-aspnet-web-services.md)  
  Opisuje, w jaki sposób WCF może współdziałać z usługami sieci Web ASP.NET.  
   
- [Migrowanie usług internetowych na platformie ASP.NET do programu WCF](migrating-aspnet-web-services-to-wcf.md)  
+ [Migrowanie usług sieci Web na platformie ASP.NET do programu WCF](migrating-aspnet-web-services-to-wcf.md)  
  Opisuje sposób migrowania usługi sieci Web ASP.NET do usługi WCF.  
   
- [Migrowanie usług internetowych na platformie ASP.NET do programu WCF](migrating-aspnet-web-services-to-wcf.md)  
+ [Migrowanie usług sieci Web na platformie ASP.NET do programu WCF](migrating-aspnet-web-services-to-wcf.md)  
  Opisuje sposób migrowania usługi sieci Web ASP.NET do usługi WCF.  
   
- [Migrowanie usług internetowych na platformie ASP.NET do programu WCF](migrating-aspnet-web-services-to-wcf.md)  
+ [Migrowanie usług sieci Web na platformie ASP.NET do programu WCF](migrating-aspnet-web-services-to-wcf.md)  
  Opisuje sposób migrowania usługi sieci Web ASP.NET do usługi WCF.  
   
  [Współdziałanie z aplikacjami POX](interoperability-with-pox-applications.md)  
  Opisuje, w jaki sposób WCF zapewnia usługi i klientów, którzy używają komunikatów "zwykłe stare XML" (POX).  
   
 ## <a name="reference"></a>Dokumentacja  
+
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Rozszerzanie architektury WCF](../extending/index.md)

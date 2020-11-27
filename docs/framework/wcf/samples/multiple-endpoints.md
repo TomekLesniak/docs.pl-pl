@@ -4,20 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Multiple EndPoints
 ms.assetid: 8f0c2e1f-9aee-41c2-8301-c72b7f664412
-ms.openlocfilehash: 5f2915f4f0170f85c27c6c809575d1c56d40774b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 92c329ff922b5e4fc025245dac596c6abebc2716
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602482"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96260152"
 ---
 # <a name="multiple-endpoints"></a>Wiele punktów końcowych
+
 Przykład wielu punktów końcowych pokazuje, jak skonfigurować wiele punktów końcowych w usłudze i jak komunikować się z każdym punktem końcowym klienta. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md). Konfiguracja usługi została zmodyfikowana w celu zdefiniowania dwóch punktów końcowych, które obsługują `ICalculator` kontrakt, ale każdy z nich na innym adresie przy użyciu innego powiązania. Konfiguracja i kod klienta zostały zmodyfikowane w celu komunikowania się z obydwoma punktami końcowymi usługi.  
   
 > [!NOTE]
 > Procedura instalacji i instrukcje dotyczące kompilacji dla tego przykładu znajdują się na końcu tego tematu.  
   
- Plik Web. config usługi został zmodyfikowany w celu zdefiniowania dwóch punktów końcowych, z których każdy obsługuje ten sam `ICalculator` kontrakt, ale na różnych adresach przy użyciu różnych powiązań. Pierwszy punkt końcowy jest zdefiniowany pod adresem podstawowym przy użyciu `basicHttpBinding` powiązania, które nie ma włączonej funkcji zabezpieczenia. Drugi punkt końcowy jest zdefiniowany w lokalizacji {BaseAddress}/Secure przy użyciu `wsHttpBinding` powiązania, które jest zabezpieczone domyślnie przy użyciu protokołu WS-Security z uwierzytelnianiem systemu Windows.  
+ Plik Web.config usługi został zmodyfikowany w celu zdefiniowania dwóch punktów końcowych, z których każdy obsługuje ten sam `ICalculator` kontrakt, ale na różnych adresach używających różnych powiązań. Pierwszy punkt końcowy jest zdefiniowany pod adresem podstawowym przy użyciu `basicHttpBinding` powiązania, które nie ma włączonej funkcji zabezpieczenia. Drugi punkt końcowy jest zdefiniowany w lokalizacji {BaseAddress}/Secure przy użyciu `wsHttpBinding` powiązania, które jest domyślnie bezpieczne, przy użyciu WS-Security z uwierzytelnianiem systemu Windows.  
   
 ```xml  
 <service
