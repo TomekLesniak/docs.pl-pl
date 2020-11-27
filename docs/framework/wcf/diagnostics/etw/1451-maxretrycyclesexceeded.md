@@ -2,27 +2,30 @@
 title: 1451 — MaxRetryCyclesExceeded
 ms.date: 03/30/2017
 ms.assetid: 0b2466f5-a6cb-43b7-aff1-70327ffbdbc1
-ms.openlocfilehash: 383f52362dde7fa1d711cda9369ae1ed58a39f81
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0968c62a9d19c1006cc69a260fea9d943f4b37e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61781956"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284878"
 ---
 # <a name="1451---maxretrycyclesexceeded"></a>1451 — MaxRetryCyclesExceeded
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1451|  
-|słowa kluczowe|Limit przydziału|  
+|ID (Identyfikator)|1451|  
+|Słowa kluczowe|limit przydziału|  
 |Poziom|Błąd|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, po przekroczeniu cykle maksymalną liczbę ponownych prób.  
+
+ To zdarzenie jest emitowane w przypadku przekroczenia maksymalnej liczby ponownych prób.  
   
-## <a name="message"></a>Komunikat  
+## <a name="message"></a>Wiadomość  
+
  1%  
   
 ## <a name="details"></a>Szczegóły

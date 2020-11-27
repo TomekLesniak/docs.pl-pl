@@ -2,27 +2,30 @@
 title: 3807 — RoutingServiceCompletingTwoWay
 ms.date: 03/30/2017
 ms.assetid: 9bcc3b48-1b84-4fb0-89b2-c54e45304007
-ms.openlocfilehash: 611f67f3f6cec8fee0ad5a76d8158eedc04a37c5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 912264030b25414ce33e3d20de07aaf5af6e1b86
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61999768"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284865"
 ---
 # <a name="3807---routingservicecompletingtwoway"></a>3807 — RoutingServiceCompletingTwoWay
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|3807|  
-|słowa kluczowe|RoutingServices|  
+|ID (Identyfikator)|3807|  
+|Słowa kluczowe|RoutingServices|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, wypełniając komunikat odpowiedzi na żądanie usługa routingu.  
+
+ To zdarzenie jest emitowane, gdy zostanie ukończony komunikat odpowiedzi żądania usługi routingu.  
   
-## <a name="message"></a>Komunikat  
- Sobie radzi z komunikatu odpowiedzi żądania usługa routingu.  
+## <a name="message"></a>Wiadomość  
+
+ Trwa uzupełnianie komunikatu odpowiedzi na żądanie usługi routingu.  
   
 ## <a name="details"></a>Szczegóły

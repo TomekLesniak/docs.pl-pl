@@ -2,27 +2,30 @@
 title: 1443 — MaxRetryCyclesExceededMsmq
 ms.date: 03/30/2017
 ms.assetid: 5fb5b119-7ae0-4c88-b3ab-3679063707d9
-ms.openlocfilehash: e19583fb0d1e4c131fff0cdad7bc94423f1bf8ca
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e3915018ea33fd519fc8a341b5e0178f5011aa13
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61781969"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284994"
 ---
 # <a name="1443---maxretrycyclesexceededmsmq"></a>1443 — MaxRetryCyclesExceededMsmq
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1443|  
-|słowa kluczowe|Limit przydziału|  
+|ID (Identyfikator)|1443|  
+|Słowa kluczowe|limit przydziału|  
 |Poziom|Błąd|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, po przekroczeniu maksymalną liczbę ponownych prób cyklów w wiadomości usługi MSMQ.  
+
+ To zdarzenie jest emitowane w przypadku przekroczenia maksymalnej liczby ponownych prób w komunikacie usługi MSMQ.  
   
-## <a name="message"></a>Komunikat  
- Maksymalna liczba ponownych prób cyklów Przekroczono wiadomości usługi MSMQ o identyfikatorze "%1"  
+## <a name="message"></a>Wiadomość  
+
+ Przekroczono maksymalną liczbę cykli ponawiania prób w wiadomości MSMQ o identyfikatorze "%1".  
   
 ## <a name="details"></a>Szczegóły

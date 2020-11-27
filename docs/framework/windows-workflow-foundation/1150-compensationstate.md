@@ -2,33 +2,36 @@
 title: 1150 — CompensationState
 ms.date: 03/30/2017
 ms.assetid: eb015842-cc5a-47be-bce5-6af39e567723
-ms.openlocfilehash: 61613a27c4d4d8fb0b206246fef25ae87def47a5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2adb317521b8659c2419e4c04aabf4cf4499b36f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923867"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96285112"
 ---
 # <a name="1150---compensationstate"></a>1150 — CompensationState
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1150|  
-|słowa kluczowe|WFActivities|  
+|ID (Identyfikator)|1150|  
+|Słowa kluczowe|WFActivities|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Oznacza zmianę stanu w CompensableActivity.  
+
+ Wskazuje zmianę stanu w działanie CompensableActivity.  
   
-## <a name="message"></a>Komunikat  
- CompensableActivity "%1" jest w stanie "%2".  
+## <a name="message"></a>Wiadomość  
+
+ Działanie CompensableActivity "%1" jest w stanie "%2".  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|Nazwa wyświetlana|xs:String|Nazwa wyświetlana działania.|  
-|Stan|xs:String|Stan wynagrodzenia.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Nazwa wyświetlana|XS: ciąg|Nazwa wyświetlana działania.|  
+|Stan|XS: ciąg|Stan wynagrodzenia.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|
