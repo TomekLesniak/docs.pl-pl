@@ -2,20 +2,22 @@
 title: 'Instrukcje: tworzenie poświadczeń pomocniczych'
 ms.date: 03/30/2017
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-ms.openlocfilehash: b181ac72c9f197e9e404f7aa0f04e254abac10da
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1e11da11de68b1d3e24115387ec61ad22ec031b1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557401"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286308"
 ---
 # <a name="how-to-create-a-supporting-credential"></a>Instrukcje: tworzenie poświadczeń pomocniczych
+
 Istnieje możliwość, że niestandardowy schemat zabezpieczeń wymaga więcej niż jednego poświadczenia. Na przykład usługa może wymagać od klienta nie tylko nazwy użytkownika i hasła, ale również poświadczenia, które potwierdzają, że klient znajduje się w wieku 18 lat. Drugie poświadczenie jest *pomocniczą poświadczeniem*. W tym temacie wyjaśniono, jak zaimplementować takie poświadczenia w kliencie Windows Communication Foundation (WCF).  
   
 > [!NOTE]
 > Specyfikacja dla obsługi poświadczeń jest częścią specyfikacji WS-SecurityPolicy. Aby uzyskać więcej informacji, zobacz [specyfikacje zabezpieczenia usług w sieci Web](/previous-versions/dotnet/articles/ms951273(v=msdn.10)).  
   
 ## <a name="supporting-tokens"></a>Obsługa tokenów  
+
  W przypadku korzystania z zabezpieczeń wiadomości *podstawowe poświadczenia* są zawsze używane do zabezpieczania wiadomości (na przykład certyfikatu X. 509 lub biletu Kerberos).  
   
  Zgodnie ze specyfikacją, powiązanie zabezpieczeń używa *tokenów* do zabezpieczenia wymiany komunikatów. *Token* jest reprezentacją poświadczenia zabezpieczeń.  
@@ -25,6 +27,7 @@ Istnieje możliwość, że niestandardowy schemat zabezpieczeń wymaga więcej n
  Dodatkowe tokeny można określić, aby rozszerzyć oświadczenia dostarczone przez token skojarzony z podpisem komunikatu.  
   
 ## <a name="endorsing-signing-and-encrypting"></a>Zatwierdzanie, podpisywanie i szyfrowanie  
+
  W wyniku obsługi poświadczenie pomocnicze przesyłane w komunikacie jest *obsługiwany token* . Specyfikacja WS-SecurityPolicy definiuje cztery sposoby dołączania tokenu pomocniczego do wiadomości, zgodnie z opisem w poniższej tabeli.  
   
 |Przeznaczenie|Opis|  
@@ -35,6 +38,7 @@ Istnieje możliwość, że niestandardowy schemat zabezpieczeń wymaga więcej n
 |Podpisywanie i szyfrowanie|Podpisane, zaszyfrowane tokeny pomocnicze są podpisywane tokeny pomocnicze, które są również szyfrowane, gdy są wyświetlane w `wsse:SecurityHeader` .|  
   
 ## <a name="programming-supporting-credentials"></a>Programowanie — poświadczenia pomocnicze  
+
  Aby utworzyć usługę korzystającą z tokenów pomocniczych, należy utworzyć [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) . (Aby uzyskać więcej informacji, zobacz [How to: Create a Custom Binding using the elementu SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md).)  
   
  Pierwszym krokiem podczas tworzenia niestandardowego powiązania jest utworzenie elementu powiązania zabezpieczeń, który może być jednym z trzech typów:  
@@ -56,6 +60,7 @@ Istnieje możliwość, że niestandardowy schemat zabezpieczeń wymaga więcej n
 - <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters%2A>  
   
 #### <a name="scopes"></a>Zakresy  
+
  Istnieją dwa zakresy do obsługi poświadczeń:  
   
 - *Tokeny obsługujące punkt końcowy* obsługują wszystkie operacje na punkcie końcowym. Oznacza to, że poświadczenie, którego token pomocniczy reprezentuje, może być używane za każdym razem, gdy zostaną wywołane wszystkie operacje punktów końcowych.  
@@ -75,11 +80,13 @@ Istnieje możliwość, że niestandardowy schemat zabezpieczeń wymaga więcej n
 ## <a name="example"></a>Przykład  
   
 ### <a name="description"></a>Opis  
+
  Poniższy przykład tworzy wystąpienie <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> i dodaje wystąpienie <xref:System.ServiceModel.Security.Tokens.KerberosSecurityTokenParameters> klasy do kolekcji, która zwraca właściwość poświadczający.  
   
 ### <a name="code"></a>Kod  
+
  [!code-csharp[c_SupportingCredential#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_supportingcredential/cs/source.cs#1)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Instrukcje: tworzenie niestandardowego wiązania za pomocą elementu SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)

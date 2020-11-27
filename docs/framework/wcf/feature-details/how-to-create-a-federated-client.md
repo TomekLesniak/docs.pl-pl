@@ -1,5 +1,5 @@
 ---
-title: 'Instrukcje: Tworzenie klienta federacyjnego'
+title: 'Instrukcje: tworzenie klienta federacyjnego'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,17 +8,18 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 56ece47e-98bf-4346-b92b-fda1fc3b4d9c
-ms.openlocfilehash: 47e59452edfff74daf17d94a058ce8b12af7867c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a03d388f2773e312a149b5caf1747627d1c17864
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593545"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286630"
 ---
-# <a name="how-to-create-a-federated-client"></a>Instrukcje: Tworzenie klienta federacyjnego
+# <a name="how-to-create-a-federated-client"></a>Instrukcje: tworzenie klienta federacyjnego
+
 W programie Windows Communication Foundation (WCF) tworzenie klienta dla *usługi federacyjnej* składa się z trzech głównych kroków:  
   
-1. Skonfiguruj [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) lub podobne niestandardowe powiązanie. Aby uzyskać więcej informacji na temat tworzenia odpowiednich powiązań, zobacz [How to: Create a WSFederationHttpBinding](how-to-create-a-wsfederationhttpbinding.md). Alternatywnie Uruchom narzędzie do obsługi [metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) względem punktu końcowego metadanych usługi federacyjnej, aby wygenerować plik konfiguracji do komunikacji z usługą federacyjną i co najmniej jedną usługą tokenów zabezpieczających.  
+1. Skonfiguruj [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) lub podobne niestandardowe powiązanie. Aby uzyskać więcej informacji na temat tworzenia odpowiednich powiązań, zobacz [How to: Create a WSFederationHttpBinding](how-to-create-a-wsfederationhttpbinding.md). Alternatywnie Uruchom narzędzie do obsługi [metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) względem punktu końcowego metadanych usługi federacyjnej, aby wygenerować plik konfiguracji do komunikacji z usługą federacyjną i co najmniej jedną usługą tokenów zabezpieczających.  
   
 2. Ustawianie właściwości kontrolujących <xref:System.ServiceModel.Security.IssuedTokenClientCredential> różne aspekty interakcji klienta z usługą tokenu zabezpieczającego.  
   
@@ -31,13 +32,13 @@ W programie Windows Communication Foundation (WCF) tworzenie klienta dla *usług
   
 ### <a name="to-generate-and-examine-the-configuration-for-a-federated-service"></a>Aby wygenerować i przeanalizować konfigurację usługi federacyjnej  
   
-1. Uruchom [Narzędzie metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) z adresem URL metadanych usługi jako parametrem wiersza polecenia.  
+1. Uruchom narzędzie do obsługi [metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) z adresem URL metadanych usługi jako parametrem wiersza polecenia.  
   
 2. Otwórz wygenerowany plik konfiguracji w odpowiednim edytorze.  
   
 3. Badaj atrybuty i zawartość wszelkich wygenerowanych [\<issuer>](../../configure-apps/file-schema/wcf/issuer.md) i [\<issuerMetadata>](../../configure-apps/file-schema/wcf/issuermetadata.md) elementów. Znajdują się one w obrębie [\<security>](../../configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) elementów dla [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) elementów niestandardowych powiązań lub. Upewnij się, że adresy zawierają oczekiwane nazwy domen lub inne informacje o adresie. Ważne jest, aby sprawdzić te informacje, ponieważ klient uwierzytelnia się na tych adresach i może ujawnić takie informacje, jak pary nazwa użytkownika i hasło. Jeśli adres nie jest oczekiwanym adresem, może to spowodować ujawnienie informacji osobie nieprzeznaczonej odbiorcy.  
   
-4. Zapoznaj [\<issuedTokenParameters>](../../configure-apps/file-schema/wcf/issuedtokenparameters.md) się z dodatkowymi elementami wewnątrz oznaczonego komentarzem <`alternativeIssuedTokenParameters`> elementu. W przypadku korzystania z narzędzia Svcutil. exe do generowania konfiguracji dla usługi federacyjnej, jeśli usługa federacyjna lub wszystkie pośrednie usługi tokenów zabezpieczających nie określają adresu wystawcy, ale zamiast tego określisz adres metadanych dla usługi tokenu zabezpieczającego, która ujawnia wiele punktów końcowych, utworzony plik konfiguracji odwołuje się do pierwszego punktu końcowego. Dodatkowe punkty końcowe znajdują się w pliku konfiguracji jako komentarz <`alternativeIssuedTokenParameters`> elementy.  
+4. Zapoznaj [\<issuedTokenParameters>](../../configure-apps/file-schema/wcf/issuedtokenparameters.md) się z dodatkowymi elementami wewnątrz oznaczonego komentarzem <`alternativeIssuedTokenParameters`> elementu. W przypadku korzystania z narzędzia Svcutil.exe do generowania konfiguracji dla usługi federacyjnej, jeśli usługa federacyjna lub wszystkie pośrednie usługi tokenów zabezpieczających nie określają adresu wystawcy, ale zamiast tego określisz adres metadanych dla usługi tokenu zabezpieczającego, która ujawnia wiele punktów końcowych, utworzony plik konfiguracji odwołuje się do pierwszego punktu końcowego. Dodatkowe punkty końcowe znajdują się w pliku konfiguracji jako komentarz <`alternativeIssuedTokenParameters`> elementy.  
   
      Ustal, czy jeden z tych <`issuedTokenParameters`> jest preferowany dla tej, która jest już obecna w konfiguracji. Na przykład klient może preferować uwierzytelnienie w usłudze tokenu zabezpieczającego przy użyciu tokenu Windows CardSpace zamiast pary nazwa użytkownika i hasło.  
   
@@ -141,20 +142,24 @@ W programie Windows Communication Foundation (WCF) tworzenie klienta dla *usług
     ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu konfiguruje wystąpienie <xref:System.ServiceModel.Security.IssuedTokenClientCredential> klasy w kodzie.  
   
  [!code-csharp[c_FederatedClient#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federatedclient/cs/source.cs#2)]
  [!code-vb[c_FederatedClient#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federatedclient/vb/source.vb#2)]  
   
 ## <a name="net-framework-security"></a>Zabezpieczenia.NET Framework  
- Aby zapobiec ujawnieniu informacji, Klienci uruchamiający narzędzie Svcutil. exe mogą przetwarzać metadane z federacyjnych punktów końcowych, powinny mieć pewność, że otrzymane adresy usługi tokenu zabezpieczającego są oczekiwane. Jest to szczególnie ważne, gdy usługa tokenów zabezpieczających ujawnia wiele punktów końcowych, ponieważ narzędzie Svcutil. exe generuje plik konfiguracji, aby użyć pierwszego takiego punktu końcowego, który może nie być używany przez klienta.  
+
+ Aby zapobiec ujawnieniu informacji, klienci, którzy uruchamiają narzędzie Svcutil.exe, mogą przetwarzać metadane z federacyjnych punktów końcowych, powinny mieć pewność, że otrzymane adresy usługi tokenu zabezpieczającego są oczekiwane. Jest to szczególnie ważne, gdy usługa tokenów zabezpieczających ujawnia wiele punktów końcowych, ponieważ narzędzie Svcutil.exe generuje plik konfiguracji, aby użyć pierwszego takiego punktu końcowego, który może nie być używany przez klienta.  
   
 ## <a name="localissuer-required"></a>LocalIssuer wymagane  
- Jeśli klienci mają zawsze używać wystawcy lokalnego, należy zwrócić uwagę na następujące kwestie: domyślne dane wyjściowe programu Svcutil. exe nie są używane, jeśli w łańcuchu określono adres wystawcy lub adres metadanych wydawcy.  
+
+ Jeśli klienci mają zawsze używać wystawcy lokalnego, należy pamiętać o następujących kwestiach: domyślne dane wyjściowe Svcutil.exe wyniki w wystawce lokalnej nie są używane, jeśli w łańcuchu jest określany adres wystawcy lub adres metadanych wystawcy.  
   
  Aby uzyskać więcej informacji na temat <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerAddress%2A> ustawiania <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A> właściwości,, i <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerChannelBehaviors%2A> <xref:System.ServiceModel.Security.IssuedTokenClientCredential> klasy, zobacz [How to: Configure a Local wystawca](how-to-configure-a-local-issuer.md).  
   
 ## <a name="scoped-certificates"></a>Certyfikaty o określonym zakresie  
+
  Jeśli należy określić certyfikaty usługi do komunikacji z dowolnymi usługami tokenów zabezpieczających, zwykle ponieważ negocjowanie certyfikatu nie jest używane, można je określić przy użyciu <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A> właściwości <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential> klasy. <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.SetDefaultCertificate%2A>Metoda przyjmuje <xref:System.Uri> <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> Parametry i AS. Określony certyfikat jest używany podczas komunikowania się z punktami końcowymi o określonym identyfikatorze URI. Alternatywnie możesz użyć <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.SetScopedCertificate%2A> metody, aby dodać certyfikat do kolekcji zwróconej przez <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A> Właściwość.  
   
 > [!NOTE]
@@ -163,9 +168,9 @@ W programie Windows Communication Foundation (WCF) tworzenie klienta dla *usług
 ## <a name="see-also"></a>Zobacz też
 
 - [Federacja — przykład](../samples/federation-sample.md)
-- [Instrukcje: Wyłączanie bezpiecznej sesji przy użyciu klasy WSFederationHttpBinding](how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)
+- [Instrukcje: wyłączanie bezpiecznej sesji przy użyciu klasy WSFederationHttpBinding](how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)
 - [Instrukcje: tworzenie elementu WSFederationHttpBinding](how-to-create-a-wsfederationhttpbinding.md)
-- [Instrukcje: Konfigurowanie poświadczeń usługi federacyjnej](how-to-configure-credentials-on-a-federation-service.md)
-- [Instrukcje: Konfigurowanie lokalnego wystawcy](how-to-configure-a-local-issuer.md)
+- [Instrukcje: konfigurowanie poświadczeń usługi federacyjnej](how-to-configure-credentials-on-a-federation-service.md)
+- [Instrukcje: konfigurowanie lokalnego wystawcy](how-to-configure-a-local-issuer.md)
 - [Zagadnienia dotyczące zabezpieczeń obejmujące metadane](security-considerations-with-metadata.md)
 - [Instrukcje: bezpieczne punkty końcowe metadanych](how-to-secure-metadata-endpoints.md)

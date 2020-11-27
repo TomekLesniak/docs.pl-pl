@@ -2,27 +2,28 @@
 title: Przegląd przepływu komunikatu
 ms.date: 03/30/2017
 ms.assetid: fb0899e1-84cc-4d90-b45b-dc5a50063943
-ms.openlocfilehash: 0bfbd1523f1d5db4a94cf3af03a03779af14655d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: cb2924b62fce62620b664efa34208deb12dd34b7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795962"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96285541"
 ---
 # <a name="message-flow-overview"></a>Przegląd przepływu komunikatu
+
 W systemie rozproszonym zawierającym połączone usługi należy określić związek przyczyn między usługami. Ważne jest, aby zrozumieć różne składniki, które były częścią przepływu żądania, aby zapewnić obsługę krytycznych scenariuszy, takich jak monitorowanie kondycji, rozwiązywanie problemów i analiza głównych przyczyn. Aby umożliwić korelację śladów między różnymi usługami, w .NET Framework 4 dodaliśmy obsługę za pomocą następujących funkcji:
 
-- Śledzenie analityczne: Wysoka wydajność i niski poziom szczegółowości śledzenie przy użyciu funkcji Śledzenie zdarzeń systemu Windows (ETW).
+- Śledzenie analityczne: wysoka wydajność i niska funkcja śledzenia szczegółowości przy użyciu funkcji Śledzenie zdarzeń systemu Windows (ETW).
 
-- Kompleksowy model działań dla usług WCF/WF: Ta funkcja obsługuje korelację śladów generowanych <xref:System.ServiceModel> przez <xref:System.Workflow.ComponentModel> i przestrzenie nazw.
+- Kompleksowy model działań dla usług WCF/WF: Ta funkcja obsługuje korelację śladów generowanych przez <xref:System.ServiceModel> <xref:System.Workflow.ComponentModel> obszary nazw i.
 
-- Śledzenie ETW dla WF: Ta funkcja używa rekordów śledzenia wygenerowanych przez usługi WF w celu zapewnienia wglądu w bieżący stan i postęp przepływu pracy.
+- Śledzenie ETW dla WF: Ta funkcja używa rekordów śledzenia generowanych przez usługi WF w celu zapewnienia wglądu w bieżący stan i postęp przepływu pracy.
 
  Błędy zarejestrowane w rekordzie śledzenia lub śledzenia mogą służyć do znajdowania wad kodu lub niepoprawnie sformułowanych komunikatów. Właściwość ActivityId węzła korelacji w nagłówku komunikatu zdarzenia może służyć do określenia działania powodującego błąd. Aby włączyć śledzenie przepływu komunikatów według identyfikatora działania, zobacz [Konfigurowanie śledzenia przepływu komunikatów](./etw/configuring-message-flow-tracing.md). W tym temacie przedstawiono sposób włączania śledzenia przepływu komunikatów w projekcie utworzonym w samouczku Wprowadzenie.
 
 ### <a name="to-enable-message-flow-tracing-in-the-getting-started-tutorial"></a>Aby włączyć śledzenie przepływu komunikatów w samouczku Wprowadzenie
 
-1. Otwórz Podgląd zdarzeń, klikając przycisk **Start**, **Uruchom**i wprowadzając `eventvwr.exe`.
+1. Otwórz Podgląd zdarzeń, klikając przycisk **Start**, **Uruchom** i wprowadzając `eventvwr.exe` .
 
 2. Jeśli nie włączono śledzenia analitycznego, rozwiń węzeł **Dzienniki aplikacji i usług**, **Microsoft**, **Windows**, **serwer aplikacji-aplikacje**. Wybierz **Widok**, **Pokaż dzienniki analityczne i debugowania**. Kliknij prawym przyciskiem myszy pozycję **analityczne** i wybierz pozycję **Włącz dziennik**. Pozostaw Podgląd zdarzeń otwarty, aby umożliwić wyświetlanie śladów.
 
@@ -30,7 +31,7 @@ W systemie rozproszonym zawierającym połączone usługi należy określić zwi
 
 4. Kliknij prawym przyciskiem myszy projekt **usługi** i wybierz polecenie **Dodaj**, **nowy element**. Wybierz pozycję **plik konfiguracji aplikacji** , a następnie kliknij przycisk **OK**.
 
-5. Dodaj następujący kod do pliku App. config utworzonego w poprzednim kroku.
+5. Dodaj następujący kod do pliku App.Config utworzonego w poprzednim kroku.
 
     ```xml
     <system.serviceModel>
@@ -63,7 +64,7 @@ W systemie rozproszonym zawierającym połączone usługi należy określić zwi
     Trace.CorrelationManager.ActivityId = guid;
     ```
 
-10. Odśwież i przejrzyj dziennik **analityczny** .  Poszukaj zdarzenia o IDENTYFIKATORze 220.  Wybierz zdarzenie, a następnie kliknij kartę **szczegóły** w okienku podglądu. To zdarzenie będzie zawierać identyfikator korelacji dla działania wywołującego.
+10. Odśwież i przejrzyj dziennik **analityczny**  .  Poszukaj zdarzenia o IDENTYFIKATORze 220.  Wybierz zdarzenie, a następnie kliknij kartę **szczegóły** w okienku podglądu. To zdarzenie będzie zawierać identyfikator korelacji dla działania wywołującego.
 
     ```xml
     <Correlation ActivityID="{A066CCF1-8AB3-459B-B62F-F79F957A5036}" />

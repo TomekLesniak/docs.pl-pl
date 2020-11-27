@@ -1,5 +1,5 @@
 ---
-title: 'Instrukcje: Tworzenie usługi tokenów zabezpieczeń'
+title: 'Instrukcje: tworzenie usługi tokenów zabezpieczeń'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,20 +8,23 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 98e82101-4cff-4bb8-a220-f7abed3556e5
-ms.openlocfilehash: 1cfcca524e5dd2b0c1560eb7600795766e2db1d6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cfe1da7c66f5c64ac3f5346bc23e9b618db38d20
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598960"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286464"
 ---
-# <a name="how-to-create-a-security-token-service"></a>Instrukcje: Tworzenie usługi tokenów zabezpieczeń
+# <a name="how-to-create-a-security-token-service"></a>Instrukcje: tworzenie usługi tokenów zabezpieczeń
+
 Usługa tokenu zabezpieczającego implementuje protokół zdefiniowany w specyfikacji WS-Trust. Ten protokół definiuje formaty komunikatów i wzorce wymiany komunikatów na potrzeby wydawania, odnawiania, anulowania i weryfikowania tokenów zabezpieczających. Dana usługa tokenów zabezpieczających udostępnia co najmniej jedną z tych możliwości. Ten temat sprawdza się w najbardziej typowym scenariuszu: implementowanie wystawiania tokenów.  
   
 ## <a name="issuing-tokens"></a>Wystawianie tokenów  
- Usługa WS-Trust definiuje formaty komunikatów na podstawie `RequestSecurityToken` elementu schematu definicji schematu XML (XSD) i `RequestSecurityTokenResponse` elementu schematu XSD do wykonywania wystawiania tokenów. Ponadto definiuje skojarzone identyfikatory URI (Uniform Resource Identifier) akcji. Identyfikator URI akcji skojarzony z `RequestSecurityToken` komunikatem to `http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue` . Identyfikator URI akcji skojarzony z `RequestSecurityTokenResponse` komunikatem to `http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue` .  
+
+ WS-Trust definiuje formaty komunikatów na podstawie `RequestSecurityToken` elementu schematu definicji schematu XML (XSD) i `RequestSecurityTokenResponse` elementu schematu XSD do wykonywania wystawiania tokenów. Ponadto definiuje skojarzone identyfikatory URI (Uniform Resource Identifier) akcji. Identyfikator URI akcji skojarzony z `RequestSecurityToken` komunikatem to `http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue` . Identyfikator URI akcji skojarzony z `RequestSecurityTokenResponse` komunikatem to   `http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue` .  
   
 ### <a name="request-message-structure"></a>Struktura komunikatu żądania  
+
  Struktura komunikatów żądania problemu zwykle składa się z następujących elementów:  
   
 - Identyfikator URI typu żądania o wartości `http://schemas.xmlsoap.org/ws/2005/02/trust/Issue` .
@@ -41,6 +44,7 @@ Usługa tokenu zabezpieczającego implementuje protokół zdefiniowany w specyfi
  Usługa tokenu zabezpieczającego używa informacji w komunikacie żądania problemu, gdy konstruuje komunikat odpowiedzi na problem.  
   
 ## <a name="response-message-structure"></a>Struktura komunikatu odpowiedzi  
+
  Struktura komunikatów o problemie z odpowiedzią zwykle składa się z następujących elementów:  
   
 - Wystawiony token zabezpieczający, na przykład potwierdzenie SAML 1,1.  
@@ -58,6 +62,7 @@ Usługa tokenu zabezpieczającego implementuje protokół zdefiniowany w specyfi
 - Informacje o okresie istnienia wystawionego tokenu.  
   
 ## <a name="processing-request-messages"></a>Przetwarzanie komunikatów żądań  
+
  Usługa tokenu zabezpieczającego przetwarza żądanie problemu, sprawdzając różne fragmenty komunikatu żądania i upewniając się, że może wydać token, który spełnia żądanie. Aby można było wystawić token, usługa tokenu zabezpieczającego musi określić następujące elementy:  
   
 - Żądanie naprawdę jest żądaniem wystawienia tokenu.  
@@ -101,6 +106,7 @@ Usługa tokenu zabezpieczającego implementuje protokół zdefiniowany w specyfi
  Aby uzyskać więcej informacji, zobacz [przykład Federacji](../samples/federation-sample.md).  
   
 ## <a name="creating-response-messages"></a>Tworzenie komunikatów odpowiedzi  
+
  Gdy usługa tokenu zabezpieczeń przetwarza żądanie problemu i konstruuje token, który ma zostać wystawiony wraz z kluczem testowym, należy skonstruować komunikat odpowiedzi, w tym co najmniej żądany token, token potwierdzający oraz odwołania do wystawionych tokenów. Wystawiony token jest zwykle <xref:System.IdentityModel.Tokens.SamlSecurityToken> tworzony przy użyciu <xref:System.IdentityModel.Tokens.SamlAssertion> , jak pokazano w poniższym przykładzie.  
   
  [!code-csharp[c_CreateSTS#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#5)]
@@ -121,6 +127,7 @@ Usługa tokenu zabezpieczającego implementuje protokół zdefiniowany w specyfi
  Te różne wartości są następnie serializowane do komunikatu odpowiedzi zwróconego do klienta.  
   
 ## <a name="example"></a>Przykład  
+
  Aby uzyskać pełny kod dla usługi tokenu zabezpieczającego, zobacz [przykład Federacji](../samples/federation-sample.md).  
   
 ## <a name="see-also"></a>Zobacz też

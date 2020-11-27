@@ -1,5 +1,5 @@
 ---
-title: 'Instrukcje: Tworzenie bezpiecznej sesji'
+title: 'Instrukcje: tworzenie bezpiecznej sesji'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], creating a session
 ms.assetid: b6f42b5a-bbf7-45cf-b917-7ec9fa7ae110
-ms.openlocfilehash: 80973a31050cf1ede03d4a3919066c62625ae590
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f6fb73653add7362e8c8452e75be802395ffc3cd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593415"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286529"
 ---
-# <a name="how-to-create-a-secure-session"></a>Instrukcje: Tworzenie bezpiecznej sesji
+# <a name="how-to-create-a-secure-session"></a>Instrukcje: tworzenie bezpiecznej sesji
+
 Z wyjątkiem [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) powiązania, dostarczone przez system powiązania w Windows Communication Foundation (WCF) automatycznie używają bezpiecznych sesji, gdy włączono zabezpieczenia komunikatów.  
   
  Domyślnie bezpieczne sesje nie przeżyły serwera sieci Web, który jest odtwarzany ponownie. Po ustanowieniu bezpiecznej sesji klient i usługa buforują klucz skojarzony z bezpieczną sesją. Podczas wymiany komunikatów wymieniany jest tylko identyfikator klucza w pamięci podręcznej. Jeśli serwer sieci Web jest odtwarzany ponownie, pamięć podręczna jest również odtwarzana w taki sposób, że serwer sieci Web nie może pobrać klucza buforowanego identyfikatora. W takim przypadku wyjątek jest zgłaszany z powrotem do klienta. Bezpieczne sesje korzystające z tokenu stanowego kontekstu zabezpieczeń (SCT) mogą przetrwać serwer sieci Web, który jest odtwarzany. Aby uzyskać więcej informacji na temat używania stanowego SCT w bezpiecznej sesji, zobacz [How to: Create a Security Context token for a Secure Session](how-to-create-a-security-context-token-for-a-secure-session.md).  
@@ -60,7 +61,7 @@ Z wyjątkiem [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichtt
   
 - Utwórz niestandardowe powiązanie, które określa, że wiadomości protokołu SOAP są chronione przez bezpieczną sesję.  
   
-     Aby uzyskać więcej informacji na temat tworzenia niestandardowego powiązania, zobacz [How to: Dostosowywanie podanego przez system powiązania](../extending/how-to-customize-a-system-provided-binding.md).  
+     Aby uzyskać więcej informacji na temat tworzenia niestandardowego powiązania, zobacz [How to: Dostosowywanie powiązania System-Provided](../extending/how-to-customize-a-system-provided-binding.md).  
   
      Poniższy przykład kodu używa konfiguracji do określenia niestandardowego powiązania, które wiadomości używają bezpiecznej sesji.  
   

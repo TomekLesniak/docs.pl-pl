@@ -8,22 +8,25 @@ helpviewer_keywords:
 - WCF, federation
 - federation [WCF]
 ms.assetid: 2f1e646f-8361-48d4-9d5d-1b961f31ede4
-ms.openlocfilehash: c31c2612b595e627b0c4c2d7fbb3a359b19ee704
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 5b5e944b96fc5e56fbb4d19a582ba9dd245904b4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595495"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286750"
 ---
 # <a name="federation"></a>Federacja
+
 Ten temat zawiera krótkie omówienie koncepcji zabezpieczeń federacyjnych. Opisano w nim również obsługę Windows Communication Foundation (WCF) na potrzeby wdrażania federacyjnych architektur zabezpieczeń. Aby zapoznać się z przykładową aplikacją, która demonstruje Federacji, zobacz [przykład Federacji](../samples/federation-sample.md).  
   
 ## <a name="definition-of-federated-security"></a>Definicja zabezpieczeń federacyjnych  
+
  Zabezpieczenia federacyjne umożliwiają czyste rozdzielenie między usługą dostępną przez klienta a związanymi z nimi procedurami uwierzytelniania i autoryzacji. Zabezpieczenia federacyjne umożliwiają również współpracę między wieloma systemami, sieciami i organizacjami w różnych obszarach zaufania.  
   
  Funkcja WCF zapewnia obsługę kompilowania i wdrażania systemów rozproszonych, które wykorzystują zabezpieczenia federacyjne.  
   
 ### <a name="elements-of-a-federated-security-architecture"></a>Elementy architektury zabezpieczeń federacyjnych  
+
  Architektura zabezpieczeń federacyjnych ma trzy kluczowe elementy, zgodnie z opisem w poniższej tabeli.  
   
 |Element|Opis|  
@@ -33,6 +36,7 @@ Ten temat zawiera krótkie omówienie koncepcji zabezpieczeń federacyjnych. Opi
 |Usługa tokenu zabezpieczającego (STS)|Usługa sieci Web, która wystawia tokeny zabezpieczające; oznacza to, że wykonuje potwierdzenia oparte na zasobie, że ufa, aby whomever je z zaufaniem. Stanowi to podstawę zaufania między domenami.|  
   
 ### <a name="example-scenario"></a>Przykładowy scenariusz  
+
  Na poniższej ilustracji przedstawiono przykład zabezpieczeń federacyjnych:  
   
  ![Diagram przedstawiający typowy scenariusz zabezpieczeń federacyjnych.](./media/federation/typical-federated-security-scenario.gif)  
@@ -40,7 +44,7 @@ Ten temat zawiera krótkie omówienie koncepcji zabezpieczeń federacyjnych. Opi
  Ten scenariusz obejmuje dwie organizacje: a i B. organizacja B ma zasób sieci Web (usługę sieci Web), który niektórzy użytkownicy w organizacji znalazły wartość cenną.  
   
 > [!NOTE]
-> Ta sekcja używa zamiennie postanowień dotyczących *zasobów*, *usług*i *usług sieci Web* .  
+> Ta sekcja używa zamiennie postanowień dotyczących *zasobów*, *usług* i *usług sieci Web* .  
   
  Zazwyczaj organizacja B wymaga, aby przed uzyskaniem dostępu do usługi użytkownik z organizacji A zapewniał pewną prawidłową formę uwierzytelniania. Ponadto organizacja może również wymagać, aby użytkownik miał uprawnienia dostępu do określonego zasobu. Jednym ze sposobów rozwiązania tego problemu i umożliwienie użytkownikom w organizacji A uzyskiwania dostępu do zasobu w organizacji B jest następująca:  
   
@@ -67,6 +71,7 @@ Ten temat zawiera krótkie omówienie koncepcji zabezpieczeń federacyjnych. Opi
  Gdy użytkownicy uzyskają token zabezpieczający od usługi STS A, przedstawią token do usługi STS B. organizacja B wykonuje autoryzację żądań użytkowników i wystawia token zabezpieczający użytkownikom ze swojego własnego zestawu tokenów zabezpieczających. Użytkownicy mogą następnie przedstawić swój token dla zasobu w organizacji B i uzyskać dostęp do usługi.  
   
 ## <a name="support-for-federated-security-in-wcf"></a>Obsługa zabezpieczeń federacyjnych w programie WCF  
+
  Funkcja WCF oferuje gotoweą obsługę wdrażania federacyjnych architektur zabezpieczeń za pomocą programu [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) .  
   
  [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md)Element zapewnia bezpieczne, niezawodne i interoperacyjne powiązanie, które wiąże się z użyciem protokołu HTTP jako podstawowego mechanizmu transportu dla stylu komunikacji żądanie-odpowiedź, wykorzystując tekst i XML jako format sieci do kodowania.  
@@ -74,7 +79,8 @@ Ten temat zawiera krótkie omówienie koncepcji zabezpieczeń federacyjnych. Opi
  Korzystanie z programu [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) w federacyjnym scenariuszu zabezpieczeń można rozdzielić na dwie niezależne fazy logiczne, zgodnie z opisem w poniższych sekcjach.  
   
 ### <a name="phase-1-design-phase"></a>Faza 1: faza projektowania  
- W fazie projektowania klient używa narzędzia do obsługi [metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) , aby przeczytać zasady ujawniane przez punkt końcowy usługi i zebrać wymagania dotyczące uwierzytelniania i autoryzacji usługi. Odpowiednie serwery proxy są konstruowane w celu utworzenia na kliencie następującego wzorca komunikacji z zabezpieczeniami federacyjnymi:  
+
+ W fazie projektowania klient używa narzędzia do obsługi [metadanych modelu ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) do odczytywania zasad udostępnianych przez punkt końcowy usługi i zbierających wymagania dotyczące uwierzytelniania i autoryzacji usługi. Odpowiednie serwery proxy są konstruowane w celu utworzenia na kliencie następującego wzorca komunikacji z zabezpieczeniami federacyjnymi:  
   
 - Uzyskaj token zabezpieczający z usługi STS w obszarze zaufania klienta.  
   
@@ -84,15 +90,18 @@ Ten temat zawiera krótkie omówienie koncepcji zabezpieczeń federacyjnych. Opi
   
 - Zaprezentowanie tokenu usłudze w celu uzyskania dostępu do usługi.  
   
-### <a name="phase-2-run-time-phase"></a>Faza 2: faza czasu wykonywania  
+### <a name="phase-2-run-time-phase"></a>Faza 2: Run-Time fazy  
+
  Podczas fazy czasu wykonywania klient tworzy wystąpienie obiektu klasy klienta WCF i wykonuje wywołanie przy użyciu klienta WCF. Podstawowa struktura programu WCF obsługuje wyżej wymienione kroki we wzorcu komunikacji z zabezpieczeniami federacyjnymi i umożliwia klientowi bezproblemowe korzystanie z usługi.  
   
 ## <a name="sample-implementation-using-wcf"></a>Przykładowa implementacja przy użyciu programu WCF  
+
  Na poniższej ilustracji przedstawiono przykładową implementację architektury zabezpieczeń federacyjnych przy użyciu natywnej pomocy technicznej z programu WCF.  
   
  ![Diagram przedstawiający przykładową implementację zabezpieczeń Federacji.](./media/federation/federated-security-implementation.gif)  
   
 ### <a name="example-myservice"></a>Przykładowa usługa  
+
  Usługa `MyService` ujawnia pojedynczy punkt końcowy za pomocą `MyServiceEndpoint` . Na poniższej ilustracji przedstawiono adres, powiązanie i kontrakt skojarzone z punktem końcowym.  
   
  ![Diagram przedstawiający szczegóły dotyczące programu ServiceEndpoint.](./media/federation/myserviceendpoint-details.gif)  
@@ -158,6 +167,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 [!code-vb[C_Federation#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federation/vb/source.vb#1)]  
   
 #### <a name="sts-b"></a>USŁUGA STS B  
+
  Na poniższej ilustracji przedstawiono usługę STS B. Jak wspomniano wcześniej, usługa tokenu zabezpieczającego (STS) jest również usługą sieci Web i może mieć skojarzone punkty końcowe, zasady i tak dalej.  
   
  ![Diagram przedstawiający usługę tokenów zabezpieczających B.](./media/federation/myservice-security-token-service-b.gif)  
@@ -220,6 +230,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
  [!code-vb[C_Federation#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federation/vb/source.vb#3)]  
   
 #### <a name="sts-a"></a>USŁUGA STS A  
+
  Na poniższej ilustracji przedstawiono usługę STS A.  
   
  ![Federacja](media/sts-b.gif "STS_B")  
@@ -282,11 +293,13 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
  [!code-vb[C_Federation#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federation/vb/source.vb#5)]  
   
 ### <a name="client-at-organization-a"></a>Klient w organizacji A  
+
  Na poniższej ilustracji przedstawiono klienta w organizacji A wraz z krokami związanymi z wykonywaniem `MyService` wywołania usługi. Pozostałe składniki funkcjonalne są również dołączone do kompletności.  
   
  ![Diagram przedstawiający kroki wywołania usługi WebService.](./media/federation/federation-myservice-service-call-process.gif)  
   
 ## <a name="summary"></a>Podsumowanie  
+
  Zabezpieczenia federacyjne zapewniają czyste dział odpowiedzialności i ułatwiają tworzenie bezpiecznych, skalowalnych architektur usług. Jako platforma do kompilowania i wdrażania aplikacji rozproszonych, WCF zapewnia natywną obsługę implementowania zabezpieczeń federacyjnych.  
   
 ## <a name="see-also"></a>Zobacz też

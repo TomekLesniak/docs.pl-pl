@@ -13,17 +13,19 @@ helpviewer_keywords:
 - time formatting
 - UTC formatting
 ms.assetid: c4a942bb-2651-4b65-8718-809f892a0659
-ms.openlocfilehash: d092b93af55d2cdf14e9284d8cffcdc8440cbf81
-ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
+ms.openlocfilehash: ed2cf0b960c0a8f51dc327a5c58770fcf5e2fa17
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415995"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286061"
 ---
 # <a name="datetimeinvalidlocalformat-mda"></a>dateTimeInvalidLocalFormat MDA
+
 `dateTimeInvalidLocalFormat`Zdarzenie MDA jest uaktywniane, gdy <xref:System.DateTime> wystąpienie, które jest przechowywane jako uniwersalny czas koordynowany (UTC) jest sformatowane przy użyciu formatu, który jest przeznaczony do użycia tylko dla <xref:System.DateTime> wystąpień lokalnych. Ta wartość MDA nie została aktywowana dla wystąpień nieokreślonych lub domyślnych <xref:System.DateTime> .  
   
 ## <a name="symptom"></a>Objaw  
+
  Aplikacja ręcznie Serializowanie wystąpienia czasu UTC <xref:System.DateTime> przy użyciu formatu lokalnego:  
   
 ```csharp
@@ -32,9 +34,11 @@ Serialize(myDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss.fffffffzzz"));
 ```  
   
 ### <a name="cause"></a>Przyczyna  
+
  Format "z" dla <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> metody obejmuje przesunięcie lokalnej strefy czasowej, na przykład "+ 10:00" dla czasu Sydney. W związku z tym zostanie wygenerowane znaczące wyniki tylko wtedy, gdy wartość <xref:System.DateTime> jest lokalna. Jeśli wartość jest czasu UTC, <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> uwzględnia przesunięcie strefy czasowej, ale nie wyświetla ani nie dostosowuje specyfikatora strefy czasowej.  
   
 ### <a name="resolution"></a>Rozwiązanie  
+
  Wystąpienia czasu UTC <xref:System.DateTime> powinny być sformatowane w taki sposób, aby wskazywały czas UTC. Zalecany format czasu UTC do użycia "Z" jako "czas UTC":  
   
 ```csharp
@@ -50,12 +54,14 @@ Serialize(myDateTime.ToString("o"));
 ```  
   
 ## <a name="effect-on-the-runtime"></a>Wpływ na środowisko uruchomieniowe  
+
  To zdarzenie MDA nie ma wpływu na środowisko uruchomieniowe.  
   
 ## <a name="output"></a>Dane wyjściowe  
+
  W wyniku tego przeprowadzenia operacji MDA nie ma żadnych specjalnych danych wyjściowych. jednak stos wywołań może służyć do określenia lokalizacji <xref:System.DateTime.ToString%2A> wywołania, które aktywuje zdarzenie MDA.  
   
-## <a name="configuration"></a>Konfiguracja  
+## <a name="configuration"></a>Konfigurowanie  
   
 ```xml  
 <mdaConfig>  
@@ -66,6 +72,7 @@ Serialize(myDateTime.ToString("o"));
 ```  
   
 ## <a name="example"></a>Przykład  
+
  Rozważmy aplikację, która pośrednio serializacji wartość czasu UTC przy <xref:System.DateTime> użyciu <xref:System.Xml.XmlConvert> <xref:System.Data.DataSet> klasy or, w następujący sposób.  
   
 ```csharp

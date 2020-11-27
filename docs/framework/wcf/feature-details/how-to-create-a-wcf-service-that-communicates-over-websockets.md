@@ -1,14 +1,16 @@
 ---
-title: 'Instrukcje: Tworzenie usługi WCF komunikującej się przez protokół WebSockets'
+title: 'Instrukcje: tworzenie usługi WCF komunikującej się przez protokół WebSockets'
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: 80c62ddc6630d26c6c178d1eeff8c6df05bf1d00
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 64f856bcce1234c8e833cc9be723b4af91c4569c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051938"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286165"
 ---
-# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Instrukcje: Tworzenie usługi WCF komunikującej się przez protokół WebSockets
+# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Instrukcje: tworzenie usługi WCF komunikującej się przez protokół WebSockets
+
 Usługi i klienci WCF mogą używać <xref:System.ServiceModel.NetHttpBinding> powiązania do komunikacji za pośrednictwem obiektów WebSockets.  Usługa WebSockets zostanie użyta, gdy <xref:System.ServiceModel.NetHttpBinding> określi kontrakt usługi definiuje kontrakt wywołania zwrotnego. W tym temacie opisano sposób implementacji usługi WCF i klienta, który używa programu <xref:System.ServiceModel.NetHttpBinding> do komunikacji za pośrednictwem usług WebSockets.  
   
 ### <a name="define-the-service"></a>Definiowanie usługi  
@@ -160,6 +162,7 @@ Usługi i klienci WCF mogą używać <xref:System.ServiceModel.NetHttpBinding> p
          Nie ma żadnych specjalnych, które należy wykonać w konfiguracji klienta, wystarczy określić punkt końcowy po stronie klienta przy użyciu `NetHttpBinding` .  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej znajduje się kompletny kod używany w tym temacie.  
   
 ```csharp  
@@ -317,7 +320,7 @@ namespace Client
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Operacje synchroniczne i asynchroniczne](../synchronous-and-asynchronous-operations.md)
 - [Używanie elementu NetHttpBinding](using-the-nethttpbinding.md)

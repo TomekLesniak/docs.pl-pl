@@ -1,15 +1,16 @@
 ---
-title: 'Porada: Tworzenie przepływu pracy usługi przy użyciu działań dotyczących komunikatów'
+title: 'Instrukcje: Tworzenie usługi przepływu pracy przy użyciu działań dotyczących komunikatów'
 ms.date: 03/30/2017
 ms.assetid: 53d094e2-6901-4aa1-88b8-024b27ccf78b
-ms.openlocfilehash: b4991fc9f8a6c45cae3943f1506247c42ed2b30b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 21d08d9c3c78cc8774d038018703ffb0c7ceb1fe
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597127"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286321"
 ---
-# <a name="how-to-create-a-workflow-service-with-messaging-activities"></a>Porada: Tworzenie przepływu pracy usługi przy użyciu działań dotyczących komunikatów
+# <a name="how-to-create-a-workflow-service-with-messaging-activities"></a>Instrukcje: Tworzenie usługi przepływu pracy przy użyciu działań dotyczących komunikatów
+
 W tym temacie opisano sposób tworzenia prostej usługi przepływu pracy przy użyciu działań związanych z wiadomościami. Ten temat koncentruje się na Mechanics tworzenia usługi przepływu pracy, w której usługa składa się wyłącznie z działań związanych z obsługą komunikatów. W przypadku usługi w świecie przepływ pracy zawiera wiele innych działań. Usługa implementuje jedną operację o nazwie echo, która pobiera ciąg i zwraca ciąg do obiektu wywołującego. Ten temat jest pierwszą częścią serii dwóch tematów. Następny temat [: uzyskiwanie dostępu do usługi z poziomu aplikacji przepływu pracy](how-to-access-a-service-from-a-workflow-application.md) omawia sposób tworzenia aplikacji przepływu pracy, która może wywołać usługę utworzoną w tym temacie.  
   
 ### <a name="to-create-a-workflow-service-project"></a>Aby utworzyć projekt usługi przepływu pracy  
@@ -67,11 +68,12 @@ W tym temacie opisano sposób tworzenia prostej usługi przepływu pracy przy u�
 8. Zapisz i skompiluj rozwiązanie, klikając menu **kompilacja** i wybierając polecenie **Kompiluj rozwiązanie**.  
   
 ## <a name="configure-the-workflow-service-project"></a>Konfigurowanie projektu usługi przepływu pracy  
+
  Usługa przepływu pracy została ukończona. W tej sekcji opisano sposób konfigurowania rozwiązania usługi przepływu pracy w celu ułatwienia hostowania i uruchamiania programu. To rozwiązanie używa serwera deweloperskiego ASP.NET do hostowania usługi.  
   
 #### <a name="to-set-project-start-up-options"></a>Aby ustawić opcje uruchamiania projektu  
   
-1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy pozycję **MyWFService** i wybierz pozycję **Właściwości** , aby wyświetlić okno dialogowe **właściwości projektu** .  
+1. W **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy pozycję **MyWFService** i wybierz pozycję **Właściwości** , aby wyświetlić okno dialogowe **właściwości projektu** .  
   
 2. Wybierz kartę **Sieć Web** i wybierz opcję **określona Strona** w obszarze **Rozpocznij akcję** , a następnie wpisz `Service1.xamlx` w polu tekstowym, jak pokazano na poniższej ilustracji.  
   

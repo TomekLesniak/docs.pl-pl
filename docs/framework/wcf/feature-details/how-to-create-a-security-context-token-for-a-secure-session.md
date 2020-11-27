@@ -1,18 +1,19 @@
 ---
-title: 'Instrukcje: Tworzenie tokenu kontekstu zabezpieczeń dla bezpiecznej sesji'
+title: 'Instrukcje: tworzenie tokenu kontekstu zabezpieczeń dla bezpiecznej sesji'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 640676b6-c75a-4ff7-aea4-b1a1524d71b2
-ms.openlocfilehash: 36cf5ce1aa6e0eef80123ac7008294062d7faf82
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 87156eb4c8d28180b492c7ff445b3334515f4a7f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598908"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286503"
 ---
-# <a name="how-to-create-a-security-context-token-for-a-secure-session"></a>Instrukcje: Tworzenie tokenu kontekstu zabezpieczeń dla bezpiecznej sesji
+# <a name="how-to-create-a-security-context-token-for-a-secure-session"></a>Instrukcje: tworzenie tokenu kontekstu zabezpieczeń dla bezpiecznej sesji
+
 Przy użyciu tokenu stanowego kontekstu zabezpieczeń (SCT) w bezpiecznej sesji, sesja może przetrzymywać odtwarzanie usługi. Na przykład gdy w bezpiecznej sesji jest używany niestanowy SCT, a Internet Information Services (IIS) jest resetowany, dane sesji skojarzone z usługą zostaną utracone. Dane sesji obejmują pamięć podręczną tokenów SCT. W związku z tym następnym razem, gdy klient wysyła usługę do bezstanowego SCT, zwracany jest błąd, ponieważ nie można pobrać klucza skojarzonego z SCT. Jeśli jednak używany jest stanowy SCT, wówczas klucz skojarzony z SCT jest zawarty w SCT. Ponieważ klucz znajduje się w obrębie SCT i w związku z tym jest zawarty w komunikacie, usługa nie ma na nie wpływ na bezpieczną sesję. Domyślnie Windows Communication Foundation (WCF) używa bezstanowej SCTs w bezpiecznej sesji. W tym temacie szczegółowo opisano sposób używania SCTs stanowej w bezpiecznej sesji.  
   
 > [!NOTE]
@@ -90,6 +91,7 @@ Przy użyciu tokenu stanowego kontekstu zabezpieczeń (SCT) w bezpiecznej sesji,
     ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu tworzy niestandardowe powiązanie, które używa <xref:System.ServiceModel.Configuration.AuthenticationMode.MutualCertificate> trybu uwierzytelniania do uruchamiania bezpiecznej sesji.  
   
  [!code-csharp[c_CreateStatefulSCT#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_createstatefulsct/cs/secureservice.cs#2)]

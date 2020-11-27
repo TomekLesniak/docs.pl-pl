@@ -1,23 +1,25 @@
 ---
-title: 'Instrukcje: Tworzenie elementu SecurityBindingElement dla określonego trybu uwierzytelniania'
+title: 'Instrukcje: tworzenie elementu SecurityBindingElement dla określonego trybu uwierzytelniania'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: a7c7747a-5b8c-463f-8493-7266dac75066
-ms.openlocfilehash: 9aebe6d8cc82c454161daead49b55f02a1cca4a7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7b71224c74d7e9e766fb17101219dc5718d5d6a6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598947"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286438"
 ---
-# <a name="how-to-create-a-securitybindingelement-for-a-specified-authentication-mode"></a>Instrukcje: Tworzenie elementu SecurityBindingElement dla określonego trybu uwierzytelniania
+# <a name="how-to-create-a-securitybindingelement-for-a-specified-authentication-mode"></a>Instrukcje: tworzenie elementu SecurityBindingElement dla określonego trybu uwierzytelniania
+
 Windows Communication Foundation (WCF) oferuje kilka trybów, za pomocą których klienci i usługi mogą się wzajemnie uwierzytelniać. Można utworzyć elementy powiązań zabezpieczeń dla tych trybów uwierzytelniania przy użyciu metod statycznych w <xref:System.ServiceModel.Channels.SecurityBindingElement> klasie lub przez konfigurację, jak pokazano w poniższym przykładzie.  
   
  Aby uzyskać więcej informacji o 18 trybach uwierzytelniania, zobacz [elementu SecurityBindingElement Authentication Modes](securitybindingelement-authentication-modes.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu przedstawia metody tworzenia powiązań dla różnych trybów uwierzytelniania.  
   
 > [!NOTE]
@@ -29,4 +31,4 @@ Windows Communication Foundation (WCF) oferuje kilka trybów, za pomocą któryc
 ## <a name="see-also"></a>Zobacz też
 
 - [Tryby uwierzytelniania elementu SecurityBindingElement](securitybindingelement-authentication-modes.md)
-- [Instrukcje: tworzenie niestandardowego powiązania za pomocą elementu SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Instrukcje: tworzenie niestandardowego wiązania za pomocą elementu SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)

@@ -2,27 +2,30 @@
 title: 4812 — DiscoveryMessageWithNullReplyTo
 ms.date: 03/30/2017
 ms.assetid: a40e6b7e-c2a6-4186-b1d6-c9560f24a959
-ms.openlocfilehash: ff281dc7fe5dd277d9cd69cdea51bd155cc79546
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f933f8668ccb21c9b509db6dc2b56726ba6c78bf
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942938"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96285996"
 ---
 # <a name="4812---discoverymessagewithnullreplyto"></a>4812 — DiscoveryMessageWithNullReplyTo
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|4812|  
-|słowa kluczowe|Odnajdywanie|  
+|ID (Identyfikator)|4812|  
+|Słowa kluczowe|Odnajdywanie|  
 |Poziom|Ostrzeżenie|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, gdy komunikat odnajdowanie zostało porzucone, klasa DiscoveryClient, ponieważ nie ma adresu ReplyTo.  
+
+ To zdarzenie jest emitowane, gdy komunikat odnajdowania został porzucony przez obiekt DiscoveryClient, ponieważ nie miał adresu ReplyTo.  
   
-## <a name="message"></a>Komunikat  
- Komunikat żądania odnajdywania z messageId = "%1" został porzucony, ponieważ nie ma adresu ReplyTo.  
+## <a name="message"></a>Wiadomość  
+
+ Komunikat z żądaniem odnajdowania o atrybucie messageId równym "%1" został porzucony, ponieważ nie miał adresu ReplyTo.  
   
 ## <a name="details"></a>Szczegóły

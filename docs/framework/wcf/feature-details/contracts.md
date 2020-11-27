@@ -6,19 +6,21 @@ helpviewer_keywords:
 - contracts [WCF]
 - Windows Communication Foundation [WCF], contracts
 ms.assetid: c8364183-4ac1-480b-804a-c5e6c59a5d7d
-ms.openlocfilehash: 1cd7e54d50e7116c71c040df1965674a4fdaff13
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b51bbd1a8a9bfc8963cee429dab41fdf9b4f594c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595599"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286763"
 ---
 # <a name="contracts"></a>Kontrakty
+
 W tej sekcji przedstawiono sposób definiowania i implementowania kontraktów Windows Communication Foundation (WCF). Kontrakt usługi określa, co punkt końcowy komunikuje się ze światem zewnętrznym. Na wyższym poziomie jest to zestawienie konkretnych komunikatów zorganizowanych w podstawowe wzorce wymiany komunikatów (MEPs), takie jak żądanie/odpowiedź, jednokierunkowe i dwustronne. Jeśli kontrakt usługi jest związany logicznie z wymianą komunikatów, operacja usługi jest pojedynczą wymianą komunikatów. Na przykład `Hello` operacja musi w dowolny sposób zaakceptować jeden komunikat (aby obiekt wywołujący mógł ogłosić powitanie) i może lub nie zwracać komunikatu (w zależności od tego, co jest wymagane).  
   
  Aby uzyskać więcej informacji na temat umów i innych podstawowych koncepcji programu WCF, zobacz [podstawowe pojęcia dotyczące Windows Communication Foundation](../fundamental-concepts.md). Ten temat koncentruje się na zrozumieniu umów dotyczących usług. Aby uzyskać więcej informacji na temat tworzenia klientów, którzy używają umów usługi do łączenia się z usługami, zobacz [Omówienie klienta programu WCF](../wcf-client-overview.md). Aby uzyskać więcej informacji na temat kanałów klienta, architektury klienta i innych problemów z klientami, zobacz [klienci](clients.md)programu.  
   
 ## <a name="overview"></a>Omówienie  
+
  Ten temat zawiera ogólne ukierunkowane na projektowanie i implementowanie usług WCF. Tematy podrzędne zawierają bardziej szczegółowe informacje dotyczące projektowania i implementacji. Przed zaprojektowaniem i wdrożeniem aplikacji WCF zaleca się:  
   
 - Zapoznaj się z umową usługi, jej działaniem i sposobami ich tworzenia.  
@@ -26,6 +28,7 @@ W tej sekcji przedstawiono sposób definiowania i implementowania kontraktów Wi
 - Informacje o minimalnych wymaganiach dotyczących konfiguracji w czasie wykonywania lub środowiska hostingu przez umowę.  
   
 ## <a name="service-contracts"></a>Kontrakty usług  
+
  Kontrakt usługi jest instrukcją, która zawiera informacje o:  
   
 - Grupowanie operacji w usłudze.  
@@ -59,6 +62,7 @@ W tej sekcji przedstawiono sposób definiowania i implementowania kontraktów Wi
  Ponadto funkcja WCF oferuje również możliwość tworzenia umów dotyczących usług wyłącznie na poziomie wiadomości. Aby uzyskać więcej informacji na temat opracowywania kontraktów usług na poziomie wiadomości, zobacz [Używanie kontraktów komunikatów](using-message-contracts.md). Aby uzyskać więcej informacji na temat tworzenia usług w formacie innym niż SOAP, zobacz [współdziałanie z aplikacjami POX](interoperability-with-pox-applications.md).  
   
 ### <a name="understanding-the-hierarchy-of-requirements"></a>Informacje o hierarchii wymagań  
+
  Kontrakt usługi grupuje operacje; Określa unikatowy MEP, typy komunikatów i typy danych, które są wykonywane przez te wiadomości; i wskazuje kategorie zachowania w czasie wykonywania, które musi mieć implementacja do obsługi kontraktu (na przykład może wymagać zaszyfrowania i podpisania wiadomości). Jednak sama umowa serwisowa nie określa dokładnej, jak te wymagania są spełnione, tylko muszą być. Jakiego typu szyfrowanie lub w jaki sposób komunikat jest podpisywany, do implementacji i konfiguracji zgodnej usługi.  
   
  Zwróć uwagę na sposób, w jaki kontrakt wymaga pewnego działania implementacji kontraktu usługi i konfiguracji czasu wykonywania, aby dodać zachowanie. Zestaw wymagań, które muszą zostać spełnione, aby uwidocznić usługę do użycia w ramach wcześniejszego zestawu wymagań. Jeśli kontrakt spełnia wymagania implementacji, implementacja może wymagać jeszcze większej liczby konfiguracji i powiązań, które umożliwiają uruchomienie usługi. Na koniec aplikacja hosta musi również obsługiwać wszelkie wymagania, które dodaje konfiguracja usługi i powiązania.  
@@ -67,6 +71,6 @@ W tej sekcji przedstawiono sposób definiowania i implementowania kontraktów Wi
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Punkty końcowe: Adresy, powiązania i kontrakty](endpoints-addresses-bindings-and-contracts.md)
+- [Punkty końcowe: adresy, wiązania i kontrakty](endpoints-addresses-bindings-and-contracts.md)
 - [Projektowanie kontraktów usług](../designing-service-contracts.md)
 - [Implementowanie kontraktów usług](../implementing-service-contracts.md)

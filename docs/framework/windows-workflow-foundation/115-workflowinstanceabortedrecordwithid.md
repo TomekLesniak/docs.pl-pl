@@ -2,39 +2,42 @@
 title: 115 — WorkflowInstanceAbortedRecordWithId
 ms.date: 03/30/2017
 ms.assetid: 0293dd4e-e6ae-473a-b3d6-c2d38f9bd875
-ms.openlocfilehash: 2c1dbfb0fb3dca69d8cbecde1a8e691fa5596d0d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 69c0c58de36a7fff916b11deba888b7cef7c626e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924374"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96285151"
 ---
 # <a name="115---workflowinstanceabortedrecordwithid"></a>115 — WorkflowInstanceAbortedRecordWithId
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|115|  
-|słowa kluczowe|HealthMonitoring, WFTracking|  
+|ID (Identyfikator)|115|  
+|Słowa kluczowe|HealthMonitoring, WFTracking|  
 |Poziom|Ostrzeżenie|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane przez uczestnika śledzenia zdarzeń systemu Windows, gdy wystąpienie przepływu pracy emituje WorkflowInstanceAbortedRecord.  
+
+ To zdarzenie jest emitowane przez uczestnika śledzenia funkcji ETW, gdy wystąpienie przepływu pracy emituje WorkflowInstanceAbortedRecord.  
   
-## <a name="message"></a>Komunikat  
- TrackRecord = WorkflowInstanceAbortedRecord, InstanceID = %1, RecordNumber = %2, EventTime = %3, ActivityDefinitionId = %4, przyczyna = %5, adnotacje = %6, ProfileName = %7, WorkflowDefinitionIdentity = %8  
+## <a name="message"></a>Wiadomość  
+
+ TrackRecord = WorkflowInstanceAbortedRecord, InstanceID = %1, RecordNumber = %2, EventTime = %3, ActivityDefinitionId = %4, powód = %5, adnotacje = %6, ProfileName = %7, WorkflowDefinitionIdentity = %8  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|InstanceId|xs:GUID|Identyfikator wystąpienia przepływu pracy|  
-|RecordNumber|xs:long|Numer sekwencyjny emitowany rekordu|  
-|eventTime|xs:dateTime|Godzina w formacie UTC zdarzenia został wyemitowany|  
-|ActivityDefinitionId|xs:String|Nazwa działania głównego w przepływie pracy|  
-|Stan|xs:String|Bieżący stan przepływu pracy.|  
-|Adnotacje|xs:String|Adnotacje, które zostały dodane do tego zdarzenia. Wartości są przechowywane w elemencie xml w formacie \<elementy >\< nazwa elementu = "annotationName" type="System.String" > annotationValue\</item > \< /elementy >. Jeśli nie określono bez adnotacji, a następnie ciąg zawiera \<elementów / >. Rozmiar zdarzenia ETW jest ograniczona przez rozmiar buforu ETW lub max ładunek zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limit ETW, a następnie zdarzenie zostanie obcięta przez usunięcie adnotacje i zastępując wartość symbolu adnotacji z \<elementy >...  \< /elementy >.|  
-|ProfileName|xs:String|Nazwa lub profilu śledzenia, które spowodowały to zdarzenie jest emitowane|  
-|WorkflowDefinitionIdentity|xs:String|Identyfikator definicji przepływu pracy|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|InstanceId|XS: GUID|Identyfikator wystąpienia przepływu pracy|  
+|RecordNumber|XS: Long|Numer sekwencji emitowanego rekordu|  
+|EventTime|XS: dateTime|Czas w formacie UTC, gdy zdarzenie zostało wyemitowane|  
+|ActivityDefinitionId|XS: ciąg|Nazwa działania głównego w przepływie pracy|  
+|Stan|XS: ciąg|Bieżący stan przepływu pracy.|  
+|Adnotacje|XS: ciąg|Adnotacje, które zostały dodane do tego zdarzenia. Wartości są przechowywane w elemencie XML w formacie \<items> \< item name = "annotationName" type="System.String"> annotationValue \</item> \</items> . Jeśli adnotacje nie są określone, ciąg zawiera \<items/> . Rozmiar zdarzenia ETW jest ograniczony przez rozmiar buforu ETW lub maksymalny ładunek dla zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limity ETW, zdarzenie jest obcinane przez upuszczenie adnotacji i zamianę wartości adnotacji na \<items> ... \</items>|  
+|ProfileName|XS: ciąg|Nazwa lub profil śledzenia, który spowodował wyemitowanie tego zdarzenia|  
+|WorkflowDefinitionIdentity|XS: ciąg|Identyfikator definicji przepływu pracy|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

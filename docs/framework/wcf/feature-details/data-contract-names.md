@@ -8,18 +8,19 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], naming
 ms.assetid: 31f87e6c-247b-48f5-8e94-b9e1e33d8d09
-ms.openlocfilehash: 85c533d683558520d46f259db0bdb34dcb1214c9
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 3bb0aca2a1207a98b45fe8b6d43930e9b2acc5ec
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247406"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96286707"
 ---
 # <a name="data-contract-names"></a>Nazwy kontraktów danych
 
 Czasami klient i usługa nie mają tego samego typu. Mogą nadal przekazywać dane do siebie, o ile Kontrakty danych są równoważne obu stronom. [Równoważność kontraktu danych](data-contract-equivalence.md) opiera się na kontraktach danych i nazwach elementów członkowskich, w związku z czym mechanizm jest dostarczany do mapowania typów i składowych tych nazw. W tym temacie opisano reguły nazewnictwa kontraktów danych oraz domyślne zachowanie infrastruktury Windows Communication Foundation (WCF) podczas tworzenia nazw.
 
 ## <a name="basic-rules"></a>Podstawowe reguły
+
 Podstawowe reguły dotyczące określania nazw umów dotyczących danych obejmują:
 
 - W pełni kwalifikowana nazwa kontraktu danych składa się z przestrzeni nazw i nazwy.
@@ -29,6 +30,7 @@ Podstawowe reguły dotyczące określania nazw umów dotyczących danych obejmuj
 - Podczas przetwarzania kontraktów danych Infrastruktura WCF jest uwzględniana w przypadku przestrzeni nazw oraz nazw kontraktów danych i elementów członkowskich danych.
 
 ## <a name="data-contract-namespaces"></a>Przestrzenie nazw kontraktu danych
+
 Przestrzeń nazw kontraktu danych przyjmuje formę Uniform Resource Identifier (URI). Identyfikator URI może być bezwzględny lub względny. Domyślnie Kontrakty danych dla określonego typu są przypisane do przestrzeni nazw, która pochodzi z przestrzeni nazw środowiska uruchomieniowego języka wspólnego (CLR) tego typu.
 
 Domyślnie wszystkie określone przestrzenie nazw środowiska CLR (w formacie *CLR. Namespace*) są mapowane do przestrzeni nazw `http://schemas.datacontract.org/2004/07/Clr.Namespace` . Aby zastąpić to ustawienie domyślne, Zastosuj <xref:System.Runtime.Serialization.ContractNamespaceAttribute> atrybut do całego modułu lub zestawu. Alternatywnie, aby kontrolować przestrzeń nazw kontraktu danych dla każdego typu, należy ustawić <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> Właściwość <xref:System.Runtime.Serialization.DataContractAttribute> .
@@ -40,18 +42,22 @@ Domyślnie wszystkie określone przestrzenie nazw środowiska CLR (w formacie *C
 > Nie można zastąpić domyślnej przestrzeni nazw w typach kontraktu danych, które zawierają `delegate` deklaracje.
 
 ## <a name="data-contract-names"></a>Nazwy kontraktów danych
+
 Domyślną nazwą kontraktu danych dla danego typu jest nazwa tego typu. Aby zastąpić wartość domyślną, należy ustawić <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> Właściwość <xref:System.Runtime.Serialization.DataContractAttribute> na nazwę alternatywną. Reguły specjalne dla typów ogólnych są opisane w sekcji "nazwy kontraktów danych dla typów ogólnych" w dalszej części tego tematu.
 
 ## <a name="data-member-names"></a>Nazwy elementów członkowskich danych
+
 Domyślną nazwą elementu członkowskiego danych dla danego pola lub właściwości jest nazwa tego pola lub właściwości. Aby zastąpić domyślny, ustaw <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A> Właściwość <xref:System.Runtime.Serialization.DataMemberAttribute> na wartość alternatywną.
 
 ### <a name="examples"></a>Przykłady
+
 Poniższy przykład pokazuje, jak można zastąpić domyślne zachowanie nazewnictwa kontraktów danych i elementów członkowskich danych.
 
 [!code-csharp[C_DataContractNames#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_datacontractnames/cs/source.cs#1)]
 [!code-vb[C_DataContractNames#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractnames/vb/source.vb#1)]
 
 ## <a name="data-contract-names-for-generic-types"></a>Nazwy kontraktów danych dla typów ogólnych
+
 Istnieją specjalne reguły określania nazw kontraktów danych dla typów ogólnych. Te reguły pomagają uniknąć kolizji nazw kontraktu danych między dwoma zamkniętymi rodzajami ogólnymi tego samego typu ogólnego.
 
 Domyślnie nazwa kontraktu danych dla typu ogólnego jest nazwą typu, po którym następuje ciąg "z", po którym następuje nazwa kontraktu danych parametrów ogólnych, a następnie *skrót* obliczony przy użyciu przestrzeni nazw kontraktu danych parametrów ogólnych. Skrót jest wynikiem funkcji matematycznej, która pełni rolę "odcisku palca", która jednoznacznie identyfikuje fragment danych. Gdy wszystkie parametry ogólne są typami pierwotnymi, skrót zostanie pominięty.

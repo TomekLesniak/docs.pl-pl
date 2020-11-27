@@ -9,17 +9,19 @@ helpviewer_keywords:
 - versioning [WCF]
 - data contracts [WCF], versioning
 ms.assetid: 4a0700cb-5f5f-4137-8705-3a3ecf06461f
-ms.openlocfilehash: 493efab41e2c6763eb95df8662e6254d9e0df2f2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6f8623c9d8e9e7ba1f7c762c929f986b523c2f90
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593506"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96285203"
 ---
 # <a name="data-contract-versioning"></a>Przechowywanie wersji kontraktów danych
+
 W miarę rozwoju aplikacji może być również konieczna zmiana kontraktów danych używanych przez usługi. W tym temacie wyjaśniono, jak wersje umów dotyczących danych. W tym temacie opisano mechanizmy obsługi wersji kontraktu danych. Aby zapoznać się z pełnym omówieniem i wskazówkami dotyczącymi wersji, zobacz [najlepsze rozwiązania: przechowywanie wersji kontraktu danych](../best-practices-data-contract-versioning.md).  
   
 ## <a name="breaking-vs-nonbreaking-changes"></a>Zmiany w porównaniu z nieprzerwanymi zmianami  
+
  Zmiany w kontrakcie danych mogą być przerywane lub nieprzerwane. Po zmianie kontraktu danych w sposób nieprzerwany aplikacja używająca starszej wersji kontraktu może komunikować się z aplikacją przy użyciu nowszej wersji, a aplikacja korzystająca z nowszej wersji kontraktu może komunikować się z aplikacją przy użyciu starszej wersji. Z drugiej strony, nieprzerwana zmiana uniemożliwia komunikację w jednym lub obu kierunkach.  
   
  Wszelkie zmiany typu, który nie ma wpływu na sposób jego przesyłania i odbierania, nie są przerywane. Takie zmiany nie zmieniają kontraktu danych, tylko typ podstawowy. Na przykład można zmienić nazwę pola w sposób niepodzielony, jeśli następnie ustawisz <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A> Właściwość <xref:System.Runtime.Serialization.DataMemberAttribute> na nazwę starszej wersji. Poniższy kod przedstawia wersję 1 kontraktu danych.  
@@ -45,6 +47,7 @@ W miarę rozwoju aplikacji może być również konieczna zmiana kontraktów dan
  Możliwe są również następujące zmiany.  
   
 ## <a name="adding-and-removing-data-members"></a>Dodawanie i usuwanie elementów członkowskich danych  
+
  W większości przypadków dodanie lub usunięcie elementu członkowskiego danych nie jest istotną zmianą, chyba że wymagana jest ścisła ważność schematu (nowe wystąpienia są weryfikowane względem starego schematu).  
   
  Gdy typ z dodatkowym polem jest deserializowany do typu z brakującym polem, dodatkowe informacje są ignorowane. (Mogą być również przechowywane w celach okrężnych; Aby uzyskać więcej informacji, zobacz [Kontrakty danych zgodne z przekazaniem](forward-compatible-data-contracts.md)).  
@@ -78,6 +81,7 @@ W miarę rozwoju aplikacji może być również konieczna zmiana kontraktów dan
  Deserializator wersji 2 nie wie `HorsePower` , do czego służy pole, ponieważ nie ma żadnych pasujących danych w przychodzącym formacie XML. Zamiast tego pole jest ustawione na wartość domyślną 0.  
   
 ## <a name="required-data-members"></a>Wymagane składowe danych  
+
  Składowa danych może być oznaczona jako wymagana przez ustawienie <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> właściwości <xref:System.Runtime.Serialization.DataMemberAttribute> do `true` . Jeśli podczas deserializacji brakuje wymaganych danych, zostanie zgłoszony wyjątek zamiast ustawiania elementu członkowskiego danych do jego wartości domyślnej.  
   
  Dodawanie wymaganego elementu członkowskiego danych jest istotną zmianą. Oznacza to, że nowszy typ można nadal wysyłać do punktów końcowych ze starszym typem, ale nie w inny sposób. Usunięcie elementu członkowskiego danych, który został oznaczony jako wymagany w dowolnej starszej wersji, jest również istotną zmianą.  
@@ -88,6 +92,7 @@ W miarę rozwoju aplikacji może być również konieczna zmiana kontraktów dan
 > Mimo że <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> Właściwość jest ustawiona na `true` , dane przychodzące mogą mieć wartość null lub zero, a typ musi być przygotowany do obsługi tej możliwości. Nie należy używać <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> jako mechanizmu zabezpieczeń, aby chronić przed nieprawidłowymi danymi przychodzącymi.  
   
 ## <a name="omitted-default-values"></a>Pominięte wartości domyślne  
+
  Jest możliwe (choć niezalecane), aby ustawić `EmitDefaultValue` właściwość atrybutu DataMemberAttribute na `false` , zgodnie z opisem w [wartościach domyślnych elementu członkowskiego danych](data-member-default-values.md). Jeśli to ustawienie ma `false` wartość, element członkowski danych nie zostanie wyemitowany, jeśli zostanie ustawiona na jego wartości domyślne (zazwyczaj wartość null lub zero). Jest to niezgodne z wymaganymi elementami członkowskimi danych w różnych wersjach na dwa sposoby:  
   
 - Kontrakt danych z elementem członkowskim danych, który jest wymagany w jednej wersji, nie może odbierać wartości domyślnych (null lub zero) z innej wersji, w której element członkowski danych ma `EmitDefaultValue` ustawioną wartość `false` .  
@@ -95,6 +100,7 @@ W miarę rozwoju aplikacji może być również konieczna zmiana kontraktów dan
 - Wymagany element członkowski danych, który ma `EmitDefaultValue` ustawioną `false` wartość, nie może zostać użyty do serializacji jego wartości domyślnej (null lub zero), ale może otrzymać taką wartość przy deserializacji. Powoduje to utworzenie problemu okrężnego (dane mogą zostać odczytane, ale te same dane nie mogą być zapisywane). W związku z tym, jeśli `IsRequired` jest `true` i `EmitDefaultValue` znajduje się `false` w jednej wersji, ta sama kombinacja powinna mieć zastosowanie do wszystkich innych wersji, tak że żadna wersja kontraktu danych nie będzie mogła utworzyć wartości, która nie powoduje rundy.  
   
 ## <a name="schema-considerations"></a>Zagadnienia dotyczące schematu  
+
  Aby dowiedzieć się, jakie schematy są generowane dla typów kontraktu danych, zobacz temat [Informacje o schemacie kontraktu danych](data-contract-schema-reference.md).  
   
  Schemat WCF dla typów kontraktu danych nie ma żadnych przepisów dotyczących przechowywania wersji. Oznacza to, że schemat wyeksportowany z określonej wersji typu zawiera tylko te składowe danych, które znajdują się w tej wersji. Implementacja <xref:System.Runtime.Serialization.IExtensibleDataObject> interfejsu nie powoduje zmiany schematu dla typu.  
@@ -106,12 +112,15 @@ W miarę rozwoju aplikacji może być również konieczna zmiana kontraktów dan
  Dwukrotne wyzwolenie obejmuje również pewne dodatkowe zagadnienia. Aby uzyskać więcej informacji, zobacz sekcję "zagadnienia dotyczące schematu" w [umowach dotyczących danych przesyłanych dalej](forward-compatible-data-contracts.md).  
   
 ### <a name="other-permitted-changes"></a>Inne dozwolone zmiany  
+
  Implementacja <xref:System.Runtime.Serialization.IExtensibleDataObject> interfejsu jest zmianą nierozdzielającą. Niemniej jednak pomoc techniczna przy użyciu rundy nie istnieje dla wersji typu przed wersją, w której <xref:System.Runtime.Serialization.IExtensibleDataObject> została zaimplementowana. Aby uzyskać więcej informacji, zobacz [Kontrakty danych zgodne z przekazywaniem dalej](forward-compatible-data-contracts.md).  
   
 ## <a name="enumerations"></a>Wyliczenia  
+
  Dodawanie lub usuwanie elementu członkowskiego wyliczenia jest istotną zmianą. Zmiana nazwy elementu członkowskiego wyliczenia jest przerywana, chyba że jego nazwa kontraktu jest taka sama jak w starej wersji przy użyciu `EnumMemberAttribute` atrybutu. Aby uzyskać więcej informacji, zobacz [typy wyliczeniowe w kontraktach danych](enumeration-types-in-data-contracts.md).  
   
 ## <a name="collections"></a>Kolekcje  
+
  Większość zmian kolekcji jest nieprzerwana, ponieważ większość typów kolekcji są zamienne ze sobą w modelu kontraktu danych. Jednak niestandardowa kolekcja jest dostosowywana lub na odwrót jest istotną zmianą. Ponadto zmiana ustawień dostosowywania kolekcji jest istotną zmianą. oznacza to, że zmiana nazwy kontraktu danych i przestrzeni nazw, powtarzająca się nazwa elementu, nazwa elementu klucza i nazwa elementu wartości. Aby uzyskać więcej informacji na temat dostosowywania kolekcji, zobacz [typy kolekcji w kontraktach danych](collection-types-in-data-contracts.md).  
 Naturalnie zmiana kontraktu danych kolekcji (na przykład zmiana listy liczb całkowitych na listę ciągów) jest istotną zmianą.  
   
@@ -126,7 +135,7 @@ Naturalnie zmiana kontraktu danych kolekcji (na przykład zmiana listy liczb ca�
 - <xref:System.Runtime.Serialization.SerializationException>
 - <xref:System.Runtime.Serialization.IExtensibleDataObject>
 - [Wywołania zwrotne serializacji z tolerancją dla wersji](version-tolerant-serialization-callbacks.md)
-- [Najlepsze rozwiązania: przechowywanie wersji kontraktów danych](../best-practices-data-contract-versioning.md)
+- [Najlepsze rozwiązania: Przechowywanie wersji kontraktów danych](../best-practices-data-contract-versioning.md)
 - [Używanie kontraktów danych](using-data-contracts.md)
 - [Równoważność kontraktów danych](data-contract-equivalence.md)
 - [Kontrakty danych zgodne z nowszymi wersjami](forward-compatible-data-contracts.md)
