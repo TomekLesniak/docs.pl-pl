@@ -2,20 +2,21 @@
 title: 'Komunikacja podstawowa: Struktura kanału'
 ms.date: 03/30/2017
 ms.assetid: 8caeb496-8d4c-477e-a476-994ece685a68
-ms.openlocfilehash: 3795c3c34d80c455d7158a707e5d1cb18e7c5a7b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2be3fa056c95a45d16f50442ee86ffb92f97cb74
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61998806"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96277598"
 ---
 # <a name="core-communications-channel-framework"></a>Komunikacja podstawowa: Struktura kanału
-Ten temat zawiera listę wszystkich wyjątków generowanych przez struktura kanału usługi Windows Communication Foundation (WCF).  
+
+W tym temacie wymieniono wszystkie wyjątki wygenerowane przez strukturę kanału Windows Communication Foundation (WCF).  
   
 ## <a name="exception-list"></a>Lista wyjątków  
   
 |Kod zasobu|Ciąg zasobu|  
 |-------------------|---------------------|  
-|ReceiveRequestTimedOut|Odebrane żądanie na określony adres lokalny został przekroczony po określonym czasie. Czas przydzielony na tę operację mógł stanowić część większego limitu czasu.|  
-|ReceiveTimedOutNoLocalAddress|Operacja odbioru został przekroczony po określonym czasie. Czas przydzielony na tę operację mógł stanowić część większego limitu czasu.|  
-|UnableToDemuxChannel|Kanał nie jest dostępny do akceptowania wiadomości z określonej akcji.|
+|ReceiveRequestTimedOut|Odebrane żądanie dotyczące określonego adresu lokalnego przekroczyło limit czasu po upływie określonego czasu. Czas przydzielony na tę operację mógł być częścią dłuższego limitu czasu.|  
+|ReceiveTimedOutNoLocalAddress|Przekroczono limit czasu operacji odbierania po upływie określonego czasu. Czas przydzielony na tę operację mógł być częścią dłuższego limitu czasu.|  
+|UnableToDemuxChannel|Brak dostępnego kanału, aby zaakceptować komunikat z określoną akcją.|

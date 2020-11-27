@@ -1,34 +1,35 @@
 ---
-title: 'Komunikacja podstawowa: Kanały transportu HTTP i HTTPS'
+title: 'Komunikacja podstawowa: kanały transportu HTTP-HTTPS'
 ms.date: 03/30/2017
 ms.assetid: 6c0a23c9-a663-461c-bdab-58b4d3e23642
-ms.openlocfilehash: 4c4a2537ae615943ffac299a8c8cd00c67094360
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d33d153c6c527398b035ad9d027593a0fefd0e8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61998754"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96277416"
 ---
 # <a name="core-communications-httphttps-transport-channels"></a>Komunikacja podstawowa: Kanały transportu protokołów HTTP/HTTPS
-Ten temat zawiera listę wszystkich wyjątków generowanych przez kanały programu Windows Communication Foundation (WCF) transportu HTTP/HTTPS.  
+
+W tym temacie wymieniono wszystkie wyjątki wygenerowane przez kanały HTTP/HTTPS usługi Windows Communication Foundation (WCF).  
   
 ## <a name="exception-list"></a>Lista wyjątków  
   
 |Kod zasobu|Ciąg zasobu|  
 |-------------------|---------------------|  
-|DigestExplicitCredsImpersonationLevel|Określono poziom personifikacji określony. Uwierzytelnianie szyfrowane HTTP obsługuje tylko poziom "Personifikacji", gdy jest używane z jawne poświadczenia.|  
-|FramingContentTypeMismatch|Określony typ zawartości nie była obsługiwana przez określonej usługi. Powiązania klienta i usługi mogą być niezgodne.|  
-|Hosting_SslSettingsMisconfigured|Ustawienia protokołu Secure Sockets Layer określonej usługi nie są zgodne z udostępnianych przez Internetowe usługi informacyjne.|  
-|HttpAuthSchemeAndClientCert|Fabryka odbiornika protokołu HTTPS została skonfigurowana wymaga certyfikatu klienta i określony schemat uwierzytelniania. Jednak tylko jednej formy uwierzytelniania klienta mogą być wymagane w tym samym czasie.|  
-|HttpReceiveFailure|Wystąpił błąd podczas odbierania odpowiedzi HTTP do określonego. Powiązanie punktu końcowego usługi nie może być używany protokół HTTP. Inną możliwością jest, że kontekstu żądania HTTP został zakończony przez serwer ze względu na zamknięcie usługi. Zobacz dzienniki serwera, aby uzyskać więcej informacji.|  
-|HttpRegistrationAccessDenied|HTTP nie można zarejestrować określonego adresu URL. Proces nie ma praw dostępu do tej przestrzeni nazw (zobacz [rezerwacje Namespace, rejestracji i Routing](/windows/desktop/http/namespace-reservations-registrations-and-routing) Aby uzyskać szczegółowe informacje).|  
-|HttpRegistrationAlreadyExists|HTTP nie można zarejestrować określonego adresu URL. Inna aplikacja już zarejestrowany ten adres URL za pośrednictwem protokołu HTTP. SYS.|  
-|HttpRegistrationPortInUse|HTTP nie można zarejestrować określonego adresu URL, ponieważ określony port TCP jest używany przez inną aplikację.|  
-|HttpSendFailure|Wystąpił błąd podczas wykonywania żądania HTTP do określonego. Upewnij się, że przyczyna nie jest niezgodność powiązania zabezpieczeń. Upewnij się również, że usługa nie jest skonfigurowana dla protokołu Secure Sockets Layer.|  
-|MessageXmlProtocolError|Wystąpił problem z plikiem XML odebranym z sieci. Zobacz wyjątek wewnętrzny, aby uzyskać więcej informacji.|  
-|MissingContentType|Odbiorca zwrócił błąd wskazujący, że brak typu zawartości na żądanie do określonego. Zobacz wyjątek wewnętrzny, aby uzyskać więcej informacji.|  
-|ProxyAuthenticationLevelMismatch|Poświadczenia uwierzytelniania serwera proxy HTTP określony wymogu wzajemnego uwierzytelniania, który jest bardziej restrykcyjny niż wymagane do uwierzytelniania serwera docelowego.|  
-|ProxyImpersonationLevelMismatch|Poświadczenia uwierzytelniania serwera proxy HTTP określone ograniczenia poziomu personifikacji, który jest bardziej restrykcyjny niż ograniczeń do uwierzytelniania serwera docelowego.|  
-|SecureChannelFailure|Bezpieczny kanał nie można ustanowić dla Secure Socket Layer/Transport Layer Security przy użyciu określonego urzędu.|  
-|TrustFailure|Nie można ustanowić relacji zaufania dla Secure Sockets Layer / Transport Layer Security należy zabezpieczyć kanał z określonego urzędu.|  
-|UseDefaultWebProxyCantBeUsedWithExplicitProxyAddress|Nie można określić adresu jawne serwera proxy, a także UseDefaultWebProxy = true w elemencie swoje HttpTransportBinding.|
+|DigestExplicitCredsImpersonationLevel|Określono określony poziom personifikacji. Uwierzytelnianie szyfrowane HTTP obsługuje poziom "personifikacji" tylko wtedy, gdy jest używany z jawnym poświadczeniem.|  
+|FramingContentTypeMismatch|Określony typ zawartości nie jest obsługiwany przez określoną usługę. Powiązania klienta i usługi mogą być niezgodne.|  
+|Hosting_SslSettingsMisconfigured|Ustawienia SSL dla określonej usługi nie pasują do tych Internet Information Services.|  
+|HttpAuthSchemeAndClientCert|Fabryka odbiorników HTTPS została skonfigurowana tak, aby wymagała certyfikatu klienta i określonego schematu uwierzytelniania. Jednak w tym samym czasie może być wymagane tylko jedno uwierzytelnianie klienta.|  
+|HttpReceiveFailure|Wystąpił błąd podczas uzyskiwania odpowiedzi HTTP do określonego. Powiązanie punktu końcowego usługi może nie używać protokołu HTTP. Kolejną przyczyną jest fakt, że kontekst żądania HTTP został przerwany przez serwer z powodu zamknięcia usługi. Aby uzyskać więcej informacji, zobacz Dzienniki serwera.|  
+|HttpRegistrationAccessDenied|Protokół HTTP nie może zarejestrować określonego adresu URL. Proces nie ma uprawnień dostępu do tej przestrzeni nazw (zobacz [rezerwacje przestrzeni nazw, rejestracje i routing,](/windows/desktop/http/namespace-reservations-registrations-and-routing) Aby uzyskać szczegółowe informacje).|  
+|HttpRegistrationAlreadyExists|Protokół HTTP nie może zarejestrować określonego adresu URL. Inna aplikacja zarejestrowała już ten adres URL przy użyciu HTTP.SYS.|  
+|HttpRegistrationPortInUse|Protokół HTTP nie może zarejestrować określonego adresu URL, ponieważ określony port TCP jest używany przez inną aplikację.|  
+|HttpSendFailure|Wystąpił błąd podczas wykonywania żądania HTTP do określonego. Upewnij się, że przyczyna nie jest niezgodnością powiązań zabezpieczeń. Upewnij się również, że usługa nie jest skonfigurowana do SSL.|  
+|MessageXmlProtocolError|Wystąpił problem z plikiem XML, który został odebrany z sieci. Zobacz wewnętrzny wyjątek, aby uzyskać więcej szczegółów.|  
+|MissingContentType|Odbiorca zwrócił błąd wskazujący, że w żądaniu brakuje typu zawartości. Zobacz wewnętrzny wyjątek, aby uzyskać więcej informacji.|  
+|ProxyAuthenticationLevelMismatch|Poświadczenie uwierzytelniania serwera proxy HTTP określiło wymóg wzajemnego uwierzytelniania, który jest bardziej restrykcyjny niż wymóg uwierzytelniania serwera docelowego.|  
+|ProxyImpersonationLevelMismatch|Poświadczenie uwierzytelniania serwera proxy HTTP określiło ograniczenie poziomu personifikacji, które jest bardziej restrykcyjne niż ograniczenie uwierzytelniania serwera docelowego.|  
+|SecureChannelFailure|Nie można nawiązać bezpiecznego kanału dla protokołu Secure Socket Layer/Transport Layer Security z określonym Urzędem.|  
+|TrustFailure|Nie można nawiązać relacji zaufania dla bezpiecznego kanału Secure Socket Layer/Transport Layer Security z określonym Urzędem.|  
+|UseDefaultWebProxyCantBeUsedWithExplicitProxyAddress|Nie można określić jawnego adresu serwera proxy, a także UseDefaultWebProxy = true w elemencie HttpTransportBinding.|

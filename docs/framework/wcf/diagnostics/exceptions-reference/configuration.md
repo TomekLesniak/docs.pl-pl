@@ -1,33 +1,34 @@
 ---
-title: Konfiguracja
+title: Konfigurowanie
 ms.date: 03/30/2017
 ms.assetid: 86a6e12f-73b5-450e-8725-f4ca5fe0702c
-ms.openlocfilehash: 3ef91a1f851f87ebf35669748f8beb1c6a880ae8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2b14b9e66db7d3548022a728ec27137a14bf3e55
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61998819"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96277624"
 ---
-# <a name="configuration"></a>Konfiguracja
-Ten temat zawiera listę wszystkich wyjątków generowanych przez konfigurację usług Windows Communication Foundation (WCF).  
+# <a name="configuration"></a>Konfigurowanie
+
+W tym temacie wymieniono wszystkie wyjątki wygenerowane przez konfigurację programu Windows Communication Foundation (WCF).  
   
 ## <a name="exception-list"></a>Lista wyjątków  
   
 |Kod zasobu|Ciąg zasobu|  
 |-------------------|---------------------|  
 |ConfigBindingCannotBeConfigured|Nie można skonfigurować powiązania w punkcie końcowym usługi.|  
-|ConfigElementKeyNull|Klucz elementu konfiguracji nie może mieć wartości null.|  
-|ConfigExtensionTypeNotRegisteredInCollection|Typ określonego rozszerzenia nie jest zarejestrowany w kolekcji określone rozszerzenie.|  
-|ConfigIndexOutOfRange|Wartość określonego atrybutu jest poza zakresem.|  
-|ConfigInvalidBindingConfigurationName|Określona konfiguracja nie ma powiązanie o określonej nazwie.|  
-|ConfigInvalidBindingName|Określona konfiguracja nie ma powiązanie o określonej nazwie. To jest nieprawidłową wartością dla wiązania.|  
-|ConfigInvalidCommonEndpointBehaviorType|Nie można dodać rozszerzenia określone zachowanie wspólnego zachowania punktu końcowego, ponieważ nie implementuje określonego typu.|  
-|ConfigInvalidCommonServiceBehaviorType|Nie można dodać rozszerzenia określone zachowanie typowe zachowanie usługi, ponieważ nie implementuje określonego typu.|  
-|ConfigInvalidEndpointBehaviorType|Nie można dodać rozszerzenia określone zachowanie zachowanie określonego punktu końcowego, ponieważ podstawowy typ zachowania nie implementuje interfejsu IServiceBehavior.|  
-|ConfigInvalidExtensionType|Określony typ musi pochodzić z określonego rozszerzenia ma być używany w kolekcji.|  
-|ConfigInvalidServiceBehaviorType|Nie można dodać rozszerzenia zachowania "zachowanie usługi z określonymi nazwy, ponieważ podstawowy typ zachowania nie implementuje interfejsu IServiceBehavior.|  
-|ConfigMessageEncodingAlreadyInBinding|Nie można dodać elementu kodowania szczegółowy komunikat o błędzie. Inny element kodowania komunikatu już istnieje w określonym powiązaniu. Może istnieć tylko jeden element dla każdego powiązania kodowania komunikatu.|  
-|ConfigNoExtensionCollectionAssociatedWithType|Nie można odnaleźć kolekcji rozszerzenie skojarzone z rozszerzeniem określonego typu.|  
-|ConfigSectionNotFound|Nie można utworzyć w sekcji konfiguracji. Brak informacji w pliku Machine.config. Sprawdź, czy ta sekcja konfiguracji jest poprawnie zarejestrowany, i czy masz poprawnie wpisana nazwa sekcji. Dla sekcji Windows Communication Foundation, należy uruchomić ServiceModelReg.exe -i, aby naprawić ten błąd.|  
-|ConfigTransportAlreadyInBinding|Nie można dodać elementu określonego transportu. Inny element transportu już istnieje w określonym powiązaniu. Może istnieć tylko jeden element dla każdego powiązania kodowania komunikatu.|
+|ConfigElementKeyNull|Określony klucz elementu konfiguracji nie może mieć wartości null.|  
+|ConfigExtensionTypeNotRegisteredInCollection|Określony typ rozszerzenia nie jest zarejestrowany w określonej kolekcji rozszerzeń.|  
+|ConfigIndexOutOfRange|Wartość określonego atrybutu znajduje się poza zakresem.|  
+|ConfigInvalidBindingConfigurationName|Określona konfiguracja nie ma powiązania z określoną nazwą.|  
+|ConfigInvalidBindingName|Określona konfiguracja nie ma powiązania z określoną nazwą. To jest nieprawidłowa wartość dla powiązania.|  
+|ConfigInvalidCommonEndpointBehaviorType|Nie można dodać rozszerzenia określonego zachowania do wspólnego zachowania punktu końcowego, ponieważ nie implementuje określonego typu.|  
+|ConfigInvalidCommonServiceBehaviorType|Nie można dodać rozszerzenia zachowań do typowego zachowania usługi, ponieważ nie implementuje określonego typu.|  
+|ConfigInvalidEndpointBehaviorType|Nie można dodać rozszerzenia określonego zachowania do określonego zachowania punktu końcowego, ponieważ podstawowy typ zachowania nie implementuje interfejsu IServiceBehavior.|  
+|ConfigInvalidExtensionType|Określony typ musi pochodzić od określonego rozszerzenia, które ma być używane w kolekcji.|  
+|ConfigInvalidServiceBehaviorType|Nie można dodać rozszerzenia zachowania do zachowania usługi z określoną nazwą, ponieważ podstawowy typ zachowania nie implementuje interfejsu IServiceBehavior.|  
+|ConfigMessageEncodingAlreadyInBinding|Nie można dodać określonego elementu kodowania komunikatów. Inny element kodowania komunikatów już istnieje w określonym powiązaniu. Dla każdego powiązania może istnieć tylko jeden element kodowania komunikatów.|  
+|ConfigNoExtensionCollectionAssociatedWithType|Nie można odnaleźć kolekcji rozszerzeń skojarzonej z rozszerzeniem określonego typu.|  
+|ConfigSectionNotFound|Nie można utworzyć konkretnej sekcji konfiguracji. Brak informacji w pliku Machine.config. Sprawdź, czy ta sekcja konfiguracji została prawidłowo zarejestrowana i czy nazwa sekcji została prawidłowo poprawna. W przypadku Windows Communication Foundation sekcji Uruchom polecenie ServiceModelReg.exe-i, aby naprawić ten błąd.|  
+|ConfigTransportAlreadyInBinding|Nie można dodać określonego elementu transportowego. Inny element transportu już istnieje w określonym powiązaniu. Dla każdego powiązania może istnieć tylko jeden element kodowania komunikatów.|
