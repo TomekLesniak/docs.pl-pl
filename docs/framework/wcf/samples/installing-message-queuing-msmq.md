@@ -3,14 +3,15 @@ title: Instalowanie usługi kolejkowania komunikatów (MSMQ)
 description: Dowiedz się, jak zainstalować usługę kolejkowania komunikatów 4,0 i kolejkowanie komunikatów 3,0 do użycia z przykładami WFC w ramach procedury jednorazowej konfiguracji.
 ms.date: 03/30/2017
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-ms.openlocfilehash: 0d0cb87b40b1cb11eb7692c2fa1e890ec815b13d
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: bf33a5cd899bf2d7ef4947c51ac1723c8eb80c29
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244468"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281875"
 ---
 # <a name="installing-message-queuing-msmq"></a>Instalowanie usługi kolejkowania komunikatów (MSMQ)
+
 W poniższych procedurach pokazano, jak zainstalować usługę kolejkowania komunikatów 4,0 i kolejkowanie komunikatów 3,0.  
   
 > [!NOTE]
@@ -20,7 +21,7 @@ W poniższych procedurach pokazano, jak zainstalować usługę kolejkowania komu
   
 1. W Menedżer serwera kliknij pozycję **funkcje**.  
   
-2. W okienku po prawej stronie w obszarze **Podsumowanie funkcji**kliknij pozycję **Dodaj funkcje**.  
+2. W okienku po prawej stronie w obszarze **Podsumowanie funkcji** kliknij pozycję **Dodaj funkcje**.  
   
 3. W oknie wyników rozwiń węzeł **kolejkowanie komunikatów**.  
   
@@ -34,7 +35,7 @@ W poniższych procedurach pokazano, jak zainstalować usługę kolejkowania komu
   
 1. Otwórz **Panel sterowania**.  
   
-2. Kliknij pozycję **programy** , a następnie w obszarze **programy i funkcje**kliknij pozycję **Włącz lub wyłącz funkcje systemu Windows**.  
+2. Kliknij pozycję **programy** , a następnie w obszarze **programy i funkcje** kliknij pozycję **Włącz lub wyłącz funkcje systemu Windows**.  
   
 3. Rozwiń węzeł serwer usługi Microsoft Message Queue (MSMQ), rozwiń węzeł serwer usługi kolejkowania komunikatów (MSMQ) firmy Microsoft, a następnie zaznacz pola wyboru dla następujących funkcji usługi kolejkowania komunikatów, które mają zostać zainstalowane:  
   

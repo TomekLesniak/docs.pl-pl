@@ -2,18 +2,20 @@
 title: Architektura WCF i międzynarodowe nazwy domen
 ms.date: 03/30/2017
 ms.assetid: c8a3e10a-8bc2-4a78-8d86-a562ba6e65fa
-ms.openlocfilehash: 1db62f3e7d073fd1bf9bf9d4d0e17703310f2e69
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 2d93bbb0c284c2227a4d03acf1ad9a801df57bd8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988596"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281992"
 ---
 # <a name="wcf-and-internationalized-domain-names"></a>Architektura WCF i międzynarodowe nazwy domen
+
 Dodano obsługę usług WCF z międzynarodowymi nazwami domen (IDN). Międzynarodowa nazwa domeny to nazwa domeny, która zawiera znaki inne niż ASCII. Ta obsługa obejmuje zarówno możliwość hostowania usługi WCF przy użyciu nazwy IDN, jak i klienta WCF, aby komunikować się z usługą sieci Web przy użyciu nazwy IDN.  
   
 ## <a name="systemuri-and-idn"></a>System. URI i IDN  
- <xref:System.Uri>ma dwie właściwości <xref:System.Uri.Host%2A> i <xref:System.Uri.DnsSafeHost%2A>. Te właściwości zawierają wartości Unicode lub formacie Punycode w zależności od ustawień konfiguracji IDN.  
+
+ <xref:System.Uri> ma dwie właściwości <xref:System.Uri.Host%2A> i <xref:System.Uri.DnsSafeHost%2A> . Te właściwości zawierają wartości Unicode lub formacie Punycode w zależności od ustawień konfiguracji IDN.  
   
  IDN jest włączona w pliku konfiguracji aplikacji przy użyciu następującego kodu XML  
   
@@ -25,9 +27,9 @@ Dodano obsługę usług WCF z międzynarodowymi nazwami domen (IDN). Międzynaro
 </configuration>  
 ```  
   
- Element \<> IDN zawiera atrybut Enabled, który można ustawić na jedną z następujących wartości:  
+ \<idn>Element zawiera atrybut Enabled, który można ustawić na jedną z następujących wartości:  
   
-1. "None"  
+1. Dawaj  
   
 2. "AllExceptIntranet"  
   
@@ -39,8 +41,8 @@ Dodano obsługę usług WCF z międzynarodowymi nazwami domen (IDN). Międzynaro
 > Nigdy nie należy nakodować adresu przy użyciu formacie Punycode. Program WCF przekonwertuje go na podstawie stosowanych ustawień konfiguracji.  
   
 > [!WARNING]
-> Podczas dodawania znaków Unicode do pliku applicationHost. exe. config Zapisz plik przy użyciu kodowania UTF-8.  
+> Podczas dodawania znaków Unicode do applicationHost.exe.config Zapisz plik przy użyciu kodowania UTF-8.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Uri?displayProperty=nameWithType>

@@ -6,14 +6,15 @@ helpviewer_keywords:
 - Impersonating the Client Sample [Windows Communication Foundation]
 - impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
-ms.openlocfilehash: b5272d8b4dbac60e14fe87accbb08a2073ed65ab
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bc4ff2d4b53b679266978ae5ffdea97e4606a351
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594637"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281901"
 ---
 # <a name="impersonating-the-client"></a>Personifikowanie klienta
+
 Przykład personifikacji demonstruje sposób personifikacji aplikacji wywołującej w usłudze, aby usługa mogła uzyskać dostęp do zasobów systemowych w imieniu obiektu wywołującego.  
   
  Ten przykład jest oparty [na przykładu samoobsługowego](self-host.md) . Pliki konfiguracji usługi i klienta są takie same jak w przypadku przykładu samoobsługowego [hosta](self-host.md) .  
@@ -102,10 +103,10 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
  Po uruchomieniu przykładu żądania operacji i odpowiedzi są wyświetlane zarówno w systemie, jak i w oknach konsoli klienta. Naciśnij klawisz ENTER w każdym oknie konsoli, aby zamknąć usługę i klienta.  
   
 > [!NOTE]
-> Usługa musi być uruchomiona na koncie administracyjnym lub konto, w którym jest uruchamiane, musi mieć przyznane prawa do rejestracji `http://localhost:8000/ServiceModelSamples` identyfikatora URI za pomocą warstwy http. Takie prawa można udzielić przez skonfigurowanie [rezerwacji przestrzeni nazw](/windows/win32/http/namespace-reservations-registrations-and-routing) za pomocą [narzędzia HttpCfg. exe](/windows/win32/http/httpcfg-exe).  
+> Usługa musi być uruchomiona na koncie administracyjnym lub konto, w którym jest uruchamiane, musi mieć przyznane prawa do rejestracji `http://localhost:8000/ServiceModelSamples` identyfikatora URI za pomocą warstwy http. Takie prawa można udzielić przez skonfigurowanie [rezerwacji przestrzeni nazw](/windows/win32/http/namespace-reservations-registrations-and-routing) za pomocą [ NarzędziaHttpcfg.exe](/windows/win32/http/httpcfg-exe).  
   
 > [!NOTE]
-> Na komputerach z systemem Windows Server 2003 Personifikacja jest obsługiwana tylko wtedy, gdy aplikacja host. exe ma uprawnienie personifikacji. (Domyślnie tylko Administratorzy mają to uprawnienie). Aby dodać to uprawnienie do konta, na którym działa usługa, przejdź do pozycji **Narzędzia administracyjne**, Otwórz **pozycję Zasady zabezpieczeń lokalnych**, Otwórz **Zasady lokalne**, kliknij pozycję **Przypisywanie praw użytkownika**, a następnie wybierz opcję **Personifikuj klienta po uwierzytelnieniu** , a następnie kliknij dwukrotnie pozycję **Właściwości** , aby dodać użytkownika lub grupę.  
+> Na komputerach z systemem Windows Server 2003 Personifikacja jest obsługiwana tylko wtedy, gdy aplikacja Host.exe ma uprawnienie personifikacji. (Domyślnie tylko Administratorzy mają to uprawnienie). Aby dodać to uprawnienie do konta, na którym działa usługa, przejdź do pozycji **Narzędzia administracyjne**, Otwórz **pozycję Zasady zabezpieczeń lokalnych**, Otwórz **Zasady lokalne**, kliknij pozycję **Przypisywanie praw użytkownika**, a następnie wybierz opcję **Personifikuj klienta po uwierzytelnieniu** , a następnie kliknij dwukrotnie pozycję **Właściwości** , aby dodać użytkownika lub grupę.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Aby skonfigurować, skompilować i uruchomić przykład  
   

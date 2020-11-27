@@ -2,38 +2,41 @@
 title: 1031 — CompleteFaultWorkItem
 ms.date: 03/30/2017
 ms.assetid: 95f4ccb0-6be4-41f3-9330-fae43165828f
-ms.openlocfilehash: cdcbe516fc8ba7440b3d109a5e5cadc105ecee9f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 557155fab35a37bdbaa45efb26d6bc025ad825c4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008801"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96281836"
 ---
 # <a name="1031---completefaultworkitem"></a>1031 — CompleteFaultWorkItem
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1031|  
-|słowa kluczowe|WFRuntime|  
+|ID (Identyfikator)|1031|  
+|Słowa kluczowe|WFRuntime|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że FaultWorkItem zostało zakończone.  
+
+ Wskazuje, że FaultWorkItem został ukończony.  
   
-## <a name="message"></a>Komunikat  
- FaultWorkItem zostało ukończone dla działania "%1", DisplayName: "%2", InstanceId: "%3". Wyjątek został rozpropagowany działania "%4", DisplayName: '%5', InstanceId: '%6'.  
+## <a name="message"></a>Wiadomość  
+
+ FaultWorkItem dla działania %1, nazwa wyświetlana: %2, identyfikator wystąpienia: %3. Wyjątek został rozpropagowany z działania "%4", nazwa wyświetlana: "%5", identyfikator wystąpienia: "%6".  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|FaultActivity|xs:String|Nazwa typu aktywności błędów.|  
-|FaultActivityDisplayName|xs:String|Nazwa wyświetlana aktywności błędów.|  
-|FaultActivityInstanceId|xs:String|Identyfikator wystąpienia aktywności błędów.|  
-|ExceptionActivity|xs:String|Nazwa typu działania, który wygenerował wyjątek.|  
-|ExceptionActivityDisplayName|xs:String|Nazwa wyświetlana działania, który wygenerował wyjątek.|  
-|ExceptionActivityInstanceId|xs:String|Identyfikator wystąpienia działania, który wygenerował wyjątek.|  
-|Wyjątek|xs:String|Szczegóły wyjątku, dla wyjątku|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Błąd|XS: ciąg|Nazwa typu działania dotyczącego błędu.|  
+|FaultActivityDisplayName|XS: ciąg|Nazwa wyświetlana działania dotyczącego błędu.|  
+|FaultActivityInstanceId|XS: ciąg|Identyfikator wystąpienia działania błędu.|  
+|Wyjątek|XS: ciąg|Nazwa typu działania, które wywołało wyjątek.|  
+|ExceptionActivityDisplayName|XS: ciąg|Nazwa wyświetlana działania, które wywołało wyjątek.|  
+|ExceptionActivityInstanceId|XS: ciąg|Identyfikator wystąpienia działania, które wywołało wyjątek.|  
+|Wyjątek|XS: ciąg|Szczegóły wyjątku dla wyjątku|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|
