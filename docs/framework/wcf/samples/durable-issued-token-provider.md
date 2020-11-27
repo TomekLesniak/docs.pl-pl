@@ -2,17 +2,19 @@
 title: Niezawodny dostawca wystawionych tokenów
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-ms.openlocfilehash: fed5f44e6cc40cfe2ca963077b6371c14b3b086a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7e0025eb4bc4918b977d9d8c4e2b1435b0425973
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600569"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96291677"
 ---
 # <a name="durable-issued-token-provider"></a>Niezawodny dostawca wystawionych tokenów
+
 Ten przykład pokazuje, jak zaimplementować niestandardowego dostawcę tokenów wystawionych przez klienta.  
   
-## <a name="discussion"></a>Dyskusji  
+## <a name="discussion"></a>Dyskusja  
+
  Dostawca tokenu w Windows Communication Foundation (WCF) służy do dostarczania poświadczeń do infrastruktury zabezpieczeń. Dostawca tokenu ogólnie bada cel i wystawia odpowiednie poświadczenia, aby infrastruktura zabezpieczeń mogła zabezpieczyć komunikat. Usługa WCF jest dostarczana z dostawcą tokenu programu CardSpace. Dostawcy tokenów niestandardowych są przydatne w następujących przypadkach:  
   
 - Jeśli masz magazyn poświadczeń, którego nie może używać dostawca wbudowanego tokenu.  
@@ -31,7 +33,7 @@ Ten przykład pokazuje, jak zaimplementować niestandardowego dostawcę tokenów
   
 - Jak serwer jest uwierzytelniany przez klienta za pomocą certyfikatu X. 509 serwera.  
   
- Ten przykład składa się z programu konsolowego klienta (Client. exe), programu usługi tokenu zabezpieczającego (SecurityTokenService. exe) i programu konsoli usług (Service. exe). Usługa implementuje kontrakt definiujący wzorzec komunikacji żądanie-odpowiedź. Kontrakt jest definiowany przez `ICalculator` interfejs, który udostępnia operacje matematyczne (Dodawanie, odejmowanie, mnożenie i dzielenie). Klient pobiera token zabezpieczający z usługi tokenu zabezpieczającego (STS) i wysyła synchroniczne żądania do usługi dla danej operacji matematycznej i usługi z wynikiem. Aktywność klienta jest widoczna w oknie konsoli.  
+ Ten przykład składa się z programu konsolowego klienta (Client.exe), programu Service token Security (Securitytokenservice.exe) i programu Service Console (Service.exe). Usługa implementuje kontrakt definiujący wzorzec komunikacji żądanie-odpowiedź. Kontrakt jest definiowany przez `ICalculator` interfejs, który udostępnia operacje matematyczne (Dodawanie, odejmowanie, mnożenie i dzielenie). Klient pobiera token zabezpieczający z usługi tokenu zabezpieczającego (STS) i wysyła synchroniczne żądania do usługi dla danej operacji matematycznej i usługi z wynikiem. Aktywność klienta jest widoczna w oknie konsoli.  
   
 > [!NOTE]
 > Procedura konfiguracji i instrukcje dotyczące kompilacji dla tego przykładu znajdują się na końcu tego tematu.  
@@ -110,6 +112,7 @@ Ten przykład pokazuje, jak zaimplementować niestandardowego dostawcę tokenów
  Usługa token zabezpieczający ujawnia pojedynczy punkt końcowy przy użyciu standardowej wsHttpBinding. Usługa tokenu zabezpieczającego odpowiada na żądanie od klientów tokenów i, pod warunkiem, że klient uwierzytelnia się przy użyciu konta systemu Windows, wystawia token, który zawiera nazwę użytkownika klienta jako zastrzeżenie w wystawionym tokenie. W ramach tworzenia tokenu usługa tokenu zabezpieczającego podpisuje token przy użyciu klucza prywatnego skojarzonego z certyfikatem CN = STS. Ponadto tworzy klucz symetryczny i szyfruje go przy użyciu klucza publicznego skojarzonego z certyfikatem CN = localhost. W programie zwracającym token do klienta usługa tokenu zabezpieczającego zwraca również klucz symetryczny. Klient przedstawia wystawiony token usłudze Kalkulator i potwierdza, że zna klucz symetryczny, podpisując komunikat przy użyciu tego klucza.  
   
 ## <a name="custom-client-credentials-and-token-provider"></a>Niestandardowe poświadczenia klienta i dostawca tokenów  
+
  W poniższych krokach przedstawiono sposób tworzenia niestandardowego dostawcy tokenów, który buforuje wystawione tokeny i integruje go z programem WCF: zabezpieczenia.  
   
 ### <a name="to-develop-a-custom-token-provider"></a>Aby opracować niestandardowego dostawcę tokenów  
@@ -226,9 +229,11 @@ Ten przykład pokazuje, jak zaimplementować niestandardowego dostawcę tokenów
     ```  
   
 ## <a name="running-the-sample"></a>Uruchamianie przykładowej aplikacji  
+
  Zapoznaj się z poniższymi instrukcjami, aby uruchomić przykład. Po uruchomieniu przykładu żądanie tokenu zabezpieczającego jest wyświetlane w oknie konsoli usługi tokenu zabezpieczającego. Żądania operacji i odpowiedzi są wyświetlane w oknach konsoli klienta i usługi. Naciśnij klawisz ENTER w dowolnym systemie Windows Console, aby zamknąć aplikację.  
   
 ## <a name="the-setupcmd-batch-file"></a>Plik wsadowy Setup. cmd  
+
  Plik wsadowy Setup. cmd dołączony do tego przykładu umożliwia skonfigurowanie serwera i usługi tokenu zabezpieczającego za pomocą odpowiednich certyfikatów do uruchamiania aplikacji samohostowanej. Plik wsadowy tworzy dwa certyfikaty zarówno w magazynie certyfikatów CurrentUser/TrustedPeople. Pierwszy certyfikat ma nazwę podmiotu CN = STS i jest używany przez usługę tokenu zabezpieczającego do podpisywania tokenów zabezpieczających, które wystąpiły dla klienta. Drugi certyfikat ma nazwę podmiotu CN = localhost i jest używany przez usługę tokenu zabezpieczającego do szyfrowania klucza tajnego, aby usługa mogła je odszyfrować.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Aby skonfigurować, skompilować i uruchomić przykład  
@@ -237,9 +242,9 @@ Ten przykład pokazuje, jak zaimplementować niestandardowego dostawcę tokenów
   
 2. Aby skompilować rozwiązanie, postępuj zgodnie z instrukcjami w temacie [Tworzenie przykładów Windows Communication Foundation](building-the-samples.md). Upewnij się, że wszystkie projekty w rozwiązaniu zostały skompilowane (Shared, RSTRSTR, Service, SecurityTokenService i Client).  
   
-3. Upewnij się, że program Service. exe i SecurityTokenService. exe są uruchamiane z uprawnieniami administratora.  
+3. Upewnij się, że Service.exe i SecurityTokenService.exe są uruchamiane z uprawnieniami administratora.  
   
-4. Uruchom plik Client. exe.  
+4. Uruchom Client.exe.  
   
 ### <a name="to-clean-up-after-the-sample"></a>Aby wyczyścić po przykładzie  
   

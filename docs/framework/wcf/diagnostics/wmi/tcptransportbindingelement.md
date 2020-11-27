@@ -2,14 +2,15 @@
 title: TcpTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: 33bbc1e5-44e4-4ee3-b7b5-801dc78956e4
-ms.openlocfilehash: 6d2717bc2d1d14e369af2b9c5a8c0affb67501d9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6af85d62fffada95537494692b8694f42d7a2932
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956549"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96290091"
 ---
 # <a name="tcptransportbindingelement"></a>TcpTransportBindingElement
+
 TcpTransportBindingElement  
   
 ## <a name="syntax"></a>Składnia  
@@ -25,12 +26,15 @@ class TcpTransportBindingElement : ConnectionOrientedTransportBindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa TcpTransportBindingElement nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa TcpTransportBindingElement ma następujące właściwości:  
   
 ### <a name="connectionpoolsettings"></a>ConnectionPoolSettings  
+
  Typ danych: TcpConnectionPoolSettings  
   
  Typ dostępu: tylko do odczytu  
@@ -38,32 +42,35 @@ class TcpTransportBindingElement : ConnectionOrientedTransportBindingElement
  Ustawienia puli połączeń.  
   
 ### <a name="listenbacklog"></a>ListenBacklog  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalna liczba żądań w kolejce połączeń, które może być oczekujące.  
+ Maksymalna liczba oczekujących żądań połączeń z kolejki.  
   
 ### <a name="portsharingenabled"></a>PortSharingEnabled  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość logiczna określająca, czy włączone jest udostępnianie portów TCP dla tego połączenia.  
+ Wartość logiczna określająca, czy włączone jest Udostępnianie portów TCP dla tego połączenia.  
   
 ### <a name="teredoenabled"></a>TeredoEnabled  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość logiczna określająca, czy jest włączony protokół Teredo (technologia adresować klientów znajdujących się za zaporami).  
+ Wartość logiczna określająca, czy jest włączona funkcja Teredo (technologia do adresowania klientów znajdujących się za zaporą).  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.TcpTransportBindingElement>

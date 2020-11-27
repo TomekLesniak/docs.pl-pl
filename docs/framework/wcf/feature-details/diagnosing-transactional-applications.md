@@ -2,17 +2,19 @@
 title: Diagnozowanie aplikacji transakcyjnych
 ms.date: 03/30/2017
 ms.assetid: 4a993492-1088-4d10-871b-0c09916af05f
-ms.openlocfilehash: fb3a83083e876cf697621ba70dcf7dd67636f83a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 696ebe7249a8388eaaf38a678581e28d472e821a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599220"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96290247"
 ---
 # <a name="diagnosing-transactional-applications"></a>Diagnozowanie aplikacji transakcyjnych
+
 W tym temacie opisano, jak używać funkcji zarządzania i diagnostyki Windows Communication Foundation (WCF) do rozwiązywania problemów z aplikacją transakcyjną.  
   
 ## <a name="performance-counters"></a>Liczniki wydajności  
+
  Funkcja WCF oferuje standardowy zestaw liczników wydajności służący do mierzenia wydajności transakcyjnej aplikacji. Aby uzyskać więcej informacji, zobacz [liczniki wydajności](../diagnostics/performance-counters/index.md).  
   
  Liczniki wydajności są objęte zakresem trzech różnych poziomów: usługi, punktu końcowego i operacji, zgodnie z opisem w poniższych tabelach.  
@@ -45,6 +47,7 @@ W tym temacie opisano, jak używać funkcji zarządzania i diagnostyki Windows C
 |Przepływ transakcji na sekundę|Liczba transakcji, które przepływają do operacji w tym punkcie końcowym w ciągu każdej sekundy. Ten licznik jest zwiększany w każdym momencie, gdy transakcja jest obecna w komunikacie wysyłanym do punktu końcowego.|  
   
 ## <a name="windows-management-instrumentation"></a>Instrumentacja zarządzania Windows  
+
  Funkcja WCF udostępnia dane inspekcji usługi w czasie wykonywania za pomocą dostawcy usług WCF Instrumentacja zarządzania Windows (WMI). Aby uzyskać więcej informacji na temat uzyskiwania dostępu do danych usługi WMI, zobacz [używanie Instrumentacja zarządzania Windows do diagnostyki](../diagnostics/wmi/index.md).  
   
  Wiele właściwości usługi WMI tylko do odczytu wskazuje zastosowane ustawienia transakcji dla usługi. W poniższej tabeli wymieniono wszystkie te ustawienia.  
@@ -85,6 +88,7 @@ W tym temacie opisano, jak używać funkcji zarządzania i diagnostyki Windows C
 |Parametru TransactionFlowOption|Ciąg, który zawiera prawidłową wartość <xref:System.ServiceModel.TransactionFlowOption> wyliczenia.|Określa zakres, do którego jest wymagany przepływ transakcji.|  
   
 ## <a name="tracing"></a>Śledzenie  
+
  Ślady umożliwiają monitorowanie i analizowanie błędów w aplikacjach transakcyjnych. Śledzenie można włączyć, korzystając z następujących sposobów:  
   
 - Standardowe śledzenie WCF  
@@ -93,9 +97,9 @@ W tym temacie opisano, jak używać funkcji zarządzania i diagnostyki Windows C
   
 - Śledzenie WS-AtomicTransaction  
   
-     Śledzenie WS-AtomicTransaction można włączyć za pomocą [Narzędzia konfiguracji protokołu WS-AtomicTransaction (wsatConfig. exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md). Takie śledzenie zapewnia wgląd w stan transakcji i uczestników w ramach systemu. Aby włączyć również śledzenie wewnętrznego modelu usług, można ustawić `HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` klucz rejestru na prawidłową wartość <xref:System.Diagnostics.SourceLevels> wyliczenia. Rejestrowanie komunikatów można włączyć w taki sam sposób, jak w przypadku innych aplikacji WCF.  
+     Śledzenie WS-AtomicTransaction można włączyć za pomocą [Narzędzia konfiguracji protokołu WS-AtomicTransaction (wsatConfig.exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md). Takie śledzenie zapewnia wgląd w stan transakcji i uczestników w ramach systemu. Aby włączyć również śledzenie wewnętrznego modelu usług, można ustawić `HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` klucz rejestru na prawidłową wartość <xref:System.Diagnostics.SourceLevels> wyliczenia. Rejestrowanie komunikatów można włączyć w taki sam sposób, jak w przypadku innych aplikacji WCF.  
   
-- `System.Transactions`pochodzenia  
+- `System.Transactions` pochodzenia  
   
      W przypadku korzystania z protokołu OleTransactions komunikaty protokołu nie mogą być śledzone. Funkcja śledzenia zapewnia obsługę <xref:System.Transactions> infrastruktury (która używa OleTransactions) umożliwia użytkownikom wyświetlanie zdarzeń, które wystąpiły w transakcjach. Aby włączyć śledzenie dla <xref:System.Transactions> aplikacji, Dołącz następujący kod w `App.config` pliku konfiguracji.  
   

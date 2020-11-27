@@ -7,17 +7,19 @@ dev_langs:
 helpviewer_keywords:
 - queues [WCF]. grouping messages
 ms.assetid: 63b23b36-261f-4c37-99a2-cc323cd72a1a
-ms.openlocfilehash: 66f51267f20f8cdad8feeedf37435ccfa733146e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9ad3bd29535e14231d07b9e491e606f8349ca3ac
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597361"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96290065"
 ---
 # <a name="grouping-queued-messages-in-a-session"></a>Grupowanie komunikatów z obsługą kolejek w ramach sesji
+
 Windows Communication Foundation (WCF) to sesja, która umożliwia grupowanie zestawu powiązanych komunikatów w celu przetworzenia przez pojedynczą aplikację otrzymującą. Komunikaty, które są częścią sesji, muszą być częścią tej samej transakcji. Ponieważ wszystkie komunikaty są częścią tej samej transakcji, jeśli nie można przetworzyć jednego komunikatu, cała sesja jest wycofywana. Sesje mają podobne zachowania w odniesieniu do nieutraconych kolejek i trujących kolejek. Właściwość Time to Live (TTL) ustawiona w powiązaniu w kolejce skonfigurowanym dla sesji jest stosowana do sesji jako całości. Jeśli tylko niektóre komunikaty w sesji są wysyłane przed upływem czasu wygaśnięcia, cała sesja zostanie umieszczona w kolejce utraconych wiadomości. Podobnie w przypadku niepowodzenia wysyłania komunikatów w sesji do aplikacji z kolejki aplikacji cała sesja zostanie umieszczona w kolejce trującej (jeśli jest dostępna).  
   
 ## <a name="message-grouping-example"></a>Przykład grupowania komunikatów  
+
  Przykładem, gdy pomocne jest grupowanie komunikatów, jest zaimplementowanie aplikacji do przetwarzania zamówień jako usługi WCF. Na przykład klient przesyła do tej aplikacji zamówienie, które zawiera kilka elementów. Dla każdego elementu klient wykonuje wywołanie do usługi, co spowoduje wysłanie osobnej wiadomości. Jest możliwe, aby program mógł otrzymać pierwszy element, a serwer B odbierze drugi element. Za każdym razem, gdy element jest dodawany, serwer przetwarzania tego elementu musi znaleźć odpowiednie zamówienie i dodać do niego element, który jest wysoce nieefektywny. W dalszym ciągu można pracować w taki sposób, że tylko jeden serwer obsługuje wszystkie żądania, ponieważ serwer musi śledzić wszystkie aktualnie przetwarzane zamówienia i określić, do którego, do którego należy nowy element. Grupowanie wszystkich żądań dla pojedynczego zamówienia znacznie upraszcza implementację takiej aplikacji. Aplikacja kliencka wysyła wszystkie elementy z pojedynczej kolejności w sesji, więc gdy usługa przetwarza kolejność, przetwarza całą sesję jednocześnie. \  
   
 ## <a name="procedures"></a>Procedury  
@@ -62,7 +64,7 @@ Windows Communication Foundation (WCF) to sesja, która umożliwia grupowanie ze
   
 1. Utwórz zakres transakcji do zapisu w kolejce transakcyjnej.  
   
-2. Utwórz klienta WCF za pomocą narzędzia [Svcutil. exe (narzędzie do przesyłania metadanych)](../servicemodel-metadata-utility-tool-svcutil-exe.md) .  
+2. Utwórz klienta WCF przy użyciu narzędzia do [Zametadanych modelu ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) .  
   
 3. Złóż zamówienie.  
   
@@ -71,13 +73,16 @@ Windows Communication Foundation (WCF) to sesja, która umożliwia grupowanie ze
 ## <a name="example"></a>Przykład  
   
 ### <a name="description"></a>Opis  
+
  Poniższy przykład zawiera kod dla `IProcessOrder` usługi i klienta programu korzystającego z tej usługi. Pokazuje, w jaki sposób WCF używa kolejkowane sesje, aby zapewnić zachowanie grupowania.  
   
 ### <a name="code-for-the-service"></a>Kod usługi  
+
  [!code-csharp[S_Msmq_Session#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_session/cs/service.cs#1)]
  [!code-vb[S_Msmq_Session#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_session/vb/service.vb#1)]  
 
 ### <a name="code-for-the-client"></a>Kod dla klienta  
+
  [!code-csharp[S_Msmq_Session#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_session/cs/client.cs#3)]
  [!code-vb[S_Msmq_Session#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_session/vb/client.vb#3)]  
 

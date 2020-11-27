@@ -2,15 +2,16 @@
 title: ActivityTransfer
 ms.date: 03/30/2017
 ms.assetid: fc40ef17-2a92-4ce2-853c-6ba8e5d571f3
-ms.openlocfilehash: 6237d65d6964a4ebca34af895158c83239641593
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f1978881517fe5010ccc0f5192b21bd6688f063a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662820"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96291118"
 ---
 # <a name="activitytransfer"></a>ActivityTransfer
-Zdarzenia transferu aktywności  
+
+Zdarzenie transferu działania  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -23,12 +24,14 @@ class ActivityTransfer : WSAT_TraceEvent
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa ActivityTransfer nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa ActivityTransfer ma następujące właściwości:  
   
-### <a name="activityid"></a>Identyfikator działania  
+### <a name="activityid"></a>ActivityID  
   
 - Typ danych: obiekt  
     Typ dostępu: tylko do odczytu  
@@ -40,10 +43,10 @@ class ActivityTransfer : WSAT_TraceEvent
 - Typ danych: obiekt  
     Typ dostępu: tylko do odczytu  
   
-- Identyfikator działania powiązane  
+- IDENTYFIKATOR powiązanego działania  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel.|

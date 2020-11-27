@@ -2,14 +2,15 @@
 title: AppDomainInfo
 ms.date: 03/30/2017
 ms.assetid: 6610b7d8-81eb-4bec-a543-9b72ad7b6f73
-ms.openlocfilehash: 0b7f8aadbd9a9dfcdd33fc65be3a5a41ea95f5be
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c5c44f4d8f6d93443802d5e1950c4d850976c5b6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61964258"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96291131"
 ---
 # <a name="appdomaininfo"></a>AppDomainInfo
+
 Informacje o domenie aplikacji  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,54 +34,63 @@ class AppDomainInfo
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa AppDomainInfo nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa AppDomainInfo ma następujące właściwości:  
   
 ### <a name="appdomainid"></a>AppDomainId  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Identyfikator elementu appdomain.  
+ Identyfikator domeny aplikacji.  
   
 ### <a name="isdefault"></a>IsDefault  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wskazuje, czy element appdomain jest domyślnej domeny aplikacji.  
+ Wskazuje, czy domena aplikacji jest domyślną domeną aplikacji.  
   
 ### <a name="logmalformedmessages"></a>LogMalformedMessages  
+
  Typ danych: wartość logiczna  
   
- Typ dostępu: Odczyt/zapis  
+ Typ dostępu: odczyt/zapis  
   
- Wartość, która określa, czy wadliwe komunikaty są rejestrowane.  
+ Wartość określająca, czy źle sformułowane komunikaty są rejestrowane.  
   
 ### <a name="logmessagesatservicelevel"></a>LogMessagesAtServiceLevel  
+
  Typ danych: wartość logiczna  
   
- Typ dostępu: Odczyt/zapis  
+ Typ dostępu: odczyt/zapis  
   
- Wartość, która określa, czy komunikaty są śledzone na poziomie usługi (przed zaszyfrowaniem i transformacjami związanymi z transportem).  
+ Wartość określająca, czy komunikaty są śledzone na poziomie usługi (przed szyfrowaniem i transformacjemi związanymi z transportem).  
   
 ### <a name="logmessagesattransportlevel"></a>LogMessagesAtTransportLevel  
+
  Typ danych: wartość logiczna  
   
- Typ dostępu: Odczyt/zapis  
+ Typ dostępu: odczyt/zapis  
   
- Wartość, która określa, czy komunikaty są śledzone na poziomie transportu.  
+ Wartość określająca, czy komunikaty są śledzone na poziomie transportu.  
   
 ### <a name="messageloggingtracelisteners"></a>MessageLoggingTraceListeners  
- Typ danych: Tablica zdarzeń TraceListener  
+
+ Typ danych: tablica TraceListener  
   
  Typ dostępu: tylko do odczytu  
   
- Kolekcja obiektów nasłuchujących śledzenia System.Wmi.MessageLogging źródła śledzenia.  
+ Detektory śledzenia kolekcji, które nasłuchują źródła śledzenia system. WMI. MessageLogging.  
   
 ### <a name="name"></a>Nazwa  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -88,6 +98,7 @@ class AppDomainInfo
  Nazwa domeny aplikacji.  
   
 ### <a name="performancecounters"></a>Liczniki wydajności  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -95,6 +106,7 @@ class AppDomainInfo
  Zakres aktywnych liczników wydajności w domenie aplikacji.  
   
 ### <a name="processid"></a>Identyfikator procesu  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
@@ -102,6 +114,7 @@ class AppDomainInfo
  Identyfikator procesu.  
   
 ### <a name="serviceconfigpath"></a>ServiceConfigPath  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -109,21 +122,23 @@ class AppDomainInfo
  Ścieżka do konfiguracji usługi.  
   
 ### <a name="tracelevel"></a>TraceLevel  
+
  Typ danych: ciąg  
   
- Typ dostępu: Odczyt/zapis  
+ Typ dostępu: odczyt/zapis  
   
- Poziom śledzenia System.Wmi źródła śledzenia.  
+ Poziom śledzenia źródła śledzenia system. WMI.  
   
 ### <a name="servicemodeltracelisteners"></a>ServiceModelTraceListeners  
- Typ danych: Tablica zdarzeń TraceListener  
+
+ Typ danych: tablica TraceListener  
   
  Typ dostępu: tylko do odczytu  
   
- Kolekcja obiektów nasłuchujących ze źródła śledzenia System.ServiceModel.  
+ Kolekcja odbiorników ze źródła śledzenia system. ServiceModel.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|
