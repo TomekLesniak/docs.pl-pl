@@ -3,14 +3,15 @@ title: Uproszczona konfiguracja usług WCF
 description: Dowiedz się, jak zaimplementować i skonfigurować typową usługę i klienta przy użyciu programu WCF. Usługa komunikuje się za pomocą punktu końcowego określonego w pliku konfiguracji.
 ms.date: 03/30/2017
 ms.assetid: 1e39ec25-18a3-4fdc-b6a3-9dfafbd60112
-ms.openlocfilehash: dd05754dcfe36cb2e9c28ce20a5927585f85478f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 087618d603ea1c7df75ab5383f6c95b781dca847
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554270"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96290026"
 ---
 # <a name="simplified-configuration-for-wcf-services"></a>Uproszczona konfiguracja usług WCF
+
 Ten przykład pokazuje, jak zaimplementować i skonfigurować typową usługę i klienta przy użyciu Windows Communication Foundation (WCF). Ten przykład jest podstawą dla wszystkich innych podstawowych przykładów technologii.  
   
  Ta usługa, która udostępnia punkt końcowy do komunikacji z usługą, używa uproszczonej konfiguracji w .NET Framework 4. Przed .NET Framework 4 punkt końcowy jest zwykle definiowany w pliku konfiguracji (Web.config), jak pokazano w poniższym przykładowym kodzie konfiguracyjnym.  
@@ -79,7 +80,7 @@ Ten przykład pokazuje, jak zaimplementować i skonfigurować typową usługę i
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\ConfigSimplificationIn40`  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykłady zarządzania dla oprogramowania AppFabric](/previous-versions/appfabric/ff383405(v=azure.10))
 - [Uproszczona konfiguracja](../simplified-configuration.md)
