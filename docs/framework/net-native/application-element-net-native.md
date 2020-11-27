@@ -1,19 +1,20 @@
 ---
-title: <Application>— Element (.NET Native)
+title: <Application> — Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
-ms.openlocfilehash: e26826b3d8674b536ab0897182da58bc02cfd00b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a7f2eca5a5bb5cfb7b9827f2463454a17fc128cb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128518"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288141"
 ---
-# <a name="application-element-net-native"></a>\<Application>— Element (.NET Native)
+# <a name="application-element-net-native"></a>\<Application> — Element (.NET Native)
+
 Służy jako kontener dla typów i składowych dla całej aplikacji, których metadane są dostępne do odbicia w czasie wykonywania, i stosuje zasady odbicia środowiska uruchomieniowego do wszystkich elementów programu w aplikacji.  
   
  \<Directives> Element  
-\<Application>— Element (RD. xml)  
+\<Application> — Element (rd.xml)  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -31,6 +32,7 @@ Służy jako kontener dla typów i składowych dla całej aplikacji, których me
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne. W tabeli elementy podrzędne zasady odnoszą się do rodzaju metadanych, które są udostępniane dla określonych elementów programu w czasie wykonywania.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -75,6 +77,7 @@ Służy jako kontener dla typów i składowych dla całej aplikacji, których me
 |[\<Directives>](directives-element-net-native.md)|Element główny pliku dyrektywy środowiska uruchomieniowego.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  [\<Directives>](directives-element-net-native.md)Element może zawierać zero lub jeden `<Application>` element. Wiele `<Application>` elementów w jednym pliku dyrektywy odbicia nie jest obsługiwane.  
   
  `<Application>`Element może być używany na jeden z dwóch sposobów:  
@@ -83,9 +86,9 @@ Służy jako kontener dla typów i składowych dla całej aplikacji, których me
   
 - Jako element, który ustawia zasady dla całej aplikacji na potrzeby odbicia, serializacji i międzyoperacyjności. Atrybuty `<Application>` elementu definiują zasady na poziomie aplikacji, które mogą zostać zastąpione przez elementy podrzędne zdefiniowane przez `<Application>` [\<Library>](library-element-net-native.md) element lub.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [\<Library>Postaci](library-element-net-native.md)
-- [\<Directives>Postaci](directives-element-net-native.md)
+- [\<Library> Postaci](library-element-net-native.md)
+- [\<Directives> Postaci](directives-element-net-native.md)
 - [Elementy dyrektyw środowiska uruchomieniowego](runtime-directive-elements.md)
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)

@@ -2,17 +2,19 @@
 title: Korzystanie z personifikacji z zabezpieczeniami transportu
 ms.date: 03/30/2017
 ms.assetid: 426df8cb-6337-4262-b2c0-b96c2edf21a9
-ms.openlocfilehash: 1d33bfbbb74266aefa538166b4e1aca7d7e315ef
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 14914bc65d5033c54640e06b79713ea1871daf18
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594975"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289506"
 ---
 # <a name="using-impersonation-with-transport-security"></a>Korzystanie z personifikacji z zabezpieczeniami transportu
+
 *Personifikacja* to możliwość, aby aplikacja serwera mogła przejąć tożsamość klienta. Podczas sprawdzania poprawności dostępu do zasobów często używane są personifikacje usług. Aplikacja serwera jest uruchamiana przy użyciu konta usługi, ale gdy serwer zaakceptuje połączenie klienta, personifikuje klienta, aby testy dostępu były wykonywane przy użyciu poświadczeń klienta. Zabezpieczenia transportu to mechanizm przekazywania poświadczeń i zabezpieczania komunikacji przy użyciu tych poświadczeń. W tym temacie opisano korzystanie z zabezpieczeń transportu w programie Windows Communication Foundation (WCF) z funkcją personifikacji. Aby uzyskać więcej informacji na temat personifikacji przy użyciu zabezpieczeń wiadomości, zobacz [delegowanie i personifikacja](delegation-and-impersonation-with-wcf.md).  
   
 ## <a name="five-impersonation-levels"></a>Pięć poziomów personifikacji  
+
  Zabezpieczenia transportu korzystają z pięciu poziomów personifikacji, zgodnie z opisem w poniższej tabeli.  
   
 |Poziom personifikacji|Opis|  
@@ -27,10 +29,12 @@ ms.locfileid: "84594975"
   
  Użycie personifikacji na `Impersonate` `Delegate` poziomach lub wymaga, aby aplikacja serwera miała to `SeImpersonatePrivilege` uprawnienie. Aplikacja ma to uprawnienie domyślnie, jeśli jest uruchomiona na koncie w grupie Administratorzy lub na koncie z identyfikatorem SID usługi (usługa sieciowa, Usługa lokalna lub system lokalny). Personifikacja nie wymaga wzajemnego uwierzytelniania klienta i serwera. Niektóre schematy uwierzytelniania obsługujące personifikację, takie jak NTLM, nie mogą być używane z uwierzytelnianiem obustronnym.  
   
-## <a name="transport-specific-issues-with-impersonation"></a>Problemy związane z transportem dotyczące personifikacji  
+## <a name="transport-specific-issues-with-impersonation"></a>Transport-Specific problemy z personifikacją  
+
  Wybór transportu w programie WCF ma wpływ na możliwe opcje personifikacji. W tej sekcji opisano problemy mające wpływ na transporty standardowego protokołu HTTP i nazwanego potoku w programie WCF. Niestandardowe transporty mają własne ograniczenia dotyczące obsługi personifikacji.  
   
 ### <a name="named-pipe-transport"></a>Transport nazwanych potoków  
+
  Następujące elementy są używane z transportem nazwanego potoku:  
   
 - Transport nazwanego potoku jest przeznaczony do użycia tylko na komputerze lokalnym. Transport potoków nazwanych w usłudze WCF jawnie nie zezwala na połączenia między maszynami.  
@@ -40,6 +44,7 @@ ms.locfileid: "84594975"
  Aby uzyskać więcej informacji na temat nazwanych potoków, zobacz [Wybieranie transportu](choosing-a-transport.md).  
   
 ### <a name="http-transport"></a>Transport HTTP  
+
  Powiązania korzystające z transportu HTTP ( <xref:System.ServiceModel.WSHttpBinding> i <xref:System.ServiceModel.BasicHttpBinding> ) obsługują kilka schematów uwierzytelniania, zgodnie z opisem w temacie [uwierzytelnianie HTTP](understanding-http-authentication.md). Obsługiwany poziom personifikacji zależy od schematu uwierzytelniania. Następujące elementy są używane z transportem HTTP:  
   
 - `Anonymous`Schemat uwierzytelniania ignoruje personifikację.  

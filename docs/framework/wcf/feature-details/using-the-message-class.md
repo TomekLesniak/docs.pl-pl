@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d1d62bfb-2aa3-4170-b6f8-c93d3afdbbed
-ms.openlocfilehash: f806e257cfd3ccc5118a5783e2eda48eef4ba0bf
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: fd19256b571727883dd877f0094f180ec47c6d63
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246496"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289389"
 ---
 # <a name="using-the-message-class"></a>Używanie klasy Message
+
 <xref:System.ServiceModel.Channels.Message>Klasa ma podstawowe znaczenie dla Windows Communication Foundation (WCF). Cała komunikacja między klientami i usługami ostatecznie powoduje <xref:System.ServiceModel.Channels.Message> , że wystąpienia są wysyłane i odbierane.  
   
  Zazwyczaj nie można bezpośrednio korzystać z <xref:System.ServiceModel.Channels.Message> klasy. Zamiast tego konstrukcje modelu usługi WCF, takie jak kontrakty danych, kontrakty komunikatów i kontrakty operacji, służą do opisywania komunikatów przychodzących i wychodzących. Jednak w niektórych zaawansowanych scenariuszach można bezpośrednio korzystać z <xref:System.ServiceModel.Channels.Message> klasy. Na przykład możesz chcieć użyć <xref:System.ServiceModel.Channels.Message> klasy:  
@@ -29,6 +30,7 @@ ms.locfileid: "85246496"
  A <xref:System.ServiceModel.Channels.Message> to kontener ogólnego przeznaczenia dla danych, ale jego konstrukcja jest ściśle zgodna z projektem komunikatu w protokole SOAP. Podobnie jak w przypadku protokołu SOAP komunikat ma zarówno treść wiadomości, jak i nagłówki. Treść wiadomości zawiera rzeczywiste dane ładunku, podczas gdy nagłówki zawierają dodatkowe nazwane kontenery danych. Reguły odczytu i zapisu treści i nagłówki są różne, na przykład nagłówki są zawsze buforowane w pamięci i mogą być dostępne w dowolnej kolejności, a treść może być odczytana tylko raz i mogą być przesyłane strumieniowo. Zwykle w przypadku korzystania z protokołu SOAP treść komunikatu jest mapowana na treść protokołu SOAP, a nagłówki komunikatów są mapowane na nagłówki protokołu SOAP.  
   
 ## <a name="using-the-message-class-in-operations"></a>Korzystanie z klasy Message w operacjach  
+
  Klasy można użyć <xref:System.ServiceModel.Channels.Message> jako parametru wejściowego operacji, wartości zwracanej operacji lub obu tych elementów. Jeśli <xref:System.ServiceModel.Channels.Message> jest używany w dowolnym miejscu operacji, obowiązują następujące ograniczenia:  
   
 - Operacja nie może mieć żadnych `out` `ref` parametrów ani.  
@@ -43,11 +45,13 @@ ms.locfileid: "85246496"
  [!code-vb[C_UsingTheMessageClass#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#1)]  
   
 ## <a name="creating-basic-messages"></a>Tworzenie podstawowych komunikatów  
+
  <xref:System.ServiceModel.Channels.Message>Klasa zawiera statyczne `CreateMessage` metody fabryki, których można użyć do tworzenia podstawowych komunikatów.  
   
- Wszystkie `CreateMessage` przeciążenia pobierają parametr wersji typu <xref:System.ServiceModel.Channels.MessageVersion> , który wskazuje wersje protokołu SOAP i WS-Addressing do użycia w wiadomości. Jeśli chcesz używać tych samych wersji protokołu co komunikat przychodzący, możesz użyć <xref:System.ServiceModel.OperationContext.IncomingMessageVersion%2A> właściwości w <xref:System.ServiceModel.OperationContext> wystąpieniu uzyskanym we <xref:System.ServiceModel.OperationContext.Current%2A> właściwości. Większość `CreateMessage` przeciążenia ma również parametr ciągu, który wskazuje akcję protokołu SOAP, która ma być używana dla wiadomości. Aby `None` wyłączyć generowanie kopert protokołu SOAP, można ustawić wersję programu. komunikat składa się tylko z treści.  
+ Wszystkie `CreateMessage` przeciążenia pobierają parametr wersji typu <xref:System.ServiceModel.Channels.MessageVersion> , który wskazuje wersje SOAP i WS-Addressing do użycia w komunikacie. Jeśli chcesz używać tych samych wersji protokołu co komunikat przychodzący, możesz użyć <xref:System.ServiceModel.OperationContext.IncomingMessageVersion%2A> właściwości w <xref:System.ServiceModel.OperationContext> wystąpieniu uzyskanym we <xref:System.ServiceModel.OperationContext.Current%2A> właściwości. Większość `CreateMessage` przeciążenia ma również parametr ciągu, który wskazuje akcję protokołu SOAP, która ma być używana dla wiadomości. Aby `None` wyłączyć generowanie kopert protokołu SOAP, można ustawić wersję programu. komunikat składa się tylko z treści.  
   
 ## <a name="creating-messages-from-objects"></a>Tworzenie komunikatów z obiektów  
+
  Najbardziej podstawowe `CreateMessage` Przeciążenie, które pobiera tylko wersję i akcję, tworzy komunikat z pustą treścią. Inne Przeciążenie pobiera dodatkowy <xref:System.Object> parametr; spowoduje to utworzenie komunikatu, którego treść jest serializowaną reprezentacją danego obiektu. Użyj <xref:System.Runtime.Serialization.DataContractSerializer> domyślnych ustawień serializacji. Jeśli chcesz użyć innego serializatora lub chcesz `DataContractSerializer` skonfigurować inaczej, użyj `CreateMessage` przeciążenia, które również pobiera `XmlObjectSerializer` parametr.  
   
  Na przykład, aby zwrócić obiekt w komunikacie, można użyć poniższego kodu.  
@@ -56,27 +60,31 @@ ms.locfileid: "85246496"
  [!code-vb[C_UsingTheMessageClass#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#2)]  
   
 ## <a name="creating-messages-from-xml-readers"></a>Tworzenie komunikatów z poziomu czytników XML  
+
  Istnieją `CreateMessage` przeciążenia, które pobierają <xref:System.Xml.XmlReader> lub <xref:System.Xml.XmlDictionaryReader> dla treści zamiast do obiektu. W takim przypadku treść wiadomości zawiera kod XML, który wynika z odczytu z przekazaną wartość czytnika XML. Na przykład poniższy kod zwraca komunikat z zawartością treści odczytaną z pliku XML.  
   
  [!code-csharp[C_UsingTheMessageClass#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#3)]
  [!code-vb[C_UsingTheMessageClass#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#3)]  
   
- Ponadto istnieją `CreateMessage` przeciążenia, które pobierają <xref:System.Xml.XmlReader> lub <xref:System.Xml.XmlDictionaryReader> reprezentują cały komunikat, a nie tylko treść. Te przeciążenia również pobierają parametr liczby całkowitej `maxSizeOfHeaders` . Nagłówki są zawsze buforowane w pamięci, gdy tylko zostanie utworzony komunikat, a ten parametr ogranicza ilość buforu, który ma miejsce. Ważne jest, aby ustawić ten parametr na wartość bezpieczną, jeśli plik XML pochodzi z niezaufanego źródła, aby zmniejszyć prawdopodobieństwo ataku typu "odmowa usługi". Wersja protokołu SOAP i WS-Addressing wiadomości, która reprezentuje czytnik XML, musi być zgodna z wersjami wskazanymi przy użyciu parametru Version.  
+ Ponadto istnieją `CreateMessage` przeciążenia, które pobierają <xref:System.Xml.XmlReader> lub <xref:System.Xml.XmlDictionaryReader> reprezentują cały komunikat, a nie tylko treść. Te przeciążenia również pobierają parametr liczby całkowitej `maxSizeOfHeaders` . Nagłówki są zawsze buforowane w pamięci, gdy tylko zostanie utworzony komunikat, a ten parametr ogranicza ilość buforu, który ma miejsce. Ważne jest, aby ustawić ten parametr na wartość bezpieczną, jeśli plik XML pochodzi z niezaufanego źródła, aby zmniejszyć prawdopodobieństwo ataku typu "odmowa usługi". Wersje SOAP i WS-Addressing komunikatu reprezentowanego przez czytelnika XML muszą być zgodne z wersjami wskazanymi przy użyciu parametru Version.  
   
 ## <a name="creating-messages-with-bodywriter"></a>Tworzenie komunikatów za pomocą BodyWriter  
+
  Jedno `CreateMessage` Przeciążenie pobiera `BodyWriter` wystąpienie opisujące treść wiadomości. A `BodyWriter` jest klasą abstrakcyjną, która może być pochodną, aby dostosować sposób tworzenia treści wiadomości. Można utworzyć własną `BodyWriter` klasę pochodną do opisywania treści wiadomości w niestandardowy sposób. Należy zastąpić `BodyWriter.OnWriteBodyContents` metodę, która przyjmuje <xref:System.Xml.XmlDictionaryWriter> ; Ta metoda jest odpowiedzialna za napisanie treści.  
   
- Moduły zapisujące treści mogą być buforowane lub niebuforowane (przesyłane strumieniowo). Elementy zapisujące buforowanej treści mogą dowolnie wypełniać zawartość dowolnej liczby razy, podczas gdy strumieniowo mogą zapisywać zawartość tylko raz. `IsBuffered`Właściwość wskazuje, czy moduł zapisujący treści jest buforowany, czy nie. Można ustawić tę wartość dla składnika zapisywania treści przez wywołanie chronionego `BodyWriter` konstruktora, który przyjmuje `isBuffered` parametr Boolean. Moduł zapisywania treści obsługuje tworzenie zbuforowanego składnika zapisywania treści z niebuforowanego składnika zapisywania treści. Można zastąpić metodę, `OnCreateBufferedCopy` Aby dostosować ten proces. Domyślnie bufor w pamięci, który zawiera kod XML zwracany przez `OnWriteBodyContents` jest używany. `OnCreateBufferedCopy`przyjmuje `maxBufferSize` parametr liczby całkowitej; w przypadku zastąpienia tej metody nie należy tworzyć buforów o rozmiarze większym niż ten maksymalny rozmiar.  
+ Moduły zapisujące treści mogą być buforowane lub niebuforowane (przesyłane strumieniowo). Elementy zapisujące buforowanej treści mogą dowolnie wypełniać zawartość dowolnej liczby razy, podczas gdy strumieniowo mogą zapisywać zawartość tylko raz. `IsBuffered`Właściwość wskazuje, czy moduł zapisujący treści jest buforowany, czy nie. Można ustawić tę wartość dla składnika zapisywania treści przez wywołanie chronionego `BodyWriter` konstruktora, który przyjmuje `isBuffered` parametr Boolean. Moduł zapisywania treści obsługuje tworzenie zbuforowanego składnika zapisywania treści z niebuforowanego składnika zapisywania treści. Można zastąpić metodę, `OnCreateBufferedCopy` Aby dostosować ten proces. Domyślnie bufor w pamięci, który zawiera kod XML zwracany przez `OnWriteBodyContents` jest używany. `OnCreateBufferedCopy` przyjmuje `maxBufferSize` parametr liczby całkowitej; w przypadku zastąpienia tej metody nie należy tworzyć buforów o rozmiarze większym niż ten maksymalny rozmiar.  
   
  `BodyWriter`Klasa zawiera `WriteBodyContents` `CreateBufferedCopy` metody i, które są zasadniczo cienkimi otokami `OnWriteBodyContents` i `OnCreateBufferedCopy` metodami, odpowiednio. Te metody wykonują sprawdzanie stanu, aby upewnić się, że nie można uzyskać dostępu do niebuforowanego składnika zapisywania treści więcej niż raz. Te metody są wywoływane bezpośrednio tylko podczas tworzenia niestandardowych `Message` klas pochodnych opartych na `BodyWriters` .  
   
 ## <a name="creating-fault-messages"></a>Tworzenie komunikatów o błędach  
+
  `CreateMessage`Do tworzenia komunikatów o błędach SOAP można użyć pewnych przeciążeń. Najbardziej podstawowe z nich to <xref:System.ServiceModel.Channels.MessageFault> obiekt, który opisuje błąd. Inne przeciążenia są udostępniane dla wygody. Pierwsze takie Przeciążenie pobiera `FaultCode` ciąg i przyczynę i tworzy `MessageFault` przy użyciu `MessageFault.CreateFault` tych informacji. Inne Przeciążenie pobiera obiekt szczegółowy, a także przekazuje go `CreateFault` wraz z kodem błędu i przyczynie. Na przykład następująca operacja zwraca błąd.  
   
  [!code-csharp[C_UsingTheMessageClass#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#4)]
  [!code-vb[C_UsingTheMessageClass#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#4)]  
   
 ## <a name="extracting-message-body-data"></a>Wyodrębnianie danych treści wiadomości  
+
  `Message`Klasa obsługuje wiele sposobów wyodrębniania informacji z jej treści. Mogą one być klasyfikowane do następujących kategorii:  
   
 - Pobieranie całej treści komunikatu w jednym miejscu do składnika zapisywania XML. Jest to nazywane *pisaniem wiadomości*.  
@@ -88,6 +96,7 @@ ms.locfileid: "85246496"
  Możesz uzyskać dostęp do treści `Message` tylko raz, niezależnie od tego, w jaki sposób jest on dostępny. Obiekt komunikatu ma `State` Właściwość, która początkowo została ustawiona jako utworzona. Trzy metody dostępu opisane na powyższej liście ustawiają stan do zapisu, odczytu i kopiowania odpowiednio. Ponadto `Close` Metoda może ustawić stan na zamknięty, gdy treść wiadomości nie jest już wymagana. Treść komunikatu może być dostępna tylko w stanie utworzonym i nie ma możliwości powrotu do stanu utworzonego po zmianie stanu.  
   
 ## <a name="writing-messages"></a>Pisanie wiadomości  
+
  <xref:System.ServiceModel.Channels.Message.WriteBodyContents%28System.Xml.XmlDictionaryWriter%29>Metoda zapisuje zawartość treści danego `Message` wystąpienia do danego składnika zapisywania XML. Metoda ta jest <xref:System.ServiceModel.Channels.Message.WriteBody%2A> taka sama, z tą różnicą, że zawartość treści jest umieszczona w odpowiednim elemencie otoki (na przykład <`soap:body`>). Na koniec <xref:System.ServiceModel.Channels.Message.WriteMessage%2A> zapisuje cały komunikat, włącznie z zapakowaniem koperty protokołu SOAP i nagłówkami. Jeśli protokół SOAP jest wyłączony ( <xref:System.ServiceModel.Channels.Message.Version> is <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType> ), wszystkie trzy metody wykonują te same czynności: zapisuje zawartość treści komunikatu.  
   
  Na przykład poniższy kod zapisuje treść wiadomości przychodzącej do pliku.  
@@ -95,15 +104,16 @@ ms.locfileid: "85246496"
  [!code-csharp[C_UsingTheMessageClass#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#5)]
  [!code-vb[C_UsingTheMessageClass#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#5)]  
   
- Dwie dodatkowe metody pomocnika zapisują niektóre Tagi elementu początkowego protokołu SOAP. Te metody nie uzyskują dostępu do treści wiadomości, dlatego nie zmieniają stanu komunikatu. Należą do nich następujące elementy:  
+ Dwie dodatkowe metody pomocnika zapisują niektóre Tagi elementu początkowego protokołu SOAP. Te metody nie uzyskują dostępu do treści wiadomości, dlatego nie zmieniają stanu komunikatu. Są one następujące:  
   
-- <xref:System.ServiceModel.Channels.Message.WriteStartBody%2A>zapisuje element start body, na przykład `<soap:Body>` .  
+- <xref:System.ServiceModel.Channels.Message.WriteStartBody%2A> zapisuje element start body, na przykład `<soap:Body>` .  
   
-- <xref:System.ServiceModel.Channels.Message.WriteStartEnvelope%2A>zapisuje element Start Envelope, na przykład `<soap:Envelope>` .  
+- <xref:System.ServiceModel.Channels.Message.WriteStartEnvelope%2A> zapisuje element Start Envelope, na przykład `<soap:Envelope>` .  
   
  Aby zapisać odpowiednie Tagi elementu końcowego, wywołaj `WriteEndElement` dla odpowiedniego składnika zapisywania XML. Te metody są rzadko wywoływane bezpośrednio.  
   
 ## <a name="reading-messages"></a>Odczytywanie wiadomości  
+
  Podstawowym sposobem odczytywania treści wiadomości jest wywołanie <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> . Możesz użyć kopii zapasowej <xref:System.Xml.XmlDictionaryReader> , która pozwala odczytać treść wiadomości. Należy zauważyć, że <xref:System.ServiceModel.Channels.Message> przejścia do stanu odczytu zaraz po <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> wywołaniu jest wywoływany, a nie w przypadku używania zwróconego czytnika XML.  
   
  <xref:System.ServiceModel.Channels.Message.GetBody%2A>Metoda ta umożliwia również dostęp do treści wiadomości jako obiekt z określonym typem. Wewnętrznie, ta metoda używa `GetReaderAtBodyContents` i dlatego przechodzi stan komunikatu do <xref:System.ServiceModel.Channels.MessageState.Read> stanu (zobacz <xref:System.ServiceModel.Channels.Message.State%2A> Właściwość).  
@@ -118,6 +128,7 @@ ms.locfileid: "85246496"
  [!code-vb[C_UsingTheMessageClass#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#6)]  
   
 ## <a name="copying-a-message-into-a-buffer"></a>Kopiowanie wiadomości do buforu  
+
  Czasami konieczne jest uzyskanie dostępu do treści wiadomości więcej niż jeden raz, na przykład w celu przekazania tego samego komunikatu do wielu miejsc docelowych w ramach systemu subskrybenta wydawcy. W takim przypadku konieczne jest buforowanie całego komunikatu (w tym treści) w pamięci. Można to zrobić przez wywołanie metody <xref:System.ServiceModel.Channels.Message.CreateBufferedCopy%28System.Int32%29> . Ta metoda przyjmuje parametr liczby całkowitej, który reprezentuje maksymalny rozmiar buforu i tworzy bufor nie większy niż ten rozmiar. Ważne jest, aby ustawić tę wartość na bezpieczną, jeśli wiadomość pochodzi z niezaufanego źródła.  
   
  Bufor jest zwracany jako <xref:System.ServiceModel.Channels.MessageBuffer> wystąpienie. Dostęp do danych w buforze można uzyskać na kilka sposobów. Podstawowym sposobem jest wywołanie <xref:System.ServiceModel.Channels.Message.CreateMessage%2A> do tworzenia `Message` wystąpień z bufora.  
@@ -134,9 +145,11 @@ ms.locfileid: "85246496"
  `MessageBuffer`Klasa ma inne składowe. <xref:System.ServiceModel.Channels.MessageBuffer.Close%2A>Metodę można wywołać, aby zwolnić zasoby, gdy zawartość buforu nie jest już wymagana. <xref:System.ServiceModel.Channels.MessageBuffer.BufferSize%2A>Właściwość zwraca rozmiar przydzieloną bufora. <xref:System.ServiceModel.Channels.MessageBuffer.MessageContentType%2A>Właściwość zwraca typ zawartości MIME wiadomości.  
   
 ## <a name="accessing-the-message-body-for-debugging"></a>Uzyskiwanie dostępu do treści wiadomości na potrzeby debugowania  
+
  Na potrzeby debugowania można wywołać <xref:System.ServiceModel.Channels.Message.ToString%2A> metodę, aby otrzymać reprezentację wiadomości jako ciąg. Ta reprezentacja jest zwykle zgodna ze sposobem, w jaki komunikat będzie wyglądał w sieci, jeśli został zakodowany za pomocą kodera tekstu, z tą różnicą, że kod XML będzie lepiej sformatowany do czytelności. Jedynym wyjątkiem jest treść wiadomości. Treść można odczytać tylko raz i nie `ToString` zmienia stanu komunikatu. W związku z tym `ToString` Metoda może nie być w stanie uzyskać dostępu do treści i może zastąpić symbol zastępczy (na przykład "..." lub trzy kropki) zamiast treści wiadomości. W związku z tym nie należy używać `ToString` do rejestrowania komunikatów, jeśli treść wiadomości jest ważna.  
   
 ## <a name="accessing-other-message-parts"></a>Uzyskiwanie dostępu do innych części komunikatów  
+
  W celu uzyskania dostępu do informacji o komunikacie innym niż zawartość treści są udostępniane różne właściwości. Jednak tych nie można wywołać po zamknięciu wiadomości:  
   
 - <xref:System.ServiceModel.Channels.Message.Headers%2A>Właściwość reprezentuje nagłówki komunikatów. Zapoznaj się z sekcją "Praca z nagłówkami" w dalszej części tego tematu.  
@@ -152,12 +165,14 @@ ms.locfileid: "85246496"
  Można użyć metody, <xref:System.ServiceModel.Channels.Message.GetBodyAttribute%28System.String%2CSystem.String%29> Aby uzyskać dostęp do określonego atrybutu w elemencie otoki treści (na przykład `<soap:Body>` ) identyfikowanego przez określoną nazwę i przestrzeń nazw. Jeśli taki atrybut nie zostanie znaleziony, `null` jest zwracany. Tę metodę można wywołać tylko wtedy, gdy `Message` jest w stanie Created (gdy treść komunikatu nie została jeszcze uzyskana).  
   
 ## <a name="working-with-headers"></a>Praca z nagłówkami  
- `Message`Może zawierać dowolną liczbę nazwanych fragmentów XML o nazwie *Headers*. Każdy fragment zwykle jest mapowany do nagłówka SOAP. Nagłówki są dostępne przez `Headers` Właściwość typu <xref:System.ServiceModel.Channels.MessageHeaders> . <xref:System.ServiceModel.Channels.MessageHeaders>jest kolekcją <xref:System.ServiceModel.Channels.MessageHeaderInfo> obiektów i dostęp do poszczególnych nagłówków można uzyskać za pomocą jego <xref:System.Collections.IEnumerable> interfejsu lub indeksatora. Na przykład poniższy kod wyświetla listę nazw wszystkich nagłówków w `Message` .  
+
+ `Message`Może zawierać dowolną liczbę nazwanych fragmentów XML o nazwie *Headers*. Każdy fragment zwykle jest mapowany do nagłówka SOAP. Nagłówki są dostępne przez `Headers` Właściwość typu <xref:System.ServiceModel.Channels.MessageHeaders> . <xref:System.ServiceModel.Channels.MessageHeaders> jest kolekcją <xref:System.ServiceModel.Channels.MessageHeaderInfo> obiektów i dostęp do poszczególnych nagłówków można uzyskać za pomocą jego <xref:System.Collections.IEnumerable> interfejsu lub indeksatora. Na przykład poniższy kod wyświetla listę nazw wszystkich nagłówków w `Message` .  
   
  [!code-csharp[C_UsingTheMessageClass#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#8)]
  [!code-vb[C_UsingTheMessageClass#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#8)]  
   
 #### <a name="adding-removing-finding-headers"></a>Dodawanie, usuwanie i znajdowanie nagłówków  
+
  Można dodać nowy nagłówek na końcu wszystkich istniejących nagłówków przy użyciu <xref:System.ServiceModel.Channels.MessageHeaders.Add%2A> metody. Możesz użyć metody, <xref:System.ServiceModel.Channels.MessageHeaders.Insert%2A> Aby wstawić nagłówek w określonym indeksie. Istniejące nagłówki są przesuwane dla wstawionego elementu. Nagłówki są uporządkowane według ich indeksu, a pierwszy dostępny indeks to 0. Różnych <xref:System.ServiceModel.Channels.MessageHeaders.CopyHeadersFrom%2A> przeciążeń metod można użyć do dodawania nagłówków z innego `Message` `MessageHeaders` wystąpienia. Niektóre przeciążenia kopiowania jednego pojedynczego nagłówka, podczas gdy inne kopiują wszystkie z nich. <xref:System.ServiceModel.Channels.MessageHeaders.Clear%2A>Metoda usuwa wszystkie nagłówki. <xref:System.ServiceModel.Channels.MessageHeaders.RemoveAt%2A>Metoda usuwa nagłówek w określonym indeksie (przesunięcie wszystkich nagłówków po nim). <xref:System.ServiceModel.Channels.MessageHeaders.RemoveAll%2A>Metoda usuwa wszystkie nagłówki z określoną nazwą i przestrzenią nazw.  
   
  Pobierz konkretny nagłówek przy użyciu <xref:System.ServiceModel.Channels.MessageHeaders.FindHeader%2A> metody. Ta metoda przyjmuje nazwę i przestrzeń nazw nagłówka do znalezienia i zwraca jego indeks. Jeśli nagłówek występuje więcej niż jeden raz, zgłaszany jest wyjątek. Jeśli nagłówek nie zostanie znaleziony, zwraca wartość-1.  
@@ -169,15 +184,18 @@ ms.locfileid: "85246496"
  Aby uzyskać dostęp do danych XML w nagłówku, można wywołać <xref:System.ServiceModel.Channels.MessageHeaders.GetReaderAtHeader%2A> i zwrócić czytnik XML dla określonego indeksu nagłówka. Jeśli chcesz zdeserializować zawartość nagłówka do obiektu, użyj <xref:System.ServiceModel.Channels.MessageHeaders.GetHeader%60%601%28System.Int32%29> lub jeden z innych przeciążeń. Najbardziej podstawowe przeciążenia deserializacji nagłówków przy użyciu <xref:System.Runtime.Serialization.DataContractSerializer> skonfigurowane w sposób domyślny. Jeśli chcesz użyć innego serializatora lub innej konfiguracji `DataContractSerializer` , użyj jednego z przeciążeń, które zajmie `XmlObjectSerializer` . Istnieją również przeciążenia, które pobierają nazwę nagłówka, przestrzeń nazw i opcjonalnie listę `Actor` wartości zamiast indeksu; jest to kombinacja `FindHeader` i `GetHeader` .  
   
 ## <a name="working-with-properties"></a>Praca z właściwościami  
+
  `Message`Wystąpienie może zawierać dowolną liczbę nazwanych obiektów dowolnego typu. Dostęp do tej kolekcji uzyskuje się za pomocą `Properties` właściwości typu `MessageProperties` . Kolekcja implementuje <xref:System.Collections.Generic.IDictionary%602> interfejs i działa jako mapowanie z <xref:System.String> do <xref:System.Object> . Zwykle wartości właściwości nie są mapowane bezpośrednio do żadnej części wiadomości w sieci, ale zamiast tego udostępniają różne wskazówki przetwarzania komunikatów do różnych kanałów w stosie kanału WCF lub w <xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29> środowisku usługi. Aby zapoznać się z przykładem, zobacz [Omówienie architektury transfer danych](data-transfer-architectural-overview.md).  
   
 ## <a name="inheriting-from-the-message-class"></a>Dziedziczenie z klasy Message  
+
  Jeśli wbudowane typy komunikatów utworzone za pomocą nie `CreateMessage` spełniają wymagań, Utwórz klasę pochodzącą od `Message` klasy.  
   
 ### <a name="defining-the-message-body-contents"></a>Definiowanie zawartości treści wiadomości  
+
  Istnieją trzy podstawowe metody uzyskiwania dostępu do danych w treści wiadomości: zapisywanie, odczytywanie i kopiowanie do buforu. Te operacje ostatecznie powodują, <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A> <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents%2A> i <xref:System.ServiceModel.Channels.Message.OnCreateBufferedCopy%2A> metody są wywoływane odpowiednio, w klasie pochodnej `Message` . Klasa bazowa `Message` gwarantuje, że tylko jedna z tych metod jest wywoływana dla każdego `Message` wystąpienia i nie jest wywoływana więcej niż raz. Klasa bazowa gwarantuje również, że metody nie są wywoływane na zamkniętej wiadomości. Nie ma potrzeby śledzenia stanu komunikatu w implementacji.  
   
- <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A>jest metodą abstrakcyjną i musi być zaimplementowana. Najbardziej podstawowym sposobem zdefiniowania zawartości treści wiadomości jest zapisanie przy użyciu tej metody. Na przykład następujący komunikat zawiera liczbę losową 100 000 od 1 do 20.  
+ <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A> jest metodą abstrakcyjną i musi być zaimplementowana. Najbardziej podstawowym sposobem zdefiniowania zawartości treści wiadomości jest zapisanie przy użyciu tej metody. Na przykład następujący komunikat zawiera liczbę losową 100 000 od 1 do 20.  
   
  [!code-csharp[C_UsingTheMessageClass#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#9)]
  [!code-vb[C_UsingTheMessageClass#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#9)]  
@@ -194,6 +212,7 @@ ms.locfileid: "85246496"
  Należy pamiętać, że w przypadku utworzenia kopii komunikatu kopia będzie używać nagłówków wiadomości z oryginału.  
   
 ### <a name="other-members-that-can-be-overridden"></a>Inne elementy członkowskie, które mogą zostać zastąpione  
+
  Można zastąpić <xref:System.ServiceModel.Channels.Message.OnWriteStartEnvelope%2A> <xref:System.ServiceModel.Channels.Message.OnWriteStartHeaders%2A> metody,, i, <xref:System.ServiceModel.Channels.Message.OnWriteStartBody%2A> Aby określić sposób, w jaki koperty protokołu SOAP, nagłówki protokołu SOAP i Tagi początkowe elementu treści protokołu SOAP są zapisywane. Zwykle są one zgodne z `<soap:Envelope>` , `<soap:Header>` i `<soap:Body>` . Te metody nie powinny zwykle zapisywać niczego w przypadku, gdy <xref:System.ServiceModel.Channels.Message.Version> Właściwość zwraca <xref:System.ServiceModel.Channels.MessageVersion.None> .  
   
 > [!NOTE]

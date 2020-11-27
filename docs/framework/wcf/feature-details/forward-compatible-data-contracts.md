@@ -7,24 +7,27 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], forward compatibility
 ms.assetid: 413c9044-26f8-4ecb-968c-18495ea52cd9
-ms.openlocfilehash: 34bde56b78ec0148cf6b924f8edd29343b97faa4
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e8a6cf0cae7519c3ffdbad188c6f67d11a4a6fc1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597387"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289805"
 ---
 # <a name="forward-compatible-data-contracts"></a>Kontrakty danych zgodne z nowszymi wersjami
+
 Funkcja systemu kontraktów danych Windows Communication Foundation (WCF) polega na tym, że kontrakty mogą być rozwijane w czasie w sposób niepodzielony. Oznacza to, że klient ze starszą wersją kontraktu danych może komunikować się z usługą z nowszą wersją tego samego kontraktu danych lub klient z nowszą wersją kontraktu danych może komunikować się ze starszą wersją tego samego kontraktu danych. Aby uzyskać więcej informacji, zobacz [najlepsze rozwiązania: przechowywanie wersji kontraktu danych](../best-practices-data-contract-versioning.md).  
   
- Większość funkcji przechowywania wersji można zastosować w zależności od wymagań, gdy są tworzone nowe wersje istniejącego kontraktu danych. Jednak jedna funkcja *obsługi*wersji, która musi być wbudowana w typ z pierwszej wersji, aby działała prawidłowo.  
+ Większość funkcji przechowywania wersji można zastosować w zależności od wymagań, gdy są tworzone nowe wersje istniejącego kontraktu danych. Jednak jedna funkcja *obsługi* wersji, która musi być wbudowana w typ z pierwszej wersji, aby działała prawidłowo.  
   
-## <a name="round-tripping"></a>Dwukierunkowa  
+## <a name="round-tripping"></a>Round-Tripping  
+
  Gdy dane przechodzą z nowej wersji do starej wersji i z powrotem do nowej wersji kontraktu danych, nastąpi przekroczenie. Dwukierunkowa gwarancja gwarantuje, że żadne dane nie zostaną utracone. Włączenie operacji okrężnej powoduje, że typ do przodu jest zgodny z wszelkimi przyszłymi zmianami obsługiwanymi przez model przechowywania wersji kontraktu danych.  
   
  Aby włączyć funkcję okrężną dla określonego typu, typ musi implementować <xref:System.Runtime.Serialization.IExtensibleDataObject> interfejs. Interfejs zawiera jedną właściwość <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> (zwracającą <xref:System.Runtime.Serialization.ExtensionDataObject> Typ). Właściwość przechowuje wszystkie dane z przyszłych wersji kontraktu danych, które są nieznane w bieżącej wersji.  
   
 ### <a name="example"></a>Przykład  
+
  Następujący kontrakt danych nie jest zgodny ze zmianami w przyszłości.  
   
  [!code-csharp[C_DataContract#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#7)]
@@ -46,4 +49,4 @@ Funkcja systemu kontraktów danych Windows Communication Foundation (WCF) polega
 - <xref:System.Runtime.Serialization.IExtensibleDataObject>
 - <xref:System.Runtime.Serialization.ExtensionDataObject>
 - [Przechowywanie wersji kontraktów danych](data-contract-versioning.md)
-- [Najlepsze rozwiązania: przechowywanie wersji kontraktów danych](../best-practices-data-contract-versioning.md)
+- [Najlepsze rozwiązania: Przechowywanie wersji kontraktów danych](../best-practices-data-contract-versioning.md)

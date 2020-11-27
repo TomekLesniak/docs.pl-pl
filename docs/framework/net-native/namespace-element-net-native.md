@@ -1,15 +1,16 @@
 ---
-title: <Namespace>— Element (.NET Native)
+title: <Namespace> — Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 57c614e5-18a9-4e87-bfd5-d0fe3396a192
-ms.openlocfilehash: 06d88a7b0f95c7c1dbe98818b847c92e08a57a19
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 05de04685f8ba746f55bf040c74fd3831c5b63ca
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79180955"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287894"
 ---
-# <a name="namespace-element-net-native"></a>\<Namespace>— Element (.NET Native)
+# <a name="namespace-element-net-native"></a>\<Namespace> — Element (.NET Native)
+
 Stosuje zasady odbicia środowiska uruchomieniowego do wszystkich typów w określonym obszarze nazw.  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,6 +30,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do wszystkich typów w okre�
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -77,11 +79,12 @@ Stosuje zasady odbicia środowiska uruchomieniowego do wszystkich typów w okre�
 |`<Namespace>`|Stosuje zasady odbicia do wszystkich typów w nadrzędnej przestrzeni nazw.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `Activate`Atrybuty, `Browse` , `Dynamic` i `Serialize` są opcjonalne. Jeśli żaden nie jest obecny, `<Namespace>` element służy tylko jako kontener dla elementów podrzędnych. Jeśli są obecne, `<Namespace>` element stosuje zasady odbicia środowiska uruchomieniowego do wszystkich typów w określonym obszarze nazw.  
   
- Gdy jest elementem podrzędnym [\<Assembly>](assembly-element-net-native.md) elementu, `<Namespace>` element zastępuje zasady odbicia środowiska uruchomieniowego zdefiniowane przez [\<Assembly>](assembly-element-net-native.md) element.  
+ Gdy jest elementem podrzędnym [\<Assembly>](assembly-element-net-native.md) elementu, `<Namespace>` element zastępuje zasady odbicia środowiska uruchomieniowego zdefiniowane przez  [\<Assembly>](assembly-element-net-native.md) element.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Ustawienia zasad dyrektyw środowiska uruchomieniowego](runtime-directive-policy-settings.md)
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)

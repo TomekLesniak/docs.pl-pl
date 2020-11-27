@@ -1,15 +1,16 @@
 ---
-title: <Subtypes>— Element (.NET Native)
+title: <Subtypes> — Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: fb854070-248b-46cf-9dab-c322e2b4d624
-ms.openlocfilehash: bb719449f3769c5dbbde6d05efdb865c18bb4ab2
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7484152c351f59ee84b601584bd84347186628a3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79180937"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287816"
 ---
-# <a name="subtypes-element-net-native"></a>\<Subtypes>— Element (.NET Native)
+# <a name="subtypes-element-net-native"></a>\<Subtypes> — Element (.NET Native)
+
 Stosuje zasady środowiska uruchomieniowego do wszystkich klas dziedziczonych z typu zawierającego.  
   
 ## <a name="syntax"></a>Składnia  
@@ -28,6 +29,7 @@ Stosuje zasady środowiska uruchomieniowego do wszystkich klas dziedziczonych z 
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -52,6 +54,7 @@ Stosuje zasady środowiska uruchomieniowego do wszystkich klas dziedziczonych z 
 |*policy_setting*|Ustawienie, które ma zostać zastosowane do tego typu zasad. Możliwe wartości to `All` , `Auto` ,,,,, `Excluded` `Public` `PublicAndInternal` `Required Public` `Required PublicAndInternal` i `Required All` . Aby uzyskać więcej informacji, zobacz [Ustawienia zasad dyrektywy środowiska uruchomieniowego](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -61,11 +64,13 @@ Stosuje zasady środowiska uruchomieniowego do wszystkich klas dziedziczonych z 
 |[\<Type>](type-element-net-native.md)|Stosuje zasady odbicia do typu i wszystkich jego elementów członkowskich.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<Subtypes>`Element stosuje zasady do wszystkich podtypów zawierającego go typu. Jest ona używana, gdy chcesz zastosować różne zasady do typów pochodnych i ich klas bazowych.  
   
  Atrybuty odbicia, serializacji i międzyoperacyjności są opcjonalne, chociaż co najmniej jeden z nich powinien być obecny.  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie zdefiniowano klasę o nazwie `BaseClass` i podklasą o nazwie `Derived1` .  
   
  [!code-csharp[ProjectN_Reflection#4](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/subtypes.cs#4)]  
@@ -87,9 +92,9 @@ Stosuje zasady środowiska uruchomieniowego do wszystkich klas dziedziczonych z 
   
  [!code-csharp[ProjectN_Reflection#5](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/subtypes.cs#5)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [\<Type>Postaci](type-element-net-native.md)
+- [\<Type> Postaci](type-element-net-native.md)
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy dyrektyw środowiska uruchomieniowego](runtime-directive-elements.md)
 - [Ustawienia zasad dyrektyw środowiska uruchomieniowego](runtime-directive-policy-settings.md)

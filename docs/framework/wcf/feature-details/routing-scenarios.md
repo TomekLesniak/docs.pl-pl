@@ -4,17 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - routing [WCF], scenarios
 ms.assetid: ec22f308-665a-413e-9f94-7267cb665dab
-ms.openlocfilehash: 455a6e42aea064d48846994b4e729b90667bc8e1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b84cd4ba49e9deaf4ffc0e901716efc56059d60f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84590504"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288530"
 ---
 # <a name="routing-scenarios"></a>Scenariusze routingu
+
 Mimo że usługa routingu jest wysoce dostosowywana, może być wyzwaniem do projektowania wydajnej logiki routingu podczas tworzenia nowej konfiguracji od podstaw.  Istnieje jednak kilka typowych scenariuszy, w których obowiązują większość konfiguracji usługi routingu. Chociaż te scenariusze mogą nie dotyczyć konkretnej konfiguracji, zrozumienie, w jaki sposób usługa routingu może być skonfigurowana do obsługi tych scenariuszy, pomoże Ci w zrozumieniu usługi routingu.  
   
 ## <a name="common-scenarios"></a>Typowe scenariusze  
+
  Najbardziej podstawowym zastosowaniem usługi routingu jest agregowanie wielu docelowych punktów końcowych w celu zmniejszenia liczby punktów końcowych narażonych na aplikacje klienckie, a następnie użycie filtrów komunikatów do kierowania poszczególnych komunikatów do właściwych miejsc docelowych. Komunikaty mogą być kierowane na podstawie wymagań związanych z przetwarzaniem logicznym lub fizycznym, takich jak typ komunikatu, który musi być przetwarzany przez określoną usługę lub na podstawie dowolnych potrzeb firmy, takich jak zapewnienie priorytetowego przetwarzania komunikatów z określonego źródła. W poniższej tabeli wymieniono niektóre typowe scenariusze i czas ich wystąpienia:  
   
 |Scenariusz|Zastosowania|  
@@ -30,6 +32,7 @@ Mimo że usługa routingu jest wysoce dostosowywana, może być wyzwaniem do pro
 > Chociaż wiele z przedstawionych scenariuszy jest specyficznych dla pewnych potrzeb lub wymagań związanych z wymaganiami biznesowymi, Planowanie obsługi aktualizacji dynamicznych i korzystanie z obsługi błędów jest często traktowane jako najlepsze rozwiązanie, ponieważ pozwala na modyfikowanie logiki routingu w czasie wykonywania i odzyskiwanie po przejściowych awariach sieci i komunikacji.  
   
 ### <a name="service-versioning"></a>Przechowywanie wersji usługi  
+
  Podczas wprowadzania nowej wersji usługi należy zachować poprzednią wersję do momentu przejścia wszystkich klientów do nowej usługi. Jest to szczególnie ważne, jeśli usługa jest długotrwałym procesem, który pobiera dni, tygodnie lub nawet miesiące do ukończenia. Zwykle wymaga to zaimplementowania nowego adresu punktu końcowego dla nowej usługi przy zachowaniu oryginalnego punktu końcowego dla poprzedniej wersji.  
   
  Korzystając z usługi routingu, można uwidocznić jeden punkt końcowy do odbierania komunikatów z aplikacji klienckich, a następnie skierować każdy komunikat do odpowiedniej wersji usługi na podstawie zawartości komunikatu. Najbardziej podstawowa implementacja obejmuje dodanie niestandardowego nagłówka do wiadomości, która wskazuje wersję usługi, przez którą wiadomość ma być przetwarzana. Usługa routingu może używać XPathMessageFilter, aby sprawdzić każdy komunikat dla obecności niestandardowego nagłówka i skierować komunikat do odpowiedniego docelowego punktu końcowego.  
@@ -37,16 +40,19 @@ Mimo że usługa routingu jest wysoce dostosowywana, może być wyzwaniem do pro
  Aby uzyskać instrukcje dotyczące tworzenia konfiguracji wersji usługi, zobacz [How to: Versioning Service](how-to-service-versioning.md).
   
 ### <a name="service-data-partitioning"></a>Partycjonowanie danych usługi  
+
  Podczas projektowania środowiska rozproszonego często pożądane jest rozłożenie obciążenia przetwarzania na wielu komputerach w celu zapewnienia wysokiej dostępności, zmniejszenia obciążenia przetwarzania na poszczególnych komputerach lub zapewnienia dedykowanych zasobów dla określonego podzestawu komunikatów. Chociaż usługa routingu nie zastępuje dedykowanego rozwiązania do równoważenia obciążenia, jego zdolność do wykonywania routingu opartego na zawartości może służyć do kierowania podobnych komunikatów do określonych miejsc docelowych. Na przykład może istnieć wymóg przetworzenia komunikatów od określonego klienta osobno od komunikatów odebranych od innych klientów.  
   
  Aby uzyskać instrukcje dotyczące tworzenia konfiguracji partycjonowania danych usługi, zobacz [How to: Partycjonowanie danych usługi](how-to-service-data-partitioning.md).  
   
 ### <a name="dynamic-routing"></a>Routing dynamiczny  
+
  Często należy zmodyfikować konfigurację routingu w celu zaspokojenia zmieniających się potrzeb firmy, takich jak dodawanie trasy do nowszej wersji usługi, zmiana kryteriów routingu lub zmiana docelowego punktu końcowego określonego komunikatu, do którego filtr trasy. Usługa routingu umożliwia wykonywanie tych czynności za pomocą programu <xref:System.ServiceModel.Routing.RoutingExtension> , co pozwala na zapewnienie nowego zastosowano w czasie wykonywania. Nowa konfiguracja zacznie obowiązywać natychmiast, ale ma wpływ tylko na wszystkie nowe sesje przetwarzane przez usługę routingu.  
   
  Aby zapoznać się z instrukcjami dotyczącymi implementacji dynamicznego routingu, zobacz [How to: Update Dynamic](how-to-dynamic-update.md).
   
 ### <a name="multicast"></a>Multicast  
+
  Podczas routingu wiadomości, zazwyczaj kierowanie poszczególnych komunikatów do jednego określonego docelowego punktu końcowego.  Czasami może być konieczne kierowanie kopii wiadomości do wielu docelowych punktów końcowych. Aby możliwe było przeprowadzenie routingu multiemisji, muszą być spełnione następujące warunki:  
   
 - Kształt kanału nie może być odpowiedzią na żądanie (chociaż może być jednokierunkowa lub dupleks), ponieważ aplikacja kliencka może odebrać tylko jedną odpowiedź w odpowiedzi na żądanie.  
@@ -56,9 +62,11 @@ Mimo że usługa routingu jest wysoce dostosowywana, może być wyzwaniem do pro
  Jeśli te warunki są spełnione, każdy docelowy punkt końcowy, który jest skojarzony z filtrem zwracającym wartość true, otrzyma kopię komunikatu.  
   
 ### <a name="protocol-bridging"></a>Mostkowanie protokołów  
+
  Podczas routingu komunikatów między niepodobnymi protokołami SOAP usługa routingu używa interfejsów API WCF do konwersji komunikatów z jednego protokołu na drugi. Jest to wykonywane automatycznie, gdy punkty końcowe usługi udostępniane przez usługę routingu używają innego protokołu niż punkty końcowe klienta, do których są kierowane komunikaty. To zachowanie można wyłączyć, jeśli używane protokoły nie są standardowe. należy jednak podać własny kod łączący.
   
 ### <a name="error-handling"></a>Obsługa błędów  
+
  W środowisku rozproszonym nierzadko występują błędy w sieci lub komunikacji. Bez usługi pośredniczącej, takiej jak usługa routingu, obciążenie związane z obsługą takich błędów znajduje się w aplikacji klienckiej. Jeśli aplikacja kliencka nie zawiera konkretnej logiki do ponawiania próby w przypadku awarii sieci lub komunikacji oraz znajomości lokalizacji alternatywnych, użytkownik może napotkać scenariusze, w których komunikat musi zostać przesłany wiele razy, zanim zostanie pomyślnie przetworzony przez usługę docelową. Może to prowadzić do niezadowolenia klientów w przypadku aplikacji, ponieważ mogą one być postrzegane jako niezawodne.  
   
  Usługa routingu próbuje naprawić ten scenariusz, zapewniając niezawodne funkcje obsługi błędów dla komunikatów, które napotykają błędy sieci lub komunikacji. Tworząc listę możliwych docelowych punktów końcowych i kojarząc tę listę z każdym filtrem komunikatów, należy usunąć single point of failure poniesione przez posiadanie tylko jednego możliwego miejsca docelowego. W przypadku awarii usługa routingu podejmie próbę dostarczenia komunikatu do następnego punktu końcowego na liście, dopóki nie zostanie dostarczony komunikat, wystąpił błąd braku komunikacji lub wszystkie punkty końcowe zostały wyczerpane.  
@@ -66,13 +74,14 @@ Mimo że usługa routingu jest wysoce dostosowywana, może być wyzwaniem do pro
  Aby uzyskać instrukcje dotyczące konfigurowania obsługi błędów, zobacz [How to: obsługa błędów](how-to-error-handling.md).
   
 ### <a name="in-this-section"></a>W tej sekcji  
- [Instrukcje: przechowywanie wersji usługi](how-to-service-versioning.md)  
+
+ [Instrukcje: Przechowywanie wersji usługi](how-to-service-versioning.md)  
   
  [Instrukcje: Partycjonowanie danych usługi](how-to-service-data-partitioning.md)  
   
  [Instrukcje: Aktualizacja dynamiczna](how-to-dynamic-update.md)  
   
- [Instrukcje: obsługa błędów](how-to-error-handling.md)  
+ [Instrukcje: Obsługa błędów](how-to-error-handling.md)  
   
 ## <a name="see-also"></a>Zobacz też
 

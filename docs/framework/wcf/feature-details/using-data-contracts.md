@@ -10,22 +10,25 @@ helpviewer_keywords:
 - WCF, data
 - data contracts [WCF]
 ms.assetid: a3ae7b21-c15c-4c05-abd8-f483bcbf31af
-ms.openlocfilehash: 80ea2a8bd67c627fbe11ee07e640704c1a41ef7b
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 97d234d094abf7666a341493f6b394c73513fa70
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244728"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289870"
 ---
 # <a name="using-data-contracts"></a>Używanie kontraktów danych
+
 *Kontrakt dotyczący danych* jest formalnym porozumieniem między usługą a klientem, który w sposób abstrakcyjny opisuje dane, które mają być wymieniane. Oznacza to, że w celu komunikacji klient i usługa nie muszą używać tych samych typów, tylko tych samych umów dotyczących danych. Dla każdego parametru lub typu zwracanego jest definiowana umowa dotycząca danych, która jest serializowana (w formacie XML) do wymiany.  
   
 ## <a name="data-contract-basics"></a>Podstawowe informacje dotyczące kontraktu danych  
+
  Windows Communication Foundation (WCF) używa aparatu serializacji o nazwie serializator kontraktu danych domyślnie do serializacji i deserializacji danych (Konwertuj je na i z XML). Wszystkie .NET Framework typy pierwotne, takie jak liczby całkowite i ciągi, a także niektóre typy traktowane jako elementy pierwotne, takie jak <xref:System.DateTime> i <xref:System.Xml.XmlElement> , mogą być serializowane bez innych przygotowań i są traktowane jako z domyślnymi kontraktami danych. Wiele typów .NET Framework ma także istniejące Kontrakty danych. Aby uzyskać pełną listę typów możliwych do serializacji, zobacz [Typy obsługiwane przez serializator kontraktu danych](types-supported-by-the-data-contract-serializer.md).  
   
  Nowe tworzone typy złożone muszą mieć kontrakt danych zdefiniowany dla nich, aby można było je serializować. Domyślnie program <xref:System.Runtime.Serialization.DataContractSerializer> wnioskuje o umowę danych i serializować wszystkie publicznie widoczne typy. Wszystkie publiczne właściwości odczytu/zapisu i pola typu są serializowane. Członków można zrezygnować z serializacji przy użyciu <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> . Możesz również jawnie utworzyć kontrakt danych przy użyciu <xref:System.Runtime.Serialization.DataContractAttribute> <xref:System.Runtime.Serialization.DataMemberAttribute> atrybutów i. Jest to zwykle wykonywane przez zastosowanie <xref:System.Runtime.Serialization.DataContractAttribute> atrybutu do typu. Ten atrybut może być stosowany do klas, struktur i wyliczeń. Ten <xref:System.Runtime.Serialization.DataMemberAttribute> atrybut musi następnie zostać zastosowany do każdego elementu członkowskiego typu kontraktu danych, aby wskazać, że jest to *element członkowski danych*, czyli powinien być serializowany. Aby uzyskać więcej informacji, zobacz [typy serializacji](serializable-types.md).  
   
 ### <a name="example"></a>Przykład  
+
  W poniższym przykładzie przedstawiono kontrakt usługi (interfejs), do którego <xref:System.ServiceModel.ServiceContractAttribute> atrybuty i zostały <xref:System.ServiceModel.OperationContractAttribute> zastosowane jawnie. W przykładzie pokazano, że typy pierwotne nie wymagają kontraktu danych, podczas gdy typ złożony wykonuje.  
   
  [!code-csharp[C_DataContract#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#1)]
@@ -37,6 +40,7 @@ ms.locfileid: "85244728"
  [!code-vb[C_DataContract#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#2)]  
   
 ### <a name="notes"></a>Uwagi  
+
  Poniższe notatki zawierają elementy, które należy wziąć pod uwagę podczas tworzenia umów dotyczących danych:  
   
 - Ten <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> atrybut jest uznawany tylko w przypadku użycia z nieoznaczonymi typami. Obejmuje to typy, które nie są oznaczone jednym z <xref:System.Runtime.Serialization.DataContractAttribute> atrybutów, <xref:System.SerializableAttribute> , <xref:System.Runtime.Serialization.CollectionDataContractAttribute> , lub są <xref:System.Runtime.Serialization.EnumMemberAttribute> oznaczone jako możliwe do serializacji w inny sposób (na przykład <xref:System.Xml.Serialization.IXmlSerializable> ).  
@@ -81,4 +85,4 @@ ms.locfileid: "85244728"
 - [Wywołania zwrotne serializacji z tolerancją dla wersji](version-tolerant-serialization-callbacks.md)
 - [Domyślne wartości elementów członkowskich danych](data-member-default-values.md)
 - [Typy obsługiwane przez serializator kontraktu danych](types-supported-by-the-data-contract-serializer.md)
-- [Instrukcje: Tworzenie podstawowego kontraktu danych dla klasy lub struktury](how-to-create-a-basic-data-contract-for-a-class-or-structure.md)
+- [Instrukcje: tworzenie podstawowego kontraktu danych dla klasy lub struktury](how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

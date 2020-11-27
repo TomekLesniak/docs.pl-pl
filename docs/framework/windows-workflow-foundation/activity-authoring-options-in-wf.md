@@ -2,37 +2,44 @@
 title: Opcje tworzenia działań w WF
 ms.date: 03/30/2017
 ms.assetid: b9061f5f-12c3-47f0-adbe-1330e2714c94
-ms.openlocfilehash: 219d759cd1390a83abfb90af509b21047085f6e9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e80750b3865a21d072f45b0245ae114660012e66
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774234"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289207"
 ---
 # <a name="activity-authoring-options-in-wf"></a>Opcje tworzenia działań w WF
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] zapewnia kilka opcji tworzenia działań niestandardowych. Prawidłowe metody służące do tworzenia danego działania, zależy od tego, jakie funkcje środowiska wykonawczego są wymagane.  
+
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] oferuje kilka opcji tworzenia działań niestandardowych. Poprawna metoda tworzenia danego działania zależy od tego, jakie funkcje czasu wykonywania są wymagane.  
   
-## <a name="deciding-which-base-activity-class-to-use-for-authoring-custom-activities"></a>Przy wyborze rozwiązania, które podstawowego elementu Activity klasy do użycia na potrzeby tworzenia działań niestandardowych  
- W poniższej tabeli wymieniono funkcje dostępne w klasach bazowych działań niestandardowych.  
+## <a name="deciding-which-base-activity-class-to-use-for-authoring-custom-activities"></a>Decydowanie o klasie działania podstawowego, która ma być używana do tworzenia działań niestandardowych  
+
+ W poniższej tabeli wymieniono funkcje dostępne w klasach podstawowych działań niestandardowych.  
   
-|Klasa podstawowego elementu activity|Dostępne funkcje|  
+|Podstawowa aktywność — Klasa|Dostępne funkcje|  
 |-------------------------|------------------------|  
-|<xref:System.Activities.Activity>|Redaguj grupami dostarczane przez system i niestandardowych działań do działań złożonych.|  
-|<xref:System.Activities.CodeActivity>|Implementuje funkcje imperatywnego, zapewniając <xref:System.Activities.CodeActivity%601.Execute%2A> metodę, która może zostać zastąpiona. Umożliwia również dostęp do śledzenia, zmienne i argumenty...|  
-|<xref:System.Activities.NativeActivity>|Zawiera wszystkie funkcje <xref:System.Activities.CodeActivity>, a także Trwa przerywanie wykonywania działania, który anulował wykonanie działania podrzędne, korzystanie z zakładek i Planowanie działań, działanie akcje i funkcje.|  
-|<xref:System.Activities.DynamicActivity>|Zapewnia podejście podobne do modelu DOM do tworzenia działań, które interfejsy za pomocą projektanta WF i maszyny czasu wykonywania za pomocą <xref:System.ComponentModel.ICustomTypeDescriptor>, dzięki czemu nowe działania, które ma zostać utworzony bez definiowania nowych typów.|  
+|<xref:System.Activities.Activity>|Tworzy grupy działań dostarczonych przez system i niestandardowych w ramach działania złożonego.|  
+|<xref:System.Activities.CodeActivity>|Implementuje bezwzględną funkcjonalność, dostarczając <xref:System.Activities.CodeActivity%601.Execute%2A> metodę, którą można zastąpić. Zapewnia również dostęp do śledzenia, zmiennych i argumentów..|  
+|<xref:System.Activities.NativeActivity>|Program udostępnia wszystkie funkcje programu <xref:System.Activities.CodeActivity> , a także przerywa wykonywanie działań, anulowanie wykonywania działania podrzędnego, używanie zakładek i działań planowania, akcje działania i funkcje.|  
+|<xref:System.Activities.DynamicActivity>|Zapewnia podejście podobne do modelu DOM do konstruowania działań, które są związane z projektantem WF oraz maszynami czasu wykonywania przez <xref:System.ComponentModel.ICustomTypeDescriptor> program, umożliwiając tworzenie nowych działań bez definiowania nowych typów.|  
   
-## <a name="authoring-activities-using-activity"></a>Tworzenie działań przy użyciu działania  
- Działania, które wynikają z <xref:System.Activities.Activity> compose funkcji przez łączenie innych istniejących działań. Te działania mogą być niestandardowe istniejących działań i działania z [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] biblioteki działań. Złożenia te działania to najprostszy sposób tworzenia funkcji niestandardowych. To podejście jest najczęściej zajęta, podczas tworzenia przepływów pracy przy użyciu środowiska projektowania wizualnego.  
+## <a name="authoring-activities-using-activity"></a>Działania tworzenia przy użyciu działania  
+
+ Działania, które pochodzą od <xref:System.Activities.Activity> funkcji redagowania przez złożenie innych istniejących działań. Te działania mogą być istniejącymi działaniami niestandardowymi i działaniami z poziomu [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] biblioteki działań. Montaż tych działań jest najbardziej podstawowym sposobem na tworzenie funkcji niestandardowych. Takie podejście jest zazwyczaj podejmowane w przypadku używania środowiska projektowania wizualnego do tworzenia przepływów pracy.  
   
-## <a name="authoring-activities-using-codeactivity-or-asynccodeactivity"></a>Tworzenie działań przy użyciu elementu CodeActivity lub AsyncCodeActivity  
- Działania, które wynikają z <xref:System.Activities.CodeActivity> lub <xref:System.Activities.AsyncCodeActivity> można zaimplementować imperatywne funkcji przez zastąpienie <xref:System.Activities.CodeActivity%601.Execute%2A> metody za pomocą niestandardowego kodu imperatywnego. Niestandardowy kod jest wykonywany, gdy działanie jest wykonywany przez środowisko uruchomieniowe. Podczas działania utworzone w ten sposób mają dostęp do funkcji niestandardowych, mogą nie mają dostęp do wszystkich funkcji środowiska uruchomieniowego, takie jak pełny dostęp do środowiska wykonania, możliwość zaplanowania działania podrzędne, tworzenia zakładek lub obsługa Anulowanie lub przerywania metody. Gdy <xref:System.Activities.CodeActivity> jest wykonywana, ma dostęp do skrócona wersja środowiska wykonawczego (za pośrednictwem <xref:System.Activities.CodeActivityContext> lub <xref:System.Activities.AsyncCodeActivityContext> klasy). Działania utworzone za pomocą <xref:System.Activities.CodeActivity> mają dostęp do rozpoznawania argumentów i zmiennych, rozszerzenia oraz śledzenie. Planowanie działań asynchronicznych może odbywać się przy użyciu <xref:System.Activities.AsyncCodeActivity>.  
+## <a name="authoring-activities-using-codeactivity-or-asynccodeactivity"></a>Tworzenie działań za pomocą elementu CodeActivity lub metoda AsyncCodeActivity  
+
+ Działania, które pochodzą z <xref:System.Activities.CodeActivity> lub <xref:System.Activities.AsyncCodeActivity> mogą implementować bezwzględne funkcje przez zastąpienie <xref:System.Activities.CodeActivity%601.Execute%2A> metody niestandardowym kodem. Kod niestandardowy jest wykonywany, gdy działanie jest wykonywane przez środowisko uruchomieniowe. Podczas gdy działania utworzone w ten sposób mają dostęp do funkcji niestandardowych, nie mają dostępu do wszystkich funkcji środowiska uruchomieniowego, takich jak pełny dostęp do środowiska wykonawczego, możliwość planowania działań podrzędnych, tworzenia zakładek lub obsługi metody Cancel lub Abort. Gdy jest <xref:System.Activities.CodeActivity> wykonywana, ma dostęp do zmniejszonej wersji środowiska wykonawczego (za pomocą <xref:System.Activities.CodeActivityContext> <xref:System.Activities.AsyncCodeActivityContext> klasy lub). Działania utworzone przy użyciu <xref:System.Activities.CodeActivity> mają dostęp do argumentów i rozpoznawania zmiennych, rozszerzeń i śledzenia. Asynchroniczne planowanie aktywności można wykonać przy użyciu <xref:System.Activities.AsyncCodeActivity> .  
   
-## <a name="authoring-activities-using-nativeactivity"></a>Tworzenie działań przy użyciu klasy NativeActivity  
- Działań, które wynikają z <xref:System.Activities.NativeActivity>, podobne do tych, które wynikają z <xref:System.Activities.CodeActivity>, utworzenia imperatywne funkcji przez zastąpienie <xref:System.Activities.NativeActivity.Execute%2A>, również ma dostęp do wszystkich funkcji środowiska wykonawczego przepływów pracy za pośrednictwem <xref:System.Activities.NativeActivityContext> , które pobiera przekazany do <xref:System.Activities.NativeActivity.Execute%2A> metody. Ten kontekst zapewnia obsługę planowania i anulowanie działania podrzędne, wykonywanie <xref:System.Activities.ActivityAction> i <xref:System.Activities.ActivityFunc%601> obiektów, przepływy transakcji do przepływu pracy, wywoływanie asynchronicznych procesów, anulowanie i Przerywanie wykonywania, dostęp do wykonania właściwości i rozszerzeń i zakładek (uchwytów wznawianie wstrzymanej przepływów pracy).  
+## <a name="authoring-activities-using-nativeactivity"></a>Działania tworzenia przy użyciu natywnego  
+
+ Działania, które pochodzą z <xref:System.Activities.NativeActivity> , takie jak te, które pochodzą z <xref:System.Activities.CodeActivity> , tworzą bezwzględne funkcje przez zastępowanie <xref:System.Activities.NativeActivity.Execute%2A> , ale również mają dostęp do wszystkich funkcji środowiska uruchomieniowego przepływu pracy za pośrednictwem, <xref:System.Activities.NativeActivityContext> który jest przesyłany do <xref:System.Activities.NativeActivity.Execute%2A> metody. Ten kontekst obsługuje planowanie i anulowanie działań podrzędnych, wykonywanie <xref:System.Activities.ActivityAction> i <xref:System.Activities.ActivityFunc%601> obiekty, przepływowanie transakcji do przepływu pracy, wywoływanie procesów asynchronicznych, anulowanie i przerywanie wykonywania, dostęp do właściwości i rozszerzeń wykonywania oraz zakładki (uchwyty dla wznawiania wstrzymanych przepływów pracy).  
   
-## <a name="authoring-activities-using-dynamicactivity"></a>Tworzenie działań przy użyciu działania DynamicActivity  
- W przeciwieństwie do innych trzy typy działań, nowa funkcja nie jest tworzony przez wyprowadzanie nowych typów z <xref:System.Activities.DynamicActivity> (klasa jest zapieczętowany,), ale zamiast tego złożenia funkcji do <xref:System.Activities.DynamicActivity.Properties%2A> i <xref:System.Activities.DynamicActivity.Implementation%2A> właściwości za pomocą działania dokumentu Object model (DOM).  
+## <a name="authoring-activities-using-dynamicactivity"></a>Działania tworzenia przy użyciu operacji dynamicznej  
+
+ W przeciwieństwie do innych typów działań, nowe funkcje nie są tworzone przez wyprowadzanie nowych typów z <xref:System.Activities.DynamicActivity> (Klasa jest zapieczętowana), ale zamiast tego przez umieszczenie funkcji we <xref:System.Activities.DynamicActivity.Properties%2A> <xref:System.Activities.DynamicActivity.Implementation%2A> właściwościach i przy użyciu modelu DOM (Document Object Model).  
   
-## <a name="authoring-activities-that-return-a-result"></a>Tworzenie działań, które zwracają wynik  
- Wiele działań musi zwrócić wynik po ich wykonaniu. Chociaż istnieje możliwość zawsze Definiowanie niestandardowego <xref:System.Activities.OutArgument%601> w ramach działania w tym celu zaleca się użyć zamiast tego <xref:System.Activities.Activity%601>, lub pochodzić od <xref:System.Activities.CodeActivity%601> lub <xref:System.Activities.NativeActivity%601>. Każda z tych klas bazowych ma <xref:System.Activities.OutArgument%601> o nazwie wynik, używanego przez swoje działania do jego zwracanej wartości. Działania, które zwracają wynik powinien być używany tylko, jeśli tylko jeden wynik musi zostać zwrócone przez działanie; Jeśli potrzebujesz wielu wyników do zwrócenia, oddziel <xref:System.Activities.OutArgument%601> elementów członkowskich, które powinny być używane zamiast tego.
+## <a name="authoring-activities-that-return-a-result"></a>Działania tworzenia zwracające wynik  
+
+ Wiele działań musi zwrócić wynik po ich wykonaniu. Chociaż można zawsze definiować niestandardowe <xref:System.Activities.OutArgument%601> działania w tym celu, sugerowane jest użycie <xref:System.Activities.Activity%601> lub pochodna z <xref:System.Activities.CodeActivity%601> lub <xref:System.Activities.NativeActivity%601> . Każda z tych klas podstawowych ma <xref:System.Activities.OutArgument%601> nazwany wynik, którego działanie może używać dla zwracanej wartości. Działania, które zwracają wynik, powinny być używane tylko wtedy, gdy tylko jeden wynik należy zwrócić z działania; Jeśli trzeba zwrócić wiele wyników, <xref:System.Activities.OutArgument%601> zamiast tego należy użyć oddzielnych elementów członkowskich.

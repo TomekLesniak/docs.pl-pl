@@ -2,32 +2,35 @@
 title: 57398 — MaxInstancesExceeded
 ms.date: 03/30/2017
 ms.assetid: f943d209-dfeb-43e5-b572-c9a06217936e
-ms.openlocfilehash: d644c25ec2dee06eea4a5fb66c30792bb650f252
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd490aad24fba4550bc778799cd6f836dcfd466c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945967"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289181"
 ---
 # <a name="57398---maxinstancesexceeded"></a>57398 — MaxInstancesExceeded
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|57398|  
-|słowa kluczowe|WFServices|  
+|ID (Identyfikator)|57398|  
+|Słowa kluczowe|WFServices|  
 |Poziom|Ostrzeżenie|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że system osiągnięty limit ustawiony dla ograniczenia "MaxConcurrentInstances".  
+
+ Wskazuje, że system osiągnął limit ustawiony dla dławienia "MaxConcurrentInstances".  
   
-## <a name="message"></a>Komunikat  
- System osiągnięty limit ustawiony dla ograniczenia "MaxConcurrentInstances". Limit dla tego ograniczania zostało ustawione na %1. Wartość ograniczenia przepustowości można zmienić, modyfikując atrybut "maxConcurrentInstances" w elemencie serviceThrottle lub modyfikując właściwość "MaxConcurrentInstances" Zachowanie elementu ServiceThrottlingBehavior.  
+## <a name="message"></a>Wiadomość  
+
+ System osiągnął limit ustawiony dla dławienia "MaxConcurrentInstances". Limit dla tego dławienia został ustawiony na %1. Wartość ograniczenia można zmienić, modyfikując atrybut "maxConcurrentInstances" w elemencie servicedławienia lub modyfikując właściwość "MaxConcurrentInstances" w przypadku zachowania elementu ServiceThrottlingBehavior.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|Nazwa|xs:String|Nazwa elementu.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Nazwa|XS: ciąg|Nazwa elementu .|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

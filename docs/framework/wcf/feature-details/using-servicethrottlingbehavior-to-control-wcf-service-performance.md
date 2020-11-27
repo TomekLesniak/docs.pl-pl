@@ -4,17 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - behavior [WCF], service performance
 ms.assetid: f9dc120c-dc24-49d5-930e-b22f5bc73423
-ms.openlocfilehash: 9cc5141805504bc46391105f475860b032f12d32
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 44cc924de0c3079bb2f8125a7ac63fa494d4aca1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600234"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289415"
 ---
 # <a name="using-servicethrottlingbehavior-to-control-wcf-service-performance"></a>Używanie elementu ServiceThrottlingBehavior do kontrolowania wydajności programu WCF
+
 <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>Klasa uwidacznia właściwości, których można użyć, aby ograniczyć liczbę wystąpień lub sesji tworzonych na poziomie aplikacji. Korzystając z tego zachowania, można dostosować wydajność aplikacji Windows Communication Foundation (WCF).  
   
 ## <a name="controlling-service-instances-and-concurrent-calls"></a>Kontrolowanie wystąpień usług i współbieżnych wywołań  
+
  Użyj <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A> właściwości, aby określić maksymalną liczbę komunikatów aktywnie przetwarzanych przez <xref:System.ServiceModel.ServiceHost> klasę i <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> Właściwość, aby określić maksymalną liczbę <xref:System.ServiceModel.InstanceContext> obiektów w usłudze.  
   
  Ponieważ określenie ustawień tych właściwości zwykle odbywa się po rzeczywistym doświadczeniu uruchamiania aplikacji przed załadowaniem, ustawienia <xref:System.ServiceModel.Description.ServiceThrottlingBehavior> właściwości są zwykle określane w pliku konfiguracyjnym aplikacji przy użyciu [\<serviceThrottling>](../../configure-apps/file-schema/wcf/servicethrottling.md) elementu.  

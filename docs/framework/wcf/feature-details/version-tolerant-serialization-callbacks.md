@@ -11,17 +11,19 @@ helpviewer_keywords:
 - serialization [WCF], setting default values
 - OnSerializedAttribute [WCF]
 ms.assetid: aa4a3a6f-05ec-4efd-bdbf-2181e13e6468
-ms.openlocfilehash: 0736f94b1fe1a91b20ee76da673e0bc139aa802a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ad162f24042f30eabee7a1fad2025072b26d9af5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959554"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289376"
 ---
 # <a name="version-tolerant-serialization-callbacks"></a>Wywołania zwrotne serializacji z tolerancją dla wersji
-Model programowania kontraktu danych w pełni obsługuje metody wywołania zwrotnego serializacji odporne na <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> wersje <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> , które obsługują klasy i.  
+
+Model programowania kontraktu danych w pełni obsługuje metody wywołania zwrotnego serializacji odporne na wersje, które <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> obsługują klasy i.  
   
-## <a name="version-tolerant-attributes"></a>Atrybuty odporne na wersje  
+## <a name="version-tolerant-attributes"></a>Atrybuty Version-Tolerant  
+
  Istnieją cztery atrybuty wywołania zwrotnego. Każdy atrybut może być stosowany do metody, którą aparat serializacji/deserializacji wywołuje w różnym czasie. W poniższej tabeli objaśniono, kiedy używać każdego atrybutu.  
   
 |Atrybut|Po wywołaniu odpowiedniej metody|  
@@ -33,11 +35,12 @@ Model programowania kontraktu danych w pełni obsługuje metody wywołania zwrot
   
  Metody muszą akceptować <xref:System.Runtime.Serialization.StreamingContext> parametr.  
   
- Te metody są przeznaczone głównie do użytku z wersjami lub inicjalizacją. Podczas deserializacji nie są wywoływane konstruktory. W związku z tym elementy członkowskie danych mogą nie być prawidłowo zainicjowane (do zamierzonych wartości domyślnych), jeśli w strumieniu przychodzącym brakuje danych dla tych elementów członkowskich, na przykład jeśli dane pochodzą z poprzedniej wersji typu, w którym brakuje niektórych elementów członkowskich danych. Aby rozwiązać ten wynik, użyj metody wywołania zwrotnego oznaczonej przy użyciu <xref:System.Runtime.Serialization.OnDeserializingAttribute>, jak pokazano w poniższym przykładzie.  
+ Te metody są przeznaczone głównie do użytku z wersjami lub inicjalizacją. Podczas deserializacji nie są wywoływane konstruktory. W związku z tym elementy członkowskie danych mogą nie być prawidłowo zainicjowane (do zamierzonych wartości domyślnych), jeśli w strumieniu przychodzącym brakuje danych dla tych elementów członkowskich, na przykład jeśli dane pochodzą z poprzedniej wersji typu, w którym brakuje niektórych elementów członkowskich danych. Aby rozwiązać ten wynik, użyj metody wywołania zwrotnego oznaczonej przy użyciu <xref:System.Runtime.Serialization.OnDeserializingAttribute> , jak pokazano w poniższym przykładzie.  
   
  Można oznaczyć tylko jedną metodę na typ z każdym z powyższych atrybutów wywołania zwrotnego.  
   
 ### <a name="example"></a>Przykład  
+
  [!code-csharp[C_DataContract#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#9)]
  [!code-vb[C_DataContract#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#9)]  
   

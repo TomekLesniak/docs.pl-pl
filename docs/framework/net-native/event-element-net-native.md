@@ -1,15 +1,16 @@
 ---
-title: <Event>— Element (.NET Native)
+title: <Event> — Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: e53b029c-9d6d-4c0a-9cdc-5cfca8a5ca47
-ms.openlocfilehash: 60da48d5872d7ce61afcffa7977411bc6e1efc7f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b1cf2239e58839c5026bc375ba04568227881bdd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79181037"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288102"
 ---
-# <a name="event-element-net-native"></a>\<Event>— Element (.NET Native)
+# <a name="event-element-net-native"></a>\<Event> — Element (.NET Native)
+
 Stosuje zasady odbicia środowiska uruchomieniowego do zdarzenia.  
   
 ## <a name="syntax"></a>Składnia  
@@ -21,6 +22,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do zdarzenia.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -44,6 +46,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do zdarzenia.
 |*policy_setting*|Ustawienie, które ma zostać zastosowane do tego typu zasad dla zdarzenia. Możliwe wartości to `Auto` , `Excluded` , `Included` , i `Required` . Aby uzyskać więcej informacji, zobacz [Ustawienia zasad dyrektywy środowiska uruchomieniowego](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -54,9 +57,10 @@ Stosuje zasady odbicia środowiska uruchomieniowego do zdarzenia.
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Stosuje zasady odbicia do skonstruowanego typu ogólnego i wszystkich jego członków.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Jeśli zasady zdarzenia nie są jawnie zdefiniowane, dziedziczy zasad środowiska uruchomieniowego jego elementu nadrzędnego.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy dyrektyw środowiska uruchomieniowego](runtime-directive-elements.md)

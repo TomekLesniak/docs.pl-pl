@@ -2,33 +2,36 @@
 title: 3508 — TrackingProfileNotFound
 ms.date: 03/30/2017
 ms.assetid: 4cee3c4a-0490-4c94-aa19-ef7ce7287c02
-ms.openlocfilehash: 94c7ce231df241778f7c6ec5fe5998eae364750d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 23262427c3da730eaf930a8b483c7c4d4ec3a3a4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61755574"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289844"
 ---
 # <a name="3508---trackingprofilenotfound"></a>3508 — TrackingProfileNotFound
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|3508|  
-|słowa kluczowe|WFServices|  
+|ID (Identyfikator)|3508|  
+|Słowa kluczowe|WFServices|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- Oznacza TrackingProfile nie znajduje się w pliku konfiguracji lub ActivityDefinitionId nie pasuje do profilu.  
+
+ Wskazuje, że element TrackingProfile nie został znaleziony w pliku konfiguracyjnym lub ActivityDefinitionId nie jest zgodny z profilem.  
   
-## <a name="message"></a>Komunikat  
- TrackingProfile "%1" dla ActivityDefinitionId "%2" nie można odnaleźć. TrackingProfile nie znajduje się w pliku konfiguracji, albo ActivityDefinitionId jest niezgodny.  
+## <a name="message"></a>Wiadomość  
+
+ Nie znaleziono TrackingProfile "%1" dla ActivityDefinitionId "%2". Nie znaleziono TrackingProfile w pliku konfiguracyjnym lub ActivityDefinitionId nie jest zgodny.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|TrackingProfile|xs:String|Nazwa profilu śledzenia.|  
-|ActivityDefinitionId|xs:String|Identyfikator definicji działania.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|TrackingProfile|XS: ciąg|Nazwa profilu śledzenia.|  
+|ActivityDefinitionId|XS: ciąg|Identyfikator definicji działania.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

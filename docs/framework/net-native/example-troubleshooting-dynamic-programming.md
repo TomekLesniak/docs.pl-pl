@@ -2,14 +2,15 @@
 title: 'Przykład: Rozwiązywanie problemów z programowaniem dynamicznym'
 ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
-ms.openlocfilehash: ff179854066d024a89cb5a84a19d0b9bb054d6e5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0cff232668b9eb65b09a22b14e4ae58673ccd6d0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128441"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288076"
 ---
 # <a name="example-troubleshooting-dynamic-programming"></a>Przykład: Rozwiązywanie problemów z programowaniem dynamicznym
+
 > [!NOTE]
 > Ten temat dotyczy wersji zapoznawczej programu .NET Native Developer, która jest oprogramowaniem w wersji wstępnej. Wersję zapoznawczą można pobrać z [witryny sieci Web Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (wymaga rejestracji).  
   
@@ -34,11 +35,12 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
  Spróbujmy rozwiązać ten wyjątek, korzystając z podejścia z trzech kroków opisanych w sekcji "Ręczne rozwiązywanie brakujących metadanych" [wprowadzenie](getting-started-with-net-native.md).  
   
 ## <a name="what-was-the-app-doing"></a>Co robiła aplikacja?  
+
  Pierwszą rzeczą, którą należy zwrócić, jest `async` maszyna słowa kluczowego na podstawie stosu.  Określenie, co aplikacja była naprawdę wykonywana w `async` metodzie, może być problematyczne, ponieważ stos utracił kontekst wywołania źródłowego i uruchomił `async` kod w innym wątku. Można jednak określić, że aplikacja próbuje załadować pierwszą stronę.  W implementacji dla programu `NavigationArgs.Setup` następujący kod spowodował naruszenie zasad dostępu:  
   
 `AppViewModel.Current.LayoutVM.PageMap`  
   
- W tym wystąpieniu `LayoutVM` Właściwość `AppViewModel.Current` **ma wartość null**.  Niektóre z braku metadanych spowodowały delikatne różnice między zachowaniem i spowodowały niezainicjowanie właściwości zamiast ustawionej, ponieważ oczekiwano aplikacji.  Ustawienie punktu przerwania w kodzie, w którym `LayoutVM` powinna zostać zainicjowana, może spowodować wygenerowanie jasnej sytuacji.  Należy jednak pamiętać, że `LayoutVM` jest to typ `App.Core.ViewModels.Layout.LayoutApplicationVM` .  Jedyną dyrektywą dotyczącą metadanych jest obecna w pliku Rd. XML:  
+ W tym wystąpieniu `LayoutVM` Właściwość `AppViewModel.Current` **ma wartość null**.  Niektóre z braku metadanych spowodowały delikatne różnice między zachowaniem i spowodowały niezainicjowanie właściwości zamiast ustawionej, ponieważ oczekiwano aplikacji.  Ustawienie punktu przerwania w kodzie, w którym `LayoutVM` powinna zostać zainicjowana, może spowodować wygenerowanie jasnej sytuacji.  Należy jednak pamiętać, że `LayoutVM` jest to typ `App.Core.ViewModels.Layout.LayoutApplicationVM` .  Jedyną dyrektywą dotyczącą metadanych obecną w pliku rd.xml jest:  
   
 ```xml  
 <Namespace Name="App.ViewModels" Browse="Required Public" Dynamic="Required Public" />  
@@ -51,12 +53,14 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
  W programowaniu dynamicznym dobrym sposobem korzystania z interfejsów API odbicia w obszarze .NET Native jest użycie <xref:System.Type.GetType%2A?displayProperty=nameWithType> przeciążeń, które generują wyjątek w przypadku niepowodzenia.  
   
 ## <a name="is-this-an-isolated-case"></a>Czy to jest izolowany przypadek?  
+
  Inne problemy mogą również wystąpić podczas korzystania z programu `App.Core.ViewModels` .  Należy zdecydować, czy warto identyfikować i naprawiać każdy brakujący wyjątek metadanych lub zaoszczędzić czas i dodać dyrektywy dla większej klasy typów.  W tym miejscu Dodawanie `dynamic` metadanych dla programu `App.Core.ViewModels` może być najlepszym rozwiązaniem, jeśli wzrost rozmiaru danych binarnych wyjściowych nie jest problemem.  
   
 ## <a name="could-the-code-be-rewritten"></a>Czy kod można napisać ponownie?  
- Jeśli aplikacja była używana `typeof(LayoutApplicationVM)` zamiast `Type.GetType("LayoutApplicationVM")` , łańcuch narzędzi mógłby zachować `browse` metadane.  Mimo to nadal nie utworzy `invoke` metadanych, co spowodowałoby wyjątek [MissingMetadataException](missingmetadataexception-class-net-native.md) podczas tworzenia wystąpienia typu. Aby zapobiec wyjątku, nadal trzeba dodać dyrektywę środowiska uruchomieniowego dla przestrzeni nazw lub typ, który określa `dynamic` zasady. Aby uzyskać informacje na temat dyrektyw środowiska uruchomieniowego, zobacz [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (RD. xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
+
+ Jeśli aplikacja była używana `typeof(LayoutApplicationVM)` zamiast `Type.GetType("LayoutApplicationVM")` , łańcuch narzędzi mógłby zachować `browse` metadane.  Mimo to nadal nie utworzy `invoke` metadanych, co spowodowałoby wyjątek [MissingMetadataException](missingmetadataexception-class-net-native.md) podczas tworzenia wystąpienia typu. Aby zapobiec wyjątku, nadal trzeba dodać dyrektywę środowiska uruchomieniowego dla przestrzeni nazw lub typ, który określa `dynamic` zasady. Aby uzyskać informacje na temat dyrektyw środowiska uruchomieniowego, zobacz [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie](getting-started-with-net-native.md)
 - [Przykład: Obsługa wyjątków podczas wiązania danych](example-handling-exceptions-when-binding-data.md)

@@ -3,17 +3,19 @@ title: Tworzenie przepływów pracy, działań i wyrażeń przy użyciu kodu imp
 description: Definicja przepływu pracy programu Workflow Foundation to drzewo skonfigurowanych obiektów aktywności. Użyj kodu, aby utworzyć definicje, działania i wyrażenia przepływu pracy.
 ms.date: 03/30/2017
 ms.assetid: cefc9cfc-2882-4eb9-8c94-7a6da957f2b2
-ms.openlocfilehash: d169049c47c154858a2e653b5f286fa6b66ba44d
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 5355f2090317a0bce3fec0f46550b202bd0af095
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063799"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289129"
 ---
 # <a name="authoring-workflows-activities-and-expressions-using-imperative-code"></a>Tworzenie przepływów pracy, działań i wyrażeń przy użyciu kodu imperatywnego
+
 Definicja przepływu pracy jest drzewem skonfigurowanych obiektów działania. To drzewo działań można zdefiniować na wiele sposobów, w tym poprzez ręczne edytowanie kodu XAML lub użycie Projektant przepływu pracy do tworzenia kodu XAML. Jednak użycie języka XAML nie jest wymagane. Definicje przepływów pracy można także tworzyć programowo. Ten temat zawiera omówienie tworzenia definicji przepływu pracy, działań i wyrażeń przy użyciu kodu. Aby zapoznać się z przykładami pracy z przepływami pracy XAML przy użyciu kodu, zobacz [Serializowanie przepływów pracy i działań do i z języka XAML](serializing-workflows-and-activities-to-and-from-xaml.md).  
   
 ## <a name="creating-workflow-definitions"></a>Tworzenie definicji przepływu pracy  
+
  Definicję przepływu pracy można utworzyć przez utworzenie wystąpienia typu działania i skonfigurowanie właściwości obiektu działania. W przypadku działań, które nie zawierają działań podrzędnych, można to zrobić za pomocą kilku wierszy kodu.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#47](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#47)]  
@@ -26,6 +28,7 @@ Definicja przepływu pracy jest drzewem skonfigurowanych obiektów działania. T
  [!code-csharp[CFX_WorkflowApplicationExample#48](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#48)]  
   
 ### <a name="using-object-initializers"></a>Korzystanie z inicjatorów obiektów  
+
  W przykładach w tym temacie użyto składni inicjowania obiektu. Składnia inicjowania obiektu może być przydatnym sposobem tworzenia definicji przepływu pracy w kodzie, ponieważ zawiera hierarchiczny widok działań w przepływie pracy i pokazuje relację między działaniami. Nie ma potrzeby używania składni inicjowania obiektów podczas programistycznego tworzenia przepływów pracy. Poniższy przykład jest funkcjonalnie równoważny z poprzednim przykładem.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#49](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#49)]  
@@ -33,6 +36,7 @@ Definicja przepływu pracy jest drzewem skonfigurowanych obiektów działania. T
  Aby uzyskać więcej informacji na temat inicjatorów obiektów, zobacz [How to: Initialize obiektów bez wywoływania konstruktora (Przewodnik programowania w języku C#)](../../csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md) i [instrukcje: deklarowanie obiektu za pomocą inicjatora obiektów](../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md).  
   
 ### <a name="working-with-variables-literal-values-and-expressions"></a>Praca ze zmiennymi, literałami i wyrażeniami  
+
  Podczas tworzenia definicji przepływu pracy przy użyciu kodu należy wiedzieć, jaki kod jest wykonywany w ramach tworzenia definicji przepływu pracy i jaki kod jest wykonywany w ramach wykonywania wystąpienia tego przepływu pracy. Na przykład poniższy przepływ pracy jest przeznaczony do generowania liczby losowej i zapisywania jej w konsoli programu.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#50](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#50)]  
@@ -56,7 +60,7 @@ new Assign<int>
  <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>Reprezentuje wyrażenie w składni Visual Basic, które może być używane jako wartość r w wyrażeniu, a <xref:Microsoft.CSharp.Activities.CSharpValue%601> reprezentuje wyrażenie w składni języka C#, które może być używane jako wartość języka r w wyrażeniu. Te wyrażenia są oceniane przy każdym wykonywaniu działania zawierającego. Wynik wyrażenia jest przypisywany do zmiennej przepływu pracy `n` , a wyniki są używane przez następne działanie w przepływie pracy. Aby uzyskać dostęp do wartości zmiennej przepływu pracy `n` w czasie wykonywania, <xref:System.Activities.ActivityContext> jest to wymagane. Dostęp do niego można uzyskać za pomocą następującego wyrażenia lambda.  
   
 > [!NOTE]
-> Należy zauważyć, że oba te kody są przykładami użycia języka C# jako język programowania, ale jeden z nich używa a <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> <xref:Microsoft.CSharp.Activities.CSharpValue%601> . <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>i <xref:Microsoft.CSharp.Activities.CSharpValue%601> mogą być używane w projektach Visual Basic i C#. Domyślnie wyrażenia utworzone w Projektancie przepływu pracy pasują do języka projektu hostingu. W przypadku tworzenia przepływów pracy w kodzie żądany język jest według uznania autora przepływu pracy.  
+> Należy zauważyć, że oba te kody są przykładami użycia języka C# jako język programowania, ale jeden z nich używa a <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> <xref:Microsoft.CSharp.Activities.CSharpValue%601> . <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> i <xref:Microsoft.CSharp.Activities.CSharpValue%601> mogą być używane w projektach Visual Basic i C#. Domyślnie wyrażenia utworzone w Projektancie przepływu pracy pasują do języka projektu hostingu. W przypadku tworzenia przepływów pracy w kodzie żądany język jest według uznania autora przepływu pracy.  
   
  W tych przykładach wynik wyrażenia jest przypisywany do zmiennej przepływu pracy `n` , a wyniki są używane przez następne działanie w przepływie pracy. Aby uzyskać dostęp do wartości zmiennej przepływu pracy `n` w czasie wykonywania, <xref:System.Activities.ActivityContext> jest to wymagane. Dostęp do niego można uzyskać za pomocą następującego wyrażenia lambda.  
   
@@ -75,6 +79,7 @@ new Assign<int>
  W czasie wykonywania wyrażenia Visual Basic są kompilowane do wyrażeń LINQ. Oba poprzednie przykłady można serializować do języka XAML, ale jeśli serializowany kod XAML jest przeznaczony do wyświetlania i edytowania w Projektancie przepływów pracy, użyj <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> dla wyrażeń. Serializowane przepływy pracy, które `ExpressionServices.Convert` mogą być otwierane w projektancie, ale wartości wyrażenia będą puste. Aby uzyskać więcej informacji na temat serializowania przepływów pracy do języka XAML, zobacz [Serializowanie przepływów pracy i działań do i z języka XAML](serializing-workflows-and-activities-to-and-from-xaml.md).  
   
 #### <a name="literal-expressions-and-reference-types"></a>Wyrażenia literału i typy odwołań  
+
  Wyrażenia literałów są reprezentowane w przepływach pracy przez <xref:System.Activities.Expressions.Literal%601> działanie. Poniższe <xref:System.Activities.Statements.WriteLine> działania są funkcjonalnie równoważne.  
   
 ```csharp  
@@ -111,6 +116,7 @@ new Assign
  Aby uzyskać więcej informacji na temat wyrażeń, zobacz [Expressions](expressions.md).  
   
 #### <a name="invoking-methods-on-objects-using-expressions-and-the-invokemethod-activity"></a>Wywoływanie metod dla obiektów przy użyciu wyrażeń i działania InvokeMethod  
+
  <xref:System.Activities.Expressions.InvokeMethod%601>Działanie może służyć do wywoływania metod statycznych i wystąpień klas w .NET Framework. W poprzednim przykładzie w tym temacie Wygenerowano losową liczbę przy użyciu <xref:System.Random> klasy.  
   
  [!code-csharp[CFX_WorkflowApplicationExample#51](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#51)]  
@@ -134,6 +140,7 @@ new InvokeMethod<int>
  Ponieważ <xref:System.Random.Next%2A> nie jest to metoda statyczna, wystąpienie <xref:System.Random> klasy jest dostarczane dla <xref:System.Activities.Expressions.InvokeMethod%601.TargetObject%2A> właściwości. W tym przykładzie nowe wystąpienie jest tworzone przy użyciu wyrażenia Visual Basic, ale mogło być również wcześniej utworzone i przechowywane w zmiennej przepływu pracy. W tym przykładzie łatwiej będzie użyć <xref:System.Activities.Statements.Assign%601> działania zamiast <xref:System.Activities.Expressions.InvokeMethod%601> działania. Jeśli wywołanie metody ostatecznie wywołane przez albo <xref:System.Activities.Statements.Assign%601> <xref:System.Activities.Expressions.InvokeMethod%601> działania jest długotrwałe, <xref:System.Activities.Expressions.InvokeMethod%601> ma korzyść, ponieważ ma <xref:System.Activities.Expressions.InvokeMethod%601.RunAsynchronously%2A> Właściwość. Gdy ta właściwość jest ustawiona na `true` , wywoływana metoda zostanie uruchomiona asynchronicznie w odniesieniu do przepływu pracy. Jeśli inne działania są równolegle, nie będą blokowane, gdy metoda jest wykonywana asynchronicznie. Ponadto, jeśli metoda, która ma zostać wywołana nie ma wartości zwracanej, <xref:System.Activities.Expressions.InvokeMethod%601> jest odpowiednim sposobem wywołania metody.  
   
 ## <a name="arguments-and-dynamic-activities"></a>Argumenty i działania dynamiczne  
+
  Definicja przepływu pracy jest tworzona w kodzie przez umieszczenie działań w drzewie aktywności i skonfigurowanie wszelkich właściwości i argumentów. Istniejące argumenty mogą być powiązane, ale nie można dodać nowych argumentów do działań. Obejmuje to argumenty przepływu pracy przekazane do działania głównego. W kodzie bezwzględnym argumenty przepływu pracy są określane jako właściwości dla nowego typu CLR, a w języku XAML są one deklarowane za pomocą `x:Class` i `x:Member` . Ponieważ nie istnieje nowy typ CLR tworzony podczas tworzenia definicji przepływu pracy jako drzewa obiektów w pamięci, nie można dodawać argumentów. Jednak argumenty mogą być dodawane do <xref:System.Activities.DynamicActivity> . W tym przykładzie <xref:System.Activities.DynamicActivity%601> jest tworzony, który przyjmuje dwa argumenty całkowite, dodaje je razem i zwraca wynik. <xref:System.Activities.DynamicActivityProperty>Jest tworzony dla każdego argumentu, a wynik operacji jest przypisywany do <xref:System.Activities.Activity%601.Result%2A> argumentu obiektu <xref:System.Activities.DynamicActivity%601> .  
   
  [!code-csharp[CFX_WorkflowApplicationExample#55](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#55)]  
@@ -141,6 +148,7 @@ new InvokeMethod<int>
  Aby uzyskać więcej informacji o działaniach dynamicznych, zobacz [Tworzenie działania w czasie wykonywania](creating-an-activity-at-runtime-with-dynamicactivity.md).  
   
 ## <a name="compiled-activities"></a>Skompilowane działania  
+
  Działania dynamiczne są jednym ze sposobów definiowania działania, które zawiera argumenty przy użyciu kodu, ale działania mogą być również tworzone w kodzie i kompilowane do typów. Proste działania można utworzyć, które pochodzą z <xref:System.Activities.CodeActivity> i działań asynchronicznych, które pochodzą z <xref:System.Activities.AsyncCodeActivity> . Działania te mogą mieć argumenty, wartości zwracane i definiować ich logiki przy użyciu kodu bezwzględnego. Przykłady tworzenia tego typu działań można znaleźć w temacie [elementu CodeActivity Base Class (klasa bazowa](workflow-activity-authoring-using-the-codeactivity-class.md) ) i [Tworzenie działań asynchronicznych](creating-asynchronous-activities-in-wf.md).  
   
  Działania, które pochodzą z programu, <xref:System.Activities.NativeActivity> mogą definiować swoje logiki przy użyciu bezwzględnego kodu i mogą również zawierać działania podrzędne, które definiują logikę. Mają także pełny dostęp do funkcji środowiska uruchomieniowego, takich jak tworzenie zakładek. Przykłady tworzenia <xref:System.Activities.NativeActivity> działań opartych na programie można znaleźć w temacie [Klasa bazowa natywna](nativeactivity-base-class.md), [instrukcje: tworzenie działania](how-to-create-an-activity.md)oraz [niestandardowy kompozyt przy użyciu natywnego działania](./samples/custom-composite-using-native-activity.md) .  

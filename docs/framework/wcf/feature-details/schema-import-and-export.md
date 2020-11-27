@@ -9,14 +9,15 @@ helpviewer_keywords:
 - XsdDataContractExporter class
 - XsdDataContractImporter class
 ms.assetid: 0da32b50-ccd9-463a-844c-7fe803d3bf44
-ms.openlocfilehash: 942ade69d92d8a213f65a3a2e463b6924e2f986e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 52a9e1bf4c9442bd42beb55b133a185c4a42148d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84590218"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288570"
 ---
 # <a name="schema-import-and-export"></a>Importowanie i eksportowanie schematu
+
 Windows Communication Foundation (WCF) zawiera nowy aparat serializacji, <xref:System.Runtime.Serialization.DataContractSerializer> . `DataContractSerializer`Tłumaczy między obiektami .NET Framework i XML (w obu kierunkach). Oprócz programu szeregującego, WCF zawiera skojarzone mechanizmy importowania schematu i eksportowania schematu. *Schemat* to formalny, dokładny i czytelny dla maszyn opis kształtu XML, który tworzy serializator lub który Deserializator może uzyskać dostęp. Funkcja WCF używa organizacja World Wide Web Consortium (W3C) języka definicji schematu XML (XSD) jako reprezentacji schematu, która jest szeroko współdziałana z wieloma platformami innych firm.  
   
  Składnik importowania schematu, <xref:System.Runtime.Serialization.XsdDataContractImporter> , pobiera dokument schematu XSD i generuje klasy .NET Framework (zazwyczaj klasy kontraktu danych), tak że serializowane formularze odpowiadają danemu schematowi.  
@@ -42,9 +43,11 @@ Windows Communication Foundation (WCF) zawiera nowy aparat serializacji, <xref:S
  <xref:System.Runtime.Serialization.XsdDataContractExporter>Umożliwia przeprowadzenie odwrócenia — wykonaj typy, które można serializować przy użyciu `DataContractSerializer` i Generuj dokument schematu XSD.  
   
 ## <a name="fidelity-is-not-guaranteed"></a>Wierność nie jest gwarantowana  
+
  Nie gwarantuje to, że schemat lub typy przedają w wyniku rundy całkowitą wierność. (W wyniku *rundy* należy zaimportować schemat, aby utworzyć zestaw klas, i wyeksportować wynik, aby ponownie utworzyć schemat). Nie można zwrócić tego samego schematu. Odwrócenie procesu nie gwarantuje również zachowania dokładności. (Wyeksportuj typ, aby wygenerować jego schemat, a następnie zaimportuj typ z powrotem. Jest mało prawdopodobne, że zwracany jest ten sam typ.)  
   
 ## <a name="supported-types"></a>Obsługiwane typy  
+
  Model kontraktu danych obsługuje tylko ograniczony podzbiór schematu WC3. Każdy schemat, który nie jest zgodny z tym podzbiorem, spowoduje wyjątek podczas procesu importowania. Na przykład nie istnieje sposób, aby określić, że element członkowski danych kontraktu danych powinien być serializowany jako atrybut XML. W związku z tym schematy, które wymagają użycia atrybutów XML, nie są obsługiwane i spowodują wyjątki podczas importowania, ponieważ nie można wygenerować kontraktu danych z poprawnym rzutowaniem XML.  
   
  Na przykład poniższy fragment schematu nie może zostać zaimportowany przy użyciu domyślnych ustawień importu.  

@@ -1,15 +1,16 @@
 ---
-title: <Method>— Element (.NET Native)
+title: <Method> — Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 348b49e5-589d-4eb2-a597-d6ff60ab52d1
-ms.openlocfilehash: 8db32c660846b4f4071fff2a40c760a3d1ef2489
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1d57457c90e44c70caa301eccc02c5831d283cea
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79180988"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287907"
 ---
-# <a name="method-element-net-native"></a>\<Method>— Element (.NET Native)
+# <a name="method-element-net-native"></a>\<Method> — Element (.NET Native)
+
 Stosuje zasady odbicia środowiska uruchomieniowego do konstruktora lub metody.  
   
 ## <a name="syntax"></a>Składnia  
@@ -22,6 +23,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do konstruktora lub metody.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -68,13 +70,15 @@ Stosuje zasady odbicia środowiska uruchomieniowego do konstruktora lub metody.
 |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Stosuje zasady odbicia do skonstruowanego typu ogólnego i wszystkich jego członków.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<Method>`Element metody ogólnej stosuje swoje zasady do wszystkich wystąpień, które nie mają własnych zasad.  
   
  Możesz użyć atrybutu, `Signature` Aby określić zasady dla konkretnego przeciążenia metody. W przeciwnym razie, jeśli `Signature` atrybut jest nieobecny, dyrektywa Runtime stosuje się do wszystkich przeciążeń metody.  
   
- Nie można zdefiniować zasad odbicia środowiska uruchomieniowego dla konstruktora przy użyciu `<Method>` elementu. Zamiast tego należy użyć `Activate` atrybutu [\<Assembly>](assembly-element-net-native.md) [\<Namespace>](namespace-element-net-native.md) elementu,, [\<Type>](type-element-net-native.md) , lub [\<TypeInstantiation>](typeinstantiation-element-net-native.md) .  
+ Nie można zdefiniować zasad odbicia środowiska uruchomieniowego dla konstruktora przy użyciu `<Method>` elementu. Zamiast tego należy użyć `Activate` atrybutu  [\<Assembly>](assembly-element-net-native.md) [\<Namespace>](namespace-element-net-native.md) elementu,, [\<Type>](type-element-net-native.md) , lub [\<TypeInstantiation>](typeinstantiation-element-net-native.md) .  
   
 ## <a name="example"></a>Przykład  
+
  `Stringify`Metoda w poniższym przykładzie jest metodą formatowania ogólnego zastosowania, która używa odbicia do przekonwertowania obiektu na jego reprezentację w postaci ciągu. Oprócz wywoływania domyślnej `ToString` metody obiektu Metoda może utworzyć sformatowany ciąg wynikowy przez przekazanie `ToString` metody obiektu ciągu formatu, <xref:System.IFormatProvider> implementacji lub obu. Może również wywołać jedno z <xref:System.Convert.ToString%2A?displayProperty=nameWithType> przeciążeń, które konwertuje liczbę na jej reprezentację binarną, szesnastkową lub ósemkową.  
   
  [!code-csharp[ProjectN_Reflection#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/method1.cs#7)]  
@@ -85,7 +89,7 @@ Stosuje zasady odbicia środowiska uruchomieniowego do konstruktora lub metody.
   
  Jednak podczas kompilowania z .NET Native przykład może zgłosić liczbę wyjątków w czasie wykonywania, w tym <xref:System.NullReferenceException> wyjątki i [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) , dzieje się tak, ponieważ `Stringify` Metoda jest zaprojektowana głównie do obsługi dynamicznego formatowania typów pierwotnych w bibliotece klas .NET Framework. Jednak ich metadane nie są udostępniane przez domyślny plik dyrektyw. Jednak w przypadku udostępnienia ich metadanych przykład zgłasza wyjątki [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) , ponieważ odpowiednie `ToString` implementacje nie zostały uwzględnione w kodzie natywnym.  
   
- Te wyjątki można usunąć za pomocą [\<Type>](type-element-net-native.md) elementu, aby zdefiniować typy, których metadane muszą być obecne, i przez dodanie elementów, `<Method>` Aby upewnić się, że implementacja przeciążeń metody, które mogą być wywołane dynamicznie. Poniżej znajduje się domyślny plik. Rd. XML, który eliminuje te wyjątki i pozwala na wykonywanie przykładu bez błędu.  
+ Te wyjątki można usunąć za pomocą [\<Type>](type-element-net-native.md) elementu, aby zdefiniować typy, których metadane muszą być obecne, i przez dodanie elementów, `<Method>` Aby upewnić się, że implementacja przeciążeń metody, które mogą być wywołane dynamicznie. Poniżej znajduje się plik default.rd.xml, który eliminuje te wyjątki i pozwala na wykonywanie przykładu bez błędu.  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -143,9 +147,9 @@ Stosuje zasady odbicia środowiska uruchomieniowego do konstruktora lub metody.
 </Directives>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy dyrektyw środowiska uruchomieniowego](runtime-directive-elements.md)
 - [Ustawienia zasad dyrektyw środowiska uruchomieniowego](runtime-directive-policy-settings.md)
-- [\<MethodInstantiation>Postaci](methodinstantiation-element-net-native.md)
+- [\<MethodInstantiation> Postaci](methodinstantiation-element-net-native.md)

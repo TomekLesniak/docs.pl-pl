@@ -2,12 +2,12 @@
 title: Nieobsługiwane scenariusze
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: a3ee91e5232926b4ea7db80db35d9a309ca8105b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2d779b49a8201b3ad53507af7710f7aef5e9321c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557817"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289649"
 ---
 # <a name="unsupported-scenarios"></a>Nieobsługiwane scenariusze
 
@@ -16,6 +16,7 @@ Z różnych powodów Windows Communication Foundation (WCF) nie obsługuje niekt
 ## <a name="impersonation-scenarios"></a>Scenariusze personifikacji
 
 ### <a name="impersonated-identity-might-not-flow-when-clients-make-asynchronous-calls"></a>Personifikowana tożsamość może nie przepływać, gdy klienci powodują wywołania asynchroniczne
+
  Gdy klient WCF wykonuje wywołania asynchroniczne do usługi WCF przy użyciu uwierzytelniania systemu Windows w ramach personifikacji, uwierzytelnianie może wystąpić w przypadku tożsamości procesu klienta zamiast personifikowanej tożsamości.
 
 ### <a name="windows-xp-and-secure-context-token-cookie-enabled"></a>Włączono plik cookie systemu Windows XP i bezpiecznego tokenu kontekstu
@@ -122,7 +123,7 @@ Funkcja WCF traci śledzenie atrybutów dla `<wst:Claims>` elementu w `RST` szab
 
  Poprawka polega na zmodyfikowaniu powiązania bezpośrednio na kliencie po zaimportowaniu.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zagadnienia dotyczące zabezpieczeń](security-considerations-in-wcf.md)
 - [Information Disclosure (ujawnienie informacji)](information-disclosure.md)

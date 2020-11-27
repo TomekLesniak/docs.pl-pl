@@ -16,12 +16,12 @@ helpviewer_keywords:
 - user authentication, code access security
 - code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-ms.openlocfilehash: 528824e2d1b5d854f9eef816d3f7b20ba0f2b7db
-ms.sourcegitcommit: 67ebdb695fd017d79d9f1f7f35d145042d5a37f7
+ms.openlocfilehash: 1119965f971e00b1b795378d9af3977074a696f3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92224357"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288323"
 ---
 # <a name="code-access-security"></a>Zabezpieczenia dostępu kodu
 
@@ -44,7 +44,9 @@ ms.locfileid: "92224357"
  Cały kod zarządzany, który jest przeznaczony dla środowiska uruchomieniowego języka wspólnego, otrzymuje zalety zabezpieczenia dostępu kodu, nawet jeśli ten kod nie nawiąże wywołania zabezpieczeń pojedynczego kodu. Aby uzyskać więcej informacji, zobacz podstawowe informacje o [zabezpieczeniach dostępu kodu](code-access-security-basics.md).  
   
 <a name="key_functions"></a>
+
 ## <a name="key-functions-of-code-access-security"></a>Najważniejsze funkcje zabezpieczeń dostępu kodu  
+
  Zabezpieczenia dostępu kodu pomagają ograniczyć dostęp tego kodu do chronionych zasobów i operacji. W .NET Framework zabezpieczenia dostępu kodu są wykonywane w następujących funkcjach:  
   
 - Definiuje uprawnienia i zestawy uprawnień, które reprezentują prawo dostępu do różnych zasobów systemu.  
@@ -56,7 +58,9 @@ ms.locfileid: "92224357"
 - Wymusza ograniczenia dotyczące kodu w czasie wykonywania, porównując przyznane uprawnienia każdego obiektu wywołującego na stosie wywołań z uprawnieniami, które są wymagane przez wywoływania.  
   
 <a name="walking_the_call_stack"></a>
+
 ## <a name="walking-the-call-stack"></a>Instruktaż stosu wywołań  
+
  Aby ustalić, czy kod jest autoryzowany do uzyskania dostępu do zasobu lub wykonywania operacji, system zabezpieczeń środowiska uruchomieniowego sprawdza stos wywołań, porównując przyznane uprawnienia każdego wywołującego z przyznanym uprawnieniem. Jeśli jakikolwiek obiekt wywołujący w stosie wywołań nie ma wymaganego uprawnienia, zgłaszany jest wyjątek zabezpieczeń i nastąpiła odmowa dostępu. Funkcja przeszukiwania stosu pomaga zapobiegać atakom luring, w którym kod mniej zaufany wywołuje wysoce zaufany kod i używa go do wykonywania nieautoryzowanych akcji. Wysokie uprawnienia wszystkich obiektów wywołujących w czasie wykonywania mają wpływ na wydajność, ale ważne jest, aby chronić kod przed atakami luring przez kod mniej zaufany. Aby zoptymalizować wydajność, kod może wykonywać mniej przeszukiwań stosu. Należy jednak pamiętać, że nie ujawniamy luki w zabezpieczeniach w każdym przypadku.  
   
  Na poniższej ilustracji przedstawiono przeszukiwanie stosu, które powstaje, gdy metoda w zestawie A4 wymaga, aby jej wywołania miały uprawnienie P.  
@@ -64,6 +68,7 @@ ms.locfileid: "92224357"
  ![Przeszukiwanie stosu zabezpieczeń dostępu kodu](media/slide-10a.gif "slide_10a")
   
 <a name="related_topics"></a>
+
 ## <a name="related-articles"></a>Pokrewne artykuły:
   
 |Tytuł|Opis|  

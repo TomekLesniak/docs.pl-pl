@@ -2,14 +2,15 @@
 title: Korzystanie z zabezpieczeń komunikatów
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: b5f7679d5e5ec82e63b588cebd90ce873c055088
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6aae16b766889f402f774451338ae2cd30162437
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558306"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288606"
 ---
 # <a name="securing-messages-using-message-security"></a>Korzystanie z zabezpieczeń komunikatów
+
 W tej części omówiono zabezpieczenia komunikatów WCF podczas korzystania z programu <xref:System.ServiceModel.NetMsmqBinding> .  
   
 > [!NOTE]
@@ -28,6 +29,7 @@ W tej części omówiono zabezpieczenia komunikatów WCF podczas korzystania z p
  Funkcja zabezpieczenia komunikatów WCF dodaje nagłówki zabezpieczeń do wiadomości WCF, która integruje się z istniejącymi infrastrukturami zabezpieczeń, takimi jak certyfikat lub protokół Kerberos.  
   
 ## <a name="message-credential-type"></a>Typ poświadczeń wiadomości  
+
  Korzystając z zabezpieczeń komunikatów, usługa i klient mogą przedstawić poświadczenia do wzajemnego uwierzytelniania. Możesz wybrać opcję Zabezpieczenia komunikatów, ustawiając <xref:System.ServiceModel.NetMsmqBinding.Security%2A> tryb na `Message` lub (to `Both` oznacza, że są używane zabezpieczenia transportu i zabezpieczenia komunikatów).  
   
  Usługa może użyć właściwości, <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> Aby sprawdzić poświadczenie używane do uwierzytelniania klienta. Można go również użyć do dalszej kontroli autoryzacji, którą usługa wybiera do wdrożenia.  
@@ -35,6 +37,7 @@ W tej części omówiono zabezpieczenia komunikatów WCF podczas korzystania z p
  W tej sekcji objaśniono różne typy poświadczeń i sposoby ich używania z kolejkami.  
   
 ### <a name="certificate"></a>Certyfikat  
+
  Typ poświadczeń certyfikatu używa certyfikatu X. 509, aby zidentyfikować usługę i klienta.  
   
  W typowym scenariuszu klient i usługa otrzymują prawidłowy certyfikat przez zaufany urząd certyfikacji. Następnie połączenie zostanie nawiązane, a klient uwierzytelnia ważność usługi przy użyciu certyfikatu usługi, aby zdecydować, czy może ufać usłudze. Podobnie usługa używa certyfikatu klienta do sprawdzania poprawności zaufania klienta.  
@@ -44,6 +47,7 @@ W tej części omówiono zabezpieczenia komunikatów WCF podczas korzystania z p
  Na komputerze z systemem Windows certyfikaty są przechowywane w kilku rodzajach magazynów. Aby uzyskać więcej informacji na temat różnych magazynów, zobacz [magazyny certyfikatów](/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
   
 ### <a name="windows"></a>Windows  
+
  Typ poświadczeń komunikatu systemu Windows używa protokołu Kerberos.  
   
  Protokół Kerberos jest mechanizmem zabezpieczeń, który uwierzytelnia użytkowników w domenie i zezwala uwierzytelnionym użytkownikom na ustanawianie bezpiecznych kontekstów z innymi jednostkami w domenie.  
@@ -55,15 +59,18 @@ W tej części omówiono zabezpieczenia komunikatów WCF podczas korzystania z p
  Protokół Kerberos jest używany domyślnie podczas wybierania poświadczeń wiadomości.
   
 ### <a name="username-password"></a>Hasło użytkownika  
+
  Korzystając z tej właściwości, klient może uwierzytelniać się na serwerze przy użyciu hasła użytkownika w nagłówku zabezpieczeń wiadomości.  
   
 ### <a name="issuedtoken"></a>IssuedToken  
+
  Klient może użyć usługi tokenu zabezpieczającego, aby wystawić token, który następnie może zostać dołączony do wiadomości dla usługi w celu uwierzytelnienia klienta.  
   
 ## <a name="using-transport-and-message-security"></a>Korzystanie z usługi transport i zabezpieczenia komunikatów  
+
  W przypadku korzystania z zabezpieczeń transportu i zabezpieczeń komunikatów certyfikat używany do zabezpieczenia komunikatu zarówno w transportie, jak i na poziomie komunikatu protokołu SOAP musi być taki sam.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Ochrona komunikatów za pomocą zabezpieczeń transportu](securing-messages-using-transport-security.md)
 - [Zabezpieczenia komunikatów w ramach kolejkowania komunikatów](../samples/message-security-over-message-queuing.md)

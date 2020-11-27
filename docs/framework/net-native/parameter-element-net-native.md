@@ -1,15 +1,16 @@
 ---
-title: <Parameter>— Element (.NET Native)
+title: <Parameter> — Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 22aaa1f3-596f-4733-93db-f4bcabcb5240
-ms.openlocfilehash: c6dfc347d44a794ee8496c45ca879f9daab12b22
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7e812ab60eb0a89eb868346733a8ea74e2f76d3e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128197"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287868"
 ---
-# <a name="parameter-element-net-native"></a>\<Parameter>— Element (.NET Native)
+# <a name="parameter-element-net-native"></a>\<Parameter> — Element (.NET Native)
+
 Stosuje zasady odbicia do typu argumentu przesłanego do metody.  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,6 +30,7 @@ Stosuje zasady odbicia do typu argumentu przesłanego do metody.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atrybuty i elementy  
+
  W poniższych sekcjach opisano atrybuty, elementy podrzędne i elementy nadrzędne.  
   
 ### <a name="attributes"></a>Atrybuty  
@@ -60,6 +62,7 @@ Stosuje zasady odbicia do typu argumentu przesłanego do metody.
 |*policy_setting*|Ustawienie, które ma zostać zastosowane do tego typu zasad. Możliwe wartości to `All` , `Public` , `PublicAndInternal` , `Required Public` , `Required PublicAndInternal` i `Required All` . Aby uzyskać więcej informacji, zobacz [Ustawienia zasad dyrektywy środowiska uruchomieniowego](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Elementy podrzędne  
+
  Brak.  
   
 ### <a name="parent-elements"></a>Elementy nadrzędne  
@@ -69,11 +72,12 @@ Stosuje zasady odbicia do typu argumentu przesłanego do metody.
 |[\<Method>](method-element-net-native.md)|Stosuje zasady odbicia środowiska uruchomieniowego do konstruktora lub metody.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  `<Parameter>`Element jest elementem podrzędnym [\<Method>](method-element-net-native.md) elementu i służy do stosowania zasad do określonego parametru metody. Konkretny parametr metody jest określony według nazwy, a nie według typu. Co najmniej jeden atrybut reprezentujący typ zasad, taki jak `Activate` lub `Dynamic` , musi być obecny.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [\<Method>Postaci](method-element-net-native.md)
+- [\<Method> Postaci](method-element-net-native.md)
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Ustawienia zasad dyrektyw środowiska uruchomieniowego](runtime-directive-policy-settings.md)
 - [Elementy dyrektyw środowiska uruchomieniowego](runtime-directive-elements.md)

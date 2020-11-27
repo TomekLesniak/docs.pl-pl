@@ -20,14 +20,15 @@ helpviewer_keywords:
 - network resources, authentication
 - user authentication, digest
 ms.assetid: 8cce2742-8d52-4643-9dd2-64ddf38aa878
-ms.openlocfilehash: 7772430b508b52a63d716550b69018385418c132
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: e55dc58a7998824dbcfffa204008aacb815be03a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502704"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287582"
 ---
 # <a name="basic-and-digest-authentication"></a>Uwierzytelnianie podstawowe i szyfrowane
+
 <xref:System.Net>Implementacja uwierzytelniania podstawowego i szyfrowanego jest zgodna z RFC2617 — uwierzytelnianie http: uwierzytelnianie podstawowe i szyfrowane (dostępne w witrynie sieci web [organizacja World Wide Web Consortium](https://www.w3.org) ).  
   
  Aby można było korzystać z uwierzytelniania podstawowego i szyfrowanego, aplikacja musi podać nazwę użytkownika i hasło we <xref:System.Net.WebRequest.Credentials%2A> właściwości <xref:System.Net.WebRequest> obiektu, którego używa do żądania danych z Internetu, jak pokazano w poniższym przykładzie.  
@@ -47,7 +48,7 @@ WReq.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword);
 > [!CAUTION]
 > Dane wysyłane z uwierzytelnianiem podstawowym i szyfrowanym nie są szyfrowane, więc dane mogą być widoczne przez atakującej. Ponadto poświadczenia uwierzytelniania podstawowego (nazwa użytkownika i hasło) są wysyłane w postaci jasnej i mogą być przechwytywane.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Uwierzytelnianie NTLM i uwierzytelnianie Kerberos](ntlm-and-kerberos-authentication.md)
 - [Uwierzytelnianie internetowe](internet-authentication.md)

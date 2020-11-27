@@ -1,15 +1,15 @@
 ---
-title: <Type>— Element (.NET Native)
+title: <Type> — Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 1e88d368-a886-4f1e-8eb6-6127979a9fce
-ms.openlocfilehash: 4e88b49b82513079ddcf6f0bafe02d44235a406a
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e71df41c4a37206910d835ee85dc3d68b4cbad4a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73091851"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287712"
 ---
-# <a name="type-element-net-native"></a>\<Type>— Element (.NET Native)
+# <a name="type-element-net-native"></a>\<Type> — Element (.NET Native)
 
 Stosuje zasady środowiska uruchomieniowego do określonego typu, takiego jak Klasa lub struktura.
 
@@ -118,6 +118,7 @@ Poniższy przykład używa odbicia, aby wyświetlić informacje dotyczące pól,
 ```
 
 ## <a name="example"></a>Przykład
+
  Poniższy przykład używa odbicia, aby pobrać <xref:System.Reflection.PropertyInfo> obiekt, który reprezentuje <xref:System.String.Chars%2A?displayProperty=nameWithType> Właściwość. Następnie używa metody, <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> Aby pobrać wartość siódmego znaku w ciągu i wyświetlić wszystkie znaki w ciągu. Zmienna `b` w przykładzie jest <xref:Windows.UI.Xaml.Controls.TextBlock> kontrolką.
 
  [!code-csharp[ProjectN_Reflection#1](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/propertyinfo1.cs#1)]
@@ -133,7 +134,7 @@ Poniższy przykład używa odbicia, aby wyświetlić informacje dotyczące pól,
 </Directives>
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy dyrektyw środowiska uruchomieniowego](runtime-directive-elements.md)

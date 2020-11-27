@@ -6,17 +6,19 @@ helpviewer_keywords:
 - WCF [WCF], routing
 - Windows communication Foundation [WCF], routing
 ms.assetid: bd56516c-420d-4c4e-97f9-f72d28d149a9
-ms.openlocfilehash: 801de9865495aec32114f47075397c3445a88fc9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f4d87d5ea1df85dd383fb6274ba55491c2cd5c34
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84590387"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288552"
 ---
 # <a name="routing"></a>Routing
+
 Tematy w tej sekcji dotyczą usługi routingu. Usługa routingu to ogólny, konfigurowalny pośrednik protokołu SOAP, który umożliwia skonfigurowanie routingu opartego na zawartości, skonfigurowanie mostkowania protokołów, obsługę błędów komunikacji i dynamiczne aktualizowanie logiki routingu w czasie wykonywania.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Usługa routingu](routing-service.md)  
  Zawiera omówienie funkcji usługi routingu.  
   

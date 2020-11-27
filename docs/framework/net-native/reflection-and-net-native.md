@@ -2,14 +2,15 @@
 title: Odbicie i architektura .NET Native
 ms.date: 03/30/2017
 ms.assetid: 91c9eae4-c641-476c-a06e-d7ce39709763
-ms.openlocfilehash: 65921377be9b8bf1c2d147b384c85cbd037d15f2
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c38070ec4afe0a7311133e0ef7b5b24eb2fe4fb5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128183"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287842"
 ---
 # <a name="reflection-and-net-native"></a>Odbicie i architektura .NET Native
+
 W .NET Framework zarządzanie zarządzane obsługuje tworzenie aplikacji za pomocą interfejsu API odbicia. Odbicie umożliwia inspekcję obiektów w aplikacji, wywoływanie metod dla obiektów odnalezionych za poorednictwem inspekcji, generowanie nowych typów w czasie wykonywania i obsługę wielu innych scenariuszy kodu dynamicznego. Obsługuje również serializacji i deserializacji, co pozwala na utrwalanie i późniejsze przywracanie wartości pól obiektu. Te scenariusze wymagają, .NET Framework kompilator just-in-Time (JIT) do generowania kodu natywnego na podstawie dostępnych metadanych.  
   
  Środowisko uruchomieniowe .NET Native nie zawiera kompilatora JIT. W związku z tym wszystkie niezbędne kod macierzysty muszą zostać wygenerowane z wyprzedzeniem. Zestaw algorytmów heurystycznych służy do określenia, jaki kod powinien zostać wygenerowany, ale te heurystyki nie mogą obejmować wszystkich możliwych scenariuszy tworzenia elementów.  W związku z tym należy zapewnić wskazówki dotyczące tych scenariuszy związanych z programowaniem, korzystając z [dyrektyw środowiska uruchomieniowego](runtime-directives-rd-xml-configuration-file-reference.md). Jeśli niezbędne metadane lub kod implementacji nie są dostępne w czasie wykonywania, aplikacja zgłasza wyjątek [MissingMetadataException](missingmetadataexception-class-net-native.md), [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)lub [MissingInteropDataException](missinginteropdataexception-class-net-native.md) . Dostępne są dwa narzędzia do rozwiązywania problemów, które spowodują wygenerowanie odpowiedniego wpisu dla pliku dyrektywy środowiska uruchomieniowego, który eliminuje wyjątek:  
@@ -31,7 +32,7 @@ W .NET Framework zarządzanie zarządzane obsługuje tworzenie aplikacji za pomo
   
 - [Dokumentacja pliku konfiguracji dyrektyw środowiska uruchomieniowego (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Kompilowanie aplikacji z architekturą .NET Native](index.md)
 - [Architektura .NET Native i kompilacja](net-native-and-compilation.md)

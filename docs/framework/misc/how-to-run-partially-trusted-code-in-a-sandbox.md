@@ -9,12 +9,12 @@ helpviewer_keywords:
 - restricted security environment
 - code security, sandboxing
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
-ms.openlocfilehash: 415a42f7c4f4866bb72f19bdd6f02bfdb5158bf8
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: baa04a3c55728590b8aa502648a8ab42bf62f903
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855806"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96288284"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Porady: uruchamianie częściowo zaufanego kodu w bibliotece
 
@@ -63,7 +63,7 @@ AppDomain.CreateDomain( string friendlyName,
     PermissionSet internetPS = SecurityManager.GetStandardSandbox(ev);  
     ```  
   
-     <xref:System.Security.SecurityManager.GetStandardSandbox%2A>Metoda zwraca `Internet` zestaw uprawnień lub `LocalIntranet` zestaw uprawnień w zależności od strefy w dowodu. <xref:System.Security.SecurityManager.GetStandardSandbox%2A>Ponadto konstruuje uprawnienia tożsamości dla niektórych obiektów dowodu, które przechodzą jako odwołania.  
+     <xref:System.Security.SecurityManager.GetStandardSandbox%2A>Metoda zwraca `Internet` zestaw uprawnień lub `LocalIntranet` zestaw uprawnień w zależności od strefy w dowodu. <xref:System.Security.SecurityManager.GetStandardSandbox%2A> Ponadto konstruuje uprawnienia tożsamości dla niektórych obiektów dowodu, które przechodzą jako odwołania.  
   
 2. Podpisz zestaw zawierający klasę hostingu (o nazwie `Sandboxer` w tym przykładzie), która wywołuje niezaufany kod. Dodaj <xref:System.Security.Policy.StrongName> użyty do podpisania zestawu do <xref:System.Security.Policy.StrongName> tablicy `fullTrustAssemblies` parametru <xref:System.AppDomain.CreateDomain%2A> wywołania. Klasa hostingu musi działać jako w pełni zaufana, aby umożliwić wykonywanie kodu częściowego zaufania lub oferowanie usług dla aplikacji częściowo zaufanej. Jest to sposób odczytywania <xref:System.Security.Policy.StrongName> zestawu:  
   
@@ -167,7 +167,7 @@ AppDomain.CreateDomain( string friendlyName,
     }  
     ```  
   
-     <xref:System.Reflection>służy do pobierania dojścia metody z częściowo zaufanego zestawu. Uchwyt może służyć do wykonywania kodu w bezpieczny sposób z minimalnymi uprawnieniami.  
+     <xref:System.Reflection> służy do pobierania dojścia metody z częściowo zaufanego zestawu. Uchwyt może służyć do wykonywania kodu w bezpieczny sposób z minimalnymi uprawnieniami.  
   
      Przed przystąpieniem do drukowania w poprzednim kodzie należy zwrócić uwagę <xref:System.Security.PermissionSet.Assert%2A> na uprawnienia pełnego zaufania <xref:System.Security.SecurityException> .  
   
@@ -178,6 +178,7 @@ AppDomain.CreateDomain( string friendlyName,
      Potwierdzenie pełnego zaufania służy do uzyskiwania rozszerzonych informacji z <xref:System.Security.SecurityException> . Bez <xref:System.Security.PermissionSet.Assert%2A> , <xref:System.Security.SecurityException.ToString%2A> Metoda <xref:System.Security.SecurityException> wykryje, że na stosie znajduje się częściowo zaufany kod i ograniczy zwrócone informacje. Może to spowodować problemy z bezpieczeństwem, jeśli kod częściowego zaufania może odczytać te informacje, ale ryzyko to nie jest udzielane <xref:System.Security.Permissions.UIPermission> . Potwierdzenie pełnego zaufania powinno być używane oszczędnie i tylko wtedy, gdy masz pewność, że nie zezwolisz na podniesienie poziomu kodu zaufania do pełnego zaufania. Zgodnie z regułą nie należy wywoływać kodu, który nie jest zaufany w tej samej funkcji, i po wywołaniu potwierdzenia pełnego zaufania. Dobrym sposobem jest zawsze przywrócenie potwierdzenia po zakończeniu korzystania z niego.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład implementuje procedurę opisaną w poprzedniej sekcji. W przykładzie projekt o nazwie `Sandboxer` w rozwiązaniu programu Visual Studio zawiera również projekt o nazwie `UntrustedCode` , który implementuje klasę `UntrustedClass` . W tym scenariuszu przyjęto założenie, że pobrano zestaw biblioteczny zawierający metodę, która powinna zostać zwrócona, `true` lub `false` Aby wskazać, czy podany numer jest numerem Fibonacci. Zamiast tego Metoda próbuje odczytać plik z komputera. Poniższy przykład pokazuje kod niezaufany.  
   
 ```csharp
@@ -273,6 +274,6 @@ class Sandboxer : MarshalByRefObject
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wytyczne dotyczące bezpiecznego programowania](../../standard/security/secure-coding-guidelines.md)

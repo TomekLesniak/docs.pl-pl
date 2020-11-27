@@ -2,17 +2,19 @@
 title: Używanie mechanizmu rozpoznawania kontraktów danych
 ms.date: 03/30/2017
 ms.assetid: 2e68a16c-36f0-4df4-b763-32021bff2b89
-ms.openlocfilehash: 20abd4d928fc51eb359949ecbb216615e9659b7f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a86ad21a5846feec37f8b4b48843eab2d6c161da
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595027"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96289636"
 ---
 # <a name="using-a-data-contract-resolver"></a>Używanie mechanizmu rozpoznawania kontraktów danych
+
 Program rozpoznawania kontraktów danych umożliwia dynamiczne Konfigurowanie znanych typów. Znane typy są wymagane podczas serializacji lub deserializacji typu nieoczekiwanego przez kontrakt danych. Aby uzyskać więcej informacji na temat znanych typów, zobacz [znane typy kontraktu danych](data-contract-known-types.md). Znane typy są zwykle określane statycznie. Oznacza to, że trzeba znać wszystkie możliwe typy, które operacja może otrzymać podczas implementowania operacji. Istnieją scenariusze, w których ta wartość nie jest prawdziwa i możliwość dynamicznego określania znanych typów jest ważna.  
   
 ## <a name="creating-a-data-contract-resolver"></a>Tworzenie programu rozpoznawania kontraktu danych  
+
  Tworzenie programu rozpoznawania kontraktu danych wymaga zastosowania dwóch metod <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> i <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> . Te dwie metody implementują wywołania zwrotne, które są używane podczas serializacji i deserializacji odpowiednio. <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A>Metoda jest wywoływana podczas serializacji i pobiera typ kontraktu danych i mapuje go na `xsi:type` nazwę i przestrzeń nazw. <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A>Metoda jest wywoływana podczas deserializacji i przyjmuje `xsi:type` nazwę i przestrzeń nazw i rozwiązuje ją do typu kontraktu danych. Obie te metody mają `knownTypeResolver` parametr, którego można użyć do użycia domyślnego programu rozpoznawania znanego typu w implementacji.  
   
  Poniższy przykład pokazuje, jak zaimplementować metodę <xref:System.Runtime.Serialization.DataContractResolver> w celu mapowania do i z typu kontraktu danych o nazwie `Customer` pochodnej z typu kontraktu danych `Person` .  
