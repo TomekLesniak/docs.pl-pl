@@ -10,19 +10,21 @@ helpviewer_keywords:
 - interoperation with unmanaged code, samples
 - COM interop, samples
 ms.assetid: a3f752bb-8945-4e1b-8163-71def6e9f137
-ms.openlocfilehash: bc95197813f5e4b0f4c7db6a8f0c24e8b27e4c3e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: ed8568116d189573a1903678726cb348fa062376
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620875"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96282889"
 ---
 # <a name="com-interop-sample-net-client-and-com-server"></a>Przykład międzyoperacyjnego modelu COM: klient modelu COM i serwer COM
+
 Ten przykład pokazuje, jak [klient .NET](#cpconcominteropsamplenetclientcomserveranchor1), który został utworzony w celu uzyskania dostępu do [serwera com](#cpconcominteropsamplenetclientcomserveranchor2), tworzy wystąpienie klasy coclass modelu COM i wywołuje elementy członkowskie klasy do wykonywania obliczeń hipotecznych.  
   
  W tym przykładzie klient tworzy i wywołuje wystąpienie klasy coclass **pożyczki** , przekazuje cztery argumenty (jeden z czterech równa zero) do wystąpienia i wyświetla obliczenia. Fragmenty kodu z tego przykładu pojawiają się w tej sekcji.  
   
 <a name="cpconcominteropsamplenetclientcomserveranchor1"></a>
+
 ## <a name="net-client"></a>Klient platformy .NET  
   
 ```vb  
@@ -153,6 +155,7 @@ public class LoanApp {
 ```  
   
 <a name="cpconcominteropsamplenetclientcomserveranchor2"></a>
+
 ## <a name="com-server"></a>Serwer COM  
   
 ```cpp  
@@ -298,6 +301,6 @@ static double Round(double value, short digits)
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Udostępnianie składników COM programowi.NET Framework](exposing-com-components.md)

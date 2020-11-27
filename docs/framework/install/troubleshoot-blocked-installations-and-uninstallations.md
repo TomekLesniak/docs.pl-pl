@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework, troubleshooting blocked installations
 - blocked .NET Framework installations, troubleshooting
 ms.assetid: c3fdfbc1-ed99-4202-a2b0-8c4f1646385d
-ms.openlocfilehash: e6f5dbce6bd10ae68b2033a135660d1e31aceff9
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 9f4ae96a148d850efd92f950a177b32cc75c33ab
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558455"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283175"
 ---
 # <a name="troubleshoot-blocked-net-framework-installations-and-uninstallations"></a>Rozwiązywanie problemów z zablokowaną instalacją i odinstalowywaniem programu .NET Framework
 
@@ -53,6 +53,7 @@ W tej tabeli 4.5. x odnosi się do .NET Framework 4,5 i jego punktów, 4.5.1 i 4
 |Ten program instalacyjny wymaga komputera x64 lub x86. Nie można go instalować na komputerach IA64.|Zobacz [wymagania systemowe](../get-started/system-requirements.md).|  
 
 <a name="compat"></a>
+
 ### <a name="program-compatibility-issues"></a>Problemy ze zgodnością programu
 
 Instalacja .NET Framework 4,5 lub jego wydań punktów kończy się niepowodzeniem z kodem błędu 1603 lub bloków, gdy jest uruchomiony w trybie zgodności programów systemu Windows. **Asystent zgodności programu** wskazuje, że .NET Framework być może nie został poprawnie zainstalowany i zostanie wyświetlony komunikat z prośbą o jej ponowne zainstalowanie przy użyciu zalecanego ustawienia (tryb zgodności programów). Tryb zgodności programów mógł zostać skonfigurowany przez Asystenta zgodności programów podczas wcześniejszych nieudanych lub anulowanych prób uruchomienia Instalatora programu .NET Framework.

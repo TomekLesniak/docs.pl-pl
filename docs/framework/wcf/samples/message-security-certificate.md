@@ -4,15 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: 909333b3-35ec-48f0-baff-9a50161896f6
-ms.openlocfilehash: bdebe0db25d796c2debfb905864fd8bf780c8e66
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 164a939fa7ee0112e1ceae24755854b09dc72603
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558657"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283994"
 ---
 # <a name="message-security-certificate"></a>Certyfikat zabezpieczeń komunikatów
-Ten przykład pokazuje, jak zaimplementować aplikację, która korzysta z protokołu WS-Security z uwierzytelnianiem certyfikatu X. 509 v3 dla klienta i wymaga uwierzytelniania serwera przy użyciu certyfikatu X. 509 v3 serwera. Ten przykład używa ustawień domyślnych, takich jak wszystkie komunikaty aplikacji między klientem a serwerem są podpisane i szyfrowane. Ten przykład jest oparty na [WSHttpBinding](wshttpbinding.md) i składa się z programu konsolowego klienta oraz biblioteki usług hostowanej przez Internet Information Services (IIS). Usługa implementuje kontrakt definiujący wzorzec komunikacji żądanie-odpowiedź.  
+
+Ten przykład pokazuje, jak zaimplementować aplikację, która używa WS-Security z uwierzytelnianiem certyfikatu X. 509 v3 dla klienta i wymaga uwierzytelniania serwera przy użyciu certyfikatu X. 509 v3 serwera. Ten przykład używa ustawień domyślnych, takich jak wszystkie komunikaty aplikacji między klientem a serwerem są podpisane i szyfrowane. Ten przykład jest oparty na [WSHttpBinding](wshttpbinding.md) i składa się z programu konsolowego klienta oraz biblioteki usług hostowanej przez Internet Information Services (IIS). Usługa implementuje kontrakt definiujący wzorzec komunikacji żądanie-odpowiedź.  
   
 > [!NOTE]
 > Procedura instalacji i instrukcje dotyczące kompilacji dla tego przykładu znajdują się na końcu tego tematu.  
@@ -33,7 +34,7 @@ public class CalculatorService : ICalculator
 }  
 ```  
   
- Usługa udostępnia jeden punkt końcowy do komunikacji z usługą i jeden punkt końcowy do udostępnienia dokumentu WSDL usługi przy użyciu protokołu WS-MetadataExchange zdefiniowanego przy użyciu pliku konfiguracyjnego (Web.config). Punkt końcowy składa się z adresu, powiązania i kontraktu. Powiązanie jest skonfigurowane przy użyciu standardowego [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) elementu, który jest domyślnie używany przez zabezpieczenia komunikatów. Ten przykład ustawia `clientCredentialType` atrybut na certyfikat, aby wymagać uwierzytelnienia klienta.  
+ Usługa udostępnia jeden punkt końcowy do komunikacji z usługą i jeden punkt końcowy do udostępnienia dokumentu WSDL usługi przy użyciu protokołu WS-MetadataExchange zdefiniowanego przy użyciu pliku konfiguracji (Web.config). Punkt końcowy składa się z adresu, powiązania i kontraktu. Powiązanie jest skonfigurowane przy użyciu standardowego [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) elementu, który jest domyślnie używany przez zabezpieczenia komunikatów. Ten przykład ustawia `clientCredentialType` atrybut na certyfikat, aby wymagać uwierzytelnienia klienta.  
   
 ```xml  
 <system.serviceModel>  
@@ -240,7 +241,7 @@ Press <ENTER> to terminate client.
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
     ```  
   
-     Zmienna% SERVER_NAME% określa nazwę serwera. Certyfikat jest przechowywany w magazynie LocalMachine. Jeśli plik wsadowy Setup.bat jest uruchamiany z argumentem usługi (na przykład ** usługasetup.bat Service**),% server_name% zawiera w pełni kwalifikowaną nazwę domeny komputera. W przeciwnym razie wartość domyślna to localhost.  
+     Zmienna% SERVER_NAME% określa nazwę serwera. Certyfikat jest przechowywany w magazynie LocalMachine. Jeśli plik wsadowy Setup.bat jest uruchamiany z argumentem usługi (na przykład **usługasetup.bat Service**),% server_name% zawiera w pełni kwalifikowaną nazwę domeny komputera. W przeciwnym razie wartość domyślna to localhost.  
   
 - Instalowanie certyfikatu serwera w zaufanym magazynie certyfikatów klienta.  
   
@@ -309,7 +310,7 @@ Press <ENTER> to terminate client.
   
 4. Skopiuj pliki programu klienckiego do katalogu klienta na komputerze klienckim. Skopiuj także pliki Setup.bat, Cleanup.bat i ImportServiceCert.bat do klienta programu.  
   
-5. Na serwerze uruchom ** usługęsetup.bat** w wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora. Uruchomienie **setup.bat** z argumentem **usługi** tworzy certyfikat usługi z w pełni kwalifikowaną nazwą domeny komputera i eksportuje certyfikat usługi do pliku o nazwie Service. cer.  
+5. Na serwerze uruchom **usługęsetup.bat** w wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora. Uruchomienie **setup.bat** z argumentem **usługi** tworzy certyfikat usługi z w pełni kwalifikowaną nazwą domeny komputera i eksportuje certyfikat usługi do pliku o nazwie Service. cer.  
   
 6. Edytuj Web.config, aby odzwierciedlić nową nazwę certyfikatu (w `findValue` atrybucie w [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ), która jest taka sama jak w pełni kwalifikowana nazwa domeny komputera.  
   

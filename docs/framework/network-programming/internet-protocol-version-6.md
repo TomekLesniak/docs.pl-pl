@@ -9,14 +9,15 @@ helpviewer_keywords:
 - Internet Protocol version 6, improvements
 - Internet Protocol version 6
 ms.assetid: e6fa8ebd-010a-4c48-a5ec-a5102c53c06f
-ms.openlocfilehash: c2b23705ae309436344513e54d6258e206d69da4
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f5b74674ba4144f75d125267f2458394bb74fab1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551468"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283955"
 ---
 # <a name="internet-protocol-version-6"></a>Protokół IPv6
+
 Protokół Internet Protocol w wersji 6 (IPv6) to nowy zestaw standardowych protokołów dla warstwy sieciowej Internetu. Protokół IPv6 jest przeznaczony do rozwiązywania wielu problemów z bieżącą wersją internetowego zestawu protokołów (znanego jako IPv4) w odniesieniu do niszczenia, zabezpieczeń, automatycznej konfiguracji, rozszerzalności i tak dalej. Protokół IPv6 rozszerza możliwości Internetu w celu umożliwienia korzystania z nowych rodzajów aplikacji, w tym aplikacji równorzędnych i mobilnych. Poniżej przedstawiono główne problemy dotyczące bieżącego protokołu IPv4:  
   
 - Szybka wyczerpanie przestrzeni adresowej.  
@@ -45,7 +46,8 @@ Protokół Internet Protocol w wersji 6 (IPv6) to nowy zestaw standardowych prot
   
  Aby uzyskać więcej informacji, zobacz [adresowanie IPv6](ipv6-addressing.md), [Routing IPv6](ipv6-routing.md), [Autokonfiguracja IPv6](ipv6-auto-configuration.md), [Włączanie i wyłączanie protokołu IPv6](enabling-and-disabling-ipv6.md)oraz [instrukcje: Modyfikowanie pliku konfiguracji komputera w celu włączenia obsługi protokołu IPv6](how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md).  
   
-## <a name="references"></a>Dokumentacja  
+## <a name="references"></a>Odwołania  
+
  Poniżej przedstawiono wybrane dokumenty RFC, które można znaleźć w witrynie internetowej [Internet Engineering Task Force (IETF)](https://www.ietf.org/) :  
   
 - RFC 1287 w kierunku przyszłej architektury Internetu.  
@@ -58,7 +60,7 @@ Protokół Internet Protocol w wersji 6 (IPv6) to nowy zestaw standardowych prot
   
  Informacje dotyczące protokołu IPv6 można także znaleźć w [wersji 6 protokołu IP](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379498(v=ws.10)).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykład protokołu IPv6 Sockets](/previous-versions/dotnet/netframework-3.0/ms180981(v=vs.85))
 - [Przykłady programowania sieciowego](network-programming-samples.md)

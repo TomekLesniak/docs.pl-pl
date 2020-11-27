@@ -9,17 +9,19 @@ helpviewer_keywords:
 - interoperation with unmanaged code, samples
 - COM interop, samples
 ms.assetid: a219cb2c-9fa2-4c90-9b26-939e0788f178
-ms.openlocfilehash: 1a9c17cda6a6d129327b296e5d7d851902f78d35
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 91c908153592eb8ae55ecd341b32b82a232ee473
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620888"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96282928"
 ---
 # <a name="com-interop-sample-com-client-and-net-server"></a>Przykład usługi międzyoperacyjnej modelu COM: Klient modelu COM i serwer .NET
+
 Ten przykład pokazuje międzyoperacyjność [klienta com](#cpconcominteropsamplecomclientnetserveranchor1) i [serwera .NET](#cpconcominteropsamplecomclientnetserveranchor2) , który wykonuje obliczenia hipoteczne. W tym przykładzie klient tworzy i wywołuje wystąpienie klasy zarządzanej `Loan` , przekazuje cztery argumenty (jeden z czterech równa zero) do wystąpienia i wyświetla obliczenia. Przykłady kodu z tego przykładu pojawiają się w tej sekcji.  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor1"></a>
+
 ## <a name="com-client"></a>Klient COM  
   
 ```cpp  
@@ -87,6 +89,7 @@ int main(int argc, char* argv[])
 ```  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor2"></a>
+
 ## <a name="net-server"></a>Serwer .NET  
   
 ```vb  
@@ -388,6 +391,6 @@ namespace LoanLib {
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Udostępnianie składników .NET Framework modelowi COM](exposing-dotnet-components-to-com.md)

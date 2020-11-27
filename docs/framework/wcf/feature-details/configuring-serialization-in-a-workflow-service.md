@@ -2,15 +2,16 @@
 title: Konfigurowanie serializacji w usłudze przepływu pracy
 ms.date: 03/30/2017
 ms.assetid: aa70b290-a2ee-4c3c-90ea-d0a7665096ae
-ms.openlocfilehash: 5076f3d377a656cb96909cf8df01591dc6ab72b7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d1cda33c8a469b4a54b6d282b99c07b23e91543e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597543"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284202"
 ---
 # <a name="configuring-serialization-in-a-workflow-service"></a>Konfigurowanie serializacji w usłudze przepływu pracy
-Usługi przepływu pracy są usługami Windows Communication Foundation (WCF) i dlatego mają opcję użycia <xref:System.Runtime.Serialization.DataContractSerializer> (wartość domyślna) lub <xref:System.Xml.Serialization.XmlSerializer> . Podczas pisania usług innych niż przepływ pracy typ serializatora do użycia jest określony w kontrakcie usługi lub operacji. Podczas tworzenia usług przepływu pracy WCF nie można określać tych kontraktów w kodzie, ale nie są one generowane w czasie wykonywania przez wnioskowanie kontraktu. Aby uzyskać więcej informacji o wnioskach o kontrakt, zobacz [Korzystanie z kontraktów w przepływie pracy](using-contracts-in-workflow.md).  Serializator jest określony za pomocą <xref:System.ServiceModel.Activities.Receive.SerializerOption%2A> właściwości. Tę wartość można ustawić w projektancie, jak pokazano na poniższej ilustracji.  
+
+Usługi przepływu pracy są usługami Windows Communication Foundation (WCF) i dlatego mają opcję użycia <xref:System.Runtime.Serialization.DataContractSerializer> (wartość domyślna) lub <xref:System.Xml.Serialization.XmlSerializer> . Podczas pisania usług innych niż przepływ pracy typ serializatora do użycia jest określony w kontrakcie usługi lub operacji. Podczas tworzenia usług przepływu pracy WCF nie można określać tych kontraktów w kodzie, ale nie są one generowane w czasie wykonywania przez wnioskowanie kontraktu. Aby uzyskać więcej informacji o wnioskach o kontrakt, zobacz  [Korzystanie z kontraktów w przepływie pracy](using-contracts-in-workflow.md).  Serializator jest określony za pomocą <xref:System.ServiceModel.Activities.Receive.SerializerOption%2A> właściwości. Tę wartość można ustawić w projektancie, jak pokazano na poniższej ilustracji.  
   
  ![Ustawianie właściwości SerializerOption w oknie właściwości.](./media/configuring-serialization-in-a-workflow-service/setting-serializer-property.png)  
   

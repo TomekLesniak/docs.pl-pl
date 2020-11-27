@@ -9,14 +9,15 @@ helpviewer_keywords:
 - Type Library Exporter
 - type libraries [.NET Framework], exporting
 ms.assetid: a487d61b-d166-467b-a7ca-d8b52fbff42d
-ms.openlocfilehash: e675b0addc9051a0b3c877e9b029e113c17ba5f0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1a9e984e1b81adda572076cb118a25f5f3a045ea
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90543390"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283760"
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (Eksporter biblioteki typów)
+
 Eksporter biblioteki typów generuje bibliotekę typów, która opisuje typy zdefiniowane w zestawie środowiska uruchomieniowego języka wspólnego.  
   
  To narzędzie jest instalowane automatycznie z programem Visual Studio. Aby uruchomić narzędzie, użyj wiersz polecenia dla deweloperów dla programu Visual Studio (lub wiersza polecenia programu Visual Studio w systemie Windows 7). Aby uzyskać więcej informacji, zobacz [wiersza polecenia](developer-command-prompt-for-vs.md).  
@@ -53,9 +54,10 @@ tlbexp assemblyName [options]
 |**/?**|Wyświetla składnię polecenia i opcje narzędzia.|  
   
 > [!NOTE]
-> W opcjach wiersza polecenia programu Tlbexp.exe nie jest rozróżniana wielkość liter i opcje mogą być podawane w dowolnej kolejności. Wystarczy określić część nazwy opcji umożliwiającą jej jednoznaczną identyfikację. Na przykład **/n** jest równoważne **/nologo**i **/o:** *plik. tlb* jest równoważny z **/out:** *plik. tlb*.  
+> W opcjach wiersza polecenia programu Tlbexp.exe nie jest rozróżniana wielkość liter i opcje mogą być podawane w dowolnej kolejności. Wystarczy określić część nazwy opcji umożliwiającą jej jednoznaczną identyfikację. Na przykład **/n** jest równoważne **/nologo** i **/o:** *plik. tlb* jest równoważny z **/out:** *plik. tlb*.  
   
 ## <a name="remarks"></a>Uwagi  
+
  Tlbexp.exe generuje bibliotekę typów, która zawiera definicje typów zdefiniowanych w zestawie. Aplikacje, takie jak Visual Basic 6.0, mogą użyć wygenerowanej biblioteki typów, aby utworzyć powiązanie z typami .NET zdefiniowanymi w zestawie.  
   
 > [!IMPORTANT]
@@ -96,6 +98,7 @@ HRESULT StructDispSafe([out, retval] SAFEARRAY(IDispatch*)* pRetVal);
  Eksporter biblioteki typów jest obsługiwany w systemie Microsoft Windows 2000 i nowszych.  
   
 ## <a name="examples"></a>Przykłady  
+
  Następujące polecenie generuje bibliotekę typów o takiej samej nazwie jak zestaw znaleziony w `myTest.dll` .  
   
 ```console  
@@ -128,7 +131,7 @@ CSC Sample.cs /reference:myLib.dll /out:Sample.dll
 tlbexp Sample.dll  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Runtime.InteropServices.TypeLibExporterFlags>
 - [Narzędzia](index.md)

@@ -6,17 +6,19 @@ helpviewer_keywords:
 - in-process side-by-side execution
 - side-by-side execution, in-process
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
-ms.openlocfilehash: 078f2eaada8fac57138bef22d46218ef2ccda835
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 85d0ec90a8877384517e9de3b56258d294e0c612
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622604"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283487"
 ---
 # <a name="in-process-side-by-side-execution"></a>Wykonywanie równoczesne i wewnątrzprocesowe
+
 Począwszy od .NET Framework 4, można użyć w procesie równoczesnego hostowania do uruchamiania wielu wersji środowiska uruchomieniowego języka wspólnego (CLR) w ramach jednego procesu. Domyślnie zarządzane składniki COM są uruchamiane z .NET Framework wersją, z którą zostały skompilowane, niezależnie od wersji .NET Framework, która jest ładowana dla tego procesu.  
   
 ## <a name="background"></a>Tło  
+
  .NET Framework zawsze udostępnia hosting równoczesny dla aplikacji z kodem zarządzanym, ale przed .NET Framework 4, nie zapewniał on funkcji zarządzanych składników COM. W przeszłości zarządzane składniki COM, które zostały załadowane do procesu, działały z wersją środowiska uruchomieniowego, które zostało już załadowane lub z najnowszą zainstalowaną wersją .NET Framework. Jeśli ta wersja nie jest zgodna ze składnikiem COM, składnik ten nie powiedzie się.  
   
  .NET Framework 4 zawiera nowe podejście do hostingu równoczesnego, które zapewnia następujące działania:  
@@ -37,16 +39,17 @@ Począwszy od .NET Framework 4, można użyć w procesie równoczesnego hostowan
   
      Zgodnie z poniższą tabelą składniki, które zostały skompilowane przy użyciu .NET Framework w wersji 1,1 mogą działać obok składników w wersji 4, ale nie mogą być uruchamiane z wersjami 2,0, 3,0 lub 3,5, ponieważ nie są dostępne dla tych wersji.  
   
-    |Wersja programu .NET Framework|1.1|2,0 – 3,5|4|  
+    |Wersja programu .NET Framework|1,1|2,0 – 3,5|4|  
     |----------------------------|---------|----------------|-------|  
-    |1.1|Nie dotyczy|Nie|Yes|  
+    |1,1|Nie dotyczy|Nie|Tak|  
     |2,0 – 3,5|Nie|Nie dotyczy|Tak|  
-    |4|Yes|Tak|Nie dotyczy|  
+    |4|Tak|Tak|Nie dotyczy|  
   
 > [!NOTE]
 > .NET Framework wersje 3,0 i 3,5 są kompilowane przyrostowo w wersji 2,0 i nie muszą być uruchamiane obok siebie. Są one w tej samej wersji.  
   
 <a name="scenarios"></a>
+
 ## <a name="common-side-by-side-hosting-scenarios"></a>Typowe scenariusze hostingu równoczesnego  
   
 - **Scenariusz 1:** Aplikacja natywna, która korzysta ze składników COM utworzonych przy użyciu wcześniejszych wersji .NET Framework.  
@@ -85,6 +88,7 @@ Począwszy od .NET Framework 4, można użyć w procesie równoczesnego hostowan
     ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ilustruje niezarządzany host COM, na którym działa zarządzany składnik COM przy użyciu wersji .NET Framework, do której składnik został skompilowany.  
   
  Aby uruchomić Poniższy przykład, skompiluj i zarejestruj następujący zarządzany składnik COM przy użyciu .NET Framework 3,5. Aby zarejestrować składnik, w menu **projekt** kliknij polecenie **Właściwości**, kliknij kartę **kompilacja** , a następnie zaznacz pole wyboru **Zarejestruj dla międzyoperacyjności modelu COM** .  
@@ -172,7 +176,7 @@ int _tmain(int argc, _TCHAR* argv[])
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [\<startup>Postaci](../configure-apps/file-schema/startup/startup-element.md)
-- [\<supportedRuntime>Postaci](../configure-apps/file-schema/startup/supportedruntime-element.md)
+- [\<startup> Postaci](../configure-apps/file-schema/startup/startup-element.md)
+- [\<supportedRuntime> Postaci](../configure-apps/file-schema/startup/supportedruntime-element.md)

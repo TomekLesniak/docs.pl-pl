@@ -2,26 +2,28 @@
 title: FailedToTraceEventWithException
 ms.date: 03/30/2017
 ms.assetid: b605b2b8-acd6-4762-8269-b025758a2404
-ms.openlocfilehash: a3d0b389a3aa7b89185b063ae8de6ce63235d6d5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a159d36089698d067c4eb7d6bbd5066d48c4de68
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797877"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284397"
 ---
 # <a name="failedtotraceeventwithexception"></a>FailedToTraceEventWithException
-#C1 105  
+
+Identyfikator: 105  
   
- Obrażeń Błąd  
+ Ważność: błąd  
   
- Kategorii Śledzenie  
+ Kategoria: śledzenie  
   
 ## <a name="description"></a>Opis  
+
  Zdarzenie lub zdarzenia nie zostały śledzone.  
   
  Zdarzenie Wyświetla pierwotny ciąg zdarzenia, wyjątek, nazwę procesu i identyfikator procesu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Rejestrowanie zdarzeń](index.md)
 - [Informacje ogólne o zdarzeniach](events-general-reference.md)

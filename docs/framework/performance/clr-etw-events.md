@@ -7,14 +7,15 @@ helpviewer_keywords:
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
-ms.openlocfilehash: 4184b2b34c4503eaf4e9513a85e6c018f6de7366
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8acc792b5217519e2a73c0cdf30c20161373c678
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553821"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283916"
 ---
 # <a name="clr-etw-events"></a>Zdarzenia ETW CLR
+
 W tematach w tej sekcji opisano zdarzenia śledzenia zdarzeń systemu Windows (ETW). Każde zdarzenie ma skojarzone słowo kluczowe i poziom, które są opisane w temacie [słowa kluczowe ETW środowiska CLR i poziomy](clr-etw-keywords-and-levels.md) . Środowisko CLR ma dwóch dostawców dla zdarzeń:  
   
 - Dostawca środowiska uruchomieniowego, który wywołuje zdarzenia w zależności od tego, które słowa kluczowe (kategorie zdarzeń) są włączone. Identyfikator GUID dostawcy środowiska uruchomieniowego CLR to e13c0d23-ccbc-4e12-931b-d9cc2eee27e4.  
@@ -24,6 +25,7 @@ W tematach w tej sekcji opisano zdarzenia śledzenia zdarzeń systemu Windows (E
  Więcej informacji o dostawcach znajduje się w temacie [dostawcy CLR ETW](clr-etw-providers.md).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Informacje o zdarzeniach środowiska uruchomieniowego](runtime-information-etw-events.md)  
  Przechwytuje informacje o środowisku uruchomieniowym, w tym jednostkę SKU, numer wersji, sposób aktywowania środowiska uruchomieniowego, parametry wiersza polecenia, które zostały uruchomione, identyfikator GUID (jeśli dotyczy) i inne istotne informacje.  
   
@@ -60,7 +62,7 @@ W tematach w tej sekcji opisano zdarzenia śledzenia zdarzeń systemu Windows (E
  [Zdarzenie stosu](stack-etw-event.md)  
  Przechwytuje informacje, które są używane z innymi zdarzeniami do generowania śladów stosu po podniesieniu zdarzenia.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Ulepszanie debugowania i dostrajania wydajności za pomocą funkcji ETW](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
 - [Kontrolowanie logowania w programie .NET Framework](controlling-logging.md)

@@ -8,17 +8,19 @@ helpviewer_keywords:
 - ETW, CLR keywords
 - ETW, CLR levels
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
-ms.openlocfilehash: dfbe047640a3a640cf37adeea6fa3656cfd9ec6d
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 31426ae0589954d4388ba6d40f156c3eea9a8989
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309680"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283890"
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Słowa kluczowe i poziomy ETW CLR
+
 Zdarzenia śledzenia zdarzeń systemu Windows (ETW) mogą być filtrowane według kategorii i poziomu. Zdarzenia dotyczące [słów kluczowych funkcji ETW środowiska CLR](#clr-etw-keywords) umożliwiają filtrowanie zdarzeń według kategorii; są one używane w kombinacjach dla dostawców środowiska uruchomieniowego i uwalniania. [Poziomy zdarzeń](#etw-event-levels) są identyfikowane przez flagi.  
   
 ## <a name="clr-etw-keywords"></a>Słowa kluczowe ETW CLR  
+
  Słowa kluczowe są flagami, które można połączyć w celu wygenerowania wartości. W przypadku użycia wartości szesnastkowych słów kluczowych zamiast nazw słów kluczowych podczas wywoływania narzędzi wiersza polecenia.  
   
  Słowa kluczowe są opisane w następujących tabelach:  
@@ -32,7 +34,9 @@ Zdarzenia śledzenia zdarzeń systemu Windows (ETW) mogą być filtrowane wedłu
 - [Kombinacje słów kluczowych dla rozpoznawania symboli dla dostawcy uwalniania](#rundown_combo)  
   
 <a name="runtime"></a>
+
 ### <a name="clr-etw-runtime-keywords"></a>Słowa kluczowe środowiska uruchomieniowego CLR ETW  
+
  W poniższej tabeli wymieniono słowa kluczowe środowiska uruchomieniowego CLR ETW, ich wartości i ich użycia.  
   
 |Nazwa słowa kluczowego środowiska uruchomieniowego|Wartość|Przeznaczenie|  
@@ -55,7 +59,9 @@ Zdarzenia śledzenia zdarzeń systemu Windows (ETW) mogą być filtrowane wedłu
 |`StackKeyword`|0x40000000|Włącza zbieranie [zdarzeń śledzenia stosu](stack-etw-event.md)CLR.|  
   
 <a name="rundown"></a>
+
 ### <a name="clr-etw-rundown-keywords"></a>Słowa kluczowe uwalniania CLR  
+
  Poniższa tabela zawiera listę słów kluczowych uwalniania CLR, ich wartości i ich użycia.  
   
 |Nazwa słowa kluczowego uwalniania|Wartość|Przeznaczenie|  
@@ -71,6 +77,7 @@ Zdarzenia śledzenia zdarzeń systemu Windows (ETW) mogą być filtrowane wedłu
 |`PerfTrackKeyWord`|0x2000000|Włącza zbieranie `ModuleDCStart` `ModuleDCEnd` zdarzeń,, `ModuleRangeDCStart` i `ModuleRangeDCEnd` .|
   
 <a name="runtime_combo"></a>
+
 ### <a name="keyword-combinations-for-symbol-resolution-for-the-runtime-provider"></a>Kombinacje słów kluczowych dla rozpoznawania symboli dla dostawcy środowiska uruchomieniowego  
   
 |Słowa kluczowe i flagi|Domena aplikacji, zestaw, zdarzenia ładowania/zwalniania modułu|Zdarzenia ładowania/zwalniania metod (z wyjątkiem zdarzeń dynamicznych)|Zdarzenia dynamicznej ładowania/niszczenia metod dynamicznych|  
@@ -83,18 +90,20 @@ Zdarzenia śledzenia zdarzeń systemu Windows (ETW) mogą być filtrowane wedłu
 |`NGenKeyword` +<br /><br /> `EndEnumerationKeyword`|Brak.|Zwolnij zdarzenia.|Nie dotyczy.|  
   
 <a name="rundown_combo"></a>
+
 ### <a name="keyword-combinations-for-symbol-resolution-for-the-rundown-provider"></a>Kombinacje słów kluczowych dla rozpoznawania symboli dla dostawcy uwalniania  
   
 |Słowa kluczowe i flagi|Domena aplikacji, zestaw, DCStart modułów/zdarzenia DCEnd|Zdarzenia DCStart/DCEnd (w tym zdarzenia metod dynamicznych)|  
 |------------------------|----------------------------------------------------------------|----------------------------------------------------------------------|  
-|`LoaderRundownKeyword` +<br /><br /> `StartRundownKeyword`|`DCStart`wydarzeniach.|Brak.|  
-|`LoaderRundownKeyword` +<br /><br /> `EndRundownKeyword`|`DCEnd`wydarzeniach.|Brak.|  
-|`JITKeyword` +<br /><br /> `StartRundownKeyword`|Brak.|`DCStart`wydarzeniach.|  
-|`JITKeyword` +<br /><br /> `EndRundownKeyword`|Brak.|`DCEnd`wydarzeniach.|  
-|`NGenKeyword` +<br /><br /> `StartRundownKeyword`|Brak.|`DCStart`wydarzeniach.|  
-|`NGenKeyword` +<br /><br /> `EndRundownKeyword`|Brak.|`DCEnd`wydarzeniach.|  
+|`LoaderRundownKeyword` +<br /><br /> `StartRundownKeyword`|`DCStart` wydarzeniach.|Brak.|  
+|`LoaderRundownKeyword` +<br /><br /> `EndRundownKeyword`|`DCEnd` wydarzeniach.|Brak.|  
+|`JITKeyword` +<br /><br /> `StartRundownKeyword`|Brak.|`DCStart` wydarzeniach.|  
+|`JITKeyword` +<br /><br /> `EndRundownKeyword`|Brak.|`DCEnd` wydarzeniach.|  
+|`NGenKeyword` +<br /><br /> `StartRundownKeyword`|Brak.|`DCStart` wydarzeniach.|  
+|`NGenKeyword` +<br /><br /> `EndRundownKeyword`|Brak.|`DCEnd` wydarzeniach.|  
 
 ## <a name="etw-event-levels"></a>Poziomy zdarzeń ETW  
+
  Zdarzenia ETW można również filtrować według poziomu. Jeśli poziom jest ustawiony na 0x5, zdarzenia wszystkich poziomów, w tym 0x5 i poniżej (czyli zdarzenia należące do kategorii włączonych za pomocą słów kluczowych) są wywoływane. Jeśli poziom jest ustawiony na 0x2, wywoływane są tylko zdarzenia należące do poziomu 0x2 i poniżej.  
   
  Poziomy mają następujące znaczenie:  

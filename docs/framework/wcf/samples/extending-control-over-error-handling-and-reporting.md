@@ -2,14 +2,15 @@
 title: Rozszerzanie kontroli obsługi i raportowania błędów
 ms.date: 03/30/2017
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
-ms.openlocfilehash: c7ca8d85220d65905bc4d9d220de366c331504a4
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2e9298c6a282b9df8499458ad166e320d41e63a9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600545"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283337"
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>Rozszerzanie kontroli obsługi i raportowania błędów
+
 Ten przykład pokazuje, jak rozciągnąć kontrolę nad obsługą błędów i raportowaniem błędów w usłudze Windows Communication Foundation (WCF) przy użyciu <xref:System.ServiceModel.Dispatcher.IErrorHandler> interfejsu. Przykład jest oparty na [wprowadzenie](getting-started-sample.md) z dodatkowym kodem dodanym do usługi w celu obsługi błędów. Klient wymusza kilka warunków błędu. Usługa przechwytuje błędy i rejestruje je w pliku.  
   
 > [!NOTE]
@@ -19,7 +20,7 @@ Ten przykład pokazuje, jak rozciągnąć kontrolę nad obsługą błędów i ra
   
  W tym przykładzie `CalculatorErrorHandler` Typ implementuje <xref:System.ServiceModel.Dispatcher.IErrorHandler> interfejs. W  
   
- <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A>Metoda, `CalculatorErrorHandler` zapisuje dziennik błędu do pliku tekstowego Error. txt w c:\LOGS. Należy zauważyć, że przykład rejestruje błąd i nie pomija go, co umożliwia jego raportowanie z powrotem do klienta programu.  
+ <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> Metoda, `CalculatorErrorHandler` zapisuje dziennik błędu do pliku tekstowego Error.txt w c:\LOGS. Należy zauważyć, że przykład rejestruje błąd i nie pomija go, co umożliwia jego raportowanie z powrotem do klienta programu.  
   
 ```csharp
 public class CalculatorErrorHandler : IErrorHandler
@@ -145,7 +146,7 @@ Fault: Reason = Invalid Argument: The argument must be greater than zero.
   
 2. Aby skompilować rozwiązanie, postępuj zgodnie z instrukcjami w temacie [Tworzenie przykładów Windows Communication Foundation](building-the-samples.md).  
   
-3. Upewnij się, że utworzono katalog c:\LOGS dla pliku Error. txt. Lub zmodyfikuj nazwę pliku używaną w programie `CalculatorErrorHandler.HandleError` .  
+3. Upewnij się, że utworzono katalog c:\LOGS dla pliku error.txt. Lub zmodyfikuj nazwę pliku używaną w programie `CalculatorErrorHandler.HandleError` .  
   
 4. Aby uruchomić przykład w konfiguracji na jednym lub wielu komputerach, postępuj zgodnie z instrukcjami w temacie [Uruchamianie przykładów Windows Communication Foundation](running-the-samples.md).  
   

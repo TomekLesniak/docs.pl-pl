@@ -6,14 +6,15 @@ helpviewer_keywords:
 - ETW, CLR providers
 - CLR ETW providers
 ms.assetid: 0beafad4-b2c8-47f4-b342-83411d57a51f
-ms.openlocfilehash: 9f86e8334482880c4f7cb23ec93a3c826c083389
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: f537a2e0557f1b0434d1f303d74f9cd48f157edc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309654"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283877"
 ---
 # <a name="clr-etw-providers"></a>Dostawcy CLR ETW
+
 Środowisko uruchomieniowe języka wspólnego (CLR) ma dwóch dostawców: dostawcę środowiska uruchomieniowego i dostawcę.  
   
  Dostawca środowiska uruchomieniowego zgłasza zdarzenia, w zależności od tego, które słowa kluczowe (kategorie zdarzeń) są włączone. Na przykład można zbierać zdarzenia modułu ładującego przez włączenie `LoaderKeyword` słowa kluczowego.  
@@ -21,6 +22,7 @@ ms.locfileid: "86309654"
  Zdarzenia śledzenia zdarzeń systemu Windows (ETW) są rejestrowane w pliku z rozszerzeniem. etl, które może później być przetworzone w plikach z wartościami rozdzielanymi przecinkami (CSV), zgodnie z wymaganiami. Informacje o sposobach konwertowania pliku. etl do pliku CSV znajdują się w temacie [sterowanie rejestrowaniem .NET Framework](controlling-logging.md).  
   
 ## <a name="the-runtime-provider"></a>Dostawca środowiska uruchomieniowego  
+
  Dostawca środowiska uruchomieniowego jest głównym dostawcą funkcji ETW CLR.  
   
  Identyfikator GUID dostawcy środowiska uruchomieniowego CLR to e13c0d23-ccbc-4e12-931b-d9cc2eee27e4.  
@@ -30,6 +32,7 @@ ms.locfileid: "86309654"
  Oprócz używania słów kluczowych, takich jak `LoaderKeyword` , może być konieczne włączenie słów kluczowych do rejestrowania zdarzeń, które mogą być zgłaszane zbyt często. `StartEnumerationKeyword` `EndEnumerationKeyword` Słowa kluczowe i umożliwiają włączenie tych zdarzeń i są podsumowywane w [słowach kluczowych i poziomach funkcji ETW CLR](clr-etw-keywords-and-levels.md).  
   
 ## <a name="the-rundown-provider"></a>Dostawca uwalniania  
+
  Dostawca uwalniania musi być włączony do określonych zastosowań specjalnych. Jednak w przypadku większości użytkowników należy mieć wystarczające dla nich dostawca środowiska uruchomieniowego.  
   
  Identyfikator GUID dostawcy uwalniania CLR to A669021C-C450-4609-A035-5AF59AF4DF18.  
@@ -43,9 +46,11 @@ ms.locfileid: "86309654"
  Oprócz filtrów słów kluczowych zdarzenia dostawca uwalniania obsługuje również `StartRundownKeyword` `EndRundownKeyword` słowa kluczowe i, aby zapewnić filtrowanie.  
   
 ### <a name="start-rundown"></a>Rozpocznij uwalnianie  
+
  Rozpocznij uwalnianie jest wyzwalane, gdy rejestrowanie w ramach dostawcy uwalniania jest włączone ze `StartRundownKeyword` słowem kluczowym. Powoduje to wygenerowanie `DCStart` zdarzenia i przechwycenie stanu systemu. Przed rozpoczęciem wyliczania `DCStartInit` zdarzenie jest zgłaszane. Na końcu wyliczenia `DCStartComplete` zdarzenie jest zgłaszane w celu powiadomienia kontrolera, że zbieranie danych zostało zakończone normalnie.  
   
 ### <a name="end-rundown"></a>Zakończ uwalnianie  
+
  Zakończenie uwalniania jest wyzwalane, gdy rejestrowanie w ramach dostawcy uwalniania jest włączone ze `EndRundownKeyword` słowem kluczowym. Zakończenie końca spowoduje zatrzymanie profilowania dla procesu, który jest nadal wykonywany. `DCEnd`Zdarzenia przechwytują stan systemu, gdy profilowanie zostało zatrzymane.  
   
  Przed rozpoczęciem wyliczania `DCEndInit` zdarzenie jest zgłaszane. Na końcu wyliczenia `DCEndComplete` zdarzenie jest zgłaszane w celu powiadomienia konsumenta, że zbieranie danych zostało zakończone normalnie. Początkowy i końcowy uwalnianie są używane głównie do rozpoznawania symboli zarządzanych. Rozpocznij uwalnianie może dostarczyć informacji o zakresie adresów dla metod, które zostały już skompilowane JIT przed uruchomieniem sesji profilowania. Końcowa kompilacja może dostarczyć informacji o zakresie adresów dla wszystkich metod, które zostały skompilowane JIT, gdy profilowanie ma zostać wyłączone.  
@@ -55,6 +60,7 @@ ms.locfileid: "86309654"
  Chociaż parametr początkowy lub końcowy uwalniania może dostarczyć informacji o zakresie adresów metody dla rozdzielczości symboli zarządzanych, zalecamy użycie `EndRundownKeyword` słowa kluczowego (które dostarcza `DCEnd` zdarzenia) zamiast `StartRundownKeyword` słowa kluczowego (które dostarcza `DCStart` zdarzenia). Użycie `StartRundownKeyword` powoduje, że podczas sesji profilowania zostanie wykonane uwalnianie, co może zakłócać profilowany scenariusz.  
   
 ## <a name="etw-data-collection-using-runtime-and-rundown-providers"></a>Zbieranie danych funkcji ETW przy użyciu dostawców środowiska uruchomieniowego i uwalniania  
+
  W poniższym przykładzie pokazano, jak używać dostawcy uwalniania środowiska CLR w taki sposób, aby umożliwiać Rozpoznawanie symboli zarządzanych procesów z minimalnym wpływem, niezależnie od tego, czy procesy są uruchamiane, czy kończyć się w oknie profilowanym.  
   
 1. Włącz rejestrowanie funkcji ETW przy użyciu dostawcy środowiska uruchomieniowego CLR:  

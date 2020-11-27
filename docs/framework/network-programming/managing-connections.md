@@ -18,14 +18,15 @@ helpviewer_keywords:
 - downloading Internet resources, connections
 - ServicePointManager class, about ServicePointManager class
 ms.assetid: 9b3d3de7-189f-4f7d-81ae-9c29c441aaaa
-ms.openlocfilehash: 124dff1b104e323b929d13f73cf17d740e747c32
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 00db05c99cf232a31b10bbd0356e6d43d3bc3e28
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502291"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96282863"
 ---
 # <a name="managing-connections"></a>Zarządzanie połączeniami
+
 Aplikacje korzystające z protokołu HTTP do łączenia się z zasobami danych mogą używać .NET Framework <xref:System.Net.ServicePoint> i <xref:System.Net.ServicePointManager> klas do zarządzania połączeniami z Internetem, aby ułatwić im osiągnięcie optymalnej skali i wydajności.  
   
  Klasa **ServicePoint** zapewnia aplikację z punktem końcowym, do którego aplikacja może połączyć się z dostępem do zasobów internetowych. Każdy **ServicePoint** zawiera informacje pomagające zoptymalizować połączenia z serwerem internetowym przez udostępnienie informacji o optymalizacji między połączeniami w celu zwiększenia wydajności.  
@@ -65,7 +66,7 @@ Dim sp As ServicePoint = ServicePointManager.FindServicePoint(uri)
 sp.ConnectionLimit = newLimit  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Grupowanie połączeń](connection-grouping.md)
 - [Korzystanie z protokołów aplikacji](using-application-protocols.md)

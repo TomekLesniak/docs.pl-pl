@@ -2,14 +2,15 @@
 title: WebContentTypeMapper — przykład
 ms.date: 03/30/2017
 ms.assetid: a4fe59e7-44d8-43c6-a1f8-40c45223adca
-ms.openlocfilehash: a51d03fab5c6499a0e9685e01a9bbace1c11f28a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 550e763d30a7fa503f6500dcaa8f9b77ea499bca
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594559"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283266"
 ---
 # <a name="webcontenttypemapper-sample"></a>WebContentTypeMapper — przykład
+
 Ten przykład pokazuje, jak mapować nowe typy zawartości na formaty treści wiadomości Windows Communication Foundation (WCF).  
   
  <xref:System.ServiceModel.Description.WebHttpEndpoint>Element jest elementem kodera komunikatów sieci Web, który umożliwia platformie WCF odbieranie komunikatów JSON, XML lub nieprzetworzonych danych binarnych w tym samym punkcie końcowym. Koder określa format treści wiadomości, sprawdzając zawartość HTTP-Type żądania. Ten przykład wprowadza <xref:System.ServiceModel.Channels.WebContentTypeMapper> klasę, która umożliwia użytkownikowi kontrolowanie mapowania między typem zawartości i formatem treści.  
@@ -38,7 +39,7 @@ public class JsonContentTypeMapper : WebContentTypeMapper
   
  Typ musi przesłaniać <xref:System.ServiceModel.Channels.WebContentTypeMapper.GetMessageFormatForContentType%28System.String%29> metodę. Metoda musi oszacować `contentType` argument i zwracać jedną z następujących wartości: <xref:System.ServiceModel.Channels.WebContentFormat.Json> , <xref:System.ServiceModel.Channels.WebContentFormat.Xml> , <xref:System.ServiceModel.Channels.WebContentFormat.Raw> , lub <xref:System.ServiceModel.Channels.WebContentFormat.Default> . Zwracanie <xref:System.ServiceModel.Channels.WebContentFormat.Default> wartości do domyślnych mapowań kodera komunikatów sieci Web. W poprzednim przykładowym kodzie `text/javascript` Typ zawartości jest mapowany na format JSON, a wszystkie inne mapowania pozostają bez zmian.  
   
- Aby użyć `JsonContentTypeMapper` klasy, użyj następującego w pliku Web. config:  
+ Aby użyć `JsonContentTypeMapper` klasy, należy użyć następujących danych w Web.config:  
   
 ```xml  
 <system.serviceModel>  
@@ -58,7 +59,7 @@ public class JsonContentTypeMapper : WebContentTypeMapper
   
 2. Skompiluj rozwiązanie WebContentTypeMapperSample. sln zgodnie z opisem w temacie [Tworzenie przykładów Windows Communication Foundation](building-the-samples.md).  
   
-3. Przejdź do `http://localhost/ServiceModelSamples/JCTMClientPage.htm` (nie otwieraj JCTMClientPage. htm w przeglądarce z katalogu projektu).  
+3. Przejdź do `http://localhost/ServiceModelSamples/JCTMClientPage.htm` (nie otwieraj JCTMClientPage.htm w przeglądarce z katalogu projektu).  
   
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).  

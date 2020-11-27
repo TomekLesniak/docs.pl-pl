@@ -14,14 +14,15 @@ helpviewer_keywords:
 - platform invoke
 - DLL functions
 ms.assetid: eca7606e-ebfb-4f47-b8d9-289903fdc045
-ms.openlocfilehash: 880cbd4701ae4aee35038f6402b3beb70e60290c
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: ea4008db59e580fc9d68135618f292496e96fce9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622188"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96282941"
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>Wykorzystywanie niezarządzanych funkcji DLL
+
 Wywołanie platformy to usługa, która umożliwia kodowi zarządzanemu wywoływanie funkcji niezarządzanych wdrożonych w bibliotekach dołączanych dynamicznie (dll), takich jak te w interfejsie API systemu Windows. Lokalizuje i wywołuje wyeksportowaną funkcję i kierującie jej argumentów (liczbami całkowitymi, ciągami, tablicami, strukturami itd.) w granicach międzyoperacyjnych, zgodnie z wymaganiami.  
   
  W tej sekcji przedstawiono zadania związane z wykorzystywaniem niezarządzanych funkcji DLL i podano więcej informacji na temat wywołania platformy. Oprócz następujących zadań istnieją ogólne zagadnienia i link zawierający dodatkowe informacje i przykłady.  
@@ -51,6 +52,7 @@ Wywołanie platformy to usługa, która umożliwia kodowi zarządzanemu wywoływ
  Przykłady, które demonstrują sposób konstruowania. Deklaracje oparte na sieci, które mają być używane z wywołaniem platformy, można znaleźć w temacie [kierowanie danych za pomocą wywołania platformy](marshaling-data-with-platform-invoke.md).  
   
 ## <a name="a-closer-look-at-platform-invoke"></a>Bliższe spojrzenie na wywołanie platformy  
+
  Wywołanie platformy polega na metadanych, aby znaleźć eksportowane funkcje i zorganizować ich argumenty w czasie wykonywania. Ten proces przedstawiono na poniższej ilustracji.  
   
  ![Diagram przedstawiający wywołanie wywołania platformy.](./media/consuming-unmanaged-dll-functions/platform-invoke-call.gif)  
@@ -70,7 +72,7 @@ Wywołanie platformy to usługa, która umożliwia kodowi zarządzanemu wywoływ
   
  Wywołanie platformy zgłasza wyjątki wygenerowane przez niezarządzaną funkcję do zarządzanego obiektu wywołującego.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Współdziałanie z kodem niezarządzanym](index.md)
 - [Przykłady wywołań platformy](platform-invoke-examples.md)

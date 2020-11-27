@@ -9,14 +9,15 @@ helpviewer_keywords:
 - registration-free COM interop, configuring .NET-based components
 - activation, registration-free
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
-ms.openlocfilehash: ad25a79add84e43ba0a8e71a0f48c5ddf65108bd
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ffeb342f286663ee7fe733ee617741e0ab30d0d8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554843"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96282876"
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Instrukcje: Konfigurowanie aktywacji bez rejestracji składników COM opartych na platformie .NET Framework
+
 Aktywacja bez rejestracji dla składników opartych na .NET Framework jest nieco bardziej skomplikowana niż w przypadku składników modelu COM. Instalator wymaga dwóch manifestów:  
   
 - Aplikacje COM muszą mieć manifest aplikacji w stylu Win32, aby zidentyfikować składnik zarządzany.  
@@ -110,9 +111,9 @@ Manifest aplikacji można zainstalować w tym samym katalogu, w którym znajduje
   
     |Atrybut|Opis|Wymagane|  
     |---------------|-----------------|--------------|  
-    |`clsid`|Identyfikator określający klasę, która ma zostać aktywowana.|Yes|  
+    |`clsid`|Identyfikator określający klasę, która ma zostać aktywowana.|Tak|  
     |`description`|Ciąg, który informuje użytkownika o składniku. Pusty ciąg jest wartością domyślną.|Nie|  
-    |`name`|Ciąg, który reprezentuje klasę zarządzaną.|Yes|  
+    |`name`|Ciąg, który reprezentuje klasę zarządzaną.|Tak|  
     |`progid`|Identyfikator, który ma być używany w przypadku aktywacji z późnym wiązaniem.|Nie|  
     |`threadingModel`|Model wątkowości COM. Wartość domyślna to "Both".|Nie|  
     |`runtimeVersion`|Określa wersję środowiska uruchomieniowego języka wspólnego (CLR) do użycia. Jeśli nie określisz tego atrybutu, a środowisko CLR nie jest już załadowane, składnik zostanie załadowany z najnowszym zainstalowanym środowiskiem CLR przed środowiskiem CLR w wersji 4. W przypadku określenia v 1.0.3705, v 1.1.4322 lub v 2.0.50727 wersja zostanie automatycznie przesunięta do najnowszej zainstalowanej wersji środowiska CLR przed środowiskiem CLR w wersji 4 (zazwyczaj 2.0.50727). Jeśli inna wersja środowiska CLR jest już załadowana i określona wersja może zostać załadowana równolegle, określona wersja zostanie załadowana. w przeciwnym razie zostanie użyte załadowane środowisko CLR. Może to spowodować niepowodzenie ładowania.|Nie|  
@@ -173,9 +174,9 @@ Manifest aplikacji można zainstalować w tym samym katalogu, w którym znajduje
   
      Ponownie `myresource.res` jest nazwą pliku zasobów zawierającego osadzone zasoby.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Współdziałanie z modelem COM bez rejestrowania](registration-free-com-interop.md)
-- [Wymagania dotyczące międzyoperacyjności modelu COM bez rejestracji](/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
-- [Konfigurowanie składników COM do aktywacji bez rejestracji](/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
+- [Wymagania dotyczące międzyoperacyjnego Registration-Free modelu COM](/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
+- [Konfigurowanie składników COM na potrzeby aktywacji Registration-Free](/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
 - [Aktywacja bez rejestracji. Składniki oparte na sieci: Przewodnik](/previous-versions/dotnet/articles/ms973915(v=msdn.10))

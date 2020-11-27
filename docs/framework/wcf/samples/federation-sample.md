@@ -2,17 +2,19 @@
 title: Federacja — przykład
 ms.date: 03/30/2017
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
-ms.openlocfilehash: 00cb9a13a01687fb41f1d5c09f277d582f706e3b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 22d405620a77285ebe7a68fc151a8e8611df9b4d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594689"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283279"
 ---
 # <a name="federation-sample"></a>Federacja — przykład
+
 Ten przykład pokazuje zabezpieczenia federacyjne.  
   
 ## <a name="sample-details"></a>Przykładowe szczegóły  
+
  Windows Communication Foundation (WCF) zapewnia obsługę wdrażania federacyjnych architektur zabezpieczeń za pomocą programu `wsFederationHttpBinding` . `wsFederationHttpBinding`Zapewnia bezpieczne, niezawodne i interoperacyjne powiązanie, które polega na użyciu protokołu HTTP jako podstawowego mechanizmu transportowego do komunikacji żądania/odpowiedzi oraz text/xml jako formatu sieci do kodowania. Aby uzyskać więcej informacji na temat Federacji w programie WCF, zobacz [Federacja](../feature-details/federation.md).  
   
  Scenariusz składa się z 4 sztuk:  
@@ -86,14 +88,14 @@ Ten przykład pokazuje zabezpieczenia federacyjne.
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Aby skonfigurować, skompilować i uruchomić przykład  
   
-1. Otwórz okno polecenia zestawu SDK. W przykładowej ścieżce uruchom setup. bat. Spowoduje to utworzenie katalogów wirtualnych wymaganych dla przykładu i zainstalowanie wymaganych certyfikatów z odpowiednimi uprawnieniami.  
+1. Otwórz okno polecenia zestawu SDK. W przykładowej ścieżce Uruchom Setup.bat. Spowoduje to utworzenie katalogów wirtualnych wymaganych dla przykładu i zainstalowanie wymaganych certyfikatów z odpowiednimi uprawnieniami.  
   
     > [!NOTE]
-    > Plik wsadowy Setup. bat został zaprojektowany tak, aby można go było uruchomić z poziomu wiersza polecenia Windows SDK. Wymaga, aby zmienna środowiskowa MSSDK wskazywała katalog, w którym zainstalowano zestaw SDK. Ta zmienna środowiskowa jest ustawiana automatycznie w wierszu polecenia Windows SDK. W systemie Windows Vista należy upewnić się, że zgodność z zarządzaniem usługami IIS 6,0 jest zainstalowana, ponieważ konfiguracja używa skryptów administratora usług IIS. Uruchomienie skryptu konfiguracji w systemie Windows Vista wymaga uprawnień administratora.  
+    > Plik wsadowy Setup.bat został zaprojektowany do uruchamiania z wiersza polecenia Windows SDK. Wymaga, aby zmienna środowiskowa MSSDK wskazywała katalog, w którym zainstalowano zestaw SDK. Ta zmienna środowiskowa jest ustawiana automatycznie w wierszu polecenia Windows SDK. W systemie Windows Vista należy upewnić się, że zgodność z zarządzaniem usługami IIS 6,0 jest zainstalowana, ponieważ konfiguracja używa skryptów administratora usług IIS. Uruchomienie skryptu konfiguracji w systemie Windows Vista wymaga uprawnień administratora.  
   
-2. Otwórz FederationSample. sln w programie Visual Studio i wybierz opcję **Kompiluj rozwiązanie** z menu **kompilacja** . Powoduje to utworzenie wspólnych plików projektu, usług księgarni, księgarni STS, HomeRealm STS i wdrożenie ich w usługach IIS. Powoduje to również kompilację aplikacji klienckiej księgarni i umieszczenie pliku wykonywalnego BookStoreClient. exe w folderze FederationSample\BookStoreClient\bin\Debug.  
+2. Otwórz FederationSample. sln w programie Visual Studio i wybierz opcję **Kompiluj rozwiązanie** z menu **kompilacja** . Powoduje to utworzenie wspólnych plików projektu, usług księgarni, księgarni STS, HomeRealm STS i wdrożenie ich w usługach IIS. Powoduje to również kompilację aplikacji klienckiej księgarni i umieszczenie pliku wykonywalnego BookStoreClient.exe w folderze FederationSample\BookStoreClient\bin\Debug.  
   
-3. Kliknij dwukrotnie plik BookStoreClient. exe. Zostanie wyświetlone okno BookStoreClient.  
+3. Kliknij dwukrotnie BookStoreClient.exe. Zostanie wyświetlone okno BookStoreClient.  
   
 4. Książki dostępne w księgarni można przeglądać, klikając pozycję **Przeglądaj książki**.  
   
@@ -106,7 +108,7 @@ Ten przykład pokazuje zabezpieczenia federacyjne.
   
 #### <a name="to-clean-up"></a>Aby oczyścić  
   
-1. Uruchom Oczyść. bat. Spowoduje to usunięcie katalogów wirtualnych, które zostały utworzone podczas konfiguracji, a także spowoduje usunięcie certyfikatów zainstalowanych podczas instalacji.  
+1. Uruchom Cleanup.bat. Spowoduje to usunięcie katalogów wirtualnych, które zostały utworzone podczas konfiguracji, a także spowoduje usunięcie certyfikatów zainstalowanych podczas instalacji.  
   
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).  

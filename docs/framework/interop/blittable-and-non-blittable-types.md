@@ -6,14 +6,15 @@ helpviewer_keywords:
 - interop marshaling, blittable types
 - blittable types, interop marshaling
 ms.assetid: d03b050e-2916-49a0-99ba-f19316e5c1b3
-ms.openlocfilehash: 8bbf9c72143033cec22b38cc26cbe8ceb44f790b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5f0f6b2f35c184b4df8c93af1c85e7169cb0cc95
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556274"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283149"
 ---
 # <a name="blittable-and-non-blittable-types"></a>Typy kopiowalne i niekopiowalne
+
 Większość typów danych ma wspólną reprezentację w pamięci zarządzanej i niezarządzanej i nie wymaga specjalnej obsługi przez organizatora międzyoperacyjności. Typy te są nazywane *danych kopiowalnychmi* , ponieważ nie wymagają konwersji podczas przekazywania między zarządzanym i niezarządzanym kodem.  
   
  Struktury zwracane z wywołań wywołania platformy muszą być typami danych kopiowalnych. Wywołanie platformy nie obsługuje struktur innych niż danych kopiowalnych jako typów zwracanych.  
@@ -72,6 +73,6 @@ Większość typów danych ma wspólną reprezentację w pamięci zarządzanej i
   
  Typy klas i obiektów są obsługiwane tylko przez międzyoperacyjność modelu COM. Aby uzyskać odpowiednie typy w Visual Basic, C# i C++, zobacz [Omówienie biblioteki klas](../../standard/class-library-overview.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Domyślne zachowanie marshalingu](default-marshaling-behavior.md)

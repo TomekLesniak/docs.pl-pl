@@ -2,19 +2,21 @@
 title: Uwagi dotyczące zabezpieczeń rejestrowania komunikatów
 ms.date: 03/30/2017
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
-ms.openlocfilehash: df8a1b4382ce4bce60e3214def10c816ced0f13c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8594329fb27aa1d77a2baffee2a7e37ea0d009c4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550550"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96283773"
 ---
 # <a name="security-concerns-for-message-logging"></a>Uwagi dotyczące zabezpieczeń rejestrowania komunikatów
+
 W tym temacie opisano, jak można chronić poufne dane przed ujawnieniem w dziennikach komunikatów, a także zdarzenia generowane przez funkcję rejestrowania komunikatów.  
   
 ## <a name="security-concerns"></a>Zagadnienia dotyczące zabezpieczeń  
   
 ### <a name="logging-sensitive-information"></a>Rejestrowanie poufnych informacji  
+
  Windows Communication Foundation (WCF) nie modyfikuje żadnych danych w nagłówkach i treści specyficznych dla aplikacji. Funkcja WCF nie śledzi również informacji osobistych w nagłówkach lub danych treści specyficznych dla aplikacji.  
   
  Po włączeniu rejestrowania komunikatów informacje osobiste w nagłówkach specyficznych dla aplikacji, takie jak ciąg zapytania; i informacje o treści, takie jak numer karty kredytowej, mogą stać się widoczne w dziennikach. Narzędzie wdrażania aplikacji jest odpowiedzialne za wymuszanie kontroli dostępu do plików konfiguracyjnych i dzienników. Jeśli nie chcesz, aby ten rodzaj informacji był widoczny, należy wyłączyć rejestrowanie lub przefiltrować część danych, jeśli chcesz udostępnić dzienniki.  
@@ -94,9 +96,11 @@ W tym temacie opisano, jak można chronić poufne dane przed ujawnieniem w dzien
 > Dane OSOBowe nie są ukryte w źle sformułowanych wiadomościach. Takie komunikaty są rejestrowane bez żadnych modyfikacji. Opisane wcześniej atrybuty nie mają wpływu na to.  
   
 ### <a name="custom-trace-listener"></a>Odbiornik śledzenia niestandardowego  
+
  Dodawanie niestandardowego odbiornika śledzenia do źródła śledzenia rejestrowania komunikatów jest uprawnieniem, które powinno być ograniczone do administratora. Jest to spowodowane tym, że złośliwe niestandardowe odbiorniki można skonfigurować do zdalnego wysyłania wiadomości, co prowadzi do ujawnienia poufnych informacji. Ponadto, jeśli skonfigurujesz odbiornik niestandardowy do wysyłania komunikatów do sieci, takich jak, do zdalnej bazy danych, należy wymusić odpowiednią kontrolę dostępu do dzienników komunikatów na komputerze zdalnym.  
   
 ## <a name="events-triggered-by-message-logging"></a>Zdarzenia wyzwalane przez rejestrowanie komunikatów  
+
  Poniżej wymieniono wszystkie zdarzenia emitowane przez funkcję rejestrowania komunikatów.  
   
 - Logowanie do wiadomości: to zdarzenie jest emitowane, gdy rejestrowanie komunikatów jest włączone w konfiguracji lub za pomocą usługi WMI. Zawartość zdarzenia to "rejestrowanie komunikatów zostało włączone. Poufne informacje mogą być rejestrowane w postaci zwykłego tekstu, nawet jeśli zostały zaszyfrowane w sieci, na przykład treści wiadomości ".  
@@ -109,7 +113,7 @@ W tym temacie opisano, jak można chronić poufne dane przed ujawnieniem w dzien
   
  Te zdarzenia można wyświetlać w narzędziu Podgląd zdarzeń, które są dostarczane z systemem Windows. Aby uzyskać więcej informacji na ten temat, zobacz [Rejestrowanie zdarzeń](./event-logging/index.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Rejestrowanie komunikatów](message-logging.md)
 - [Problemy dotyczące zabezpieczeń i przydatne porady na temat śledzenia](./tracing/security-concerns-and-useful-tips-for-tracing.md)

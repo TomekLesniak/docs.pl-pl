@@ -3,14 +3,15 @@ title: Konfigurowanie wartości limitów czasu w wiązaniu
 description: Dowiedz się, jak zarządzać ustawieniami limitu czasu dla powiązań programu WCF w celu zwiększenia wydajności, użyteczności i zabezpieczeń usługi.
 ms.date: 03/30/2017
 ms.assetid: b5c825a2-b48f-444a-8659-61751ff11d34
-ms.openlocfilehash: c41824a242d9b42290183cd70b9acf5b8ee59e6b
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 6582568f3579f784d4c91c707dbb35c38533551d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245118"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284046"
 ---
 # <a name="configuring-timeout-values-on-a-binding"></a>Konfigurowanie wartości limitów czasu w wiązaniu
+
 W powiązaniach WCF dostępne są wiele ustawień limitu czasu. Poprawne ustawienie tych ustawień limitu czasu może poprawić nie tylko wydajność usługi, ale również odgrywać rolę w zakresie użyteczności i bezpieczeństwa usługi. W powiązaniach WCF są dostępne następujące limity czasu:  
   
 1. OpenTimeout  
@@ -22,6 +23,7 @@ W powiązaniach WCF dostępne są wiele ustawień limitu czasu. Poprawne ustawie
 4. ReceiveTimeout  
   
 ## <a name="wcf-binding-timeouts"></a>Limity czasu powiązania WCF  
+
  Wszystkie ustawienia omówione w tym temacie są wykonywane w ramach powiązania w kodzie lub konfiguracji. Poniższy kod pokazuje, jak programowo ustawiać limity czasu dla powiązania WCF w kontekście usługi samodzielnej.  
   
 ```csharp  
@@ -76,6 +78,7 @@ public static void Main()
  Więcej informacji o tych ustawieniach można znaleźć w dokumentacji <xref:System.ServiceModel.Channels.Binding> klasy.  
   
 ### <a name="client-side-timeouts"></a>Limity czasu po stronie klienta  
+
  Po stronie klienta:  
   
 1. Właściwości SendTimeout — służy do inicjowania OperationTimeout, który reguluje cały proces wysyłania komunikatu, w tym otrzymywanie komunikatu odpowiedzi dla operacji usługi żądania/odpowiedzi. Ten limit czasu obowiązuje również podczas wysyłania komunikatów odpowiedzi z metody kontraktu wywołania zwrotnego.  
@@ -87,6 +90,7 @@ public static void Main()
 4. ReceiveTimeout — nie jest używany.  
   
 ### <a name="service-side-timeouts"></a>Limity czasu po stronie usługi  
+
  Po stronie usługi:  
   
 1. Właściwości SendTimeout, OpenTimeout, CloseTimeout są takie same jak na kliencie.  
