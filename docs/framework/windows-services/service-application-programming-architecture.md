@@ -15,14 +15,15 @@ helpviewer_keywords:
 - ServiceProcessInstaller class, service application code model
 - Windows Service applications, states
 ms.assetid: 83230026-d068-4174-97ff-e264c896eb2f
-ms.openlocfilehash: 386311228abb08600acc249e80702c724c137900
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: c2344dd0a7d35781aea52b24694f2cfee70a6d41
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609268"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96270461"
 ---
 # <a name="service-application-programming-architecture"></a>Architektura programowania aplikacji usług
+
 Aplikacje usług systemu Windows są oparte na klasie, która dziedziczy z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> klasy. Zastąpisz metody z tej klasy i zdefiniujesz dla nich funkcję, aby określić sposób zachowania usługi.  
   
  Główne klasy wykorzystywane podczas tworzenia usług są następujące:  
@@ -34,6 +35,7 @@ Aplikacje usług systemu Windows są oparte na klasie, która dziedziczy z <xref
  Ponadto klasy o nazwie <xref:System.ServiceProcess.ServiceController> można użyć do manipulowania samą usługą. Ta klasa nie obejmuje tworzenia usługi, ale może służyć do uruchamiania i zatrzymywania usługi, przekazywania do niej poleceń i zwracania serii wyliczeń.  
   
 ## <a name="defining-your-services-behavior"></a>Definiowanie zachowania usługi  
+
  W klasie usług przesłonisz funkcje klasy podstawowej, które określają, co się stanie w przypadku zmiany stanu usługi w Menedżerze kontroli usług. <xref:System.ServiceProcess.ServiceBase>Klasa uwidacznia następujące metody, które można przesłonić w celu dodania zachowania niestandardowego.  
   
 |Metoda|Przesłoń do|  
@@ -49,7 +51,7 @@ Aplikacje usług systemu Windows są oparte na klasie, która dziedziczy z <xref
 > [!NOTE]
 > Te metody reprezentują Stany przenoszone przez usługę w jego okresie istnienia; przejście usługi z jednego stanu do następnego. Na przykład usługa nie będzie mogła odpowiedzieć na <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> polecenie przed <xref:System.ServiceProcess.ServiceBase.OnStart%2A> wywołaniem.  
   
- Istnieje kilka innych właściwości i metod, które są interesujące. Należą do nich:  
+ Istnieje kilka innych właściwości i metod, które są interesujące. Są one następujące:  
   
 - <xref:System.ServiceProcess.ServiceBase.Run%2A>Metoda <xref:System.ServiceProcess.ServiceBase> klasy. To jest główny punkt wejścia dla usługi. Podczas tworzenia usługi przy użyciu szablonu usługi systemu Windows kod jest wstawiany w `Main` metodzie aplikacji, aby uruchomić usługę. Ten kod wygląda następująco:  
   
@@ -66,7 +68,7 @@ Aplikacje usług systemu Windows są oparte na klasie, która dziedziczy z <xref
   
  Można również użyć składnika o nazwie, <xref:System.ServiceProcess.ServiceController> Aby komunikować się i kontrolować zachowanie istniejącej usługi.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie do aplikacji usług systemu Windows](introduction-to-windows-service-applications.md)
 - [Instrukcje: Tworzenie usług systemu Windows](how-to-create-windows-services.md)

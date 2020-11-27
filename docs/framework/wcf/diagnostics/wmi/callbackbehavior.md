@@ -2,14 +2,15 @@
 title: CallbackBehavior
 ms.date: 03/30/2017
 ms.assetid: 42acd302-2b62-4849-a2d1-a03084343ecd
-ms.openlocfilehash: 9d8f4335c304d164daafeb0ad4de5b4e3bba4590
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cec9005a099247671dbebaacc0b242ca8d7a0144
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963959"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269651"
 ---
 # <a name="callbackbehavior"></a>CallbackBehavior
+
 CallbackBehavior  
   
 ## <a name="syntax"></a>Składnia  
@@ -28,53 +29,62 @@ class CallbackBehavior : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa CallbackBehavior nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa CallbackBehavior ma następujące właściwości:  
   
 ### <a name="automaticsessionshutdown"></a>AutomaticSessionShutdown  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- W przypadku wartości true automatycznie zamknięciem sesji usługi powoduje zamknięcie sesji dupleksowej.  
+ W przypadku wartości true sesja jest automatycznie zamykana, gdy usługa zamyka sesję dupleksową.  
   
-### <a name="concurrencymode"></a>Właściwość ConcurrencyMode  
+### <a name="concurrencymode"></a>Obsługują  
+
  Typ danych: ciąg  
 Typ dostępu: tylko do odczytu  
   
  Określa, czy usługa obsługuje jeden wątek, wiele wątków lub wywołania współużytkowane.  
   
 ### <a name="ignoreextensiondataobject"></a>IgnoreExtensionDataObject  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość, która określa, czy wysyłać dane serializacji nieznany podczas transmisji.  
+ Wartość określająca, czy w sieci należy wysyłać nieznane dane serializacji.  
   
 ### <a name="includeexceptiondetailinfaults"></a>IncludeExceptionDetailInFaults  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Po włączeniu szczegóły dotyczące wyjątków w wywołaniu zwrotnym są dołączane do błędów zwracanych do usługi.  
+ Po włączeniu szczegółowe informacje o wyjątkach wywołania zwrotnego są dołączone do błędów zwróconych do usługi.  
   
 ### <a name="maxitemsinobjectgraph"></a>MaxItemsInObjectGraph  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalną liczbę elementów dozwoloną w Zserializowany obiekt.  
+ Maksymalna liczba elementów dozwolona w serializowanym obiekcie.  
   
 ### <a name="usesynchronizationcontext"></a>UseSynchronizationContext  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Określa, czy umożliwia wybieranie wątkiem wykonywania w bieżącym kontekście synchronizacji.  
+ Określa, czy do wybierania wątku wykonywania ma być używany bieżący kontekst synchronizacji.  
   
 ### <a name="validatemustunderstand"></a>ValidateMustUnderstand  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
@@ -83,10 +93,10 @@ Typ dostępu: tylko do odczytu
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.CallbackBehaviorAttribute>

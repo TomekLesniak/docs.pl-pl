@@ -9,14 +9,15 @@ helpviewer_keywords:
 - services, creating
 - Windows Service applications, creating
 ms.assetid: 3abbb2ec-78d2-41e6-b9f9-6662d4e2cdc7
-ms.openlocfilehash: cd749d325bec6636243dec1905f79abb5e42f04e
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: ab153b89272323a1a7a71181559f4f4eee082640
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91608403"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96270514"
 ---
 # <a name="how-to-write-services-programmatically"></a>Instrukcje: Programowane pisanie usług
+
 Jeśli zdecydujesz się nie używać szablonu projektu usługi systemu Windows, możesz napisać własne usługi, konfigurując dziedziczenie i inne elementy infrastruktury samodzielnie. W przypadku programistycznego tworzenia usługi należy wykonać kilka czynności, dla których szablon mógłby obsłużyć:  
   
 - Należy skonfigurować klasę usługi, aby dziedziczyć z <xref:System.ServiceProcess.ServiceBase> klasy.  
@@ -29,7 +30,7 @@ Jeśli zdecydujesz się nie używać szablonu projektu usługi systemu Windows, 
   
 1. Utwórz pusty projekt i Utwórz odwołanie do odpowiednich przestrzeni nazw, wykonując następujące czynności:  
   
-    1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy węzeł **odwołania** i kliknij polecenie **Dodaj odwołanie**.  
+    1. W **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy węzeł **odwołania** i kliknij polecenie **Dodaj odwołanie**.  
   
     2. Na karcie **.NET Framework** przewiń do **System.dll** i kliknij pozycję **Wybierz**.  
   
@@ -70,7 +71,7 @@ Jeśli zdecydujesz się nie używać szablonu projektu usługi systemu Windows, 
   
 10. Zainstaluj usługę. Aby uzyskać więcej informacji, zobacz [jak: Instalowanie i odinstalowywanie usług](how-to-install-and-uninstall-services.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie do aplikacji usług systemu Windows](introduction-to-windows-service-applications.md)
 - [Instrukcje: Tworzenie usług systemu Windows](how-to-create-windows-services.md)

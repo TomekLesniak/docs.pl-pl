@@ -2,14 +2,15 @@
 title: BinaryMessageEncodingBindingElement
 ms.date: 03/30/2017
 ms.assetid: e2bb3cdd-3bbd-4bb5-85fe-570457500a66
-ms.openlocfilehash: e0551e7b4b05151490625912742aa6b26ef0216e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eb174d12731d7f1bc78f4d709cf043daf2346bd2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61964102"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269798"
 ---
 # <a name="binarymessageencodingbindingelement"></a>BinaryMessageEncodingBindingElement
+
 BinaryMessageEncodingBindingElement  
   
 ## <a name="syntax"></a>Składnia  
@@ -25,45 +26,51 @@ class BinaryMessageEncodingBindingElement : MessageEncodingBindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa BinaryMessageEncodingBindingElement nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa BinaryMessageEncodingBindingElement ma następujące właściwości.  
   
 ## <a name="maxreadpoolsize"></a>MaxReadPoolSize  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Liczba całkowita definiująca, ile komunikatów można jednocześnie odczytać bez przydziału nowych czytników.  
+ Liczba całkowita, która określa, ile komunikatów można jednocześnie odczytać bez przydziału nowych czytników.  
   
 ## <a name="maxsessionsize"></a>MaxSessionSize  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość, która określa rozmiar w bajtach buforu używany do kodowania.  
+ Wartość określająca wyrażony w bajtach rozmiar buforu używany do kodowania.  
   
 ## <a name="maxwritepoolsize"></a>MaxWritePoolSize  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Liczba całkowita definiująca, ile komunikatów można jednocześnie wysłać bez przydziału nowych modułów zapisujących.  
+ Liczba całkowita, która określa, ile komunikatów można jednocześnie wysłać bez przydziału nowych modułów zapisujących.  
   
 ## <a name="readerquotas"></a>ReaderQuotas  
+
  Typ danych: XmlDictionaryReaderQuotas  
   
  Typ dostępu: tylko do odczytu  
   
- Przydziały czytników.  
+ Przydziały czytelników.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>
