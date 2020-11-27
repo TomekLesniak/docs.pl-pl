@@ -2,17 +2,19 @@
 title: Rozszerzalność
 ms.date: 03/30/2017
 ms.assetid: cd7ddffc-a261-44aa-bd50-33c1c74f0df0
-ms.openlocfilehash: 757783536ac25dd30e96748b9d9791e06c08b091
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bb939814fe30bd8e28d42cac4e4945a83b1b3158
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600493"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255439"
 ---
 # <a name="extensibility"></a>Rozszerzalność
+
 Ta sekcja zawiera przykłady, które zajmują się niestandardową rozszerzalnością i innymi funkcjami Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Rozszerzalność kanałów](channels-extensibility.md)  
  Pokazuje kanały niestandardowe.  
   

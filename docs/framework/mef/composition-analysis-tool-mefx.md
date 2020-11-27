@@ -7,22 +7,27 @@ helpviewer_keywords:
 - MEF, Composition Analysis Tool
 - Mefx [MEF], Composition Analysis Tool
 ms.assetid: c48a7f93-83bb-4a06-aea0-d8e7bd1502ad
-ms.openlocfilehash: abb1459afc5aeb2d39ee553c62fe382bb7af58d5
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: d3f3a282cfa9274a1939d312987dd58b24eab2af
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281280"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255796"
 ---
 # <a name="composition-analysis-tool-mefx"></a>Narzędzie do analizy kompozycji (Mefx)
+
 Narzędzie do analizy kompozycji (Mefx) jest aplikacją wiersza polecenia, która analizuje pliki biblioteki (. dll) i aplikacji (exe) zawierające części Managed Extensibility Framework (MEF). Głównym celem Mefx jest zapewnienie deweloperom metody diagnozowania błędów kompozycji w aplikacjach MEF, bez konieczności dodawania kodu śledzenia skomplikowany do samej aplikacji. Pomocne może być również zrozumienie części z biblioteki udostępnionej przez inną firmę. W tym temacie opisano, jak używać Mefx i zawiera odwołanie do jego składni.  
   
 <a name="getting_mefx"></a>
+
 ## <a name="getting-mefx"></a>Pobieranie Mefx  
+
  Mefx jest dostępny w witrynie GitHub w [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef/releases/tag/4.0). Wystarczy pobrać i rozpakować narzędzie.  
   
 <a name="basic_syntax"></a>
+
 ## <a name="basic-syntax"></a>Podstawowa składnia  
+
  Mefx jest wywoływany z wiersza polecenia w następującym formacie:  
   
 ```console
@@ -41,7 +46,9 @@ mefx /file:MyAddIn.dll /directory:Program\AddIns [action...]
  Po wyświetleniu listy plików i katalogów należy określić polecenie i wszystkie opcje dla tego polecenia.  
   
 <a name="listing_available_parts"></a>
+
 ## <a name="listing-available-parts"></a>Wyświetlanie listy dostępnych części  
+
  Użyj `/parts` akcji, aby wyświetlić listę wszystkich części zadeklarowanych w załadowanych plikach. Wynik jest prostą listą nazw części.  
   
 ```console
@@ -59,7 +66,9 @@ mefx /file:MyAddIn.dll /type:MyAddIn.AddIn /verbose
 ```  
   
 <a name="listing_imports_and_exports"></a>
+
 ## <a name="listing-imports-and-exports"></a>Wyświetlanie listy importów i eksportów  
+
  W `/imports` `/exports` akcjach i zostaną wystawione wszystkie zaimportowane części i wszystkie wyeksportowane części. Można również wyświetlić listę składników, które zaimportują lub eksportują określony typ za `/importers` pomocą `/exporters` akcji lub.  
   
 ```console  
@@ -70,10 +79,12 @@ MyAddin.AddIn
  Można również zastosować `/verbose` opcję do tych akcji.  
   
 <a name="finding_rejected_parts"></a>
+
 ## <a name="finding-rejected-parts"></a>Znajdowanie odrzuconych części  
+
  Po załadowaniu dostępnych części Mefx używa aparatu kompozycji MEF, aby je tworzyć. Części, które nie mogą zostać pomyślnie złożone, są określane jako *odrzucone*. Aby wyświetlić listę wszystkich odrzuconych części, użyj `/rejected` akcji.  
   
- Można użyć `/verbose` opcji z `/rejected` akcją do drukowania szczegółowych informacji o odrzuconych częściach. W poniższym przykładzie `ClassLibrary1` Biblioteka DLL zawiera `AddIn` część, która importuje `MemberPart` `ChainOne` części i. `ChainOne`Importy `ChainTwo` , ale `ChainTwo` nie istnieją. Oznacza to, że `ChainOne` odrzucono, co spowoduje `AddIn` odrzucenie.  
+ Można użyć `/verbose` opcji z `/rejected` akcją do drukowania szczegółowych informacji o odrzuconych częściach. W poniższym przykładzie `ClassLibrary1` Biblioteka DLL zawiera `AddIn` część, która importuje `MemberPart` `ChainOne` części i. `ChainOne` Importy `ChainTwo` , ale `ChainTwo` nie istnieją. Oznacza to, że `ChainOne` odrzucono, co spowoduje `AddIn` odrzucenie.  
   
 ```console  
 mefx /file:ClassLibrary1.dll /rejected /verbose  
@@ -107,7 +118,9 @@ from: ClassLibrary1.ChainOne from: AssemblyCatalog (Assembly="ClassLibrary1, Ver
  Interesujące informacje są zawarte w `[Exception]` `[Unsuitable]` wynikach i. `[Exception]`Wynik zawiera informacje o tym, dlaczego część została odrzucona. `[Unsuitable]`Wynik wskazuje, dlaczego nie można użyć części dopasowywania w inny sposób, aby wypełnić import; w tym przypadku, ponieważ ta część została odrzucona w przypadku brakujących importów.  
   
 <a name="analyzing_primary_causes"></a>
+
 ## <a name="analyzing-primary-causes"></a>Analizowanie przyczyn podstawowych  
+
  Jeśli kilka części jest połączonych w łańcuchu długich zależności, problem związany z częścią znajdującą się u dołu może spowodować odrzucenie całego łańcucha. Diagnozowanie tych problemów może być trudne, ponieważ główna przyczyna awarii nie zawsze jest oczywista. Aby pomóc w rozwiązaniu problemu, możesz użyć `/causes` akcji, która próbuje znaleźć główną przyczynę odrzucenia kaskadowego.  
   
  Użycie `/causes` akcji z poprzedniego przykładu spowoduje wyświetlenie listy informacji dla `ChainOne` , których niewypełniony import jest główną przyczyną odrzucania `AddIn` . `/causes`Akcja może być używana zarówno w normalnych, jak i w `/verbose` opcjach.  
@@ -116,7 +129,9 @@ from: ClassLibrary1.ChainOne from: AssemblyCatalog (Assembly="ClassLibrary1, Ver
 > W większości przypadków Mefx będzie mógł zdiagnozować główną przyczynę niepowodzenia kaskadowego. Jednakże w przypadkach, gdy części są dodawane programowo do kontenera, przypadki obejmujące kontenery hierarchiczne lub przypadki z implementacją niestandardową `ExportProvider` , Mefx nie będzie w stanie zdiagnozować przyczyny. Ogólnie opisane wcześniej w miarę możliwości należy unikać błędów, gdy błędy są zwykle trudne do zdiagnozowania.  
   
 <a name="white_lists"></a>
+
 ## <a name="white-lists"></a>Białe listy  
+
  `/whitelist`Opcja umożliwia określenie pliku tekstowego zawierającego listę części, które powinny być odrzucane. Nieoczekiwane odrzucenia zostaną następnie oflagowane. Może to być przydatne podczas analizowania niekompletnej biblioteki lub podbiblioteki, w której brakuje niektórych zależności. `/whitelist`Opcja może być stosowana do `/rejected` `/causes` akcji lub.  
   
  Rozważmy plik o nazwie test.txt, który zawiera tekst "ClassLibrary1. ChainOne". Jeśli uruchomisz `/rejected` akcję z `/whitelist` opcją w poprzednim przykładzie, spowoduje to wygenerowanie następujących danych wyjściowych:  

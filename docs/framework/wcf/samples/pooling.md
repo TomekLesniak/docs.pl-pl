@@ -2,14 +2,15 @@
 title: Buforowanie
 ms.date: 03/30/2017
 ms.assetid: 688dfb30-b79a-4cad-a687-8302f8a9ad6a
-ms.openlocfilehash: 82b81637deb0715d19109794348d2a2bcda7f0d9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6b266dafa945fa44d6c857810df42eb5439f157d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594624"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255445"
 ---
 # <a name="pooling"></a>Buforowanie
+
 W tym przykładzie pokazano, jak rozszerzając Windows Communication Foundation (WCF), aby obsługiwał buforowanie obiektów. W przykładzie pokazano, jak utworzyć atrybut, który jest syntaktycznie i semantycznie podobny do `ObjectPoolingAttribute` funkcji atrybutów usług przedsiębiorstwa. Buforowanie obiektów może stanowić znaczący wzrost wydajności aplikacji. Może jednak mieć odwrotny efekt, jeśli nie jest on używany prawidłowo. Buforowanie obiektów pomaga zmniejszyć obciążenie odtwarzania często używanych obiektów, które wymagają obszernej inicjalizacji. Jeśli jednak wywołanie metody w obiekcie w puli trwa znaczną ilość czasu, w przypadku osiągnięcia limitu maksymalnego rozmiaru puli obiekty będą kolejkować dodatkowe żądania. W ten sposób może nie obtworzyć niektórych żądań utworzenia obiektów przez wygenerowanie wyjątku limitu czasu.  
   
 > [!NOTE]
@@ -22,6 +23,7 @@ W tym przykładzie pokazano, jak rozszerzając Windows Communication Foundation 
  Dyspozytory kanału i punktu końcowego oferują rozszerzalność obejmującą wiele kanałów i kontraktu przez ujawnienie różnych właściwości, które kontrolują zachowanie wysyłania. <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.DispatchRuntime%2A>Właściwość umożliwia również sprawdzanie, modyfikowanie lub Dostosowywanie procesu wysyłania. Ten przykład koncentruje się na <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> właściwości, która wskazuje na obiekt, który dostarcza wystąpienia klasy usługi.  
   
 ## <a name="the-iinstanceprovider"></a>IInstanceProvider  
+
  W programie WCF Dyspozytor tworzy wystąpienia klasy usługi przy użyciu <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> , która implementuje <xref:System.ServiceModel.Dispatcher.IInstanceProvider> interfejs. Ten interfejs ma trzy metody:  
   
 - <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29>: Po nadejściu komunikatu przez dyspozytora wywoływana jest <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> metoda tworzenia wystąpienia klasy usługi w celu przetworzenia komunikatu. Częstotliwość wywołań tej metody jest określana przez <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> Właściwość. Na przykład, jeśli <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> Właściwość jest ustawiona na <xref:System.ServiceModel.InstanceContextMode.PerCall> nowe wystąpienie klasy usługi jest tworzone w celu przetworzenia każdego odebranego komunikatu, więc <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> jest wywoływana za każdym razem, gdy wiadomość zostanie odebrana.  
@@ -31,6 +33,7 @@ W tym przykładzie pokazano, jak rozszerzając Windows Communication Foundation 
 - <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%28System.ServiceModel.InstanceContext%2CSystem.Object%29>: Po upłynięciu okresu istnienia wystąpienia usługi Dyspozytor wywołuje <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%28System.ServiceModel.InstanceContext%2CSystem.Object%29> metodę. Podobnie jak w przypadku <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> metody częstotliwość wywołań tej metody jest określana przez <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> Właściwość.  
   
 ## <a name="the-object-pool"></a>Pula obiektów  
+
  Implementacja niestandardowa <xref:System.ServiceModel.Dispatcher.IInstanceProvider> zapewnia wymaganą semantykę buforowania obiektów dla usługi. W związku z tym, ten przykład zawiera `ObjectPoolingInstanceProvider` Typ, który zapewnia niestandardową implementację <xref:System.ServiceModel.Dispatcher.IInstanceProvider> do buforowania. Gdy `Dispatcher` wywołuje <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%28System.ServiceModel.InstanceContext%2CSystem.ServiceModel.Channels.Message%29> metodę, zamiast tworzyć nowe wystąpienie, implementacja niestandardowa wyszukuje istniejący obiekt w puli w pamięci. Jeśli jest dostępna, jest zwracana. W przeciwnym razie tworzony jest nowy obiekt. Implementacja programu `GetInstance` jest pokazana w poniższym przykładowym kodzie.  
   
 ```csharp  
@@ -83,6 +86,7 @@ void IInstanceProvider.ReleaseInstance(InstanceContext instanceContext, object i
  `ReleaseInstance`Metoda zawiera funkcję "oczyszczanie inicjacji". Zwykle Pula utrzymuje minimalną liczbę obiektów w okresie istnienia puli. Jednak mogą istnieć okresy nadmiernego użycia, które wymagają utworzenia dodatkowych obiektów w puli w celu osiągnięcia maksymalnego limitu określonego w konfiguracji. Ostatecznie, gdy pula stanie się mniej aktywna, te nadwyżkowe obiekty mogą stać się dodatkowymi kosztami. W związku z tym, gdy `activeObjectsCount` osiągnie zero, uruchamiany jest czasomierz bezczynny, który wyzwala wyzwalacz i wykonuje oczyszczanie.  
   
 ## <a name="adding-the-behavior"></a>Dodawanie zachowania  
+
  Dyspozytor — rozszerzenia warstwy są podłączane przy użyciu następujących zachowań:  
   
 - Zachowania usługi. Umożliwiają one dostosowanie całego środowiska uruchomieniowego usługi.  
@@ -186,6 +190,7 @@ public class PoolService : IPoolService
 ```  
   
 ## <a name="running-the-sample"></a>Uruchamianie przykładu  
+
  W przykładzie przedstawiono korzyści z wydajności, które można uzyskać przy użyciu pul obiektów w niektórych scenariuszach.  
   
  Aplikacja usługi implementuje dwie usługi — `WorkService` i `ObjectPooledWorkService` . Obie usługi korzystają z tej samej implementacji — obie wymagają kosztownej inicjacji, a następnie uwidaczniają `DoWork()` metodę, która jest stosunkowo tani. Jedyną różnicą jest to, że `ObjectPooledWorkService` skonfigurowano pulę obiektów:  
@@ -241,7 +246,7 @@ Press <ENTER> to exit.
 3. Aby uruchomić przykład w konfiguracji na jednym lub wielu komputerach, postępuj zgodnie z instrukcjami w temacie [Uruchamianie przykładów Windows Communication Foundation](running-the-samples.md).  
   
 > [!NOTE]
-> Jeśli używasz programu Svcutil. exe w celu ponownego wygenerowania konfiguracji dla tego przykładu, pamiętaj, aby zmodyfikować nazwę punktu końcowego w konfiguracji klienta w celu dopasowania go do kodu klienta.  
+> W przypadku użycia Svcutil.exe do ponownego wygenerowania konfiguracji dla tego przykładu należy zmodyfikować nazwę punktu końcowego w konfiguracji klienta, aby odpowiadała kodowi klienta.  
   
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).  

@@ -2,43 +2,44 @@
 title: Dane struktury usługi
 ms.date: 03/30/2017
 ms.assetid: 2a2c8ddc-4e82-4e7f-a79f-97085c469517
-ms.openlocfilehash: 5c65e9d473b5fe3f2b1c29824dcc1151abb0c3f6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8bb6e9df6a77eda5875981a0bf7783f50671a589
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780812"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255783"
 ---
 # <a name="service-framework-data"></a>Dane struktury usługi
-Ten temat zawiera listę wszystkich wyjątków generowanych przez dane struktury usługi.  
+
+W tym temacie wymieniono wszystkie wyjątki wygenerowane przez dane struktury usługi.  
   
 ## <a name="exception-list"></a>Lista wyjątków  
   
 |Kod zasobu|Ciąg zasobu|  
 |-------------------|---------------------|  
-|AddressingExtensionInBadNS|Określony element w określonej przestrzeni nazw nie jest prawidłowy. Oznacza to, że określony element jest zduplikowany element lub że nie jest niedozwolonym rozszerzeniem ponieważ elementów rozszerzenia nie może znajdować się w przestrzeni nazw adresowania.|  
+|AddressingExtensionInBadNS|Określony element w określonej przestrzeni nazw jest nieprawidłowy. Oznacza to, że określony element jest duplikatem elementu lub że nie jest to dozwolone rozszerzenie, ponieważ elementy rozszerzenia nie mogą znajdować się w przestrzeni nazw adresowania.|  
 |BinaryEncoderSessionInvalid|Sesja kodera binarnego jest nieprawidłowa, ponieważ wystąpił błąd podczas dekodowania poprzedniego komunikatu.|  
-|CannotDetectAddressingVersion|Nie można wykryć wersji WS-Addressing. EndpointAddress nie rozpoczyna się od elementu.|  
-|CouldNotFindNamespaceForPrefix|Określony prefiks jest Brak powiązania przestrzeni nazw w zakresie.|  
-|EncoderBadContentType|Nie można przetworzyć do contentType.|  
-|EncoderEnvelopeVersionMismatch|Wersja schematu envelope określonego komunikatu przychodzącego jest niezgodny z określonym kodera. Upewnij się, że powiązanie jest skonfigurowane przy użyciu tej samej wersji co oczekiwane komunikaty.|  
-|EncoderMessageVersionMismatch|Wersja komunikatu określonego komunikatu wychodzącego jest niezgodny z określonym kodera. Upewnij się, że powiązanie jest skonfigurowane przy użyciu tej samej wersji co komunikat.|  
-|ExtraContentIsPresentInFaultDetail|Dodatkowa zawartość Extensible Markup Language znajduje się w błędnym elemencie szczegółowym. Dozwolone jest tylko jeden element.|  
-|FilterBadTableType|Obiekt IMessageFilterTable utworzony dla filtru nie może być obiektem lub pochodzić od MessageFilterTable.|  
-|FilterTableInvalidForLookup|MessageFilterTable jest uszkodzony. Nie można przeprowadzić żądanego wyszukiwania.|  
-|MandatoryHeaderNotUnderstood|Co najmniej wymagana prostego obiektu dostępu protokołu nagłówka bloki była niezrozumiała.|  
-|MessageBodyIsStream|Treść komunikatu jest strumień.|  
+|CannotDetectAddressingVersion|Nie można wykryć wersji WS-Addressing. Element EndpointAddress nie zaczyna się od elementu.|  
+|CouldNotFindNamespaceForPrefix|Określony prefiks nie ma powiązania przestrzeni nazw w zakresie.|  
+|EncoderBadContentType|Nie można przetworzyć do ContentType.|  
+|EncoderEnvelopeVersionMismatch|Wersja koperty określonego komunikatu przychodzącego nie jest zgodna z określonym koderem. Upewnij się, że powiązanie ma skonfigurowaną taką samą wersję jak oczekiwane komunikaty.|  
+|EncoderMessageVersionMismatch|Wersja komunikatu określonego komunikatu wychodzącego nie jest zgodna z określonym koderem. Upewnij się, że powiązanie ma skonfigurowaną taką samą wersję, jak komunikat.|  
+|ExtraContentIsPresentInFaultDetail|Dodatkowa zawartość XML jest obecna w elemencie szczegóły błędu. Dozwolony jest tylko jeden element.|  
+|FilterBadTableType|IMessageFilterTable utworzony dla filtru nie może być elementem obiektem ani pochodzącym z obiektem.|  
+|FilterTableInvalidForLookup|Stan obiektem jest uszkodzony. Nie można wykonać żądanego wyszukiwania.|  
+|MandatoryHeaderNotUnderstood|Co najmniej jeden wymagany blok nagłówka prostego dostępu do obiektów jest niezrozumiały.|  
+|MessageBodyIsStream|Treść komunikatu jest strumieniem.|  
 |MessageBodyIsUnknown|Format treści komunikatu jest nieznany.|  
-|MessageBodyReaderInvalidReadState|Określony ReadState czytnika treść komunikatu nie mogą być używane.|  
-|MessageTextEncodingNotSupported|Kodowanie określony tekst, który jest używany w formacie wiadomości tekstowej nie jest obsługiwane.|  
-|MissingMessageID|Żądanie wiadomości Brak nagłówka MessageID. Nagłówka MessageID jest wymagany do dopasowania odpowiedzi.|  
+|MessageBodyReaderInvalidReadState|Określony stanie ReadState czytnika treści wiadomości nie może zostać użyty.|  
+|MessageTextEncodingNotSupported|Określone kodowanie tekstu używane w formacie wiadomości tekstowej nie jest obsługiwane.|  
+|MissingMessageID|W komunikacie żądania brakuje nagłówka MessageID. Nagłówek MessageID jest wymagany do skorelowania odpowiedzi.|  
 |MultipleMessageHeaders|Znaleziono więcej niż jeden nagłówek o określonej nazwie i przestrzeni nazw.|  
-|MultipleMessageHeadersWithActor|Znaleziono więcej niż jeden nagłówek o określonej nazwie, przestrzeni nazw i ról.|  
-|MultipleRelatesToHeaders|Znaleziono więcej niż jeden nagłówka RelatesTo z określonej relacji. Dla każdej relacji jest dozwolony tylko jeden.|  
-|QueryFunctionTypeNotSupported|Określony zwrotu typu dla IXsltContextFunction nie jest obsługiwana.|  
-|QueryIteratorOutOfScope|Klasa XPathNodeIterator zostały unieważnione. Elementy, które są przekazywane jako argumenty do elementów IXsltContextFunctions XPathNodeIterators są prawidłowe tylko w obrębie funkcji. Nie może być pamięci podręcznej do późniejszego użycia lub zwrócona przez funkcję.|  
-|QueryVariableNull|Metody IXsltContextVariable nie może zwracać wartość null.|  
-|QueryVariableTypeNotSupported|Określony IXsltContextVariable, typu pochodnego nie jest obsługiwana.|  
-|ReceiveShutdownReturnedMessage|Kanał odebrał nieoczekiwany komunikat wejściowy o określonej akcji podczas zamykania. Zamknij kanał, gdy żadne komunikaty wejściowe nie są oczekiwane.|  
+|MultipleMessageHeadersWithActor|Znaleziono więcej niż jeden nagłówek o określonej nazwie, przestrzeni nazw i roli.|  
+|MultipleRelatesToHeaders|Znaleziono więcej niż jeden nagłówek RelatesTo z określoną relacją. Dla każdej relacji jest dozwolony tylko jeden.|  
+|QueryFunctionTypeNotSupported|Określony typ zwracany dla IXsltContextFunction nie jest obsługiwany.|  
+|QueryIteratorOutOfScope|XPathNodeIterator zostało unieważnione. XPathNodeIterators, które są przekazane jako argumenty do IXsltContextFunctions, są prawidłowe tylko w obrębie funkcji. Nie mogą być buforowane do późniejszego użycia lub zwracane przez funkcję.|  
+|QueryVariableNull|Metody IXsltContextVariable nie mogą zwracać wartości null.|  
+|QueryVariableTypeNotSupported|Określony typ pochodny IXsltContextVariable nie jest obsługiwany.|  
+|ReceiveShutdownReturnedMessage|W kanale Odebrano nieoczekiwany komunikat wejściowy z określoną akcją podczas zamykania. Zamknij kanał, gdy nie oczekujesz więcej komunikatów wejściowych.|  
 |XmlBufferInInvalidState|Wystąpił błąd wewnętrzny. Nie można wykonać operacji ze względu na stan buforu XML.|  
-|XmlBufferQuotaExceeded|Rozmiar wymagany do buforowania zawartości Extensible Markup Language przekroczył limit przydziału buforu.|
+|XmlBufferQuotaExceeded|Rozmiar wymagany do buforowania zawartości XML przekroczył limit przydziału buforu.|

@@ -2,17 +2,19 @@
 title: Kontrolowanie zużycia zasobów i zwiększanie wydajności
 ms.date: 03/30/2017
 ms.assetid: 9a829669-5f76-4c88-80ec-92d0c62c0660
-ms.openlocfilehash: 7210f71287a2ec763b67dfa033cd9f4dadf6bd34
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f06dd0b7e66ae783b2f268551f15c5e6e8369b7f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90543072"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255068"
 ---
 # <a name="controlling-resource-consumption-and-improving-performance"></a>Kontrolowanie zużycia zasobów i zwiększanie wydajności
+
 W tym temacie opisano różne właściwości w różnych obszarach architektury Windows Communication Foundation (WCF), które działają w celu kontrolowania zużycia zasobów i wpływają na metryki wydajności.
 
 ## <a name="properties-that-constrain-resource-consumption-in-wcf"></a>Właściwości ograniczające użycie zasobów w programie WCF
+
  Windows Communication Foundation (WCF) stosuje ograniczenia dotyczące niektórych typów procesów w celu zapewnienia bezpieczeństwa lub wydajności. Te ograniczenia są dostępne w dwóch głównych formularzach — przydziałach i ograniczeniach. Limity *przydziału* są limitami, które po osiągnięciu lub przekroczeniu wyzwalają natychmiastowy wyjątek w pewnym momencie w systemie. *Ograniczenia* są ograniczone, które nie powodują natychmiastowego zgłoszenia wyjątku. Zamiast tego, po osiągnięciu limitu ograniczania, przetwarzanie jest kontynuowane, ale w ramach limitów ustawionych przez wartość ograniczenia. To ograniczone przetwarzanie może wyzwolić wyjątek w innym miejscu, ale jest to zależne od aplikacji.
 
  Oprócz rozróżnienia między przydziałami i ograniczeniami, pewne właściwości ograniczające się na poziomie serializacji, na poziomie transportu, a także na poziomie aplikacji. Na przykład przydział <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A?displayProperty=nameWithType> , który jest implementowany przez wszystkie elementy, które są dostarczane przez system, jest domyślnie ustawiony na 65 536 bajtów, aby utrudnić złośliwym klientom ataki ataków typu "odmowa usługi" z usługą, powodując nadmierne użycie pamięci. (Zazwyczaj można zwiększyć wydajność, obniżając tę wartość).
@@ -27,6 +29,7 @@ W tym temacie opisano różne właściwości w różnych obszarach architektury 
  Właściwości ograniczające procesy serializacji są wymienione w temacie [zagadnienia dotyczące zabezpieczeń danych](./feature-details/security-considerations-for-data.md). Właściwości ograniczające użycie zasobów związanych z transportami są wymienione w obszarze [przydziały transportu](./feature-details/transport-quotas.md). Właściwości ograniczające użycie zasobów w warstwie aplikacji są elementami członkowskimi <xref:System.ServiceModel.Dispatcher.ServiceThrottle> klasy.
 
 ## <a name="detecting-application-and-performance-issues-related-to-quota-settings"></a>Wykrywanie problemów z aplikacjami i wydajnością związanych z ustawieniami limitu przydziału
+
  Ustawienia domyślne powyższych wartości zostały wybrane w celu włączenia podstawowej funkcjonalności aplikacji dla szerokiego zakresu typów aplikacji, a jednocześnie zapewnia podstawową ochronę przed typowymi problemami z zabezpieczeniami. Jednak różne projekty aplikacji mogą przekroczyć jedno lub więcej ustawień ograniczania, chociaż aplikacja jest bezpieczna i będzie działała zgodnie z założeniami. W takich przypadkach należy określić, które wartości ograniczania przepustowości są przewyższane i na jakim poziomie, i podjąć decyzję o odpowiednim czasie działania, aby zwiększyć przepływność aplikacji.
 
  Zazwyczaj podczas pisania aplikacji i debugowania należy ustawić <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> Właściwość na `true` w pliku konfiguracji lub programowo. Powoduje to zwrócenie przez program WCF śladów stosu wyjątków usługi do aplikacji klienckiej w celu wyświetlenia. Ta funkcja raportuje większość wyjątków poziomu aplikacji w taki sposób, aby wyświetlić ustawienia przydziałów, które mogą być uwzględnione, jeśli jest to problem.
@@ -36,6 +39,7 @@ W tym temacie opisano różne właściwości w różnych obszarach architektury 
  Niezależnie od możliwości środowiska programistycznego można używać funkcji śledzenia i rejestrowania komunikatów w programie WCF w celu debugowania wszystkich wyjątków i dostrajania wydajności aplikacji. Aby uzyskać więcej informacji, zobacz [Używanie śledzenia w celu rozwiązywania problemów z aplikacją](./diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).
 
 ## <a name="performance-issues-and-xmlserializer"></a>Problemy z wydajnością i XmlSerializer
+
  Usługi i aplikacje klienckie korzystające z typów danych, które są serializowane przy użyciu <xref:System.Xml.Serialization.XmlSerializer> generowania i kompilowania kodu serializacji dla tych typów danych w czasie wykonywania, co może spowodować spowolnienie wydajności uruchamiania.
 
 > [!NOTE]
@@ -47,7 +51,7 @@ W tym temacie opisano różne właściwości w różnych obszarach architektury 
 
 Gdy usługa WCF jest hostowana w usługach IIS i ASP.NET, ustawienia konfiguracji usług IIS i ASP.NET mogą mieć wpływ na przepływność i ilość pamięci usługi WCF.  Aby uzyskać więcej informacji na temat wydajności ASP.NET, zobacz [Poprawianie wydajności ASP.NET](/previous-versions/msp-n-p/ff647787(v=pandp.10)). Jedno ustawienie, które może mieć niezamierzone konsekwencje <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> , to, który jest właściwością <xref:System.Web.Configuration.ProcessModelSection> . Jeśli aplikacja ma ustaloną lub niewielką liczbę klientów, ustawienie <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> 2 może zapewnić zwiększenie przepływności na komputerze wieloprocesorowym o wykorzystaniu procesora w pobliżu 100%. Ten wzrost wydajności obejmuje koszt: spowoduje to również zwiększenie użycia pamięci, co może obniżyć skalowalność.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Administracja i Diagnostyka](./diagnostics/index.md)
 - [Duże ilości danych i przesyłanie strumieniowe](./feature-details/large-data-and-streaming.md)

@@ -4,15 +4,16 @@ ms.date: 03/30/2017
 f1_keywords:
 - WcfOptions
 ms.assetid: 6abe5d34-519b-4cef-8f02-3c0a7f125585
-ms.openlocfilehash: 7f21cd7ea600277461146387b962a89ea0a8472b
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 2033e693003d0b50bcdada428e4a5f451b3ad67e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320625"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255081"
 ---
 # <a name="controlling-auto-launching-of-wcf-service-host"></a>Kontrolowanie automatycznego uruchamiania hosta programu WCF
-Można kontrolować funkcję autouruchamiania hosta usługi Windows Communication Foundation (WCF) (WcfSvcHost. exe) dla projektu biblioteki usług WCF, podczas debugowania innego projektu w tym samym rozwiązaniu programu Visual Studio zawierającym wiele projektów.  
+
+Można kontrolować możliwość uruchamiania Windows Communication Foundation (WcfSvcHost.exe) dla projektu biblioteki usług WCF w przypadku debugowania innego projektu w tym samym rozwiązaniu programu Visual Studio zawierającym wiele projektów.  
   
  Aby to zrobić, kliknij prawym przyciskiem myszy projekt usługi WCF w **Eksplorator rozwiązań**, wybierz polecenie **Właściwości**, a następnie kliknij kartę **Opcje WCF** . **Uruchom hosta usługi WCF podczas debugowania innego projektu w tym samym rozwiązaniu** pole wyboru jest domyślnie włączone. Możesz wyczyścić to pole, aby Host usługi WCF dla danego projektu nie był uruchamiany, gdy inny projekt jest debugowany w tym samym rozwiązaniu.  
   
@@ -28,6 +29,6 @@ Można kontrolować funkcję autouruchamiania hosta usługi Windows Communicatio
   
 - Projekt biblioteki usługi zespolonej.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Host usługi WCF (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)

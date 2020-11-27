@@ -6,17 +6,19 @@ helpviewer_keywords:
 - extensibility [WCF]
 - Windows Communication Foundation, extensibility
 ms.assetid: c145e2f6-f402-41f5-8b5a-eee03978737b
-ms.openlocfilehash: 037182a3cb105f544e15a05f955c142ba57f62f3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b82dd4fb6a5b41a0160df8680fb1ba65d9a5bd33
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795536"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254600"
 ---
 # <a name="extending-wcf"></a>Rozszerzanie architektury WCF
+
 Windows Communication Foundation (WCF) pozwala modyfikować i zwiększać składniki czasu wykonywania w celu precyzyjnego kontrolowania i rozbudowania aplikacji opartych na usługach. W tematach w tej sekcji opisano architekturę rozszerzalności. Aby uzyskać więcej informacji na temat programowania podstawowego, zobacz [podstawowe programowanie WCF](../basic-wcf-programming.md).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Rozszerzanie elementu ServiceHost i warstwy modelu usług](extending-servicehost-and-the-service-model-layer.md)  
  Warstwa modelu usług jest odpowiedzialna za ściąganie komunikatów przychodzących z kanałów, tłumaczenie ich na wywołania metod w kodzie aplikacji i wysyłanie wyników z powrotem do obiektu wywołującego.  Rozszerzenia modelu usług modyfikują lub implementują działania związane z wykonywaniem lub komunikacją, a także funkcje, w tym funkcje dyspozytora, niestandardowe zachowania, komunikat i przechwycenie parametru oraz inne funkcje rozszerzalności.  
   
@@ -30,12 +32,13 @@ Windows Communication Foundation (WCF) pozwala modyfikować i zwiększać skład
  Zabezpieczenia w programie WCF obejmują zabezpieczenia transferu (integralność, poufność i uwierzytelnianie), kontrolę dostępu (autoryzacja) i inspekcję. Klasy Znalezione w `IdentityModel` przestrzeni nazw są używane przez funkcję WCF do kontroli dostępu. Zrozumienie architektury zabezpieczeń umożliwia tworzenie niestandardowych typów zgłoszeń w celu uwzględnienia niestandardowych systemów kontroli dostępu.  
   
  [Rozszerzanie systemu metadanych](extending-the-metadata-system.md)  
- System metadanych WCF jest grupą klas i interfejsów, które reprezentują metadane wymagane do implementowania aplikacji opartych na usługach. Modyfikuj lub rozszerzaj klasy albo Implementuj i Konfiguruj interfejsy do eksportowania i importowania niestandardowych metadanych, takich jak rozszerzenia Web Services Description Language (WSDL) lub niestandardowe potwierdzenia WS-PolicyAttachments.  
+ System metadanych WCF jest grupą klas i interfejsów, które reprezentują metadane wymagane do implementowania aplikacji opartych na usługach. Modyfikuj lub rozszerzaj klasy albo Implementuj i Konfiguruj interfejsy, aby wyeksportować i zaimportować niestandardowe metadane, takie jak rozszerzenia Web Services Description Language (WSDL) lub niestandardowe potwierdzenia WS-PolicyAttachments.  
   
  [Rozszerzanie koderów i serializatorów](extending-encoders-and-serializers.md)  
  Kodery i serializatory tłumaczą dane z jednej postaci na inną. W tematach w tej sekcji omówiono, jak zwiększyć liczbę dostarczonych klas w celu spełnienia specjalnych wymagań.  
   
-## <a name="reference"></a>Tematy pomocy  
+## <a name="reference"></a>Dokumentacja  
+
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Channels>  
@@ -51,6 +54,7 @@ Windows Communication Foundation (WCF) pozwala modyfikować i zwiększać skład
  <xref:System.IdentityModel.Tokens>  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Podstawy programowania przy użyciu programu WCF](../basic-wcf-programming.md)  
   
  [Szczegóły funkcji WCF](../feature-details/index.md)  

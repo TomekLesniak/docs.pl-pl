@@ -2,14 +2,15 @@
 title: Informacje o wyjątkach
 ms.date: 03/30/2017
 ms.assetid: adc19950-5f79-4045-8403-bf6310118ee3
-ms.openlocfilehash: 5e61f395cb107202a7c435648f53ad40fce318b4
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 233586c3a4fdda4cfbea2c3370d447c7bfa41b94
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797339"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254808"
 ---
 # <a name="exceptions-reference"></a>Informacje o wyjątkach
+
 Ta sekcja zawiera listę wszystkich wyjątków w następujących obszarach wygenerowanych przez Windows Communication Foundation (WCF):  
   
  [IdentityModel](identitymodel-exceptions.md)  
@@ -18,13 +19,13 @@ Ta sekcja zawiera listę wszystkich wyjątków w następujących obszarach wygen
   
  [Konfiguracja](configuration.md)  
   
- [Komunikacja podstawowa: Architektura kanału](core-communications-channel-framework.md)  
+ [Komunikacja podstawowa: Struktura kanału](core-communications-channel-framework.md)  
   
  [Komunikacja podstawowa: Struktura połączenia](core-communications-connection-framework.md)  
   
  Komunikacja podstawowa: Kanały transportu protokołów HTTP/HTTPS  
   
- [Komunikacja podstawowa: Wewnętrzne kanały transportu dupleksowego](core-communications-internal-duplex-transport-channels.md)  
+ [Komunikacja podstawowa: Wewnętrzne dwukierunkowe kanały transportu](core-communications-internal-duplex-transport-channels.md)  
   
  [Komunikacja podstawowa: Kanały transportu nazwanego potoku](core-communications-named-pipe-transport-channels.md)  
   
@@ -32,9 +33,9 @@ Ta sekcja zawiera listę wszystkich wyjątków w następujących obszarach wygen
   
  [Komunikacja podstawowa: Struktura transportu](core-communications-transport-framework.md)  
   
- [Komunikacja podstawowa: Uruchamiane](core-communications-utilities.md)  
+ [Komunikacja podstawowa: Narzędzia](core-communications-utilities.md)  
   
- [Komunikacja podstawowa: Obsługa webhost](core-communications-webhost-support.md)  
+ [Komunikacja podstawowa: Obsługa hostów internetowych](core-communications-webhost-support.md)  
   
  [Transakcja](transaction-exceptions.md)  
   

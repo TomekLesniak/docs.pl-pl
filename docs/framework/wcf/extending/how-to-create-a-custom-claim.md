@@ -1,19 +1,20 @@
 ---
-title: 'Instrukcje: Tworzenie oświadczenia niestandardowego'
+title: 'Instrukcje: tworzenie oświadczenia niestandardowego'
 description: Dowiedz się, jak utworzyć niestandardową funkcję w programie WCF. Usługa WCF obsługuje różne wbudowane oświadczenia, a niektóre aplikacje mogą wymagać oświadczeń niestandardowych.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d619976b-eda3-475e-ac23-c7988a2dceb0
-ms.openlocfilehash: 89f2b1359b48b71720db6ff38f27883745cfe612
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: ea3bc7384ca10538ca5ab1d3bb05da6a2757fb67
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247549"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256017"
 ---
-# <a name="how-to-create-a-custom-claim"></a>Instrukcje: Tworzenie oświadczenia niestandardowego
+# <a name="how-to-create-a-custom-claim"></a>Instrukcje: tworzenie oświadczenia niestandardowego
+
 Infrastruktura modelu tożsamości w programie Windows Communication Foundation (WCF) udostępnia zestaw wbudowanych typów i praw do funkcji pomocnika do tworzenia <xref:System.IdentityModel.Claims.Claim> wystąpień z tymi typami i prawami. Te wbudowane oświadczenia są przeznaczone do informacji o modelu znajdujących się w typach poświadczeń klienta obsługiwanych domyślnie przez program WCF. W wielu przypadkach wbudowane oświadczenia są wystarczające; Niektóre aplikacje mogą jednak wymagać oświadczeń niestandardowych. Każde z nich składa się z typu, zasobu, którego dotyczy to i po prawej stronie tego zasobu. W tym temacie opisano sposób tworzenia niestandardowego żądania.  
   
 ### <a name="to-create-a-custom-claim-that-is-based-on-a-primitive-data-type"></a>Aby utworzyć niestandardową wartość, która jest oparta na typie danych pierwotnych  
@@ -70,6 +71,7 @@ Infrastruktura modelu tożsamości w programie Windows Communication Foundation 
          [!code-vb[c_CustomClaim#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#5)]
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu demonstruje sposób tworzenia niestandardowego zgłoszenia z typem zasobu pierwotnego i niestandardowym niepierwotnym typem zasobu.  
   
  [!code-csharp[c_CustomClaim#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#0)]

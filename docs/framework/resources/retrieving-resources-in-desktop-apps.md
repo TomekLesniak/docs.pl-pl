@@ -19,19 +19,21 @@ helpviewer_keywords:
 - translating resources into languages
 - localizing resources
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
-ms.openlocfilehash: cefdfef32928783b23ac0d51be596e48c27bde9a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 26e4367d28193ce731198ee0ba3d3b35d83cf19c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90535511"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254548"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Pobieranie zasobów w aplikacjach klasycznych
 
 W przypadku pracy z zlokalizowanymi zasobami w .NET Framework aplikacjach klasycznych najlepiej jest spakować zasoby dla kultury domyślnej lub neutralnej z zestawem głównym i utworzyć oddzielny zestaw satelicki dla każdego języka lub kultury obsługiwanej przez aplikację. Następnie można użyć <xref:System.Resources.ResourceManager> klasy zgodnie z opisem w następnej sekcji, aby uzyskać dostęp do nazwanych zasobów. Jeśli nie zdecydujesz się na osadzanie zasobów w głównym zestawie i zestawach satelickich, możesz również uzyskać dostęp do plików binarnych. resources bezpośrednio, zgodnie z opisem w sekcji [pobieranie zasobów z plików. resources](#from_file) w dalszej części tego artykułu.  Aby pobrać zasoby z aplikacji ze sklepu Windows 8. x, zobacz [Tworzenie i pobieranie zasobów w aplikacjach ze sklepu Windows](/previous-versions/windows/apps/hh694557(v=vs.140)).  
   
 <a name="from_assembly"></a>
+
 ## <a name="retrieving-resources-from-assemblies"></a>Pobieranie zasobów z zestawów  
+
  <xref:System.Resources.ResourceManager>Klasa zapewnia dostęp do zasobów w czasie wykonywania. Używasz <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType> metody do pobierania zasobów ciągów i <xref:System.Resources.ResourceManager.GetObject%2A?displayProperty=nameWithType> <xref:System.Resources.ResourceManager.GetStream%2A?displayProperty=nameWithType> metody lub do pobierania zasobów niebędących ciągami. Każda metoda ma dwa przeciążenia:  
   
 - Przeciążenie, którego pojedynczy parametr jest ciągiem zawierającym nazwę zasobu. Metoda próbuje pobrać ten zasób dla bieżącej kultury wątku. Aby uzyskać więcej informacji, zobacz <xref:System.Resources.ResourceManager.GetString%28System.String%29> <xref:System.Resources.ResourceManager.GetObject%28System.String%29> metody, i <xref:System.Resources.ResourceManager.GetStream%28System.String%29> .  
@@ -41,6 +43,7 @@ W przypadku pracy z zlokalizowanymi zasobami w .NET Framework aplikacjach klasyc
  Menedżer zasobów używa procesu rezerwowego zasobów do kontrolowania sposobu, w jaki aplikacja pobiera zasoby specyficzne dla kultury. Aby uzyskać więcej informacji, zobacz sekcję "proces rezerwowy zasobów" w artykule [pakowanie i wdrażanie zasobów](packaging-and-deploying-resources-in-desktop-apps.md). Aby uzyskać informacje o tworzeniu wystąpienia <xref:System.Resources.ResourceManager> obiektu, zobacz sekcję "Tworzenie wystąpienia obiektu ResourceManager" w temacie dotyczącym <xref:System.Resources.ResourceManager> klas.  
   
 ### <a name="retrieving-string-data-an-example"></a>Pobieranie danych ciągu: przykład  
+
  Poniższy przykład wywołuje metodę, <xref:System.Resources.ResourceManager.GetString%28System.String%29> Aby pobrać zasoby ciągów dla bieżącej kultury interfejsu użytkownika. Zawiera on neutralny zasób ciągu dla kultur angielskiej (Stany Zjednoczone) i zlokalizowanych zasobów dla kultur francuski (Francja) i rosyjski (Rosja). Następujący zasób w języku angielskim (Stany Zjednoczone) znajduje się w pliku o nazwie Strings.txt:  
   
 ```text
@@ -82,6 +85,7 @@ al -embed:strings.ru-RU.resources -culture:ru-RU -out:ru-RU\GetString.resources.
  Gdy bieżącą kulturą interfejsu użytkownika jest hiszpański (Hiszpania), należy zauważyć, że w przykładzie są wyświetlane zasoby języka angielskiego, ponieważ nie są dostępne zasoby języka hiszpańskiego, a język angielski jest domyślną kulturą przykładu.  
   
 ### <a name="retrieving-object-data-two-examples"></a>Pobieranie danych obiektu: dwa przykłady  
+
  Możesz użyć <xref:System.Resources.ResourceManager.GetObject%2A> metod i, <xref:System.Resources.ResourceManager.GetStream%2A> Aby pobrać dane obiektu. Obejmuje to pierwotne typy danych, obiekty, które można serializować i obiekty, które są przechowywane w formacie binarnym (na przykład obrazy).  
   
  W poniższym przykładzie użyto <xref:System.Resources.ResourceManager.GetStream%28System.String%29> metody do pobrania mapy bitowej używanej w oknie powitalnym otwierającym aplikację. Następujący kod źródłowy w pliku o nazwie CreateResources.cs (dla języka C#) lub. vb (dla Visual Basic) generuje plik resx zawierający serializowany obraz. W takim przypadku obraz jest ładowany z pliku o nazwie SplashScreen.jpg; Możesz zmodyfikować nazwę pliku, aby zastąpić własny obraz.  
@@ -134,6 +138,7 @@ GetObject.exe
 ```  
   
 ## <a name="versioning-support-for-satellite-assemblies"></a>Obsługa obsługi wersji dla zestawów satelickich  
+
  Domyślnie, gdy <xref:System.Resources.ResourceManager> obiekt pobiera żądane zasoby, szuka zestawów satelickich, które mają numery wersji zgodne z numerem wersji głównego zestawu. Po wdrożeniu aplikacji może być konieczne zaktualizowanie zestawu głównego lub określonych zestawów satelickich zasobów. .NET Framework zapewnia obsługę wersji zestawu głównego i zestawów satelickich.  
   
  Ten <xref:System.Resources.SatelliteContractVersionAttribute> atrybut zapewnia obsługę przechowywania wersji dla zestawu głównego. Określenie tego atrybutu w głównym zestawie aplikacji umożliwia aktualizowanie i ponowne wdrażanie zestawu głównego bez aktualizowania zestawów satelickich. Po zaktualizowaniu zestawu głównego należy zwiększyć numer wersji zestawu głównego, ale pozostawić numer wersji kontraktu satelitarnego bez zmian. Gdy Menedżer zasobów pobiera żądane zasoby, ładuje wersję zestawu satelickiego określoną przez ten atrybut.  
@@ -145,10 +150,13 @@ GetObject.exe
  Aby uzyskać więcej informacji o wersji zestawu, zobacz [przechowywanie wersji zestawu](../../standard/assembly/versioning.md) i [jak środowisko uruchomieniowe lokalizuje zestawy](../deployment/how-the-runtime-locates-assemblies.md).  
   
 <a name="from_file"></a>
+
 ## <a name="retrieving-resources-from-resources-files"></a>Pobieranie zasobów z plików Resources  
+
  Jeśli nie zdecydujesz się na wdrażanie zasobów w zestawach satelickich, możesz nadal używać <xref:System.Resources.ResourceManager> obiektu do bezpośredniego dostępu do zasobów z plików. resources. W tym celu należy poprawnie wdrożyć pliki resources. Następnie użyj metody, <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%2A?displayProperty=nameWithType> Aby utworzyć wystąpienie <xref:System.Resources.ResourceManager> obiektu i określić katalog, który zawiera pliki Standalone. resources.  
   
 ### <a name="deploying-resources-files"></a>Wdrażanie plików Resources  
+
  Po osadzeniu plików Resources w zestawie aplikacji i w zestawach satelickich każdy zestaw satelicki ma taką samą nazwę pliku, ale jest umieszczany w podkatalogu, który odzwierciedla kulturę zestawu satelickiego. Natomiast w przypadku uzyskiwania dostępu do zasobów z plików resources bezpośrednio można umieścić wszystkie pliki resources w jednym katalogu, zazwyczaj podkatalogiem katalogu aplikacji. Nazwa domyślnego pliku Resources aplikacji składa się tylko z nazwy głównej, bez wskazania jego kultury (na przykład ciągi. resources). Zasoby dla każdej zlokalizowanej kultury są przechowywane w pliku, którego nazwa składa się z nazwy głównej, po której następuje kultura (na przykład ciągi. ja. resources lub strings.de-DE. resources).
 
  Na poniższej ilustracji przedstawiono, gdzie pliki zasobów powinny znajdować się w strukturze katalogów. Zapewnia również konwencje nazewnictwa dla plików zasobów.  
@@ -156,6 +164,7 @@ GetObject.exe
  ![Ilustracja przedstawiająca katalog główny aplikacji.](./media/retrieving-resources-in-desktop-apps/resource-application-directory.gif)  
   
 ### <a name="using-the-resource-manager"></a>Korzystanie z Menedżer zasobów  
+
  Po utworzeniu zasobów i umieszczeniu ich w odpowiednim katalogu należy utworzyć <xref:System.Resources.ResourceManager> obiekt do korzystania z zasobów, wywołując <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%28System.String%2CSystem.String%2CSystem.Type%29> metodę. Pierwszy parametr określa nazwę główną domyślnego pliku Resources aplikacji ("ciągi" dla przykładu w poprzedniej sekcji). Drugi parametr określa lokalizację zasobów ("zasoby" dla poprzedniego przykładu). Trzeci parametr określa <xref:System.Resources.ResourceSet> implementację do użycia. Jeśli trzeci parametr jest `null` , używane jest domyślne środowisko uruchomieniowe <xref:System.Resources.ResourceSet> .  
   
 > [!NOTE]
@@ -164,6 +173,7 @@ GetObject.exe
  Po utworzeniu wystąpienia <xref:System.Resources.ResourceManager> obiektu należy użyć <xref:System.Resources.ResourceManager.GetString%2A> metod, i, <xref:System.Resources.ResourceManager.GetObject%2A> <xref:System.Resources.ResourceManager.GetStream%2A> jak wspomniano wcześniej, aby pobrać zasoby. Jednak pobieranie zasobów bezpośrednio z plików Resources różni się od pobierania zasobów osadzonych z zestawów. Podczas pobierania zasobów z plików. resources <xref:System.Resources.ResourceManager.GetString%28System.String%29> metody, <xref:System.Resources.ResourceManager.GetObject%28System.String%29> , i <xref:System.Resources.ResourceManager.GetStream%28System.String%29> zawsze pobierają domyślne zasoby kultury, niezależnie od bieżącej kultury. Aby pobrać zasoby bieżącej kultury lub określonej kultury aplikacji, należy wywołać <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29> <xref:System.Resources.ResourceManager.GetObject%28System.String%2CSystem.Globalization.CultureInfo%29> metodę,, lub <xref:System.Resources.ResourceManager.GetStream%28System.String%2CSystem.Globalization.CultureInfo%29> i określić kulturę, której zasoby mają być pobrane. Aby pobrać zasoby bieżącej kultury, określ wartość <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> właściwości jako `culture` argument. Jeśli Menedżer zasobów nie może pobrać zasobów programu `culture` , program użyje standardowych reguł rezerwowych zasobów do pobrania odpowiednich zasobów.  
   
 ### <a name="an-example"></a>Przykład  
+
  Poniższy przykład ilustruje sposób pobierania przez Menedżera zasobów zasobów bezpośrednio z plików Resources. Przykład składa się z trzech plików zasobów tekstowych dla kultur angielskiej (Stany Zjednoczone), francuski (Francja) i rosyjski (Rosja). W języku angielskim (Stany Zjednoczone) jest domyślną kulturą przykładową. Jego zasoby są przechowywane w następującym pliku o nazwie Strings.txt:  
   
 ```text
@@ -201,7 +211,7 @@ Resgen Strings.ru-RU.txt Resources\Strings.ru-RU.resources
 csc Example.cs  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Resources.ResourceManager>
 - [Zasoby w aplikacjach klasycznych](index.md)

@@ -2,29 +2,30 @@
 title: Rozwiązywanie problemów dotyczących konfiguracji
 ms.date: 03/30/2017
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-ms.openlocfilehash: fb687e9975ab9ac763030f10d54c7744dc02c9e0
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: 596aae345061796535895a091c59d50a5bffe0d8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90720455"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255120"
 ---
 # <a name="troubleshoot-setup-issues"></a>Rozwiązywanie problemów z instalacją
 
 W tym artykule opisano sposób rozwiązywania problemów z instalacją programu Windows Communication Foundation (WCF).  
   
 ## <a name="some-windows-communication-foundation-registry-keys-are-not-repaired-by-performing-an-msi-repair-operation-on-the-net-framework-30"></a>Niektóre Windows Communication Foundation klucze rejestru nie są naprawiane przez wykonanie operacji naprawy MSI na .NET Framework 3,0  
+
  W przypadku usunięcia dowolnego z następujących kluczy rejestru:  
   
-- HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ServiceModelService 3.0.0.0  
+- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ServiceModelService 3.0.0.0  
   
-- HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ServiceModelOperation 3.0.0.0  
+- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ServiceModelOperation 3.0.0.0  
   
-- HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ServiceModelEndpoint 3.0.0.0  
+- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ServiceModelEndpoint 3.0.0.0  
   
-- HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\SMSvcHost 3.0.0.0  
+- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SMSvcHost 3.0.0.0  
   
-- HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\MSDTC 3.0.0.0 Bridge  
+- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MSDTC Bridge 3.0.0.0  
   
  Klucze nie są ponownie tworzone w przypadku uruchomienia naprawy przy użyciu Instalatora .NET Framework 3,0 uruchomionego z apletu **Dodaj/Usuń programy** w **Panelu sterowania**. Aby poprawnie utworzyć te klucze, użytkownik musi odinstalować i ponownie zainstalować .NET Framework 3,0.  
   
@@ -56,7 +57,7 @@ W tym artykule opisano sposób rozwiązywania problemów z instalacją programu 
   
 1. Uruchom Narzędzie diagnostyczne WMI, aby naprawić usługę WMI. Aby uzyskać więcej informacji na temat korzystania z tego narzędzia, zobacz [Narzędzie diagnostyczne WMI](/previous-versions/tn-archive/ff404265(v%3dmsdn.10)).  
   
- Napraw instalację .NET Framework 3,0 przy użyciu apletu **Dodaj/Usuń programy** znajdującego się w **Panelu sterowania**lub odinstaluj/ponownie zainstaluj .NET Framework 3,0.  
+ Napraw instalację .NET Framework 3,0 przy użyciu apletu **Dodaj/Usuń programy** znajdującego się w **Panelu sterowania** lub odinstaluj/ponownie zainstaluj .NET Framework 3,0.  
   
 ## <a name="repair-net-framework-30-after-net-framework-35-installation"></a>Naprawa .NET Framework 3,0 po zainstalowaniu .NET Framework 3,5
 
@@ -65,6 +66,7 @@ W tym artykule opisano sposób rozwiązywania problemów z instalacją programu 
  [Narzędzie rejestracji usługi przepływu pracy (WFServicesReg.exe)](workflow-service-registration-tool-wfservicesreg-exe.md) można znaleźć pod adresem%windir%\Microsoft.NET\framework\v3.5\ lub%windir%\Microsoft.NET\framework64\v3.5\  
   
 ## <a name="configure-iis-properly-for-wcfwf-webhost-after-installing-net-framework-35"></a>Skonfiguruj prawidłowo usługi IIS dla programu WCF/WF webhost po zainstalowaniu .NET Framework 3,5  
+
  W przypadku instalacji .NET Framework 3,5 nie można skonfigurować dodatkowych ustawień konfiguracji usług IIS związanych z WCF, rejestruje błąd w dzienniku instalacji i kontynuuje działanie. Każda próba uruchomienia aplikacji obiektów WorkflowService zakończy się niepowodzeniem, ponieważ brakuje wymaganych ustawień konfiguracji. Na przykład ładowanie usługi xoml lub reguł może zakończyć się niepowodzeniem.  
   
  Aby obejść ten problem, użyj [narzędzia rejestracji usługi przepływu pracy (WFServicesReg.exe)](workflow-service-registration-tool-wfservicesreg-exe.md) z `/c` przełącznikiem, aby prawidłowo skonfigurować mapy skryptów usług IIS na tym komputerze. [Narzędzie rejestracji usługi przepływu pracy (WFServicesReg.exe)](workflow-service-registration-tool-wfservicesreg-exe.md) można znaleźć pod adresem%windir%\Microsoft.NET\framework\v3.5\ lub%windir%\Microsoft.NET\framework64\v3.5\  

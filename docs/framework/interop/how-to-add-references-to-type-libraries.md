@@ -8,14 +8,15 @@ helpviewer_keywords:
 - type libraries
 - COM interop, importing type library
 ms.assetid: f5cfa6ba-cc25-4017-82cd-ba7391859113
-ms.openlocfilehash: a3c24385c9cc7debe95aa10369b050897415bc46
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 76f616c36d81b8245f77f011b5c2f9b945e6916b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617434"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255107"
 ---
 # <a name="how-to-add-references-to-type-libraries"></a>Instrukcje: Dodawanie odwołań do bibliotek typów
+
 Program Visual Studio generuje zestaw międzyoperacyjny zawierający metadane podczas dodawania odwołania do biblioteki typów. Jeśli jest dostępny podstawowy zestaw międzyoperacyjny, program Visual Studio używa istniejącego zestawu przed wygenerowaniem nowego zestawu międzyoperacyjnego.  
   
 ### <a name="to-add-a-reference-to-a-type-library-in-visual-studio"></a>Aby dodać odwołanie do biblioteki typów w programie Visual Studio  
@@ -43,7 +44,7 @@ Program Visual Studio generuje zestaw międzyoperacyjny zawierający metadane po
   
 2. Użyj opcji [-link (opcje kompilatora C#)](../../csharp/language-reference/compiler-options/link-compiler-option.md) lub [-link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md) z nazwą zestawu międzyoperacyjnego, aby osadzić informacje o typie dla typów com w plikach wykonywalnych.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Importowanie biblioteki typów jako zestawu](importing-a-type-library-as-an-assembly.md)
 - [Udostępnianie składników COM programowi.NET Framework](exposing-com-components.md)

@@ -10,14 +10,15 @@ helpviewer_keywords:
 - data marshaling, Callback sample
 - marshaling, Callback sample
 ms.assetid: 6ddd7866-9804-4571-84de-83f5cc017a5a
-ms.openlocfilehash: 5e63dc9b7142934c56fb70bce7b878a37a540faa
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1c339ea2424041d0264d2aa92f7e7eacda7e5074
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556027"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255926"
 ---
 # <a name="marshaling-a-delegate-as-a-callback-method"></a>Marshaling delegata jako metoda wywołania zwrotnego
+
 Ten przykład ilustruje sposób przekazywania delegatów do funkcji niezarządzanej, oczekiwanie wskaźników funkcji. Delegat jest klasą, która może przechowywać odwołanie do metody i jest równoznaczna z bezpiecznym dla typu wskaźnikiem funkcji lub funkcją wywołania zwrotnego.
 
 > [!NOTE]
@@ -42,16 +43,18 @@ Przykład wywołania zwrotnego używa następujących funkcji niezarządzanych, 
 W tym przykładzie `NativeMethods` Klasa zawiera zarządzane prototypy dla `TestCallBack` `TestCallBack2` metod i. Obie metody przekażą delegata do funkcji wywołania zwrotnego jako parametr. Podpis delegata musi być zgodny z podpisem metody, do której się odwołuje. Na przykład `FPtr` `FPtr2` Delegaty i mają podpisy identyczne z `DoSomething` `DoSomething2` metodami i.
 
 ## <a name="declaring-prototypes"></a>Deklarowanie prototypów
+
 [!code-cpp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#37)]
 [!code-csharp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#37)]
 [!code-vb[Conceptual.Interop.Marshaling#37](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#37)]
 
 ## <a name="calling-functions"></a>Wywoływanie funkcji
+
 [!code-cpp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#38)]
 [!code-csharp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#38)]
 [!code-vb[Conceptual.Interop.Marshaling#38](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#38)]
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Różne przykłady organizowania](/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))
 - [Typy danych wywołania platformy](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)

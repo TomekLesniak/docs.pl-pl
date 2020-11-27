@@ -5,14 +5,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: 7b0cc58975ee145e5234adf51e24109898853e1c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 35ac2dded5b3c727391fcad3ca950c2de4dbea64
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558904"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254444"
 ---
 # <a name="configuring-tracing"></a>Konfigurowanie śledzenia
+
 W tym temacie opisano sposób włączania śledzenia, konfigurowania źródeł śledzenia w celu emitowania śladów i ustawiania poziomów śledzenia, ustawiania śledzenia aktywności i propagacji w celu obsługi korelacji kompleksowych wyników śledzenia oraz ustawiania detektorów śledzenia dostępu do śladów.  
   
  W przypadku zaleceń dotyczących ustawień śledzenia w środowisku produkcyjnym lub debugowania zapoznaj się z [zalecanymi ustawieniami śledzenia i rejestrowania komunikatów](recommended-settings-for-tracing-and-message-logging.md).  
@@ -21,6 +22,7 @@ W tym temacie opisano sposób włączania śledzenia, konfigurowania źródeł �
 > W systemie Windows 8 należy uruchomić podniesiony poziom aplikacji (Uruchom jako administrator), aby aplikacja mogła generować dzienniki śledzenia.  
   
 ## <a name="enabling-tracing"></a>Włączenie debugowania  
+
  Windows Communication Foundation (WCF) wyprowadza następujące dane na potrzeby śledzenia diagnostycznego:  
   
 - Ślady dla punktów kontrolnych procesu we wszystkich składnikach aplikacji, takich jak wywołania operacji, wyjątki kodu, ostrzeżenia i inne istotne zdarzenia przetwarzania.  
@@ -57,6 +59,7 @@ W tym temacie opisano sposób włączania śledzenia, konfigurowania źródeł �
 > Aby edytować plik konfiguracji projektu usługi WCF w programie Visual Studio, kliknij prawym przyciskiem myszy plik konfiguracyjny aplikacji — albo Web.config dla aplikacji hostowanych w sieci Web, albo Appname.exe.config dla aplikacji samodzielnie hostowanej w **Eksplorator rozwiązań**. Następnie wybierz pozycję **Edytuj kontekst konfiguracji WCF** . Spowoduje to uruchomienie [Narzędzia Edytora konfiguracji (SvcConfigEditor.exe)](../../configuration-editor-tool-svcconfigeditor-exe.md), które pozwala modyfikować ustawienia konfiguracji usług WCF przy użyciu graficznego interfejsu użytkownika.  
   
 ## <a name="configuring-trace-sources-to-emit-traces"></a>Konfigurowanie źródeł śledzenia w celu emitowania śladów  
+
  Funkcja WCF definiuje Źródło śledzenia dla każdego zestawu. Ślady wygenerowane w zestawie są dostępne dla odbiorników zdefiniowanych dla tego źródła. Zdefiniowane są następujące źródła śledzenia:  
   
 - System. ServiceModel: rejestruje wszystkie etapy przetwarzania w programie WCF, za każdym razem, gdy konfiguracja jest odczytywana, komunikat jest przetwarzany w transporcie, przetwarzanie zabezpieczeń, komunikat jest wysyłany w kodzie użytkownika i tak dalej.  
@@ -137,6 +140,7 @@ W tym temacie opisano sposób włączania śledzenia, konfigurowania źródeł �
  Aby uzyskać więcej informacji na temat tworzenia źródeł śledzenia zdefiniowanych przez użytkownika, zobacz [Rozszerzanie śledzenia](../../samples/extending-tracing.md).  
   
 ## <a name="configuring-trace-listeners-to-consume-traces"></a>Konfigurowanie detektorów śledzenia do korzystania ze śladów  
+
  W czasie wykonywania usługa WCF zwraca dane śledzenia do odbiorników, które przetwarzają dane. Funkcja WCF udostępnia kilka wstępnie zdefiniowanych odbiorników <xref:System.Diagnostics> , które różnią się w formacie danych wyjściowych. Możesz również dodać typy odbiorników niestandardowych.  
   
  Można użyć `add` określić nazwę i typ odbiornik śledzenia ma być używany. W naszej przykładowej konfiguracji nazywamy odbiornik `traceListener` i dodałeś odbiornik standardowego .NET Framework śledzenia ( `System.Diagnostics.XmlWriterTraceListener` ) jako typ, który ma być używany. Można dodać dowolną liczbę detektorów śledzenia dla każdego źródła. Jeśli odbiornik śledzenia emituje ślad do pliku, należy określić lokalizację i nazwę pliku wyjściowego w pliku konfiguracji. Jest to realizowane przez ustawienie `initializeData` nazwy pliku dla tego odbiornika. Jeśli nie określisz nazwy pliku, zostanie wygenerowana losowa nazwa pliku na podstawie używanego typu odbiornika. Jeśli <xref:System.Diagnostics.XmlWriterTraceListener> jest używana, zostanie wygenerowana nazwa pliku bez rozszerzenia. W przypadku zaimplementowania odbiornika niestandardowego można także użyć tego atrybutu do odbierania danych inicjujących innych niż nazwa pliku. Na przykład można określić identyfikator bazy danych dla tego atrybutu.  
@@ -149,11 +153,12 @@ W tym temacie opisano sposób włączania śledzenia, konfigurowania źródeł �
 > Ponieważ `System.Diagnostics.XmlWriterTraceListener` nie jest bezpieczny wątkowo, Źródło śledzenia może blokować zasoby wyłącznie podczas wyprowadzania śladów. Gdy wiele wątków wyprowadza ślady do źródła śledzenia skonfigurowanego do korzystania z tego odbiornika, może wystąpić rywalizacja o zasoby, co powoduje znaczący problem z wydajnością. Aby rozwiązać ten problem, należy zaimplementować niestandardowy odbiornik, który jest bezpieczny dla wątków.  
   
 ## <a name="trace-level"></a>Poziom śledzenia  
+
  Poziom śledzenia jest kontrolowany przez `switchValue` ustawienie źródła śledzenia. Dostępne poziomy śledzenia są opisane w poniższej tabeli.  
   
 |Poziom śledzenia|Charakter śledzonych zdarzeń|Zawartość śledzonych zdarzeń|Zdarzenia śledzone|Obiekt docelowy użytkownika|  
 |-----------------|----------------------------------|-----------------------------------|--------------------|-----------------|  
-|Wyłączone|NIE DOTYCZY|NIE DOTYCZY|Brak wyemitowanych śladów.|Brak|  
+|Wyłączone|NIE DOTYCZY|NIE DOTYCZY|Brak wyemitowanych śladów.|Nie dotyczy|  
 |Krytyczne|Zdarzenia "negatywne": zdarzenia wskazujące nieoczekiwane przetwarzanie lub warunek błędu.||Zarejestrowano Nieobsłużone wyjątki, w tym następujące:<br /><br /> -OutOfMemoryException<br />-ThreadAbortException (środowisko CLR wywołuje wszystkie ThreadAbortExceptionHandler)<br />-StackOverflowException (nie można przechwycić)<br />-ConfigurationErrorsException<br />-SEHException —<br />-Błędy uruchamiania aplikacji<br />-FailFast zdarzenia<br />— Zawiesza się system<br />-Trujące komunikaty: ślady komunikatów, które powodują niepowodzenie aplikacji.|Administratorzy<br /><br /> Deweloperzy aplikacji|  
 |Błąd|Zdarzenia "negatywne": zdarzenia wskazujące nieoczekiwane przetwarzanie lub warunek błędu.|Nastąpiło nieoczekiwane przetwarzanie. Aplikacja nie mogła wykonać zadania zgodnie z oczekiwaniami. Aplikacja jest jednak nadal uruchomiona.|Wszystkie wyjątki są rejestrowane.|Administratorzy<br /><br /> Deweloperzy aplikacji|  
 |Ostrzeżenie|Zdarzenia "negatywne": zdarzenia wskazujące nieoczekiwane przetwarzanie lub warunek błędu.|Wystąpił możliwy problem lub może wystąpić, ale aplikacja nadal działa poprawnie. Może jednak nadal nie funkcjonować prawidłowo.|-Aplikacja otrzymuje więcej żądań niż zezwala na to ustawienia ograniczenia przepustowości.<br />-Kolejka otrzymująca zbliża się do maksymalnej skonfigurowanej pojemności.<br />-Przekroczono limit czasu.<br />-Poświadczenia są odrzucane.|Administratorzy<br /><br /> Deweloperzy aplikacji|  
@@ -168,6 +173,7 @@ W tym temacie opisano sposób włączania śledzenia, konfigurowania źródeł �
 > Informacje, pełne i ActivityTracing poziomy generują wiele śladów, co może negatywnie wpłynąć na przepływność komunikatów, jeśli wszystkie dostępne zasoby są używane na komputerze.  
   
 ## <a name="configuring-activity-tracing-and-propagation-for-correlation"></a>Konfigurowanie śledzenia działań i propagacji dla korelacji  
+
  `activityTracing`Wartość określona dla atrybutu służy `switchValue` do włączania śledzenia aktywności, która emituje ślady dla granic działań i transferów w punktach końcowych.  
   
 > [!NOTE]
@@ -181,7 +187,7 @@ W tym temacie opisano sposób włączania śledzenia, konfigurowania źródeł �
   
  Nie można używać `propagateActivity` atrybutu ze źródłami śledzenia zdefiniowanymi przez użytkownika. W przypadku propagacji identyfikatora działania kodu użytkownika upewnij się, że nie ustawiono elementu ServiceModel `ActivityTracing` , podczas gdy nadal `propagateActivity` ma atrybut ServiceModel ustawiony na `true` .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Śledzenie](index.md)
 - [Administracja i Diagnostyka](../index.md)

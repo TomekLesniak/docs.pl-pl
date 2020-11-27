@@ -6,17 +6,19 @@ helpviewer_keywords:
 - issued tokens [WCF]
 - federation [WCF], issued tokens
 ms.assetid: 4c31ee7d-a820-4067-8b84-a83049021bb6
-ms.openlocfilehash: dffba51c1bf1aaffbed8725aafc96fd747cb31c6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0ab3d6bad717e71901b4d94c99f1c48f99d8675e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559255"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255523"
 ---
 # <a name="federation-and-issued-tokens"></a>Federacja i wystawione tokeny
+
 Program Windows Communication Foundation (WCF) umożliwia tworzenie klientów, którzy komunikują się bezpiecznie z usługami, które implementują specyfikacje WS-Federation i WS-Trust. Specyfikacje wykorzystują XML, SOAP i Web Services Description Language (WSDL), aby zapewnić mechanizmy umożliwiające uwierzytelnianie i autoryzację w różnych obszarach zaufania.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Federacja](federation.md)  
  Zawiera przegląd Federacji.  
   
@@ -44,7 +46,8 @@ Program Windows Communication Foundation (WCF) umożliwia tworzenie klientów, k
  [Instrukcje: wyłączanie bezpiecznej sesji przy użyciu klasy WSFederationHttpBinding](how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
  Zawiera opis sposobu wyłączania zabezpieczonych sesji w systemie `WSFederationHttpBinding` . Podczas tworzenia kolektywu serwerów sieci Web wymagającego sesji dla każdego klienta należy wyłączyć bezpieczne sesje.  
   
-## <a name="reference"></a>Tematy pomocy  
+## <a name="reference"></a>Dokumentacja  
+
  <xref:System.IdentityModel.Claims>  
   
  <xref:System.ServiceModel.ServiceAuthorizationManager>  
@@ -61,7 +64,7 @@ Program Windows Communication Foundation (WCF) umożliwia tworzenie klientów, k
   
  <xref:System.ServiceModel.WSFederationHttpBinding>  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Autoryzacja](authorization-in-wcf.md)
 - [Tokeny niestandardowe](../extending/custom-tokens.md)

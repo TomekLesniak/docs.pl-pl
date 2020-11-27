@@ -2,19 +2,20 @@
 title: Określanie czasu trwania operacji usługi
 ms.date: 03/30/2017
 ms.assetid: e8a93a2c-2c20-48b3-8986-57e90e9aa908
-ms.openlocfilehash: 06a4c2da7b702fa4fbc1469576c118b790803339
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 2607efe0d469f1235ee3d43d62f5e9781681668d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291422"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254834"
 ---
 # <a name="determining-service-operation-duration"></a>Określanie czasu trwania operacji usługi
+
 Jeśli śledzenie analityczne jest włączone w aplikacji Windows Communication Foundation (WCF), czas wykonywania operacji na usłudze można łatwo określić, sprawdzając dziennik zdarzeń.  W tym temacie pokazano, jak określić czas trwania operacji usługi.  
   
 ### <a name="determining-service-operation-execution-duration"></a>Określanie czasu trwania wykonywania operacji usługi  
   
-1. Otwórz Podgląd zdarzeń, klikając przycisk **Start**, **uruchom**i wprowadzając `eventvwr.exe`.  
+1. Otwórz Podgląd zdarzeń, klikając przycisk **Start**, **Uruchom** i wprowadzając `eventvwr.exe` .  
   
 2. Jeśli nie włączono śledzenia analitycznego, rozwiń węzeł **Dzienniki aplikacji i usług**, **Microsoft**, **Windows**, **serwer aplikacji-aplikacje**. Wybierz **Widok**, **Pokaż dzienniki analityczne i debugowania**. Kliknij prawym przyciskiem myszy pozycję **analityczne** i wybierz pozycję **Włącz dziennik**. Pozostaw Podgląd zdarzeń otwarty, aby można było wyświetlić ślady po uruchomieniu operacji usługi.  
   

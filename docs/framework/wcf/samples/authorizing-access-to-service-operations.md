@@ -6,14 +6,15 @@ helpviewer_keywords:
 - Authorizing Access To Service Operations Sample [Windows Communication Foundation]
 - authorization, Windows Communication Foundation sample
 ms.assetid: ddcfdaa5-8b2e-4e13-bd85-887209dc6328
-ms.openlocfilehash: 3097c86f50a75dec8a649ca4e1edd2511a046ca8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 68e6d53b656cb6327487598f65fa4f04c2495292
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585535"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255458"
 ---
 # <a name="authorizing-access-to-service-operations"></a>Autoryzowanie dostępu do operacji usługi
+
 W tym przykładzie pokazano, jak użyć, [\<serviceAuthorization>](../../configure-apps/file-schema/wcf/serviceauthorization-element.md) Aby umożliwić użycie <xref:System.Security.Permissions.PrincipalPermissionAttribute> atrybutu w celu autoryzacji dostępu do operacji usługi. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md) przykładzie. Usługa i klient są konfigurowane przy użyciu [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) . `mode`Atrybut [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) został ustawiony na `Message` i `clientCredentialType` został ustawiony na `Windows` . <xref:System.Security.Permissions.PrincipalPermissionAttribute>Stosuje się do każdej metody usługi i służy do ograniczania dostępu do każdej operacji. Obiekt wywołujący musi być administratorem systemu Windows, aby uzyskać dostęp do każdej operacji.  
   
  W tym przykładzie klient jest aplikacją konsolową (. exe), a usługa jest hostowana przez Internet Information Services (IIS).  

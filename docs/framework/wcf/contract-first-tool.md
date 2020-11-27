@@ -2,19 +2,20 @@
 title: Narzędzie Contract-First
 ms.date: 03/30/2017
 ms.assetid: 0a880690-f460-4475-a5f4-9f91ce08fcc6
-ms.openlocfilehash: 36e1a3e19f802ca5b74cf50f5bcd57c167e31e33
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.openlocfilehash: 1896a76892c76fb7277c3e36978604a4d290018e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291704"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255133"
 ---
 # <a name="contract-first-tool"></a>Narzędzie Contract-First
-Umowy serwisowe często muszą być tworzone z istniejących usług. W .NET Framework 4.5 i nowszych klasy kontraktów danych mogą być tworzone automatycznie z istniejących usług przy użyciu narzędzia umowy. Aby użyć narzędzia umowy, plik definicji schematu XML (XSD) musi zostać pobrany lokalnie; narzędzie nie może importować zdalnych kontraktów na dane za pośrednictwem protokołu HTTP.
 
- Narzędzie umowy pierwszy jest zintegrowany z visual studio 2012 jako zadanie kompilacji. Pliki kodu generowane przez zadanie kompilacji są tworzone za każdym razem, gdy projekt jest zbudowany, dzięki czemu projekt można łatwo przyjąć zmiany w podstawowej umowy serwisowej.
+Kontrakty usług często muszą być tworzone na podstawie istniejących usług. W .NET Framework 4,5 i nowszych klasy kontraktów danych mogą być tworzone automatycznie z istniejących usług przy użyciu narzędzia kontrakt-pierwsze. Aby można było użyć narzędzia kontraktu, plik definicji schematu XML (XSD) musi zostać pobrany lokalnie; Narzędzie nie może importować kontraktów danych zdalnych za pośrednictwem protokołu HTTP.
 
- Typy schematów, które narzędzie umowy po pierwsze można zaimportować, są następujące:
+ Narzędzie pierwszy kontrakt jest zintegrowane z Visual Studio 2012 jako zadanie kompilacji. Pliki kodu generowane przez zadanie kompilacji są tworzone za każdym razem, gdy projekt został skompilowany, dzięki czemu projekt może łatwo przyjąć zmiany w podstawowym kontrakcie usługi.
+
+ Typy schematów, które może zaimportować narzędzie kontraktu, obejmują następujące elementy:
 
 ```xml
 <xsd:complexType>
@@ -23,10 +24,11 @@ Umowy serwisowe często muszą być tworzone z istniejących usług. W .NET Fram
 </xsd:complexType>
 ```
 
- Typy proste nie zostaną wygenerowane, jeśli `Int16` są `String`prymitywami, takimi jak lub ; typy złożone nie zostaną wygenerowane, jeśli są typu `Collection`. Typy również nie zostaną wygenerowane, `xsd:complexType`jeśli są częścią innego . We wszystkich tych przypadkach typy będą odwoływane do istniejących typów w projekcie zamiast tego.
+ Typy proste nie będą generowane, jeśli są to elementy pierwotne, takie jak `Int16` lub `String` ; typy złożone nie będą generowane, jeśli są typu `Collection` . Typy nie będą również generowane, jeśli są częścią innego `xsd:complexType` . We wszystkich tych przypadkach do typów zostaną przywoływane istniejące typy w projekcie.
 
 ## <a name="adding-a-data-contract-to-a-project"></a>Dodawanie kontraktu danych do projektu
- Przed użyciem narzędzia umowy pierwszy, umowa serwisowa (XSD) należy dodać do projektu. Na potrzeby tego przeglądu, poniższa umowa zostanie wykorzystana do zilustrowania funkcji umowy. Ta definicja usługi jest małym podzbiorem umowy serwisowej używanej przez interfejs API wyszukiwania Bing.
+
+ Aby można było użyć narzędzia pierwszego kontraktu, do projektu należy dodać kontrakt usługi (XSD). Na potrzeby tego omówienia do zilustrowania funkcji pierwszego kontraktu zostanie użyty następujący kontrakt. Ta definicja usługi jest małym podzbiorem kontraktu usługi używanego przez interfejs API wyszukiwania w usłudze Bing.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -58,44 +60,45 @@ Umowy serwisowe często muszą być tworzone z istniejących usług. W .NET Fram
 </xs:schema>
 ```
 
- Aby dodać powyższą umowę serwisową do projektu, kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Dodaj nowy...**. Wybierz opcję Definicja schematu z okienka WCF okna dialogowego Szablony i nazwij nowy plik SampleContract.xsd. Skopiuj i wklej powyższy kod do widoku kodu nowego pliku.
+ Aby dodać powyższy kontrakt usługi do projektu, kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Dodaj nowy..**.. Wybierz pozycję definicja schematu w okienku WCF okna dialogowego szablony i Nadaj nowemu plikowi nazwę SampleContract. xsd. Skopiuj i wklej powyższy kod do widoku Kod nowego pliku.
 
-## <a name="configuring-contract-first-options"></a>Konfigurowanie opcji pierwszego kontraktu
- Opcje kontraktu-first można skonfigurować w menu Właściwości projektu WCF. Aby włączyć programowanie oparte na umowie, zaznacz pole wyboru **Włącz XSD jako język definicji typu** na stronie WCF okna właściwości projektu.
+## <a name="configuring-contract-first-options"></a>Konfigurowanie kontraktu — opcje pierwszego
 
- ![Zrzut ekranu przedstawiający opcje WCF z włączonym programem rozwoju pierwszego kontraktu.](./media/contract-first-tool/contract-first-options.png)
+ Opcje kontraktu — pierwsze można skonfigurować w menu właściwości projektu WCF. Aby włączyć programowanie pierwszego kontraktu, zaznacz pole wyboru **Włącz XSD jako język definicji typu** na stronie WCF okna właściwości projektu.
+
+ ![Zrzut ekranu przedstawiający opcje WCF z włączonym programowaniem w pierwszej kolejności.](./media/contract-first-tool/contract-first-options.png)
 
  Aby skonfigurować właściwości zaawansowane, kliknij przycisk Zaawansowane.
 
- ![Okno dialogowe Zaawansowane ustawienia generowania kodu kontraktu.](./media/contract-first-tool/advanced-contract-settings.png)
+ ![Zaawansowane ustawienia generowania kodu kontraktu — okno dialogowe.](./media/contract-first-tool/advanced-contract-settings.png)
 
- Następujące ustawienia zaawansowane można skonfigurować do generowania kodu z kontraktów. Ustawienia można skonfigurować tylko dla wszystkich plików w projekcie; nie można obecnie skonfigurować dla poszczególnych plików.
+ Poniższe ustawienia zaawansowane można skonfigurować do generowania kodu z umów. Ustawienia można skonfigurować tylko dla wszystkich plików w projekcie; w tej chwili nie można skonfigurować ustawień dla poszczególnych plików.
 
-- **Tryb serializatora:** To ustawienie określa, który serializator jest używany do odczytywania plików umowy serwisowej. Po **wybraniu modułu szeregowego XML** opcje **Typy kolekcji** i **Typy ponownego użycia** są wyłączone. Te opcje dotyczą tylko **serializatora kontraktu danych**.
+- **Tryb serializatora**: to ustawienie określa, który serializator jest używany do odczytywania plików kontraktu usługi. Po wybraniu **serializatora XML** , **typy kolekcji** i opcje **ponownego użycia** są wyłączone. Te opcje mają zastosowanie tylko do **serializatora kontraktu danych**.
 
-- **Typy ponownego użycia:** To ustawienie określa, które biblioteki są używane do ponownego użycia typu. To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **Serializator kontraktu danych**.
+- **Użyj ponownie typów**: to ustawienie określa, które biblioteki są używane do ponownego użycia. To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **serializator kontraktu danych**.
 
-- **Typ kolekcji:** To ustawienie określa w pełni kwalifikowany lub kwalifikowany typ zestawu, który ma być używany dla typu danych zbierania. To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **Serializator kontraktu danych**.
+- **Typ kolekcji**: to ustawienie określa w pełni kwalifikowana lub kwalifikowana dla zestawu typ, który ma być używany jako typ danych kolekcji. To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **serializator kontraktu danych**.
 
-- **Typ słownika:** To ustawienie określa w pełni kwalifikowany lub kwalifikowany typ zestawu, który ma być używany dla typu danych słownika.
+- **Typ słownika**: to ustawienie określa w pełni kwalifikowana lub kwalifikowana dla zestawu typ, który ma być używany jako typ danych słownika.
 
-- **EnableDataBinding**: To ustawienie określa, <xref:System.ComponentModel.INotifyPropertyChanged> czy interfejs ma być implementował wszystkie typy danych w celu zaimplementowania powiązania danych.
+- **EnableDataBinding**: to ustawienie określa, czy zaimplementować <xref:System.ComponentModel.INotifyPropertyChanged> interfejs dla wszystkich typów danych w celu wdrożenia powiązania danych.
 
-- **ExcludedTypes**:To ustawienie określa listę w pełni kwalifikowanych lub kwalifikowanych typów zestawu, które mają zostać wykluczone z zestawów, do których istnieje odwołanie. To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **Serializator kontraktu danych**.
+- **ExcludedTypes**: to ustawienie określa listę w pełni kwalifikowanych lub kwalifikowanych do zestawu typów, które mają być wykluczone z zestawów, do których się odwołuje. To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **serializator kontraktu danych**.
 
-- **GenerateInternalTypes**: To ustawienie określa, czy mają być generowane klasy oznaczone jako wewnętrzne. To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **Serializator kontraktu danych**.
+- **GenerateInternalTypes**: to ustawienie określa, czy mają zostać wygenerowane klasy, które są oznaczone jako wewnętrzne. To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **serializator kontraktu danych**.
 
-- **GenerateSerializableTypes**: To ustawienie określa, czy <xref:System.SerializableAttribute> mają być generowane klasy z atrybutem. To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **Serializator kontraktu danych**.
+- **GenerateSerializableTypes**: to ustawienie określa, czy generować klasy z <xref:System.SerializableAttribute> atrybutem. To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **serializator kontraktu danych**.
 
-- **ImportXMLTypes**: To ustawienie określa, czy skonfigurować serializator <xref:System.SerializableAttribute> umowy danych, <xref:System.Runtime.Serialization.DataContractAttribute> aby zastosować atrybut do klas bez atrybutu.  To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **Serializator kontraktu danych**.
+- **ImportXmlTypes**: to ustawienie określa, czy należy skonfigurować serializator kontraktu danych, aby zastosować <xref:System.SerializableAttribute> atrybut do klas bez <xref:System.Runtime.Serialization.DataContractAttribute> atrybutu.  To ustawienie ma zastosowanie tylko wtedy, gdy **tryb serializatora** jest ustawiony na **serializator kontraktu danych**.
 
-- **SupportFx35TypedDataSets**: To ustawienie określa, czy należy zapewnić dodatkowe funkcje dla wpisanych zestawów danych utworzonych dla programu .NET Framework 3.5. Gdy **tryb serializatora** jest ustawiony na <xref:System.Data.Design.TypedDataSetSchemaImporterExtensionFx35> **XML Serializer,** rozszerzenie zostanie dodane do importera schematu XML, gdy ta wartość jest ustawiona na True. Gdy **tryb serializatora** jest ustawiony na <xref:System.DateTimeOffset> **Serializator kontraktów danych,** typ zostanie wykluczony z odwołań, gdy ta wartość jest ustawiona na False, tak aby <xref:System.DateTimeOffset> zawsze jest generowany dla starszych wersji frameworka.
+- **SupportFx35TypedDataSets**: to ustawienie określa, czy należy udostępnić dodatkowe funkcje dla wpisanych zestawów danych utworzonych dla .NET Framework 3,5. Gdy  **tryb serializatora** jest ustawiony na **Serializator XML**, <xref:System.Data.Design.TypedDataSetSchemaImporterExtensionFx35> rozszerzenie zostanie dodane do importera schematu XML, gdy ta wartość jest ustawiona na true. Gdy  **tryb serializatora** jest ustawiony na **serializator kontraktu danych**, typ <xref:System.DateTimeOffset> zostanie wykluczony z odwołań, gdy ta wartość zostanie ustawiona na wartość false, tak aby <xref:System.DateTimeOffset> zawsze była generowana dla starszych wersji struktury.
 
-- **InputXsdFiles**: To ustawienie określa listę plików wejściowych. Każdy plik musi zawierać prawidłowy schemat XML.
+- **InputXsdFiles**: to ustawienie określa listę plików wejściowych. Każdy plik musi zawierać prawidłowy schemat XML.
 
-- **Język:** To ustawienie określa język wygenerowanego kodu umowy. Ustawienie musi być rozpoznawalne przez <xref:System.CodeDom.Compiler.CodeDomProvider>.
+- **Język**: to ustawienie określa język wygenerowanego kodu kontraktu. Ustawienie musi być rozpoznawalne przez program <xref:System.CodeDom.Compiler.CodeDomProvider> .
 
-- **NamespaceMappings**: To ustawienie określa mapowania z obszarów nazw docelowych XSD do obszarów nazw CLR. Każde mapowanie powinno mieć następujący format:
+- **NamespaceMappings**: to ustawienie określa mapowania z przestrzeni nazw obiektów docelowych XSD na przestrzenie nazw środowiska CLR. Każde mapowanie powinno mieć następujący format:
 
     ```xml
     "Schema Namespace, CLR Namespace"
@@ -107,24 +110,25 @@ Umowy serwisowe często muszą być tworzone z istniejących usług. W .NET Fram
     "*, CLR Namespace"
     ```
 
-- **OutputDirectory**: To ustawienie określa katalog, w którym będą generowane pliki kodu.
+- **OutputDirectory**: to ustawienie określa katalog, w którym będą generowane pliki kodu.
 
- Ustawienia będą używane do generowania typów umów serwisowych z plików umowy serwisowej podczas tworzenia projektu.
+ Ustawienia te zostaną użyte do wygenerowania typów kontraktu usługi z plików umów serwisowych podczas kompilowania projektu.
 
-## <a name="using-contract-first-development"></a>Korzystanie z rozwoju pierwszego kontraktu
- Po dodaniu umowy serwisowej do projektu i potwierdzeniu ustawień kompilacji, zbuduj projekt, naciskając **klawisz F6**. Typy zdefiniowane w umowie serwisowej będą następnie dostępne do użycia w projekcie.
+## <a name="using-contract-first-development"></a>Korzystanie z kontraktu — pierwsze programowanie
 
- Aby użyć typów zdefiniowanych w umowie serwisowej, dodaj odwołanie do `ContractTypes` bieżącej przestrzeni nazw:
+ Po dodaniu kontraktu usługi do projektu i potwierdzeniu ustawień kompilacji Skompiluj projekt, naciskając klawisz **F6**. Typy zdefiniowane w kontrakcie usługi będą następnie dostępne do użycia w projekcie.
+
+ Aby użyć typów zdefiniowanych w kontrakcie usługi, Dodaj odwołanie do `ContractTypes` pod bieżącą przestrzenią nazw:
 
 ```csharp
 using MyProjectNamespace.ContractTypes;
 ```
 
- Typy zdefiniowane w umowie serwisowej będą następnie rozwiązywalne w projekcie, jak pokazano poniżej:
+ Typy zdefiniowane w kontrakcie usługi zostaną następnie rozpoznawalne w projekcie, jak pokazano poniżej:
 
- ![SearchRequest klasy wyświetlane w IntelliSense po wpisaniu pierwszych kilku liter.](./media/contract-first-tool/service-contract-types.png)
+ ![Klasa SearchRequest wyświetlana w technologii IntelliSense po wpisaniu kilku pierwszych liter.](./media/contract-first-tool/service-contract-types.png)
 
- Typy generowane przez narzędzie są tworzone w pliku GeneratedXSDTypes.cs. Plik jest tworzony \<w katalogu projektu>/obj/\<build konfiguracji>/XSDGeneratedCode/ katalogu domyślnie. Przykładowy schemat na początku tego artykułu jest konwertowany w następujący sposób:
+ Typy generowane przez narzędzie są tworzone w pliku GeneratedXSDTypes.cs. Plik jest domyślnie tworzony w \<project directory> katalogu/obj/ \<build configuration> /XSDGeneratedCode/. Przykładowy schemat na początku tego artykułu został przekonwertowany w następujący sposób:
 
 ```csharp
 //------------------------------------------------------------------------------
@@ -344,7 +348,9 @@ namespace TestXSD3.ContractTypes
 ```
 
 ## <a name="errors-and-warnings"></a>Błędy i ostrzeżenia
+
  Błędy i ostrzeżenia napotkane podczas analizowania schematu XSD będą wyświetlane jako błędy kompilacji i ostrzeżenia.
 
 ## <a name="interface-inheritance"></a>Dziedziczenie interfejsu
- Nie jest możliwe użycie dziedziczenia interfejsu z rozwojem pierwszego kontraktu; jest to zgodne ze sposobem zachowania interfejsów w innych operacjach. Aby użyć interfejsu, który dziedziczy interfejs podstawowy, należy użyć dwóch oddzielnych punktów końcowych. Pierwszy punkt końcowy używa dziedziczonego kontraktu, a drugi punkt końcowy implementuje interfejs podstawowy.
+
+ Nie można używać dziedziczenia interfejsów w przypadku tworzenia kontraktu. jest to zgodne z sposobem zachowania interfejsów w innych operacjach. Aby można było użyć interfejsu, który dziedziczy interfejs podstawowy, należy użyć dwóch oddzielnych punktów końcowych. Pierwszy punkt końcowy używa dziedziczonego kontraktu, a drugi punkt końcowy implementuje interfejs podstawowy.

@@ -8,17 +8,19 @@ helpviewer_keywords:
 - XsdDataContractExporter class
 - XsdDataContractImporter class
 ms.assetid: bb57b962-70c1-45a9-93d5-e721e340a13f
-ms.openlocfilehash: d356450af8ce6690e2142f3487e153bcde095324
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8105ada41a2ec9dac962f5029ac89b66c69893ab
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595521"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96255562"
 ---
 # <a name="exporting-schemas-from-classes"></a>Eksportowanie schematów z klas
+
 Aby wygenerować schematy języka definicji schematu XML (XSD) z klas, które są używane w modelu kontraktu danych, użyj <xref:System.Runtime.Serialization.XsdDataContractExporter> klasy. W tym temacie opisano proces tworzenia schematów.  
   
 ## <a name="the-export-process"></a>Proces eksportowania  
+
  Proces eksportowania schematu rozpoczyna się od jednego lub kilku typów i tworzy <xref:System.Xml.Schema.XmlSchemaSet> , który opisuje projekcję XML tych typów.  
   
  `XmlSchemaSet`Jest częścią .NET Framework modelu obiektów schematu (SOM), który reprezentuje zestaw dokumentów schematu XSD. Aby utworzyć dokumenty XSD z `XmlSchemaSet` , Użyj kolekcji schematów z <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> właściwości `XmlSchemaSet` klasy. Następnie serializować każdy <xref:System.Xml.Schema.XmlSchema> obiekt za pomocą <xref:System.Xml.Serialization.XmlSerializer> .  
@@ -41,6 +43,7 @@ Aby wygenerować schematy języka definicji schematu XML (XSD) z klas, które s�
 5. Dostęp do <xref:System.Xml.Schema.XmlSchemaSet> <xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> właściwości.  
   
 ## <a name="export-options"></a>Opcje eksportu  
+
  Można ustawić <xref:System.Runtime.Serialization.XsdDataContractExporter.Options%2A> Właściwość <xref:System.Runtime.Serialization.XsdDataContractExporter> na wystąpienie <xref:System.Runtime.Serialization.ExportOptions> klasy w celu kontrolowania różnych aspektów procesu eksportu. W tym celu można ustawić następujące opcje:  
   
 - <xref:System.Runtime.Serialization.ExportOptions.KnownTypes%2A>. Ta kolekcja `Type` reprezentuje znane typy dla eksportowanych typów. (Aby uzyskać więcej informacji, zobacz [znane typy kontraktu danych](data-contract-known-types.md)). Te znane typy są eksportowane przy każdym `Export` wywołaniu oprócz typów przekazaną do `Export` metody.  
@@ -48,13 +51,14 @@ Aby wygenerować schematy języka definicji schematu XML (XSD) z klas, które s�
 - <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A>. <xref:System.Runtime.Serialization.IDataContractSurrogate>Można dostarczyć za pomocą tej właściwości, która dostosowuje proces eksportowania. Aby uzyskać więcej informacji, zobacz [surogaty kontraktu danych](../extending/data-contract-surrogates.md). Domyślnie żaden Surogat nie jest używany.  
   
 ## <a name="helper-methods"></a>Metody pomocnika  
- Poza podstawową rolą eksportowania schematu, `XsdDataContractExporter` zapewnia kilka przydatnych metod pomocniczych, które dostarczają informacji o typach. Należą do nich następujące elementy:  
+
+ Poza podstawową rolą eksportowania schematu, `XsdDataContractExporter` zapewnia kilka przydatnych metod pomocniczych, które dostarczają informacji o typach. Są one następujące:  
   
-- <xref:System.Runtime.Serialization.XsdDataContractExporter.GetRootElementName%2A>Method. Ta metoda przyjmuje `Type` i zwraca obiekt <xref:System.Xml.XmlQualifiedName> , który reprezentuje nazwę elementu głównego i przestrzeń nazw, które będą używane, jeśli ten typ został Zserializowany jako obiekt główny.  
+- <xref:System.Runtime.Serialization.XsdDataContractExporter.GetRootElementName%2A> Method. Ta metoda przyjmuje `Type` i zwraca obiekt <xref:System.Xml.XmlQualifiedName> , który reprezentuje nazwę elementu głównego i przestrzeń nazw, które będą używane, jeśli ten typ został Zserializowany jako obiekt główny.  
   
-- <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaTypeName%2A>Method. Ta metoda przyjmuje `Type` i zwraca obiekt <xref:System.Xml.XmlQualifiedName> , który reprezentuje nazwę typu schematu XSD, który będzie używany, jeśli ten typ został wyeksportowany do schematu. <xref:System.Xml.Serialization.IXmlSerializable>W przypadku typów reprezentowanych jako typy anonimowe w schemacie ta metoda zwraca `null` .  
+- <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaTypeName%2A> Method. Ta metoda przyjmuje `Type` i zwraca obiekt <xref:System.Xml.XmlQualifiedName> , który reprezentuje nazwę typu schematu XSD, który będzie używany, jeśli ten typ został wyeksportowany do schematu. <xref:System.Xml.Serialization.IXmlSerializable>W przypadku typów reprezentowanych jako typy anonimowe w schemacie ta metoda zwraca `null` .  
   
-- <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaType%2A>Method. Ta metoda działa tylko z <xref:System.Xml.Serialization.IXmlSerializable> typami, które są reprezentowane jako typy anonimowe w schemacie, i zwraca `null` dla wszystkich innych typów. W przypadku typów anonimowych Metoda zwraca, <xref:System.Xml.Schema.XmlSchemaType> która reprezentuje daną `Type` .  
+- <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaType%2A> Method. Ta metoda działa tylko z <xref:System.Xml.Serialization.IXmlSerializable> typami, które są reprezentowane jako typy anonimowe w schemacie, i zwraca `null` dla wszystkich innych typów. W przypadku typów anonimowych Metoda zwraca, <xref:System.Xml.Schema.XmlSchemaType> która reprezentuje daną `Type` .  
   
  Opcje eksportu mają wpływ na wszystkie te metody.  
   
@@ -63,5 +67,5 @@ Aby wygenerować schematy języka definicji schematu XML (XSD) z klas, które s�
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Runtime.Serialization.XsdDataContractImporter>
 - <xref:System.Runtime.Serialization.XsdDataContractExporter>
-- [importowanie i eksportowanie schematu](schema-import-and-export.md)
+- [Importowanie i eksportowanie schematu](schema-import-and-export.md)
 - [Importowanie schematu w celu generowania klas](importing-schema-to-generate-classes.md)

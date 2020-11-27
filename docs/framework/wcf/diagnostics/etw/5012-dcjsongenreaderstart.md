@@ -2,27 +2,30 @@
 title: 5012 — DCJsonGenReaderStart
 ms.date: 03/30/2017
 ms.assetid: 6d2ad3c9-47ee-4e77-b1c6-259ab15b0cfb
-ms.openlocfilehash: 6de157a476310f7f5a1cfc6d9253cf1ed8b6b19c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 778456f429c13505e5b7ac0cb3303e166cb14a7f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650599"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254717"
 ---
 # <a name="5012---dcjsongenreaderstart"></a>5012 — DCJsonGenReaderStart
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|5012|  
-|słowa kluczowe|Serializacja|  
+|ID (Identyfikator)|5012|  
+|Słowa kluczowe|Serializacja|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, za pomocą pliku Json wygenerowanym rozpoczyna czytnika.  
+
+ To zdarzenie jest emitowane po uruchomieniu czytnika wygenerowanego przez kod JSON.  
   
-## <a name="message"></a>Komunikat  
- JSON Generowanie czytnika %1 w %2 start.  
+## <a name="message"></a>Wiadomość  
+
+ Generowanie pliku JSON — czytnik %1 dla %2.  
   
 ## <a name="details"></a>Szczegóły

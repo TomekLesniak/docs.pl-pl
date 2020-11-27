@@ -9,12 +9,12 @@ helpviewer_keywords:
 - resource files, .resx files
 - .resx files
 ms.assetid: 168f941a-2b84-43f8-933f-cf4a8548d824
-ms.openlocfilehash: 519ca099b65710b6eb4251e1a9419e965ee69f93
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: c6b1ef6c7dd8be3dbc98b2298ab0e649ff74008e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166157"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254509"
 ---
 # <a name="work-with-resx-files-programmatically"></a>Praca programistyczna z plikami .resx
 
@@ -51,6 +51,7 @@ Poniższy przykład tworzy plik resx o nazwie CarResources. resx, który przecho
 Nie można osadzić pliku resx w pliku wykonywalnym środowiska uruchomieniowego lub skompilować go do zestawu satelickiego. Plik resx należy skonwertować do pliku zasobów binarnych (. resources) przy użyciu [generatora plików zasobów (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md). Utworzony plik resources może następnie zostać osadzony w zestawie aplikacji lub w zestawie satelickim. Aby uzyskać więcej informacji, zobacz [Tworzenie plików zasobów](creating-resource-files-for-desktop-apps.md).
 
 ## <a name="enumerate-resources"></a>Wyliczanie zasobów
+
  W niektórych przypadkach możesz chcieć pobrać wszystkie zasoby, zamiast określonego zasobu, z pliku resx. W tym celu można użyć <xref:System.Resources.ResXResourceReader?displayProperty=nameWithType> klasy, która dostarcza moduł wyliczający dla wszystkich zasobów w pliku resx. <xref:System.Resources.ResXResourceReader?displayProperty=nameWithType>Klasa implementuje <xref:System.Collections.IDictionaryEnumerator> , która zwraca <xref:System.Collections.DictionaryEntry> obiekt reprezentujący określony zasób dla każdej iteracji pętli. Jej <xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=nameWithType> Właściwość zwraca klucz zasobu, a jej <xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=nameWithType> Właściwość zwraca wartość zasobu.
 
  Poniższy przykład tworzy <xref:System.Resources.ResXResourceReader> obiekt dla pliku CarResources. resx utworzonego w poprzednim przykładzie i wykonuje iterację w pliku zasobów. Dodaje dwa obiekty, `Automobile` które są zdefiniowane w pliku zasobów do <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> obiektu i dodaje pięć z sześciu ciągów do <xref:System.Collections.SortedList> obiektu. Wartości w <xref:System.Collections.SortedList> obiekcie są konwertowane na tablicę parametrów, która jest używana do wyświetlania nagłówków kolumn w konsoli. `Automobile`Wartości właściwości są również wyświetlane w konsoli programu.
@@ -59,6 +60,7 @@ Nie można osadzić pliku resx w pliku wykonywalnym środowiska uruchomieniowego
  [!code-vb[Conceptual.Resources.ResX#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resx/vb/enumerate1.vb#2)]
 
 ## <a name="retrieve-a-specific-resource"></a>Pobieranie określonego zasobu
+
  Oprócz wyliczania elementów w pliku resx można pobrać konkretny zasób według nazwy przy użyciu <xref:System.Resources.ResXResourceSet?displayProperty=nameWithType> klasy. <xref:System.Resources.ResourceSet.GetString%28System.String%29?displayProperty=nameWithType>Metoda pobiera wartość nazwanego zasobu ciągu. <xref:System.Resources.ResourceSet.GetObject%28System.String%29?displayProperty=nameWithType>Metoda pobiera wartość nazwanego obiektu lub dane binarne. Metoda zwraca obiekt, który musi następnie być rzutowany (w języku C#) lub przekonwertowany (w Visual Basic) do obiektu odpowiedniego typu.
 
  Poniższy przykład pobiera ciąg podpisów formularza i ikony według ich nazw zasobów. Pobiera również obiekty zdefiniowane przez aplikację `Automobile` używane w poprzednim przykładzie i wyświetla je w <xref:System.Windows.Forms.DataGridView> kontrolce.
@@ -67,6 +69,7 @@ Nie można osadzić pliku resx w pliku wykonywalnym środowiska uruchomieniowego
  [!code-vb[Conceptual.Resources.ResX#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resx/vb/retrieve1.vb#3)]
 
 ## <a name="convert-resx-files-to-binary-resources-files"></a>Konwertuj pliki resx na pliki binarne. resources
+
  Konwertowanie plików resx na osadzone pliki zasobów binarnych (. resources) ma znaczące zalety. Chociaż pliki resx są łatwo odczytywane i utrzymywane podczas tworzenia aplikacji, są one rzadko uwzględniane w gotowych aplikacjach. Jeśli są one dystrybuowane z aplikacją, istnieją one jako osobne pliki oprócz pliku wykonywalnego aplikacji i jego dołączonych bibliotek. Z kolei pliki resources są osadzone w pliku wykonywalnym aplikacji lub w jego dołączonych zestawach. Ponadto w przypadku zlokalizowanych aplikacji polegają na plikach resx w czasie wykonywania, które są odpowiedzialne za obsługę powrotu zasobów dla deweloperów. W przeciwieństwie do tego, czy zestaw zestawów satelickich zawierający osadzony plik resources został utworzony, środowisko uruchomieniowe języka wspólnego obsługuje proces rezerwowy zasobu.
 
  Aby skonwertować plik. resx do pliku Resources, należy użyć [generatora plików zasobów (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md), który ma następującą składnię podstawową:
@@ -85,7 +88,7 @@ Nie można osadzić pliku resx w pliku wykonywalnym środowiska uruchomieniowego
 
  **Al** *resourcesFilename* **:** *assemblyFilename*
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Tworzenie plików zasobów](creating-resource-files-for-desktop-apps.md)
 - [Resgen.exe (Generator plików zasobów)](../tools/resgen-exe-resource-file-generator.md)
