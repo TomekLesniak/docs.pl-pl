@@ -2,27 +2,30 @@
 title: 3366 — SharedListenerProxyRegisterFailed
 ms.date: 03/30/2017
 ms.assetid: 28f6151c-650f-473d-a807-cb06b56f67f1
-ms.openlocfilehash: afb7562424e636991cc198ea97bbaf3df584dc72
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 41764e711647b8a1da54335e16f260c72ba1fda6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049196"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96282473"
 ---
 # <a name="3366---sharedlistenerproxyregisterfailed"></a>3366 — SharedListenerProxyRegisterFailed
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|3366|  
-|słowa kluczowe|ActivationServices|  
+|ID (Identyfikator)|3366|  
+|Słowa kluczowe|ActivationServices|  
 |Poziom|Błąd|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, gdy rejestracja SharedListenerProxy nie powiodła się.  
+
+ To zdarzenie jest emitowane w przypadku niepowodzenia rejestracji obiektu sharedlistenerproxy.  
   
-## <a name="message"></a>Komunikat  
- Zarejestruj się SharedListenerProxy nie powiodło się ze stanem "%1".  
+## <a name="message"></a>Wiadomość  
+
+ Rejestrowanie obiektu sharedlistenerproxy nie powiodło się ze stanem "%1".  
   
 ## <a name="details"></a>Szczegóły
