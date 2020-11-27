@@ -2,17 +2,18 @@
 title: CallbackBehavior
 ms.date: 03/30/2017
 ms.assetid: 42acd302-2b62-4849-a2d1-a03084343ecd
-ms.openlocfilehash: 9d8f4335c304d164daafeb0ad4de5b4e3bba4590
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cec9005a099247671dbebaacc0b242ca8d7a0144
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963959"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269651"
 ---
-# <a name="callbackbehavior"></a><span data-ttu-id="33f96-102">CallbackBehavior</span><span class="sxs-lookup"><span data-stu-id="33f96-102">CallbackBehavior</span></span>
-<span data-ttu-id="33f96-103">CallbackBehavior</span><span class="sxs-lookup"><span data-stu-id="33f96-103">CallbackBehavior</span></span>  
+# <a name="callbackbehavior"></a><span data-ttu-id="7a7c0-102">CallbackBehavior</span><span class="sxs-lookup"><span data-stu-id="7a7c0-102">CallbackBehavior</span></span>
+
+<span data-ttu-id="7a7c0-103">CallbackBehavior</span><span class="sxs-lookup"><span data-stu-id="7a7c0-103">CallbackBehavior</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="33f96-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="33f96-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7a7c0-104">Składnia</span><span class="sxs-lookup"><span data-stu-id="7a7c0-104">Syntax</span></span>  
   
 ```csharp
 class CallbackBehavior : Behavior  
@@ -27,66 +28,75 @@ class CallbackBehavior : Behavior
 };  
 ```  
   
-## <a name="methods"></a><span data-ttu-id="33f96-105">Metody</span><span class="sxs-lookup"><span data-stu-id="33f96-105">Methods</span></span>  
- <span data-ttu-id="33f96-106">Klasa CallbackBehavior nie definiuje żadnych metod.</span><span class="sxs-lookup"><span data-stu-id="33f96-106">The CallbackBehavior class does not define any methods.</span></span>  
+## <a name="methods"></a><span data-ttu-id="7a7c0-105">Metody</span><span class="sxs-lookup"><span data-stu-id="7a7c0-105">Methods</span></span>  
+
+ <span data-ttu-id="7a7c0-106">Klasa CallbackBehavior nie definiuje żadnych metod.</span><span class="sxs-lookup"><span data-stu-id="7a7c0-106">The CallbackBehavior class does not define any methods.</span></span>  
   
-## <a name="properties"></a><span data-ttu-id="33f96-107">Właściwości</span><span class="sxs-lookup"><span data-stu-id="33f96-107">Properties</span></span>  
- <span data-ttu-id="33f96-108">Klasa CallbackBehavior ma następujące właściwości:</span><span class="sxs-lookup"><span data-stu-id="33f96-108">The CallbackBehavior class has the following properties:</span></span>  
+## <a name="properties"></a><span data-ttu-id="7a7c0-107">Właściwości</span><span class="sxs-lookup"><span data-stu-id="7a7c0-107">Properties</span></span>  
+
+ <span data-ttu-id="7a7c0-108">Klasa CallbackBehavior ma następujące właściwości:</span><span class="sxs-lookup"><span data-stu-id="7a7c0-108">The CallbackBehavior class has the following properties:</span></span>  
   
-### <a name="automaticsessionshutdown"></a><span data-ttu-id="33f96-109">AutomaticSessionShutdown</span><span class="sxs-lookup"><span data-stu-id="33f96-109">AutomaticSessionShutdown</span></span>  
- <span data-ttu-id="33f96-110">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="33f96-110">Data type: boolean</span></span>  
+### <a name="automaticsessionshutdown"></a><span data-ttu-id="7a7c0-109">AutomaticSessionShutdown</span><span class="sxs-lookup"><span data-stu-id="7a7c0-109">AutomaticSessionShutdown</span></span>  
+
+ <span data-ttu-id="7a7c0-110">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="7a7c0-110">Data type: boolean</span></span>  
   
- <span data-ttu-id="33f96-111">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="33f96-111">Access type: Read-only</span></span>  
+ <span data-ttu-id="7a7c0-111">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="7a7c0-111">Access type: Read-only</span></span>  
   
- <span data-ttu-id="33f96-112">W przypadku wartości true automatycznie zamknięciem sesji usługi powoduje zamknięcie sesji dupleksowej.</span><span class="sxs-lookup"><span data-stu-id="33f96-112">When true, the session is automatically closed when a service closes a duplex session.</span></span>  
+ <span data-ttu-id="7a7c0-112">W przypadku wartości true sesja jest automatycznie zamykana, gdy usługa zamyka sesję dupleksową.</span><span class="sxs-lookup"><span data-stu-id="7a7c0-112">When true, the session is automatically closed when a service closes a duplex session.</span></span>  
   
-### <a name="concurrencymode"></a><span data-ttu-id="33f96-113">Właściwość ConcurrencyMode</span><span class="sxs-lookup"><span data-stu-id="33f96-113">ConcurrencyMode</span></span>  
- <span data-ttu-id="33f96-114">Typ danych: ciąg</span><span class="sxs-lookup"><span data-stu-id="33f96-114">Data type: string</span></span>  
-<span data-ttu-id="33f96-115">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="33f96-115">Access type: Read-only</span></span>  
+### <a name="concurrencymode"></a><span data-ttu-id="7a7c0-113">Obsługują</span><span class="sxs-lookup"><span data-stu-id="7a7c0-113">ConcurrencyMode</span></span>  
+
+ <span data-ttu-id="7a7c0-114">Typ danych: ciąg</span><span class="sxs-lookup"><span data-stu-id="7a7c0-114">Data type: string</span></span>  
+<span data-ttu-id="7a7c0-115">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="7a7c0-115">Access type: Read-only</span></span>  
   
- <span data-ttu-id="33f96-116">Określa, czy usługa obsługuje jeden wątek, wiele wątków lub wywołania współużytkowane.</span><span class="sxs-lookup"><span data-stu-id="33f96-116">Specifies whether the service supports one thread, multiple threads, or reentrant calls.</span></span>  
+ <span data-ttu-id="7a7c0-116">Określa, czy usługa obsługuje jeden wątek, wiele wątków lub wywołania współużytkowane.</span><span class="sxs-lookup"><span data-stu-id="7a7c0-116">Specifies whether the service supports one thread, multiple threads, or reentrant calls.</span></span>  
   
-### <a name="ignoreextensiondataobject"></a><span data-ttu-id="33f96-117">IgnoreExtensionDataObject</span><span class="sxs-lookup"><span data-stu-id="33f96-117">IgnoreExtensionDataObject</span></span>  
- <span data-ttu-id="33f96-118">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="33f96-118">Data type: boolean</span></span>  
+### <a name="ignoreextensiondataobject"></a><span data-ttu-id="7a7c0-117">IgnoreExtensionDataObject</span><span class="sxs-lookup"><span data-stu-id="7a7c0-117">IgnoreExtensionDataObject</span></span>  
+
+ <span data-ttu-id="7a7c0-118">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="7a7c0-118">Data type: boolean</span></span>  
   
- <span data-ttu-id="33f96-119">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="33f96-119">Access type: Read-only</span></span>  
+ <span data-ttu-id="7a7c0-119">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="7a7c0-119">Access type: Read-only</span></span>  
   
- <span data-ttu-id="33f96-120">Wartość, która określa, czy wysyłać dane serializacji nieznany podczas transmisji.</span><span class="sxs-lookup"><span data-stu-id="33f96-120">A value that specifies whether to send unknown serialization data onto the wire.</span></span>  
+ <span data-ttu-id="7a7c0-120">Wartość określająca, czy w sieci należy wysyłać nieznane dane serializacji.</span><span class="sxs-lookup"><span data-stu-id="7a7c0-120">A value that specifies whether to send unknown serialization data onto the wire.</span></span>  
   
-### <a name="includeexceptiondetailinfaults"></a><span data-ttu-id="33f96-121">IncludeExceptionDetailInFaults</span><span class="sxs-lookup"><span data-stu-id="33f96-121">IncludeExceptionDetailInFaults</span></span>  
- <span data-ttu-id="33f96-122">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="33f96-122">Data type: boolean</span></span>  
+### <a name="includeexceptiondetailinfaults"></a><span data-ttu-id="7a7c0-121">IncludeExceptionDetailInFaults</span><span class="sxs-lookup"><span data-stu-id="7a7c0-121">IncludeExceptionDetailInFaults</span></span>  
+
+ <span data-ttu-id="7a7c0-122">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="7a7c0-122">Data type: boolean</span></span>  
   
- <span data-ttu-id="33f96-123">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="33f96-123">Access type: Read-only</span></span>  
+ <span data-ttu-id="7a7c0-123">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="7a7c0-123">Access type: Read-only</span></span>  
   
- <span data-ttu-id="33f96-124">Po włączeniu szczegóły dotyczące wyjątków w wywołaniu zwrotnym są dołączane do błędów zwracanych do usługi.</span><span class="sxs-lookup"><span data-stu-id="33f96-124">When enabled, details about exceptions on the callback are attached to the faults returned to the service.</span></span>  
+ <span data-ttu-id="7a7c0-124">Po włączeniu szczegółowe informacje o wyjątkach wywołania zwrotnego są dołączone do błędów zwróconych do usługi.</span><span class="sxs-lookup"><span data-stu-id="7a7c0-124">When enabled, details about exceptions on the callback are attached to the faults returned to the service.</span></span>  
   
-### <a name="maxitemsinobjectgraph"></a><span data-ttu-id="33f96-125">MaxItemsInObjectGraph</span><span class="sxs-lookup"><span data-stu-id="33f96-125">MaxItemsInObjectGraph</span></span>  
- <span data-ttu-id="33f96-126">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="33f96-126">Data type: boolean</span></span>  
+### <a name="maxitemsinobjectgraph"></a><span data-ttu-id="7a7c0-125">MaxItemsInObjectGraph</span><span class="sxs-lookup"><span data-stu-id="7a7c0-125">MaxItemsInObjectGraph</span></span>  
+
+ <span data-ttu-id="7a7c0-126">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="7a7c0-126">Data type: boolean</span></span>  
   
- <span data-ttu-id="33f96-127">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="33f96-127">Access type: Read-only</span></span>  
+ <span data-ttu-id="7a7c0-127">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="7a7c0-127">Access type: Read-only</span></span>  
   
- <span data-ttu-id="33f96-128">Maksymalną liczbę elementów dozwoloną w Zserializowany obiekt.</span><span class="sxs-lookup"><span data-stu-id="33f96-128">The maximum number of items allowed in a serialized object.</span></span>  
+ <span data-ttu-id="7a7c0-128">Maksymalna liczba elementów dozwolona w serializowanym obiekcie.</span><span class="sxs-lookup"><span data-stu-id="7a7c0-128">The maximum number of items allowed in a serialized object.</span></span>  
   
-### <a name="usesynchronizationcontext"></a><span data-ttu-id="33f96-129">UseSynchronizationContext</span><span class="sxs-lookup"><span data-stu-id="33f96-129">UseSynchronizationContext</span></span>  
- <span data-ttu-id="33f96-130">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="33f96-130">Data type: boolean</span></span>  
+### <a name="usesynchronizationcontext"></a><span data-ttu-id="7a7c0-129">UseSynchronizationContext</span><span class="sxs-lookup"><span data-stu-id="7a7c0-129">UseSynchronizationContext</span></span>  
+
+ <span data-ttu-id="7a7c0-130">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="7a7c0-130">Data type: boolean</span></span>  
   
- <span data-ttu-id="33f96-131">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="33f96-131">Access type: Read-only</span></span>  
+ <span data-ttu-id="7a7c0-131">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="7a7c0-131">Access type: Read-only</span></span>  
   
- <span data-ttu-id="33f96-132">Określa, czy umożliwia wybieranie wątkiem wykonywania w bieżącym kontekście synchronizacji.</span><span class="sxs-lookup"><span data-stu-id="33f96-132">Specifies whether to use the current synchronization context to choose the thread of execution.</span></span>  
+ <span data-ttu-id="7a7c0-132">Określa, czy do wybierania wątku wykonywania ma być używany bieżący kontekst synchronizacji.</span><span class="sxs-lookup"><span data-stu-id="7a7c0-132">Specifies whether to use the current synchronization context to choose the thread of execution.</span></span>  
   
-### <a name="validatemustunderstand"></a><span data-ttu-id="33f96-133">ValidateMustUnderstand</span><span class="sxs-lookup"><span data-stu-id="33f96-133">ValidateMustUnderstand</span></span>  
- <span data-ttu-id="33f96-134">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="33f96-134">Data type: boolean</span></span>  
+### <a name="validatemustunderstand"></a><span data-ttu-id="7a7c0-133">ValidateMustUnderstand</span><span class="sxs-lookup"><span data-stu-id="7a7c0-133">ValidateMustUnderstand</span></span>  
+
+ <span data-ttu-id="7a7c0-134">Typ danych: wartość logiczna</span><span class="sxs-lookup"><span data-stu-id="7a7c0-134">Data type: boolean</span></span>  
   
- <span data-ttu-id="33f96-135">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="33f96-135">Access type: Read-only</span></span>  
+ <span data-ttu-id="7a7c0-135">Typ dostępu: tylko do odczytu</span><span class="sxs-lookup"><span data-stu-id="7a7c0-135">Access type: Read-only</span></span>  
   
- <span data-ttu-id="33f96-136">Określa, czy system lub aplikacja wymusza przetwarzanie nagłówka MustUnderstand protokołu SOAP.</span><span class="sxs-lookup"><span data-stu-id="33f96-136">Specifies whether the system or the application enforces SOAP MustUnderstand header processing.</span></span>  
+ <span data-ttu-id="7a7c0-136">Określa, czy system lub aplikacja wymusza przetwarzanie nagłówka MustUnderstand protokołu SOAP.</span><span class="sxs-lookup"><span data-stu-id="7a7c0-136">Specifies whether the system or the application enforces SOAP MustUnderstand header processing.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="33f96-137">Wymagania</span><span class="sxs-lookup"><span data-stu-id="33f96-137">Requirements</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7a7c0-137">Wymagania</span><span class="sxs-lookup"><span data-stu-id="7a7c0-137">Requirements</span></span>  
   
-|<span data-ttu-id="33f96-138">MOF</span><span class="sxs-lookup"><span data-stu-id="33f96-138">MOF</span></span>|<span data-ttu-id="33f96-139">Zadeklarowana w Servicemodel.mof.</span><span class="sxs-lookup"><span data-stu-id="33f96-139">Declared in Servicemodel.mof.</span></span>|  
+|<span data-ttu-id="7a7c0-138">PLIK</span><span class="sxs-lookup"><span data-stu-id="7a7c0-138">MOF</span></span>|<span data-ttu-id="7a7c0-139">Zadeklarowany w ServiceModel. mof.</span><span class="sxs-lookup"><span data-stu-id="7a7c0-139">Declared in Servicemodel.mof.</span></span>|  
 |---------|-----------------------------------|  
-|<span data-ttu-id="33f96-140">Przestrzeń nazw</span><span class="sxs-lookup"><span data-stu-id="33f96-140">Namespace</span></span>|<span data-ttu-id="33f96-141">Zdefiniowane w root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="33f96-141">Defined in root\ServiceModel</span></span>|  
+|<span data-ttu-id="7a7c0-140">Przestrzeń nazw</span><span class="sxs-lookup"><span data-stu-id="7a7c0-140">Namespace</span></span>|<span data-ttu-id="7a7c0-141">Zdefiniowane w root\ServiceModel</span><span class="sxs-lookup"><span data-stu-id="7a7c0-141">Defined in root\ServiceModel</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="33f96-142">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="33f96-142">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7a7c0-142">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="7a7c0-142">See also</span></span>
 
 - <xref:System.ServiceModel.CallbackBehaviorAttribute>
