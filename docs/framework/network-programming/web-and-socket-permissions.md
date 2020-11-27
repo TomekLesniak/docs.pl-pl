@@ -16,14 +16,15 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - positions [.NET Framework], granting
 ms.assetid: d51ad8cb-03ae-4a51-bfcd-cfcf6b98afa9
-ms.openlocfilehash: 08ae360e8097f7281631da2a3f9846994dfbf5b6
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: b940e6deb98686051847728da6fa5e20debc0f11
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501901"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96276610"
 ---
 # <a name="web-and-socket-permissions"></a>Internet i uprawnienia gniazd
+
 Zabezpieczenia internetowe dla aplikacji korzystających z <xref:System.Net> przestrzeni nazw są udostępniane <xref:System.Net.WebPermission> przez <xref:System.Net.SocketPermission> klasy i. Klasa **uprawnień** sieci Web kontroluje prawo aplikacji do żądania danych od identyfikatora URI lub do połączenia z Internetem za pomocą identyfikatora URI. Klasa **SocketPermission** kontroluje prawo aplikacji do <xref:System.Net.Sockets.Socket> akceptowania danych na porcie lokalnym lub kontaktowania się z urządzeniami zdalnymi przy użyciu protokołu transportowego na innym adresie w oparciu o hosta, numer portu i protokół transportowy gniazda.  
   
  Której klasy uprawnień używasz, zależy od typu aplikacji. Aplikacje, które używają <xref:System.Net.WebRequest> i ich elementów podrzędnych, powinny **WebPermission** używać klasy webpermissions do zarządzania uprawnieniami. Aplikacje korzystające z dostępu na poziomie gniazda powinny używać klasy **SocketPermission** do zarządzania uprawnieniami.  
@@ -34,7 +35,7 @@ Zabezpieczenia internetowe dla aplikacji korzystających z <xref:System.Net> prz
   
  W przypadku wystąpień z **uprawnieniami WebPermission** Zaakceptuj oznacza, że aplikacja może eksportować identyfikator URI kontrolowany przez **uprawnienie WebPermission** na świecie; połączenie oznacza, że aplikacja może uzyskać dostęp do tego identyfikatora URI (niezależnie od tego, czy jest to zdalne czy lokalne).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Bezpieczeństwo](../../standard/security/index.md)
 - [Zabezpieczenia w programowaniu sieciowym](security-in-network-programming.md)

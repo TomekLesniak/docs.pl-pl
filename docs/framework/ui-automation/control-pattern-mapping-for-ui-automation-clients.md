@@ -6,14 +6,15 @@ helpviewer_keywords:
 - control patterns, for UI Automation clients
 - UI Automation, clients, control patterns for
 ms.assetid: 8b81645b-8be3-4e26-9c98-4fb0fceca06b
-ms.openlocfilehash: 7673ce4ac88cc36a7c35e2e946a31d23b2ce6eca
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: aaab4639a7573dd090af2e6d9bb06f896c4728f6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164183"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96276558"
 ---
 # <a name="control-pattern-mapping-for-ui-automation-clients"></a>Mapowanie wzorców kontrolek dla klientów automatyzacji interfejsu użytkownika
+
 > [!NOTE]
 > Ta dokumentacja jest przeznaczona dla .NET Framework deweloperów, którzy chcą korzystać z zarządzanych [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klas zdefiniowanych w <xref:System.Windows.Automation> przestrzeni nazw. Aby uzyskać najnowsze informacje na temat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , zobacz [interfejs API usługi Windows Automation: Automatyzacja interfejsu użytkownika](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -31,6 +32,7 @@ ms.locfileid: "87164183"
 > Niektóre kontrolki mają warunkową obsługę kilku wzorców kontroli w zależności od funkcjonalności formantu. Na przykład kontrolka element menu ma obsługę warunkową dla <xref:System.Windows.Automation.InvokePattern> wzorca, <xref:System.Windows.Automation.ExpandCollapsePattern> , <xref:System.Windows.Automation.TogglePattern> , lub <xref:System.Windows.Automation.SelectionItemPattern> formantu, w zależności od jego funkcji w kontrolce menu.  
   
 <a name="control_mapping_clients"></a>
+
 ## <a name="ui-automation-control-patterns-for-clients"></a>Wzorce kontrolek automatyzacji interfejsu użytkownika dla klientów  
   
 |Typ formantu|Obsługiwane|Obsługa warunkowa|Nieobsługiwane|  
@@ -47,7 +49,7 @@ ms.locfileid: "87164183"
 |Nagłówek|Brak|Przekształcanie|Brak|  
 |element nagłówka|Brak|Przekształcanie, wywoływanie|Brak|  
 |Hyperlink|Invoke|Wartość|Brak|  
-|Image (Obraz)|Brak|Element siatki, element tabeli|Invoke, element zaznaczenia|  
+|Obraz|Brak|Element siatki, element tabeli|Invoke, element zaznaczenia|  
 |Lista|Brak|Siatka, wiele widoków, przewijanie, Zaznaczanie|Tabela|  
 |Element listy|SelectionItem|Rozwiń Zwiń, element siatki, wywołaj, przewiń element, przełącznik, wartość|Brak|  
 |Menu|Brak|Brak|Brak|  
@@ -58,11 +60,11 @@ ms.locfileid: "87164183"
 |przycisk radiowy|SelectionItem|Brak|przełączanie|  
 |pasek przewijania|Brak|wartość zakresu|Scroll|  
 |Separator|Brak|Brak|Brak|  
-|Slider|Brak|Wartość zakresu, wybór, wartość|Brak|  
+|Suwak|Brak|Wartość zakresu, wybór, wartość|Brak|  
 |pokrętło|Brak|Wartość zakresu, wybór, wartość|Brak|  
 |przycisk podziału|Invoke, rozwiń przycisk Zwiń|Brak|Brak|  
 |pasek stanu|Brak|Siatka|Brak|  
-|Tab|Wybór|Scroll|Brak|  
+|Tab|Zaznaczenie|Scroll|Brak|  
 |element karty|SelectionItem|Brak|Invoke|  
 |Tabela|Siatka, element siatki, tabela, element tabeli|Brak|Brak|  
 |Tekst|Brak|Element siatki, element tabeli, tekst|Wartość|  
@@ -77,6 +79,6 @@ ms.locfileid: "87164183"
 > [!NOTE]
 > Jeśli typ formantu nie zawiera żadnych obsługiwanych wzorców kontroli, ale ma jeden lub więcej nieobsługiwanych warunkowo wzorców kontroli, jeden z tych wzorców kontroli warunkowej będzie obsługiwany przez cały czas.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przegląd automatyzacji interfejsu użytkownika](ui-automation-overview.md)

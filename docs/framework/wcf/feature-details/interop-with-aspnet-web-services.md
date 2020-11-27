@@ -2,14 +2,15 @@
 title: Współdziałanie z usługami ASP.NET w sieci Web
 ms.date: 03/30/2017
 ms.assetid: 622422f8-6651-442f-b8be-e654a4aabcac
-ms.openlocfilehash: f38209ffe2161e58528a108b29e730665a65da37
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cca4e1b3da26d8026d41d0a7107432cdd2960545
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598869"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96276636"
 ---
 # <a name="interoperability-with-aspnet-web-services"></a>Współdziałanie z usługami ASP.NET w sieci Web
+
 Współdziałanie między usługami sieci Web ASP.NET Web Services i Windows Communication Foundation (WCF) można uzyskać, upewniając się, że usługi zaimplementowane przy użyciu obu technologii są zgodne ze specyfikacją WS-I Basic Profile 1,1. Usługi sieci Web ASP.NET, które są zgodne ze standardem WS-I Basic Profile 1,1, współdziałają z klientami programu WCF przy użyciu powiązania dostarczonego przez system <xref:System.ServiceModel.BasicHttpBinding> .  
   
  Użyj opcji ASP.NET 2,0, aby dodać <xref:System.Web.Services.WebService> <xref:System.Web.Services.WebMethodAttribute> atrybuty i do interfejsu, a nie do klasy, i napisać klasę, aby zaimplementować interfejs, jak pokazano w poniższym przykładowym kodzie.  
@@ -47,7 +48,8 @@ public class Service : IEcho
  Należy unikać używania opcji uwierzytelniania zapewnianych przez Internet Information Services (IIS). Klienci WCF nie obsługują tych funkcji. Jeśli usługa musi być zabezpieczona, użyj opcji dostarczonych przez program WCF, ponieważ te opcje są niezawodne i są oparte na protokołach standardowych.  
   
 ## <a name="performance-impact-caused-by-loading-the-servicemodel-httpmodule"></a>Wpływ na wydajność spowodowany ładowaniem modułu ServiceModel HttpModule  
- W .NET Framework 3,0 `HttpModule` Funkcja WCF została zainstalowana w głównym pliku Web. config w taki sposób, że każda aplikacja ASP.NET była włączona w ramach funkcji WCF. Może to mieć wpływ na wydajność, dlatego można usunąć `ServiceModel` plik Web. config, jak pokazano w poniższym przykładzie.  
+
+ W .NET Framework 3,0 `HttpModule` Funkcja WCF została zainstalowana w głównym pliku Web.config w taki sposób, że każda aplikacja ASP.NET była włączona w ramach funkcji WCF. Może to mieć wpływ na wydajność, dlatego można usunąć `ServiceModel` plik Web.config, jak pokazano w poniższym przykładzie.  
   
 ```xml  
 <httpModules>  
@@ -57,4 +59,4 @@ public class Service : IEcho
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Instrukcje: konfigurowanie usługi WCF na potrzeby współdziałania z klientami usługi ASP.NET w sieci Web](config-wcf-service-with-aspnet-web-service.md)
+- [Instrukcje: konfigurowanie usługi WCF na potrzeby współdziałania z klientami usługi ASP.NET w Internecie](config-wcf-service-with-aspnet-web-service.md)
