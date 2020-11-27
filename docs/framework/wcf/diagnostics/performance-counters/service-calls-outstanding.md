@@ -2,15 +2,17 @@
 title: 'Usługa: Wywołania oczekujące'
 ms.date: 03/30/2017
 ms.assetid: 88eb4019-b99b-491d-bfd6-15129bb32821
-ms.openlocfilehash: cbe28f67e391d603d6ca48e7ba947f71c17f0017
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4be05174ba8d8bfb8f7b5700fe595ed72de8c7fe
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923022"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96252910"
 ---
-# <a name="service-calls-outstanding"></a><span data-ttu-id="1e7ea-102">Usługa: Wywołania oczekujące</span><span class="sxs-lookup"><span data-stu-id="1e7ea-102">Service: Calls Outstanding</span></span>
-<span data-ttu-id="1e7ea-103">Nazwa komputera: Wywołania oczekujące</span><span class="sxs-lookup"><span data-stu-id="1e7ea-103">Counter Name: Calls Outstanding</span></span>  
+# <a name="service-calls-outstanding"></a><span data-ttu-id="fdc38-102">Usługa: Wywołania oczekujące</span><span class="sxs-lookup"><span data-stu-id="fdc38-102">Service: Calls Outstanding</span></span>
+
+<span data-ttu-id="fdc38-103">Nazwa licznika: wywołania oczekujące</span><span class="sxs-lookup"><span data-stu-id="fdc38-103">Counter Name: Calls Outstanding</span></span>  
   
-## <a name="description"></a><span data-ttu-id="1e7ea-104">Opis</span><span class="sxs-lookup"><span data-stu-id="1e7ea-104">Description</span></span>  
- <span data-ttu-id="1e7ea-105">Liczba wywołań w trakcie tej usługi.</span><span class="sxs-lookup"><span data-stu-id="1e7ea-105">Number of in-progress calls to this service.</span></span>
+## <a name="description"></a><span data-ttu-id="fdc38-104">Opis</span><span class="sxs-lookup"><span data-stu-id="fdc38-104">Description</span></span>  
+
+ <span data-ttu-id="fdc38-105">Liczba wywołań w toku do tej usługi.</span><span class="sxs-lookup"><span data-stu-id="fdc38-105">Number of in-progress calls to this service.</span></span>
