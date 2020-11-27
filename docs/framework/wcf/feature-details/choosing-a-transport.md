@@ -5,14 +5,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - choosing transports [WCF]
 ms.assetid: b169462b-f7b6-4cf4-9fca-d306909ee8bf
-ms.openlocfilehash: e1a92203de25aa399316eea91a758802768442a0
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: e38b25f4b76977f4eb30e3dd39cf0c726228a822
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247497"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295148"
 ---
 # <a name="choosing-a-transport"></a>Wybieranie transportu
+
 W tym temacie omówiono kryteria wyboru trzech głównych transportów, które znajdują się w Windows Communication Foundation (WCF): HTTP, TCP i nazwanych potoków. Funkcja WCF obejmuje również transport usługi kolejkowania komunikatów (MSMQ), ale ten dokument nie obejmuje usługi kolejkowania komunikatów.  
   
  Model programowania WCF oddziela operacje punktów końcowych (zgodnie z umową usługi) od mechanizmu transportu, który łączy dwa punkty końcowe. Zapewnia to elastyczność w wyborze sposobu uwidaczniania usług w sieci.  
@@ -21,12 +22,14 @@ W tym temacie omówiono kryteria wyboru trzech głównych transportów, które z
   
  Jeśli musisz nawiązać połączenie z istniejącym klientem lub serwerem, możesz nie mieć możliwości korzystania z określonego transportu. Jednak usługi WCF można udostępnić za pomocą wielu punktów końcowych, z których każdy ma inny transport. Jeśli pojedynczy transport nie obejmuje odpowiednich odbiorców usługi, należy rozważyć udostępnienie usługi za pośrednictwem wielu punktów końcowych. Aplikacje klienckie mogą następnie używać punktu końcowego, który jest dla nich najlepszy.  
   
- Po wybraniu transportu musisz wybrać powiązanie, które go używa. Można wybrać powiązanie dostarczone z systemem (patrz [powiązania dostarczone z systemem](../system-provided-bindings.md)) lub utworzyć własne niestandardowe powiązanie (zobacz [powiązania niestandardowe](../extending/custom-bindings.md)). Możesz również utworzyć własne powiązanie. Aby uzyskać więcej informacji, zobacz [Tworzenie powiązań zdefiniowanych przez użytkownika](../extending/creating-user-defined-bindings.md).  
+ Po wybraniu transportu musisz wybrać powiązanie, które go używa. Można wybrać powiązanie dostarczone z systemem (patrz [powiązania dostarczone z systemem](../system-provided-bindings.md)) lub utworzyć własne niestandardowe powiązanie (zobacz [powiązania niestandardowe](../extending/custom-bindings.md)). Możesz również utworzyć własne powiązanie. Aby uzyskać więcej informacji, zobacz [Tworzenie powiązań User-Defined](../extending/creating-user-defined-bindings.md).  
   
 ## <a name="advantages-of-each-transport"></a>Zalety poszczególnych transportów  
+
  W tej sekcji opisano główne przyczyny wyboru jednego z trzech głównych transportów, łącznie z szczegółowym wykresem decyzyjnym do wyboru między nimi.  
   
 ### <a name="when-to-use-http-transport"></a>Kiedy używać transportu HTTP  
+
  HTTP to protokół żądania/odpowiedzi między klientami a serwerami. Najbardziej Typowa aplikacja składa się z klientów przeglądarek sieci Web komunikujących się z serwerem sieci Web. Klient wysyła żądanie do serwera, który nasłuchuje komunikatów żądań klientów. Gdy serwer odbiera żądanie, zwraca odpowiedź, która zawiera stan żądania. Jeśli zakończono pomyślnie, opcjonalne dane, takie jak strona sieci Web, komunikat o błędzie lub inne informacje są zwracane. Aby uzyskać więcej informacji na temat protokołu HTTP, zobacz [http-Hypertext Transfer Protocol](https://www.w3.org/Protocols/).  
   
  Protokół HTTP nie jest oparty na połączeniu — po wysłaniu odpowiedzi żaden stan nie jest obsługiwany. Aby obsłużyć transakcje wielostronicowe, aplikacja musi utrzymywać wszelkie niezbędne Stany.  
@@ -34,6 +37,7 @@ W tym temacie omówiono kryteria wyboru trzech głównych transportów, które z
  W programie WCF powiązanie transportu HTTP jest zoptymalizowane pod kątem współdziałania ze starszymi systemami nieobsługującymi WCF. Jeśli wszystkie strony komunikują się z użyciem usługi WCF, powiązania oparte na protokole TCP lub nazwanych potoków są szybsze. Aby uzyskać więcej informacji, zobacz <xref:System.ServiceModel.NetTcpBinding> i <xref:System.ServiceModel.NetNamedPipeBinding>.  
   
 ### <a name="when-to-use-the-tcp-transport"></a>Kiedy używać transportu TCP  
+
  TCP to oparta na połączeniach usługa dostarczania strumieniowego z kompleksowym wykrywaniem błędów i korekcją. *Oparte na połączeniach* oznacza, że sesja komunikacji między hostami została ustanowiona przed wymianą danych. Host to dowolne urządzenie w sieci TCP/IP identyfikowane za pomocą logicznego adresu IP.  
   
  Protokół TCP zapewnia niezawodne dostarczanie danych i łatwość użycia. W odniesieniu do protokołu TCP powiadamia nadawcę o dostarczeniu pakietu, gwarantuje, że pakiety są dostarczane w takiej samej kolejności, w jakiej są wysyłane, ponownie przesyła utracone pakiety i gwarantuje, że pakiety danych nie są duplikowane. Należy zauważyć, że to niezawodne dostarczanie ma zastosowanie między dwoma węzłami TCP/IP i nie jest tym samym, co Metoda *WS-ReliableMessaging*, która stosuje się między punktami końcowymi, niezależnie od tego, ile węzłów pośrednich może obejmować.  
@@ -41,6 +45,7 @@ W tym temacie omówiono kryteria wyboru trzech głównych transportów, które z
  Transport TCP WCF jest zoptymalizowany pod kątem scenariusza, w którym oba punkty końcowe komunikacji korzystają z programu WCF. To powiązanie jest najszybszym powiązaniem WCF dla scenariuszy, które obejmują komunikację między różnymi komputerami. W wymianie komunikatów jest używany <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> zoptymalizowany transfer komunikatów. Protokół TCP zapewnia komunikację dupleksową i może służyć do implementowania umów dupleksowych, nawet jeśli klient znajduje się za translatorem adresów sieciowych (NAT).  
   
 ### <a name="when-to-use-the-named-pipe-transport"></a>Kiedy używać transportu nazwanego potoku  
+
  Nazwany potok jest obiektem w jądrze systemu operacyjnego Windows, takim jak sekcja pamięci współdzielonej, która może być używana przez procesy do komunikacji. Nazwany potok ma nazwę i może być używany do komunikacji jednokierunkowej między procesami na pojedynczym komputerze.  
   
  Gdy komunikacja jest wymagana między różnymi aplikacjami programu WCF na pojedynczym komputerze i chcesz uniemożliwić wszelką komunikację z innej maszyny, użyj transportu nazwanych potoków. Dodatkowe ograniczenie polega na tym, że procesy działające z systemu Windows Pulpit zdalny mogą być ograniczone do tej samej sesji systemu Windows Pulpit zdalny, chyba że mają podwyższone uprawnienia.  
@@ -49,6 +54,7 @@ W tym temacie omówiono kryteria wyboru trzech głównych transportów, które z
 > W przypadku korzystania z transportu nazwanego potoku z nieprawidłowym zarezerwowanym adresem URL w wielu witrynach hostowanych w usługach IIS może wystąpić następujący błąd: Wystąpił błąd w usłudze aktywacji "NetPipeActivator" protokołu "net. Pipe" podczas próby nasłuchiwania lokacji "2", więc protokół jest tymczasowo wyłączony dla lokacji. Aby uzyskać więcej informacji, zobacz komunikat o wyjątku. URL: WeakWildcard: net. pipe:/ \<machine name> /status: ConflictingRegistration Exception: Process Name: SMSvcHost proces ID: 1076 \  
   
 ## <a name="decision-points-for-choosing-a-transport"></a>Punkty decyzyjne do wyboru transportu  
+
  W poniższej tabeli opisano typowe punkty decyzyjne używane do wybierania transportu. Należy wziąć pod uwagę wszelkie dodatkowe atrybuty i transporty, które mają zastosowanie do Twojej aplikacji. Zidentyfikuj atrybuty, które są ważne dla aplikacji, zidentyfikuj transporty, które kojarzą favorably z każdym z atrybutów, a następnie wybierz transporty, które najlepiej współpracują z ustawionym atrybutem.  
   
 |Atrybut|Opis|Preferowane transporty|  
@@ -74,5 +80,5 @@ W tym temacie omówiono kryteria wyboru trzech głównych transportów, które z
 - <xref:System.ServiceModel.NetNamedPipeBinding>
 - <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>
 - [Powiązania](bindings.md)
-- [Powiązania dostarczane przez system](../system-provided-bindings.md)
-- [Tworzenie powiązań zdefiniowanych przez użytkownika](../extending/creating-user-defined-bindings.md)
+- [Wiązania dostarczane przez system](../system-provided-bindings.md)
+- [Tworzenie wiązań zdefiniowanych przez użytkownika](../extending/creating-user-defined-bindings.md)

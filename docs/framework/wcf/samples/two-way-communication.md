@@ -2,14 +2,15 @@
 title: Komunikacja dwukierunkowa
 ms.date: 03/30/2017
 ms.assetid: fb64192d-b3ea-4e02-9fb3-46a508d26c60
-ms.openlocfilehash: 291380d656b0e22c7fdf1cb291c45d05359a95c8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ba81fc1f4de99800ec0b61f51579365bc031fef4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591270"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295031"
 ---
 # <a name="two-way-communication"></a>Komunikacja dwukierunkowa
+
 W tym przykładzie pokazano, jak wykonać transakcyjne dwukierunkowe połączenia w kolejce za pośrednictwem usługi MSMQ. Ten przykład używa `netMsmqBinding` powiązania. W takim przypadku usługa to samodzielna aplikacja konsolowa, która umożliwia obserwowanie usługi do odebrania komunikatów umieszczonych w kolejce.  
   
 > [!NOTE]
@@ -75,7 +76,7 @@ public void SubmitPurchaseOrder(PurchaseOrder po, string reportOrderStatusTo)
 > [!NOTE]
 > Nazwa kolejki MSMQ i adres punktu końcowego używają nieco różnych konwencji adresowania. Nazwa kolejki MSMQ używa kropki (.) dla komputera lokalnego i separatora odwrotnego ukośnika w ścieżce. Adres punktu końcowego Windows Communication Foundation (WCF) określa obiekt net. MSMQ: schemat, używa "localhost" dla komputera lokalnego i używa ukośników w ścieżce. Aby odczytać z kolejki hostowanej na maszynie zdalnej, Zastąp ciąg "." i "localhost" nazwą maszyny zdalnej.  
   
- Usługa jest samodzielna. W przypadku korzystania z transportu usługi MSMQ użyta Kolejka musi zostać utworzona z góry. Można to zrobić ręcznie lub przy użyciu kodu. W tym przykładzie usługa sprawdza obecność kolejki i tworzy ją w razie potrzeby. Nazwa kolejki jest odczytywana z pliku konfiguracji. Adres podstawowy jest używany przez narzędzie do obsługi [metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) w celu wygenerowania serwera proxy w usłudze.  
+ Usługa jest samodzielna. W przypadku korzystania z transportu usługi MSMQ użyta Kolejka musi zostać utworzona z góry. Można to zrobić ręcznie lub przy użyciu kodu. W tym przykładzie usługa sprawdza obecność kolejki i tworzy ją w razie potrzeby. Nazwa kolejki jest odczytywana z pliku konfiguracji. Adres podstawowy jest używany przez narzędzie do obsługi [metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) do generowania serwera proxy w usłudze.  
 
 ```csharp
 // Host the service within this EXE console application.  
@@ -225,7 +226,7 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
 3. Aby uruchomić przykład w konfiguracji na jednym lub wielu komputerach, postępuj zgodnie z instrukcjami w temacie [Uruchamianie przykładów Windows Communication Foundation](running-the-samples.md).  
   
     > [!NOTE]
-    > Jeśli używasz programu Svcutil. exe do ponownego wygenerowania konfiguracji dla tego przykładu, pamiętaj o zmodyfikowaniu nazw punktów końcowych w konfiguracji klienta, aby odpowiadały kodowi klienta.  
+    > Jeśli używasz Svcutil.exe, aby ponownie wygenerować konfigurację dla tego przykładu, pamiętaj o zmodyfikowaniu nazw punktów końcowych w konfiguracji klienta, aby odpowiadały kodowi klienta.  
   
  Domyślnie z opcją <xref:System.ServiceModel.NetMsmqBinding> jest włączona funkcja zabezpieczenia transportu. Istnieją dwie istotne właściwości zabezpieczenia transportu usługi MSMQ, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` tryb uwierzytelniania jest ustawiony na wartość, `Windows` a poziom ochrony jest ustawiony na `Sign` . Aby usługa MSMQ zapewniała funkcję uwierzytelniania i podpisywania, musi być częścią domeny, a dla usługi MSMQ należy zainstalować opcję Integracja z usługą Active Directory. Jeśli ten przykład zostanie uruchomiony na komputerze, który nie spełnia tych kryteriów, wystąpi błąd.  
   

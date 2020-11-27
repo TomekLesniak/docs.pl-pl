@@ -6,17 +6,19 @@ helpviewer_keywords:
 - WF [WF], getting started
 - Windows Workflow Foundation [WF], getting started
 ms.assetid: c2d3585f-6b1a-4d4f-9865-bd7cd31c5d42
-ms.openlocfilehash: 148ba77231067bf5f8ff1d8b444b83d951ce8761
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: e9856320faa82becf12dda04d02f6f1c08081feb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419853"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293601"
 ---
 # <a name="getting-started-tutorial"></a>Wprowadzenie — samouczek
+
 Ta sekcja zawiera zestaw przewodników, które umożliwiają Programowanie aplikacji Windows Workflow Foundation (WF). Postępując zgodnie z procedurami opisanymi w tych tematach, utworzysz aplikację, która jest grą o większej liczbie. Pierwszy temat w samouczku prowadzi użytkownika przez procedurę tworzenia niestandardowych działań wymaganych dla przepływu pracy. W drugim temacie te działania są składane wraz z wbudowanymi działaniami przepływu pracy do przepływu pracy schematu blokowego. W trzecim temacie aplikacja hosta jest skonfigurowana do uruchamiania przepływu pracy i zostaje wprowadzona Ostatnia trwałość tematu. Każdy krok w tym procesie zależy od poprzednich kroków, dlatego zalecamy ich zakończenie w kolejności.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Instrukcje: Tworzenie działania](how-to-create-an-activity.md)  
  Opisuje sposób tworzenia niestandardowych działań, które pochodzą z <xref:System.Activities.NativeActivity%601> i jak tworzyć to działanie wraz z wbudowaną aktywnością w ramach działania złożonego za pomocą projektanta działań.  
   
@@ -38,6 +40,6 @@ Ta sekcja zawiera zestaw przewodników, które umożliwiają Programowanie aplik
  [Instrukcje: Aktualizowanie definicji działającego wystąpienia przepływu pracy](how-to-update-the-definition-of-a-running-workflow-instance.md)  
  Opisuje sposób korzystania z aktualizacji dynamicznej w celu modyfikowania uruchomionych wystąpień przepływu pracy.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Programowanie w programie Windows Workflow Foundation](programming.md)

@@ -2,17 +2,19 @@
 title: Używanie śledzenia do rozwiązywania problemów z aplikacjami
 ms.date: 03/30/2017
 ms.assetid: 8851adde-c3c2-4391-9523-d8eb831490af
-ms.openlocfilehash: fc9427d0c06ed67ea69669cab2aae64f39f7c10c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 62f2240831dd33bdaf78655199aad75b7e29c59c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551291"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293575"
 ---
 # <a name="using-tracking-to-troubleshoot-applications"></a>Używanie śledzenia do rozwiązywania problemów z aplikacjami
+
 Funkcja Windows Workflow Foundation (WF) umożliwia śledzenie informacji związanych z przepływem pracy w celu uzyskania szczegółów dotyczących wykonywania Windows Workflow Foundation aplikacji lub usługi. Hosty Windows Workflow Foundation mogą przechwytywać zdarzenia przepływu pracy podczas wykonywania wystąpienia przepływu pracy. Jeśli przepływ pracy generuje błędy lub wyjątki, można użyć szczegółów śledzenia Windows Workflow Foundation do rozwiązywania problemów z przetwarzaniem.  
   
 ## <a name="troubleshooting-a-wf-using-wf-tracking"></a>Rozwiązywanie problemów z usługą WF przy użyciu śledzenia WF  
+
  Aby wykryć błędy w trakcie przetwarzania działania Windows Workflow Foundation, można włączyć śledzenie z profilem śledzenia, który wysyła zapytanie o <xref:System.Activities.Tracking.ActivityStateRecord> stan błędu. Odpowiednie zapytanie jest określone w poniższym kodzie.  
   
 ```xml  
@@ -51,7 +53,7 @@ Funkcja Windows Workflow Foundation (WF) umożliwia śledzenie informacji związ
   
  Jeśli śledzenie jest włączone przy użyciu uczestnika śledzenia funkcji ETW, zdarzenia błędów są emitowane do sesji ETW. Zdarzenia można wyświetlić za pomocą Podgląd zdarzeń Podgląd zdarzeń. Można to znaleźć w węźle **Podgląd zdarzeń->Dzienniki aplikacji i usług — >Microsoft->Windows->Application Server-Applications** w kanale analitycznym.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Monitorowanie aplikacji sieci szkieletowej systemu Windows Server](/previous-versions/appfabric/ee677251(v=azure.10))
 - [Monitorowanie aplikacji przy użyciu sieci szkieletowej aplikacji](/previous-versions/appfabric/ee677276(v=azure.10))

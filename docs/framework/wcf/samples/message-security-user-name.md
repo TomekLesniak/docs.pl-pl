@@ -4,15 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: c63cfc87-6b20-4949-93b3-bcd4b732b0a2
-ms.openlocfilehash: c6b742cbb438b10b443aa8d1cfca21a80acd2afe
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8e1cf38a6906ca1c15c0dc00fc8866955a326f3d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558618"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294368"
 ---
 # <a name="message-security-user-name"></a>Nazwa użytkownika zabezpieczeń komunikatów
-Ten przykład pokazuje, jak zaimplementować aplikację, która korzysta z protokołu WS-Security z uwierzytelnianiem nazwy użytkownika dla klienta i wymaga uwierzytelniania serwera przy użyciu certyfikatu X. 509v3 serwera. Wszystkie komunikaty aplikacji między klientem a serwerem są podpisane i szyfrowane. Domyślnie nazwa użytkownika i hasło podane przez klienta są używane do logowania się do prawidłowego konta systemu Windows. Ten przykład jest oparty na [WSHttpBinding](wshttpbinding.md). Ten przykład składa się z programu konsolowego klienta (Client.exe) i biblioteki usług (Service.dll) hostowanej przez Internet Information Services (IIS). Usługa implementuje kontrakt definiujący wzorzec komunikacji żądanie-odpowiedź.  
+
+Ten przykład pokazuje, jak zaimplementować aplikację, która używa WS-Security z uwierzytelnianiem nazwy użytkownika dla klienta i wymaga uwierzytelniania serwera przy użyciu certyfikatu X. 509v3 serwera. Wszystkie komunikaty aplikacji między klientem a serwerem są podpisane i szyfrowane. Domyślnie nazwa użytkownika i hasło podane przez klienta są używane do logowania się do prawidłowego konta systemu Windows. Ten przykład jest oparty na [WSHttpBinding](wshttpbinding.md). Ten przykład składa się z programu konsolowego klienta (Client.exe) i biblioteki usług (Service.dll) hostowanej przez Internet Information Services (IIS). Usługa implementuje kontrakt definiujący wzorzec komunikacji żądanie-odpowiedź.  
   
 > [!NOTE]
 > Procedura instalacji i instrukcje dotyczące kompilacji dla tego przykładu znajdują się na końcu tego tematu.  

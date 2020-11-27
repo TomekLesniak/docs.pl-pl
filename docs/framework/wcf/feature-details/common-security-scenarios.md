@@ -4,17 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], scenarios
 ms.assetid: 201923b5-5162-4a8a-8d4c-e7bd242748d5
-ms.openlocfilehash: cfd29f8cae8ac362a5fa1709864dce4ae11b5af6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 21c8279890d1d1cf746e98f875efb6b1ff869c73
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558891"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295083"
 ---
 # <a name="common-security-scenarios"></a>Typowe scenariusze zabezpieczeń
+
 Tematy w tej sekcji wykazują wiele możliwych konfiguracji zabezpieczeń klientów i usług. Konfiguracje różnią się w zależności od liczby czynników. Na przykład, czy usługa lub klient znajduje się w intranecie, czy też zabezpieczenia są dostarczane przez system Windows lub transport (na przykład HTTPS).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Niezabezpieczony klient internetowy i usługa](internet-unsecured-client-and-service.md)  
  Przykład publicznego, niezabezpieczonego klienta i usługi.  
   
@@ -57,10 +59,12 @@ Tematy w tej sekcji wykazują wiele możliwych konfiguracji zabezpieczeń klient
  [Zaufany podsystem](trusted-subsystem.md)  
  Klient uzyskuje dostęp do co najmniej jednej usługi sieci Web, która jest dystrybuowana przez sieć. Usługi sieci Web uzyskują dostęp do dodatkowych zasobów (np. baz danych lub innych usług sieci Web), które muszą być zabezpieczone.  
   
-## <a name="reference"></a>Tematy pomocy  
+## <a name="reference"></a>Dokumentacja  
+
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Autoryzacja](authorization-in-wcf.md)  
   
  [Przegląd zabezpieczeń](security-overview.md)  
@@ -79,7 +83,7 @@ Tematy w tej sekcji wykazują wiele możliwych konfiguracji zabezpieczeń klient
   
  [Inspekcja](auditing-security-events.md)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wytyczne dotyczące zabezpieczeń i najlepsze rozwiązania](security-guidance-and-best-practices.md)
 - [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

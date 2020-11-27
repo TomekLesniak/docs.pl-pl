@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Message Contract
 ms.assetid: 5a200b78-1a46-4104-b7fb-da6dbab33893
-ms.openlocfilehash: 404fd9ddc911327bbc09c65d74da22bd88d08e2e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0a70fb519f3b3e8d9ce109c3b7bef0313e22eb50
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602573"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292831"
 ---
 # <a name="default-message-contract"></a>Domyślny kontrakt komunikatów
+
 Domyślny przykład kontraktu komunikatu pokazuje usługę, w której do i z operacji usługi jest przesyłany niestandardowy komunikat zdefiniowany przez użytkownika. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md) , który implementuje interfejs kalkulatora jako usługę o określonym typie. Zamiast poszczególnych operacji usługi do dodawania, odejmowania, mnożenia i dzielenia używanych w [wprowadzenie](getting-started-sample.md), ten przykład przekazuje komunikat niestandardowy, który zawiera operandy i operator, i zwraca wynik obliczeń arytmetycznych.  
   
  Klient jest programem konsolowym (. exe), a Biblioteka usług (. dll) jest hostowana przez Internet Information Services (IIS). Aktywność klienta jest widoczna w oknie konsoli.  
@@ -131,7 +132,7 @@ public class CalculatorService : ICalculator
 }  
 ```  
   
- Wygenerowany kod klienta dla klienta został utworzony za pomocą narzędzia [Svcutil. exe (narzędzie do przesyłania metadanych)](../servicemodel-metadata-utility-tool-svcutil-exe.md) . W razie potrzeby narzędzie automatycznie tworzy w kodzie wygenerowanym klienta typy kontraktów komunikatów. `/messageContract`Opcja polecenia może być określona, aby wymusić generowanie kontraktów komunikatów.  
+ Wygenerowany kod klienta dla klienta został utworzony za pomocą narzędzia do [przesyłania metadanych (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) narzędzia. W razie potrzeby narzędzie automatycznie tworzy w kodzie wygenerowanym klienta typy kontraktów komunikatów. `/messageContract`Opcja polecenia może być określona, aby wymusić generowanie kontraktów komunikatów.  
   
 ```console  
 svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" /o:client\generatedClient.cs http://localhost/servicemodelsamples/service.svc/mex  

@@ -2,34 +2,37 @@
 title: 1032 — ScheduleRuntimeWorkItem
 ms.date: 03/30/2017
 ms.assetid: 54688101-becf-42f3-80ca-f53a7b527620
-ms.openlocfilehash: 505b852d54e256b2c2bfff8d90944dd4e993e0c0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: da35201f2b3e3bc07e0b9139b0584ce37011e168
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924868"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294316"
 ---
 # <a name="1032---scheduleruntimeworkitem"></a>1032 — ScheduleRuntimeWorkItem
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1032|  
-|słowa kluczowe|WFRuntime|  
+|ID (Identyfikator)|1032|  
+|Słowa kluczowe|WFRuntime|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że RuntimeWorkItem została zaplanowana.  
+
+ Wskazuje, że zaplanowano RuntimeWorkItem.  
   
-## <a name="message"></a>Komunikat  
- Element roboczy środowiska uruchomieniowego została zaplanowana dla działania "%1", DisplayName: "%2", InstanceId: "%3".  
+## <a name="message"></a>Wiadomość  
+
+ Zaplanowano element roboczy środowiska uruchomieniowego dla działania %1, nazwa wyświetlana: %2, identyfikator wystąpienia: %3.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|Działanie|xs:String|Nazwa typu działania.|  
-|Nazwa wyświetlana|xs:String|Nazwa wyświetlana działania.|  
-|InstanceId|xs:String|Identyfikator wystąpienia działania.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Działanie|XS: ciąg|Nazwa typu działania.|  
+|Nazwa wyświetlana|XS: ciąg|Nazwa wyświetlana działania.|  
+|InstanceId|XS: ciąg|Identyfikator wystąpienia działania.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

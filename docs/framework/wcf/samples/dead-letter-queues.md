@@ -2,14 +2,15 @@
 title: Kolejki utraconych komunikatów
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: 8ea2ea530db8745c3802f9f39793ffd77ddd0008
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cf281ff08d56669d0257d693af93d8a9b5b2e81a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84575293"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292830"
 ---
 # <a name="dead-letter-queues"></a>Kolejki utraconych komunikatów
+
 Ten przykład pokazuje, jak obsługiwać i przetwarzać komunikaty, których dostarczenie nie powiodło się. Jest on oparty na przykładowym [wiązaniem usługi MSMQ](transacted-msmq-binding.md) . Ten przykład używa `netMsmqBinding` powiązania. Usługa to samodzielna aplikacja konsolowa, która umożliwia obserwowanie usługi do odebrania komunikatów znajdujących się w kolejce.
 
 > [!NOTE]
@@ -24,7 +25,7 @@ Ten przykład pokazuje, jak obsługiwać i przetwarzać komunikaty, których dos
 
  Kolejka utraconych wiadomości w `NetMsmqBinding` powiązaniu jest wyrażona w następujących właściwościach:
 
-- <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A>Właściwość w celu wyrażenia rodzaju kolejki utraconych wiadomości, która jest wymagana przez klienta. To wyliczenie ma następujące wartości:
+- <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A> Właściwość w celu wyrażenia rodzaju kolejki utraconych wiadomości, która jest wymagana przez klienta. To wyliczenie ma następujące wartości:
 
 - `None`: Brak kolejki utraconych wiadomości wymaganych przez klienta.
 
@@ -32,7 +33,7 @@ Ten przykład pokazuje, jak obsługiwać i przetwarzać komunikaty, których dos
 
 - `Custom`: Niestandardowa Kolejka utracona określona przy użyciu <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> właściwości jest używana do przechowywania wiadomości utraconych. Ta funkcja jest dostępna tylko w systemie Windows Vista. Jest on używany, gdy aplikacja musi używać własnej kolejki utraconych wiadomości zamiast udostępniać ją innym aplikacjom uruchomionym na tym samym komputerze.
 
-- <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A>Właściwość do wyrażenia określonej kolejki, która ma być używana jako kolejka utraconych wiadomości. Jest to możliwe tylko w systemie Windows Vista.
+- <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> Właściwość do wyrażenia określonej kolejki, która ma być używana jako kolejka utraconych wiadomości. Jest to możliwe tylko w systemie Windows Vista.
 
  W tym przykładzie klient wysyła partię komunikatów do usługi z zakresu transakcji i określa arbitralnie niską wartość "czas wygaśnięcia" dla tych komunikatów (około 2 sekund). Klient określa również niestandardową kolejkę utraconych wiadomości, która ma być używana do kolejkowania komunikatów, które wygasły.
 
@@ -318,7 +319,7 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
 
     2. Rozwiń kartę **funkcje** .
 
-    3. Kliknij prawym przyciskiem myszy pozycję **prywatne kolejki komunikatów**, a następnie wybierz kolejno pozycje **Nowa**i **prywatne**.
+    3. Kliknij prawym przyciskiem myszy pozycję **prywatne kolejki komunikatów**, a następnie wybierz kolejno pozycje **Nowa** i **prywatne**.
 
     4. Zaznacz pole **transakcyjne** .
 
@@ -350,6 +351,7 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
     > Ustawienie `security mode` odpowiada `None` ustawieniu `MsmqAuthenticationMode` `MsmqProtectionLevel` i `Message` zabezpieczenia na `None` .
 
 ## <a name="comments"></a>Komentarze
+
  Domyślnie w przypadku `netMsmqBinding` transportu powiązań jest włączone zabezpieczenia. Dwie właściwości, `MsmqAuthenticationMode` a `MsmqProtectionLevel` także określają typ zabezpieczenia transportu. Domyślnie tryb uwierzytelniania jest ustawiony na `Windows` , a poziom ochrony jest ustawiony na `Sign` . Aby usługa MSMQ zapewniała funkcję uwierzytelniania i podpisywania, musi być częścią domeny. Jeśli ten przykład zostanie uruchomiony na komputerze, który nie jest częścią domeny, zostanie wyświetlony następujący błąd: "wewnętrzny certyfikat usługi kolejkowania komunikatów użytkownika nie istnieje".
 
 > [!IMPORTANT]

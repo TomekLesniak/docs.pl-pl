@@ -2,17 +2,19 @@
 title: Informacje o śladach
 ms.date: 03/30/2017
 ms.assetid: bd960851-162d-4dcc-8c0c-0ec8f455d56d
-ms.openlocfilehash: c6f6d5a928500cce9f64dbb7338826d5a4ccd1ce
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ea3759d67d546eb916ec7f5413ce41fa3419d174
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587784"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293419"
 ---
 # <a name="traces-reference"></a>Informacje o śladach
+
 W tej sekcji wymieniono wszystkie ślady wygenerowane przez Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  `Administration`  
   
  [System.ServiceModel.Administration.WmiPut](system-servicemodel-administration-wmiput.md)  
@@ -131,7 +133,7 @@ W tej sekcji wymieniono wszystkie ślady wygenerowane przez Windows Communicatio
   
  [System.ServiceModel.Channels.ConnectToIPEndpoint](system-servicemodel-channels-connecttoipendpoint.md)  
   
- [System.ServiceModel.Channels.SocketConnectionCreate](system-servicemodel-channels-socketconnectioncreate.md)  
+ [System.ServiceModel.Channels.ConnectionPoolLeaseTimeoutReached](system-servicemodel-channels-socketconnectioncreate.md)  
   
  [System.ServiceModel.Channels.SocketConnectionClose](system-servicemodel-channels-socketconnectionclose.md)  
   

@@ -2,17 +2,19 @@
 title: Transfer
 ms.date: 03/30/2017
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
-ms.openlocfilehash: 52b0cf35a2f8bab17252d3711f3143738c2bc39c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: da31dcb24234e750c88383b9f1bea4f088f4ee3d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587771"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293406"
 ---
 # <a name="transfer"></a>Transfer
+
 W tym temacie opisano transfer w modelu śledzenia działań Windows Communication Foundation (WCF).  
   
 ## <a name="transfer-definition"></a>Definicja transferu  
+
  Transfery między działaniami reprezentują związek przyczyn między zdarzeniami w pokrewnych działaniach w punktach końcowych. Dwie działania są powiązane z transferami, gdy sterowanie przepływem między tymi działaniami, na przykład wywołanie metody przecina granice działania. W programie WCF, gdy w usłudze są przyjmowane bajty, nasłuchiwanie w działaniu jest przesyłane do działania odbierania bajtów, w którym jest tworzony obiekt wiadomości. Aby zapoznać się z listą kompleksowych scenariuszy śledzenia i ich odpowiedniego projektu działań i śledzenia, zobacz [kompleksowe scenariusze śledzenia](end-to-end-tracing-scenarios.md).  
   
  Aby emitować ślady transferu, użyj `ActivityTracing` Ustawienia ze źródła śledzenia, jak pokazano w poniższym kodzie konfiguracyjnym.  
@@ -22,6 +24,7 @@ W tym temacie opisano transfer w modelu śledzenia działań Windows Communicati
 ```  
   
 ## <a name="using-transfer-to-correlate-activities-within-endpoints"></a>Używanie transferu do skorelowania działań w punktach końcowych  
+
  Działania i transfery umożliwiają użytkownikowi probabilistically lokalizowanie głównej przyczyny błędu. Jeśli na przykład przeniesiemy z powrotem i wstecz między działaniami M i N w składnikach M i N, a awaria wystąpi w N prawo po przeniesieniu z powrotem do M, możemy sporządzić wniosek, że najprawdopodobniej jest to spowodowane przekazywaniem danych z powrotem do M.  
   
  Ślad transferu jest emitowany z działania M do działania N, gdy istnieje przepływ sterowania między M i N. Na przykład N wykonuje część pracy dla M ze względu na to, że wywołanie metody przekracza granice działania. N może już istnieć lub został utworzony. N jest duplikowany przez M, gdy N to nowe działanie, które wykonuje pewną pracę dla M.  
@@ -33,6 +36,7 @@ W tym temacie opisano transfer w modelu śledzenia działań Windows Communicati
  Relacja zagnieżdżenia nie musi istnieć między działaniami M i N. Może się to zdarzyć z dwóch przyczyn. Po pierwsze, gdy działanie M nie monitoruje rzeczywistego przetwarzania wykonanego w N, chociaż M zainicjowano N. Sekunda, gdy N już istnieje.  
   
 ## <a name="example-of-transfers"></a>Przykład transferu  
+
  Poniżej wymieniono dwa przykłady transferu.  
   
 - Podczas tworzenia hosta usługi Konstruktor uzyskuje kontrolę nad wywoływanym kodem lub wywoływanie przesyłanych kodu do konstruktora. Gdy Konstruktor zakończył wykonywanie, zwraca sterowanie do kodu wywołującego lub Konstruktor przesyła z powrotem do kodu wywołującego. Jest to przypadek relacji zagnieżdżonej.  
@@ -40,6 +44,7 @@ W tym temacie opisano transfer w modelu śledzenia działań Windows Communicati
 - Gdy odbiornik zacznie przetwarzać dane transportu, tworzy nowy wątek i ręce do działania odbierania bajtów, który jest odpowiednim kontekstem do przetwarzania, przekazywania kontroli i danych. Gdy ten wątek zakończy przetwarzanie żądania, działanie odbieraj bajty kończy się bez powrotu do odbiornika. W takim przypadku mamy transfer w przypadku, gdy nie przeprowadzono transferu z nowego wątku. Te dwa działania są powiązane, ale nie są zagnieżdżone.  
   
 ## <a name="activity-transfer-sequence"></a>Sekwencja transferu działań  
+
  Poprawnie sformułowana sekwencja transferu działań obejmuje następujące kroki.  
   
 1. Rozpocznij nowe działanie, które składa się z wyboru nowego gAId.  

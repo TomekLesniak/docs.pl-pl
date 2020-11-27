@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], equivalence
 ms.assetid: f06f3c7e-c235-4ec1-b200-68142edf1ed1
-ms.openlocfilehash: b96a32f5e11ed4808f8f35d02802afd1f48c3072
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2a8c186c839be5008bbc5315c7c9fae638680714
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601325"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293926"
 ---
 # <a name="data-contract-equivalence"></a>Równoważność kontraktów danych
+
 Aby Klient pomyślnie wysłał dane określonego typu do usługi lub usługa, która pomyślnie wyśle dane do klienta, wysłany typ nie musi istnieć na końcu odbioru. Jedyny wymóg polega na tym, że kontrakty danych obu typów są równoważne. (Czasami ścisła równoważność nie jest wymagana, zgodnie z opisem w sekcji [przechowywanie wersji kontraktu danych](data-contract-versioning.md)).  
   
  Aby Kontrakty danych były równoważne, muszą mieć tę samą przestrzeń nazw i nazwę. Ponadto każdy element członkowski danych na jednej stronie musi mieć odpowiedni element członkowski danych po drugiej stronie.  
@@ -34,6 +35,7 @@ Aby Klient pomyślnie wysłał dane określonego typu do usługi lub usługa, kt
  [!code-vb[C_DataContractNames#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractnames/vb/source.vb#5)]  
   
 ## <a name="data-member-order-and-data-contract-equivalence"></a>Kolejność elementów członkowskich danych i równoważności kontraktu danych  
+
  Użycie <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> właściwości <xref:System.Runtime.Serialization.DataMemberAttribute> klasy może wpłynąć na równoważność kontraktu danych. Kontrakty danych muszą mieć elementy członkowskie, które są wyświetlane w tej samej kolejności, aby były równoważne. Kolejność domyślna jest alfabetyczna. Aby uzyskać więcej informacji, zobacz [kolejność elementów członkowskich danych](data-member-order.md).  
   
  Na przykład poniższy kod skutkuje odpowiednikiem umów dotyczących danych.  
@@ -47,6 +49,7 @@ Aby Klient pomyślnie wysłał dane określonego typu do usługi lub usługa, kt
  [!code-vb[C_DataContractNames#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractnames/vb/source.vb#7)]  
   
 ## <a name="inheritance-interfaces-and-data-contract-equivalence"></a>Dziedziczenie, interfejsy i równoważność kontraktu danych  
+
  Podczas określania równoważności, kontrakt danych, który dziedziczy z innego kontraktu danych, jest traktowany jak w przypadku tylko jednego kontraktu danych, który zawiera wszystkie elementy członkowskie danych z typu podstawowego. Należy pamiętać, że kolejność elementów członkowskich danych musi być zgodna i składowe typu podstawowego poprzedzają elementy członkowskie typu pochodnego w kolejności. Ponadto, jeśli, jak w poniższym przykładzie kodu, dwa elementy członkowskie danych mają tę samą wartość kolejności, kolejność dla tych elementów członkowskich danych jest alfabetyczna. Aby uzyskać więcej informacji, zobacz [kolejność elementów członkowskich danych](data-member-order.md).  
   
  W poniższym przykładzie kontrakt danych dla typu `Employee` jest odpowiednikiem kontraktu danych dla tego typu `Worker` .  

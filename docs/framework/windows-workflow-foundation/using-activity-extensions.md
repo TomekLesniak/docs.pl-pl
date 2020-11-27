@@ -2,21 +2,22 @@
 title: Używanie rozszerzeń działania
 ms.date: 03/30/2017
 ms.assetid: 500eb96a-c009-4247-b6b5-b36faffdf715
-ms.openlocfilehash: 551ce24db8c0adc8225ac94a1d05f998a26873a9
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 3a9cabda9fe92b2ea4e708da8f853f3029328775
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988633"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293289"
 ---
 # <a name="using-activity-extensions"></a>Używanie rozszerzeń działania
+
 Działania mogą współdziałać z rozszerzeniami aplikacji przepływu pracy, które umożliwiają hostowi dostarczanie dodatkowych funkcji, które nie są jawnie modelowane w przepływie pracy.  W tym temacie opisano sposób tworzenia i używania rozszerzenia w celu zliczenia liczby wykonywanych działań.
 
 ### <a name="to-use-an-activity-extension-to-count-executions"></a>Aby użyć rozszerzenia działania do zliczenia wykonywania
 
-1. Open Visual Studio 2010. Wybierz pozycję **Nowy**, **projekt**. W węźle **Wizualizacja C#**  wybierz pozycję **przepływ pracy**.  Z listy szablonów wybierz pozycję **aplikacja konsoli przepływu pracy** . Nadaj nazwę projektowi `Extensions`. Kliknij przycisk **OK** , aby utworzyć projekt.
+1. Otwórz program Visual Studio 2010. Wybierz pozycję **Nowy**, **projekt**. W węźle **Visual C#** wybierz pozycję **przepływ pracy**.  Z listy szablonów wybierz pozycję **aplikacja konsoli przepływu pracy** . Nadaj nazwę projektowi `Extensions` . Kliknij przycisk **OK**, aby utworzyć projekt.
 
-2. Dodaj instrukcję w pliku program.cs dla przestrzeni nazw **System. Collections. Generic.** `using`
+2. Dodaj `using` instrukcję w pliku program.cs dla przestrzeni nazw **System. Collections. Generic** .
 
     ```csharp
     using System.Collections.Generic;

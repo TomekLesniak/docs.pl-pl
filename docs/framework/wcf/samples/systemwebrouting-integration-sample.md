@@ -2,14 +2,15 @@
 title: Przykład integracji elementu SystemWebRouting
 ms.date: 03/30/2017
 ms.assetid: f1c94802-95c4-49e4-b1e2-ee9dd126ff93
-ms.openlocfilehash: 58d720f164c4c35f3de4c282e9aa983d11e4040b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 04c3093097c5bf11e1d4dd5d3124c9fbae4b3665
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555227"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293913"
 ---
 # <a name="systemwebrouting-integration-sample"></a>Przykład integracji elementu SystemWebRouting
+
 Ten przykład pokazuje integrację warstwy hostingu z klasami w <xref:System.Web.Routing> przestrzeni nazw. Klasy w <xref:System.Web.Routing> przestrzeni nazw umożliwiają aplikacji korzystanie z adresów URL, które nie są bezpośrednio zgodne z zasobem fizycznym. Użycie routingu sieci Web umożliwia deweloperom tworzenie adresów wirtualnych dla protokołu HTTP, które następnie są mapowane z powrotem do rzeczywistych usług WCF. Jest to przydatne w przypadku, gdy usługa WCF musi być hostowana bez konieczności fizycznego pliku lub zasobu, lub w przypadku uzyskiwania dostępu do usług za pomocą adresów URL, które nie zawierają plików takich jak. html czy. aspx. Ten przykład pokazuje, jak używać <xref:System.Web.Routing.RouteTable> klasy do tworzenia wirtualnych identyfikatorów URI, które mapują na uruchamianie usług zdefiniowanych w Global. asax.
 
 > [!NOTE]
@@ -60,9 +61,9 @@ Ten przykład może już być zainstalowany na komputerze. Przed kontynuowaniem 
   
     1. W Menedżerze usług IIS kliknij prawym przyciskiem myszy pozycję **Domyślna witryna sieci Web** i wybierz polecenie **Dodaj aplikację**.  
   
-    2. Dla **aliasu**wpisz w `WebRoutingIntegration` .  
+    2. Dla **aliasu** wpisz w `WebRoutingIntegration` .  
   
-    3. W polu **Ścieżka fizyczna**wybierz folder usługi wewnątrz projektu.  
+    3. W polu **Ścieżka fizyczna** wybierz folder usługi wewnątrz projektu.  
   
     4. Naciśnij przycisk **OK**.  
   
@@ -83,6 +84,6 @@ Ten przykład może już być zainstalowany na komputerze. Przed kontynuowaniem 
 > [!NOTE]
 > Domyślną wersję puli aplikacji należy zaktualizować do .NET Framework 4, jeśli jest ona ustawiona na wersję 2.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykłady hostingu i trwałości usługi AppFabric](/previous-versions/appfabric/ff383418(v=azure.10))

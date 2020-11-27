@@ -2,12 +2,12 @@
 title: Zabezpieczenia odnajdywania — przykład
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: c6ec9b7e13234b7dae03541eb09ccba98f4cc93a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0957e8ddaee99e60b205c92319dc2c61e2ab007a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144906"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292639"
 ---
 # <a name="discovery-security-sample"></a>Zabezpieczenia odnajdywania — przykład
 
@@ -15,12 +15,14 @@ Specyfikacja odnajdywania nie wymaga, aby punkty końcowe, które uczestniczą w
   
  Niestandardowy kanał jest stosowany na podstawie istniejącego stosu kanału w celu odnajdywania i punktów końcowych anonsów. W ten sposób nagłówek podpisu jest stosowany dla każdej wysyłanej wiadomości. Podpis jest weryfikowany dla odebranych komunikatów i niezgodnych lub gdy komunikaty nie mają podpisu, komunikaty są usuwane. Aby podpisać i zweryfikować komunikaty, przykład używa certyfikatów.  
   
-## <a name="discussion"></a>Dyskusji  
+## <a name="discussion"></a>Dyskusja  
+
  Funkcja WCF jest rozszerzalna i umożliwia użytkownikom dostosowanie kanałów zgodnie z potrzebami. Przykład implementuje element funkcji odnajdywania bezpiecznego powiązania, który kompiluje bezpieczne kanały. Bezpieczne kanały stosują i weryfikują podpisy komunikatów i są stosowane na podstawie bieżącego stosu.  
   
  Element bezpiecznego powiązania kompiluje bezpieczne fabryki kanałów i odbiorniki kanałów.  
   
 ## <a name="secure-channel-factory"></a>Fabryka kanałów Secure Channel  
+
  Fabryka bezpiecznych kanałów tworzy kanały wyjściowe lub dupleksowe, które dodają skrócony podpis do nagłówków komunikatów. Aby zapewnić, że komunikaty są możliwie małe, jest używany format podpisu kompaktowego. Struktura skróconej sygnatury jest pokazana w poniższym przykładzie.  
   
 ```xml  
@@ -38,14 +40,16 @@ Specyfikacja odnajdywania nie wymaga, aby punkty końcowe, które uczestniczą w
 > [!NOTE]
 > `PrefixList`Dodano do protokołu 2008 odnajdywania wersji.  
   
- Aby obliczyć sygnaturę, przykład określa rozwinięte elementy podpisu. Zostanie utworzony podpis XML ( `SignedInfo` ) przy użyciu `ds` prefiksu przestrzeni nazw, zgodnie z wymaganiami specyfikacji WS-Discovery. Treść i wszystkie nagłówki w przestrzeni nazw odnajdowania i adresowania są przywoływane w podpisie, więc nie mogą zostać naruszone. Każdy element, do którego istnieje odwołanie, jest przekształcany przy użyciu nieprawidłowej postaci kanonicznej ( <http://www.w3.org/2001/10/xml-exc-c14n#> ), a następnie obliczana jest wartość skrótu SHA-1 ( <http://www.w3.org/2000/09/xmldsig#sha1> ). W oparciu o wszystkie elementy, do których istnieją odwołania i ich wartości skrótu, wartość podpisu jest obliczana przy użyciu algorytmu RSA ( <http://www.w3.org/2000/09/xmldsig#rsa-sha1> ).  
+ Aby obliczyć sygnaturę, przykład określa rozwinięte elementy podpisu. Sygnatura XML ( `SignedInfo` ) jest tworzona przy użyciu `ds` prefiksu przestrzeni nazw, zgodnie z wymaganiami specyfikacji WS-Discovery. Treść i wszystkie nagłówki w przestrzeni nazw odnajdowania i adresowania są przywoływane w podpisie, więc nie mogą zostać naruszone. Każdy element, do którego istnieje odwołanie, jest przekształcany przy użyciu nieprawidłowej postaci kanonicznej ( <http://www.w3.org/2001/10/xml-exc-c14n#> ), a następnie obliczana jest wartość skrótu SHA-1 ( <http://www.w3.org/2000/09/xmldsig#sha1> ). W oparciu o wszystkie elementy, do których istnieją odwołania i ich wartości skrótu, wartość podpisu jest obliczana przy użyciu algorytmu RSA ( <http://www.w3.org/2000/09/xmldsig#rsa-sha1> ).  
   
  Komunikaty są podpisane przy użyciu certyfikatu określonego przez klienta. Podczas tworzenia elementu powiązania należy określić lokalizację magazynu, nazwę i nazwę podmiotu certyfikatu. `KeyId`W podpisie kompaktowym reprezentuje identyfikator klucza tokenu podpisywania i jest identyfikatorem klucza podmiotu (Ski) tokenu podpisującego lub (Jeśli ta nazwa nie istnieje) skrót SHA-1 klucza publicznego tokenu podpisywania.  
   
 ## <a name="secure-channel-listener"></a>Odbiornik bezpiecznego kanału  
+
  Odbiornik bezpiecznego kanału tworzy kanały wejściowe lub dupleksowe, które weryfikują skrócony podpis w odebranych komunikatach. Aby sprawdzić podpis, `KeyId` określony w podpisie kompaktowym dołączonym do wiadomości jest używany do wybierania certyfikatu z określonego magazynu. Jeśli wiadomość nie ma podpisu lub sprawdzanie podpisu nie powiedzie się, komunikaty są usuwane. Aby użyć bezpiecznego powiązania, przykład definiuje fabrykę, która tworzy niestandardowe <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> i <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> z dodaniem bezpiecznego powiązania odnajdywania. Te bezpieczne punkty końcowe mogą być używane w detektorach anonsów odnajdowania i odnajdywanych usługach.  
   
 ## <a name="sample-details"></a>Przykładowe szczegóły  
+
  Przykład obejmuje bibliotekę i 4 aplikacje konsolowe:
   
 - **DiscoverySecurityChannels**: Biblioteka, która uwidacznia bezpieczne powiązanie. Biblioteka oblicza i weryfikuje skrócony podpis dla komunikatów wychodzących/przychodzących.  
@@ -57,15 +61,15 @@ Specyfikacja odnajdywania nie wymaga, aby punkty końcowe, które uczestniczą w
 - **AnnouncementListener**: usługa samoobsługowa, która nasłuchuje w trybie online i powiadomienia w trybie offline i korzysta z punktu końcowego bezpiecznego anonsu.  
   
 > [!NOTE]
-> Jeśli Setup. bat jest uruchamiany wiele razy, Menedżer certyfikatów monituje o wybranie certyfikatu do dodania, ponieważ istnieją zduplikowane certyfikaty. W takim przypadku należy przerwać działanie Setup. bat i oczyścić. bat, ponieważ duplikaty zostały już utworzone. Oczyść. bat jest również monitowany o wybranie certyfikatu do usunięcia. Wybierz certyfikat z listy i kontynuuj wykonywanie czyszczenia. bat do momentu pozostawania certyfikatów.  
+> Jeśli Setup.bat jest uruchamiane wiele razy, Menedżer certyfikatów monituje o wybranie certyfikatu do dodania, ponieważ istnieją zduplikowane certyfikaty. W takim przypadku Setup.bat powinny być przerwane i należy wywołać Cleanup.bat, ponieważ duplikaty zostały już utworzone. Cleanup.bat również prosi o wybranie certyfikatu do usunięcia. Wybierz certyfikat z listy i kontynuuj wykonywanie Cleanup.bat do momentu pozostawania certyfikatów.  
   
 #### <a name="to-use-this-sample"></a>Aby użyć tego przykładu  
   
-1. Wykonaj skrypt Setup. bat na podstawie wiersz polecenia dla deweloperów dla programu Visual Studio. Przykład używa certyfikatów do podpisywania i weryfikowania wiadomości. Skrypt tworzy certyfikaty przy użyciu programu Makecert. exe, a następnie instaluje je za pomocą certmgr. exe. Skrypt musi być uruchamiany z uprawnieniami administratora.  
+1. Wykonaj skrypt Setup.bat z wiersz polecenia dla deweloperów dla programu Visual Studio. Przykład używa certyfikatów do podpisywania i weryfikowania wiadomości. Skrypt tworzy certyfikaty przy użyciu Makecert.exe a następnie instaluje je przy użyciu Certmgr.exe. Skrypt musi być uruchamiany z uprawnieniami administratora.  
   
 2. Aby skompilować i uruchomić przykład, Otwórz plik Security. sln w programie Visual Studio i wybierz polecenie **Kompiluj ponownie wszystko**. Zaktualizuj właściwości rozwiązania, aby uruchomić wiele projektów: wybierz pozycję **Rozpocznij** dla wszystkich projektów z wyjątkiem DiscoverySecureChannels. Uruchom rozwiązanie normalnie.  
   
-3. Po wykonaniu przykładu wykonaj skrypt Oczyść. bat, który usuwa certyfikaty utworzone dla tego przykładu.  
+3. Po wykonaniu przykładu wykonaj skrypt Cleanup.bat, który usuwa certyfikaty utworzone dla tego przykładu.  
   
 > [!IMPORTANT]
 > Przykłady mogą być już zainstalowane na komputerze. Przed kontynuowaniem Wyszukaj następujący katalog (domyślny).  

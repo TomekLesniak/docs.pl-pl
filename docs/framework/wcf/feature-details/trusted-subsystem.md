@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f5ce46b-e259-4bc9-a0b9-89d06fc9341c
-ms.openlocfilehash: 29ac26616313ec8bd7661cb92c42f726ec051cd7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 93770c8f4d92a12dcfe29290c84708949d9a1d4a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90542890"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293393"
 ---
 # <a name="trusted-subsystem"></a>Zaufany podsystem
+
 Klient uzyskuje dostęp do co najmniej jednej usługi sieci Web, która jest dystrybuowana przez sieć. Usługi sieci Web są zaprojektowane tak, aby dostęp do dodatkowych zasobów (np. baz danych lub innych usług sieci Web) był hermetyzowany w logice biznesowej usługi sieci Web. Te zasoby muszą być chronione przed nieautoryzowanym dostępem. Poniższa ilustracja przedstawia proces zaufanego podsystemu.  
   
  ![Zaufany podsystem](media/wcfc-trustedsubsystemc.gif "wcfc_TrustedSubsystemc")  
@@ -35,20 +36,22 @@ Klient uzyskuje dostęp do co najmniej jednej usługi sieci Web, która jest dys
 |Współdziałanie|Tylko Windows Communication Foundation (WCF).|  
 |Uwierzytelnianie (usługa)|Usługa tokenu zabezpieczającego uwierzytelnia i autoryzuje klientów.|  
 |Uwierzytelnianie (klient)|Zaufany podsystem uwierzytelnia klienta, a zasób uwierzytelnia usługę zaufanego podsystemu.|  
-|Integralność|Yes|  
-|Poufność|Yes|  
+|Integralność|Tak|  
+|Poufność|Tak|  
 |Transport|Protokół HTTP między klientem a usługą zaufanego podsystemu.<br /><br /> Waga. TCP między usługą zaufanego podsystemu a zasobem (usługa zaplecza).|  
 |Wiązanie|<xref:System.ServiceModel.WSHttpBinding> lub <xref:System.ServiceModel.NetTcpBinding>[\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
   
 ## <a name="resource-back-end-service"></a>Zasób (usługa zaplecza)  
   
 ### <a name="code"></a>Kod  
+
  Poniższy kod pokazuje, jak utworzyć punkt końcowy usługi dla zasobu, który używa zabezpieczeń transportu za pośrednictwem protokołu transportowego TCP.  
   
  [!code-csharp[TrustedSubSystemsResource#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/trustedsubsystemsresource/cs/source.cs#1)]
  [!code-vb[TrustedSubSystemsResource#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/trustedsubsystemsresource/vb/source.vb#1)]  
   
-### <a name="configuration"></a>Konfiguracja  
+### <a name="configuration"></a>Konfigurowanie  
+
  Poniższa konfiguracja konfiguruje ten sam punkt końcowy przy użyciu konfiguracji.  
   
 ```xml  
@@ -90,6 +93,7 @@ Klient uzyskuje dostęp do co najmniej jednej usługi sieci Web, która jest dys
 ## <a name="trusted-subsystem"></a>Zaufany podsystem  
   
 ### <a name="code"></a>Kod  
+
  Poniższy kod pokazuje, jak utworzyć punkt końcowy usługi dla zaufanego podsystemu, który używa zabezpieczeń komunikatów przez protokół HTTP i nazwę użytkownika i hasło na potrzeby uwierzytelniania.  
   
  [!code-csharp[TrustedSubSystems#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/trustedsubsystems/cs/source.cs#1)]
@@ -100,7 +104,8 @@ Klient uzyskuje dostęp do co najmniej jednej usługi sieci Web, która jest dys
  [!code-csharp[TrustedSubSystems#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/trustedsubsystems/cs/source.cs#2)]
  [!code-vb[TrustedSubSystems#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/trustedsubsystems/vb/source.vb#2)]  
   
-### <a name="configuration"></a>Konfiguracja  
+### <a name="configuration"></a>Konfigurowanie  
+
  Poniższa konfiguracja konfiguruje ten sam punkt końcowy przy użyciu konfiguracji. Zwróć uwagę na dwa powiązania: jeden zabezpiecza usługę hostowaną w zaufanym podsystemie, a druga komunikuje się między zaufanym podsystemem a usługą zaplecza.  
   
 ```xml  
@@ -166,12 +171,14 @@ Klient uzyskuje dostęp do co najmniej jednej usługi sieci Web, która jest dys
 ## <a name="client"></a>Klient  
   
 ### <a name="code"></a>Kod  
+
  Poniższy kod przedstawia sposób tworzenia klienta, który komunikuje się z zaufanym podsystemem przy użyciu zabezpieczeń komunikatów przez protokół HTTP i nazwę użytkownika i hasło na potrzeby uwierzytelniania.  
   
  [!code-csharp[TrustedSubSystemsClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/trustedsubsystemsclient/cs/source.cs#1)]
  [!code-vb[TrustedSubSystemsClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/trustedsubsystemsclient/vb/source.vb#1)]  
   
-### <a name="configuration"></a>Konfiguracja  
+### <a name="configuration"></a>Konfigurowanie  
+
  Poniższy kod służy do konfigurowania klienta do korzystania z zabezpieczeń komunikatów za pośrednictwem protokołu HTTP oraz nazwy użytkownika i hasła na potrzeby uwierzytelniania. Nazwę użytkownika i hasło można określić tylko przy użyciu kodu (nie można go konfigurować).  
   
 ```xml  
@@ -210,7 +217,7 @@ Klient uzyskuje dostęp do co najmniej jednej usługi sieci Web, która jest dys
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przegląd zabezpieczeń](security-overview.md)
 - [Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))

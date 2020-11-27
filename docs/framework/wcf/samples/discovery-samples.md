@@ -2,17 +2,19 @@
 title: Odnajdywanie (przykłady)
 ms.date: 03/30/2017
 ms.assetid: 522a00b4-a789-4e8c-b8d7-a4c3d863a182
-ms.openlocfilehash: bb5471db6f4feb61798926ae1466a3bebac7e959
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d5801452943a75e87d829e5d5004e3c259ce3afa
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600584"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292613"
 ---
 # <a name="discovery-samples"></a>Odnajdywanie (przykłady)
+
 Ta sekcja zawiera przykłady dotyczące funkcji odnajdywania.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Anonse](announcements-sample.md)  
  Demonstruje sposób używania anonsów z funkcją odnajdywania.  
   

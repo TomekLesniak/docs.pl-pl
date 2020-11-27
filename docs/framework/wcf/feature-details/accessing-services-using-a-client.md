@@ -5,19 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c8329832-bf66-4064-9034-bf39f153fc2d
-ms.openlocfilehash: 001f30d7a0dde952a7d18bfbc50f2c3622287406
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d136e094e4f1ea5258ff568527d10ac25a38f1a9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84576554"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293965"
 ---
 # <a name="accessing-services-using-a-client"></a>Uzyskiwanie dostępu do usług za pomocą klienta
+
 Aplikacje klienckie muszą tworzyć, konfigurować i używać obiektów klienta lub kanału WCF w celu komunikowania się z usługami. Temat [Omówienie klienta WCF](../wcf-client-overview.md) zawiera omówienie obiektów i kroków związanych z tworzeniem podstawowych obiektów klienta i kanałów oraz ich używania.  
   
  Ten temat zawiera szczegółowe informacje dotyczące niektórych problemów dotyczących aplikacji klienckich oraz obiektów klienta i kanałów, które mogą być przydatne w zależności od danego scenariusza.  
   
 ## <a name="overview"></a>Omówienie  
+
  W tym temacie opisano zachowanie i problemy związane z:  
   
 - Okresy istnienia kanału i sesji.  
@@ -29,6 +31,7 @@ Aplikacje klienckie muszą tworzyć, konfigurować i używać obiektów klienta 
 - Interaktywna Inicjalizacja kanałów.  
   
 ### <a name="channel-and-session-lifetimes"></a>Okresy istnienia kanału i sesji  
+
  Aplikacje Windows Communication Foundation (WCF) zawierają dwie kategorie kanałów, datagram i sesję.  
   
  Kanał *datagramu* to kanał, w którym wszystkie komunikaty są nieskorelowane. Jeśli operacja wejścia lub wyjścia kończy się niepowodzeniem w kanale datagramu, następna operacja jest zwykle niezależna i można ponownie użyć tego samego kanału. Z tego powodu kanały datagramów zazwyczaj nie są błędne.  
@@ -43,11 +46,13 @@ Aplikacje klienckie muszą tworzyć, konfigurować i używać obiektów klienta 
  Większość powiązań dostarczonych przez system (które uwidaczniają kanały do warstwy aplikacji) domyślnie używa sesji, ale nie jest <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> . Aby uzyskać więcej informacji, zobacz [Korzystanie z sesji](../using-sessions.md).  
   
 ### <a name="the-proper-use-of-sessions"></a>Odpowiednie użycie sesji  
+
  Sesje zapewniają sposób, aby wiedzieć, czy cała wymiana komunikatów została ukończona, oraz czy obie strony uznały się pomyślnie. Zaleca się, aby aplikacja wywołująca otworzyła kanał, używać jej i zamknąć kanał wewnątrz jednego bloku try. Jeśli kanał sesji jest otwarty, a <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType> Metoda jest wywoływana jednokrotnie, a wywołanie zwrotne powiodło się, sesja zakończyła się pomyślnie. Pomyślne w tym przypadku oznacza, że wszystkie dostawy gwarantują spełnienie określonego powiązania, a druga strona nie wywołuje <xref:System.ServiceModel.ICommunicationObject.Abort%2A?displayProperty=nameWithType> kanału przed wywołaniem <xref:System.ServiceModel.ICommunicationObject.Close%2A> .  
   
  W poniższej sekcji przedstawiono przykład tego podejścia klienta.  
   
 ### <a name="handling-exceptions"></a>Obsługa wyjątków  
+
  Obsługa wyjątków w aplikacjach klienckich jest prosta. Jeśli kanał jest otwarty, używany i zamknięty wewnątrz bloku try, Konwersacja zakończyła się powodzeniem, chyba że zostanie zgłoszony wyjątek. Zazwyczaj Jeśli wystąpi wyjątek, konwersacja jest przerywana.  
   
 > [!NOTE]
@@ -66,15 +71,17 @@ Aplikacje klienckie muszą tworzyć, konfigurować i używać obiektów klienta 
  Aby uzyskać więcej informacji na temat pracy z informacjami o błędach na poziomie aplikacji, zobacz [określanie i obsługa błędów w kontraktach i usługach](../specifying-and-handling-faults-in-contracts-and-services.md). [Oczekiwane wyjątki](../samples/expected-exceptions.md) opisują oczekiwane wyjątki i pokazują, jak je obsłużyć. Aby uzyskać więcej informacji o sposobie obsługi błędów podczas tworzenia kanałów, zobacz [Obsługa wyjątków i błędów](../extending/handling-exceptions-and-faults.md).  
   
 ### <a name="client-blocking-and-performance"></a>Blokowanie i wydajność klienta  
+
  Gdy aplikacja synchronicznie wywołuje operację żądanie-odpowiedź, zostaje zablokowana przez klienta do momentu otrzymania wartości zwracanej lub wyjątek (na przykład <xref:System.TimeoutException?displayProperty=nameWithType> ). Takie zachowanie jest podobne do zachowania lokalnego. Gdy aplikacja synchronicznie wywołuje operację na obiekcie klienta lub kanale programu WCF, klient nie zwraca do momentu, gdy warstwa kanału nie będzie mogła zapisywać danych w sieci ani nie zostanie zgłoszony wyjątek. Natomiast wzorzec wymiany komunikatów jednokierunkowych (określony przez oznaczenie operacji z <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> ustawioną na `true` ) może spowodować, że niektórzy klienci jeszcze więcej odpowiadają, w zależności od powiązania i komunikatów, które zostały już wysłane. Operacje jednokierunkowe dotyczą tylko wymiany komunikatów, nie są jeszcze mniejsze. Aby uzyskać więcej informacji, zobacz jednokierunkowe [usługi](one-way-services.md).  
   
  Duże fragmenty danych mogą spowalniać przetwarzanie klienta niezależnie od tego, jaki jest wzorzec wymiany komunikatów. Aby zrozumieć, jak obsłużyć te problemy, zobacz artykuł [duże ilości danych i przesyłanie strumieniowe](large-data-and-streaming.md).  
   
- Jeśli aplikacja musi wykonywać większą pracę podczas kończenia operacji, należy utworzyć parę metod asynchronicznych w interfejsie kontraktu usługi, który implementuje klient WCF. Najprostszym sposobem jest użycie `/async` przełącznika w [narzędziu narzędzia metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Aby zapoznać się z przykładem, zobacz [How to: calling Service Operations asynchronicznie](how-to-call-wcf-service-operations-asynchronously.md).  
+ Jeśli aplikacja musi wykonywać większą pracę podczas kończenia operacji, należy utworzyć parę metod asynchronicznych w interfejsie kontraktu usługi, który implementuje klient WCF. Najprostszym sposobem jest użycie `/async` przełącznika w [narzędziu narzędzia metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Aby zapoznać się z przykładem, zobacz [How to: calling Service Operations asynchronicznie](how-to-call-wcf-service-operations-asynchronously.md).  
   
  Aby uzyskać więcej informacji o zwiększaniu wydajności klienta, zobacz [aplikacje klienckie warstwy środkowej](middle-tier-client-applications.md).  
   
 ### <a name="enabling-the-user-to-select-credentials-dynamically"></a>Umożliwienie użytkownikowi dynamicznego wybierania poświadczeń  
+
  <xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer>Interfejs umożliwia aplikacjom wyświetlanie interfejsu użytkownika, który umożliwia użytkownikowi wybranie poświadczeń, za pomocą których kanał jest tworzony przed rozpoczęciem czasomierzy limitu czasu.  
   
  Deweloperzy aplikacji mogą korzystać z wstawionego <xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer> na dwa sposoby. Aplikacja kliencka może wywołać jedną <xref:System.ServiceModel.ClientBase%601.DisplayInitializationUI%2A?displayProperty=nameWithType> lub <xref:System.ServiceModel.IClientChannel.DisplayInitializationUI%2A?displayProperty=nameWithType> (lub wersję asynchroniczną) przed otwarciem kanału ( *jawne* podejście) lub wywołać pierwszą operację ( *niejawne* podejście).  
@@ -100,5 +107,5 @@ Aplikacje klienckie muszą tworzyć, konfigurować i używać obiektów klienta 
 - [Instrukcje: uzyskiwanie dostępu do usług za pomocą kontraktu dwukierunkowego](how-to-access-services-with-a-duplex-contract.md)
 - [Instrukcje: dostęp do usługi WSE 3.0](how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
 - [Instrukcje: używanie elementu ChannelFactory](how-to-use-the-channelfactory.md)
-- [Instrukcje: Asynchroniczne wywoływanie operacji usługi](how-to-call-wcf-service-operations-asynchronously.md)
+- [Instrukcje: asynchroniczne wywoływanie operacji usługi](how-to-call-wcf-service-operations-asynchronously.md)
 - [Aplikacje klienckie warstwy środkowej](middle-tier-client-applications.md)

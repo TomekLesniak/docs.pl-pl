@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: d2221d1c-c9cb-48d1-b044-a3b4445c7f05
-ms.openlocfilehash: 7b5b9ba0cc9a6d867b0478720b6151c7a561da16
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0c5cbb0962407ea6ee9a32e35f65103d1def880f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84584717"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294346"
 ---
 # <a name="message-security-windows"></a>Zabezpieczenia komunikatów — Windows
+
 Ten przykład pokazuje, jak skonfigurować <xref:System.ServiceModel.WSHttpBinding> powiązanie do używania zabezpieczeń na poziomie komunikatów z uwierzytelnianiem systemu Windows. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md). W tym przykładzie usługa jest hostowana w Internet Information Services (IIS), a klient jest aplikacją konsolową (. exe).  
   
 > [!NOTE]

@@ -2,14 +2,15 @@
 title: Aktywacja UDP
 ms.date: 03/30/2017
 ms.assetid: 4b0ccd10-0dfb-4603-93f9-f0857c581cb7
-ms.openlocfilehash: 13d20524693b234a14b2b31061c6259f75b1c0b8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 74ee3e1d53b9ba060820f69c201bfdccb6308d47
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591114"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295005"
 ---
 # <a name="udp-activation"></a>Aktywacja UDP
+
 Ten przykład jest oparty na [transportie: przykład UDP](transport-udp.md) . Rozszerza [transport: przykład UDP](transport-udp.md) w celu obsługi aktywacji procesu przy użyciu usługi aktywacji procesów systemu Windows (was).  
   
  Przykład składa się z trzech głównych elementów:  
@@ -21,6 +22,7 @@ Ten przykład jest oparty na [transportie: przykład UDP](transport-udp.md) . Ro
 - Usługa (hostowana w procesie roboczym aktywowana przez usługę WAS), która odbiera komunikaty za pośrednictwem transportu niestandardowego protokołu UDP.  
   
 ## <a name="udp-protocol-activator"></a>Aktywator protokołu UDP  
+
  Aktywator protokołu UDP jest mostkiem między klientem programu WCF a usługą WCF. Zapewnia ona komunikację z danymi za pomocą protokołu UDP w warstwie transportowej. Ma dwie główne funkcje:  
   
 - Adapter odbiornika (LA), który współpracuje z programem, można aktywować procesy w odpowiedzi na komunikaty przychodzące.  
@@ -30,6 +32,7 @@ Ten przykład jest oparty na [transportie: przykład UDP](transport-udp.md) . Ro
  Aktywator musi być uruchomiony jako program autonomiczny na komputerze serwera. Zazwyczaj były to karty odbiornika (takie jak NetTcpActivator i NetPipeActivator), które są implementowane w długotrwałych usługach systemu Windows. Jednak w przypadku uproszczenia i przejrzystości ten przykład implementuje aktywatora protokołu jako autonomiczną aplikację.  
   
 ### <a name="was-listener-adapter"></a>Adapter odbiornika  
+
  Adapter odbiornika dla UDP został zaimplementowany w `UdpListenerAdapter` klasie. Jest to moduł, który współdziała z programem, aby przeprowadzić aktywację aplikacji dla protokołu UDP. Jest to osiągane przez wywołanie następujących interfejsów API webhost:  
   
 - `WebhostRegisterProtocol`  
@@ -40,29 +43,33 @@ Ten przykład jest oparty na [transportie: przykład UDP](transport-udp.md) . Ro
   
 - `WebhostCloseAllListenerChannelInstances`  
   
- Po wstępnej wywołaniu `WebhostRegisterProtocol` Adapter odbiornika odbiera wywołanie zwrotne `ApplicationCreated` od dla wszystkich aplikacji zarejestrowanych w pliku ApplicationHost. config (znajdującym się w%windir%\system32\inetsrv). W tym przykładzie obsługujemy tylko aplikacje z protokołem UDP (z identyfikatorem protokołu "net. UDP"). Inne implementacje mogą być obsługiwane inaczej, jeśli takie implementacje odpowiadają na dynamiczne zmiany konfiguracji aplikacji (np. przejście aplikacji z wyłączone na włączone).  
+ Po pierwszym wywołaniu `WebhostRegisterProtocol` Adapter odbiornika odbiera wywołanie zwrotne `ApplicationCreated` z programu jako dla wszystkich aplikacji zarejestrowanych w applicationHost.config (znajdujących się w%windir%\system32\inetsrv). W tym przykładzie obsługujemy tylko aplikacje z protokołem UDP (z identyfikatorem protokołu "net. UDP"). Inne implementacje mogą być obsługiwane inaczej, jeśli takie implementacje odpowiadają na dynamiczne zmiany konfiguracji aplikacji (np. przejście aplikacji z wyłączone na włączone).  
   
  Po odebraniu wywołania zwrotnego `ConfigManagerInitializationCompleted` wskazuje, że zostało zakończone wszystkie powiadomienia o zainicjowaniu protokołu. W tej chwili Adapter odbiornika jest gotowy do przetwarzania żądań aktywacji.  
   
  Gdy nowe żądanie jest uruchamiane po raz pierwszy dla aplikacji, Adapter odbiornika wywołuje `WebhostOpenListenerChannelInstance` program, który uruchamia proces roboczy, jeśli nie został jeszcze uruchomiony. Następnie programy obsługi protokołów są ładowane, a komunikacja między kartą odbiornika i aplikacją wirtualną może zostać uruchomiona.  
   
- Karta odbiornika jest zarejestrowana w%SystemRoot%\System32\inetsrv\ApplicationHost.config w `listenerAdapters` sekcji > < w następujący sposób:  
+ Karta odbiornika jest zarejestrowana w folderze% SystemRoot% \System32\inetsrv\ApplicationHost.config w sekcji <`listenerAdapters`> w następujący sposób:  
   
 ```xml  
 <add name="net.udp" identity="S-1-5-21-2127521184-1604012920-1887927527-387045" />  
 ```  
   
 ### <a name="protocol-listener"></a>Odbiornik protokołu  
+
  Odbiornik protokołu UDP jest modułem w ramach aktywatora protokołu, który nasłuchuje w punkcie końcowym UDP w imieniu aplikacji wirtualnej. Jest zaimplementowana w klasie `UdpSocketListener` . Punkt końcowy jest reprezentowany jako, `IPEndpoint` dla którego jest wyodrębniany numer portu z powiązania protokołu dla lokacji.  
   
 ### <a name="control-service"></a>Usługa sterowania  
+
  W tym przykładzie używamy funkcji WCF do komunikacji między aktywatorem a procesem roboczym. Usługa, która znajduje się w aktywatora, nazywa się usługą kontroli.  
   
 ## <a name="protocol-handlers"></a>Programy obsługi protokołów  
+
  Gdy Adapter odbiornika wywoła wywołanie `WebhostOpenListenerChannelInstance` , Menedżer przetworzenia przetwarza proces roboczy, jeśli nie został uruchomiony. Menedżer aplikacji wewnątrz procesu roboczego ładuje program obsługi protokołu UDP (PPH) żądania `ListenerChannelId` . PPH w programie włącza wywołania `IAdphManager` .`StartAppDomainProtocolListenerChannel` Aby uruchomić procedurę obsługi protokołu UDP AppDomain (ADPH).  
   
 ## <a name="hostedudptransportconfiguration"></a>HostedUDPTransportConfiguration  
- Informacje są rejestrowane w pliku Web. config w następujący sposób:  
+
+ Informacje są rejestrowane w Web.config w następujący sposób:  
   
 ```xml  
 <serviceHostingEnvironment>  
@@ -71,6 +78,7 @@ Ten przykład jest oparty na [transportie: przykład UDP](transport-udp.md) . Ro
 ```  
   
 ## <a name="special-setup-for-this-sample"></a>Specjalna instalacja dla tego przykładu  
+
  Ten przykład może być zbudowany i uruchamiany tylko w systemie Windows Vista, Windows Server 2008 lub Windows 7. Aby uruchomić przykład, należy najpierw pobrać wszystkie składniki skonfigurowane prawidłowo. Wykonaj poniższe kroki, aby zainstalować przykład.  
   
 #### <a name="to-set-up-this-sample"></a>Aby skonfigurować ten przykład  
@@ -89,25 +97,26 @@ Ten przykład jest oparty na [transportie: przykład UDP](transport-udp.md) . Ro
   
     - Włącza również protokół "net. UDP" dla tej aplikacji wirtualnej.  
   
-3. Uruchom aplikację interfejsu użytkownika "WasNetActivator. exe". Kliknij kartę **Instalator** , zaznacz następujące pola wyboru, a następnie kliknij przycisk **Instaluj** , aby je zainstalować:  
+3. Uruchom aplikację interfejsu użytkownika "WasNetActivator.exe". Kliknij kartę **Instalator** , zaznacz następujące pola wyboru, a następnie kliknij przycisk **Instaluj** , aby je zainstalować:  
   
     - Adapter odbiornika UDP  
   
     - Procedury obsługi protokołu UDP  
   
-4. Kliknij kartę **Aktywacja** aplikacji interfejsu użytkownika "WasNetActivator. exe". Kliknij przycisk **Uruchom** , aby uruchomić Adapter odbiornika. Teraz można przystąpić do uruchamiania programu.  
+4. Kliknij kartę **Aktywacja** aplikacji interfejsu użytkownika "WasNetActivator.exe". Kliknij przycisk **Uruchom** , aby uruchomić Adapter odbiornika. Teraz można przystąpić do uruchamiania programu.  
   
     > [!NOTE]
-    > Po zakończeniu pracy z tym przykładem należy uruchomić polecenie Oczyść. bat, aby usunąć powiązanie net. UDP z "domyślnej witryny sieci Web".  
+    > Po zakończeniu pracy z tym przykładem należy uruchomić Cleanup.bat, aby usunąć powiązanie net. UDP z "domyślnej witryny sieci Web".  
   
 ## <a name="sample-usage"></a>Przykładowe użycie  
+
  Po kompilacji są generowane cztery różne pliki binarne:  
   
-- Client. exe: kod klienta. Plik App. config jest kompilowany do pliku konfiguracji klienta Client. exe. config.  
+- Client.exe: kod klienta. App.config jest kompilowany do Client.exe.config pliku konfiguracji klienta.  
   
-- UDPActivation. dll: Biblioteka, która zawiera wszystkie główne implementacje protokołu UDP.  
+- UDPActivation.dll: Biblioteka, która zawiera wszystkie główne implementacje protokołu UDP.  
   
-- Service. dll: kod usługi. Jest on kopiowany do katalogu \Bin aplikacji wirtualnej ServiceModelSamples. Plik usługi to Service. svc, a plik konfiguracji to Web. config. Po kompilacji są one kopiowane do następującej lokalizacji:%SystemDrive%\Inetpub\wwwroot\ServiceModelSamples.  
+- Service.dll: kod usługi. Jest on kopiowany do katalogu \Bin aplikacji wirtualnej ServiceModelSamples. Plik usługi to Service. svc, a plik konfiguracji jest Web.config. Po kompilacji są one kopiowane do następującej lokalizacji:%SystemDrive%\Inetpub\wwwroot\ServiceModelSamples.  
   
 - WasNetActivator: program aktywatora UDP.  
   
@@ -119,9 +128,9 @@ Ten przykład jest oparty na [transportie: przykład UDP](transport-udp.md) . Ro
   
     - Internet Information Services (IIS): W3SVC.  
   
-2. Następnie uruchom aktywatora, WasNetActivator. exe. Na karcie **Aktywacja** na liście rozwijanej jest wybierany tylko protokół **UDP**. Kliknij przycisk **Uruchom** , aby uruchomić aktywatora.  
+2. Następnie należy uruchomić aktywatora WasNetActivator.exe. Na karcie **Aktywacja** na liście rozwijanej jest wybierany tylko protokół **UDP**. Kliknij przycisk **Uruchom** , aby uruchomić aktywatora.  
   
-3. Po uruchomieniu aktywatora można uruchomić kod klienta, uruchamiając program Client. exe z okna polecenia. Oto przykładowe dane wyjściowe:  
+3. Po uruchomieniu aktywatora można uruchomić kod klienta, uruchamiając Client.exe z okna poleceń. Oto przykładowe dane wyjściowe:  
   
     ```console  
     Testing Udp Activation.  

@@ -1,25 +1,26 @@
 ---
-title: Tworzenie działań przepływu pracy przy użyciu klasy działań
+title: Tworzenie działań przepływu pracy przy użyciu klasy Activity
 ms.date: 03/30/2017
 ms.assetid: 7b7b1c66-f093-43c3-b4d1-7173b46516da
-ms.openlocfilehash: 1bec10b6ae9fb43319cfb6acbf59133e1acca09c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 21f1c8b1249d41029fa7a19360e96ad866c823a7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61755509"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293848"
 ---
-# <a name="workflow-activity-authoring-using-the-activity-class"></a>Tworzenie działań przepływu pracy przy użyciu klasy działań
-Najprostszy sposób tworzenia działania przy użyciu Windows Workflow Foundation (WF) w [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] polega na utworzeniu klasy, która dziedziczy <xref:System.Activities.Activity> tworząca funkcji przez łączenie niestandardowych działań lub czynności z [wbudowane Biblioteka działań](net-framework-4-5-built-in-activity-library.md). W tym temacie pokazano, jak utworzyć działanie, które zapisuje dwa komunikaty do konsoli.
+# <a name="workflow-activity-authoring-using-the-activity-class"></a>Tworzenie działań przepływu pracy przy użyciu klasy Activity
 
-### <a name="to-create-a-custom-activity-using-the-activity-designer"></a>Aby utworzyć niestandardowe działanie za pomocą projektanta działań
+Najbardziej podstawowym sposobem utworzenia działania przy użyciu Windows Workflow Foundation (WF) w programie [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] jest utworzenie klasy, która dziedziczy po <xref:System.Activities.Activity> utworzeniu funkcji przez złożenie niestandardowych działań lub działań z [wbudowanej biblioteki działań](net-framework-4-5-built-in-activity-library.md). W tym temacie pokazano, jak utworzyć działanie, które zapisuje dwa komunikaty w konsoli programu.
 
-1. Open Visual Studio 2012.
+### <a name="to-create-a-custom-activity-using-the-activity-designer"></a>Aby utworzyć działanie niestandardowe przy użyciu projektanta działań
 
-2. Wybierz plik, nowy, projektu. Wybierz **Workflow 4.0** w obszarze **Visual C#** w **typów projektów** okna, a następnie wybierz **v2010** węzła. Wybierz **Biblioteka działań** w **szablony** okna. Nazwa nowego projektu HelloActivity.
+1. Otwórz program Visual Studio 2012.
 
-3. Otwórz nowe działanie.  Przeciągnij <xref:System.Activities.Statements.Sequence> działania z przybornika na powierzchni projektowej.
+2. Wybierz plik, nowy, projekt. Wybierz pozycję **Workflow 4,0** w obszarze **Visual C#** w oknie **typy projektów** , a następnie wybierz węzeł **V2010** . Wybierz pozycję **Biblioteka działań** w oknie **Szablony** . Nadaj nazwę nowej powitaniu projektu.
 
-4. Przeciągnij <xref:System.Activities.Statements.WriteLine> działanie do <xref:System.Activities.Statements.Sequence> działania. Wprowadź `"Hello World"` (z cudzysłowami) do **tekstu** pola.
+3. Otwórz nowe działanie.  Przeciągnij <xref:System.Activities.Statements.Sequence> działanie z przybornika na powierzchnię projektanta.
 
-5. Przeciągnij sekundy <xref:System.Activities.Statements.WriteLine> działanie do <xref:System.Activities.Statements.Sequence> działania poniżej pierwszy z nich. Wprowadź `"Goodbye"` (z cudzysłowami) do **tekstu** pola.
+4. Przeciągnij <xref:System.Activities.Statements.WriteLine> działanie do <xref:System.Activities.Statements.Sequence> działania. Wprowadź `"Hello World"` (z cudzysłowami) w polu **tekstowym** .
+
+5. Przeciągnij drugie <xref:System.Activities.Statements.WriteLine> działanie do <xref:System.Activities.Statements.Sequence> działania poniżej pierwszego. Wprowadź `"Goodbye"` (z cudzysłowami) w polu **tekstowym** .

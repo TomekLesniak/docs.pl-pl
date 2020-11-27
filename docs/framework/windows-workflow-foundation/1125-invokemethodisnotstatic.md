@@ -2,32 +2,35 @@
 title: 1125 — InvokeMethodIsNotStatic
 ms.date: 03/30/2017
 ms.assetid: ea2b3827-63da-497b-b2c3-d5cebefe57a1
-ms.openlocfilehash: 692c5e56dac0a69ab5705acd284f048391145641
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0405b4e1207db5c056fbd478b98c408258daf0c3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924268"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294212"
 ---
 # <a name="1125---invokemethodisnotstatic"></a>1125 — InvokeMethodIsNotStatic
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1125|  
-|słowa kluczowe|WFRuntime|  
+|ID (Identyfikator)|1125|  
+|Słowa kluczowe|WFRuntime|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Podczas wykonywania kroku użyciu metody CacheMetadata działania InvokeMethod wskazuje, że wywoływanej metody nie jest statyczne.  
+
+ Podczas kroku wywołaniem metody CacheMetadata działanie InvokeMethod wskazuje, że metoda wywoływana nie jest statyczna.  
   
-## <a name="message"></a>Komunikat  
- InvokeMethod "%1" - metoda nie jest statyczne.  
+## <a name="message"></a>Wiadomość  
+
+ InvokeMethod "%1" — Metoda nie jest statyczna.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|InvokeMethod|xs:String|Nazwa wyświetlana działania InvokeMethod.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|InvokeMethod|XS: ciąg|Nazwa wyświetlana działania InvokeMethod.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

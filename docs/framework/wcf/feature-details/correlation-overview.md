@@ -2,22 +2,24 @@
 title: Przegląd korelacji
 ms.date: 03/30/2017
 ms.assetid: edcc0315-5d26-44d6-a36d-ea554c418e9f
-ms.openlocfilehash: 8d33022524a4619a57b04e7774918fd73d0bdef3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3cc0bc49ad464401ccff769fd5873d5b7e19dccc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552560"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293718"
 ---
 # <a name="correlation-overview"></a>Przegląd korelacji
+
 Korelacja to mechanizm odnoszący się do wszystkich komunikatów usługi przepływu pracy lub do stanu wystąpienia aplikacji, na przykład odpowiedź na żądanie początkowe lub określony identyfikator zamówienia do stanu utrwalonego przepływu pracy przetwarzania zamówień. Ten temat zawiera omówienie korelacji. W innych tematach w tej sekcji znajdują się dodatkowe informacje dotyczące poszczególnych typów korelacji.  
   
 ## <a name="types-of-correlation"></a>Typy korelacji  
+
  Korelacja może być oparta na protokole lub w oparciu o zawartość. Korelacje oparte na protokołach wykorzystują dane dostarczone przez infrastrukturę dostarczania komunikatów w celu zapewnienia mapowania między komunikatami. Komunikaty, które są skorelowane przy użyciu korelacji opartej na protokole, są ze sobą powiązane przy użyciu obiektu w pamięci, takiego jak <xref:System.ServiceModel.Channels.RequestContext> lub przez token dostarczony przez protokół transportowy. Korelacje oparte na zawartości wiążą komunikaty ze sobą za pomocą danych określonych przez aplikację. Komunikaty, które są skorelowane przy użyciu korelacji opartej na zawartości, są ze sobą powiązane przez niektóre dane zdefiniowane przez aplikację w wiadomości, takie jak numer klienta.  
   
  Działania, które uczestniczą w korelacji, wykorzystują <xref:System.ServiceModel.Activities.CorrelationHandle> do łączenia działań związanych z wiadomościami. Na przykład, <xref:System.ServiceModel.Activities.Send> który jest używany do wywołania usługi i kolejnej <xref:System.ServiceModel.Activities.Receive> , która jest używana do odbierania wywołania zwrotnego z usługi, należy ją udostępnić <xref:System.ServiceModel.Activities.CorrelationHandle> . Ten podstawowy wzorzec jest używany niezależnie od tego, czy korelacja jest oparta na zawartości czy na protokole. Dojście korelacji można jawnie ustawić dla każdego działania lub działania mogą być zawarte w <xref:System.ServiceModel.Activities.CorrelationScope> działaniu. Działania zawarte w elemencie <xref:System.ServiceModel.Activities.CorrelationScope> mają uchwyty korelacji zarządzane przez obiekt <xref:System.ServiceModel.Activities.CorrelationScope> i nie wymagają <xref:System.ServiceModel.Activities.CorrelationHandle> jawnie ustawionej wartości. <xref:System.ServiceModel.Activities.CorrelationScope>Zakres umożliwia <xref:System.ServiceModel.Activities.CorrelationHandle> Zarządzanie korelacją typu żądanie-odpowiedź i jednym dodatkowym typem korelacji. Usługi przepływu pracy hostowane przy użyciu <xref:System.ServiceModel.Activities.WorkflowServiceHost> mają takie samo domyślne zarządzanie korelacją jak <xref:System.ServiceModel.Activities.CorrelationScope> działanie. Domyślne zarządzanie korelacją zwykle oznacza, że w wielu scenariuszach działania obsługi komunikatów w <xref:System.ServiceModel.Activities.CorrelationScope> usłudze lub przepływie pracy nie wymagają ich <xref:System.ServiceModel.Activities.CorrelationHandle> zestawu, chyba że wiele działań związanych z przesyłaniem komunikatów jest równoległych lub nie nakłada się na siebie, takich jak dwie <xref:System.ServiceModel.Activities.Receive> działania równoległe lub dwie <xref:System.ServiceModel.Activities.Send> działania, po których następuje dwie <xref:System.ServiceModel.Activities.Receive> działania. Więcej informacji o domyślnej korelacji znajduje się w tematach w tej sekcji, które obejmują poszczególne typy korelacji. Aby uzyskać więcej informacji o działaniach związanych z obsługą wiadomości, zobacz [działania dotyczące komunikatów](messaging-activities.md) i [instrukcje: Tworzenie usługi przepływu pracy przy użyciu działań obsługi komunikatów](how-to-create-a-workflow-service-with-messaging-activities.md).  
   
-## <a name="protocol-based-correlation"></a>Korelacja oparta na protokole
+## <a name="protocol-based-correlation"></a>Protocol-Based korelacji
 
 Korelacja oparta na protokole używa mechanizmu transportu do powiązania komunikatów ze sobą i odpowiednim wystąpieniem. Niektóre korelacje protokołu dostarczone przez system obejmują korelację żądania i odpowiedzi oraz korelację opartą na kontekście. Korelacja typu żądanie-odpowiedź służy do skorelowania pojedynczej pary działań związanych z przesyłaniem komunikatów w celu utworzenia operacji dwukierunkowej, na przykład <xref:System.ServiceModel.Activities.Send> pary z <xref:System.ServiceModel.Activities.ReceiveReply> lub <xref:System.ServiceModel.Activities.Receive> sparowanych z <xref:System.ServiceModel.Activities.SendReply> . Program Visual Studio Projektant przepływu pracy udostępnia również zestaw szablonów działań, aby szybko zaimplementować ten wzorzec. Korelacja oparta na kontekście jest oparta na mechanizmie wymiany kontekstu opisanym w [specyfikacji protokołu Exchange kontekstu programu .NET](/openspecs/windows_protocols/mc-netcex/a7f26280-491f-465b-9914-c5eb5322dbb4). Aby można było użyć korelacji opartej na kontekście, <xref:System.ServiceModel.BasicHttpContextBinding> <xref:System.ServiceModel.WSHttpContextBinding> <xref:System.ServiceModel.NetTcpContextBinding> w punkcie końcowym należy użyć powiązania opartego na kontekście, takiego jak lub.  
   
@@ -27,6 +29,6 @@ Aby uzyskać więcej informacji na temat korelacji protokołów, zobacz [trwałe
 
 Korelacja oparta na zawartości używa niektórych informacji w komunikacie, aby skojarzyć je z określonym wystąpieniem. W przeciwieństwie do korelacji opartej na protokole, korelacja oparta na zawartości wymaga, aby autor aplikacji jawnie wskazywał, gdzie te dane znajdują się w poszczególnych wiadomościach pokrewnych. Działania, które używają korelacji opartej na zawartości, określają te dane komunikatu przy użyciu <xref:System.ServiceModel.MessageQuerySet> . Korelacja oparta na zawartości jest przydatna podczas komunikowania się z usługami, które nie korzystają z jednego z powiązań kontekstu, takich jak <xref:System.ServiceModel.BasicHttpContextBinding> .
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [NetContextExchangeCorrelation](/previous-versions/dotnet/netframework-4.0/ee662963(v=vs.100))

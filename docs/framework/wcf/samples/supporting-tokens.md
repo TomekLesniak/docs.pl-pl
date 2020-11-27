@@ -2,17 +2,19 @@
 title: Obsługa tokenów
 ms.date: 03/30/2017
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
-ms.openlocfilehash: ff46a2f5289bc72244ea586f01ea05504d628f69
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d7e2a824060f4be05e0b0e9d1765fcf271eacbd3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555201"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293666"
 ---
 # <a name="supporting-tokens"></a>Obsługa tokenów
-Przykład tokenów pomocniczych pokazuje, jak dodać dodatkowe tokeny do wiadomości, która korzysta z protokołu WS-Security. Przykład dodaje binarny token zabezpieczający X. 509 oprócz tokenu zabezpieczeń nazwy użytkownika. Token jest przesyłany z klienta do usługi, a część wiadomości jest podpisywana przy użyciu klucza prywatnego skojarzonego z tokenem zabezpieczeń X. 509 w celu potwierdzenia posiadania certyfikatu X. 509 do odbiorcy. Jest to przydatne w przypadku, gdy wymagane jest posiadanie wielu oświadczeń skojarzonych z komunikatem w celu uwierzytelnienia lub autoryzacji nadawcy. Usługa implementuje kontrakt definiujący wzorzec komunikacji żądanie-odpowiedź.
+
+Przykład tokenów pomocniczych pokazuje, jak dodać dodatkowe tokeny do wiadomości, która korzysta z protokołu WS-Security. Przykład dodaje binarny token zabezpieczający X. 509 oprócz tokenu zabezpieczeń nazwy użytkownika. Token jest przesyłany w WS-Security nagłówku komunikatu z klienta do usługi, a część wiadomości jest podpisywana przy użyciu klucza prywatnego skojarzonego z tokenem zabezpieczeń X. 509 w celu potwierdzenia posiadania certyfikatu X. 509 do odbiorcy. Jest to przydatne w przypadku, gdy wymagane jest posiadanie wielu oświadczeń skojarzonych z komunikatem w celu uwierzytelnienia lub autoryzacji nadawcy. Usługa implementuje kontrakt definiujący wzorzec komunikacji żądanie-odpowiedź.
 
 ## <a name="demonstrates"></a>Demonstracje
+
  Przykład ilustruje:
 
 - Jak klient może przekazać dodatkowe tokeny zabezpieczające do usługi.
@@ -25,6 +27,7 @@ Przykład tokenów pomocniczych pokazuje, jak dodać dodatkowe tokeny do wiadomo
 > Procedura instalacji i instrukcje dotyczące kompilacji dla tego przykładu znajdują się na końcu tego tematu.
 
 ## <a name="client-authenticates-with-username-token-and-supporting-x509-security-token"></a>Klient uwierzytelnia się za pomocą tokenu username i obsługuje token zabezpieczający X. 509
+
  Usługa ujawnia pojedynczy punkt końcowy do komunikacji, który jest programowo tworzony przy użyciu `BindingHelper` `EchoServiceHost` klas i. Punkt końcowy składa się z adresu, powiązania i kontraktu. Powiązanie jest skonfigurowane z powiązaniem niestandardowym przy użyciu `SymmetricSecurityBindingElement` i `HttpTransportBindingElement` . Ten przykład ustawia `SymmetricSecurityBindingElement` do użycia certyfikatu usługi X. 509 w celu ochrony klucza symetrycznego podczas transmisji i przekazywania `UserNameToken` wraz z obsługą `X509SecurityToken` w nagłówku komunikatu WS-Security. Klucz symetryczny jest używany do szyfrowania treści wiadomości i tokenu zabezpieczeń nazwy użytkownika. Token pomocniczy jest przesyłany jako dodatkowy token zabezpieczający binarny w nagłówku komunikatu WS-Security. Autentyczność tokenu pomocniczego jest udowodniona przez podpisywanie części komunikatu z kluczem prywatnym skojarzonym z pomocniczym tokenem zabezpieczeń X. 509.
 
 ```csharp
@@ -282,6 +285,7 @@ public class EchoService : IEchoService
 ```
 
 ## <a name="displaying-callers-information"></a>Wyświetlanie informacji o wywołujących
+
  Aby wyświetlić informacje o wywołującym, można użyć, `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` jak pokazano w poniższym kodzie. `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets`Zawiera oświadczenia autoryzacji skojarzone z bieżącym obiektem wywołującym. Te oświadczenia są dostarczane automatycznie przez Windows Communication Foundation (WCF) dla każdego tokenu otrzymanego w komunikacie.
 
 ```csharp
@@ -345,14 +349,17 @@ void GetCallerIdentities(ServiceSecurityContext callerSecurityContext, out strin
 ```
 
 ## <a name="running-the-sample"></a>Uruchamianie przykładu
+
  Po uruchomieniu przykładu klient najpierw poprosi o podanie nazwy użytkownika i hasła dla tokenu nazwy użytkownika. Upewnij się, że podano poprawne wartości dla konta systemowego, ponieważ WCF w usłudze mapuje wartości podane w tokenie nazwy użytkownika na tożsamość dostarczoną przez system. Następnie klient wyświetli odpowiedź z usługi. Naciśnij klawisz ENTER w oknie klienta, aby zamknąć klienta programu.
 
 ## <a name="setup-batch-file"></a>Plik wsadowy konfiguracji
+
  Plik wsadowy Setup.bat dołączony do tego przykładu umożliwia skonfigurowanie serwera z odpowiednimi certyfikatami w celu uruchomienia aplikacji hostowanej Internet Information Services (IIS), która wymaga zabezpieczeń opartych na certyfikatach serwera. Ten plik wsadowy należy zmodyfikować, aby mógł działać na maszynach lub działać w nieobsługiwanym przypadku.
 
  Poniżej przedstawiono krótkie omówienie różnych sekcji plików wsadowych, dzięki czemu można je zmodyfikować do uruchamiania w odpowiedniej konfiguracji.
 
 ### <a name="creating-the-client-certificate"></a>Tworzenie certyfikatu klienta
+
  Poniższe wiersze z pliku wsadowego Setup.bat utworzyć certyfikat klienta, który ma być używany. `%CLIENT_NAME%`Zmienna określa podmiot certyfikatu klienta. Ten przykład używa "client.com" jako nazwy podmiotu.
 
  Certyfikat jest przechowywany w magazynie (Personal) w `CurrentUser` lokalizacji magazynu.
@@ -365,6 +372,7 @@ makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -p
 ```
 
 ### <a name="installing-the-client-certificate-into-the-servers-trusted-store"></a>Instalowanie certyfikatu klienta w zaufanym magazynie serwera
+
  Następujący wiersz w pliku wsadowym Setup.bat kopiuje certyfikat klienta do magazynu osób zaufanych na serwerze. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert.exe nie są niejawnie zaufane dla systemu serwera. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.
 
 ```console
@@ -375,6 +383,7 @@ certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s Tru
 ```
 
 ### <a name="creating-the-server-certificate"></a>Tworzenie certyfikatu serwera
+
  Poniższe wiersze z pliku wsadowego Setup.bat utworzyć certyfikat serwera do użycia. `%SERVER_NAME%`Zmienna określa nazwę serwera. Zmień tę zmienną, aby określić własną nazwę serwera. Wartość domyślna w tym pliku wsadowym to localhost.
 
  Certyfikat jest przechowywany w magazynie (Personal) w lokalizacji magazynu LocalMachine. Certyfikat jest przechowywany w magazynie LocalMachine dla usług hostowanych przez usługi IIS. W przypadku usług samodzielnych należy zmodyfikować plik wsadowy, aby przechowywać certyfikat serwera w lokalizacji magazynu CurrentUser przez zastąpienie ciągu LocalMachine ciągiem CurrentUser.
@@ -390,6 +399,7 @@ makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -
 ```
 
 ### <a name="installing-server-certificate-into-clients-trusted-certificate-store"></a>Instalowanie certyfikatu serwera w magazynie zaufanych certyfikatów klienta
+
  Poniższe wiersze w pliku wsadowym Setup.bat kopiują certyfikat serwera do magazynu zaufanych osób klienta. Ten krok jest wymagany, ponieważ certyfikaty wygenerowane przez Makecert.exe nie są niejawnie zaufane przez system klienta. Jeśli masz już certyfikat, który znajduje się w zaufanym certyfikacie głównym klienta — na przykład certyfikat wystawiony przez firmę Microsoft — ten krok zapełniania magazynu certyfikatów klienta z certyfikatem serwera nie jest wymagany.
 
 ```console
@@ -399,6 +409,7 @@ echo ************certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r C
 ```
 
 ### <a name="enabling-access-to-the-certificates-private-key"></a>Włączanie dostępu do klucza prywatnego certyfikatu
+
  Aby umożliwić dostęp do klucza prywatnego certyfikatu z usługi hostowanej przez usługi IIS, konto użytkownika, pod którym działa proces hostowany przez usługi IIS, musi mieć przyznane odpowiednie uprawnienia do klucza prywatnego. Jest to realizowane przez ostatnie kroki skryptu Setup.bat.
 
 ```console

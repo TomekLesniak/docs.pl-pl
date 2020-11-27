@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
-ms.openlocfilehash: 9bcac0e45d44270d27a4cf04677e967a80e94b90
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7168b393bde626c8c413cda3c7422e0eee4ce267
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550205"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292873"
 ---
 # <a name="message-security-with-a-user-name-client"></a>Zabezpieczenia na poziomie komunikatu z użyciem klienta nazwy użytkownika
+
 Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation (WCF) i klienta zabezpieczoną przy użyciu zabezpieczeń na poziomie komunikatów. Usługa jest uwierzytelniana przy użyciu certyfikatu X. 509. Klient jest uwierzytelniany przy użyciu nazwy użytkownika i hasła.  
   
  Aby zapoznać się z przykładową aplikacją, zobacz [Nazwa użytkownika zabezpieczeń wiadomości](../samples/message-security-user-name.md).  
@@ -31,6 +32,7 @@ Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation
 |Wiązanie|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>Usługa  
+
  Poniższy kod i konfiguracja są przeznaczone do niezależnego uruchamiania. Wykonaj jedną z następujących czynności:  
   
 - Tworzenie usługi autonomicznej przy użyciu kodu bez konfiguracji.  
@@ -38,12 +40,14 @@ Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation
 - Utwórz usługę przy użyciu podanej konfiguracji, ale nie Definiuj żadnych punktów końcowych.  
   
 ### <a name="code"></a>Kod  
+
  Poniższy kod przedstawia sposób tworzenia punktu końcowego usługi, który korzysta z zabezpieczeń komunikatów.  
   
  [!code-csharp[C_SecurityScenarios#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#9)]
  [!code-vb[C_SecurityScenarios#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#9)]  
   
-### <a name="configuration"></a>Konfiguracja  
+### <a name="configuration"></a>Konfigurowanie  
+
  Zamiast kodu można użyć następującej konfiguracji:  
   
 ```xml  
@@ -89,12 +93,14 @@ Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation
 ## <a name="client"></a>Klient  
   
 ### <a name="code"></a>Kod  
+
  Poniższy kod tworzy klienta. Powiązanie jest zabezpieczeniami trybu komunikatów, a typ poświadczeń klienta jest ustawiony na `UserName` . Nazwę użytkownika i hasło można określić tylko przy użyciu kodu (nie można go konfigurować). Kod, który ma zwrócić nazwę użytkownika i hasło, nie jest tutaj wyświetlany, ponieważ należy go wykonać na poziomie aplikacji. Na przykład użyj okna dialogowego Windows Forms, aby wysłać zapytanie do użytkownika o dane.  
   
  [!code-csharp[C_SecurityScenarios#16](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#16)]
  [!code-vb[C_SecurityScenarios#16](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#16)]  
   
-### <a name="configuration"></a>Konfiguracja  
+### <a name="configuration"></a>Konfigurowanie  
+
  Poniższy kod konfiguruje klienta. Powiązanie jest zabezpieczeniami trybu komunikatów, a typ poświadczeń klienta jest ustawiony na `UserName` . Nazwę użytkownika i hasło można określić tylko przy użyciu kodu (nie można go konfigurować).  
   
 ```xml  
@@ -125,7 +131,7 @@ Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przegląd zabezpieczeń](security-overview.md)
 - [Nazwa użytkownika zabezpieczeń komunikatów](../samples/message-security-user-name.md)

@@ -2,14 +2,15 @@
 title: Przykład tabeli UriTemplate
 ms.date: 03/30/2017
 ms.assetid: 5dd1d38f-1989-4c64-820d-821f5a02216a
-ms.openlocfilehash: ff88bdfe0c8c32da6f07f2b22de54af437376c51
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: caa8e2aab82283b8ca41dd650cd299485d922305
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596438"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294940"
 ---
 # <a name="uritemplate-table-sample"></a>Przykład tabeli UriTemplate
+
 <xref:System.UriTemplateTable>Klasa zawiera strukturę tabeli asocjacyjnej, która umożliwia pracę z zestawem `UriTemplate` wystąpień. Określone identyfikatory URI (Uniform Resource Identifier) można efektywnie dopasować do wszystkich szablonów w tabeli, a dane skojarzone z pasującym szablonem mogą zostać pobrane.  
   
  Ten przykład ilustruje następujące kluczowe pojęcia związane z `UriTemplateTable` klasą:  

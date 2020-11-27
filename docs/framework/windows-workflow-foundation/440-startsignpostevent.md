@@ -2,32 +2,35 @@
 title: 440 — StartSignpostEvent1
 ms.date: 03/30/2017
 ms.assetid: 27b551b5-ae76-49f8-bab8-6300009eb4c1
-ms.openlocfilehash: 4b2b6b0fa9df4725edd4929512eb1d7534d933b1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1e0278d665a961afab21445ab8490e3e5a94987c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774174"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293458"
 ---
 # <a name="440---startsignpostevent1"></a>440 — StartSignpostEvent1
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|440|  
-|słowa kluczowe|Rozwiązywanie problemów|  
+|ID (Identyfikator)|440|  
+|Słowa kluczowe|Rozwiązywanie problemów|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- W śledzenie aktywności wskazuje, czy wiadomość została uruchomiona przekraczania granicy działania w wysyłać ani odbierać.  
+
+ W obszarze śledzenie działań wskazuje, że komunikat spowodował Przekroczenie granicy działania w operacji wysyłania lub odbierania.  
   
-## <a name="message"></a>Komunikat  
- Hranice aktivity  
+## <a name="message"></a>Wiadomość  
+
+ Granica działania.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
 |ExtendedData|`xs:string`|Nazwa działania.|  
-|AppDomain|`xs:string`|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Wywołując|`xs:string`|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

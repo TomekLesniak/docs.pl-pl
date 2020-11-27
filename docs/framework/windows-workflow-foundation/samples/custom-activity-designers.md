@@ -2,25 +2,27 @@
 title: Projektanci działań niestandardowych
 ms.date: 03/30/2017
 ms.assetid: dcf14dca-ce6d-4278-96ba-062f0a679075
-ms.openlocfilehash: 982aecea27de680468fe6f574f72c459ef76b142
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2c6458d6c4c7e722f577b1bad30521d899ac1688
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61913851"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293445"
 ---
 # <a name="custom-activity-designers"></a>Projektanci działań niestandardowych
-Ta sekcja zawiera przykłady działań, które za pomocą projektantów niestandardowych do wyświetlania w Projektancie przepływu pracy.  
+
+Ta sekcja zawiera przykłady działań, które używają niestandardowych projektantów do wyświetlania w Projektancie przepływu pracy.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Projektanci niestandardowych elementów złożonych — prezenter elementu przepływu pracy](custom-composite-designers-workflow-item-presenter.md)  
- W tym przykładzie przedstawiono sposób tworzenia projektanta działań, który uwypukli najistotniejsze takiej "listy strefy."  
+ Ten przykład pokazuje, jak utworzyć projektanta działań, który ma takie same "strefy upuszczania".  
   
  [Projektanci niestandardowych elementów złożonych — prezenter elementu przepływu pracy](custom-composite-designers-workflow-items-presenter.md)  
- Niniejszy przykład pokazuje sposób kompilowania, Projektant działań, która udostępnia można edytować kolekcji.  
+ Ten przykład pokazuje, jak utworzyć projektanta działań, który wyświetla tę kolekcję edytowalną.  
   
  [Używanie elementu ExpressionTextBox w projektancie działań niestandardowych](using-the-expressiontextbox-in-a-custom-activity-designer.md)  
- Ten przykład ilustruje sposób używania <xref:System.Activities.Presentation.View.ExpressionTextBox> w Projektancie działań niestandardowych.  
+ Ten przykład pokazuje, jak używać <xref:System.Activities.Presentation.View.ExpressionTextBox> w niestandardowym projektancie działań.  
   
  [Używanie zakresu edycji](using-editing-scope.md)  
- Niniejszy przykład pokazuje jak dzielić na partie zestaw zmian, dzięki czemu mogą zostać cofnięte w pojedynczą jednostkę atomic. Domyślnie akcje wykonywane przez autora projektanta działań są automatycznie zintegrowane system Cofnij/Ponów.
+ Ten przykład pokazuje, jak utworzyć wsadowy zestaw zmian, aby można je było cofnąć w pojedynczej niepodzielnej jednostce. Domyślnie akcje podejmowane przez autora projektanta działań są automatycznie integrowane z systemem cofania/ponawiania.

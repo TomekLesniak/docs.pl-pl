@@ -2,14 +2,15 @@
 title: Opcje hostowania przepływu pracy
 ms.date: 03/30/2017
 ms.assetid: 37bcd668-9c5c-4e7c-81da-a1f1b3a16514
-ms.openlocfilehash: 4eaed147f312f3963aa1ca1d4f5dbe010c4189ad
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 8ddb83f068eab8480bacc8b80bc5d44b7755fa59
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037824"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293783"
 ---
 # <a name="workflow-hosting-options"></a>Opcje hostowania przepływu pracy
+
 Większość przykładów Windows Workflow Foundation (WF) używa przepływów pracy, które są hostowane w aplikacji konsolowej, ale nie jest to realistyczny scenariusz dla rzeczywistych przepływów pracy. Przepływy pracy w rzeczywistych aplikacjach firmowych będą hostowane w trwałych procesach — w przypadku usługi systemu Windows opracowanej przez dewelopera lub aplikacji serwera, takiej jak IIS 7,0 lub AppFabric. Różnice między tymi podejściami są następujące.
 
 ## <a name="hosting-workflows-in-iis-with-windows-appfabric"></a>Hostowanie przepływów pracy w usługach IIS przy użyciu programu Windows AppFabric

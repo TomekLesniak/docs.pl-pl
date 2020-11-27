@@ -2,14 +2,15 @@
 title: Zabezpieczenia komunikatów — przykład
 ms.date: 03/30/2017
 ms.assetid: 82444166-6288-493a-85d4-85f43f134d19
-ms.openlocfilehash: 02e758633f810d785c914152cbd4fbe687bea4f9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 267073d22d3b1b311e0de90454e0f2ec3744cf66
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558631"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294400"
 ---
 # <a name="message-security-sample"></a>Zabezpieczenia komunikatów — przykład
+
 Ten przykład pokazuje, jak zaimplementować aplikację, która korzysta z `basicHttpBinding` i zabezpieczenia komunikatów. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md) , który implementuje usługę kalkulatora.  
   
 > [!NOTE]

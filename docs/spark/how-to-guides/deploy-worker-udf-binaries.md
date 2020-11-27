@@ -4,12 +4,12 @@ description: Dowiedz się, jak wdrożyć platformę .NET dla Apache Spark proces
 ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 19ecd4736baaf789a409229d35a6946c6021db45
-ms.sourcegitcommit: 34968a61e9bac0f6be23ed6ffb837f52d2390c85
+ms.openlocfilehash: c777fdb26045c62317b49259fdde974f43ba5c0d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94688192"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293770"
 ---
 # <a name="deploy-net-for-apache-spark-worker-and-user-defined-function-binaries"></a>Wdróż platformę .NET dla Apache Spark procesów roboczych i plików binarnych funkcji zdefiniowanych przez użytkownika
 
@@ -30,6 +30,7 @@ Podczas wdrażania procesów roboczych i pisania UDF istnieje kilka często uży
 | DOTNET_WORKER_DEBUG          | Jeśli chcesz debugować funkcję <a href="https://github.com/dotnet/spark/blob/master/docs/developer-guide.md#debugging-user-defined-function-udf">UDF</a>, ustaw tę zmienną środowiskową na <code>1</code> przed uruchomieniem <code>spark-submit</code> .
 
 ### <a name="parameter-options"></a>Opcje parametrów
+
 Po dodaniu aplikacji platformy [bundled](https://spark.apache.org/docs/latest/submitting-applications.html#bundling-your-applications-dependencies)Spark można uruchomić ją za pomocą polecenia `spark-submit` . W poniższej tabeli przedstawiono niektóre z najczęściej używanych opcji:
 
 | Nazwa parametru        | Opis
@@ -47,17 +48,21 @@ Po dodaniu aplikacji platformy [bundled](https://spark.apache.org/docs/latest/su
 > Określ wszystkie `--options` przed `application-jar` uruchamianiem aplikacji za pomocą polecenia `spark-submit` , w przeciwnym razie zostaną one zignorowane. Aby uzyskać więcej informacji, zobacz [ `spark-submit` Opcje](https://spark.apache.org/docs/latest/submitting-applications.html) i [Uruchamianie platformy Spark z informacjami o przędze](https://spark.apache.org/docs/latest/running-on-yarn.html).
 
 ## <a name="frequently-asked-questions"></a>Często zadawane pytania
+
 ### <a name="when-i-run-a-spark-app-with-udfs-i-get-a-filenotfoundexception-error-what-should-i-do"></a>Gdy uruchamiam aplikację Spark przy użyciu programu UDF, otrzymuję błąd "FileNotFoundException". Co mam zrobić?
+
 > **Błąd:** [błąd] [TaskRunner] [0] ProcessStream () nie powiodło się. wyjątek: System. IO. FileNotFoundException: zestaw ' MySparkApp, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null ' nie znaleziono pliku: ' mySparkApp.dll '
 
 **Odpowiedź:** Sprawdź, czy `DOTNET_ASSEMBLY_SEARCH_PATHS` zmienna środowiskowa jest ustawiona poprawnie. Powinna to być ścieżka, która zawiera `mySparkApp.dll` .
 
 ### <a name="after-i-upgraded-my-net-for-apache-spark-version-and-reset-the-dotnet_worker_dir-environment-variable-why-do-i-still-get-the-following-ioexception-error"></a>Dlaczego po uaktualnieniu wersji platformy .NET dla Apache Spark i zresetowaniu `DOTNET_WORKER_DIR` zmiennej środowiskowej nadal pojawia się następujący `IOException` błąd?
+
 > **Błąd:** Utracono zadanie 0,0 w fazie 11,0 (TID 24, localhost, sterownik wykonujący): Java. IO. IOException: nie można uruchomić programu "Microsoft.Spark.Worker.exe": CreateProcess Error = 2, system nie może odnaleźć określonego pliku.
 
 **Odpowiedź:** Spróbuj ponownie uruchomić okno programu PowerShell (lub inne okna poleceń), aby można było pobrać najnowsze wartości zmiennych środowiskowych. Następnie uruchom program.
 
 ### <a name="after-submitting-my-spark-application-i-get-the-error-systemtypeloadexception-could-not-load-type-systemruntimeremotingcontextscontext"></a>Po przesłaniu aplikacji platformy Spark pojawia się błąd `System.TypeLoadException: Could not load type 'System.Runtime.Remoting.Contexts.Context'` .
+
 > **Błąd:** [błąd] [TaskRunner] [0] ProcessStream () nie powiodło się. wyjątek: System. TypeLoadException: nie można załadować typu "System. Runtime. Komunikacja zdalna. Contexts. kontekst" z zestawu "mscorlib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken =...".
 
 **Odpowiedź:** Sprawdź `Microsoft.Spark.Worker` używaną wersję. Istnieją dwie wersje: **.NET Framework 4.6.1** i **.NET Core 3.1. x**. W takim przypadku `Microsoft.Spark.Worker.net461.win-x64-<version>` należy użyć (którą można [pobrać](https://github.com/dotnet/spark/releases)), ponieważ `System.Runtime.Remoting.Contexts.Context` jest to tylko .NET Framework.

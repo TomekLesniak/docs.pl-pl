@@ -2,24 +2,26 @@
 title: ParticipantRecoveryLogEntryCreationFailure
 ms.date: 03/30/2017
 ms.assetid: 0bda0f08-7614-40f8-912a-06f5a99393e6
-ms.openlocfilehash: cc31605ffaa8e6e625e8eeeb6699ef2c517144b2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 37508a8511f44b59675989ee5982f9fe65a90101
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797639"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294446"
 ---
 # <a name="participantrecoverylogentrycreationfailure"></a>ParticipantRecoveryLogEntryCreationFailure
-#C1 141  
+
+Identyfikator: 141  
   
- Obrażeń Błąd  
+ Ważność: błąd  
   
- Kategorii TransactionBridge  
+ Kategoria: TransactionBridge  
   
 ## <a name="description"></a>Opis  
+
  To zdarzenie wskazuje, że nie można wygenerować wpisu dziennika arecovery dla rejestracji uczestnika. Transakcja zostanie przerwana. Zdarzenie zawiera identyfikator transakcji, Identyfikator rejestracji, wyjątek, nazwę procesu i identyfikator procesu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Rejestrowanie zdarzeń](index.md)
 - [Informacje ogólne o zdarzeniach](events-general-reference.md)

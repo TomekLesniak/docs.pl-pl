@@ -3,12 +3,12 @@ title: Publikowanie usług WCF
 description: Publikowanie usługi WCF pomaga wdrożyć aplikację w środowisku produkcyjnym na potrzeby testowania.
 ms.date: 03/30/2017
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
-ms.openlocfilehash: ccd3fe80e51ef28f7a037d624e9099c42d867d95
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ac817dac15deaf35fdb8e078094dd4b9dca97d06
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544573"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293492"
 ---
 # <a name="wcf-service-publishing"></a>Publikowanie usług WCF
 
@@ -38,7 +38,7 @@ Wykonaj następujące kroki, aby wdrożyć implementację usługi:
 
 1. Otwórz program Visual Studio z podniesionymi uprawnieniami (kliknij prawym przyciskiem myszy plik wykonywalny i wybierz polecenie **Uruchom jako administrator** , aby go otworzyć).  W przypadku korzystania z usług IIS 7,0 lub nowszych upewnij się, że zainstalowano składnik "usług IIS 6 metabazy usług IIS i zgodność konfiguracji" przy użyciu opcji "Włącz lub wyłącz funkcje systemu Windows" w panelu sterowania.
 
-2. Otwórz projekt usługi, wybierz opcję **Kompiluj**  >  **Publikowanie \<Project Name> ** z menu głównego lub kliknij prawym przyciskiem myszy projekt w **Eksplorator rozwiązań** a następnie kliknij pozycję **Publikuj**.
+2. Otwórz projekt usługi, wybierz opcję **Kompiluj**  >  **Publikowanie \<Project Name>** z menu głównego lub kliknij prawym przyciskiem myszy projekt w **Eksplorator rozwiązań** a następnie kliknij pozycję **Publikuj**.
 
 3. Zostanie wyświetlone okno **Publikowanie** . Kliknij przycisk **...**. , aby określić lokalizację docelową, w której ma zostać wdrożona usługa. Możesz wybrać opcję wdrożenia aplikacji w lokalnych usługach IIS, systemie plików lub witrynie FTP. Jeśli aplikacja jest wdrażana w lokalnych usługach IIS, możesz wybrać witrynę internetową i utworzyć w niej aplikację sieci Web, klikając ikonę **Utwórz nową aplikację sieci Web** w prawym górnym rogu.
 
@@ -51,15 +51,19 @@ Możesz użyć funkcji **Publikuj** , aby określić, czy chcesz skopiować plik
 W przypadku wybrania opcji wdrożenia aplikacji w lokalnych usługach IIS mogą wystąpić błędy związane z konfiguracją usług IIS. Upewnij się, że usługi IIS są prawidłowo zainstalowane. Możesz wprowadzić `http://localhost` na pasku adresu przeglądarki i sprawdzić, czy jest wyświetlana domyślna strona usług IIS. W niektórych przypadkach przyczyną problemów może być również nieprawidłowa Rejestracja ASP.NET lub WCF w usługach IIS. Możesz otworzyć wiersz polecenia dla deweloperów dla programu Visual Studio i uruchomić polecenie `aspnet_regiis.exe -ir` , aby rozwiązać problemy z rejestracją usługi ASP.NET lub uruchomić polecenie, `ServiceModelReg.exe –ia` Aby rozwiązać problemy z rejestracją programu WCF.
 
 ## <a name="files-generated-for-publishing"></a>Pliki wygenerowane do opublikowania
+
  Aby biblioteka usług WCF mogła być hostowana w sieci Web, następujące pliki są generowane przez narzędzie: pliki zestawu, plik Web.config i plik SVC. Wszystkie pliki zostaną skopiowane do lokalizacji docelowej. Następnie usługa jest publikowana.
 
 ### <a name="assembly-files"></a>Pliki zestawu
+
  Po opublikowaniu usługi WCF przy użyciu tego narzędzia usługa zostanie automatycznie skompilowana, a pliki zestawu są generowane w projekcie usługi po skompilowaniu.
 
-### <a name="svc-file"></a>. Plik SVC
+### <a name="svc-file"></a>Plik SVC
+
  Operacja publikowania generuje plik *. svc dla każdej usługi WCF, niezależnie od tego, czy plik istnieje, czy nie, aby upewnić się, że wersja jest poprawna. Istnieją dwa różne rodzaje plików SVC: jeden dla biblioteki usług WCF i Biblioteka usługi zespolonej, a drugi dla sekwencyjnej i stanowej biblioteki usługi przepływu pracy. Wygenerowany \* plik SVC jest kopiowany do folderu głównego w lokalizacji docelowej.
 
 ### <a name="webconfig-file"></a>Plik Web.config
+
  Za każdym razem, gdy projekt usługi jest publikowany w określonej lokalizacji docelowej, tworzony jest plik Web.config.
 
  Wygenerowany plik Web.config zawiera sekcje sieci Web, które są przydatne w przypadku hostingu w sieci Web, oraz zawartość App.config dla biblioteki usługi WCF z następującymi zmianami:
@@ -69,12 +73,14 @@ W przypadku wybrania opcji wdrożenia aplikacji w lokalnych usługach IIS mogą 
 - Ustawienia w `<diagnostics>` elemencie są wykluczone, aby zachować ustawienia śledzenia platformy docelowej.
 
 ## <a name="publishing-wcf-services-with-non-http-bindings-to-iis"></a>Publikowanie usług WCF z powiązaniami innymi niż HTTP z usługami IIS
+
  W przypadku korzystania z usług IIS 7.0 lub nowszych można opublikować usługi WCF z powiązaniami innymi niż HTTP z usługami IIS. Należy wykonać pewne wstępne konfiguracje. Aby uzyskać więcej informacji, zobacz tematy dotyczące  [hostingu w usłudze aktywacji procesów systemu Windows](./feature-details/hosting-in-windows-process-activation-service.md).
 
 ## <a name="security"></a>Zabezpieczenia
+
  Publikowanie w lokalnych usługach IIS wymaga uprawnień administratora, ponieważ usługi IIS wymagają uruchomienia na koncie administratora. Jeśli użytkownik bez uprawnień administratora otworzy opcję publikowanie usługi WCF, usługi IIS nie są dostępne jako lokalizacja docelowa. Publikowanie w systemie plików lub witryna FTP działa bez uprawnień administratora.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Szablony programu Visual Studio na potrzeby programu WCF](wcf-vs-templates.md)
 - [Host usługi WCF (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)

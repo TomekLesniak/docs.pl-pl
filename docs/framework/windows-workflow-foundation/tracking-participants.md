@@ -2,22 +2,25 @@
 title: Uczestnicy śledzenia
 ms.date: 03/30/2017
 ms.assetid: f13e360c-eeb7-4a49-98a0-8f6a52d64f68
-ms.openlocfilehash: 9455524da4451bf904d8449412e8f625542a1635
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 345138dab3d77f74f6de5217763ec4f1efc6a047
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551455"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293367"
 ---
 # <a name="tracking-participants"></a>Uczestnicy śledzenia
+
 Monitorowanie uczestników to punkty rozszerzalności, które umożliwiają deweloperom przepływu pracy dostęp do <xref:System.Activities.Tracking.InteropTrackingRecord.TrackingRecord%2A> obiektów i przetwarzanie ich. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] zawiera standardowy Uczestnik śledzenia, który zapisuje rekordy śledzenia jako zdarzenia śledzenia zdarzeń systemu Windows (ETW). Które nie spełnia wymagań, można także napisać uczestnikiem niestandardowe śledzenia.  
   
 ## <a name="tracking-participants"></a>Uczestnicy śledzenia  
+
  Infrastruktura śledzenia umożliwia stosowanie filtru dla wychodzących rekordów śledzenia, tak aby uczestnik mógł subskrybować podzestaw rekordów. Mechanizm zastosowania filtru jest profilem śledzenia.  
   
  Windows Workflow Foundation (WF) w programie [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] udostępnia uczestnika śledzenia, który zapisuje rekordy śledzenia w sesji ETW. Uczestnika jest skonfigurowany w usłudze przepływu pracy przez dodanie zachowania specyficzny dla śledzenia w PLiku konfiguracji. Włączanie funkcji ETW śledzenia uczestnika, który umożliwia śledzenia się wyświetlić podglądu zdarzeń. Przykład zestawu SDK na potrzeby śledzenia przy użyciu funkcji ETW jest dobrym sposobem na zapoznanie się ze śledzeniem WF za pomocą uczestnika śledzenia funkcji ETW.  
   
 ## <a name="etw-tracking-participant"></a>Uczestnik śledzenia ETW  
+
  [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] obejmuje uczestnika śledzenia funkcji ETW, który zapisuje rekordy śledzenia w sesji ETW. Jest to realizowane w bardzo wydajny sposób z minimalnym wpływem na wydajność aplikacji lub przepływności serwera. Zaletą korzystania z standardowego uczestnika śledzenia ETW jest to, że otrzymane rekordy śledzenia mogą być wyświetlane z innymi dziennikami aplikacji i systemu w Podgląd zdarzeń systemu Windows.  
   
  Uczestnik standardowego śledzenia ETW jest konfigurowany w pliku Web.config, jak pokazano w poniższym przykładzie.  
@@ -63,6 +66,7 @@ Monitorowanie uczestników to punkty rozszerzalności, które umożliwiają dewe
  ![Przepływ danych śledzenia za pomocą dostawcy śledzenia ETW.](./media/tracking-participants/tracking-data-event-tracing-windows-provider.gif)  
   
 ## <a name="tracking-participant-event-data"></a>Śledzenie danych zdarzeń uczestników  
+
  Uczestnik śledzenia serializować śledzone dane zdarzenia do sesji ETW w formacie jednego zdarzenia dla każdego rekordu śledzenia.  Zdarzenie jest identyfikowane przy użyciu identyfikatora z zakresu od 100 do 199. Aby zapoznać się z definicjami rekordów zdarzeń śledzenia emitowanych przez uczestnika śledzenia, zobacz temat [Informacje o śledzeniu zdarzeń](tracking-events-reference.md) .  
   
  Rozmiar zdarzenia ETW jest ograniczony przez rozmiar buforu ETW lub przez maksymalny ładunek zdarzenia ETW, w zależności od tego, która wartość jest mniejsza. Jeśli rozmiar zdarzenia przekracza jeden z tych limitów ETW, zdarzenie jest obcinane i jego zawartość została usunięta w dowolny sposób. Zmienne, argumenty, adnotacje i dane niestandardowe nie są selektywnie usuwane. W przypadku obcinania wszystkie z nich są obcinane niezależnie od wartości, która spowodowała przekroczenie limitu ETW przez rozmiar zdarzenia.  Usunięte dane zostaną zastąpione `<item>..<item>` .  
@@ -74,6 +78,7 @@ Monitorowanie uczestników to punkty rozszerzalności, które umożliwiają dewe
  Dla sesji o niższym limicie zdarzenie może zostać obcięte. Uczestnik śledzenia ETW nie ma żadnej informacji o liczbie sesji nasłuchujących zdarzeń; Jeśli zdarzenie zostanie obcięte dla sesji, uczestnik ETW ponawia próbę wysłania zdarzenia raz. W takim przypadku sesja, która jest skonfigurowana do akceptowania większego rozmiaru ładunku, spowoduje dwa razy zdarzenie (zdarzenie obcięte i obcięte). Duplikowanie może być uniemożliwione przez skonfigurowanie wszystkich sesji ETW o tym samym limicie rozmiaru buforu.  
   
 ## <a name="accessing-tracking-data-from-an-etw-participant-in-the-event-viewer"></a>Uzyskiwanie dostępu do śledzenia danych z uczestnika ETW w Podgląd zdarzeń  
+
  Do zdarzeń, które są zapisywane w sesji ETW przez uczestnika śledzenia ETW, można uzyskać dostęp za pośrednictwem Podgląd zdarzeń (przy użyciu domyślnego identyfikatora dostawcy). Pozwala to na szybkie wyświetlanie rekordów śledzenia, które zostały wyemitowane przez przepływ pracy.  
   
 > [!NOTE]
@@ -85,11 +90,12 @@ Monitorowanie uczestników to punkty rozszerzalności, które umożliwiają dewe
   
 2. Wybierz **Podgląd zdarzeń, Dzienniki aplikacji i usług, Microsoft, Windows, serwer aplikacji-aplikacje**.  
   
-3. Kliknij prawym przyciskiem myszy i sprawdź, czy wybrano opcję **Widok, Pokaż dzienniki analityczne i debugowania** . Jeśli nie, zaznacz ją, aby znacznik wyboru pojawił się obok niego. Spowoduje to wyświetlenie dzienników **analitycznych**, **wydajności**i **debugowania** .  
+3. Kliknij prawym przyciskiem myszy i sprawdź, czy wybrano opcję **Widok, Pokaż dzienniki analityczne i debugowania** . Jeśli nie, zaznacz ją, aby znacznik wyboru pojawił się obok niego. Spowoduje to wyświetlenie dzienników **analitycznych**, **wydajności** i **debugowania** .  
   
 4. Kliknij prawym przyciskiem myszy dziennik **analityczny** , a następnie wybierz pozycję **Włącz dziennik**. Dziennik będzie istnieć w pliku%SystemRoot%\System32\Winevt\Logs\Microsoft-Windows-Application Server-Applications %4 A nalytic. etl.  
   
 ## <a name="custom-tracking-participant"></a>Uczestnik śledzenia niestandardowego  
+
  Interfejs API uczestnika śledzenia umożliwia rozszerzenie środowiska uruchomieniowego śledzenia z uczestnikiem śledzenia dostarczonym przez użytkownika, który może zawierać logikę niestandardową do obsługi rekordów śledzenia emitowanych przez środowisko uruchomieniowe przepływu pracy. Aby napisać niestandardowego uczestnika śledzenia, Deweloper musi zaimplementować `Track` metodę w <xref:System.Activities.Tracking.TrackingParticipant> klasie. Ta metoda jest wywoływana, gdy rekord śledzenia jest emitowany przez środowisko uruchomieniowe przepływu pracy.  
   
  Śledzenie uczestników pochodzi od <xref:System.Activities.Tracking.TrackingParticipant> klasy. Dostarczone przez system, <xref:System.Activities.Tracking.EtwTrackingParticipant> emituje zdarzenie śledzenia zdarzeń dla systemu Windows (ETW) dla każdego odebranego rekordu śledzenia. Aby utworzyć niestandardowego uczestnika śledzenia, tworzona jest Klasa, która pochodzi od <xref:System.Activities.Tracking.TrackingParticipant> . Aby zapewnić podstawowe funkcje śledzenia, Przesłoń <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> . <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> jest wywoływana, gdy rekord śledzenia jest wysyłany przez środowisko uruchomieniowe i może być przetwarzany w odpowiedni sposób. W poniższym przykładzie zdefiniowano klasę niestandardowego uczestnika śledzenia, która emituje wszystkie rekordy śledzenia do okna konsoli. Można również zaimplementować <xref:System.Activities.Tracking.TrackingParticipant> obiekt, który przetwarza rekordy śledzenia asynchronicznie przy użyciu `BeginTrack` metod i `EndTrack`  
@@ -140,7 +146,7 @@ instance.Extensions.Add(new ConsoleTrackingParticipant());
             Console.ReadLine();  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Monitorowanie aplikacji sieci szkieletowej systemu Windows Server](/previous-versions/appfabric/ee677251(v=azure.10))
 - [Monitorowanie aplikacji przy użyciu sieci szkieletowej aplikacji](/previous-versions/appfabric/ee677276(v=azure.10))

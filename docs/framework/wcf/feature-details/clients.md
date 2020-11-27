@@ -2,17 +2,19 @@
 title: Klienci
 ms.date: 03/30/2017
 ms.assetid: cce50025-0318-4a5e-9ce8-c67feab83b06
-ms.openlocfilehash: c5c44016a0367ea80485f220418e5bd8365b9694
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 55cb3cac30ccaabec39823e9ba0629a6088b1508
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599324"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295096"
 ---
 # <a name="clients"></a>Klienci
+
 Tematy w tej sekcji dotyczą architektury klienta, sposobu uzyskiwania dostępu do usługi Windows Communication Foundation (WCF), konfigurowania klienta programu WCF i pewnych zagadnień dotyczących zabezpieczeń dla klientów programu WCF.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Architektura klienta programu WCF](client-architecture.md)  
  Opisuje architekturę klienta programu WCF.  
   
@@ -22,7 +24,7 @@ Tematy w tej sekcji dotyczą architektury klienta, sposobu uzyskiwania dostępu 
  [Konfiguracja klienta programu WCF](client-configuration.md)  
  Opisuje sposób konfigurowania klienta WCF.  
   
- [Zabezpieczanie klientów](../securing-clients.md)  
+ [Zabezpieczanie klientów [WCF]](../securing-clients.md)  
  W tym artykule opisano niektóre zagadnienia dotyczące zabezpieczeń klientów programu WCF.  
   
 ## <a name="see-also"></a>Zobacz też

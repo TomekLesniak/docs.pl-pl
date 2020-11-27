@@ -2,18 +2,19 @@
 title: Dodawanie odwołania usługi w projekcie obsługującym podzestaw przenośny
 ms.date: 03/30/2017
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
-ms.openlocfilehash: e9a0d3fbc75a8c64af892f74acedfc41dc115da3
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: f81a596c5573405bec9389347c45ff6cb6b30fc9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687708"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294862"
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a>Dodawanie odwołania usługi w projekcie obsługującym podzestaw przenośny
 
 Przenośne projekty podzestawów umożliwiają programistom zestawu .NET utrzymywanie jednego drzewa źródłowego i systemu kompilacji przy zachowaniu obsługi wielu implementacji platformy .NET (Desktop, Silverlight, Windows Phone i Xbox). Przenośne projekty podzestawów odwołują się tylko do przenośnych bibliotek, które są zestawami .NET, które mogą być używane w dowolnej implementacji platformy .NET.
   
 ## <a name="add-service-reference-details"></a>Szczegóły Dodaj odwołanie do usługi  
+
  Podczas dodawania odwołania do usługi w projekcie podzestawu przenośnego są wymuszane następujące ograniczenia:  
   
 1. Dla programu <xref:System.Xml.Serialization.XmlSerializer> dozwolone są tylko kodowania literałów. Kodowanie protokołu SOAP generuje błąd podczas importowania.  
@@ -44,7 +45,7 @@ Przenośne projekty podzestawów umożliwiają programistom zestawu .NET utrzymy
   
 14. <xref:System.ServiceModel.MessageContractAttribute.IsWrapped%2A> nie jest obsługiwane w projektach podzestawów przenośnych.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Uzyskiwanie dostępu do usług za pomocą klienta WCF](accessing-services-using-a-wcf-client.md)
 - [Biblioteka klas przenośnych](../cross-platform/portable-class-library.md)

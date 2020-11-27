@@ -2,12 +2,12 @@
 title: Wybieranie kodera komunikatów
 ms.date: 03/30/2017
 ms.assetid: 2204d82d-d962-4922-a79e-c9a231604f19
-ms.openlocfilehash: fd5bc2270f2e4095ef6ad2b1d89af3560fb8d312
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8b53c17cccc74153e652494ec9753302cda8679b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559374"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295161"
 ---
 # <a name="choose-a-message-encoder"></a>Wybierz koder komunikatów
 
@@ -19,7 +19,8 @@ W tym artykule omówiono kryteria umożliwiające wybór między koderami komuni
   
  Podczas nawiązywania połączenia z istniejącym klientem lub serwerem nie można wybrać, jak używać określonego kodowania komunikatów, ponieważ należy zakodować komunikaty w taki sposób, że jest to oczekiwane. Jednak w przypadku pisania usługi WCF można uwidocznić usługę za pomocą wielu punktów końcowych, z których każdy korzysta z innego kodowania komunikatów. Dzięki temu klienci mogą wybrać najlepsze kodowanie do rozmowy z usługą za pośrednictwem punktu końcowego, który jest najlepszy dla nich, a także zapewnić klientom elastyczność wybierania najlepszego dla nich kodowania. Używanie wielu punktów końcowych umożliwia również łączenie zalet różnych kodowań komunikatów z innymi elementami powiązania.  
   
-## <a name="system-provided-encoders"></a>Kodery dostarczone przez system  
+## <a name="system-provided-encoders"></a>Kodery System-Provided  
+
  Program WCF zawiera trzy kodery komunikatów, które są reprezentowane przez następujące trzy klasy:  
   
 - <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>koder wiadomości SMS obsługuje zarówno zwykłe Kodowanie XML, jak i kodowanie protokołu SOAP. Tryb zwykłego kodowania XML kodera wiadomości tekstowych jest nazywany "zwykłym starym plikiem XML" (POX) w celu odróżnienia go od kodowania SOAP opartego na tekście. Aby włączyć POX, ustaw <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement.MessageVersion%2A> Właściwość na <xref:System.ServiceModel.Channels.MessageVersion.None%2A> . Użyj kodera wiadomości tekstowych do współpracy z punktami końcowymi spoza usługi WCF.  
@@ -29,6 +30,7 @@ W tym artykule omówiono kryteria umożliwiające wybór między koderami komuni
 - <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>, element Binding, określa kodowanie znaków i przechowywanie wersji komunikatów dla komunikatów przy użyciu kodowania MTOM. MTOM to wydajna technologia przesyłania danych binarnych w komunikatach programu WCF. Koder MTOM próbuje utworzyć balans między wydajnością i współdziałaniem. Kodowanie MTOM przesyła większość XML w postaci tekstowej, ale optymalizuje duże bloki danych binarnych przez przesłanie ich bez konwersji do tekstu. W zakresie wydajności, wśród koderów WCF zapewnia, MTOM jest między tekstem (najwolniejszym) i binarnym (najszybszy).  
   
 ## <a name="how-to-choose-a-message-encoder"></a>Jak wybrać koder komunikatów  
+
  W poniższej tabeli opisano typowe czynniki używane do wybierania kodera komunikatów. Określ priorytety czynników, które są ważne dla aplikacji, a następnie wybierz kodery komunikatów, które najlepiej współpracują z tymi czynnikami. Należy wziąć pod uwagę wszelkie dodatkowe czynniki, które nie są wymienione w tej tabeli oraz wszystkie niestandardowe kodery komunikatów, które mogą być wymagane w aplikacji.  
   
 |Czynnik|Opis|Kodery obsługujące ten czynnik|  
@@ -83,6 +85,6 @@ Ponieważ ta właściwość jest uwidaczniana tylko w binaryMessageEncodingBindi
 
 Zarówno klient, jak i usługa muszą wyrazić zgodę na wysyłanie i odbieranie skompresowanych komunikatów, w związku z czym Właściwość compressionFormat musi być skonfigurowana dla elementu binaryMessageEncoding zarówno na kliencie, jak i w usłudze. Zostanie zgłoszony wyjątek ProtocolException, jeśli usługa lub klient nie jest skonfigurowany do kompresji, ale druga strona to. Należy uważnie rozważyć włączenie kompresji. Kompresja jest przede wszystkim przydatna, jeśli przepustowość sieci jest wąskim gardłem. W przypadku, gdy procesor CPU jest wąskim gardłem, kompresja obniży przepływność. Należy wykonać odpowiednie testy w symulowanym środowisku, aby dowiedzieć się, czy ta korzyść ma zastosowanie do aplikacji  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Powiązania](bindings.md)

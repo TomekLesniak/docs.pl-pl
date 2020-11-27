@@ -2,14 +2,15 @@
 title: Określanie niestandardowego algorytmu kryptograficznego
 ms.date: 03/30/2017
 ms.assetid: d662a305-8e09-451d-9a59-b0f12b012f1d
-ms.openlocfilehash: 3b4690071ac148966601a1c0f50edfd5a9fd52fc
-ms.sourcegitcommit: ff5a4eb5cffbcac9521bc44a907a118cd7e8638d
+ms.openlocfilehash: bdb7d45752be94c4c81e27161f57f765d64bd94a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92163236"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294004"
 ---
 # <a name="specifying-a-custom-crypto-algorithm"></a>Określanie niestandardowego algorytmu kryptograficznego
+
 Usługa WCF umożliwia określenie niestandardowego algorytmu kryptograficznego, który ma być używany podczas szyfrowania danych lub przetwarzania podpisów cyfrowych. W tym celu należy wykonać następujące czynności:  
   
 1. Utwórz klasę z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
@@ -19,6 +20,7 @@ Usługa WCF umożliwia określenie niestandardowego algorytmu kryptograficznego,
 3. Skonfiguruj powiązanie z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> klasą pochodną.  
   
 ## <a name="derive-a-class-from-securityalgorithmsuite"></a>Utwórz klasę z SecurityAlgorithmSuite  
+
  <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>Jest abstrakcyjną klasą bazową, która pozwala określić algorytm, który ma być używany podczas wykonywania różnych operacji związanych z zabezpieczeniami. Na przykład Obliczanie skrótu podpisu cyfrowego lub szyfrowanie wiadomości. Poniższy kod przedstawia sposób wygenerowania klasy z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> :  
   
 ```csharp  
@@ -87,6 +89,7 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
 ```  
   
 ## <a name="register-the-custom-algorithm"></a>Rejestrowanie niestandardowego algorytmu  
+
  Rejestrację można przeprowadzić w pliku konfiguracji lub w bezwzględnym kodzie. Zarejestrowanie algorytmu niestandardowego odbywa się przez utworzenie mapowania między klasą, która implementuje dostawcę usług kryptograficznych i alias. Alias jest następnie mapowany na identyfikator URI, który jest używany podczas określania algorytmu w powiązaniu usługi WCF. Poniższy fragment konfiguracji ilustruje sposób rejestrowania niestandardowego algorytmu w konfiguracji:  
   
 ```xml  
@@ -116,6 +119,7 @@ CryptoConfig.AddAlgorithm(typeof(SHA256CryptoServiceProvider), "http://contoso.c
 ```  
   
 ## <a name="configure-the-binding"></a>Konfigurowanie powiązania  
+
  Powiązanie można skonfigurować przez określenie <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> klasy pochodnej niestandardowej w ustawieniach powiązań, jak pokazano w poniższym fragmencie kodu:  
   
 ```csharp  

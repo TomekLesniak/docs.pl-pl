@@ -2,14 +2,15 @@
 title: Przykład dyspozytora tabeli UriTemplate
 ms.date: 03/30/2017
 ms.assetid: 3b32975d-ba90-4c5c-83bc-2fbb48f11c0c
-ms.openlocfilehash: 97e916aaf9d137eb7931470f9565797b03620d28
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 57489264de62b6adbca1c98230a0f90735b3918a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591075"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294953"
 ---
 # <a name="uritemplate-table-dispatcher-sample"></a>Przykład dyspozytora tabeli UriTemplate
+
 <xref:System.UriTemplateTable>Klasa zawiera strukturę tabeli asocjacyjnej, która umożliwia pracę z zestawem <xref:System.UriTemplate> wystąpień. W tym przykładzie przedstawiono podstawowy aparat wysyłania, który został utworzony przy użyciu `UriTemplateTable` , typowy scenariusz użycia dla `UriTemplateTable` klasy.  
   
  Ten przykład ilustruje następujące kluczowe pojęcia dotyczące `UriTemplateTable` klasy:  

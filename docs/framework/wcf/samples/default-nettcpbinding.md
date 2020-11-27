@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Net profile TCP
 ms.assetid: e8475fe6-0ecd-407a-8e7e-45860561bb74
-ms.openlocfilehash: 56648b74e400085b76f4f837852791b33fbf97e0
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7a1af17ef3c2176371a394ae8b63d9cc207d5b6f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600000"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292782"
 ---
 # <a name="default-nettcpbinding"></a>Domyślny element NetTcpBinding
+
 Ten przykład ilustruje użycie <xref:System.ServiceModel.NetTcpBinding> powiązania. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md) , który implementuje usługę kalkulatora. W tym przykładzie usługa jest samodzielna. Klientem i usługą są aplikacje konsolowe.  
   
 > [!NOTE]
@@ -107,7 +108,7 @@ Press ENTER to terminate client.
 4. Aby uruchomić przykład w konfiguracji na jednym lub wielu komputerach, postępuj zgodnie z instrukcjami w temacie [Uruchamianie przykładów Windows Communication Foundation](running-the-samples.md).  
   
     > [!NOTE]
-    > Ponieważ serwer jest samoobsługowy, należy określić tożsamość w pliku App. config klienta, aby uruchomić przykład w konfiguracji dla wielu maszyn.  
+    > Ponieważ serwer jest samoobsługowy, należy określić tożsamość w pliku App.config klienta, aby uruchomić przykład w konfiguracji dla wielu komputerów.  
   
     ```xml  
     <client>  

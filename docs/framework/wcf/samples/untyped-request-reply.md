@@ -1,15 +1,16 @@
 ---
-title: Żądanie nietypu-odpowiedź
+title: Request-Reply niewpisany
 ms.date: 03/30/2017
 ms.assetid: 0bf0f9d9-7caf-4d3d-8c9e-2d468cca16a5
-ms.openlocfilehash: 46047d1671fadb18052991451910b9056015edd2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bcd35bcac928397cad57384fdecb55d7e5ad13c3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591103"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294992"
 ---
 # <a name="untyped-requestreply"></a>Nietypizowane żądanie/nietypizowana odpowiedź
+
 Ten przykład ilustruje sposób definiowania kontraktów operacji, które używają klasy Message.  
   
 > [!NOTE]
@@ -43,7 +44,7 @@ public Message ComputeSum(Message request)
 }  
 ```  
   
- Klient korzysta z kodu wygenerowanego przez [Narzędzie do obsługi metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) , aby utworzyć serwer proxy w usłudze zdalnej. Aby wysłać komunikat żądania, klient musi mieć wersję wiadomości, która zależy od kanału bazowego. W tym celu tworzy nowy <xref:System.ServiceModel.OperationContextScope> zakres w utworzonym przez siebie kanale serwera proxy, który tworzy <xref:System.ServiceModel.OperationContext> z prawidłową wersją wiadomości wypełnioną w jej `OutgoingMessageHeaders.MessageVersion` właściwości. Klient przekaże tablicę wejściową jako treść komunikatu żądania, a następnie wywoła `ComputeSum` na serwerze proxy. Następnie klient pobiera sumę danych wejściowych, które przekazuje, uzyskując dostęp do `GetBody<T>` metody w komunikacie odpowiedzi. Poniższy przykładowy kod demonstruje ten sposób.  
+ Klient korzysta z kodu wygenerowanego przez [Narzędzie do obsługi metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) , aby utworzyć serwer proxy usługi zdalnej. Aby wysłać komunikat żądania, klient musi mieć wersję wiadomości, która zależy od kanału bazowego. W tym celu tworzy nowy <xref:System.ServiceModel.OperationContextScope> zakres w utworzonym przez siebie kanale serwera proxy, który tworzy <xref:System.ServiceModel.OperationContext> z prawidłową wersją wiadomości wypełnioną w jej `OutgoingMessageHeaders.MessageVersion` właściwości. Klient przekaże tablicę wejściową jako treść komunikatu żądania, a następnie wywoła `ComputeSum` na serwerze proxy. Następnie klient pobiera sumę danych wejściowych, które przekazuje, uzyskując dostęp do `GetBody<T>` metody w komunikacie odpowiedzi. Poniższy przykładowy kod demonstruje ten sposób.  
   
 ```csharp
 using (new OperationContextScope(client.InnerChannel))  

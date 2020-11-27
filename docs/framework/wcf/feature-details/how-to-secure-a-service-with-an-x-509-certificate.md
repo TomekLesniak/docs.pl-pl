@@ -1,18 +1,19 @@
 ---
-title: 'Instrukcje: Zabezpieczanie usługi za pomocą certyfikatu X.509'
+title: 'Instrukcje: zabezpieczanie usługi za pomocą certyfikatu X.509'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2d06c2aa-d0d7-4e5e-ad7e-77416aa1c10b
-ms.openlocfilehash: 10d6db63368ee55040f85f922b9483982e8ff264
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bf498ee373f2d637a7a93fbc36225a38ff7744c0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596971"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293900"
 ---
-# <a name="how-to-secure-a-service-with-an-x509-certificate"></a>Instrukcje: Zabezpieczanie usługi za pomocą certyfikatu X.509
+# <a name="how-to-secure-a-service-with-an-x509-certificate"></a>Instrukcje: zabezpieczanie usługi za pomocą certyfikatu X.509
+
 Zabezpieczanie usługi za pomocą certyfikatu X. 509 jest podstawową techniką, która jest używana w większości powiązań w Windows Communication Foundation (WCF). W tym temacie przedstawiono kroki konfigurowania usługi samodzielnej przy użyciu certyfikatu X. 509.  
   
  Warunek wstępny jest prawidłowym certyfikatem, którego można użyć do uwierzytelnienia serwera. Certyfikat musi zostać wystawiony dla serwera przez zaufany urząd certyfikacji. Jeśli certyfikat jest nieprawidłowy, każdy klient próbujący skorzystać z usługi nie będzie ufać usłudze i w związku z tym nie zostanie nawiązane żadne połączenie. Aby uzyskać więcej informacji o korzystaniu z certyfikatów, zobacz [Praca z certyfikatami](working-with-certificates.md).  
@@ -62,12 +63,14 @@ Zabezpieczanie usługi za pomocą certyfikatu X. 509 jest podstawową techniką,
      [!code-vb[C_SecureWithCertificate#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#8)]  
   
 ## <a name="example"></a>Przykład  
+
  W poniższym przykładzie zastosowano <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> metodę w celu skonfigurowania usługi przy użyciu certyfikatu X. 509.  
   
  [!code-csharp[C_SecureWithCertificate#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#9)]
  [!code-vb[C_SecureWithCertificate#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#9)]  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
+
  Do skompilowania kodu wymagane są następujące przestrzenie nazw:  
   
 - <xref:System>  

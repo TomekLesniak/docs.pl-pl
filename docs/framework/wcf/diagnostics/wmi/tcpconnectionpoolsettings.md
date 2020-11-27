@@ -2,14 +2,15 @@
 title: TcpConnectionPoolSettings
 ms.date: 03/30/2017
 ms.assetid: 19acfba3-c057-4dbc-bac7-8674d7844d83
-ms.openlocfilehash: 6fa68eed241edaea40b66c31240a4201e05779f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de00cac851e4c6d0fd6df16f3a01b65bb5f43415
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956578"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294680"
 ---
 # <a name="tcpconnectionpoolsettings"></a>TcpConnectionPoolSettings
+
 TcpConnectionPoolSettings  
   
 ## <a name="syntax"></a>Składnia  
@@ -25,33 +26,39 @@ class TcpConnectionPoolSettings
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa TcpConnectionPoolSettings nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa TcpConnectionPoolSettings ma następujące właściwości:  
   
 ### <a name="groupname"></a>GroupName  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Nazwa grupy puli połączeń używane przez element powiązania.  
+ Nazwa grupy puli połączeń używanej przez element powiązania.  
   
-### <a name="idletimeout"></a>IdleTimeout  
- Typ danych: Data i godzina  
+### <a name="idletimeout"></a>Czynności  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalny czas, który połączenie może być bezczynne, zanim zostanie rozłączone.  
+ Maksymalny czas bezczynności połączenia przed jego rozłączeniem.  
   
 ### <a name="leasetimeout"></a>LeaseTimeout  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalny czas na ukończenie przed przekroczeniem limitu czasu operacji dzierżawy.  
+ Limit czasu oczekiwania na zakończenie operacji dzierżawy.  
   
 ### <a name="maxoutboundconnectionsperendpoint"></a>MaxOutboundConnectionsPerEndpoint  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
@@ -60,10 +67,10 @@ class TcpConnectionPoolSettings
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.TcpConnectionPoolSettings>

@@ -3,17 +3,19 @@ title: Zmienne i argumenty
 description: W tym artykule opisano zmienne, które reprezentują magazyn danych i argumenty reprezentujące przepływ danych do/z działania w programie Workflow Foundation.
 ms.date: 03/30/2017
 ms.assetid: d03dbe34-5b2e-4f21-8b57-693ee49611b8
-ms.openlocfilehash: 5cce9931e9b0a37d5fafbfb84527ffd543a0a50f
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 9d593fa5a974524cf976361de9871d3877e58c2d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201955"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293887"
 ---
 # <a name="variables-and-arguments"></a>Zmienne i argumenty
+
 W Windows Workflow Foundation (WF) zmienne reprezentują magazyn danych i argumenty reprezentują przepływ danych do i z działania. Działanie ma zestaw argumentów i składają się na podpis działania. Ponadto działanie może obsługiwać listę zmiennych, do których deweloper może dodawać lub usuwać zmienne podczas projektowania przepływu pracy. Argument jest powiązany przy użyciu wyrażenia, które zwraca wartość.  
   
 ## <a name="variables"></a>Zmienne  
+
  Zmienne są lokalizacjami przechowywania danych. Zmienne są zadeklarowane jako część definicji przepływu pracy. Zmienne przyjmują wartości w czasie wykonywania, a te wartości są przechowywane jako część stanu wystąpienia przepływu pracy. Definicja zmiennej określa typ zmiennej i opcjonalnie nazwę. Poniższy kod pokazuje, jak zadeklarować zmienną, przypisać do niej wartość za pomocą <xref:System.Activities.Statements.Assign%601> działania, a następnie wyświetlić jej wartość w konsoli programu za pomocą <xref:System.Activities.Statements.WriteLine> działania.  
   
 ```csharp  
@@ -57,9 +59,11 @@ Variable<string> var = new Variable<string>
 ```  
   
 ## <a name="variable-scoping"></a>Określanie zakresu zmiennych  
+
  Okres istnienia zmiennej w czasie wykonywania jest równy okresowi istnienia działania, które deklaruje je. Po zakończeniu działania jego zmienne są czyszczone i nie można już do nich odwoływać się.  
   
 ## <a name="arguments"></a>Argumenty  
+
  Autorzy działań używają argumentów do definiowania sposobu, w jaki dane są przesyłane do i z działania. Każdy argument ma określony kierunek: <xref:System.Activities.ArgumentDirection.In> , <xref:System.Activities.ArgumentDirection.Out> , lub <xref:System.Activities.ArgumentDirection.InOut> .  
   
  Środowisko uruchomieniowe przepływu pracy zapewnia następujące gwarancje dotyczące chronometrażu przenoszenia danych do i z działań:  
@@ -68,11 +72,12 @@ Variable<string> var = new Variable<string>
   
 2. Gdy <xref:System.Activities.InOutArgument%601.Set%2A> jest wywoływana, środowisko uruchomieniowe natychmiast ustawia wartość.  
   
-3. Argumenty mogą opcjonalnie mieć <xref:System.Activities.Argument.EvaluationOrder%2A> określone. <xref:System.Activities.Argument.EvaluationOrder%2A>jest wartością zerową, która określa kolejność, w której argument jest oceniany. Domyślnie kolejność oceny argumentu nie jest określona i jest równa <xref:System.Activities.Argument.UnspecifiedEvaluationOrder> wartości. Ustaw <xref:System.Activities.Argument.EvaluationOrder%2A> wartość większą lub równą zero, aby określić kolejność szacowania dla tego argumentu. Windows Workflow Foundation ocenia argumenty z określoną kolejnością szacowania w kolejności rosnącej. Należy zauważyć, że argumenty z nieokreśloną kolejnością szacowania są oceniane przed tymi z określoną kolejnością szacowania.  
+3. Argumenty mogą opcjonalnie mieć <xref:System.Activities.Argument.EvaluationOrder%2A> określone. <xref:System.Activities.Argument.EvaluationOrder%2A> jest wartością zerową, która określa kolejność, w której argument jest oceniany. Domyślnie kolejność oceny argumentu nie jest określona i jest równa <xref:System.Activities.Argument.UnspecifiedEvaluationOrder> wartości. Ustaw <xref:System.Activities.Argument.EvaluationOrder%2A> wartość większą lub równą zero, aby określić kolejność szacowania dla tego argumentu. Windows Workflow Foundation ocenia argumenty z określoną kolejnością szacowania w kolejności rosnącej. Należy zauważyć, że argumenty z nieokreśloną kolejnością szacowania są oceniane przed tymi z określoną kolejnością szacowania.  
   
  Autor działania może użyć mechanizmu o jednoznacznie określonym typie do ujawnienia swoich argumentów. Jest to realizowane przez deklarując właściwości typu <xref:System.Activities.InArgument%601> , <xref:System.Activities.OutArgument%601> , i <xref:System.Activities.InOutArgument%601> . Dzięki temu autor działania może ustanowić konkretną umowę dotyczącą danych przechodzących do działania i z niego.  
   
 ### <a name="defining-the-arguments-on-an-activity"></a>Definiowanie argumentów dla działania  
+
  Argumenty można definiować w działaniu, określając właściwości typu <xref:System.Activities.InArgument%601> , <xref:System.Activities.OutArgument%601> , i <xref:System.Activities.InOutArgument%601> . Poniższy kod ilustruje sposób definiowania argumentów dla `Prompt` działania pobierającego ciąg, który ma być wyświetlany użytkownikowi i zwraca ciąg zawierający odpowiedź użytkownika.  
   
 ```csharp  
@@ -88,7 +93,8 @@ public class Prompt : Activity
 > Działania zwracające pojedynczą wartość mogą pochodzić od <xref:System.Activities.Activity%601> , <xref:System.Activities.NativeActivity%601> , lub <xref:System.Activities.CodeActivity%601> . Te działania mają dobrze zdefiniowaną <xref:System.Activities.OutArgument%601> nazwę <xref:System.Activities.Activity%601.Result%2A> , która zawiera wartość zwracaną działania.  
   
 ### <a name="using-variables-and-arguments-in-workflows"></a>Używanie zmiennych i argumentów w przepływach pracy  
- Poniższy przykład pokazuje, jak zmienne i argumenty są używane w przepływie pracy. Przepływ pracy to sekwencja, która deklaruje trzy zmienne: `var1` , `var2` , i `var3` . Pierwsze działanie w przepływie pracy to `Assign` działanie, które przypisuje wartość zmiennej `var1` do zmiennej `var2` . Następuje to `WriteLine` działanie, które drukuje wartość `var2` zmiennej. Dalej jest innym `Assign` działaniem, które przypisuje wartość zmiennej `var2` do zmiennej `var3` . Na koniec istnieje inne `WriteLine` działanie, które drukuje wartość `var3` zmiennej. Pierwsze `Assign` działanie korzysta z `InArgument<string>` `OutArgument<string>` obiektów, które jawnie reprezentują powiązania dla argumentów działania. `InArgument<string>`jest używany w przypadku <xref:System.Activities.Statements.Assign.Value%2A> , gdy wartość jest przepływa do <xref:System.Activities.Statements.Assign%601> działania za pomocą jego <xref:System.Activities.Statements.Assign.Value%2A> argumentu i `OutArgument<string>` jest używana dla, <xref:System.Activities.Statements.Assign.To%2A> ponieważ wartość przepływa z <xref:System.Activities.Statements.Assign.To%2A> argumentu do zmiennej. Drugie działanie wykonuje tę `Assign` samą czynność z bardziej zwartą, ale równoważną składnią, która używa niejawnych rzutowania. `WriteLine`Działania również używają składni kompaktowej.  
+
+ Poniższy przykład pokazuje, jak zmienne i argumenty są używane w przepływie pracy. Przepływ pracy to sekwencja, która deklaruje trzy zmienne: `var1` , `var2` , i `var3` . Pierwsze działanie w przepływie pracy to `Assign` działanie, które przypisuje wartość zmiennej `var1` do zmiennej `var2` . Następuje to `WriteLine` działanie, które drukuje wartość `var2` zmiennej. Dalej jest innym `Assign` działaniem, które przypisuje wartość zmiennej `var2` do zmiennej `var3` . Na koniec istnieje inne `WriteLine` działanie, które drukuje wartość `var3` zmiennej. Pierwsze `Assign` działanie korzysta z `InArgument<string>` `OutArgument<string>` obiektów, które jawnie reprezentują powiązania dla argumentów działania. `InArgument<string>` jest używany w przypadku <xref:System.Activities.Statements.Assign.Value%2A> , gdy wartość jest przepływa do <xref:System.Activities.Statements.Assign%601> działania za pomocą jego <xref:System.Activities.Statements.Assign.Value%2A> argumentu i `OutArgument<string>` jest używana dla, <xref:System.Activities.Statements.Assign.To%2A> ponieważ wartość przepływa z <xref:System.Activities.Statements.Assign.To%2A> argumentu do zmiennej. Drugie działanie wykonuje tę `Assign` samą czynność z bardziej zwartą, ale równoważną składnią, która używa niejawnych rzutowania. `WriteLine`Działania również używają składni kompaktowej.  
   
 ```csharp  
 // Declare three variables; the first one is given an initial value.  
@@ -123,7 +129,8 @@ Activity wf = new Sequence
 WorkflowInvoker.Invoke(wf);  
 ```  
   
-### <a name="using-variables-and-arguments-in-code-based-activities"></a>Używanie zmiennych i argumentów w działaniach opartych na kodzie  
+### <a name="using-variables-and-arguments-in-code-based-activities"></a>Używanie zmiennych i argumentów w działaniach Code-Based  
+
  Poprzednie przykłady pokazują, jak używać argumentów i zmiennych w przepływach pracy i działaniach deklaratywnych. Argumenty i zmienne są również używane w działaniach opartych na kodzie. Koncepcje użycia są bardzo podobne. Zmienne reprezentują magazyn danych w ramach działania, a argumenty reprezentują przepływ danych do działania lub z niego, i są powiązane przez autora przepływu pracy z innymi zmiennymi lub argumentami w przepływie pracy, które reprezentują miejsce, do którego dane są przesyłane do lub z. Aby uzyskać lub ustawić wartość zmiennej lub argumentu w działaniu, należy użyć kontekstu działania, który reprezentuje bieżące środowisko wykonywania działania. Jest to przesyłane do <xref:System.Activities.CodeActivity%601.Execute%2A> metody działania przez środowisko uruchomieniowe przepływu pracy. W tym przykładzie `Add` zdefiniowano działanie niestandardowe, które ma dwa <xref:System.Activities.ArgumentDirection.In> argumenty. Aby uzyskać dostęp do wartości argumentów, używana jest <xref:System.Activities.Argument.Get%2A> Metoda oraz kontekst, który został przekazane przez środowisko uruchomieniowe przepływu pracy.  
   
 ```csharp  

@@ -2,27 +2,30 @@
 title: 3336 — GetServiceInstanceStop
 ms.date: 03/30/2017
 ms.assetid: 4648026e-670d-4743-85f8-3ccfaaf18d6f
-ms.openlocfilehash: 62bb9b40796b72ff0963d795070c8a1acb7dca23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d35047431fe3c1ae9f26e75dccf5c133b39ecd8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049209"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295365"
 ---
 # <a name="3336---getserviceinstancestop"></a>3336 — GetServiceInstanceStop
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|3336|  
-|słowa kluczowe|ServiceModel|  
+|ID (Identyfikator)|3336|  
+|Słowa kluczowe|Modelu|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane, gdy wystąpienie usługi zostanie pobrana.  
+
+ To zdarzenie jest emitowane po pobraniu wystąpienia usługi.  
   
-## <a name="message"></a>Komunikat  
- Pobrać wystąpienia usługi.  
+## <a name="message"></a>Wiadomość  
+
+ Pobrano wystąpienie usługi.  
   
 ## <a name="details"></a>Szczegóły

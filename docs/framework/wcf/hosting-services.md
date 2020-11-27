@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF]
 ms.assetid: 192be927-6be2-4fda-98f0-e513c4881acc
-ms.openlocfilehash: 86ce392bb76b22e2b6a65fa1d005ed8e9589af15
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 41a7a3e651d234de4079455a667df670d6c7435d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246389"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294654"
 ---
 # <a name="hosting-services"></a>Usługi hostingu
 
@@ -22,7 +22,8 @@ Te opcje hostingu obejmują uruchamianie w ramach aplikacji konsolowej w środow
 
 ## <a name="hosting-options"></a>Opcje hostingu
 
-### <a name="self-host-in-a-managed-application"></a>Samodzielne hostowanie w aplikacji zarządzanej
+### <a name="self-host-in-a-managed-application"></a>Self-Host w aplikacji zarządzanej
+
  Usługi WCF mogą być hostowane w dowolnej zarządzanej aplikacji. Jest to najbardziej elastyczna opcja, ponieważ wymaga najmniejszej ilości infrastruktury do wdrożenia. Kod usługi można osadzić w kodzie aplikacji zarządzanej, a następnie utworzyć i otworzyć wystąpienie, <xref:System.ServiceModel.ServiceHost> Aby udostępnić usługę. Aby uzyskać więcej informacji, zobacz [jak: Hostowanie usługi WCF w zarządzanej aplikacji](how-to-host-a-wcf-service-in-a-managed-application.md).
 
  Ta opcja włącza dwa typowe scenariusze: usługi WCF działające w aplikacjach konsolowych i rozbudowane aplikacje klienckie, takie jak te oparte na Windows Presentation Foundation (WPF) lub Windows Forms (WinForms). Hosting usługi WCF w aplikacji konsolowej jest zwykle przydatny w fazie tworzenia aplikacji. Dzięki temu można łatwo debugować, łatwo uzyskać informacje o śledzeniu z usługi, aby dowiedzieć się, co się dzieje w aplikacji, i łatwo poruszać się, kopiując je do nowych lokalizacji. Ta opcja hostingu ułatwia również rozbudowane aplikacje klienckie, takie jak aplikacje WPF i WinForms, do komunikowania się ze światem zewnętrznym. Na przykład klient współpracy równorzędnej, który korzysta z platformy WPF dla interfejsu użytkownika, a także obsługuje usługę WCF, która umożliwia innym klientom łączenie się z działem IT i udostępnianie informacji.
@@ -44,6 +45,7 @@ Usługa aktywacji procesów systemu Windows (WAS) to nowy mechanizm aktywacji pr
  Ta opcja hostingu wymaga poprawnego skonfigurowania, ale nie wymaga pisania kodu hostingu jako części aplikacji. Aby uzyskać więcej informacji na temat sposobu konfigurowania usług, zobacz [jak: Hostowanie usługi WCF w usłudze was](./feature-details/how-to-host-a-wcf-service-in-was.md).
 
 ## <a name="choose-a-hosting-environment"></a>Wybierz środowisko hostingu
+
  Poniższa tabela zawiera podsumowanie najważniejszych zalet i scenariuszy związanych z poszczególnymi opcjami hostingu.
 
 |Środowisko hostingu|Typowe scenariusze|Najważniejsze zalety i ograniczenia|
@@ -70,7 +72,7 @@ Usługa aktywacji procesów systemu Windows (WAS) to nowy mechanizm aktywacji pr
 
 - [Podstawowy cykl życia programowania](basic-programming-lifecycle.md)
 - [Implementowanie kontraktów usług](implementing-service-contracts.md)
-- [Instrukcje: hostowanie usługi WCF w programie IIS](./feature-details/how-to-host-a-wcf-service-in-iis.md)
+- [Instrukcje: hostowanie usługi WCF w usługach IIS](./feature-details/how-to-host-a-wcf-service-in-iis.md)
 - [Instrukcje: hostowanie usługi WCF w usłudze WAS](./feature-details/how-to-host-a-wcf-service-in-was.md)
 - [Instrukcje: hostowanie usługi WCF w usłudze zarządzanej systemu Windows](./feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
-- [Instrukcje: hostowanie usługi WCF w zarządzanej aplikacji](how-to-host-a-wcf-service-in-a-managed-application.md)
+- [Instrukcje: Hostowanie usługi WCF w zarządzanej aplikacji](how-to-host-a-wcf-service-in-a-managed-application.md)

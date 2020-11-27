@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
-ms.openlocfilehash: 25446a89a0b5657d32d77e2d0d57f58f36bed71b
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: b6f5cd7217b447256f19891c2624fba857735107
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245547"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96294875"
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>Uzyskiwanie dostępu do usług za pomocą klienta WCF
 
@@ -27,9 +27,10 @@ Następnym krokiem po utworzeniu usługi jest utworzenie serwera proxy klienta p
 
 3. Tworzenie wystąpienia serwera proxy klienta WCF.
 
-Serwer proxy klienta WCF można wygenerować ręcznie przy użyciu narzędzia metadanych modelu usługi (SvcUtil.exe), aby uzyskać więcej informacji, zobacz [Narzędzie narzędzia metadanych ServiceModel (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md). Serwer proxy klienta WCF można również wygenerować w programie Visual Studio przy użyciu funkcji **Dodaj odwołanie do usługi** . Aby wygenerować serwer proxy klienta WCF przy użyciu dowolnej metody, musi być uruchomiona usługa. Jeśli usługa jest samoobsługowa, należy uruchomić hosta. Jeśli usługa jest hostowana w programie IIS/nie trzeba wykonywać żadnych innych czynności.
+Serwer proxy klienta WCF można wygenerować ręcznie przy użyciu narzędzia metadanych modelu usługi (SvcUtil.exe), aby uzyskać więcej informacji, zobacz [Narzędzie narzędzia metadanych ServiceModel (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md). Serwer proxy klienta WCF można również wygenerować w programie Visual Studio przy użyciu funkcji **Dodaj odwołanie do usługi**  . Aby wygenerować serwer proxy klienta WCF przy użyciu dowolnej metody, musi być uruchomiona usługa. Jeśli usługa jest samoobsługowa, należy uruchomić hosta. Jeśli usługa jest hostowana w programie IIS/nie trzeba wykonywać żadnych innych czynności.
 
 ## <a name="servicemodel-metadata-utility-tool"></a>Narzędzie do przesyłania metadanych ServiceModel
+
  [Narzędzie do przesyłania metadanych modelu ServiceModel (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) jest narzędziem wiersza polecenia do generowania kodu z metadanych. Poniżej przedstawiono przykład polecenia Basic Svcutil.exe.
 
 ```console
@@ -57,9 +58,10 @@ Svcutil.exe <file1 [,file2]>
 
 ## <a name="add-service-reference-in-visual-studio"></a>Dodaj odwołanie do usługi w programie Visual Studio
 
- Po uruchomieniu usługi kliknij prawym przyciskiem myszy projekt, który będzie zawierać serwer proxy klienta WCF i wybierz polecenie **Dodaj**  >  **odwołanie do usługi**. W **oknie dialogowym Dodaj odwołanie do usługi**wpisz adres URL usługi, którą chcesz wywołać, a następnie kliknij przycisk **Przejdź** . W oknie dialogowym zostanie wyświetlona lista usług dostępnych pod określonym adresem. Kliknij dwukrotnie usługę, aby wyświetlić dostępne kontrakty i operacje, określ przestrzeń nazw dla wygenerowanego kodu, a następnie kliknij przycisk **OK** .
+ Po uruchomieniu usługi kliknij prawym przyciskiem myszy projekt, który będzie zawierać serwer proxy klienta WCF i wybierz polecenie **Dodaj**  >  **odwołanie do usługi**. W **oknie dialogowym Dodaj odwołanie do usługi** wpisz adres URL usługi, którą chcesz wywołać, a następnie kliknij przycisk **Przejdź** . W oknie dialogowym zostanie wyświetlona lista usług dostępnych pod określonym adresem. Kliknij dwukrotnie usługę, aby wyświetlić dostępne kontrakty i operacje, określ przestrzeń nazw dla wygenerowanego kodu, a następnie kliknij przycisk **OK** .
 
 ## <a name="example"></a>Przykład
+
  Poniższy przykład kodu przedstawia kontrakt usługi utworzony dla usługi.
 
 ```csharp
@@ -151,6 +153,7 @@ End Class
 ```
 
 ## <a name="using-the-wcf-client"></a>Korzystanie z klienta WCF
+
  Aby użyć klienta WCF, Utwórz wystąpienie klienta WCF, a następnie Wywołaj jego metody, jak pokazano w poniższym kodzie.
 
 ```csharp
@@ -191,7 +194,7 @@ W przypadku wystąpienia tego typu wyjątków najlepszym sposobem rozwiązania p
 
 - [Instrukcje: tworzenie klienta](how-to-create-a-wcf-client.md)
 - [Instrukcje: uzyskiwanie dostępu do usług za pomocą kontraktu dwukierunkowego](./feature-details/how-to-access-services-with-a-duplex-contract.md)
-- [Instrukcje: Asynchroniczne wywoływanie operacji usługi](./feature-details/how-to-call-wcf-service-operations-asynchronously.md)
+- [Instrukcje: asynchroniczne wywoływanie operacji usługi](./feature-details/how-to-call-wcf-service-operations-asynchronously.md)
 - [Instrukcje: uzyskiwanie dostępu do usług za pomocą kontraktów jednokierunkowych i kontraktów „żądanie-odpowiedź”](./feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
 - [Instrukcje: dostęp do usługi WSE 3.0](./feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
 - [Opis wygenerowanego kodu klienta](./feature-details/understanding-generated-client-code.md)

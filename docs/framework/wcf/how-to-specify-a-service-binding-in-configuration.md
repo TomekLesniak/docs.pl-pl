@@ -1,19 +1,20 @@
 ---
-title: 'Instrukcje: Określanie wiązania usługi w konfiguracji'
+title: 'Instrukcje: Określanie powiązania usługi w konfiguracji'
 description: Dowiedz się, jak skonfigurować punkt końcowy dla usługi WCF w pliku konfiguracji. Kontrakt jest zdefiniowany dla usługi i zaimplementowany w klasie.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 885037f7-1c2b-4d7a-90d9-06b89be172f2
-ms.openlocfilehash: 3b9dd12f2a28ae2d420e82013459613cee8140f1
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 06b1cd009d28f854ec73286efa29d42f0f557314
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051951"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293692"
 ---
-# <a name="how-to-specify-a-service-binding-in-configuration"></a>Instrukcje: Określanie wiązania usługi w konfiguracji
+# <a name="how-to-specify-a-service-binding-in-configuration"></a>Instrukcje: Określanie powiązania usługi w konfiguracji
+
 W tym przykładzie `ICalculator` jest definiowana umowa dla podstawowej usługi kalkulatora, usługa jest zaimplementowana w `CalculatorService` klasie, a następnie jej punkt końcowy jest skonfigurowany w pliku Web.config, w którym zostanie określony, że usługa używa usługi <xref:System.ServiceModel.BasicHttpBinding> . Opis sposobu konfigurowania tej usługi przy użyciu kodu zamiast konfiguracji można znaleźć [w temacie How to: Określanie powiązania usługi w kodzie](how-to-specify-a-service-binding-in-code.md).  
   
  Zazwyczaj najlepszym rozwiązaniem jest określenie informacji o powiązaniach i adresie w konfiguracji, a nie w sposób konieczny w kodzie. Definiowanie punktów końcowych w kodzie zazwyczaj nie jest praktyczne, ponieważ powiązania i adresy dla wdrożonej usługi są zwykle inne niż te używane podczas tworzenia usługi. Ogólnie rzecz biorąc, przechowywanie informacji o powiązaniach i adresach poza kodem pozwala na ich zmianę bez konieczności ponownego kompilowania lub wdrażania aplikacji.  
@@ -96,5 +97,5 @@ W tym przykładzie `ICalculator` jest definiowana umowa dla podstawowej usługi 
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Konfigurowanie usług i klientów za pomocą powiązań](using-bindings-to-configure-services-and-clients.md)
+- [Konfigurowanie usług i klientów za pomocą wiązań](using-bindings-to-configure-services-and-clients.md)
 - [Określanie adresu punktu końcowego](specifying-an-endpoint-address.md)

@@ -1,17 +1,18 @@
 ---
-title: 'Instrukcje: używanie monikera programu Windows Communication Foundation bez rejestracji'
+title: 'Instrukcje: używanie krótkiej nazwy programu Windows Communication Foundation bez rejestracji'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [WCF], service monikers without registration
 ms.assetid: ee3cf5c0-24f0-4ae7-81da-73a60de4a1a8
-ms.openlocfilehash: f69314948a0e0a69e49ec148f94572f17d0b8e3c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 41761313fae68a1a348a73f104e21dc19e07eb65
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595053"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96293510"
 ---
-# <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Instrukcje: używanie monikera programu Windows Communication Foundation bez rejestracji
+# <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Instrukcje: używanie krótkiej nazwy programu Windows Communication Foundation bez rejestracji
+
 Aby nawiązać połączenie z usługą Windows Communication Foundation (WCF) i komunikować się z nią, aplikacja kliencka programu WCF musi mieć szczegóły dotyczące adresu usługi, konfiguracji powiązania i kontraktu usługi.  
   
  Moniker usługi WCF zwykle uzyskuje wymagany kontrakt za pomocą wcześniejszej rejestracji wymaganych typów atrybutów, ale mogą wystąpić sytuacje, w których nie jest to możliwe. W miejscu rejestracji moniker może uzyskać definicję kontraktu w formie dokumentu języka definicji usług sieci Web (WSDL), poprzez użycie `wsdl` parametru lub za pomocą wymiany metadanych przy użyciu `mexAddress` parametru.  
@@ -22,6 +23,7 @@ Aby nawiązać połączenie z usługą Windows Communication Foundation (WCF) i 
 > Wzajemne uwierzytelnianie musi być używane do ochrony przed manipulacjami lub fałszowaniem żądań i odpowiedzi. Szczególnie ważne jest, aby klienci mogli zapewnić, że punkt końcowy wymiany metadanych, który odpowiada, jest zamierzoną stroną zaufaną.  
   
 ## <a name="example"></a>Przykład  
+
  Ten przykład pokazuje użycie monikera usługi z kontraktem MEX. Usługa z następującym kontraktem jest udostępniona z wsHttpBinding.  
   
 ```csharp
@@ -59,4 +61,4 @@ binding=WSHttpBinding_IAffiliate, bindingNamespace=http://tempuri.org/
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Instrukcje: rejestrowanie i konfigurowanie monikera usługi](how-to-register-and-configure-a-service-moniker.md)
+- [Instrukcje: rejestrowanie i konfigurowanie krótkiej nazwy usługi](how-to-register-and-configure-a-service-moniker.md)

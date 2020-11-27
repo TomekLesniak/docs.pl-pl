@@ -2,14 +2,15 @@
 title: Zaufana usługa fasady
 ms.date: 03/30/2017
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-ms.openlocfilehash: e9459b4cc26ef85adcc59c308d92491fd2d3acba
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 80f139ace43d5f8d2136528681386711bea7a1e5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544183"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295057"
 ---
 # <a name="trusted-facade-service"></a>Zaufana usługa fasady
+
 W tym scenariuszu przedstawiono sposób przepływu informacji o tożsamości wywołującego z jednej usługi do innej przy użyciu infrastruktury zabezpieczeń Windows Communication Foundation (WCF).  
   
  Typowym wzorcem projektu jest udostępnienie funkcjonalności oferowanej przez usługę do sieci publicznej za pomocą usługi fasadowej. Usługa elewacji zwykle znajduje się w sieci obwodowej (znanej także jako Strefa DMZ, zdemilitaryzowana Zone i podsieć z osłoną) i komunikuje się z usługą zaplecza, która implementuje logikę biznesową i ma dostęp do danych wewnętrznych. Kanał komunikacyjny między usługą fasady a usługą zaplecza przechodzi przez zaporę i jest zwykle ograniczony tylko do jednego celu.  
@@ -28,9 +29,11 @@ W tym scenariuszu przedstawiono sposób przepływu informacji o tożsamości wyw
 > Usługa zaplecza ufa usłudze elewacji do uwierzytelniania obiektu wywołującego. W związku z tym usługa zaplecza nie uwierzytelnia ponownie obiektu wywołującego; używa on informacji o tożsamości dostarczonych przez usługę elewacji w żądaniu przekazywanym dalej. Ze względu na tę relację zaufania usługa zaplecza musi uwierzytelnić usługę elewacji, aby upewnić się, że przekazany komunikat pochodzi z zaufanego źródła — w tym przypadku usługi elewacji.  
   
 ## <a name="implementation"></a>Implementacja  
+
  W tym przykładzie istnieją dwie ścieżki komunikacji. Po pierwsze jest między klientem a usługą elewacji drugi między usługą elewacji a usługą zaplecza.  
   
 ### <a name="communication-path-between-client-and-faade-service"></a>Ścieżka komunikacji między klientem a usługą elewacji  
+
  Klient do ścieżki komunikacji usługi elewacji używa `wsHttpBinding` z `UserName` typem poświadczeń klienta. Oznacza to, że klient używa nazwy użytkownika i hasła do uwierzytelniania w usłudze elewacji, a usługa fasada używa certyfikatu X. 509 do uwierzytelniania na kliencie. Konfiguracja powiązania wygląda podobnie do poniższego przykładu.  
   
 ```xml  
@@ -93,6 +96,7 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
 ```  
   
 ### <a name="communication-path-between-faade-service-and-backend-service"></a>Ścieżka komunikacji między usługą elewacji a usługą zaplecza  
+
  Podnosząca się do ścieżki komunikacji usługi wewnętrznej bazy danych używa `customBinding` , która składa się z kilku elementów powiązania. To powiązanie wykonuje dwie rzeczy. Usługa ta uwierzytelnia usługę fasady i usługę zaplecza, aby upewnić się, że komunikacja jest bezpieczna i pochodzi z zaufanego źródła. Ponadto również przesyła początkową tożsamość obiektu wywołującego wewnątrz `Username` tokenu zabezpieczającego. W takim przypadku tylko nazwa użytkownika początkowego obiektu wywołującego jest przesyłana do usługi wewnętrznej bazy danych, a hasło nie jest uwzględniane w komunikacie. Wynika to z faktu, że usługa zaplecza ufa usłudze elewacji do uwierzytelniania obiektu wywołującego przed przekazaniem do niego żądania. Ponieważ usługa fasady jest uwierzytelniana w usłudze wewnętrznej bazy danych, usługa zaplecza może ufać informacjom zawartym w żądaniu przekazywanym dalej.  
   
  Poniżej znajduje się Konfiguracja powiązania dla tej ścieżki komunikacji.  
@@ -212,6 +216,7 @@ public string GetCallerIdentity()
  Informacje o koncie usługi fasady są wyodrębniane przy użyciu `ServiceSecurityContext.Current.WindowsIdentity` właściwości. Aby uzyskać dostęp do informacji o początkowym wywołującym, usługa zaplecza używa `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` właściwości. Szuka on `Identity` zgłoszenia z typem `Name` . To zgłoszenie jest generowane automatycznie przez infrastrukturę zabezpieczeń WCF z informacji zawartych w `Username` tokenie zabezpieczającym.  
   
 ## <a name="running-the-sample"></a>Uruchamianie przykładowej aplikacji  
+
  Po uruchomieniu przykładu żądania operacji i odpowiedzi są wyświetlane w oknie konsoli klienta. Naciśnij klawisz ENTER w oknie klienta, aby zamknąć klienta programu. Aby zamknąć usługi, możesz nacisnąć klawisz ENTER w oknach konsoli usługi elewacji i zaplecza.  
   
 ```console  
