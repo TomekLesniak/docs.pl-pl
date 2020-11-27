@@ -2,24 +2,26 @@
 title: FailedToInitializeTraceSource
 ms.date: 03/30/2017
 ms.assetid: ce6fea55-292c-4fb9-908e-3713fcd4cf8f
-ms.openlocfilehash: bda061bb77b8bde44592c61c44bcfa6bef320dfa
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6a5e591f7dbe9aadc85dc58be55d5a1f176358cc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797942"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96284605"
 ---
 # <a name="failedtoinitializetracesource"></a>FailedToInitializeTraceSource
-#C1 101  
+
+Identyfikator: 101  
   
- Obrażeń Błąd  
+ Ważność: błąd  
   
- Kategorii Śledzenie  
+ Kategoria: śledzenie  
   
 ## <a name="description"></a>Opis  
+
  Nie zainicjowano źródła śledzenia. Śledzenie jest wyłączone. Zdarzenie zawiera listę wyjątku, nazwę procesu i identyfikator procesu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Rejestrowanie zdarzeń](index.md)
 - [Informacje ogólne o zdarzeniach](events-general-reference.md)
