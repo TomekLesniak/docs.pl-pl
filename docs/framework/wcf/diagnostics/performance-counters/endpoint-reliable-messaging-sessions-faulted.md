@@ -2,15 +2,17 @@
 title: 'Punkt końcowy: Błędne sesje komunikacji niezawodnej'
 ms.date: 03/30/2017
 ms.assetid: 63eb536f-cb9d-4c9a-b620-947d1828b1ce
-ms.openlocfilehash: 0a032570baf16841d49ddf5b0ab6d6c66567e1e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 716a0090bd7e1b21fc32ba9e37b0510bb2361e3e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61951167"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256615"
 ---
 # <a name="endpoint-reliable-messaging-sessions-faulted"></a>Punkt końcowy: Błędne sesje komunikacji niezawodnej
-Nazwa komputera: Błędne sesje niezawodnej obsługi komunikatów na sekundę.  
+
+Nazwa licznika: Błędy sesji niezawodnej obsługi komunikatów na sekundę.  
   
 ## <a name="description"></a>Opis  
- Liczba sesje niezawodnej obsługi komunikatów, które są umieszczone w tym punkcie końcowym na sekundę.
+
+ Liczba sesji niezawodnej obsługi komunikatów, które są błędne w tym punkcie końcowym w drugim.

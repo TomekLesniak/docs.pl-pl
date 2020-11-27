@@ -1,30 +1,32 @@
 ---
-title: 'Punkt końcowy: Błędy walidacji zabezpieczeń i uwierzytelniania'
+title: 'Punkt końcowy: Błędy weryfikacji zabezpieczeń i uwierzytelniania'
 ms.date: 03/30/2017
 ms.assetid: 5bad60aa-6084-4c7b-aefd-9b581f04382e
-ms.openlocfilehash: 9e0192ea600bb52abd555f2f83cfe8e96d3fe203
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a9a4758b26c744c55af200aee22a7e90c5a5cf57
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619337"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256472"
 ---
-# <a name="endpoint-security-validation-and-authentication-failures"></a>Punkt końcowy: Błędy walidacji zabezpieczeń i uwierzytelniania
-Nazwa komputera: Błędy walidacji zabezpieczeń i uwierzytelniania  
+# <a name="endpoint-security-validation-and-authentication-failures"></a>Punkt końcowy: Błędy weryfikacji zabezpieczeń i uwierzytelniania
+
+Nazwa licznika: Błędy walidacji zabezpieczeń i uwierzytelniania  
   
 ## <a name="description"></a>Opis  
- Ten licznik jest zwiększany, gdy komunikat zostanie odrzucony, ze względu na problem z zabezpieczeniami nie pasuje do żadnego licznika "Zabezpieczenia połączeń nie masz praw". Takie problemy obejmują:  
+
+ Ten licznik jest zwiększany za każdym razem, gdy komunikat zostanie odrzucony z powodu problemu z zabezpieczeniami, którego nie dotyczy licznik "wywołania zabezpieczeń bez autoryzacji". Takie problemy obejmują:  
   
-- Nie można odczytać tokenu klienta z komunikatu.  
+- Nie można odczytać z komunikatu tokenu klienta.  
   
-- Token klienta nie powiodło się uwierzytelnianie (nieprawidłowe hasło).  
+- Uwierzytelnianie tokenu klienta nie powiodło się (nieprawidłowe hasło).  
   
-- Weryfikacja podpisu nie powiodła się (komunikat został zmodyfikowany).  
+- Weryfikacja podpisu nie powiodła się (komunikat został naruszony).  
   
-- Komunikat jest duplikatem z poprzedniej wersji, która może się zdarzyć podczas ataku powtarzania.  
+- Komunikat jest duplikatem z poprzedniego, który może wystąpić podczas ataku metodą powtórzeń.  
   
 - Wystąpił błąd odszyfrowywania.  
   
-- Komunikat brakuje niektórych wymaganych elementów (Brak znacznika czasu lub zaszyfrowanego bloku danych).  
+- W komunikacie brakuje niektórych wymaganych elementów (Brak znacznika czasu lub zaszyfrowanego bloku danych).  
   
-- Wystąpił błąd podczas uzgadniania TLSNEGO/SPNEGO.
+- Wystąpiły błędy podczas uzgadniania TLSNEGO/SPNEGO.

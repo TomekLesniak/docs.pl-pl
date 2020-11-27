@@ -10,14 +10,15 @@ helpviewer_keywords:
 - interoperation with unmanaged code, marshaling
 - marshaling behavior
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
-ms.openlocfilehash: f2a508b87d2f4a9ad92bc0f27fc44d74d8e916d3
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3e18bb5c4caa43a8e951eed3fc6992ec1b2d2afb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555279"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256659"
 ---
 # <a name="default-marshaling-behavior"></a>Domyślne zachowanie marshalingu
+
 Kierowanie międzyoperacyjności operuje na regułach, które określają sposób, w jaki dane skojarzone z parametrami metod działają w miarę przekazywania między pamięcią zarządzaną i niezarządzaną. Te wbudowane reguły kontrolują takie działania kierujące jako przekształcenia typu danych, niezależnie od tego, czy wywoływany może zmienić dane przekazywane do niego, i zwrócić te zmiany do obiektu wywołującego, i w jakich okolicznościach Organizator zapewnia optymalizację wydajności.  
   
  W tej sekcji opisano domyślne właściwości behawioralne usługi organizowania międzyoperacyjnego. Przedstawia szczegółowe informacje na temat organizowania tablic, typów logicznych, typów znaków, delegatów, klas, obiektów, ciągów i struktur.  
@@ -26,6 +27,7 @@ Kierowanie międzyoperacyjności operuje na regułach, które określają sposó
 > Kierowanie typów ogólnych nie jest obsługiwane. Aby uzyskać więcej informacji, zobacz [współdziałanie przy użyciu typów ogólnych](/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100)).  
   
 ## <a name="memory-management-with-the-interop-marshaler"></a>Zarządzanie pamięcią za pomocą Organizatora międzyoperacyjnego  
+
  Organizator międzyoperacyjny zawsze próbuje zwolnić pamięć przydzieloną przez kod niezarządzany. To zachowanie jest zgodne z regułami zarządzania pamięcią COM, ale różni się od zasad, które regulują natywne C++.  
   
  Może wystąpić sytuacja, w której przewidywane jest zachowanie natywnego języka C++ (bez zwalniania pamięci) podczas korzystania z funkcji wywołania platformy, która automatycznie zwalnia pamięć dla wskaźników. Na przykład, wywołanie następującej niezarządzanej metody z biblioteki C++ DLL nie zwalnia automatycznie żadnej pamięci.  
@@ -43,12 +45,15 @@ BSTR MethodOne (BSTR b) {
  Środowisko uruchomieniowe zawsze używa metody **CoTaskMemFree** do zwolnienia pamięci. Jeśli pamięć, z którą pracujesz, nie została przypisana przy użyciu metody **CoTaskMemAlloc** , należy użyć elementu **IntPtr** i zwolnić pamięć ręcznie przy użyciu odpowiedniej metody. Podobnie można uniknąć automatycznej zwalniania pamięci w sytuacjach, w których pamięć nigdy nie powinna zostać zwolniona, na przykład przy użyciu funkcji **GetCommandLine** z Kernel32.dll, która zwraca wskaźnik do pamięci jądra. Aby uzyskać szczegółowe informacje na temat ręcznego zwalniania pamięci, zobacz [przykładowe bufory](/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100)).  
   
 ## <a name="default-marshaling-for-classes"></a>Kierowanie domyślne dla klas  
+
  Klasy mogą być organizowane tylko przez międzyoperacyjność modelu COM i są zawsze organizowane jako interfejsy. W niektórych przypadkach interfejs używany do organizowania klasy jest nazywany interfejsem klasy. Aby uzyskać informacje na temat przesłaniania interfejsu klasy z wybranym interfejsem, zobacz [wprowadzenie do interfejsu klasy](../../standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface).  
   
 ### <a name="passing-classes-to-com"></a>Przekazywanie klas do modelu COM  
+
  Gdy zarządzana Klasa jest przekazywana do modelu COM, organizator międzyoperacyjny automatycznie zawija klasę z serwerem proxy modelu COM i przekazuje interfejs klasy utworzony przez serwer proxy do wywołania metody COM. Następnie serwer proxy deleguje wszystkie wywołania w interfejsie klasy z powrotem do obiektu zarządzanego. Serwer proxy ujawnia również inne interfejsy, które nie są jawnie zaimplementowane przez klasę. Serwer proxy automatycznie implementuje interfejsy, takie jak **IUnknown** i **IDispatch** w imieniu klasy.  
   
 ### <a name="passing-classes-to-net-code"></a>Przekazywanie klas do kodu platformy .NET  
+
  Klasy coclass nie są zwykle używane jako argumenty metod w modelu COM. Zamiast tego, domyślnym interfejsem jest zwykle przekazanie zamiast klasy coclass.  
   
  Gdy interfejs jest przekazywany do kodu zarządzanego, organizator międzyoperacyjny jest odpowiedzialny za pakowanie interfejsu z odpowiednią otoką i przekazanie otoki do metody zarządzanej. Określanie otoki, która ma być używana, może być trudne. Każde wystąpienie obiektu COM ma pojedynczą, unikatową otokę, niezależnie od liczby interfejsów implementujących obiekt. Na przykład pojedynczy obiekt COM, który implementuje pięć odrębnych interfejsów, ma tylko jedną otokę. Ta sama otoka uwidacznia wszystkie pięć interfejsów. Jeśli tworzone są dwa wystąpienia obiektu COM, tworzone są dwa wystąpienia otoki.  
@@ -67,9 +72,10 @@ BSTR MethodOne (BSTR b) {
   
 2. Organizator wysyła zapytanie do interfejsu dla interfejsu **IProvideClassInfo** . Jeśli jest podany, organizator używa **Metoda ITypeInfo** zwrócone z **IProvideClassInfo. GetClassInfo** , aby określić identyfikator CLSID klasy, która uwidacznia interfejs. Organizator może użyć identyfikatora CLSID, aby zlokalizować metadane dla otoki.  
   
-3. Jeśli organizator nadal nie może zidentyfikować klasy, zawija interfejs z klasą otoki ogólnej o nazwie **System. __ComObject**.  
+3. Jeśli organizator nadal nie może zidentyfikować klasy, zawija interfejs z klasą otoki ogólnej o nazwie **System.__ComObject**.  
   
 ## <a name="default-marshaling-for-delegates"></a>Kierowanie domyślne dla delegatów  
+
  Zarządzany delegat jest zorganizowany jako interfejs COM lub jako wskaźnik funkcji, na podstawie mechanizmu wywołującego:  
   
 - W przypadku wywołania platformy delegat jest domyślnie zorganizowany jako niezarządzany wskaźnik funkcji.  
@@ -161,6 +167,7 @@ internal class DelegateTest {
 ```  
   
 ## <a name="default-marshaling-for-value-types"></a>Kierowanie domyślne dla typów wartości  
+
  Większość typów wartości, takich jak liczby całkowite i liczby zmiennoprzecinkowe, są [danych kopiowalnych](blittable-and-non-blittable-types.md) i nie wymaga organizowania. Inne typy inne [niż danych kopiowalnych](blittable-and-non-blittable-types.md) mają podobne reprezentacje w pamięci zarządzanej i niezarządzanej oraz wymagają organizowania. Nadal inne typy wymagają jawnego formatowania w granicach międzyoperacyjnych.  
   
  Ta sekcja zawiera informacje o następujących sformatowanych typach wartości:  
@@ -186,6 +193,7 @@ internal class DelegateTest {
      Wskazuje, że elementy członkowskie są określane zgodnie z <xref:System.Runtime.InteropServices.FieldOffsetAttribute> podanymi dla każdego pola.  
   
 ### <a name="value-types-used-in-platform-invoke"></a>Typy wartości używane w wywołaniu platformy  
+
  W poniższym przykładzie `Point` `Rect` typy i zapewniają informacje o układzie elementu członkowskiego przy użyciu **StructLayoutAttribute**.  
   
 ```vb  
@@ -330,6 +338,7 @@ public class Point {
 ```  
   
 ### <a name="value-types-used-in-com-interop"></a>Typy wartości używane w międzyoperacyjności modelu COM  
+
  Sformatowane typy mogą być również przesyłane do wywołań metod międzyoperacyjnych modelu COM. W rzeczywistości, gdy eksportowane do biblioteki typów, typy wartości są automatycznie konwertowane na struktury. Jak pokazano na poniższym przykładzie, `Point` Typ wartości jest definicją typu (TypeDef) o nazwie `Point` . Wszystkie odwołania do `Point` typu wartości w innym miejscu w bibliotece typów są zastępowane `Point` typedef.  
   
  **Reprezentacja biblioteki typów**  
@@ -353,6 +362,7 @@ interface _Graphics {
 > Struktury z <xref:System.Runtime.InteropServices.LayoutKind> wartością wyliczenia ustawioną na wartość **Explicit** nie mogą być używane w międzyoperacyjności modelu COM, ponieważ eksportowana biblioteka typów nie może wyrazić jawnego układu.  
   
 ### <a name="system-value-types"></a>Typy wartości systemu  
+
  <xref:System>Przestrzeń nazw ma kilka typów wartości, które reprezentują postać opakowaną typów pierwotnych środowiska uruchomieniowego. Na przykład struktura typu wartości <xref:System.Int32?displayProperty=nameWithType> reprezentuje opakowaną postać **ELEMENT_TYPE_I4**. Zamiast organizować te typy jako struktury, tak jak inne sformatowane typy, są organizowane w taki sam sposób, jak w przypadku typów pierwotnych. W związku z tym obiekt **System. Int32** jest zorganizowany jako **ELEMENT_TYPE_I4** zamiast struktury zawierającej pojedynczy element członkowski typu **Long**. Poniższa tabela zawiera listę typów wartości w przestrzeni nazw **systemu** , które są opakowane na typy pierwotne.  
   
 |Typ wartości systemowej|Typ elementu|  
@@ -377,12 +387,12 @@ interface _Graphics {
   
 |Typ wartości systemowej|Typ IDL|  
 |-----------------------|--------------|  
-|<xref:System.DateTime?displayProperty=nameWithType>|**DNIU**|  
+|<xref:System.DateTime?displayProperty=nameWithType>|**DATE**|  
 |<xref:System.Decimal?displayProperty=nameWithType>|**DOKŁADNOŚCI**|  
 |<xref:System.Guid?displayProperty=nameWithType>|**IDENT**|  
 |<xref:System.Drawing.Color?displayProperty=nameWithType>|**OLE_COLOR**|  
   
- Poniższy kod przedstawia definicję niezarządzanych typów **Date**, **GUID**, **Decimal**i **OLE_COLOR** w bibliotece typów Stdole2.  
+ Poniższy kod przedstawia definicję niezarządzanych typów **Date**, **GUID**, **Decimal** i **OLE_COLOR** w bibliotece typów Stdole2.  
   
 #### <a name="type-library-representation"></a>Reprezentacja biblioteki typów  
   
@@ -438,7 +448,7 @@ interface IValueTypes : IDispatch {
 };  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Typy kopiowalne i niekopiowalne](blittable-and-non-blittable-types.md)
 - [Kopiowanie i przypinanie](copying-and-pinning.md)

@@ -2,19 +2,21 @@
 title: Powiązania WS
 ms.date: 03/30/2017
 ms.assetid: 629945b2-d771-46d7-a87b-5df3b2e460da
-ms.openlocfilehash: b17391a882e4a85b717376f644fb3b6195073a70
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e4e37dc4b04cfa44cbca4367046c0ee24d182956
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84589763"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256719"
 ---
 # <a name="ws-binding"></a>Powiązania WS
+
 Ta sekcja zawiera przykłady demonstrujące powiązanie usługi systemu Windows w Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Przepływ transakcji WS](ws-transaction-flow.md)  
- Demonstruje użycie transakcji skoordynowanej przez klienta oraz opcji klienta i serwera dla przepływu transakcji przy użyciu protokołu transakcji WS-lub OleTransactions.  
+ Demonstruje użycie transakcji skoordynowanej przez klienta oraz opcji klienta i serwera dla przepływu transakcji przy użyciu WS-Atomic transakcji lub protokołu OleTransactions.  
   
  [Powiązanie HTTP w standardzie WS 2007 Federation](ws-2007-federation-http-binding.md)  
  Demonstruje użycie <xref:System.ServiceModel.WS2007FederationHttpBinding> .  

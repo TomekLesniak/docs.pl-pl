@@ -1,16 +1,18 @@
 ---
-title: 'Punkt końcowy: Przepływ transakcji'
+title: 'Punkt końcowy: Przekazane transakcje'
 ms.date: 03/30/2017
 ms.assetid: 66e83f05-349b-4e4f-ac4a-58345e503a30
-ms.openlocfilehash: 2e7630c2b09e67591c44b71cc5b1ce99350adf28
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 15b1111f78948ca1c8825945085e7b895fb9a0e3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61916243"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256368"
 ---
-# <a name="endpoint-transactions-flowed"></a>Punkt końcowy: Przepływ transakcji
-Nazwa komputera: Przepływ transakcji.  
+# <a name="endpoint-transactions-flowed"></a>Punkt końcowy: Przekazane transakcje
+
+Nazwa licznika: przepływają transakcje.  
   
 ## <a name="description"></a>Opis  
- Liczba transakcji przekazane do operacji w tym punkcie końcowym. Ten licznik jest zwiększany ilekroć dowolny identyfikator transakcji znajduje się w wiadomości wysyłane do punktu końcowego.
+
+ Liczba transakcji przepływających do operacji w tym punkcie końcowym. Ten licznik jest zwiększany za każdym razem, gdy w komunikacie wysyłanym do punktu końcowego jest obecny identyfikator transakcji.

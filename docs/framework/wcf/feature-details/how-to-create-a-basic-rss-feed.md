@@ -1,18 +1,19 @@
 ---
-title: 'Instrukcje: Tworzenie podstawowego kanału informacyjnego RSS'
+title: 'Instrukcje: tworzenie podstawowego kanału informacyjnego RSS'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 431879b8-a5f8-4947-ad1e-4768c726aca8
-ms.openlocfilehash: 872fe325a6705e79d026cd7f6e1f7cfef5145307
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d322dd40fd024685d6f3236caed41ae5eec1f375
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599025"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96256810"
 ---
-# <a name="how-to-create-a-basic-rss-feed"></a>Instrukcje: Tworzenie podstawowego kanału informacyjnego RSS
+# <a name="how-to-create-a-basic-rss-feed"></a>Instrukcje: tworzenie podstawowego kanału informacyjnego RSS
+
 Windows Communication Foundation (WCF) umożliwia utworzenie usługi, która uwidacznia zespolone źródło danych. W tym temacie omówiono sposób tworzenia usługi zespolonej, która uwidacznia kanał informacyjny zespolonej RSS.  
   
 ### <a name="to-create-a-basic-syndication-service"></a>Aby utworzyć podstawową usługę zespalania  
@@ -86,13 +87,15 @@ Windows Communication Foundation (WCF) umożliwia utworzenie usługi, która uwi
      [!code-vb[htRssBasic#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htrssbasic/vb/snippets.vb#11)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej znajduje się pełna lista kodów dla tego przykładu.  
   
  [!code-csharp[htRssBasic#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/htrssbasic/cs/program.cs#12)]
  [!code-vb[htRssBasic#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htrssbasic/vb/program.vb#12)]  
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
- Podczas kompilowania powyższego kodu odwołuje się do System. ServiceModel. dll i system. ServiceModel. Web. dll.  
+
+ Podczas kompilowania powyższego kodu odwołuje się System.ServiceModel.dll i System.ServiceModel.Web.dll.  
   
 ## <a name="see-also"></a>Zobacz też
 
