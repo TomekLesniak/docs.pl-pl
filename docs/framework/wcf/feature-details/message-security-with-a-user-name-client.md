@@ -5,46 +5,50 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
-ms.openlocfilehash: 9bcac0e45d44270d27a4cf04677e967a80e94b90
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 7168b393bde626c8c413cda3c7422e0eee4ce267
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90550205"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96292873"
 ---
-# <a name="message-security-with-a-user-name-client"></a><span data-ttu-id="d5140-102">Zabezpieczenia na poziomie komunikatu z użyciem klienta nazwy użytkownika</span><span class="sxs-lookup"><span data-stu-id="d5140-102">Message Security with a User Name Client</span></span>
-<span data-ttu-id="d5140-103">Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation (WCF) i klienta zabezpieczoną przy użyciu zabezpieczeń na poziomie komunikatów.</span><span class="sxs-lookup"><span data-stu-id="d5140-103">The following illustration shows an Windows Communication Foundation (WCF) service and client secured using message-level security.</span></span> <span data-ttu-id="d5140-104">Usługa jest uwierzytelniana przy użyciu certyfikatu X. 509.</span><span class="sxs-lookup"><span data-stu-id="d5140-104">The service is authenticated with an X.509 certificate.</span></span> <span data-ttu-id="d5140-105">Klient jest uwierzytelniany przy użyciu nazwy użytkownika i hasła.</span><span class="sxs-lookup"><span data-stu-id="d5140-105">The client authenticates using a user name and password.</span></span>  
+# <a name="message-security-with-a-user-name-client"></a><span data-ttu-id="d52cf-102">Zabezpieczenia na poziomie komunikatu z użyciem klienta nazwy użytkownika</span><span class="sxs-lookup"><span data-stu-id="d52cf-102">Message Security with a User Name Client</span></span>
+
+<span data-ttu-id="d52cf-103">Na poniższej ilustracji przedstawiono usługę Windows Communication Foundation (WCF) i klienta zabezpieczoną przy użyciu zabezpieczeń na poziomie komunikatów.</span><span class="sxs-lookup"><span data-stu-id="d52cf-103">The following illustration shows an Windows Communication Foundation (WCF) service and client secured using message-level security.</span></span> <span data-ttu-id="d52cf-104">Usługa jest uwierzytelniana przy użyciu certyfikatu X. 509.</span><span class="sxs-lookup"><span data-stu-id="d52cf-104">The service is authenticated with an X.509 certificate.</span></span> <span data-ttu-id="d52cf-105">Klient jest uwierzytelniany przy użyciu nazwy użytkownika i hasła.</span><span class="sxs-lookup"><span data-stu-id="d52cf-105">The client authenticates using a user name and password.</span></span>  
   
- <span data-ttu-id="d5140-106">Aby zapoznać się z przykładową aplikacją, zobacz [Nazwa użytkownika zabezpieczeń wiadomości](../samples/message-security-user-name.md).</span><span class="sxs-lookup"><span data-stu-id="d5140-106">For a sample application, see [Message Security User Name](../samples/message-security-user-name.md).</span></span>  
+ <span data-ttu-id="d52cf-106">Aby zapoznać się z przykładową aplikacją, zobacz [Nazwa użytkownika zabezpieczeń wiadomości](../samples/message-security-user-name.md).</span><span class="sxs-lookup"><span data-stu-id="d52cf-106">For a sample application, see [Message Security User Name](../samples/message-security-user-name.md).</span></span>  
   
- <span data-ttu-id="d5140-107">![Zabezpieczenia komunikatów przy użyciu uwierzytelniania nazwy użytkownika](media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61-7e1d-42f5-b1af-195bfee5b3c6")</span><span class="sxs-lookup"><span data-stu-id="d5140-107">![Message security using username authentication](media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61-7e1d-42f5-b1af-195bfee5b3c6")</span></span>  
+ <span data-ttu-id="d52cf-107">![Zabezpieczenia komunikatów przy użyciu uwierzytelniania nazwy użytkownika](media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61-7e1d-42f5-b1af-195bfee5b3c6")</span><span class="sxs-lookup"><span data-stu-id="d52cf-107">![Message security using username authentication](media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61-7e1d-42f5-b1af-195bfee5b3c6")</span></span>  
   
-|<span data-ttu-id="d5140-108">Charakterystyka</span><span class="sxs-lookup"><span data-stu-id="d5140-108">Characteristic</span></span>|<span data-ttu-id="d5140-109">Opis</span><span class="sxs-lookup"><span data-stu-id="d5140-109">Description</span></span>|  
+|<span data-ttu-id="d52cf-108">Charakterystyka</span><span class="sxs-lookup"><span data-stu-id="d52cf-108">Characteristic</span></span>|<span data-ttu-id="d52cf-109">Opis</span><span class="sxs-lookup"><span data-stu-id="d52cf-109">Description</span></span>|  
 |--------------------|-----------------|  
-|<span data-ttu-id="d5140-110">Tryb zabezpieczeń</span><span class="sxs-lookup"><span data-stu-id="d5140-110">Security Mode</span></span>|<span data-ttu-id="d5140-111">Wiadomość</span><span class="sxs-lookup"><span data-stu-id="d5140-111">Message</span></span>|  
-|<span data-ttu-id="d5140-112">Współdziałanie</span><span class="sxs-lookup"><span data-stu-id="d5140-112">Interoperability</span></span>|<span data-ttu-id="d5140-113">Tylko Windows Communication Foundation (WCF)</span><span class="sxs-lookup"><span data-stu-id="d5140-113">Windows Communication Foundation (WCF) only</span></span>|  
-|<span data-ttu-id="d5140-114">Uwierzytelnianie (serwer)</span><span class="sxs-lookup"><span data-stu-id="d5140-114">Authentication (Server)</span></span>|<span data-ttu-id="d5140-115">Początkowe negocjowanie wymaga uwierzytelniania serwera</span><span class="sxs-lookup"><span data-stu-id="d5140-115">Initial negotiation requires server authentication</span></span>|  
-|<span data-ttu-id="d5140-116">Uwierzytelnianie (klient)</span><span class="sxs-lookup"><span data-stu-id="d5140-116">Authentication (Client)</span></span>|<span data-ttu-id="d5140-117">Nazwa użytkownika/hasło</span><span class="sxs-lookup"><span data-stu-id="d5140-117">User name/password</span></span>|  
-|<span data-ttu-id="d5140-118">Integralność</span><span class="sxs-lookup"><span data-stu-id="d5140-118">Integrity</span></span>|<span data-ttu-id="d5140-119">Tak, przy użyciu kontekstu zabezpieczeń udostępnionych</span><span class="sxs-lookup"><span data-stu-id="d5140-119">Yes, using shared security context</span></span>|  
-|<span data-ttu-id="d5140-120">Poufność</span><span class="sxs-lookup"><span data-stu-id="d5140-120">Confidentiality</span></span>|<span data-ttu-id="d5140-121">Tak, przy użyciu kontekstu zabezpieczeń udostępnionych</span><span class="sxs-lookup"><span data-stu-id="d5140-121">Yes, using shared security context</span></span>|  
-|<span data-ttu-id="d5140-122">Transport</span><span class="sxs-lookup"><span data-stu-id="d5140-122">Transport</span></span>|<span data-ttu-id="d5140-123">HTTP</span><span class="sxs-lookup"><span data-stu-id="d5140-123">HTTP</span></span>|  
-|<span data-ttu-id="d5140-124">Wiązanie</span><span class="sxs-lookup"><span data-stu-id="d5140-124">Binding</span></span>|<xref:System.ServiceModel.WSHttpBinding>|  
+|<span data-ttu-id="d52cf-110">Tryb zabezpieczeń</span><span class="sxs-lookup"><span data-stu-id="d52cf-110">Security Mode</span></span>|<span data-ttu-id="d52cf-111">Wiadomość</span><span class="sxs-lookup"><span data-stu-id="d52cf-111">Message</span></span>|  
+|<span data-ttu-id="d52cf-112">Współdziałanie</span><span class="sxs-lookup"><span data-stu-id="d52cf-112">Interoperability</span></span>|<span data-ttu-id="d52cf-113">Tylko Windows Communication Foundation (WCF)</span><span class="sxs-lookup"><span data-stu-id="d52cf-113">Windows Communication Foundation (WCF) only</span></span>|  
+|<span data-ttu-id="d52cf-114">Uwierzytelnianie (serwer)</span><span class="sxs-lookup"><span data-stu-id="d52cf-114">Authentication (Server)</span></span>|<span data-ttu-id="d52cf-115">Początkowe negocjowanie wymaga uwierzytelniania serwera</span><span class="sxs-lookup"><span data-stu-id="d52cf-115">Initial negotiation requires server authentication</span></span>|  
+|<span data-ttu-id="d52cf-116">Uwierzytelnianie (klient)</span><span class="sxs-lookup"><span data-stu-id="d52cf-116">Authentication (Client)</span></span>|<span data-ttu-id="d52cf-117">Nazwa użytkownika/hasło</span><span class="sxs-lookup"><span data-stu-id="d52cf-117">User name/password</span></span>|  
+|<span data-ttu-id="d52cf-118">Integralność</span><span class="sxs-lookup"><span data-stu-id="d52cf-118">Integrity</span></span>|<span data-ttu-id="d52cf-119">Tak, przy użyciu kontekstu zabezpieczeń udostępnionych</span><span class="sxs-lookup"><span data-stu-id="d52cf-119">Yes, using shared security context</span></span>|  
+|<span data-ttu-id="d52cf-120">Poufność</span><span class="sxs-lookup"><span data-stu-id="d52cf-120">Confidentiality</span></span>|<span data-ttu-id="d52cf-121">Tak, przy użyciu kontekstu zabezpieczeń udostępnionych</span><span class="sxs-lookup"><span data-stu-id="d52cf-121">Yes, using shared security context</span></span>|  
+|<span data-ttu-id="d52cf-122">Transport</span><span class="sxs-lookup"><span data-stu-id="d52cf-122">Transport</span></span>|<span data-ttu-id="d52cf-123">HTTP</span><span class="sxs-lookup"><span data-stu-id="d52cf-123">HTTP</span></span>|  
+|<span data-ttu-id="d52cf-124">Wiązanie</span><span class="sxs-lookup"><span data-stu-id="d52cf-124">Binding</span></span>|<xref:System.ServiceModel.WSHttpBinding>|  
   
-## <a name="service"></a><span data-ttu-id="d5140-125">Usługa</span><span class="sxs-lookup"><span data-stu-id="d5140-125">Service</span></span>  
- <span data-ttu-id="d5140-126">Poniższy kod i konfiguracja są przeznaczone do niezależnego uruchamiania.</span><span class="sxs-lookup"><span data-stu-id="d5140-126">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="d5140-127">Wykonaj jedną z następujących czynności:</span><span class="sxs-lookup"><span data-stu-id="d5140-127">Do one of the following:</span></span>  
+## <a name="service"></a><span data-ttu-id="d52cf-125">Usługa</span><span class="sxs-lookup"><span data-stu-id="d52cf-125">Service</span></span>  
+
+ <span data-ttu-id="d52cf-126">Poniższy kod i konfiguracja są przeznaczone do niezależnego uruchamiania.</span><span class="sxs-lookup"><span data-stu-id="d52cf-126">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="d52cf-127">Wykonaj jedną z następujących czynności:</span><span class="sxs-lookup"><span data-stu-id="d52cf-127">Do one of the following:</span></span>  
   
-- <span data-ttu-id="d5140-128">Tworzenie usługi autonomicznej przy użyciu kodu bez konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="d5140-128">Create a stand-alone service using the code with no configuration.</span></span>  
+- <span data-ttu-id="d52cf-128">Tworzenie usługi autonomicznej przy użyciu kodu bez konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="d52cf-128">Create a stand-alone service using the code with no configuration.</span></span>  
   
-- <span data-ttu-id="d5140-129">Utwórz usługę przy użyciu podanej konfiguracji, ale nie Definiuj żadnych punktów końcowych.</span><span class="sxs-lookup"><span data-stu-id="d5140-129">Create a service using the supplied configuration, but do not define any endpoints.</span></span>  
+- <span data-ttu-id="d52cf-129">Utwórz usługę przy użyciu podanej konfiguracji, ale nie Definiuj żadnych punktów końcowych.</span><span class="sxs-lookup"><span data-stu-id="d52cf-129">Create a service using the supplied configuration, but do not define any endpoints.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="d5140-130">Kod</span><span class="sxs-lookup"><span data-stu-id="d5140-130">Code</span></span>  
- <span data-ttu-id="d5140-131">Poniższy kod przedstawia sposób tworzenia punktu końcowego usługi, który korzysta z zabezpieczeń komunikatów.</span><span class="sxs-lookup"><span data-stu-id="d5140-131">The following code shows how to create a service endpoint that uses message security.</span></span>  
+### <a name="code"></a><span data-ttu-id="d52cf-130">Kod</span><span class="sxs-lookup"><span data-stu-id="d52cf-130">Code</span></span>  
+
+ <span data-ttu-id="d52cf-131">Poniższy kod przedstawia sposób tworzenia punktu końcowego usługi, który korzysta z zabezpieczeń komunikatów.</span><span class="sxs-lookup"><span data-stu-id="d52cf-131">The following code shows how to create a service endpoint that uses message security.</span></span>  
   
  [!code-csharp[C_SecurityScenarios#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#9)]
  [!code-vb[C_SecurityScenarios#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#9)]  
   
-### <a name="configuration"></a><span data-ttu-id="d5140-132">Konfiguracja</span><span class="sxs-lookup"><span data-stu-id="d5140-132">Configuration</span></span>  
- <span data-ttu-id="d5140-133">Zamiast kodu można użyć następującej konfiguracji:</span><span class="sxs-lookup"><span data-stu-id="d5140-133">The following configuration can be used instead of the code:</span></span>  
+### <a name="configuration"></a><span data-ttu-id="d52cf-132">Konfigurowanie</span><span class="sxs-lookup"><span data-stu-id="d52cf-132">Configuration</span></span>  
+
+ <span data-ttu-id="d52cf-133">Zamiast kodu można użyć następującej konfiguracji:</span><span class="sxs-lookup"><span data-stu-id="d52cf-133">The following configuration can be used instead of the code:</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -86,16 +90,18 @@ ms.locfileid: "90550205"
 </configuration>  
 ```  
   
-## <a name="client"></a><span data-ttu-id="d5140-134">Klient</span><span class="sxs-lookup"><span data-stu-id="d5140-134">Client</span></span>  
+## <a name="client"></a><span data-ttu-id="d52cf-134">Klient</span><span class="sxs-lookup"><span data-stu-id="d52cf-134">Client</span></span>  
   
-### <a name="code"></a><span data-ttu-id="d5140-135">Kod</span><span class="sxs-lookup"><span data-stu-id="d5140-135">Code</span></span>  
- <span data-ttu-id="d5140-136">Poniższy kod tworzy klienta.</span><span class="sxs-lookup"><span data-stu-id="d5140-136">The following code creates the client.</span></span> <span data-ttu-id="d5140-137">Powiązanie jest zabezpieczeniami trybu komunikatów, a typ poświadczeń klienta jest ustawiony na `UserName` .</span><span class="sxs-lookup"><span data-stu-id="d5140-137">The binding is to message mode security, and the client credential type is set to `UserName`.</span></span> <span data-ttu-id="d5140-138">Nazwę użytkownika i hasło można określić tylko przy użyciu kodu (nie można go konfigurować).</span><span class="sxs-lookup"><span data-stu-id="d5140-138">The user name and password can only be specified using code (it is not configurable).</span></span> <span data-ttu-id="d5140-139">Kod, który ma zwrócić nazwę użytkownika i hasło, nie jest tutaj wyświetlany, ponieważ należy go wykonać na poziomie aplikacji.</span><span class="sxs-lookup"><span data-stu-id="d5140-139">The code to return the user name and password is not shown here because it must be done at the application level.</span></span> <span data-ttu-id="d5140-140">Na przykład użyj okna dialogowego Windows Forms, aby wysłać zapytanie do użytkownika o dane.</span><span class="sxs-lookup"><span data-stu-id="d5140-140">For example, use a Windows Forms dialog box to query the user for the data.</span></span>  
+### <a name="code"></a><span data-ttu-id="d52cf-135">Kod</span><span class="sxs-lookup"><span data-stu-id="d52cf-135">Code</span></span>  
+
+ <span data-ttu-id="d52cf-136">Poniższy kod tworzy klienta.</span><span class="sxs-lookup"><span data-stu-id="d52cf-136">The following code creates the client.</span></span> <span data-ttu-id="d52cf-137">Powiązanie jest zabezpieczeniami trybu komunikatów, a typ poświadczeń klienta jest ustawiony na `UserName` .</span><span class="sxs-lookup"><span data-stu-id="d52cf-137">The binding is to message mode security, and the client credential type is set to `UserName`.</span></span> <span data-ttu-id="d52cf-138">Nazwę użytkownika i hasło można określić tylko przy użyciu kodu (nie można go konfigurować).</span><span class="sxs-lookup"><span data-stu-id="d52cf-138">The user name and password can only be specified using code (it is not configurable).</span></span> <span data-ttu-id="d52cf-139">Kod, który ma zwrócić nazwę użytkownika i hasło, nie jest tutaj wyświetlany, ponieważ należy go wykonać na poziomie aplikacji.</span><span class="sxs-lookup"><span data-stu-id="d52cf-139">The code to return the user name and password is not shown here because it must be done at the application level.</span></span> <span data-ttu-id="d52cf-140">Na przykład użyj okna dialogowego Windows Forms, aby wysłać zapytanie do użytkownika o dane.</span><span class="sxs-lookup"><span data-stu-id="d52cf-140">For example, use a Windows Forms dialog box to query the user for the data.</span></span>  
   
  [!code-csharp[C_SecurityScenarios#16](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#16)]
  [!code-vb[C_SecurityScenarios#16](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#16)]  
   
-### <a name="configuration"></a><span data-ttu-id="d5140-141">Konfiguracja</span><span class="sxs-lookup"><span data-stu-id="d5140-141">Configuration</span></span>  
- <span data-ttu-id="d5140-142">Poniższy kod konfiguruje klienta.</span><span class="sxs-lookup"><span data-stu-id="d5140-142">The following code configures the client.</span></span> <span data-ttu-id="d5140-143">Powiązanie jest zabezpieczeniami trybu komunikatów, a typ poświadczeń klienta jest ustawiony na `UserName` .</span><span class="sxs-lookup"><span data-stu-id="d5140-143">The binding is to message mode security, and the client credential type is set to `UserName`.</span></span> <span data-ttu-id="d5140-144">Nazwę użytkownika i hasło można określić tylko przy użyciu kodu (nie można go konfigurować).</span><span class="sxs-lookup"><span data-stu-id="d5140-144">The user name and password can only be specified using code (it is not configurable).</span></span>  
+### <a name="configuration"></a><span data-ttu-id="d52cf-141">Konfigurowanie</span><span class="sxs-lookup"><span data-stu-id="d52cf-141">Configuration</span></span>  
+
+ <span data-ttu-id="d52cf-142">Poniższy kod konfiguruje klienta.</span><span class="sxs-lookup"><span data-stu-id="d52cf-142">The following code configures the client.</span></span> <span data-ttu-id="d52cf-143">Powiązanie jest zabezpieczeniami trybu komunikatów, a typ poświadczeń klienta jest ustawiony na `UserName` .</span><span class="sxs-lookup"><span data-stu-id="d52cf-143">The binding is to message mode security, and the client credential type is set to `UserName`.</span></span> <span data-ttu-id="d52cf-144">Nazwę użytkownika i hasło można określić tylko przy użyciu kodu (nie można go konfigurować).</span><span class="sxs-lookup"><span data-stu-id="d52cf-144">The user name and password can only be specified using code (it is not configurable).</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -125,10 +131,10 @@ ms.locfileid: "90550205"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="d5140-145">Zobacz także</span><span class="sxs-lookup"><span data-stu-id="d5140-145">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d52cf-145">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="d52cf-145">See also</span></span>
 
-- [<span data-ttu-id="d5140-146">Przegląd zabezpieczeń</span><span class="sxs-lookup"><span data-stu-id="d5140-146">Security Overview</span></span>](security-overview.md)
-- [<span data-ttu-id="d5140-147">Nazwa użytkownika zabezpieczeń komunikatów</span><span class="sxs-lookup"><span data-stu-id="d5140-147">Message Security User Name</span></span>](../samples/message-security-user-name.md)
-- [<span data-ttu-id="d5140-148">Uwierzytelnianie i tożsamość usług</span><span class="sxs-lookup"><span data-stu-id="d5140-148">Service Identity and Authentication</span></span>](service-identity-and-authentication.md)
+- [<span data-ttu-id="d52cf-146">Przegląd zabezpieczeń</span><span class="sxs-lookup"><span data-stu-id="d52cf-146">Security Overview</span></span>](security-overview.md)
+- [<span data-ttu-id="d52cf-147">Nazwa użytkownika zabezpieczeń komunikatów</span><span class="sxs-lookup"><span data-stu-id="d52cf-147">Message Security User Name</span></span>](../samples/message-security-user-name.md)
+- [<span data-ttu-id="d52cf-148">Uwierzytelnianie i tożsamość usług</span><span class="sxs-lookup"><span data-stu-id="d52cf-148">Service Identity and Authentication</span></span>](service-identity-and-authentication.md)
 - [\<identity>](../../configure-apps/file-schema/wcf/identity.md)
-- <span data-ttu-id="d5140-149">[Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))</span><span class="sxs-lookup"><span data-stu-id="d5140-149">[Security Model for Windows Server App Fabric](/previous-versions/appfabric/ee677202(v=azure.10))</span></span>
+- <span data-ttu-id="d52cf-149">[Model zabezpieczeń dla sieci szkieletowej aplikacji systemu Windows Server](/previous-versions/appfabric/ee677202(v=azure.10))</span><span class="sxs-lookup"><span data-stu-id="d52cf-149">[Security Model for Windows Server App Fabric](/previous-versions/appfabric/ee677202(v=azure.10))</span></span>
