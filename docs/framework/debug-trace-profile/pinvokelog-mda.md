@@ -10,23 +10,27 @@ helpviewer_keywords:
 - PInvokeLog MDA
 - managed debugging assistants (MDAs), platform invoke
 ms.assetid: b830444a-5003-49fe-b89b-b8bee22f7b1a
-ms.openlocfilehash: 05af4e17a91f7c0d8f3576a86d3d784ef6666aed
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: b8cb4805663a2b28a133f98503730199af695c4f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803693"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96271463"
 ---
 # <a name="pinvokelog-mda"></a>pInvokeLog MDA
+
 `pInvokeLog`Asystent debugowania zarządzanego (MDA) jest uaktywniany dla każdego unikatowego podpisu wywołania platformy używanego podczas wykonywania.  
   
 ## <a name="effect-on-the-runtime"></a>Wpływ na środowisko uruchomieniowe  
+
  To zdarzenie MDA nie ma wpływu na środowisko CLR.  
   
 ## <a name="output"></a>Dane wyjściowe  
+
  Komunikat wskazujący podpis wywołania platformy używany podczas wykonywania.  
   
 ## <a name="configuration"></a>Konfigurowanie  
+
  Każdy element dopasowania filtruje pliki. dll, do których są tworzone wywołania wywołania platformy.  
   
 ```xml  
@@ -42,7 +46,7 @@ ms.locfileid: "85803693"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Diagnozowanie błędów przy użyciu asystentów zarządzanego debugowania](diagnosing-errors-with-managed-debugging-assistants.md)
 - [Wykorzystywanie niezarządzanych funkcji DLL](../interop/consuming-unmanaged-dll-functions.md)

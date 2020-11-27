@@ -5,14 +5,15 @@ helpviewer_keywords:
 - service behaviors, throttling sample
 - Throttling Sample [Windows Communication Foundation]
 ms.assetid: 40bb3582-8ae9-4410-96f0-6c515bfaf47c
-ms.openlocfilehash: f007d153a04117df872ea2fcdc68af38c57b53b3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 89c460f58626abc2957f7f78e536ca43eea19afd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600870"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96271294"
 ---
 # <a name="throttling"></a>Ograniczanie przepływności
+
 W przykładzie ograniczania przepustowości zademonstrowano użycie kontroli ograniczania. Kontrolki ograniczania nakładają limity liczby współbieżnych wywołań, wystąpień lub sesji, aby zapobiec nadmiernemu zużyciu zasobów. Zachowanie ograniczania jest określone w ustawieniach pliku konfiguracji usługi. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md) , który implementuje usługę kalkulatora.  
   
  W tym przykładzie klient jest aplikacją konsolową (. exe), a usługa jest hostowana przez Internet Information Services (IIS).  

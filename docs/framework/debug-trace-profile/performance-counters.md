@@ -7,18 +7,19 @@ helpviewer_keywords:
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-ms.openlocfilehash: c5ee2fae9167dd508332d8e97a589a8ddb0394ac
-ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
+ms.openlocfilehash: c9e073ef088595d3ee5cd9e1af70140f12022179
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91712629"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96271476"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Liczniki wydajności w .NET Framework
 
 Ten temat zawiera listę liczników wydajności, które można znaleźć w [monitorze wydajności systemu Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)).  
 
 ## <a name="exception-performance-counters"></a>Liczniki wydajności wyjątków  
+
  Kategoria wyjątków środowiska CLR programu .NET Console zawiera liczniki, które zawierają informacje o wyjątkach zgłaszanych przez aplikację. W poniższej tabeli opisano te liczniki wydajności.  
   
 |Licznik wydajności|Opis|  
@@ -30,6 +31,7 @@ Ten temat zawiera listę liczników wydajności, które można znaleźć w [moni
 |**Rzutowanie na głębokość catch/s**|Wyświetla liczbę ramek stosu przepływających od klatki, która zgłosiła wyjątek do ramki, która obsługiwała wyjątek, na sekundę. Ten licznik resetuje do zera, gdy zostanie wprowadzona procedura obsługi wyjątków, więc zagnieżdżone wyjątki pokazują głębokość stosu obsługi do obsługi.<br /><br /> Ten licznik nie jest średnią w czasie; Wyświetla różnicę między wartościami obserwowanymi w ostatnich dwóch próbkach podzieloną przez czas trwania interwału próbkowania.|  
 
 ## <a name="interop-performance-counters"></a>Liczniki wydajności międzyoperacyjności  
+
  Kategoria programu .NET Interop dla środowiska URUCHOMIENIOWego w konsoli wydajności zawiera liczniki, które zawierają informacje o interakcjach aplikacji ze składnikami modelu COM, usługami COM+ i zewnętrznymi bibliotekami typów. W poniższej tabeli opisano te liczniki wydajności.  
   
 |Licznik wydajności|Opis|  
@@ -41,6 +43,7 @@ Ten temat zawiera listę liczników wydajności, które można znaleźć w [moni
 |**Liczba importowanych buforów TLB/s**|Zarezerwowane do użytku w przyszłości.|  
 
 ## <a name="jit-performance-counters"></a>liczniki wydajności JIT  
+
  Kategoria kompilatora wydajności JIT środowiska .NET CLR zawiera liczniki, które zawierają informacje o kodzie, który został skompilowany przez JIT. W poniższej tabeli opisano te liczniki wydajności.  
   
 |Licznik wydajności|Opis|  
@@ -53,6 +56,7 @@ Ten temat zawiera listę liczników wydajności, które można znaleźć w [moni
 |**Łączna liczba bajtów trybie JIT IL**|Przedstawia łączną liczbę bajtów MSIL skompilowanych JIT od momentu uruchomienia aplikacji. Ten licznik jest równoważny licznikowi **trybie JIT bajtów Il** .|  
 
 ## <a name="loading-performance-counters"></a>Ładowanie liczników wydajności  
+
  Kategoria ładowania CLR programu .NET Console zawiera liczniki, które zawierają informacje o zestawach, klasach i domenach aplikacji, które są ładowane. W poniższej tabeli opisano te liczniki wydajności.  
   
 |Licznik wydajności|Opis|  
@@ -75,6 +79,7 @@ Ten temat zawiera listę liczników wydajności, które można znaleźć w [moni
 |**Łączna liczba załadowanych klas**|Przedstawia skumulowaną liczbę klas załadowanych we wszystkich zestawach od momentu uruchomienia aplikacji.|  
 
 ## <a name="lock-and-thread-performance-counters"></a>Liczniki wydajności blokady i wątku  
+
  Kategoria programu .NET CLR LocksAndThreads z konsolą wydajności zawiera liczniki, które zawierają informacje o zarządzanych blokadach i wątkach używanych przez aplikację. W poniższej tabeli opisano te liczniki wydajności.  
   
 |Licznik wydajności|Opis|  
@@ -91,11 +96,12 @@ Ten temat zawiera listę liczników wydajności, które można znaleźć w [moni
 |**Łączna liczba rywalizacji**|Przedstawia łączną liczbę przypadków, w których wątki w czasie wykonywania próbowały uzyskać zarządzaną blokadę, która nie powiodła się.|  
 
 ## <a name="memory-performance-counters"></a>Liczniki wydajności pamięci  
+
  Kategoria pamięci CLR programu .NET Console zawiera liczniki, które dostarczają informacji na temat modułu wyrzucania elementów bezużytecznych. W poniższej tabeli opisano te liczniki wydajności.  
   
 |Licznik wydajności|Opis|  
 |-------------------------|-----------------|  
-|**Liczba bajtów we wszystkich stertach**|Wyświetla sumę **rozmiaru sterty generacji 1**, **rozmiaru sterty generacji 2**i liczników **rozmiaru sterty dla dużego obiektu** . Ten licznik wskazuje bieżącą pamięć przydzieloną w bajtach na sterty wyrzucania elementów bezużytecznych.|  
+|**Liczba bajtów we wszystkich stertach**|Wyświetla sumę **rozmiaru sterty generacji 1**, **rozmiaru sterty generacji 2** i liczników **rozmiaru sterty dla dużego obiektu** . Ten licznik wskazuje bieżącą pamięć przydzieloną w bajtach na sterty wyrzucania elementów bezużytecznych.|  
 |**Liczba dojść do # GC**|Wyświetla bieżącą liczbę dojść do wyrzucania elementów bezużytecznych w użyciu. Dojścia do wyrzucania elementów bezużytecznych są dojściami do zasobów zewnętrznych względem środowiska uruchomieniowego języka wspólnego i środowiska zarządzanego.|  
 |**Liczba kolekcji generacji 0**|Przedstawia liczbę obiektów generacji 0 (czyli najwygodniejszych, ostatnio przyznanych obiektów), które są zbierane jako elementy bezużyteczne od momentu uruchomienia aplikacji.<br /><br /> Wyrzucanie elementów bezużytecznych generacji 0 występuje, gdy dostępna pamięć w generacji 0 nie wystarcza do spełnienia żądania alokacji. Licznik jest zwiększany na końcu wyrzucania elementów bezużytecznych generacji 0. Wyrzucanie elementów bezużytecznych z większą generacji obejmuje wszystkie kolekcje o mniejszych generacjach. Ten licznik jest jawnie zwiększany w przypadku wystąpienia większej generacji (generacji 1 lub 2) wyrzucania elementów bezużytecznych.<br /><br /> Ten licznik wyświetla ostatnią obserwowana wartość. Wartość **licznika \_ _global** nie jest dokładna i powinna być ignorowana.|  
 |**Liczba kolekcji generacji 1**|Przedstawia liczbę obiektów generacji 1, które są zbierane jako elementy bezużyteczne od momentu uruchomienia aplikacji.<br /><br /> Licznik jest zwiększany po zakończeniu wyrzucania elementów bezużytecznych generacji 1. Wyrzucanie elementów bezużytecznych z większą generacji obejmuje wszystkie kolekcje o mniejszych generacjach. Ten licznik jest jawnie zwiększany, gdy następuje wyrzucanie elementów bezużytecznych generacji (generacja 2).<br /><br /> Ten licznik wyświetla ostatnią obserwowana wartość. Wartość **licznika \_ _global** nie jest dokładna i powinna być ignorowana.|  
@@ -107,7 +113,7 @@ Ten temat zawiera listę liczników wydajności, które można znaleźć w [moni
 |**Liczba zarezerwowanych bajtów**|Wyświetla ilość pamięci wirtualnej (w bajtach) aktualnie zarezerwowaną przez moduł wyrzucania elementów bezużytecznych. Zarezerwowana pamięć to przestrzeń pamięci wirtualnej zarezerwowana dla aplikacji, gdy nie zostały użyte żadne strony dysku lub pamięci głównej.|  
 |**Czas (%) w GC**|Przedstawia procent czasu, który upłynął podczas wykonywania wyrzucania elementów bezużytecznych od momentu ostatniego cyklu wyrzucania elementów bezużytecznych. Ten licznik zazwyczaj wskazuje prace wykonywane przez moduł wyrzucania elementów bezużytecznych w celu zbierania i kompaktowania pamięci w imieniu aplikacji. Ten licznik jest aktualizowany tylko na końcu wszystkich wyrzucania elementów bezużytecznych. Ten licznik nie jest średnią; jego wartość odzwierciedla ostatnią zaobserwowanej wartości.|  
 |**Przydzielono bajtów/sekundę**|Wyświetla liczbę bajtów na sekundę przydzieloną na stercie wyrzucania elementów bezużytecznych. Ten licznik jest aktualizowany na końcu każdej operacji wyrzucania elementów bezużytecznych, a nie przy każdej alokacji. Ten licznik nie jest średnią w czasie; Wyświetla różnicę między wartościami obserwowanymi w ostatnich dwóch próbkach podzieloną przez czas trwania interwału próbkowania.|  
-|**Osoby przeżyjąjące zakończenie**|Przedstawia liczbę obiektów zebranych w pamięci podręcznej, które przeżyły do kolekcji, ponieważ oczekują na sfinalizowanie. Jeśli te obiekty przechowują odwołania do innych obiektów, te obiekty również przeżyły, ale nie są zliczane przez ten licznik. **Podwyższona wartość finalizowania pamięci z licznika generacji 0** reprezentuje całą pamięć, która została przeżyły z powodu finalizacji.<br /><br /> Ten licznik nie jest skumulowany; jest ona aktualizowana na końcu każdego wyrzucania elementów bezużytecznych z liczbą osób, które są używane tylko w danej kolekcji. Ten licznik wskazuje dodatkowe obciążenie, które aplikacja może ponieść ze względu na finalizację.|  
+|**Osoby przeżyjąjące zakończenie**|Przedstawia liczbę obiektów zebranych w pamięci podręcznej, które przeżyły do kolekcji, ponieważ oczekują na sfinalizowanie. Jeśli te obiekty przechowują odwołania do innych obiektów, te obiekty również przeżyły, ale nie są zliczane przez ten licznik. **Podwyższona Finalization-Memory z licznika generacji 0** reprezentuje całą pamięć, która została przeżyły z powodu finalizacji.<br /><br /> Ten licznik nie jest skumulowany; jest ona aktualizowana na końcu każdego wyrzucania elementów bezużytecznych z liczbą osób, które są używane tylko w danej kolekcji. Ten licznik wskazuje dodatkowe obciążenie, które aplikacja może ponieść ze względu na finalizację.|  
 |**Rozmiar sterty generacji 0**|Wyświetla maksymalną liczbę bajtów, które mogą być przydzieloną w generacji 0; nie wskazuje na bieżącą liczbę bajtów przydzieloną w generacji 0.<br /><br /> Wyrzucanie elementów bezużytecznych generacji 0 występuje, gdy przydziały od momentu ostatniej kolekcji przekroczą ten rozmiar. Rozmiar generacji 0 jest dostrojony przez moduł wyrzucania elementów bezużytecznych i może ulec zmianie podczas wykonywania aplikacji. Na końcu kolekcji generacji 0 rozmiar sterty generacji 0 wynosi 0 bajtów. Ten licznik wyświetla rozmiar (w bajtach) przydziałów, które wywołuje wyrzucanie elementów bezużytecznych następnej generacji 0.<br /><br /> Ten licznik jest aktualizowany na końcu wyrzucania elementów bezużytecznych, a nie przy każdej alokacji.|  
 |**Liczba bajtów awansowanych generacji 0/s**|Wyświetla liczbę bajtów na sekundę, które są podwyższane z generacji 0 do generacji 1. Pamięć jest podwyższana, gdy przeżyje odzyskiwanie pamięci. Ten licznik jest wskaźnikiem obiektów o stosunkowo długim czasie, które są tworzone na sekundę.<br /><br /> Ten licznik wyświetla różnicę między wartościami obserwowanymi w ostatnich dwóch próbkach podzieloną przez czas trwania interwału próbkowania.|  
 |**Rozmiar sterty generacji 1**|Wyświetla bieżącą liczbę bajtów w generacji 1; Ten licznik nie wyświetla maksymalnego rozmiaru generacji 1. Obiekty nie są bezpośrednio przydzielne w tej generacji; są one promowane z wyrzucania elementów bezużytecznych poprzedniej generacji 0. Ten licznik jest aktualizowany na końcu wyrzucania elementów bezużytecznych, a nie przy każdej alokacji.|  
@@ -115,7 +121,7 @@ Ten temat zawiera listę liczników wydajności, które można znaleźć w [moni
 |**Rozmiar sterty generacji 2**|Wyświetla bieżącą liczbę bajtów w generacji 2. Obiekty nie są bezpośrednio przydzielne w tej generacji; są one promowane od generacji 1 w trakcie odzyskiwania pamięci poprzedniej generacji 1. Ten licznik jest aktualizowany na końcu wyrzucania elementów bezużytecznych, a nie przy każdej alokacji.|  
 |**Rozmiar sterty dla dużego obiektu**|Wyświetla bieżący rozmiar sterty dużego obiektu w bajtach. Obiekty, które są większe niż około 85 000 bajtów są traktowane jako duże obiekty przez moduł wyrzucania elementów bezużytecznych i są bezpośrednio przydzielane w specjalnej stercie. Nie są one promowane w ramach generacji. Ten licznik jest aktualizowany na końcu wyrzucania elementów bezużytecznych, a nie przy każdej alokacji.|  
 |**Identyfikator procesu**|Wyświetla identyfikator procesu monitorowanego wystąpienia procesu CLR.|  
-|**Awansowana finalizowanie pamięci z generacji 0**|Wyświetla bajty pamięci, które są podwyższane z generacji 0 do generacji 1 tylko ponieważ oczekują na sfinalizowanie. Ten licznik nie jest skumulowany; Wyświetla wartość zaobserwowana na końcu ostatniego wyrzucania elementów bezużytecznych.|  
+|**Awansowana Finalization-Memory z generacji 0**|Wyświetla bajty pamięci, które są podwyższane z generacji 0 do generacji 1 tylko ponieważ oczekują na sfinalizowanie. Ten licznik nie jest skumulowany; Wyświetla wartość zaobserwowana na końcu ostatniego wyrzucania elementów bezużytecznych.|  
 |**Podwyższona ilość pamięci z generacji 0**|Wyświetla bajty pamięci, które przeżyły do wyrzucania elementów bezużytecznych i są podwyższane z generacji 0 do generacji 1. Obiekty, które są promowane tylko dlatego, że oczekują na sfinalizowanie, nie są uwzględnione w tym liczniku. Ten licznik nie jest skumulowany; Wyświetla wartość zaobserwowana na końcu ostatniego wyrzucania elementów bezużytecznych.|  
 |**Podwyższona ilość pamięci z generacji 1**|Wyświetla bajty pamięci, które przeżyły do wyrzucania elementów bezużytecznych i zostały podwyższone z generacji 1 do generacji 2. Obiekty, które są promowane tylko dlatego, że oczekują na sfinalizowanie, nie są uwzględnione w tym liczniku. Ten licznik nie jest skumulowany; Wyświetla wartość zaobserwowana na końcu ostatniego wyrzucania elementów bezużytecznych. Ten licznik jest resetowany do wartości 0, jeśli ostatnie wyrzucanie elementów bezużytecznych było tylko kolekcjami generacji 0.|  
 
@@ -145,7 +151,7 @@ Kategoria sieci środowiska CLR programu .NET Console zawiera liczniki, które z
   
 - Liczniki czasu trwania mierzące, jak długo trwają różne procesy. Czasy są mierzone na obiektach każdego interwału (zwykle w sekundach) po wyjściu z różnych stanów.  
   
-- Liczniki dla interwałów, które mierzą liczbę obiektów tworzących określone przejście na interwał (zwykle na sekundę).  
+- Per-Interval liczników mierzących liczbę obiektów tworzących określone przejście na interwał (zwykle na sekundę).  
   
 Dostępne są następujące liczniki wydajności sieci dla zdarzeń:  
   
@@ -218,6 +224,7 @@ for (int i = 0; i < Array.Length; i++)
  Aby uzyskać więcej informacji na temat uzyskiwania dostępu do liczników wydajności i zarządzania nimi w aplikacji, zobacz [liczniki wydajności](performance-counters.md).  
 
 ## <a name="security-performance-counters"></a>Liczniki wydajności zabezpieczeń  
+
  Kategoria zabezpieczeń programu .NET CLR konsoli wydajności zawiera liczniki, które dostarczają informacji o sprawdzaniu zabezpieczeń wykonywanych przez środowisko uruchomieniowe języka wspólnego dla aplikacji. W poniższej tabeli opisano te liczniki wydajności.  
   
 |Licznik wydajności|Opis|  

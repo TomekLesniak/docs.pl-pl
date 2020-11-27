@@ -9,14 +9,15 @@ helpviewer_keywords:
 - Windows Service applications, debugging
 - services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
-ms.openlocfilehash: 2657d83f39b60be84846fb784a06e71f6dd46179
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 4d8ac0316e47925d253e7220597ab9953252521e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609736"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96270631"
 ---
 # <a name="how-to-debug-windows-service-applications"></a>Instrukcje: Debugowanie aplikacji usług systemu Windows
+
 Usługa musi być uruchomiona w kontekście menedżera kontroli usług, a nie z poziomu programu Visual Studio. Z tego powodu debugowanie usługi nie jest tak proste jak debugowanie innych typów aplikacji programu Visual Studio. Aby debugować usługę, należy ją uruchomić, a następnie dołączyć debuger do procesu, w którym jest uruchomiony. Następnie można debugować aplikację przy użyciu wszystkich standardowych funkcji debugowania programu Visual Studio.  
   
 > [!CAUTION]
@@ -40,7 +41,7 @@ Usługa musi być uruchomiona w kontekście menedżera kontroli usług, a nie z 
   
 2. Zainstaluj usługę. Aby uzyskać więcej informacji, zobacz [jak: Instalowanie i odinstalowywanie usług](how-to-install-and-uninstall-services.md).  
   
-3. Uruchom usługę z **Menedżera sterowania usługami**, **Eksplorator serwera**lub z kodu. Aby uzyskać więcej informacji, zobacz [How to: Start Services](how-to-start-services.md).  
+3. Uruchom usługę z **Menedżera sterowania usługami**, **Eksplorator serwera** lub z kodu. Aby uzyskać więcej informacji, zobacz [How to: Start Services](how-to-start-services.md).  
   
 4. Uruchom program Visual Studio z poświadczeniami administracyjnymi, aby umożliwić dołączenie do procesów systemowych.  
   
@@ -69,6 +70,7 @@ Usługa musi być uruchomiona w kontekście menedżera kontroli usług, a nie z 
 11. Dostęp do Menedżera sterowania usługami i manipulowanie usługą, wysyłanie poleceń Zatrzymaj, Wstrzymaj i Kontynuuj, aby trafiać z punktów przerwania. Aby uzyskać więcej informacji na temat uruchamiania Menedżera sterowania usługami, zobacz [How to: Start Services](how-to-start-services.md). Zobacz również [Rozwiązywanie problemów: debugowanie usług systemu Windows](troubleshooting-debugging-windows-services.md).  
   
 ## <a name="debugging-tips-for-windows-services"></a>Wskazówki dotyczące debugowania dla usług systemu Windows  
+
  Dołączenie do procesu usługi pozwala debugować większość, ale nie wszystkie, kod dla tej usługi. Na przykład, ponieważ usługa została już uruchomiona, nie można debugować kodu w <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodzie usługi lub kodzie w `Main` metodzie, która jest używana do załadowania usługi w ten sposób. Jednym ze sposobów obejścia tego ograniczenia jest utworzenie tymczasowej drugiej usługi w aplikacji usługi, która istnieje tylko w celu ułatwienia debugowania. Można zainstalować obie usługi, a następnie uruchomić tę fikcyjną usługę w celu załadowania procesu usługi. Po rozpoczęciu procesu przez usługę tymczasową możesz użyć menu **Debuguj** w programie Visual Studio w celu dołączenia do procesu usługi.  
   
  Spróbuj dodać wywołania metody, <xref:System.Threading.Thread.Sleep%2A> aby opóźnić akcję do momentu dołączenia do procesu.  
@@ -113,7 +115,7 @@ Usługa musi być uruchomiona w kontekście menedżera kontroli usług, a nie z 
   
  W niektórych przypadkach, na przykład gdy chcesz debugować problem, który występuje tylko podczas uruchamiania systemu, musisz użyć debugera systemu Windows. [Pobierz zestaw sterowników systemu Windows (WDK)](/windows-hardware/drivers/download-the-wdk) i zobacz, [jak debugować usługi systemu Windows](https://support.microsoft.com/kb/824344).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie do aplikacji usług systemu Windows](introduction-to-windows-service-applications.md)
 - [Instrukcje: Instalowanie i odinstalowywanie usług](how-to-install-and-uninstall-services.md)

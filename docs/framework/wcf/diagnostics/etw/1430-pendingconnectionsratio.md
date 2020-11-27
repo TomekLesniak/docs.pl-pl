@@ -2,27 +2,30 @@
 title: 1430 — PendingConnectionsRatio
 ms.date: 03/30/2017
 ms.assetid: c9df7da9-26e7-444f-9e36-86de1676442d
-ms.openlocfilehash: ed03aa8e7c130f91154a1ce6a9af23c3d6dcbe0b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c06f148ae755bc38dd790bf32bfaca978e50a8c9
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782164"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96271125"
 ---
 # <a name="1430---pendingconnectionsratio"></a>1430 — PendingConnectionsRatio
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1430|  
-|słowa kluczowe|Limit przydziału|  
+|ID (Identyfikator)|1430|  
+|Słowa kluczowe|limit przydziału|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowany do podawania współczynnik połączenia oczekujące.  
+
+ To zdarzenie jest emitowane w celu zapewnienia informacji o współczynniku oczekujących połączeń.  
   
-## <a name="message"></a>Komunikat  
- Oczekujące współczynnik połączenia: %1 / %2  
+## <a name="message"></a>Wiadomość  
+
+ Współczynnik oczekujących połączeń: %1/%2  
   
 ## <a name="details"></a>Szczegóły

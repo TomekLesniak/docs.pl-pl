@@ -6,14 +6,15 @@ helpviewer_keywords:
 - Windows Service applications, creating
 - templates, Windows Service
 ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
-ms.openlocfilehash: 35d78acd4fae7bf98a2b3f4ce6ac8a32393c35d4
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 9b171fa54cf65a482625c276c26185b12075c753
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91608598"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96270709"
 ---
 # <a name="how-to-create-windows-services"></a>Instrukcje: Tworzenie usług systemu Windows
+
 Podczas tworzenia usługi można użyć szablonu projektu programu Visual Studio o nazwie **Usługa systemu Windows**. Ten szablon automatycznie wykonuje większość pracy za Ciebie, odwołując się do odpowiednich klas i przestrzeni nazw, konfigurując dziedziczenie z klasy podstawowej dla usług i zastępując kilka metod, które mogą zostać przesłonięte.  
   
 > [!WARNING]
@@ -67,7 +68,7 @@ Podczas tworzenia usługi można użyć szablonu projektu programu Visual Studio
   
 8. Zainstaluj usługę. Aby uzyskać więcej informacji, zobacz [jak: Instalowanie i odinstalowywanie usług](how-to-install-and-uninstall-services.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie do aplikacji usług systemu Windows](introduction-to-windows-service-applications.md)
 - [Instrukcje: Programowane pisanie usług](how-to-write-services-programmatically.md)

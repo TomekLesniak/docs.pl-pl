@@ -11,14 +11,15 @@ helpviewer_keywords:
 - ServiceInstaller class, adding installers to services
 - ServiceProcessInstaller class, adding installers to services
 ms.assetid: 8b698e9a-b88e-4f44-ae45-e0c5ea0ae5a8
-ms.openlocfilehash: 9a6954c75595f5297a31dcaf37e744e655733df4
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 451f0db21e80dfc3dc40052179ac4ec60c2aabdc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91608689"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96270670"
 ---
 # <a name="how-to-add-installers-to-your-service-application"></a>Instrukcje: Dodawanie instalatorów od aplikacji usług
+
 Program Visual Studio jest dostarczany ze składnikami instalacji, które mogą instalować zasoby skojarzone z aplikacjami usługi. Składniki instalacji rejestrują poszczególne usługi w systemie, w którym jest instalowana, i pozwalają menedżerowi sterowania usługami znać, że usługa istnieje. Podczas pracy z aplikacją usługi można wybrać łącze w okno Właściwości, aby automatycznie dodać odpowiednie Instalatory do projektu.  
   
 > [!NOTE]
@@ -33,7 +34,7 @@ Program Visual Studio jest dostarczany ze składnikami instalacji, które mogą 
   
 ### <a name="to-add-installers-to-your-service-application"></a>Aby dodać Instalatory do aplikacji usługi  
   
-1. W **Eksplorator rozwiązań**dostęp do widoku **projektu** dla usługi, dla której chcesz dodać składnik instalacji.  
+1. W **Eksplorator rozwiązań** dostęp do widoku **projektu** dla usługi, dla której chcesz dodać składnik instalacji.  
   
 2. Kliknij tło projektanta, aby wybrać samą usługę, a nie jej zawartość.  
   
@@ -60,7 +61,7 @@ Program Visual Studio jest dostarczany ze składnikami instalacji, które mogą 
     > [!NOTE]
     > Dla każdej dodatkowej usługi w projekcie należy dodać dodatkowy <xref:System.ServiceProcess.ServiceInstaller> składnik do `ProjectInstaller` klasy projektu. <xref:System.ServiceProcess.ServiceProcessInstaller>Składnik dodany w kroku 3 współdziała ze wszystkimi instalacjami poszczególnych usług w projekcie.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie do aplikacji usług systemu Windows](introduction-to-windows-service-applications.md)
 - [Instrukcje: Instalowanie i odinstalowywanie usług](how-to-install-and-uninstall-services.md)
