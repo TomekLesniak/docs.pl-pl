@@ -2,27 +2,30 @@
 title: 3307 — ClientBaseChannelFactoryCacheHit
 ms.date: 03/30/2017
 ms.assetid: 93d332af-a666-4fa4-81a3-2db6b1eaf190
-ms.openlocfilehash: 861338080315905e0b511795297442b94c48e9f9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d8be2694b88fd23eb2e026ec3171269719f3621
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61595754"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279626"
 ---
 # <a name="3307---clientbasechannelfactorycachehit"></a>3307 — ClientBaseChannelFactoryCacheHit
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|3307|  
-|słowa kluczowe|ServiceModel|  
+|ID (Identyfikator)|3307|  
+|Słowa kluczowe|Modelu|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane po używanych pasującego fabryki kanałów znalezionych w pamięci podręcznej.  
+
+ To zdarzenie jest emitowane, gdy w pamięci podręcznej znaleziono użytą zgodną fabrykę kanałów.  
   
-## <a name="message"></a>Komunikat  
- Użyć zgodnych fabryki kanałów znalezionych w pamięci podręcznej.  
+## <a name="message"></a>Wiadomość  
+
+ Znaleziono pasującą fabrykę kanału w pamięci podręcznej.  
   
 ## <a name="details"></a>Szczegóły
