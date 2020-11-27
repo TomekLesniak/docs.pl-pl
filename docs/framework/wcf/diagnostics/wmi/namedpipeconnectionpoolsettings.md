@@ -2,14 +2,15 @@
 title: NamedPipeConnectionPoolSettings
 ms.date: 03/30/2017
 ms.assetid: 079bccb8-54b5-4436-a43d-5567763f72ce
-ms.openlocfilehash: 8c2d4bfc08a503a8d6eb0e8abf6f1e798b90bc83
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8422e1adf9a8914b631431eba5c9c0ed058cd0f3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963218"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96258026"
 ---
 # <a name="namedpipeconnectionpoolsettings"></a>NamedPipeConnectionPoolSettings
+
 NamedPipeConnectionPoolSettings  
   
 ## <a name="syntax"></a>Składnia  
@@ -24,26 +25,31 @@ class NamedPipeConnectionPoolSettings
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa NamedPipeConnectionPoolSettings nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa NamedPipeConnectionPoolSettings ma następujące właściwości:  
   
 ### <a name="groupname"></a>GroupName  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Nazwa grupy puli połączeń używane przez element powiązania.  
+ Nazwa grupy puli połączeń używanej przez element powiązania.  
   
-### <a name="idletimeout"></a>IdleTimeout  
- Typ danych: Data i godzina  
+### <a name="idletimeout"></a>Czynności  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalny czas, który połączenie może być bezczynne, zanim zostanie rozłączone.  
+ Maksymalny czas bezczynności połączenia przed jego rozłączeniem.  
   
 ### <a name="maxoutboundconnectionsperendpoint"></a>MaxOutboundConnectionsPerEndpoint  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
@@ -52,10 +58,10 @@ class NamedPipeConnectionPoolSettings
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.NamedPipeConnectionPoolSettings>

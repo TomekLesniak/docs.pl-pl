@@ -22,12 +22,12 @@ helpviewer_keywords:
 - discovering type information at run time
 - type system, reflection
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
-ms.openlocfilehash: 46c67595126af2c62b28d29983775943586a0b90
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 371f56c3a57b8e320c9b329c539075a40cd7a19f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865284"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96258416"
 ---
 # <a name="reflection-in-net"></a>Odbicie w programie .NET
 
@@ -53,7 +53,7 @@ Moduł ładujący [środowiska uruchomieniowego języka wspólnego](../../standa
   
 - Służy <xref:System.Reflection.ParameterInfo> do odnajdywania informacji, takich jak nazwa parametru, typ danych, czy parametr jest parametrem wejściowym lub wyjściowym, oraz pozycja parametru w podpisie metody.  
   
-- Służy <xref:System.Reflection.CustomAttributeData> do odnajdywania informacji o atrybutach niestandardowych podczas pracy w kontekście tylko odbicia w domenie aplikacji. <xref:System.Reflection.CustomAttributeData>umożliwia badanie atrybutów bez tworzenia wystąpień.  
+- Służy <xref:System.Reflection.CustomAttributeData> do odnajdywania informacji o atrybutach niestandardowych podczas pracy w kontekście tylko odbicia w domenie aplikacji. <xref:System.Reflection.CustomAttributeData> umożliwia badanie atrybutów bez tworzenia wystąpień.  
   
 Klasy <xref:System.Reflection.Emit> przestrzeni nazw zapewniają wyspecjalizowaną postać odbicia, która umożliwia kompilowanie typów w czasie wykonywania.  
   
@@ -62,9 +62,10 @@ Odbicie może również służyć do tworzenia aplikacji nazywanych przeglądark
 Istnieją inne zastosowania do odbicia. Kompilatory dla języków takich jak JScript używają odbicia do konstruowania tabel symboli. Klasy w <xref:System.Runtime.Serialization> przestrzeni nazw używają odbicia, aby uzyskać dostęp do danych i określić, które pola mają być utrwalane. Klasy w <xref:System.Runtime.Remoting> przestrzeni nazw używają odbicia pośrednio przy użyciu serializacji.  
   
 ## <a name="runtime-types-in-reflection"></a>Typy środowiska uruchomieniowego w odbiciu  
+
 Odbicie zawiera klasy, takie jak <xref:System.Type> i <xref:System.Reflection.MethodInfo> , do reprezentowania typów, elementów członkowskich, parametrów i innych jednostek kodu. Jednak w przypadku używania odbicia nie można bezpośrednio korzystać z tych klas, z których większość jest abstrakcyjna ( `MustInherit` w Visual Basic). Zamiast tego pracujesz z typami dostarczanymi przez środowisko uruchomieniowe języka wspólnego (CLR).  
   
-Na przykład w przypadku używania operatora języka C# `typeof` ( `GetType` w Visual Basic) do uzyskania obiektu obiekt <xref:System.Type> jest naprawdę a `RuntimeType` . `RuntimeType`pochodzi z <xref:System.Type> i zapewnia implementacje wszystkich metod abstrakcyjnych.  
+Na przykład w przypadku używania operatora języka C# `typeof` ( `GetType` w Visual Basic) do uzyskania obiektu obiekt <xref:System.Type> jest naprawdę a `RuntimeType` . `RuntimeType` pochodzi z <xref:System.Type> i zapewnia implementacje wszystkich metod abstrakcyjnych.  
   
 Te klasy środowiska uruchomieniowego są `internal` ( `Friend` w Visual Basic). Nie są one udokumentowane niezależnie od ich klas bazowych, ponieważ ich zachowanie zostało opisane w dokumentacji klasy bazowej.  
   
@@ -80,7 +81,7 @@ Te klasy środowiska uruchomieniowego są `internal` ( `Friend` w Visual Basic).
 |[Dynamiczne ładowanie i używanie typów](dynamically-loading-and-using-types.md)|Opisuje interfejs powiązania niestandardowego odbicia obsługujący późne wiązanie.|  
 |[Instrukcje: Ładowanie zestawów do kontekstu Reflection-Only](how-to-load-assemblies-into-the-reflection-only-context.md)|Opisuje kontekst ładowania tylko odbicie. Pokazuje, jak załadować zestaw, jak przetestować kontekst i jak sprawdzać atrybuty zastosowane do zestawu w kontekście tylko odbicie.|  
 |[Uzyskiwanie dostępu do atrybutów niestandardowych](accessing-custom-attributes.md)|Demonstruje użycie odbicia w celu uzyskania atrybutu i jego wartości.|  
-|[Określanie w pełni kwalifikowanych nazw typów](specifying-fully-qualified-type-names.md)|Opisuje format w pełni kwalifikowanych nazw typów w warunkach Naura (BNF) i składni wymaganej do określenia znaków specjalnych, nazw zestawów, wskaźników, odwołań i tablic.|  
+|[Określanie w pełni kwalifikowanych nazw typów](specifying-fully-qualified-type-names.md)|Opisuje format w pełni kwalifikowanych nazw typów pod warunkiem Backus-Naur formularz (BNF) i składnią wymaganą do określenia znaków specjalnych, nazw zestawów, wskaźników, odwołań i tablic.|  
 |[Instrukcje: Podłączanie delegata za pomocą odbicia](how-to-hook-up-a-delegate-using-reflection.md)|Wyjaśnia, jak utworzyć delegata dla metody i podłączyć delegata do zdarzenia. Wyjaśnia, jak utworzyć metodę obsługi zdarzeń w czasie wykonywania przy użyciu <xref:System.Reflection.Emit.DynamicMethod> .|  
 |[Emitowanie dynamicznych metod i zestawów](emitting-dynamic-methods-and-assemblies.md)|Wyjaśnia, jak generować dynamiczne zestawy i metody dynamiczne.|  
   

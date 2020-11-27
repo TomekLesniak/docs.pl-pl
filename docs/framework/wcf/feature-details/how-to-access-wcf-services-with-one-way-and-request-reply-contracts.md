@@ -2,14 +2,15 @@
 title: 'Instrukcje: Uzyskiwanie dostępu do usług WCF za pomocą kontraktów jednokierunkowych i kontraktów „żądanie-odpowiedź”'
 ms.date: 03/30/2017
 ms.assetid: 7e10d3a5-fcf4-4a4b-a8d6-92ee2c988b3b
-ms.openlocfilehash: 9c8bd0d21be1d87d536eb6f943e782fc4da352a8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2d415b8f901e0a0e35690c015656620fe5ce13d0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597192"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257707"
 ---
 # <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>Instrukcje: Uzyskiwanie dostępu do usług WCF za pomocą kontraktów jednokierunkowych i kontraktów „żądanie-odpowiedź”
+
 W poniższych procedurach opisano, jak uzyskać dostęp do usługi Windows Communication Foundation (WCF), która definiuje umowę jednokierunkową oraz kontrakt typu żądanie-odpowiedź i która nie korzysta ze wzorca komunikacji dupleksowej.  
   
 ### <a name="to-define-the-service"></a>Aby zdefiniować usługę  
@@ -109,7 +110,7 @@ W poniższych procedurach opisano, jak uzyskać dostęp do usługi Windows Commu
   
 ### <a name="to-access-the-service"></a>Aby uzyskać dostęp do usługi  
   
-1. Uruchom narzędzie do obsługi [metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) przy użyciu adresu punktu końcowego wymiany metadanych, aby utworzyć klasę klienta dla usługi przy użyciu następującego wiersza polecenia: `Svcutil http://localhost:8000/Service` [Narzędzie narzędzia metadanych ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) generuje zestaw interfejsów i klas, jak pokazano w poniższym przykładowym kodzie.  
+1. Uruchom [Narzędzie narzędzia metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) przy użyciu adresu punktu końcowego wymiany metadanych, aby utworzyć klasę klienta dla usługi przy użyciu następującego wiersza polecenia: `Svcutil http://localhost:8000/Service` [Narzędzie narzędzia metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) generuje zestaw interfejsów i klas, jak pokazano w poniższym przykładowym kodzie.  
   
     ```csharp  
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]  
@@ -247,6 +248,7 @@ W poniższych procedurach opisano, jak uzyskać dostęp do usługi Windows Commu
     ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej znajduje się kompletna lista kodu użytego w tym temacie.  
   
 ```csharp  

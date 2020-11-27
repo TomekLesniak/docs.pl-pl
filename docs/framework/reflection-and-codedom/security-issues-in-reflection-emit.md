@@ -12,14 +12,15 @@ helpviewer_keywords:
 - emitting dynamic assemblies,partial trust scenarios
 - dynamic assemblies, security
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
-ms.openlocfilehash: 62bce7435887855f799d320736e6bce8f39e5999
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 859c564e107fd3a9b219d71dc6ac5ccdf6e9d690
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558800"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96259281"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Problemy związane z zabezpieczeniami w emisji odbicia
+
 .NET Framework udostępnia trzy sposoby emisji języka pośredniego firmy Microsoft (MSIL), z których każdy ma własne problemy z zabezpieczeniami:  
   
 - [Zestawy dynamiczne](#Dynamic_Assemblies)  
@@ -34,7 +35,9 @@ ms.locfileid: "90558800"
 > Uprawnienia, które są wymagane do odzwierciedlenia kodu i emitowania kodu, zostały zmienione wraz z pomyślnymi wersjami .NET Framework. [Informacje o wersji](#Version_Information)znajdują się w dalszej części tego tematu.  
   
 <a name="Dynamic_Assemblies"></a>
+
 ## <a name="dynamic-assemblies"></a>Zestawy dynamiczne  
+
  Zestawy dynamiczne są tworzone przy użyciu przeciążenia <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType> metody. Większość przeciążeń tej metody jest przestarzałych w .NET Framework 4 z powodu usunięcia zasad zabezpieczeń dla całego komputera. (Zobacz [zmiany zabezpieczeń](/previous-versions/dotnet/framework/security/security-changes)). Pozostałe przeciążenia mogą być wykonywane przez dowolny kod niezależnie od poziomu zaufania. Te przeciążenia dzielą się na dwie grupy: te, które określają listę atrybutów, które mają być stosowane do zestawu dynamicznego podczas jego tworzenia, a te, które nie. Jeśli nie określisz modelu przezroczystości dla zestawu, stosując <xref:System.Security.SecurityRulesAttribute> atrybut podczas tworzenia, model przezroczystości jest Dziedziczony z zestawu emitującego.  
   
 > [!NOTE]
@@ -48,6 +51,7 @@ ms.locfileid: "90558800"
  Przejściowe zestawy dynamiczne są tworzone w pamięci i nigdy nie są zapisywane na dysku, więc nie wymagają uprawnień dostępu do plików. Zapisywanie dynamicznego zestawu na dysku wymaga <xref:System.Security.Permissions.FileIOPermission> odpowiedniej flagi.  
   
 ### <a name="generating-dynamic-assemblies-from-partially-trusted-code"></a>Generowanie zestawów dynamicznych przy użyciu częściowo zaufanego kodu  
+
  Rozważ warunki, w których zestaw z uprawnieniami internetowymi może generować tymczasowy dynamiczny zestaw i wykonać swój kod:  
   
 - W zestawie dynamicznym są stosowane tylko typy publiczne i elementy członkowskie innych zestawów.  
@@ -59,7 +63,9 @@ ms.locfileid: "90558800"
 - Symbole debugowania nie są generowane. ( `Internet` i `LocalIntranet` zestawy uprawnień nie obejmują wymaganych uprawnień).  
   
 <a name="Anonymously_Hosted_Dynamic_Methods"></a>
+
 ## <a name="anonymously-hosted-dynamic-methods"></a>Anonimowo hostowane metody dynamiczne  
+
  Anonimowo hostowane metody dynamiczne są tworzone przy użyciu dwóch <xref:System.Reflection.Emit.DynamicMethod> konstruktorów, które nie określają skojarzonego typu lub modułu, <xref:System.Reflection.Emit.DynamicMethod.%23ctor%28System.String%2CSystem.Type%2CSystem.Type%5B%5D%29> i <xref:System.Reflection.Emit.DynamicMethod.%23ctor%28System.String%2CSystem.Type%2CSystem.Type%5B%5D%2CSystem.Boolean%29> . Te konstruktory umieszczają metody dynamiczne w wbudowanym, w pełni zaufanym, nieprzezroczystym zestawie zabezpieczeń. Do korzystania z tych konstruktorów lub do emitowania kodu dla metod dynamicznych nie są wymagane żadne uprawnienia.  
   
  Zamiast tego, gdy tworzona jest anonimowo obsługiwana metoda dynamiczna, stos wywołań jest przechwytywany. Gdy metoda jest zbudowana, wymagania dotyczące zabezpieczeń są wykonywane względem przechwyconego stosu wywołań.  
@@ -82,6 +88,7 @@ ms.locfileid: "90558800"
  Aby uzyskać więcej informacji, zobacz <xref:System.Reflection.Emit.DynamicMethod> Klasa.  
   
 ### <a name="generating-anonymously-hosted-dynamic-methods-from-partially-trusted-code"></a>Generowanie anonimowo obsługiwanych metod dynamicznych z poziomu częściowo zaufanego kodu  
+
  Rozważ warunki, w których zestaw z uprawnieniami internetowymi może generować anonimowo hostowaną metodę dynamiczną i wykonać ją:  
   
 - Metoda dynamiczna używa tylko typów publicznych i elementów członkowskich. Jeśli jego zestaw uprawnień zawiera <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> , może używać typów niepublicznych i elementów członkowskich dowolnego zestawu, którego przydzielenie jest równe lub podzestawu zestawu, który emitujący zestaw.  
@@ -92,7 +99,9 @@ ms.locfileid: "90558800"
 > Metody dynamiczne nie obsługują symboli debugowania.  
   
 <a name="Dynamic_Methods_Associated_with_Existing_Assemblies"></a>
+
 ## <a name="dynamic-methods-associated-with-existing-assemblies"></a>Metody dynamiczne skojarzone z istniejącymi zestawami  
+
  Aby skojarzyć metodę dynamiczną z typem lub modułem w istniejącym zestawie, użyj dowolnego konstruktora, <xref:System.Reflection.Emit.DynamicMethod> który określa skojarzony typ lub moduł. Uprawnienia, które są wymagane do wywołania tych konstruktorów, różnią się, ponieważ kojarzenie metody dynamicznej z istniejącym typem lub modułem zapewnia metodę dynamiczną dostęp do typów niepublicznych i członków:  
   
 - Metoda dynamiczna, która jest skojarzona z typem, ma dostęp do wszystkich elementów członkowskich tego typu, nawet prywatnych składowych i wszystkich typów wewnętrznych i członków zestawu, który zawiera skojarzony typ.  
@@ -137,7 +146,9 @@ ms.locfileid: "90558800"
 > Metody dynamiczne nie obsługują symboli debugowania.  
   
 <a name="Version_Information"></a>
+
 ## <a name="version-information"></a>Informacje o wersji  
+
  Począwszy od .NET Framework 4, zasady zabezpieczeń dla całego komputera są eliminowane i przezroczystość zabezpieczeń staną się domyślnym mechanizmem wymuszania. Zobacz [zmiany zabezpieczeń](/previous-versions/dotnet/framework/security/security-changes).  
   
  Począwszy od .NET Framework 2,0 z dodatkiem Service Pack 1, <xref:System.Security.Permissions.ReflectionPermission> z <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> flagą nie jest już wymagane w przypadku emitowania zestawów dynamicznych i metod dynamicznych. Ta flaga jest wymagana we wszystkich wcześniejszych wersjach .NET Framework.  
@@ -150,9 +161,10 @@ ms.locfileid: "90558800"
  Na koniec .NET Framework 2,0 z dodatkiem SP1 wprowadza anonimowo hostowane metody.  
   
 ### <a name="obtaining-information-on-types-and-members"></a>Uzyskiwanie informacji na temat typów i członków  
+
  Począwszy od .NET Framework 2,0, żadne uprawnienia nie są wymagane do uzyskania informacji na temat typów niepublicznych i członków. Odbicie służy do uzyskiwania informacji niezbędnych do emitowania metod dynamicznych. Na przykład <xref:System.Reflection.MethodInfo> obiekty są używane do emisji wywołań metod. Wcześniejsze wersje .NET Framework wymagają <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> flagi z flagą. Aby uzyskać więcej informacji, zobacz [zagadnienia dotyczące zabezpieczeń dotyczące odbicia](security-considerations-for-reflection.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zagadnienia dotyczące zabezpieczeń dla odbicia](security-considerations-for-reflection.md)
 - [Emitowanie dynamicznych metod i zestawów](emitting-dynamic-methods-and-assemblies.md)

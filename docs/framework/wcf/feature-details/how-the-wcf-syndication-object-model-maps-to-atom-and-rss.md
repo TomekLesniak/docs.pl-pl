@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0365eb37-98cc-4b13-80fb-f1e78847a748
-ms.openlocfilehash: 67fbbb035a3a6683cefbf24e299f32579b674bbd
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6fa390c8ae05035e589392c909ef340fb9c7948a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597257"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257818"
 ---
 # <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a>Sposób mapowania modelu obiektu syndykacji programu WCF na kanały informacyjne Atom i RSS
+
 Podczas tworzenia usługi zespalania Windows Communication Foundation (WCF) można tworzyć źródła danych i elementy przy użyciu następujących klas:  
   
 - <xref:System.ServiceModel.Syndication.SyndicationFeed>  
@@ -37,17 +38,18 @@ Podczas tworzenia usługi zespalania Windows Communication Foundation (WCF) moż
   
  Przykłady kodu w tym temacie używają jednej z dwóch metod zdefiniowanych w tym miejscu do wykonania rzeczywistej serializacji.  
   
- `SerializeFeed`deserializacji źródła zespolonego.  
+ `SerializeFeed` deserializacji źródła zespolonego.  
   
  [!code-csharp[SyndicationMapping#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#10)]
  [!code-vb[SyndicationMapping#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#10)]  
   
- `SerializeItem`deserializacji elementu zespolonego.  
+ `SerializeItem` deserializacji elementu zespolonego.  
   
  [!code-csharp[SyndicationMapping#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#11)]
  [!code-vb[SyndicationMapping#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/syndicationmapping/vb/snippets.vb#11)]  
   
 ## <a name="syndicationfeed"></a>SyndicationFeed  
+
  Poniższy przykład kodu pokazuje, jak serializować <xref:System.ServiceModel.Syndication.SyndicationFeed> klasę do Atom 1,0 i RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#0)]
@@ -145,6 +147,7 @@ Podczas tworzenia usługi zespalania Windows Communication Foundation (WCF) moż
 ```  
   
 ## <a name="syndicationitem"></a>SyndicationItem  
+
  Poniższy przykład kodu pokazuje, jak serializować <xref:System.ServiceModel.Syndication.SyndicationItem> klasę do Atom 1,0 i RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#1)]
@@ -231,6 +234,7 @@ Podczas tworzenia usługi zespalania Windows Communication Foundation (WCF) moż
 ```  
   
 ## <a name="syndicationperson"></a>SyndicationPerson  
+
  Poniższy przykład kodu pokazuje, jak serializować <xref:System.ServiceModel.Syndication.SyndicationPerson> klasę do Atom 1,0 i RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#2)]
@@ -288,6 +292,7 @@ Podczas tworzenia usługi zespalania Windows Communication Foundation (WCF) moż
 ```  
   
 ## <a name="syndicationlink"></a>SyndicationLink  
+
  Poniższy przykład kodu pokazuje, jak serializować <xref:System.ServiceModel.Syndication.SyndicationLink> klasę do Atom 1,0 i RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#3)]
@@ -302,6 +307,7 @@ Podczas tworzenia usługi zespalania Windows Communication Foundation (WCF) moż
  `<a10:link rel="alternate" type="text/html" title="My Link Title" length="2048" href="http://contoso/MyLink" />`  
   
 ## <a name="syndicationcategory"></a>SyndicationCategory  
+
  Poniższy przykład kodu pokazuje, jak serializować <xref:System.ServiceModel.Syndication.SyndicationCategory> klasę do Atom 1,0 i RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#4)]
@@ -316,6 +322,7 @@ Podczas tworzenia usługi zespalania Windows Communication Foundation (WCF) moż
  `<category domain="categoryScheme">categoryName</category>`  
   
 ## <a name="textsyndicationcontent"></a>TextSyndicationContent  
+
  Poniższy przykład kodu pokazuje, jak serializować <xref:System.ServiceModel.Syndication.TextSyndicationContent> klasę do Atom 1,0 i RSS 2,0 podczas <xref:System.ServiceModel.Syndication.TextSyndicationContent> tworzenia przy użyciu zawartości HTML.  
   
  [!code-csharp[SyndicationMapping#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#5)]
@@ -360,6 +367,7 @@ Podczas tworzenia usługi zespalania Windows Communication Foundation (WCF) moż
  `<description><html> some xhtml </html></description>`  
   
 ## <a name="urlsyndicationcontent"></a>UrlSyndicationContent  
+
  Poniższy przykład kodu pokazuje, jak serializować <xref:System.ServiceModel.Syndication.UrlSyndicationContent> klasę do Atom 1,0 i RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#8)]
@@ -376,6 +384,7 @@ Podczas tworzenia usługi zespalania Windows Communication Foundation (WCF) moż
  `<content type="audio" src="http://Contoso/someurl/" xmlns="http://www.w3.org/2005/Atom" />`  
   
 ## <a name="xmlsyndicationcontent"></a>XmlSyndicationContent  
+
  Poniższy przykład kodu pokazuje, jak serializować <xref:System.ServiceModel.Syndication.XmlSyndicationContent> klasę do Atom 1,0 i RSS 2,0.  
   
  [!code-csharp[SyndicationMapping#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/syndicationmapping/cs/snippets.cs#9)]
@@ -401,6 +410,6 @@ Podczas tworzenia usługi zespalania Windows Communication Foundation (WCF) moż
 
 - [Omówienie syndykacji WCF](wcf-syndication-overview.md)
 - [Architektura syndykacji](architecture-of-syndication.md)
-- [Instrukcje: Tworzenie podstawowego kanału informacyjnego RSS](how-to-create-a-basic-rss-feed.md)
+- [Instrukcje: tworzenie podstawowego kanału informacyjnego RSS](how-to-create-a-basic-rss-feed.md)
 - [Instrukcje: tworzenie podstawowego źródła danych Atom](how-to-create-a-basic-atom-feed.md)
 - [Instrukcje: udostępnianie kanału informacyjnego w formatach Atom i RSS](how-to-expose-a-feed-as-both-atom-and-rss.md)

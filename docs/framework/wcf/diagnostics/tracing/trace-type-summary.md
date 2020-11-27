@@ -2,53 +2,54 @@
 title: Podsumowanie typu śledzenia
 ms.date: 03/30/2017
 ms.assetid: e639410b-d1d1-479c-b78e-a4701d4e4085
-ms.openlocfilehash: 8ed6dceb19caa52f928f285064c60337e3f15a87
-ms.sourcegitcommit: 515469828d0f040e01bde01df6b8e4eb43630b06
+ms.openlocfilehash: e8d222d6f093f5db3bd620194bfde7edd4b998a8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78674841"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96259248"
 ---
 # <a name="trace-type-summary"></a>Podsumowanie typu śledzenia
-[Poziomy źródła](xref:System.Diagnostics.SourceLevels) definiuje różne poziomy śledzenia: Krytyczne, Błąd, Ostrzeżenie, Informacje i Pełne, a `ActivityTracing` także zawiera opis flagi, która przełącza dane wyjściowe śledzenia granic i zdarzeń transferu działania.  
+
+[Poziomy źródła](xref:System.Diagnostics.SourceLevels) definiują różne poziomy śledzenia: krytyczny, błąd, ostrzeżenie, informacje i pełne, a także zawiera opis `ActivityTracing` flagi, która przełącza dane wyjściowe granicy śledzenia i zdarzeń transferu aktywności.  
   
- Można również <xref:System.Diagnostics.TraceEventType> przejrzeć typy śladów, które <xref:System.Diagnostics>mogą być emitowane z .  
+ Możesz również przejrzeć <xref:System.Diagnostics.TraceEventType> typy śladów, z których mogą być emitowane <xref:System.Diagnostics> .  
   
- W poniższej tabeli wymieniono najważniejsze z nich.  
+ W poniższej tabeli przedstawiono najważniejsze elementy.  
   
 |Typ śledzenia|Opis|  
 |----------------|-----------------|  
 |Krytyczny|Błąd krytyczny lub awaria aplikacji.|  
-|Błąd|Błąd do odzyskania.|  
-|Ostrzeżenie|Wiadomość informacyjna.|  
+|Błąd|Odwracalny błąd.|  
+|Ostrzeżenie|Komunikat informacyjny.|  
 |Informacje|Problem niekrytyczny.|  
-|Pełny|Debugowanie śledzenia.|  
-|Rozpoczęcie|Rozpoczęcie logicznej jednostki przetwarzania.|  
+|Pełny|Śledzenie debugowania.|  
+|Rozpocznij|Rozpoczynanie logicznej jednostki przetwarzania.|  
 |Wstrzymanie|Zawieszenie logicznej jednostki przetwarzania.|  
-|Resume|Wznowienie logicznej jednostki przetwarzania.|  
+|Wznów|Wznawianie jednostki logicznej przetwarzania.|  
 |Stop|Zatrzymywanie logicznej jednostki przetwarzania.|  
 |Transfer|Zmiana tożsamości korelacji.|  
   
- Działanie jest zdefiniowane jako kombinacja typów śledzenia powyżej.  
+ Działanie jest zdefiniowane jako kombinacja powyższych typów śledzenia.  
   
- Poniżej znajduje się wyrażenie regularne, które definiuje idealne działanie w zakresie lokalnym (źródło śledzenia),  
+ Poniżej znajduje się wyrażenie regularne, które definiuje idealne działanie w zakresie lokalnym (śledzenie źródła),  
   
  `R = Start (Critical | Error | Warning | Information | Verbose | Transfer | (Transfer Suspend Transfer Resume) )* Stop`  
   
  Oznacza to, że działanie musi spełniać następujące warunki.  
   
-- Musi rozpocząć i zatrzymać odpowiednio przez ślady start i stop  
+- Musi on być odpowiednio uruchamiany i zatrzymany przez uruchamianie i zatrzymywanie śledzenia  
   
-- Musi mieć transfer śledzenia bezpośrednio poprzedzających wstrzymanie lub wznowienie śledzenia  
+- Musi mieć ślad transferu bezpośrednio poprzedzający śledzenie wstrzymania lub wznowienia  
   
-- Nie może mieć żadnych śladów między wstrzymywają i wznawiaj ślady, jeśli takie ślady istnieją  
+- Nie może mieć żadnych śladów między śladami zawieszenia i wznowienia, jeśli istnieją takie ślady  
   
-- Może mieć dowolną i dowolną liczbę krytycznych/błąd/ostrzeżenie/informacje/pełne/transferowe ślady, o ile zaobserwowano poprzednie warunki  
+- Może to być dowolny i wiele ze śladów krytyczne/błąd/ostrzeżenie/informacja/pełny/transfer, o ile zostały spełnione poprzednie warunki  
   
  Poniżej znajduje się wyrażenie regularne, które definiuje idealne działanie w zakresie globalnym,  
   
 `R+`  
   
- z R jest wyrażeniem regularnym dla działania w zakresie lokalnym. Przekłada się to na,  
+ za pomocą języka R jest wyrażeniem regularnym dla działania w zakresie lokalnym. Spowoduje to przetłumaczenie na,  
   
 `[R+ = Start ( Critical | Error | Warning | Information | Verbose | Transfer | (Transfer Suspend Transfer Resume) )* Stop]+`

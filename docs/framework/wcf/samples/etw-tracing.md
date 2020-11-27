@@ -3,14 +3,15 @@ title: Śledzenie za pomocą funkcji ETW
 description: Ten przykład pokazuje, jak zaimplementować śledzenie kompleksowe (E2E) przy użyciu funkcji śledzenia zdarzeń systemu Windows (ETW) i ETWTraceListener.
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: 6e7526ef05d672b550599e3b12a4b083e9130b96
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6777b2d14786f7a79b3605bec93b4da62ff24616
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547144"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96258481"
 ---
 # <a name="etw-tracing"></a>Śledzenie za pomocą funkcji ETW
+
 W tym przykładzie pokazano, jak zaimplementować śledzenie kompleksowego (E2E) przy użyciu funkcji śledzenia zdarzeń systemu Windows (ETW) i `ETWTraceListener` dostarczonej z tym przykładem. Przykład jest oparty na [wprowadzenie](getting-started-sample.md) i zawiera śledzenie ETW.  
   
 > [!NOTE]
@@ -107,6 +108,6 @@ logman stop Wcf
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\AnalyticTrace`  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykłady monitorowania oprogramowania AppFabric](/previous-versions/appfabric/ff383407(v=azure.10))

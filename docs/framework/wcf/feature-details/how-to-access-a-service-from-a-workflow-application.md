@@ -2,14 +2,15 @@
 title: 'Instrukcje: uzyskiwanie dostępu do usługi z poziomu aplikacji przepływu pracy'
 ms.date: 03/30/2017
 ms.assetid: 925ef8ea-5550-4c9d-bb7b-209e20c280ad
-ms.openlocfilehash: 7375dc4f9af2eb0209b83724cd2ac9b9619b56dd
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 13fae7dec3026e96e3c196467da29fe768a3655f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556879"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257935"
 ---
 # <a name="how-to-access-a-service-from-a-workflow-application"></a>Instrukcje: uzyskiwanie dostępu do usługi z poziomu aplikacji przepływu pracy
+
 W tym temacie opisano sposób wywoływania usługi przepływu pracy z poziomu aplikacji konsolowej przepływu pracy. Jest to zależne od ukończenia procedury [: Tworzenie usługi przepływu pracy z działaniami obsługi komunikatów](how-to-create-a-workflow-service-with-messaging-activities.md) . Chociaż w tym temacie opisano sposób wywoływania usługi przepływu pracy z poziomu aplikacji przepływu pracy, można używać tych samych metod do wywoływania dowolnej usługi Windows Communication Foundation (WCF) z poziomu aplikacji przepływu pracy.
 
 ### <a name="create-a-workflow-console-application-project"></a>Tworzenie projektu aplikacji konsolowej przepływu pracy
@@ -62,7 +63,7 @@ W tym temacie opisano sposób wywoływania usługi przepływu pracy z poziomu ap
 
 12. Naciśnij kombinację klawiszy CTRL + F5, aby uruchomić usługę i klienta. Serwer programistyczny ASP.NET obsługuje usługę, program Internet Explorer wyświetla stronę pomocy programu WCF, a aplikacja przepływu pracy klienta jest uruchamiana w oknie konsoli i wyświetla ciąg zwracany przez usługę ("Hello, World").
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Usługi przepływu pracy](workflow-services.md)
 - [Instrukcje: Tworzenie usługi przepływu pracy przy użyciu działań dotyczących komunikatów](how-to-create-a-workflow-service-with-messaging-activities.md)

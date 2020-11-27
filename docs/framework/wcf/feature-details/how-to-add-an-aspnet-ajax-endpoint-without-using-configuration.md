@@ -1,15 +1,16 @@
 ---
-title: 'Instrukcje: Dodawanie punktu końcowego AJAX ASP.NET bez używania konfiguracji'
+title: 'Instrukcje: dodawanie punktu końcowego AJAX ASP.NET bez używania konfiguracji'
 ms.date: 03/30/2017
 ms.assetid: b05c1742-8d0a-4673-9d71-725b18a3008e
-ms.openlocfilehash: 9aab53d6457aa7848fd4acea6317a30da352cc98
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e33f1fed7dd7bf45966815949ac544250f4d1de8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579634"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257629"
 ---
-# <a name="how-to-add-an-aspnet-ajax-endpoint-without-using-configuration"></a>Instrukcje: Dodawanie punktu końcowego AJAX ASP.NET bez używania konfiguracji
+# <a name="how-to-add-an-aspnet-ajax-endpoint-without-using-configuration"></a>Instrukcje: dodawanie punktu końcowego AJAX ASP.NET bez używania konfiguracji
+
 Windows Communication Foundation (WCF) umożliwia utworzenie usługi, która uwidacznia punkt końcowy z obsługą technologii AJAX ASP.NET, który można wywołać z JavaScript w witrynie sieci Web klienta. Aby utworzyć taki punkt końcowy, możesz użyć pliku konfiguracji, podobnie jak w przypadku wszystkich innych punktów końcowych WCF, lub użyć metody, która nie wymaga żadnych elementów konfiguracji. W tym temacie przedstawiono drugie podejście.  
   
  Aby można było tworzyć usługi z ASP.NETymi punktami końcowymi AJAX bez konfiguracji, usługi muszą być hostowane przez Internet Information Services (IIS). Aby aktywować punkt końcowy ASP.NET AJAX przy użyciu tego podejścia, określ <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> jako parametr fabryki w dyrektywie [ \@ ServiceHost](../../configure-apps/file-schema/wcf-directive/servicehost.md) w pliku SVC. Ta fabryka niestandardowa jest składnikiem, który automatycznie konfiguruje punkt końcowy ASP.NET AJAX, aby można go było wywołać z JavaScript w klienckiej witrynie sieci Web.  
@@ -80,7 +81,7 @@ Windows Communication Foundation (WCF) umożliwia utworzenie usługi, która uwi
   
  Automatycznie skonfigurowany punkt końcowy jest tworzony pod pustym adresem względem podstawowego adresu URL. Plik konfiguracji można także dodać i użyć z tym podejściem. Jeśli plik konfiguracji zawiera definicje punktów końcowych, te punkty końcowe są dodawane do automatycznie skonfigurowanego punktu końcowego.  
   
- Na przykład usługa Service. svc korzysta z programu <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> , a katalog usługi zawiera plik Web. config, który definiuje punkt końcowy dla tej samej usługi przy użyciu <xref:System.ServiceModel.BasicHttpBinding> adresu względnego "SOAP". W takim przypadku usługa zawiera dwa punkty końcowe: jeden w usłudze Service. svc (który reaguje na żądania ASP.NET AJAX) i inny w usłudze Service. svc/SOAP (który reaguje na żądania protokołu SOAP).  
+ Na przykład usługa Service. svc korzysta z programu <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> , a katalog usługi zawiera plik Web.config, który definiuje punkt końcowy dla tej samej usługi przy użyciu <xref:System.ServiceModel.BasicHttpBinding> adresu względnego "SOAP". W takim przypadku usługa zawiera dwa punkty końcowe: jeden w usłudze Service. svc (który reaguje na żądania ASP.NET AJAX) i inny w usłudze Service. svc/SOAP (który reaguje na żądania protokołu SOAP).  
   
  Jeśli plik konfiguracji definiuje punkt końcowy w pustym adresie względnym i <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> jest używany, zostanie zgłoszony wyjątek i uruchomienie usługi nie powiedzie się.  
   
@@ -99,4 +100,4 @@ Windows Communication Foundation (WCF) umożliwia utworzenie usługi, która uwi
 ## <a name="see-also"></a>Zobacz też
 
 - [Tworzenie usług WCF w technologii AJAX na platformie ASP.NET](creating-wcf-services-for-aspnet-ajax.md)
-- [Instrukcje: Migrowanie usług sieci Web obsługujących technologię AJAX i opartych na platformie ASP.NET do programu WCF](how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)
+- [Instrukcje: migrowanie usług internetowych obsługujących technologię AJAX i opartych na platformie ASP.NET do programu WCF](how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)

@@ -8,30 +8,33 @@ helpviewer_keywords:
 - credential validation [WCF]
 - credentials [WCF], validation
 ms.assetid: da831bec-e281-4d44-b343-437b5eef688e
-ms.openlocfilehash: 1418d4155bc7f2fefc9f3e6caf4d3a264747a667
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5f2909bb088a5f3d3203fe3c9e24b2df3450aa3f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795817"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257831"
 ---
 # <a name="custom-credential-and-credential-validation"></a>Niestandardowe poświadczenia i weryfikacja poświadczeń
+
 Zabezpieczenia w programie Windows Communication Foundation (WCF) bazują na wymianie poświadczeń między usługami i klientami. Większość scenariuszy zabezpieczeń można spełnić przy użyciu wspólnych typów poświadczeń, takich jak Windows (Kerberos), nazwa użytkownika i hasła oraz certyfikaty. Jeśli jednak jest wymagany nowy typ poświadczeń, w tematach w tej sekcji wyjaśniono, jak obsługiwać i sprawdzać poprawność nowych typów.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
- [Instrukcje: Tworzenie usługi korzystającej z niestandardowego modułu weryfikacji certyfikatów](how-to-create-a-service-that-employs-a-custom-certificate-validator.md)  
- Wyjaśnia, <xref:System.IdentityModel.Selectors.X509CertificateValidator> jak dostosować walidację programu WCF przez dziedziczenie z klasy.  
+
+ [Instrukcje: tworzenie usługi korzystającej z niestandardowego modułu weryfikacji certyfikatów](how-to-create-a-service-that-employs-a-custom-certificate-validator.md)  
+ Wyjaśnia, jak dostosować walidację programu WCF przez dziedziczenie z <xref:System.IdentityModel.Selectors.X509CertificateValidator> klasy.  
   
- [Przewodnik: Tworzenie niestandardowych poświadczeń klienta i usługi](walkthrough-creating-custom-client-and-service-credentials.md)  
- Pokazuje, <xref:System.ServiceModel.Description.ClientCredentials> w jaki sposób można <xref:System.ServiceModel.Description.ServiceCredentials> rozciągnąć klasy i, aby pomieścić nowe typy poświadczeń. Jest to pierwsza część tematów, które umożliwiają tworzenie niestandardowych typów poświadczeń.  
+ [Przewodnik: tworzenie niestandardowego klienta i poświadczeń usługi](walkthrough-creating-custom-client-and-service-credentials.md)  
+ Pokazuje, w jaki sposób można rozciągnąć <xref:System.ServiceModel.Description.ClientCredentials> klasy i, <xref:System.ServiceModel.Description.ServiceCredentials> aby pomieścić nowe typy poświadczeń. Jest to pierwsza część tematów, które umożliwiają tworzenie niestandardowych typów poświadczeń.  
   
- [Instrukcje: Tworzenie niestandardowego dostawcy tokenów zabezpieczeń](how-to-create-a-custom-security-token-provider.md)  
+ [Instrukcje: tworzenie niestandardowego dostawcy tokenów zabezpieczeń](how-to-create-a-custom-security-token-provider.md)  
  Wyjaśnia, jak utworzyć dostawcę tokenów zabezpieczających do obsługi nowych typów poświadczeń i zwracać nowe tokeny dla poświadczenia. Jest to drugi temat w serii.  
   
- [Instrukcje: Tworzenie niestandardowego wystawcy uwierzytelniania tokenu zabezpieczeń](how-to-create-a-custom-security-token-authenticator.md)  
+ [Instrukcje: tworzenie niestandardowego wystawcy uwierzytelniania tokenu zabezpieczeń](how-to-create-a-custom-security-token-authenticator.md)  
  Wyjaśnia, jak utworzyć niestandardowy wystawca uwierzytelnienia w celu uwierzytelnienia nowego typu poświadczeń. Jest to trzeci temat w tej serii.  
   
-## <a name="reference"></a>Tematy pomocy  
+## <a name="reference"></a>Dokumentacja  
+
  <xref:System.ServiceModel.Security>  
   
  <xref:System.IdentityModel.Claims>  
@@ -49,12 +52,13 @@ Zabezpieczenia w programie Windows Communication Foundation (WCF) bazują na wym
  <xref:System.ServiceModel.Description.ServiceCredentials>  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
- [Uwierzytelnianie](../feature-details/authentication-in-wcf.md)  
+
+ [Authentication](../feature-details/authentication-in-wcf.md)  
   
  [Federacja i wystawione tokeny](../feature-details/federation-and-issued-tokens.md)  
   
  [Autoryzacja](../feature-details/authorization-in-wcf.md)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Zabezpieczenia](../feature-details/security.md)
+- [Bezpieczeństwo](../feature-details/security.md)

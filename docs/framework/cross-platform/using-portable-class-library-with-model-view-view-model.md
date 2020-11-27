@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Portable Class Library [.NET Framework], and MVVM
 - MVVM, and Portable Class Library
 ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
-ms.openlocfilehash: 3ec8b8387abf0f0271bb9585d8487c98ee6a893f
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: e8bce469fd09de02ef6ab30e21ae20a9b9f71325
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687868"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96259270"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>Korzystanie z przenośnej biblioteki klas w połączeniu z modelem Model-View-View Model
+
 Za pomocą [przenośnej biblioteki klas](portable-class-library.md) .NET Framework można zaimplementować wzorzec Model-View-View Model (MVVM) i udostępnić zestawy na wielu platformach.
 
 [!INCLUDE[standard](../../../includes/pcl-to-standard.md)]
@@ -27,6 +28,7 @@ Za pomocą [przenośnej biblioteki klas](portable-class-library.md) .NET Framewo
  Ten temat nie zawiera ogólnych informacji o wzorcu MVVM. Zawiera on tylko informacje o sposobach używania przenośnej biblioteki klas do implementowania MVVM. Aby uzyskać więcej informacji na temat MVVM, zobacz [Przewodnik Szybki Start MVVM przy użyciu biblioteki biblioteki Prism Library 5,0 for WPF](/previous-versions/msp-n-p/gg430857(v=pandp.40)).
 
 ## <a name="classes-that-support-mvvm"></a>Klasy obsługujące MVVM
+
  Jeśli obiektem docelowym jest .NET Framework 4,5, .NET dla aplikacji do sklepu Windows 8. x, Silverlight lub Windows Phone 7,5 dla projektu biblioteki klas przenośnych, do wdrożenia wzorca MVVM są dostępne następujące klasy:
 
 - Klasa <xref:System.Collections.ObjectModel.ObservableCollection%601?displayProperty=nameWithType>
@@ -52,11 +54,13 @@ Za pomocą [przenośnej biblioteki klas](portable-class-library.md) .NET Framewo
 - Wszystkie klasy w <xref:System.ComponentModel.DataAnnotations?displayProperty=nameWithType> przestrzeni nazw
 
 ## <a name="implementing-mvvm"></a>Implementowanie MVVM
+
  Aby zaimplementować MVVM, zazwyczaj tworzysz model i model widoku w projekcie biblioteki klas przenośnych, ponieważ projekt biblioteki klas przenośnych nie może odwoływać się do projektu nieprzenośnego. Model i model widoku mogą znajdować się w tym samym projekcie lub w oddzielnych projektach. Jeśli używasz oddzielnych projektów, Dodaj odwołanie z projektu modelu widoku do projektu modelu.
 
  Po skompilowaniu modelu i wyświetleniu projektów modelu należy odwołać się do tych zestawów w aplikacji, która zawiera widok. Jeśli widok współdziała tylko z modelem widoku, trzeba tylko odwołać się do zestawu, który zawiera model widoku.
 
 ### <a name="model"></a>Model
+
  W poniższym przykładzie przedstawiono uproszczoną klasę modelu, która może znajdować się w projekcie biblioteki klas przenośnych.
 
  [!code-csharp[PortableClassLibraryMVVM#1](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/customer.cs#1)]
@@ -68,6 +72,7 @@ Za pomocą [przenośnej biblioteki klas](portable-class-library.md) .NET Framewo
  [!code-vb[PortableClassLibraryMVVM#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerrepository.vb#2)]
 
 ### <a name="view-model"></a>Wyświetl model
+
  Klasa bazowa dla modeli widoków jest często dodawana podczas implementowania wzorca MVVM. Poniższy przykład pokazuje klasę bazową.
 
  [!code-csharp[PortableClassLibraryMVVM#3](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/viewmodelbase.cs#3)]
@@ -84,10 +89,11 @@ Za pomocą [przenośnej biblioteki klas](portable-class-library.md) .NET Framewo
  [!code-vb[PortableClassLibraryMVVM#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerviewmodel.vb#5)]  
   
 ### <a name="view"></a>Widok  
+
  Z poziomu aplikacji .NET Framework 4,5, aplikacji do sklepu Windows 8. x, aplikacji opartej na technologii Silverlight lub Windows Phone 7,5 aplikacji można odwołać się do zestawu, który zawiera model i widok projektów modelu.  Następnie utworzysz widok, który współdziała z modelem widoku. Poniższy przykład przedstawia uproszczoną aplikację Windows Presentation Foundation (WPF), która pobiera i aktualizuje dane z modelu widoku. Możesz tworzyć podobne widoki w aplikacjach w sklepie Silverlight, Windows Phone lub Windows 8. x.  
   
  [!code-xaml[PortableClassLibraryMVVM#6](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainwindow.xaml#6)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Biblioteka klas przenośnych](portable-class-library.md)

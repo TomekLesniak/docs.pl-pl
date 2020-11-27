@@ -2,18 +2,20 @@
 title: Filtry niestandardowe
 ms.date: 03/30/2017
 ms.assetid: 97cf247d-be0a-4057-bba9-3be5c45029d5
-ms.openlocfilehash: ae020173544372c3ce097c8ac57e53f3fde37514
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b5ec07c2e2a77c7de8b240d21b1eb54bf858b43b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185210"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96258429"
 ---
 # <a name="custom-filters"></a>Filtry niestandardowe
-Filtry niestandardowe umożliwiają definiowanie pasującej logiki, której nie można wykonać za pomocą filtrów wiadomości dostarczonych przez system. Na przykład można utworzyć filtr niestandardowy, który skróty określonego elementu wiadomości, a następnie sprawdza wartość, aby ustalić, czy filtr powinien zwracać true lub false.  
+
+Filtry niestandardowe umożliwiają zdefiniowanie dopasowania logiki, której nie można wykonać za pomocą filtrów komunikatów dostarczonych przez system. Na przykład można utworzyć filtr niestandardowy, który miesza określony element komunikatu, a następnie analizuje wartość, aby określić, czy filtr powinien zwrócić wartość true lub false.  
   
-## <a name="implementation"></a>Wdrażanie  
- Filtr niestandardowy jest implementacją abstrakcyjnej <xref:System.ServiceModel.Dispatcher.MessageFilter> klasy podstawowej. Podczas implementowania filtru niestandardowego konstruktora można opcjonalnie zaakceptować parametr pojedynczego ciągu. Ten parametr zawiera informacje o konfiguracji, który jest przekazywany do konstruktora MessageFilter w celu zapewnienia wszelkich wartości lub konfiguracji, które filtr potrzebuje w czasie wykonywania w celu wykonywania dopasowań. Na przykład może to służyć do zapewnienia wartości, która szuka filtru w ramach wiadomości są oceniane. W poniższym przykładzie pokazano podstawową implementację niestandardowego filtru wiadomości, który akceptuje parametr ciągu:  
+## <a name="implementation"></a>Implementacja  
+
+ Filtr niestandardowy jest implementacją <xref:System.ServiceModel.Dispatcher.MessageFilter> abstrakcyjnej klasy podstawowej. Podczas implementowania niestandardowego filtru Konstruktor może opcjonalnie zaakceptować pojedynczy parametr ciągu. Ten parametr zawiera informacje o konfiguracji, które są przesyłane do konstruktora MessageFilter w celu zapewnienia dowolnych wartości lub konfiguracji wymaganych przez filtr w czasie wykonywania w celu wykonania dopasowań. Na przykład może to służyć do podania wartości, która będzie wyglądała w filtrze w analizowanym komunikacie. Poniższy przykład ilustruje podstawową implementację niestandardowego filtru komunikatów, który akceptuje parametr ciągu:  
   
 ```csharp  
 public class MyMessageFilter: MessageFilter  
@@ -39,25 +41,27 @@ public class MyMessageFilter: MessageFilter
 ```  
   
 > [!NOTE]
-> W rzeczywistej implementacji Match metody zawiera logikę, która zbada komunikat, aby ustalić, czy ten filtr wiadomości powinien zwracać **true** lub **false**.  
+> W rzeczywistej implementacji metody dopasowania zawierają logikę, która będzie analizować komunikat, aby określić, czy ten filtr komunikatów powinien zwrócić **wartość true** lub **false**.  
   
 ### <a name="performance"></a>Wydajność  
- Podczas implementowania filtru niestandardowego, należy wziąć pod uwagę maksymalny czas wymagany dla filtru, aby zakończyć ocenę wiadomości. Ponieważ komunikat może być oceniany względem wielu filtrów przed znalezieniem dopasowania, ważne jest, aby upewnić się, że żądanie klienta nie limit czasu przed wszystkie filtry mogą być oceniane. W związku z tym filtr niestandardowy powinien zawierać tylko kod niezbędny do oceny zawartości lub atrybutów wiadomości w celu ustalenia, czy spełnia kryteria filtrowania.  
+
+ Podczas implementowania filtru niestandardowego należy wziąć pod uwagę maksymalny czas wymagany do przeprowadzenia obliczeń przez filtr. Ponieważ komunikat można ocenić względem wielu filtrów przed znalezieniem dopasowania, należy się upewnić, że żądanie klienta nie przekroczy limitu czasu, zanim będzie można ocenić wszystkie filtry. W związku z tym filtr niestandardowy powinien zawierać tylko kod niezbędny do oszacowania zawartości lub atrybutów komunikatu w celu ustalenia, czy pasuje do kryteriów filtrowania.  
   
- Ogólnie rzecz biorąc należy unikać następujących czynności podczas implementowania filtru niestandardowego:  
+ Ogólnie rzecz biorąc, podczas implementowania filtra niestandardowego należy unikać następujących czynności:  
   
-- We/Wy, takie jak zapisywanie danych na dysku lub w bazie danych.  
+- We/wy, takie jak zapisywanie danych na dysku lub w bazie danych.  
   
-- Niepotrzebne przetwarzanie, takie jak zapętlanie wielu rekordów w dokumencie.  
+- Niepotrzebne przetwarzanie, takie jak pętla dla wielu rekordów w dokumencie.  
   
-- Blokowanie operacji, takich jak wywołania, które obejmują uzyskanie blokady zasobów udostępnionych lub wykonywanie odnośeń w bazie danych.  
+- Operacje blokowania, takie jak wywołania, które wymagają uzyskania blokady zasobów udostępnionych lub wykonywania wyszukiwania względem bazy danych.  
   
- Przed użyciem filtru niestandardowego w środowisku produkcyjnym należy uruchomić testy wydajności, aby określić średni czas potrzebny filtrowi do oceny wiadomości. W połączeniu ze średnim czasem przetwarzania innych filtrów używanych w tabeli filtrów, pozwoli to dokładnie określić maksymalną wartość limitu czasu, który powinien być określony przez aplikację kliencką.  
+ Przed użyciem filtru niestandardowego w środowisku produkcyjnym należy uruchomić testy wydajnościowe, aby określić średni czas wymagany przez filtr w celu oceny komunikatu. W połączeniu z średnim czasem przetwarzania innych filtrów używanych w tabeli filtrów umożliwi to dokładne określenie maksymalnej wartości limitu czasu, która powinna być określona przez aplikację kliencką.  
   
-## <a name="usage"></a>Sposób użycia  
- Aby użyć filtru niestandardowego z usługą routingu, należy dodać go do tabeli filtrów, określając nowy wpis filtru typu "Niestandardowy", w pełni kwalifikowaną nazwę typu filtru wiadomości i nazwę zestawu.  Podobnie jak w przypadku innych MessageFilters, można określić filterdata ciąg, który zostanie przekazany do konstruktora filtru niestandardowego.  
+## <a name="usage"></a>Użycie  
+
+ Aby można było użyć niestandardowego filtru z usługą routingu, należy dodać go do tabeli filtrów przez określenie nowego wpisu filtru typu "Custom", w pełni kwalifikowanej nazwy typu filtru komunikatów i nazwy zestawu.  Podobnie jak w przypadku innych MessageFilters można określić ciąg danych filtru, który zostanie przesłany do konstruktora filtru niestandardowego.  
   
- Poniższe przykłady demonstrują przy użyciu filtru niestandardowego z usługą routingu:  
+ W poniższych przykładach pokazano, jak za pomocą filtru niestandardowego korzystać z usługi routingu:  
   
 ```xml  
 <!--ROUTING SECTION -->  

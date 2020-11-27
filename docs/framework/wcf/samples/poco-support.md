@@ -2,14 +2,15 @@
 title: Obsługa obiektów POCO
 ms.date: 03/30/2017
 ms.assetid: 3846ca73-2819-4ca2-8367-dc739dde5a5b
-ms.openlocfilehash: a9f8d185c58b22e68f7a8c11954e0e534c4bd48f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d416f37e0add99fbe3d60982fd2298748ff78556
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600467"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96259970"
 ---
 # <a name="poco-support"></a>Obsługa obiektów POCO
+
 Ten przykład pokazuje obsługę serializacji dla nieoznaczonych typów; oznacza to, że typy, do których nie zastosowano atrybutów serializacji, czasami określane jako zwykły typ obiektów CLR (POCO). <xref:System.Runtime.Serialization.DataContractSerializer>Wnioskuje o umowę danych dla wszystkich publicznych nieoznaczonych typów, które mają konstruktora bez parametrów. Kontrakty danych umożliwiają przekazywanie danych strukturalnych do i z usług. Aby uzyskać więcej informacji na temat typów nieoznaczonych, zobacz typy możliwe do [serializacji](../feature-details/serializable-types.md).  
   
  Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md), ale używa liczb złożonych zamiast pierwotnych typów liczbowych. Jest również podobna do podstawowego przykładu [kontraktu danych](basic-data-contract.md) , z tą różnicą, że <xref:System.Runtime.Serialization.DataContractAttribute> <xref:System.Runtime.Serialization.DataMemberAttribute> atrybuty i nie są używane.  

@@ -1,5 +1,5 @@
 ---
-title: 'Instrukcje: Konfigurowanie poświadczeń usługi federacyjnej'
+title: 'Instrukcje: konfigurowanie poświadczeń usługi federacyjnej'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,15 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 149ab165-0ef3-490a-83a9-4322a07bd98a
-ms.openlocfilehash: 05f35bbb7dbb34cd4067c407578038cbb4eff70f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 692ccc0c39ca7ed40601551ea6bbcdd840fa03af
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599148"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257590"
 ---
-# <a name="how-to-configure-credentials-on-a-federation-service"></a>Instrukcje: Konfigurowanie poświadczeń usługi federacyjnej
+# <a name="how-to-configure-credentials-on-a-federation-service"></a>Instrukcje: konfigurowanie poświadczeń usługi federacyjnej
+
 W programie Windows Communication Foundation (WCF) Tworzenie usługi federacyjnej obejmuje następujące główne procedury:  
   
 1. Konfigurowanie <xref:System.ServiceModel.WSFederationHttpBinding> lub podobne niestandardowe powiązanie. Aby uzyskać więcej informacji na temat tworzenia odpowiednich powiązań, zobacz [How to: Create a WSFederationHttpBinding](how-to-create-a-wsfederationhttpbinding.md).  
@@ -56,6 +57,7 @@ W programie Windows Communication Foundation (WCF) Tworzenie usługi federacyjne
 5. W razie potrzeby ustaw `samlSerializer` atrybut <`issuedTokenAuthentication`> elementu na nazwę typu <xref:System.IdentityModel.Tokens.SamlSerializer> klasy niestandardowej.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład ustawia właściwości <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> w kodzie.  
   
  [!code-csharp[C_FederatedService#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federatedservice/cs/source.cs#2)]
@@ -76,7 +78,7 @@ W programie Windows Communication Foundation (WCF) Tworzenie usługi federacyjne
 - [Federacja](federation.md)
 - [Federacja i zaufanie](federation-and-trust.md)
 - [Federacja — przykład](../samples/federation-sample.md)
-- [Instrukcje: Wyłączanie bezpiecznej sesji przy użyciu klasy WSFederationHttpBinding](how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)
+- [Instrukcje: wyłączanie bezpiecznej sesji przy użyciu klasy WSFederationHttpBinding](how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)
 - [Instrukcje: tworzenie elementu WSFederationHttpBinding](how-to-create-a-wsfederationhttpbinding.md)
 - [Instrukcje: tworzenie klienta federacyjnego](how-to-create-a-federated-client.md)
 - [Praca z certyfikatami](working-with-certificates.md)

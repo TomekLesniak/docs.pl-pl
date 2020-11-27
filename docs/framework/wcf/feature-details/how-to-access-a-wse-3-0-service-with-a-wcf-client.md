@@ -5,17 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f9bcd9b-8f8f-47fa-8f1e-0d47236eb800
-ms.openlocfilehash: 847146c2025612689f0d69cc0c23d2be14018c0f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c955244c2e6821abda3a1fc5e25f00a73389ff1d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556840"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257772"
 ---
 # <a name="how-to-access-a-wse-30-service-with-a-wcf-client"></a>Instrukcje: Dostęp do usługi WSE 3.0 za pomocą klienta programu WCF
-Klienci korzystający z programu Windows Communication Foundation (WCF) są zgodną z rozszerzeniami usług sieci Web (WSE) 3,0 dla usług Microsoft .NET, gdy klienci WCF są skonfigurowani do korzystania z wersji z sierpnia 2004 specyfikacji WS-Addressing. Jednak usługi WSE 3,0 nie obsługują protokołu wymiany metadanych (MEX), dlatego w przypadku tworzenia klasy klienta programu WCF za pomocą narzędzia do obsługi [metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) nie są stosowane ustawienia zabezpieczeń dla wygenerowanego klienta WCF. W związku z tym należy określić ustawienia zabezpieczeń wymagane przez usługę WSE 3,0 po wygenerowaniu klienta WCF.  
+
+Klienci korzystający z programu Windows Communication Foundation (WCF) są zgodną z rozszerzeniami usług sieci Web (WSE) 3,0 dla usług Microsoft .NET, gdy klienci WCF są skonfigurowani do używania wersji 2004 z sierpnia WS-Addressing specyfikacji. Jednak usługi WSE 3,0 nie obsługują protokołu wymiany metadanych (MEX), dlatego w przypadku tworzenia klasy klienta programu WCF za pomocą narzędzia do obsługi [metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) nie są stosowane ustawienia zabezpieczeń dla wygenerowanego klienta WCF. W związku z tym należy określić ustawienia zabezpieczeń wymagane przez usługę WSE 3,0 po wygenerowaniu klienta WCF.  
   
- Te ustawienia zabezpieczeń można zastosować przy użyciu niestandardowego powiązania, aby wziąć pod uwagę wymagania dotyczące usługi WSE 3,0 i wymagania interoperacyjności między usługą WSE 3,0 a klientem programu WCF. Te wymagania dotyczące współdziałania obejmują wymienione powyżej użycie protokołu WS-Addressing z sierpnia 2004 i domyślną ochronę wiadomości w programie WSE 3.0 <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt> . Domyślna ochrona komunikatów dla programu WCF to <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature> . W tym temacie opisano sposób tworzenia powiązania WCF, które współdziała z usługą WSE 3,0. Funkcja WCF udostępnia również przykład, który obejmuje to powiązanie. Aby uzyskać więcej informacji na temat tego przykładu, zobacz [współdziałanie z usługami sieci Web ASMX](../samples/interoperating-with-asmx-web-services.md).  
+ Te ustawienia zabezpieczeń można zastosować przy użyciu niestandardowego powiązania, aby wziąć pod uwagę wymagania dotyczące usługi WSE 3,0 i wymagania interoperacyjności między usługą WSE 3,0 a klientem programu WCF. Te wymagania dotyczące współdziałania obejmują wymienione powyżej zastosowanie specyfikacji 2004 sierpnia WS-Addressing i domyślnej ochrony wiadomości WSE 3.0 <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncrypt> . Domyślna ochrona komunikatów dla programu WCF to <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature> . W tym temacie opisano sposób tworzenia powiązania WCF, które współdziała z usługą WSE 3,0. Funkcja WCF udostępnia również przykład, który obejmuje to powiązanie. Aby uzyskać więcej informacji na temat tego przykładu, zobacz [współdziałanie z usługami sieci Web ASMX](../samples/interoperating-with-asmx-web-services.md).  
   
 ### <a name="to-access-a-wse-30-web-service-with-a-wcf-client"></a>Aby uzyskać dostęp do usługi sieci Web WSE 3,0 przy użyciu klienta WCF  
   
@@ -58,9 +59,10 @@ Klienci korzystający z programu Windows Communication Foundation (WCF) są zgod
      [!code-vb[c_WCFClientToWSEService#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/client.vb#4)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu definiuje niestandardowe powiązanie, które uwidacznia właściwości odpowiadające właściwościom WSE 3,0 gotowe Security Assertion. To niestandardowe powiązanie, które nosi nazwę `WseHttpBinding` , służy do określania właściwości powiązań dla klienta WCF, który komunikuje się z przykładem szybkiego startu WSSECURITYANONYMOUS WSE 3,0.  
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.Binding>
 - [Współdziałanie z WSE](/previous-versions/dotnet/netframework-3.5/ms752257(v=vs.90))

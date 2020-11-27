@@ -5,15 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3dadd7f1-d207-4ea5-a73b-3e8aa44407f8
-ms.openlocfilehash: 1ebc4e145528c3025b0299ea7e421c248c28cdc0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b5284db1329c572bdecf3ef607e697c63835d508
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556372"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257525"
 ---
 # <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>Instrukcje: konfigurowanie klienta programu WCF do współdziałania z usługami WES3.0
-Klienci korzystający z programu Windows Communication Foundation (WCF) są zgodną z usługami sieci Web udoskonalenia 3,0 dla usług Microsoft .NET (WSE), gdy klienci WCF są skonfigurowani do korzystania z wersji z sierpnia 2004 specyfikacji WS-Addressing.  
+
+Klienci korzystający z programu Windows Communication Foundation (WCF) są zgodną z usługami sieci Web w wersjach 3,0 dla Microsoft .NET (WSE), gdy klienci usługi WCF są skonfigurowani do korzystania z wersji 2004 WS-Addressing specyfikacji.  
   
 ### <a name="to-configure-a-wcf-client-to-interoperate-with-a-wse-30-web-service"></a>Aby skonfigurować klienta WCF do współdziałania z usługą sieci Web WSE 3,0  
   
@@ -56,12 +57,13 @@ Klienci korzystający z programu Windows Communication Foundation (WCF) są zgod
      [!code-vb[c_WCFClientToWSEService#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/client.vb#4)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu definiuje niestandardowe powiązanie, które uwidacznia właściwości odpowiadające właściwościom WSE 3,0 gotowe Security Assertion. Niestandardowe powiązanie o nazwie jest `WseHttpBinding` następnie używane do określania właściwości powiązań dla klienta WCF.  
 
 [!code-csharp[c_WCFClientToWSEService#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/client.cs#0)]
 [!code-vb[c_WCFClientToWSEService#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/client.vb#0)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.Binding>
 - [Współdziałanie z WSE](/previous-versions/dotnet/netframework-3.5/ms752257(v=vs.90))

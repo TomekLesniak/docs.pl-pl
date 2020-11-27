@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], auditing events
 ms.assetid: e71e9587-3336-46a2-9a9e-d72a1743ecec
-ms.openlocfilehash: 186dd4a7fc2beae848e5cbd167a204352ee6ed4e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 67ab5d4a4592a8b772cfdd70befe32f339062b8c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601299"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96257564"
 ---
 # <a name="how-to-audit-windows-communication-foundation-security-events"></a>Instrukcje: Inspekcja Windows Communication Foundation zdarzeń zabezpieczeń
+
 Windows Communication Foundation (WCF) umożliwia rejestrowanie zdarzeń zabezpieczeń w dzienniku zdarzeń systemu Windows, który można wyświetlić za pomocą Podgląd zdarzeń systemu Windows. W tym temacie wyjaśniono, jak skonfigurować aplikację tak, aby rejestrowała zdarzenia zabezpieczeń. Aby uzyskać więcej informacji na temat inspekcji WCF, zobacz [Inspekcja](auditing-security-events.md).  
   
 ### <a name="to-audit-security-events-in-code"></a>Aby przeprowadzić inspekcję zdarzeń zabezpieczeń w kodzie  
@@ -45,7 +46,7 @@ Windows Communication Foundation (WCF) umożliwia rejestrowanie zdarzeń zabezpi
   
 ### <a name="to-set-up-auditing-in-configuration"></a>Aby skonfigurować inspekcję w konfiguracji  
   
-1. Aby skonfigurować inspekcję w konfiguracji, Dodaj [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) element do [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) sekcji pliku Web. config. Następnie Dodaj [\<serviceSecurityAudit>](../../configure-apps/file-schema/wcf/servicesecurityaudit.md) element i Ustaw różne atrybuty, jak pokazano w poniższym przykładzie.  
+1. Aby skonfigurować inspekcję w konfiguracji, Dodaj [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) element do [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) sekcji pliku web.config. Następnie Dodaj [\<serviceSecurityAudit>](../../configure-apps/file-schema/wcf/servicesecurityaudit.md) element i Ustaw różne atrybuty, jak pokazano w poniższym przykładzie.  
   
     ```xml  
     <behaviors>  
@@ -73,17 +74,19 @@ Windows Communication Foundation (WCF) umożliwia rejestrowanie zdarzeń zabezpi
     ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod tworzy wystąpienie <xref:System.ServiceModel.ServiceHost> klasy i dodaje nową <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> do kolekcji zachowań.  
   
  [!code-csharp[AuditingSecurityEvents#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#1)]
  [!code-vb[AuditingSecurityEvents#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#1)]  
   
 ## <a name="net-framework-security"></a>Zabezpieczenia.NET Framework  
+
  Ustawienie <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> właściwości na `true` , pomija wszelkie niepowodzenie generowania inspekcji zabezpieczeń (jeśli jest ustawiona na `false` , zgłaszany jest wyjątek). Jeśli jednak zostanie włączona następująca Właściwość **Ustawienia zabezpieczeń lokalnych** systemu Windows, Niepowodzenie generowania zdarzeń inspekcji spowoduje natychmiastowe wyłączenie systemu Windows:  
   
  **Inspekcja: zamknij system natychmiast, jeśli nie można rejestrować wyników inspekcji**  
   
- Aby ustawić właściwość, Otwórz okno dialogowe **Ustawienia zabezpieczeń lokalnych** . W obszarze **Ustawienia zabezpieczeń**kliknij pozycję **Zasady lokalne**. Następnie kliknij pozycję **Opcje zabezpieczeń**.  
+ Aby ustawić właściwość, Otwórz okno dialogowe **Ustawienia zabezpieczeń lokalnych** . W obszarze **Ustawienia zabezpieczeń** kliknij pozycję **Zasady lokalne**. Następnie kliknij pozycję **Opcje zabezpieczeń**.  
   
  Jeśli <xref:System.ServiceModel.AuditLogLocation> Właściwość jest ustawiona na <xref:System.ServiceModel.AuditLogLocation.Security> i **Inspekcja dostępu do obiektów** nie jest ustawiona w **lokalnych zasadach zabezpieczeń**, zdarzenia inspekcji nie będą zapisywane w dzienniku zabezpieczeń. Zwróć uwagę, że nie jest zwracana żadna awaria, ale wpisy inspekcji nie są zapisywane w dzienniku zabezpieczeń.  
   

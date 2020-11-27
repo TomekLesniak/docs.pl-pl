@@ -2,14 +2,15 @@
 title: Obsługa zapytań
 ms.date: 03/30/2017
 ms.assetid: 093c22f5-3294-4642-857a-5252233d6796
-ms.openlocfilehash: e281b5ae7a41bd282f8e7c7eb9db6f99ef5487f3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 350644de4a5deb7b8dcb5133c9cc2edb477fd355
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948937"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96258442"
 ---
 # <a name="support-for-queries"></a>Obsługa zapytań
+
 Magazyn wystąpień przepływu pracy SQL rejestruje zestaw dobrze znanych właściwości w sklepie. Użytkownicy mogą wykonywać zapytania o wystąpienia na podstawie tych właściwości. Poniższa lista zawiera niektóre z tych dobrze znanych właściwości:  
   
 - **Nazwa witryny.** Nazwa witryny sieci Web zawierającej usługę.  
@@ -34,12 +35,14 @@ Magazyn wystąpień przepływu pracy SQL rejestruje zestaw dobrze znanych właś
  Funkcja magazynu wystąpień przepływu pracy SQL umożliwia również określenie właściwości niestandardowych, dla których mają być przechowywane wartości w bazie danych trwałości i które mają być używane w zapytaniach. Aby uzyskać więcej informacji na temat promocji niestandardowych, zobacz [rozszerzanie magazynu](store-extensibility.md).  
   
 ## <a name="views"></a>Widoki  
+
  Magazyn wystąpień zawiera następujące widoki: Aby uzyskać więcej informacji, zobacz [schemat bazy danych trwałości](persistence-database-schema.md) .  
   
 ### <a name="the-instances-view"></a>Widok wystąpień  
+
  Widok wystąpienia zawiera następujące pola:  
   
-1. **Identyfikator**  
+1. **#C1**  
   
 2. **PendingTimer**  
   
@@ -78,6 +81,7 @@ Magazyn wystąpień przepływu pracy SQL rejestruje zestaw dobrze znanych właś
 19. **WriteOnlyComplexDataProperties**  
   
 ### <a name="the-servicedeployments-view"></a>Widok ServiceDeployments  
+
  Widok ServiceDeployments zawiera następujące pola:  
   
 1. **SiteName**  
@@ -91,6 +95,7 @@ Magazyn wystąpień przepływu pracy SQL rejestruje zestaw dobrze znanych właś
 5. **Przestrzeń nazw**  
   
 ### <a name="the-instancepromotedproperties-view"></a>Widok InstancePromotedProperties  
+
  Widok InstancePromotedProperties zawiera następujące pola. Aby uzyskać szczegółowe informacje na temat podwyższonych właściwości, zobacz temat [rozszerzalność magazynu](store-extensibility.md) .  
   
 1. **Identyfikator wystąpienia**  
