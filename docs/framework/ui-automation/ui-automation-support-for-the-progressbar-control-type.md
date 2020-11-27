@@ -7,14 +7,15 @@ helpviewer_keywords:
 - ProgressBar control type
 - UI Automation, Progress Bar control type
 ms.assetid: 302e778c-24b0-4789-814a-c8d37cf53a5f
-ms.openlocfilehash: a5206d0b4ba7bf7c3bbc6fa9f2d519097000f4d7
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: ae9155d4be9e6fa06376c2bbb063502658f451cc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166006"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96277949"
 ---
 # <a name="ui-automation-support-for-the-progressbar-control-type"></a>Obsługa automatyzacji interfejsu użytkownika dla kontrolek typu ProgressBar
+
 > [!NOTE]
 > Ta dokumentacja jest przeznaczona dla .NET Framework deweloperów, którzy chcą korzystać z zarządzanych [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klas zdefiniowanych w <xref:System.Windows.Automation> przestrzeni nazw. Aby uzyskać najnowsze informacje na temat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , zobacz [interfejs API usługi Windows Automation: Automatyzacja interfejsu użytkownika](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -25,7 +26,9 @@ ms.locfileid: "87166006"
  W poniższych sekcjach opisano wymaganą [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] strukturę drzewa, właściwości, wzorce formantów i zdarzenia dla typu formantu ProgressBar. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Wymagania stosują się do wszystkich kontrolek listy, zarówno [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] systemu Win32, jak i Windows Forms.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
+
 ## <a name="required-ui-automation-tree-structure"></a>Wymagana struktura drzewa automatyzacji interfejsu użytkownika  
+
  W poniższej tabeli przedstawiono widok kontrolki i widok zawartości [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] drzewa, które odnoszą się do kontrolek paska postępu i opisano, co może być zawarte w poszczególnych widokach. Aby uzyskać więcej informacji na temat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] drzewa, zobacz [drzewo automatyzacji interfejsu użytkownika — omówienie](ui-automation-tree-overview.md).  
   
 |Widok kontrolki|Widok zawartości|  
@@ -35,10 +38,12 @@ ms.locfileid: "87166006"
  Kontrolki paska postępu nie mają żadnych elementów podrzędnych w kontrolce lub widoku zawartości [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] drzewa.  
   
 <a name="Required_UI_Automation_Properties"></a>
+
 ## <a name="required-ui-automation-properties"></a>Wymagane właściwości automatyzacji interfejsu użytkownika  
+
  Poniższa tabela zawiera listę [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] właściwości, których wartość lub definicja jest szczególnie istotna dla kontrolek paska postępu. Aby uzyskać więcej informacji na temat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] właściwości, zobacz [właściwości automatyzacji interfejsu użytkownika dla klientów](ui-automation-properties-for-clients.md).  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Wartość|Wartość|Uwagi|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Wartość|Wartość|Uwagi|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Zobacz uwagi.|Wartość tej właściwości musi być unikatowa dla wszystkich kontrolek w aplikacji.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Zobacz uwagi.|Najbardziej zewnętrzny prostokąt, który zawiera cały formant.|  
@@ -52,7 +57,9 @@ ms.locfileid: "87166006"
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Prawda|Kontrolka pasek postępu zawsze znajduje się w widoku kontrolki [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] drzewa.|  
   
 <a name="Required_UI_Automation_Control_Patterns_and_Properties"></a>
+
 ## <a name="required-ui-automation-control-patterns-and-properties"></a>Wymagane wzorce i właściwości formantów automatyzacji interfejsu użytkownika  
+
  Poniższa tabela zawiera listę [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] wzorców formantów wymaganych do obsługi przez kontrolki paska postępu. Aby uzyskać więcej informacji na temat wzorców kontroli, zobacz [Wzorce formantów automatyzacji interfejsu użytkownika — omówienie](ui-automation-control-patterns-overview.md).  
   
 |Wzorzec kontrolki/Właściwość wzorca|Obsługa/wartość|Uwagi|  
@@ -60,27 +67,29 @@ ms.locfileid: "87166006"
 |<xref:System.Windows.Automation.Provider.IValueProvider>|Zależy od|Kontrolki paska postępu, które dają tekstowy wskaźnik postępu, muszą implementować <xref:System.Windows.Automation.Provider.IValueProvider> .|  
 |<xref:System.Windows.Automation.Provider.IValueProvider.IsReadOnly%2A>|Prawda|Wartość tej właściwości jest zawsze równa true.|  
 |<xref:System.Windows.Automation.Provider.IValueProvider.Value%2A>|Zobacz uwagi.|Ta właściwość uwidacznia tekstowy postęp kontrolki paska postępu.|  
-|<xref:System.Windows.Automation.Provider.IRangeValueProvider>|Zależy od|Kontrolki paska postępu, które przyjmują zakres liczbowy, muszą implementować<xref:System.Windows.Automation.Provider.IRangeValueProvider>|  
-|<xref:System.Windows.Automation.Provider.IRangeValueProvider.Minimum%2A>|0,0|Wartość tej właściwości jest najmniejszą wartością, na którą można ustawić kontrolkę.|  
+|<xref:System.Windows.Automation.Provider.IRangeValueProvider>|Zależy od|Kontrolki paska postępu, które przyjmują zakres liczbowy, muszą implementować <xref:System.Windows.Automation.Provider.IRangeValueProvider>|  
+|<xref:System.Windows.Automation.Provider.IRangeValueProvider.Minimum%2A>|0.0|Wartość tej właściwości jest najmniejszą wartością, na którą można ustawić kontrolkę.|  
 |<xref:System.Windows.Automation.Provider.IRangeValueProvider.Maximum%2A>|100,0|Wartość tej właściwości jest największą wartością, na którą można ustawić kontrolkę.|  
 |<xref:System.Windows.Automation.Provider.IRangeValueProvider.SmallChange%2A>|NaN|Ta właściwość nie jest wymagana, ponieważ kontrolki paska postępu są tylko do odczytu.|  
 |<xref:System.Windows.Automation.Provider.IRangeValueProvider.LargeChange%2A>|NaN|Ta właściwość nie jest wymagana, ponieważ kontrolki paska postępu są tylko do odczytu.|  
   
 <a name="Required_UI_Automation_Events"></a>
+
 ## <a name="required-ui-automation-events"></a>Wymagane zdarzenia automatyzacji interfejsu użytkownika  
+
  Poniższa tabela zawiera listę [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] zdarzeń wymaganych do obsługi przez wszystkie kontrolki paska postępu. Aby uzyskać więcej informacji na temat zdarzeń, zobacz [Omówienie zdarzeń automatyzacji interfejsu użytkownika](ui-automation-events-overview.md).  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Wydarzen|Pomoc techniczna|Uwagi|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Wydarzen|Pomoc techniczna|Uwagi|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>zdarzenie zmiany właściwości.|Wymagane|Brak|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>zdarzenie zmiany właściwości.|Wymagane|Brak|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty>zdarzenie zmiany właściwości.|Wymagane|Brak|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>zdarzenie zmiany właściwości.|Wymagane|Brak|  
-|<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty>zdarzenie zmiany właściwości.|Zależy od|Brak|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Wymagane|Brak|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Wymagane|Brak|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> zdarzenie zmiany właściwości.|Wymagany|Brak|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> zdarzenie zmiany właściwości.|Wymagany|Brak|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> zdarzenie zmiany właściwości.|Wymagany|Brak|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> zdarzenie zmiany właściwości.|Wymagany|Brak|  
+|<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> zdarzenie zmiany właściwości.|Zależy od|Brak|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Wymagany|Brak|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Wymagany|Brak|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Windows.Automation.ControlType.ProgressBar>
 - [Typy formantów automatyzacji interfejsu użytkownika — omówienie](ui-automation-control-types-overview.md)

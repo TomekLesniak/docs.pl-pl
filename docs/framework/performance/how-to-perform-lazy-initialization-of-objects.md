@@ -1,5 +1,5 @@
 ---
-title: 'Porady: wykonywanie incjalizacji obiektów z opóźnieniem'
+title: 'Instrukcje: wykonywanie inicjalizacji obiektów z opóźnieniem'
 description: Zobacz, jak wykonać inicjalizację z opóźnieniem obiektów przy użyciu klasy System. Opóźnion <T> . Inicjalizacja z opóźnieniem oznacza, że obiekty nie są tworzone, jeśli nigdy nie są potrzebne.
 ms.date: 03/30/2017
 dev_langs:
@@ -8,17 +8,19 @@ dev_langs:
 helpviewer_keywords:
 - lazy initialization in .NET, how to perform
 ms.assetid: 8cd68620-dcc3-4f20-8835-c728a6820e71
-ms.openlocfilehash: dbee0d8a5c3075ad7429feb92b87a566fdd35454
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 3de0d8ea8266931c2bcda5c59c1fef97602673d5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309732"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96278131"
 ---
-# <a name="how-to-perform-lazy-initialization-of-objects"></a>Porady: wykonywanie incjalizacji obiektów z opóźnieniem
+# <a name="how-to-perform-lazy-initialization-of-objects"></a>Instrukcje: wykonywanie inicjalizacji obiektów z opóźnieniem
+
 <xref:System.Lazy%601?displayProperty=nameWithType>Klasa upraszcza pracę wykonywaną podczas inicjowania z opóźnieniem i tworzenie wystąpienia obiektów. Inicjując obiekty w sposób opóźniony, można uniknąć konieczności ich tworzenia w ogóle, jeśli nigdy nie są potrzebne, lub można odroczyć ich inicjalizację do momentu pierwszego dostępu do nich. Aby uzyskać więcej informacji, zobacz [Inicjalizacja z opóźnieniem](lazy-initialization.md).  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak zainicjować wartość za pomocą <xref:System.Lazy%601> . Załóżmy, że zmienna opóźniona może nie być wymagana, w zależności od innego kodu, który ustawia `someCondition` zmienną na wartość true lub false.  
   
 ```vb  
@@ -70,6 +72,7 @@ End Sub
 ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład pokazuje, jak używać <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> klasy do inicjowania typu, który jest widoczny tylko dla bieżącego wystąpienia obiektu w bieżącym wątku.  
   
  [!code-csharp[CDS#13](../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds2.cs#13)]

@@ -18,14 +18,15 @@ helpviewer_keywords:
 - sockets, synchronous server sockets
 - Internet, sockets
 ms.assetid: d1ce882e-653e-41f5-9289-844ec855b804
-ms.openlocfilehash: 9e7d32595f554b32ecc72bbb1f1a469ad5935467
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 305feaa71304bef749f999a078b0b5f4fa7be3cc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502057"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96278157"
 ---
 # <a name="using-a-synchronous-server-socket"></a>Używanie synchronicznego gniazda serwera
+
 Synchroniczne gniazda serwera zawieszają wykonywanie aplikacji do momentu odebrania żądania połączenia w gnieździe. Synchroniczne gniazda serwera nie są odpowiednie dla aplikacji, które wykorzystują intensywną eksploatację sieci, ale mogą być odpowiednie dla prostych aplikacji sieciowych.  
   
  Gdy <xref:System.Net.Sockets.Socket> jest ustawiony do nasłuchiwania na punkcie końcowym przy użyciu <xref:System.Net.Sockets.Socket.Bind%2A> <xref:System.Net.Sockets.Socket.Listen%2A> metod i, jest gotowy do akceptowania przychodzących żądań połączeń przy użyciu <xref:System.Net.Sockets.Socket.Accept%2A> metody. Aplikacja jest wstrzymana do momentu odebrania żądania połączenia w przypadku wywołania metody **Accept** .  
@@ -76,7 +77,7 @@ handler.Shutdown(SocketShutdown.Both);
 handler.Close();  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Używanie asynchronicznego gniazda serwera](using-an-asynchronous-server-socket.md)
 - [Przykład synchronicznego gniazda serwera](synchronous-server-socket-example.md)

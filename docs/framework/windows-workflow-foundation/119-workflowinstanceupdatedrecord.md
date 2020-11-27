@@ -2,41 +2,44 @@
 title: 119 — WorkflowInstanceUpdatedRecord
 ms.date: 03/30/2017
 ms.assetid: 32485d0a-dcdb-45bc-b1e3-79fa9ad9439b
-ms.openlocfilehash: 5bbda72208dd9cf38e7b8765d324129beaf3fa0c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c76ce2ffcd25ebe09463e6d704787f321baa2cb3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924075"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96278664"
 ---
 # <a name="119---workflowinstanceupdatedrecord"></a>119 — WorkflowInstanceUpdatedRecord
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|119|  
-|słowa kluczowe|HealthMonitoring, WFTracking|  
+|ID (Identyfikator)|119|  
+|Słowa kluczowe|HealthMonitoring, WFTracking|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane przez uczestnika śledzenia zdarzeń systemu Windows, po zaktualizowaniu wystąpienia przepływu pracy.  
+
+ To zdarzenie jest emitowane przez uczestnika śledzenia funkcji ETW podczas aktualizowania wystąpienia przepływu pracy.  
   
-## <a name="message"></a>Komunikat  
- TrackRecord = WorkflowInstanceUpdatedRecord, InstanceID = %1, RecordNumber = %2, EventTime = %3, ActivityDefinitionId = %4, stan = %5, OriginalDefinitionIdentity = %6, UpdatedDefinitionIdentity = %7, adnotacje = %8, ProfileName = %9  
+## <a name="message"></a>Wiadomość  
+
+ TrackRecord = WorkflowInstanceUpdatedRecord, InstanceID = %1, RecordNumber = %2, EventTime = %3, ActivityDefinitionId = %4, State = %5, OriginalDefinitionIdentity = %6, UpdatedDefinitionIdentity = %7, adnotacje = %8, ProfileName = %9  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|InstanceId|xs:GUID|Identyfikator wystąpienia przepływu pracy|  
-|RecordNumber|xs:long|Numer sekwencyjny emitowany rekordu|  
-|eventTime|xs:dateTime|Godzina w formacie UTC zdarzenia został wyemitowany|  
-|ActivityDefinitionId|xs:String|Nazwa działania głównego w przepływie pracy|  
-|Stan|xs:String|Bieżący stan przepływu pracy.|  
-|OriginalDefinitionIdentity|xs:String|Oryginalny identyfikator definicji przepływu pracy|  
-|UpdatedDefinitionIdentity|xs:String|Identyfikator definicji zaktualizowanego przepływu pracy|  
-|Adnotacje|xs:String|Adnotacje, które zostały dodane do tego zdarzenia. Wartości są przechowywane w elemencie xml w formacie \<elementy >\< nazwa elementu = "annotationName" type="System.String" > annotationValue\</item > \< /elementy >. Jeśli nie określono bez adnotacji, a następnie ciąg zawiera \<elementów / >. Rozmiar zdarzenia ETW jest ograniczona przez rozmiar buforu ETW lub max ładunek zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limit ETW, a następnie zdarzenie zostanie obcięta przez usunięcie adnotacje i zastępując wartość symbolu adnotacji z \<elementy >...  \< /elementy >.|  
-|ProfileName|xs:String|Nazwa lub profilu śledzenia, które spowodowały to zdarzenie jest emitowane|  
-|WorkflowDefinitionIdentity|xs:String|Identyfikator definicji przepływu pracy|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|InstanceId|XS: GUID|Identyfikator wystąpienia przepływu pracy|  
+|RecordNumber|XS: Long|Numer sekwencji emitowanego rekordu|  
+|EventTime|XS: dateTime|Czas w formacie UTC, gdy zdarzenie zostało wyemitowane|  
+|ActivityDefinitionId|XS: ciąg|Nazwa działania głównego w przepływie pracy|  
+|Stan|XS: ciąg|Bieżący stan przepływu pracy.|  
+|OriginalDefinitionIdentity|XS: ciąg|Identyfikator definicji oryginalnego przepływu pracy|  
+|UpdatedDefinitionIdentity|XS: ciąg|Zaktualizowany identyfikator definicji przepływu pracy|  
+|Adnotacje|XS: ciąg|Adnotacje, które zostały dodane do tego zdarzenia. Wartości są przechowywane w elemencie XML w formacie \<items> \< item name = "annotationName" type="System.String"> annotationValue \</item> \</items> . Jeśli adnotacje nie są określone, ciąg zawiera \<items/> . Rozmiar zdarzenia ETW jest ograniczony przez rozmiar buforu ETW lub maksymalny ładunek dla zdarzenia ETW. Jeśli rozmiar zdarzenia przekracza limity ETW, zdarzenie jest obcinane przez upuszczenie adnotacji i zamianę wartości adnotacji na \<items> ... \</items>|  
+|ProfileName|XS: ciąg|Nazwa lub profil śledzenia, który spowodował wyemitowanie tego zdarzenia|  
+|WorkflowDefinitionIdentity|XS: ciąg|Identyfikator definicji przepływu pracy|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

@@ -6,17 +6,19 @@ helpviewer_keywords:
 - performance [.NET Framework]
 - reliability [.NET Framework]
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
-ms.openlocfilehash: e24d3bc07c7292625813828d598ed43952155e4f
-ms.sourcegitcommit: 965a5af7918acb0a3fd3baf342e15d511ef75188
+ms.openlocfilehash: f15cd9b38285e88dac727bcfe51c8dc542a735f6
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94822363"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96277988"
 ---
 # <a name="net-framework-performance"></a>Wydajność środowiska .NET Framework
+
 Jeśli chcesz tworzyć aplikacje o doskonałej wydajności, należy zaprojektować i zaplanować wydajność tak samo jak w przypadku projektowania dowolnej innej funkcji aplikacji. Za pomocą narzędzi dostarczonych przez firmę Microsoft można mierzyć wydajność aplikacji oraz, w razie potrzeby, wprowadzać ulepszenia w zakresie użycia pamięci, przepływności kodu i czas odpowiedzi. W tym temacie wymieniono narzędzia analizy wydajności zapewniane przez firmę Microsoft oraz linki do innych tematów, które obejmują wydajność poszczególnych obszarów tworzenia aplikacji.  
   
 ## <a name="designing-and-planning-for-performance"></a>Projektowanie i planowanie wydajności  
+
  Jeśli potrzebujesz doskonałej aplikacji, musisz zaprojektować wydajność w aplikacji tak samo jak w przypadku każdej innej funkcji. Należy określić scenariusze krytyczne dla wydajności w aplikacji, ustawić cele wydajnościowe i zmierzyć wydajność dla tych scenariuszy aplikacji wczesne i często. Ponieważ każda aplikacja różni się od siebie i ma inne ścieżki wykonywania o kluczowym znaczeniu, co pozwala na wczesne Określanie tych ścieżek i skoncentrowanie się na założeniach, można zmaksymalizować produktywność.  
   
  Nie musisz już znać platformy docelowej w celu utworzenia aplikacji o wysokiej wydajności. Należy jednak opracować informacje o tym, które części platformy docelowej są kosztowne pod względem wydajności. Można to zrobić przez zmierzenie wydajności na początku procesu tworzenia.  
@@ -24,9 +26,11 @@ Jeśli chcesz tworzyć aplikacje o doskonałej wydajności, należy zaprojektowa
  Aby określić obszary, które mają kluczowe znaczenie dla wydajności i ustalić cele wydajności, należy zawsze rozważyć środowisko użytkownika. Czas uruchamiania i szybkość odpowiedzi są dwa kluczowe obszary, które mają wpływ na postrzeganie aplikacji przez użytkownika. Jeśli aplikacja korzysta z dużej ilości pamięci, może być niezależna od użytkownika lub mieć wpływ na inne aplikacje działające w systemie lub w niektórych przypadkach może to spowodować niepowodzenie procesu tworzenia sklepu Windows lub Windows Phone. Ponadto, jeśli określisz, które części kodu są wykonywane częściej, możesz upewnić się, że te fragmenty kodu są dobrze zoptymalizowane.  
   
 ## <a name="analyzing-performance"></a>Analizowanie wydajności  
+
  W ramach ogólnego planu rozwoju można ustawić punkty podczas opracowywania, gdzie będzie mierzona wydajność aplikacji i porównać wyniki z celami ustawionymi wcześniej. Zmierz swoją aplikację w środowisku i sprzęcie, które oczekują od użytkowników. Analizując wydajność aplikacji wczesne i często można zmienić decyzje dotyczące architektury, które byłyby kosztowne i kosztowne do późniejszego naprawienia w cyklu programowania. W poniższych sekcjach opisano narzędzia do oceny wydajności, za pomocą których można analizować aplikacje i omawiać śledzenie zdarzeń, które są używane przez te narzędzia.  
   
 ### <a name="performance-tools"></a>Narzędzia wydajności  
+
  Poniżej przedstawiono niektóre narzędzia do oceny wydajności, z których można korzystać w przypadku aplikacji .NET Framework.  
   
 |Narzędzie|Opis|  
@@ -37,9 +41,11 @@ Jeśli chcesz tworzyć aplikacje o doskonałej wydajności, należy zaprojektowa
 |[Analizator wydajności systemu Windows](https://www.microsoft.com/p/windows-performance-analyzer/9n0w1b2bxgnz?activetab=pivot:overviewtab)|Służy do określania ogólnej wydajności systemu, na przykład wykorzystania pamięci i magazynu aplikacji, gdy wiele aplikacji jest uruchomionych na tym samym komputerze. To narzędzie jest dostępne w centrum pobierania w ramach zestawu do oceny i wdrażania systemu Windows (ADK) dla systemu Windows 8. Aby uzyskać więcej informacji, zobacz [Analizator wydajności systemu Windows](/windows-hardware/test/wpt/windows-performance-analyzer).|
   
 ### <a name="event-tracing-for-windows-etw"></a>Śledzenie zdarzeń systemu Windows (ETW)  
+
  ETW to technika, która umożliwia uzyskiwanie informacji diagnostycznych dotyczących uruchamiania kodu i jest istotna dla wielu opisanych wcześniej narzędzi wydajności. System ETW tworzy dzienniki, gdy określone zdarzenia są zgłaszane przez .NET Framework aplikacje i Windows. Za pomocą funkcji ETW można dynamicznie włączać i wyłączać rejestrowanie, dzięki czemu można wykonywać szczegółowe śledzenie w środowisku produkcyjnym bez ponownego uruchamiania aplikacji. .NET Framework oferuje obsługę zdarzeń ETW, a ETW jest używana przez wiele narzędzi do profilowania i wydajności do generowania danych wydajności. Te narzędzia często włączają i wyłączają zdarzenia ETW, dlatego znane z nich. Aby zbierać informacje o wydajności określonych składników aplikacji, można użyć określonych zdarzeń funkcji ETW. Aby uzyskać więcej informacji na temat obsługi funkcji ETW w .NET Framework, zobacz [zdarzenia ETW w środowisku uruchomieniowym języka wspólnego](etw-events-in-the-common-language-runtime.md) i [zdarzenia ETW w bibliotece zadań równoległych i PLINQ](etw-events-in-task-parallel-library-and-plinq.md).  
   
 ## <a name="performance-by-app-type"></a>Wydajność przez typ aplikacji  
+
  Każdy typ aplikacji .NET Framework ma własne najlepsze rozwiązania, zagadnienia i narzędzia służące do oceny wydajności. Poniższa tabela zawiera linki do tematów dotyczących wydajności dla określonych typów aplikacji .NET Framework.  
   
 |Typ aplikacji|Zobacz|  

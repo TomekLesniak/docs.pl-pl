@@ -6,24 +6,26 @@ helpviewer_keywords:
 - JIT tracing events [.NET Framework]
 - ETW, JIT tracing events (CLR)
 ms.assetid: 926adde2-c123-452e-bf4f-4b977bf06ffb
-ms.openlocfilehash: 568fc942cd0e2188c530d2befb6260083757ec72
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: fd1fae8731ea927ab64d0c0df83b90d29289a0a0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474465"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96277971"
 ---
 # <a name="jit-tracing-etw-events"></a>Zdarzenia ETW śledzenia JIT
+
 Te zdarzenia zbierają informacje dotyczące sukcesu lub niepowodzenia wywołań wywołania "just-in-Time (JIT) i" JIT ".
 
 ## <a name="jit-inlining-events"></a>Zdarzenia związane z derysowaniem JIT
 
 ### <a name="methodjitinliningfailed-event"></a>Zdarzenie MethodJitInliningFailed
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom. (Aby uzyskać więcej informacji, zobacz [słowa kluczowe i poziomy ETW CLR](clr-etw-keywords-and-levels.md)).  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`JITTracingKeyword`0x10|Verbose (5)|  
+|`JITTracingKeyword` 0x10|Verbose (5)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -49,11 +51,12 @@ Te zdarzenia zbierają informacje dotyczące sukcesu lub niepowodzenia wywołań
 |ClrInstanceID|win: UnicodeString|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
   
 ### <a name="methodjitinliningsucceeded-event"></a>Zdarzenie MethodJitInliningSucceeded  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`JITTracingKeyword`0x10|Verbose (5)|  
+|`JITTracingKeyword` 0x10|Verbose (5)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -79,11 +82,12 @@ Te zdarzenia zbierają informacje dotyczące sukcesu lub niepowodzenia wywołań
 ## <a name="jit-tail-call-events"></a>Zdarzenia wywołania tail w trybie JIT  
   
 ### <a name="methodjittailcallfailed-event"></a>Zdarzenie MethodJITTailCallFailed  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`JITTracingKeyword`0x10|Verbose (5)|  
+|`JITTracingKeyword` 0x10|Verbose (5)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -109,11 +113,12 @@ Te zdarzenia zbierają informacje dotyczące sukcesu lub niepowodzenia wywołań
 |ClrInstanceID|win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
   
 ### <a name="methodjittailcallsucceeded-event"></a>Zdarzenie MethodJITTailCallSucceeded  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`JITTracingKeyword`0x10|Verbose (5)|  
+|`JITTracingKeyword` 0x10|Verbose (5)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -138,6 +143,6 @@ Te zdarzenia zbierają informacje dotyczące sukcesu lub niepowodzenia wywołań
 |TailCallType|win: UnicodeString|Typ wywołania tail.|  
 |ClrInstanceID|win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zdarzenia ETW CLR](clr-etw-events.md)
