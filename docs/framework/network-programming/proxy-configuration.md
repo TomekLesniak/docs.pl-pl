@@ -12,17 +12,19 @@ helpviewer_keywords:
 - network, proxy configuration
 - proxies, configuring
 ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
-ms.openlocfilehash: 4d62f5736e9aa469be49d101e85851bc01b7c159
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 5094a066fe6689a1c0cda227b284accaac49ad54
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141608"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263168"
 ---
 # <a name="proxy-configuration"></a>Konfiguracja serwera proxy
+
 Serwer proxy obsługuje żądania klientów dotyczące zasobów. Serwer proxy może zwrócić żądany zasób z jego pamięci podręcznej lub przesłać żądanie do serwera, na którym znajduje się zasób. Serwery proxy mogą zwiększyć wydajność sieci, zmniejszając liczbę żądań wysyłanych do serwerów zdalnych. Serwery proxy mogą być również używane do ograniczania dostępu do zasobów.  
   
 ## <a name="adaptive-proxies"></a>Adaptacyjne serwery proxy  
+
  W .NET Framework serwery proxy są dostępne w dwóch odmianach: adaptacyjne i statyczne. Adaptacyjne serwery proxy dostosowują swoje ustawienia w przypadku zmiany konfiguracji sieci. Na przykład, jeśli użytkownik laptop uruchamia połączenie sieciowe telefoniczne, adaptacyjny serwer proxy rozpozna tę zmianę, odnajduje i uruchamia nowy skrypt konfiguracji i odpowiednio dostosowuje jego ustawienia.  
   
  Adaptacyjne serwery proxy są konfigurowane przez skrypt konfiguracji (zobacz [Automatyczne wykrywanie serwera proxy](automatic-proxy-detection.md)). Skrypt generuje zestaw protokołów aplikacji i serwer proxy dla każdego protokołu.  
@@ -42,6 +44,7 @@ Serwer proxy obsługuje żądania klientów dotyczące zasobów. Serwer proxy mo
 ```  
   
 ## <a name="static-proxies"></a>Statyczne serwery proxy  
+
  Statyczne serwery proxy są zwykle konfigurowane jawnie przez aplikację lub gdy plik konfiguracji jest wywoływany przez aplikację lub system. Statyczne serwery proxy są przydatne w sieciach, w których topologia zmienia się rzadko, na przykład na komputerze stacjonarnym podłączonym do sieci firmowej.  
   
  Niektóre opcje kontrolują sposób działania statycznego serwera proxy. Można określić następujące elementy:  

@@ -8,17 +8,19 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], ordering members
 ms.assetid: 0658a47d-b6e5-4ae0-ba72-ababc3c6ff33
-ms.openlocfilehash: 5c192d3bda65a7364345df4310dccd96cbe04056
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 1cb63569c1789b1577588caf63fb0a0259e530ff
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247367"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262167"
 ---
 # <a name="data-member-order"></a>Kolejność elementów członkowskich danych
+
 W niektórych aplikacjach warto znać kolejność, w jakiej dane z różnych składowych danych są wysyłane lub oczekuje się ich odbioru (na przykład kolejności, w której dane są wyświetlane w serializowanym kodzie XML). Czasami może być konieczne zmiana tej kolejności. W tym temacie objaśniono reguły określania kolejności.  
   
 ## <a name="basic-rules"></a>Podstawowe reguły  
+
  Podstawowe reguły określania kolejności danych obejmują:  
   
 - Jeśli typ kontraktu danych jest częścią hierarchii dziedziczenia, składowe danych jego typów podstawowych są zawsze najpierw w kolejności.  
@@ -30,6 +32,7 @@ W niektórych aplikacjach warto znać kolejność, w jakiej dane z różnych sk�
  Kolejność alfabetyczna jest ustalana przez wywołanie <xref:System.String.CompareOrdinal%2A> metody.  
   
 ## <a name="examples"></a>Przykłady  
+
  Rozważmy następujący kod.  
   
  [!code-csharp[C_DataContractNames#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractnames/cs/source.cs#4)]

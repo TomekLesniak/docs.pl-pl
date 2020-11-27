@@ -2,27 +2,30 @@
 title: 3425 — WebSocketAsyncReadStop
 ms.date: 03/30/2017
 ms.assetid: 6d86fd8f-d430-45c0-94ee-827f4fa5881a
-ms.openlocfilehash: c941d3d5b2eb2ca3f955ece6344da6bbf916003e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b0479dc867f61539b5f7397319954dfb2c05ca9f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934072"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263064"
 ---
 # <a name="3425---websocketasyncreadstop"></a>3425 — WebSocketAsyncReadStop
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|3425|  
-|słowa kluczowe|HTTP|  
+|ID (Identyfikator)|3425|  
+|Słowa kluczowe|HTTP|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane po zatrzymaniu odczyt asynchroniczny protokołu WebSocket.  
+
+ To zdarzenie jest emitowane, gdy Asynchroniczne odczyty protokołu WebSocket zostało zatrzymane.  
   
-## <a name="message"></a>Komunikat  
- WebSocketId:% 1 odczytu bajtów "%2" z "%3".  
+## <a name="message"></a>Wiadomość  
+
+ Gniazdo WebSocketId: %1 odczytano "%2" b z "%3".  
   
 ## <a name="details"></a>Szczegóły

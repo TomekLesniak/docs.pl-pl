@@ -2,32 +2,35 @@
 title: 3550 — BufferOutOfOrderMessageNoInstance
 ms.date: 03/30/2017
 ms.assetid: 1299d294-99b8-430e-98b1-55f5f17002f3
-ms.openlocfilehash: 1af943e23aa643c6614b946175c0b1854a7ceb62
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 61605d666911cce277bcebbb0a2f803e9a5dcfeb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61755587"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261309"
 ---
 # <a name="3550---bufferoutofordermessagenoinstance"></a>3550 — BufferOutOfOrderMessageNoInstance
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|3550|  
-|słowa kluczowe|WFServices|  
+|ID (Identyfikator)|3550|  
+|Słowa kluczowe|WFServices|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że buforowane odbieranie nie powiodło się. Operacja zostanie podjęta ponownie, gdy wystąpienie usługi jest gotowy do przetwarzania tej operacji.  
+
+ Wskazuje, że zbuforowane odbieranie nie powiodło się. Operacja zostanie podjęta ponownie, gdy wystąpienie usługi będzie gotowe do przetworzenia tej konkretnej operacji.  
   
-## <a name="message"></a>Komunikat  
- W tej chwili nie można wykonać operacji "%1". Nastąpi wtedy podjąć kolejną próbę, gdy wystąpienie usługi jest gotowy do przetwarzania tej operacji.  
+## <a name="message"></a>Wiadomość  
+
+ Nie można teraz wykonać operacji "%1". Kolejna próba zostanie podjęta, gdy wystąpienie usługi będzie gotowe do przetworzenia tej konkretnej operacji.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|OperationName|xs:String|Nazwa operacji.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|OperationName|XS: ciąg|Nazwa operacji.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

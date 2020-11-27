@@ -2,14 +2,15 @@
 title: Uruchamianie przykładów programu Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: db8a83da-95c1-4a21-a9d2-48caeb6398ea
-ms.openlocfilehash: 57f760fa8bf4a3abf83492ac455dfaed2b327e7e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3a12128541739ba5c380be2efc291b9b419cab12
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545106"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262674"
 ---
 # <a name="running-the-windows-communication-foundation-samples"></a>Uruchamianie przykładów programu Windows Communication Foundation
+
 Przykłady Windows Communication Foundation (WCF) można uruchamiać w konfiguracjach na jednym lub wielu komputerach. Jak przedstawiono, przykłady są gotowe do uruchomienia na pojedynczym komputerze. W konfiguracji między maszynami należy zmodyfikować ustawienia przykładowego pliku konfiguracji. W poniższych procedurach opisano sposób uruchamiania przykładu w konfiguracjach tego samego komputera i wielu maszyn. Należy zauważyć, że istnieją różne kroki dotyczące usług hostowanych w Internet Information Services (IIS) i własnych przykładowych. Większość przykładów jest hostowana w usługach IIS. Zobacz informacje dotyczące przykładowego pliku Readme, aby określić, w jaki sposób jest hostowany.  
   
  W systemie Windows Vista przykłady, które nie są hostowane w usługach IIS, wymagają podwyższonego poziomu uprawnień do zarejestrowania odbiornika przy użyciu Http.sys. Użyj Httpcfg.exe, aby zarejestrować adresy nasłuchujące usługi przy użyciu konta, w ramach którego usługa jest uruchomiona, lub uruchomić usługę z wiersza polecenia z uprawnieniami administratora.  
@@ -79,7 +80,7 @@ Przykłady Windows Communication Foundation (WCF) można uruchamiać w konfigura
   
 - Jeśli usługa jest hostowana w usługach IIS ze względów bezpieczeństwa, usuń definicję katalogu wirtualnego i uprawnienia przyznane w procedurach instalacji po zakończeniu pracy z przykładami.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Kompilowanie przykładów programu Windows Communication Foundation](building-the-samples.md)
 - [Wskazówki dotyczące rozwiązywania problemów z przykładami WCF](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))

@@ -18,14 +18,15 @@ helpviewer_keywords:
 - Internet, streams
 - streams
 ms.assetid: 02b05fba-7235-45ce-94e5-060436ee0875
-ms.openlocfilehash: f8d35b43c9b46a77bfd0c78f7d0118093b6fe824
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c59e4aa2edad7b28203cfce5f568f8ccb8558dbb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84501979"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263116"
 ---
 # <a name="using-streams-on-the-network"></a>Stosowanie strumieni w sieci
+
 Zasoby sieciowe są reprezentowane w .NET Framework jako strumienie. Traktując strumienie ogólnie, .NET Framework oferuje następujące możliwości:  
   
 - Typowy sposób wysyłania i odbierania danych w sieci Web. Bez względu na rzeczywistą zawartość pliku — HTML, XML lub coś innego — aplikacja będzie używać programu <xref:System.IO.Stream.Write%2A?displayProperty=nameWithType> oraz <xref:System.IO.Stream.Read%2A?displayProperty=nameWithType> do wysyłania i odbierania danych.  
@@ -75,7 +76,7 @@ End Try
   
 - Właściwość **CanSeek** zawsze zwraca **wartość false** , ponieważ Klasa **NetworkStream** nie może zmienić pozycji w strumieniu. Metody **Seek** i **Position** zwracają **NotSupportedException**.  
   
-- W przypadku używania **WebRequest** i **WebResponse**wystąpienia strumienia utworzone przez wywołanie **metody GetResponseStream** są tylko do odczytu, a wystąpienia strumienia utworzone przez wywołanie **GetRequestStream** są tylko do zapisu.  
+- W przypadku używania **WebRequest** i **WebResponse** wystąpienia strumienia utworzone przez wywołanie **metody GetResponseStream** są tylko do odczytu, a wystąpienia strumienia utworzone przez wywołanie **GetRequestStream** są tylko do zapisu.  
   
 - Użyj <xref:System.IO.StreamReader> klasy, aby ułatwić kodowanie. Poniższy przykład kodu używa **StreamReader** , aby odczytać strumień zakodowany w formacie ASCII z **WebResponse** (przykład nie pokazuje tworzenia żądania).  
   
@@ -103,7 +104,7 @@ Dim sr As _
 sr.Close()  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Instrukcje: żądanie danych przy użyciu klasy WebRequest](how-to-request-data-using-the-webrequest-class.md)
 - [Żądanie danych](requesting-data.md)

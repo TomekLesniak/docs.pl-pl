@@ -2,14 +2,15 @@
 title: Opis usługi
 ms.date: 03/30/2017
 ms.assetid: 7034b5d6-d608-45f3-b57d-ec135f83ff24
-ms.openlocfilehash: 467d8437ec6b3383974b1faf2a96aacb1524771a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c0fa389e9c894bcfec49ce7538b512c96f176c23
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596581"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262583"
 ---
 # <a name="service-description"></a>Opis usługi
+
 Przykład opisu usługi pokazuje, jak usługa może pobrać informacje o opisie usługi w czasie wykonywania. Przykład jest oparty na [wprowadzenie](getting-started-sample.md)z dodatkową operacją usługi zdefiniowaną w celu zwrócenia opisowych informacji o usłudze. Zwracane informacje wyświetlają adresy podstawowe i punkty końcowe usługi. Ta usługa udostępnia te informacje przy użyciu <xref:System.ServiceModel.OperationContext> <xref:System.ServiceModel.ServiceHost> klas, i <xref:System.ServiceModel.Description.ServiceDescription> .  
   
  W tym przykładzie klient jest aplikacją konsolową (. exe), a usługa jest hostowana przez Internet Information Services (IIS).  

@@ -2,34 +2,37 @@
 title: 222 — OperationFailed
 ms.date: 03/30/2017
 ms.assetid: 6b530ded-8f20-4d78-8bfe-1875276df6ba
-ms.openlocfilehash: c49aad0f93ce47b66306d75741267530dc6d3fe5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 64b41ee78e943ca16eaa791133454ec62ccf6ed8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61781644"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263090"
 ---
 # <a name="222---operationfailed"></a>222 — OperationFailed
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|222|  
-|słowa kluczowe|EndToEndMonitoring HealthMonitoring, rozwiązywania problemów, modelu ServiceModel|  
+|ID (Identyfikator)|222|  
+|Słowa kluczowe|EndToEndMonitoring, HealthMonitoring, rozwiązywanie problemów, ServiceModel|  
 |Poziom|Ostrzeżenie|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane przy domyślny Model usług `OperationInvoker` napotkał wyjątek podczas wywoływania jego metody. Uwaga tego wyjątki, które wynikają z `FaultException` spowodować, że to zdarzenie nie jest emitowany.  
+
+ To zdarzenie jest emitowane, gdy domyślny model usługi `OperationInvoker` napotkał wyjątek podczas wywoływania jego metody. Należy zauważyć, że wyjątki, które wynikają z `FaultException` spowodowania tego zdarzenia, nie są emitowane.  
   
-## <a name="message"></a>Komunikat  
- Metoda "%1" spowodowała nieobsługiwany wyjątek podczas wywoływania przez OperationInvoker. Czas trwania wywołania metody wynosiła ms "%2".  
+## <a name="message"></a>Wiadomość  
+
+ Metoda "%1" zgłosiła nieobsługiwany wyjątek podczas wywoływania przez OperationInvoker. Czas trwania wywołania metody to "%2" MS.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|Nazwa metody|`xs:string`|Nazwa aparatu CLR metody, która została wywołana przez `OperationInvoker`.|  
-|Czas trwania|`xs:long`|Czas w milisekundach, jaki zajęło `OperationInvoker` było wywołanie metody.|  
-|HostReference|`xs:string`|W przypadku usług hostowanych w sieci Web to pole jednoznacznie identyfikuje usługę w hierarchii w sieci Web. Jego format jest zdefiniowany jako "Ścieżka wirtualna aplikacji Nazwa witryny sieci Web&#124;ścieżka wirtualna usługi&#124;ServiceName". Przykład: 'Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'.|  
-|AppDomain|`xs:string`|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Nazwa metody|`xs:string`|Nazwa środowiska CLR metody, która została wywołana przez `OperationInvoker` .|  
+|Czas trwania|`xs:long`|Czas (w milisekundach), przez który miało `OperationInvoker` wywołać metodę.|  
+|HostReference|`xs:string`|W przypadku usług hostowanych w sieci Web to pole jednoznacznie identyfikuje usługę w hierarchii sieci Web. Jego format jest zdefiniowany jako ścieżka wirtualna aplikacji nazwa witryny sieci Web&#124;wirtualnej ścieżki usługi&#124;ServiceName '. Przykład: "Default Web site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService".|  
+|Wywołując|`xs:string`|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

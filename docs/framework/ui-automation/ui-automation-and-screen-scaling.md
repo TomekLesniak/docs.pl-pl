@@ -11,21 +11,24 @@ helpviewer_keywords:
 - UI (user interface), automation
 - UI Automation
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
-ms.openlocfilehash: 99239d7bac2e556d4da0d74f36c68916da7c688a
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: cf8069f26b85318994aeeb47d42ad28a3a33834a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164012"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262531"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Automatyzacja interfejsu użytkownika a skalowanie ekranu
+
 > [!NOTE]
 > Ta dokumentacja jest przeznaczona dla .NET Framework deweloperów, którzy chcą korzystać z zarządzanych [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klas zdefiniowanych w <xref:System.Windows.Automation> przestrzeni nazw. Aby uzyskać najnowsze informacje na temat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , zobacz [interfejs API usługi Windows Automation: Automatyzacja interfejsu użytkownika](/windows/win32/winauto/entry-uiauto-win32).  
   
 Począwszy od systemu Windows Vista, system Windows umożliwia użytkownikom zmianę ustawienia kropek na cal (dpi), tak aby większość elementów interfejsu użytkownika na ekranie była większa. Mimo że ta funkcja jest dostępna w systemie Windows, we wcześniejszych wersjach skalowanie musiało zostać zaimplementowane przez aplikacje. Począwszy od systemu Windows Vista, Menedżer okien pulpitu wykonuje domyślne skalowanie dla wszystkich aplikacji, które nie obsługują własnego skalowania. Aplikacje klienckie automatyzacji interfejsu użytkownika muszą korzystać z tej funkcji w ramach konta.  
   
 <a name="Scaling_in_Windows_Vista"></a>
+
 ## <a name="scaling-in-windows-vista"></a>Skalowanie w systemie Windows Vista  
+
  Domyślnym ustawieniem DPI jest 96, co oznacza, że 96 pikseli zajmują szerokość lub wysokość jednego zakładanego cala. Dokładna miara "CAL" zależy od rozmiaru i fizycznej rozdzielczości monitora. Na przykład w przypadku monitora o szerokości 12 cali, w rozdzielczości poziomej 1280 pikseli, pozioma linia 96 pikseli rozciąga się na około 9/10 cala.  
   
  Zmiana ustawienia DPI nie jest taka sama jak zmiana rozdzielczości ekranu. W przypadku skalowania dpi liczba pikseli fizycznych na ekranie pozostaje taka sama. Jednak skalowanie jest stosowane do rozmiaru i lokalizacji [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elementów. Skalowanie może być wykonywane automatycznie przez Menedżer okien pulpitu (DWM) dla komputerów stacjonarnych i dla aplikacji, które nie proszą jawnie o skalowanie.  
@@ -42,7 +45,9 @@ Począwszy od systemu Windows Vista, system Windows umożliwia użytkownikom zmi
  Współrzędne logiczne są ważne, ponieważ sprawiają, że zachowanie systemu operacyjnego i aplikacji jest spójne niezależnie od ustawienia DPI. Na przykład <xref:System.Windows.Forms.Cursor.Position%2A?displayProperty=nameWithType> zwykle zwraca współrzędne logiczne. Jeśli przesuniesz kursor nad element w oknie dialogowym, te same współrzędne są zwracane niezależnie od ustawienia DPI. Jeśli narysujesz formant w (100, 100), jest on rysowany jako współrzędne logiczne i zastąpi to samo względne położenie przy użyciu dowolnego ustawienia DPI.  
   
 <a name="Scaling_in_UI_Automation_Clients"></a>
+
 ## <a name="scaling-in-ui-automation-clients"></a>Skalowanie w klientach automatyzacji interfejsu użytkownika  
+
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Interfejs API nie używa współrzędnych logicznych. Następujące metody i właściwości zwracają współrzędne fizyczne lub przyjmują je jako parametry.  
   
 - <xref:System.Windows.Automation.AutomationElement.GetClickablePoint%2A>  
@@ -76,6 +81,6 @@ Począwszy od systemu Windows Vista, system Windows umożliwia użytkownikom zmi
   
  Jeśli aplikacja wykonuje bezpośrednią komunikację międzyprocesową z aplikacjami obsługującymi funkcję bez użycia rozdzielczości DPI, można skonwertować współrzędne logiczne i fizyczne przy użyciu funkcji Win32 `PhysicalToLogicalPoint` i `LogicalToPhysicalPoint` .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wyróżnij przykład](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/Highlighter)

@@ -2,32 +2,35 @@
 title: 1140 — FlowchartStart
 ms.date: 03/30/2017
 ms.assetid: 9aa2c71e-a4ab-4aed-b76d-4795e8493b70
-ms.openlocfilehash: 556fd0421966083b29c925bf7555f9d8a2e7d7f0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7c3b22398926585177f4db9ffa5657d1fcb2bdde
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61924517"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261803"
 ---
 # <a name="1140---flowchartstart"></a>1140 — FlowchartStart
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|1140|  
-|słowa kluczowe|WFActivities|  
+|ID (Identyfikator)|1140|  
+|Słowa kluczowe|WFActivities|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- Wskazuje, że jest blokowy rozpoczęcie została zaplanowana.  
+
+ Wskazuje, że zaplanowano uruchomienie schematu blokowego.  
   
-## <a name="message"></a>Komunikat  
- Schemat blokowy "%1" - Start zostało zaplanowane.  
+## <a name="message"></a>Wiadomość  
+
+ Flowchart "%1" — zaplanowano uruchomienie.  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|FlowChart|xs:String|Wyświetlana nazwa schematu blokowego.|  
-|AppDomain|xs:String|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|Schema|XS: ciąg|Nazwa wyświetlana schematu blokowego.|  
+|Wywołując|XS: ciąg|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

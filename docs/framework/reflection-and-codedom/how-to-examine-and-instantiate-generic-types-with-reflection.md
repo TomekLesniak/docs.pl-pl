@@ -10,14 +10,15 @@ helpviewer_keywords:
 - reflection, generic types
 - generics [.NET Framework], reflection
 ms.assetid: f93b03b0-1778-43fc-bc6d-35983d210e74
-ms.openlocfilehash: b57a0ed0c809da442dc9fcf202ad364060971f80
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 34efca4a26b0ab3739d19b793237532ec9f4f15e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865102"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263441"
 ---
 # <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>Instrukcje: Badanie i tworzenie wystąpień typów ogólnych za pomocą odbicia
+
 Informacje o typach ogólnych są uzyskiwane w taki sam sposób jak informacje o innych typach: przez badanie <xref:System.Type> obiektu, który reprezentuje typ ogólny. Różnica między zasadami polega na tym, że typ ogólny ma listę <xref:System.Type> obiektów reprezentujących parametry typu ogólnego. Pierwsza procedura w tej sekcji bada typy ogólne.  
   
  Można utworzyć <xref:System.Type> obiekt reprezentujący skonstruowany typ według argumentów typu powiązania do parametrów typu definicji typu ogólnego. Druga procedura pokazuje to.  
@@ -73,6 +74,7 @@ Informacje o typach ogólnych są uzyskiwane w taki sam sposób jak informacje o
      [!code-vb[HowToGeneric#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToGeneric/VB/ur.vb#9)]  
   
 ## <a name="constructing-an-instance-of-a-generic-type"></a>Konstruowanie wystąpienia typu ogólnego  
+
  Typ ogólny jest podobny do szablonu. Nie można tworzyć wystąpień tego elementu, chyba że określono typy rzeczywiste dla parametrów typu ogólnego. Aby to zrobić w czasie wykonywania, przy użyciu odbicia wymaga <xref:System.Type.MakeGenericType%2A> metody.  
   
 #### <a name="to-construct-an-instance-of-a-generic-type"></a>Aby skonstruować wystąpienie typu ogólnego  
@@ -102,6 +104,7 @@ Informacje o typach ogólnych są uzyskiwane w taki sam sposób jak informacje o
      [!code-vb[HowToGeneric#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToGeneric/VB/ur.vb#13)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu definiuje metodę, `DisplayGenericType` Aby przeanalizować definicje typów ogólnych i skonstruowane typy używane w kodzie i wyświetlić ich informacje. `DisplayGenericType`Metoda pokazuje, jak używać <xref:System.Type.IsGenericType%2A> właściwości, i <xref:System.Type.IsGenericParameter%2A> <xref:System.Type.GenericParameterPosition%2A> i <xref:System.Type.GetGenericArguments%2A> metody.  
   
  W przykładzie zdefiniowano również `DisplayGenericParameter` metodę w celu sprawdzenia parametru typu ogólnego i wyświetlenia jego ograniczeń.  
@@ -114,7 +117,7 @@ Informacje o typach ogólnych są uzyskiwane w taki sam sposób jak informacje o
  [!code-csharp[HowToGeneric#1](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToGeneric/CS/ur.cs#1)]
  [!code-vb[HowToGeneric#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToGeneric/VB/ur.vb#1)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Type>
 - <xref:System.Reflection.MethodInfo>

@@ -5,17 +5,19 @@ helpviewer_keywords:
 - data serialization [WCF]
 - data transfer [WCF]
 ms.assetid: 0f03c635-f3e7-4c5c-9463-3cb0135e221e
-ms.openlocfilehash: b07937b0a94c24a934b17d6cf21b726ee0d4362e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 490c89f5cfbecd4b2cc0c0e639aa97849132a809
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593493"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261985"
 ---
 # <a name="data-transfer-and-serialization"></a>Transfer i serializacja danych
+
 W połączonym systemie usługi i klienci zależą od wymiany danych w celu wykonania dowolnego zadania. Jako deweloper usługi lub klienta należy również zrozumieć, w jaki sposób Windows Communication Foundation (WCF) obsługuje dane i serializacji danych w celu tworzenia aplikacji, które są wydajne i łatwe w obsłudze.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Określanie transferu danych w kontraktach usług](specifying-data-transfer-in-service-contracts.md)  
  Zawiera opis podstawowych pojęć związanych z transferem danych w usługach.  
   
@@ -47,6 +49,7 @@ W połączonym systemie usługi i klienci zależą od wymiany danych w celu wyko
  Opisuje widok ogólnego projektu transferu danych w programie WCF.  
   
 ## <a name="reference"></a>Dokumentacja  
+
  <xref:System.ServiceModel>  
   
  <xref:System.Runtime.Serialization.DataContractSerializer>  
@@ -58,9 +61,10 @@ W połączonym systemie usługi i klienci zależą od wymiany danych w celu wyko
  <xref:System.Xml.Serialization>  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Rozszerzanie koderów i serializatorów](../extending/extending-encoders-and-serializers.md)  
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Najlepsze rozwiązania: przechowywanie wersji kontraktów danych](../best-practices-data-contract-versioning.md)
+- [Najlepsze rozwiązania: Przechowywanie wersji kontraktów danych](../best-practices-data-contract-versioning.md)
 - [Przechowywanie wersji usługi](../service-versioning.md)

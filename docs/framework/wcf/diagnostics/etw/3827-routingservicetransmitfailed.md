@@ -2,27 +2,30 @@
 title: 3827 — RoutingServiceTransmitFailed
 ms.date: 03/30/2017
 ms.assetid: 92e94472-e91e-4c9c-81b1-b5bb11655c04
-ms.openlocfilehash: 267ffe7d8fad92025c53081427876ab607a18d32
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 72fd66e4dcd84fe6c9ca2facc8f4692dd620b668
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778433"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262492"
 ---
 # <a name="3827---routingservicetransmitfailed"></a>3827 — RoutingServiceTransmitFailed
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|3827|  
-|słowa kluczowe|RoutingServices|  
+|ID (Identyfikator)|3827|  
+|Słowa kluczowe|RoutingServices|  
 |Poziom|Ostrzeżenie|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane podczas transmisji usługa routingu nie powiodło się.  
+
+ To zdarzenie jest emitowane, gdy transmisja usługi routingu nie powiodła się.  
   
-## <a name="message"></a>Komunikat  
- Usługa routingu nie powiodło się podczas wysyłania do "%1".  
+## <a name="message"></a>Wiadomość  
+
+ Wystąpił błąd usługi routingu podczas wysyłania komunikatu do ' %1 '.  
   
 ## <a name="details"></a>Szczegóły

@@ -11,14 +11,15 @@ helpviewer_keywords:
 - generics [.NET Framework], dynamic types
 - reflection emit, generic types
 ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
-ms.openlocfilehash: bf308b07bf4b2a863b9825e7c8d9f412bdb6d1b8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 75076eb9ce1b9bfc6b3c8b5a48e200ca5e63cdff
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559216"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263467"
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Instrukcje: Definiowanie typu ogólnego przy użyciu emisji odbicia
+
 W tym temacie pokazano, jak utworzyć prosty typ ogólny z dwoma parametrami typu, jak zastosować ograniczenia klas, ograniczenia interfejsu i specjalne ograniczenia do parametrów typu oraz jak tworzyć elementy członkowskie, które używają parametrów typu klasy jako typów parametrów i zwracanych typów.  
   
 > [!IMPORTANT]
@@ -110,6 +111,7 @@ W tym temacie pokazano, jak utworzyć prosty typ ogólny z dwoma parametrami typ
      [!code-vb[EmitGenericType#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#10)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu definiuje klasę o nazwie `Sample` , wraz z klasą bazową i dwoma interfejsami. Program definiuje dwa parametry typu ogólnego dla `Sample` , przełączając je do typu ogólnego. Parametry typu są jedynym elementem, który tworzy rodzajowy typ. Program pokazuje to poprzez wyświetlenie komunikatu testowego przed i po definicji parametrów typu.  
   
  Parametr typu `TSecond` jest używany do zademonstrowania ograniczeń klas i interfejsów, przy użyciu klasy bazowej i interfejsów, a parametr typu `TFirst` jest używany do zademonstrowania specjalnych ograniczeń.  
@@ -126,7 +128,7 @@ W tym temacie pokazano, jak utworzyć prosty typ ogólny z dwoma parametrami typ
  [!code-csharp[EmitGenericType#1](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#1)]
  [!code-vb[EmitGenericType#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#1)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Reflection.Emit.GenericTypeParameterBuilder>
 - [Używanie emisji odbicia](/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))

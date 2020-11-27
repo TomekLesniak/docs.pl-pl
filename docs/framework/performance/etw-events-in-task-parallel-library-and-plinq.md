@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tasks, ETW events
 ms.assetid: 87a9cff5-d86f-4e44-a06e-d12764d0dce2
-ms.openlocfilehash: a1a068b7ba94d5e5be4fd90d6adb48b0d25a8b9e
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 4cb4967ea704064ae08d09311ff33720e3871e19
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309641"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263649"
 ---
 # <a name="etw-events-in-task-parallel-library-and-plinq"></a>Zdarzenia ETW w bibliotece równoległych zadań i PLINQ
 
@@ -40,6 +40,7 @@ EVENT_DESCRIPTOR. Identyfikator = 1
 |ExclusiveTo|<xref:System.Int64?displayProperty=nameWithType>|Wartość końcowa licznika pętli|
 
 ### <a name="parallel-loop-end"></a>Zakończenie pętli równoległej
+
  EVENT_DESCRIPTOR. Zadanie = 2
 
  EVENT_DESCRIPTOR. Identyfikator = 2
@@ -54,6 +55,7 @@ EVENT_DESCRIPTOR. Identyfikator = 1
 |totalIterations|<xref:System.Int64?displayProperty=nameWithType>|Łączna liczba iteracji|
 
 ### <a name="parallel-invoke-begin"></a>Początek wywołania równoległego
+
  EVENT_DESCRIPTOR. Zadanie = 3
 
  EVENT_DESCRIPTOR. Identyfikator = 3
@@ -70,6 +72,7 @@ EVENT_DESCRIPTOR. Identyfikator = 1
 |ActionCount|<xref:System.Int32?displayProperty=nameWithType>|Liczba akcji, które zostaną wykonane w wywołaniu równoległym.|
 
 ### <a name="parallel-invoke-end"></a>Zakończenie wywołania równoległego
+
  EVENT_DESCRIPTOR. Zadanie = 4
 
  EVENT_DESCRIPTOR. Identyfikator = 4
@@ -83,11 +86,13 @@ EVENT_DESCRIPTOR. Identyfikator = 1
 |ForkJoinContextID|<xref:System.Int32?displayProperty=nameWithType>|Unikatowy identyfikator używany do wskazania zagnieżdżenia i par dla zdarzeń z semantyką rozwidlenia/sprzężenia.|
 
 ## <a name="plinq-etw-events"></a>Zdarzenia ETW PLINQ
+
  EVENT_HEADER. Identyfikator GUID identyfikatorem dla PLINQ to:
 
 `0x159eeeec, 0x4a14, 0x4418, 0xa8, 0xfe, 0xfa, 0xab, 0xcd, 0x98, 0x78, 0x87`
 
 ### <a name="parallel-query-begin"></a>Rozpoczęcie zapytania równoległego
+
  EVENT_DESCRIPTOR. Zadanie = 1
 
  EVENT_DESCRIPTOR. Identyfikator = 1
@@ -101,6 +106,7 @@ EVENT_DESCRIPTOR. Identyfikator = 1
 |QueryID|<xref:System.Int32?displayProperty=nameWithType>|Unikatowy identyfikator zapytania.|
 
 ### <a name="parallel-query-end"></a>Równoległe zakończenie zapytania
+
  EVENT_DESCRIPTOR. Zadanie = 2
 
  EVENT_DESCRIPTOR. Identyfikator = 2

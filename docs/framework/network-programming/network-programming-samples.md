@@ -3,20 +3,22 @@ title: Przykłady programowania sieciowego
 description: Skorzystaj z tych przykładów programowania sieci do pobrania dla .NET Framework System.Net i rozszerzonych klas.
 ms.date: 03/30/2017
 ms.assetid: 8efacc29-7367-47c2-8638-a4f66385ad91
-ms.openlocfilehash: b2bff98a23b5ed8fd9a27413818f0c455d46f6f8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e5d1306f3d42226bca88e2338a31a2c984491645
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558449"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261705"
 ---
 # <a name="network-programming-samples"></a>Przykłady programowania sieciowego
+
 Ta sekcja zawiera opisy i linki do pobieranych przykładów programistycznych sieci, które używają klas w,,,,,,, <xref:System.Net> <xref:System.Net.Cache> <xref:System.Net.Configuration> <xref:System.Net.Mail> <xref:System.Net.Mime> <xref:System.Net.NetworkInformation> <xref:System.Net.Security> <xref:System.Net.Sockets> i powiązanych przestrzeniach nazw.
   
 > [!NOTE]
 > Wszystkie przykłady są dostępne w [zestawie .NET Framework SDK w wersji 2,0](https://www.microsoft.com/download/confirmation.aspx?id=22181)pobranej dla .NET Framework 2,0 i mogą być datowane.
 
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Pobierz próbkę technologii ze wskaźnikiem postępu](/previous-versions/dotnet/netframework-3.0/t8w6294a(v=vs.85))  
  Pokazuje, jak wyświetlić postęp pobierania plików.  
   
@@ -52,12 +54,13 @@ Ta sekcja zawiera opisy i linki do pobieranych przykładów programistycznych si
  [Przykład technologii FTP Explorer](/previous-versions/dotnet/netframework-3.0/ms233623(v=vs.85))  
  Pokazuje, jak wyświetlić listę zawartości serwera FTP.  
 
-## <a name="reference"></a>Tematy pomocy  
+## <a name="reference"></a>Dokumentacja  
+
  <xref:System.Net>  
   
  <xref:System.Net.NetworkInformation>  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Programowanie dla sieci w .NET Framework](index.md)
 - [Programowanie dla sieci — tematy z instrukcjami](network-programming-how-to-topics.md)

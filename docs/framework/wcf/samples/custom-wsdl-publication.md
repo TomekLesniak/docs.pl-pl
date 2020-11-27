@@ -2,14 +2,15 @@
 title: Niestandardowa publikacja WSDL
 ms.date: 03/30/2017
 ms.assetid: 3b3e8103-2c95-4db3-a05b-46aa8e9d4d29
-ms.openlocfilehash: b18ac2f72d58c768b3784e1c414a71cdaec50c01
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 83377e1c72ef5774c909729abd1312cce5364ab0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596698"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262869"
 ---
 # <a name="custom-wsdl-publication"></a>Niestandardowa publikacja WSDL
+
 W tym przykładzie pokazano, jak:  
   
 - Zaimplementuj obiekt <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> na atrybucie niestandardowym <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> , aby wyeksportować właściwości atrybutów jako adnotacje WSDL.  
@@ -24,6 +25,7 @@ W tym przykładzie pokazano, jak:
 > Procedura instalacji i instrukcje dotyczące kompilacji dla tego przykładu znajdują się na końcu tego tematu.  
   
 ## <a name="service"></a>Usługa  
+
  Usługa w tym przykładzie jest oznaczona dwoma atrybutami niestandardowymi. Pierwszy, `WsdlDocumentationAttribute` ,, akceptuje ciąg w konstruktorze i może być stosowany w celu zapewnienia interfejsu lub operacji kontraktu z ciągiem opisującym jego użycie. Sekunda, `WsdlParamOrReturnDocumentationAttribute` ,, może być stosowana do zwracanych wartości lub parametrów w celu opisania tych wartości w operacji. Poniższy przykład przedstawia kontrakt usługi, `ICalculator` opisany przy użyciu tych atrybutów.  
   
 ```csharp  
@@ -170,9 +172,11 @@ for (int i = 0; i < args.Length; i++)
 ```  
   
 ## <a name="svcutil-client"></a>Klient Svcutil  
- Ten przykład nie używa programu Svcutil. exe. Umowa jest dostępna w pliku generatedClient.cs, dzięki czemu po przykładzie zademonstrowano niestandardowy import WSDL i generowanie kodu, usługa może być wywoływana. Aby użyć następującego niestandardowego importera WSDL na potrzeby tego przykładu, można uruchomić program Svcutil. exe i określić `/svcutilConfig` opcję, podając ścieżkę do pliku konfiguracji klienta użytego w tym przykładzie, który odwołuje się do `WsdlDocumentation.dll` biblioteki. Aby załadować `WsdlDocumentationImporter` plik, program Svuctil. exe musi mieć możliwość zlokalizowania i załadowania `WsdlDocumentation.dll` biblioteki, co oznacza, że jest ona zarejestrowana w globalnej pamięci podręcznej zestawów, w ścieżce lub znajduje się w tym samym katalogu, co Svcutil. exe. W przypadku podstawowego przykładu, najłatwiejszym rozwiązaniem jest skopiowanie Svcutil. exe i pliku konfiguracji klienta do tego samego katalogu, co spowoduje `WsdlDocumentation.dll` jego uruchomienie.  
+
+ Ten przykład nie używa Svcutil.exe. Umowa jest dostępna w pliku generatedClient.cs, dzięki czemu po przykładzie zademonstrowano niestandardowy import WSDL i generowanie kodu, usługa może być wywoływana. Aby skorzystać z następującego niestandardowego importera WSDL na potrzeby tego przykładu, można uruchomić Svcutil.exe i określić `/svcutilConfig` opcję, podając ścieżkę do pliku konfiguracji klienta użytego w tym przykładzie, który odwołuje się do `WsdlDocumentation.dll` biblioteki. Aby załadować `WsdlDocumentationImporter` , należy jednak Svuctil.exe musi mieć możliwość zlokalizowania i załadowania `WsdlDocumentation.dll` biblioteki, co oznacza, że jest ona zarejestrowana w globalnej pamięci podręcznej zestawów, w ścieżce lub znajduje się w tym samym katalogu co Svcutil.exe. W przypadku podstawowego przykładu, najłatwiejszym rozwiązaniem jest skopiowanie Svcutil.exe i pliku konfiguracji klienta do tego samego katalogu co `WsdlDocumentation.dll` i uruchomienie go z tego miejsca.  
   
 ## <a name="the-custom-wsdl-importer"></a>Niestandardowy importer WSDL  
+
  Obiekt niestandardowy <xref:System.ServiceModel.Description.IWsdlImportExtension> `WsdlDocumentationImporter` jest również wdrażany <xref:System.ServiceModel.Description.IContractBehavior> i <xref:System.ServiceModel.Description.IOperationBehavior> dodawany do zaimportowanych punktów końcowych oraz <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> do wywoływania, aby modyfikować generowanie kodu podczas tworzenia kontraktu lub kodu operacji.  
   
  Po pierwsze, w <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> metodzie, przykład określa, czy adnotacja WSDL znajduje się na poziomie kontraktu lub operacji, i dodaje się do niego w odpowiednim zakresie, przekazując zaimportowany tekst adnotacji do jego konstruktora.  
@@ -219,6 +223,7 @@ public void GenerateOperation(OperationContractGenerationContext context)
 ```  
   
 ## <a name="the-client-application"></a>Aplikacja kliencka  
+
  Aplikacja kliencka ładuje niestandardowego importera WSDL przez określenie go w pliku konfiguracyjnym aplikacji.  
   
 ```xml  

@@ -2,20 +2,23 @@
 title: Informacje o klasach WMI
 ms.date: 03/30/2017
 ms.assetid: b95a51f5-8251-4619-ae05-7de88cb90f9a
-ms.openlocfilehash: 226e4dedecd152f3a3d4143280529c7823339932
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9830fbf50e8df625e3d3077a66c66e0370204acb
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795877"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262258"
 ---
 # <a name="wmi-class-reference"></a>Informacje o klasach WMI
+
 W tej sekcji wymieniono wszystkie klasy usługi WMI udostępniane przez dostawcę usługi WMI Windows Communication Foundation (WCF).  
   
 ## <a name="accessing-wmi-instances"></a>Uzyskiwanie dostępu do wystąpień usługi WMI  
+
  Nie można bezpośrednio utworzyć wystąpienia wszystkich klas wymienionych w odwołaniu do obiektu WMI, z wyjątkiem usług Service, AppDomain, Contract, serviceappdomain, ServiceToEndpointAssociation i Endpoint. Aby uzyskać dostęp do innych wystąpień, można uzyskać dostęp do właściwości wyżej wymienionych klas najwyższego poziomu. Na przykład można uzyskać dostęp do wystąpienia elementu TransportBindingElement z wystąpienia punktu końcowego — > powiązania — > BindingElements.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [ActivityTransfer](activitytransfer.md)  
   
  [AppDomainInfo](appdomaininfo.md)  
@@ -28,13 +31,13 @@ W tej sekcji wymieniono wszystkie klasy usługi WMI udostępniane przez dostawc�
   
  [BinaryMessageEncodingBindingElement](binarymessageencodingbindingelement.md)  
   
- [Powiązanie](binding.md)  
+ [Wiązanie](binding.md)  
   
  [BindingElement](bindingelement.md)  
   
  [CallbackBehavior](callbackbehavior.md)  
   
- [Klasa Channel](channel-class.md)  
+ [Klasa kanału](channel-class.md)  
   
  [ChannelPoolSettings](channelpoolsettings.md)  
   

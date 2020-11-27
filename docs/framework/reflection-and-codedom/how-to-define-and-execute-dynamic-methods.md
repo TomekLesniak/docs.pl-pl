@@ -10,14 +10,15 @@ helpviewer_keywords:
 - reflection emit, dynamic methods
 - dynamic methods
 ms.assetid: 07d08a99-62c5-4254-bce2-2a75e55a18ab
-ms.openlocfilehash: d1ccf3d3ac966e35e1708f0639785a2760eb8287
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 1ea15149ea72c3c422251abefb5a1008cc496f2c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559190"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263454"
 ---
 # <a name="how-to-define-and-execute-dynamic-methods"></a>Instrukcje: Definiowanie i wykonywanie metod dynamicznych
+
 W poniższych procedurach pokazano, jak zdefiniować i wykonać prostą metodę dynamiczną oraz metodę dynamiczną powiązaną z wystąpieniem klasy. Aby uzyskać więcej informacji na temat metod dynamicznych, zobacz <xref:System.Reflection.Emit.DynamicMethod> [scenariusze metod dynamicznych emisji klasy i odbicia](/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100)).  
   
 ### <a name="to-define-and-execute-a-dynamic-method"></a>Aby zdefiniować i wykonać metodę dynamiczną  
@@ -101,6 +102,7 @@ W poniższych procedurach pokazano, jak zdefiniować i wykonać prostą metodę 
      [!code-vb[DynamicMethodHowTo#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#16)]  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu demonstruje prostą metodę dynamiczną i metodę dynamiczną powiązaną z wystąpieniem klasy.  
   
  Prosta metoda dynamiczna przyjmuje jeden argument, 32-bitową liczbę całkowitą i zwraca kwadrat 64-bitowy tej liczby całkowitej. Delegat generyczny jest używany do wywołania metody.  
@@ -113,7 +115,7 @@ W poniższych procedurach pokazano, jak zdefiniować i wykonać prostą metodę 
  [!code-csharp[DynamicMethodHowTo#1](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#1)]
  [!code-vb[DynamicMethodHowTo#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#1)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Reflection.Emit.DynamicMethod>
 - [Używanie emisji odbicia](/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))

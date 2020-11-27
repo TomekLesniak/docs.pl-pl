@@ -6,19 +6,21 @@ helpviewer_keywords:
 - .NET Framework ETW events
 - ETW events in the .NET Framework
 ms.assetid: d186276f-6afb-4dfd-bf3c-4251edc2c299
-ms.openlocfilehash: 48d0723f0f010e5102d60940f515a478725f8263
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: c8eaec37689d4c62b1faf53364ff63012b99106f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309524"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96263625"
 ---
 # <a name="etw-events-in-the-net-framework"></a>Zdarzenia ETW w programie .NET Framework
+
 Śledzenie zdarzeń systemu Windows (ETW) to wysoce wydajny, tani i skalowalny system śledzenia zapewniany przez systemy operacyjne Windows. Uzupełnia ono obsługę profilowania i debugowania zapewniane przez .NET Framework i może służyć do rozwiązywania problemów z różnymi scenariuszami.  
   
  W .NET Framework śledzenie zdarzeń ETW jest dostępne dla środowiska uruchomieniowego języka wspólnego (CLR), [biblioteki zadań równoległych](../../standard/parallel-programming/task-parallel-library-tpl.md)i [równoległego LINQ (PLINQ)](../../standard/parallel-programming/introduction-to-plinq.md).  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Zdarzenia ETW w bibliotece równoległych zadań i PLINQ](etw-events-in-task-parallel-library-and-plinq.md)  
  Opisuje sposób profilowania kodu aplikacji równoległych.  
   

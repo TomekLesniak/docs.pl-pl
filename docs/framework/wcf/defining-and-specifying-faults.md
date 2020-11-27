@@ -8,29 +8,32 @@ helpviewer_keywords:
 - handling faults [WCF], specifying
 - handling faults [WCF], defining
 ms.assetid: c00c84f1-962d-46a7-b07f-ebc4f80fbfc1
-ms.openlocfilehash: 10fc045cab995cca8d78e470d74ec9341e167308
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 67096c4531d13bc66f584c09c458c0a5a2a41c6b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176698"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96260906"
 ---
 # <a name="defining-and-specifying-faults"></a>Definiowanie i określanie błędów
-Błędy protokołu SOAP przekazują informacje o stanie błędu z usługi do klienta, a w przypadku dupleksu z klienta do usługi w sposób interoperacyjny. W tym temacie omówiono, kiedy i jak zdefiniować niestandardową zawartość błędów i określić, które operacje mogą je zwracać. Aby uzyskać więcej informacji o tym, jak usługa lub klient dupleksu może wysyłać te błędy i jak aplikacja klienta lub usługi obsługuje te usterki, zobacz [Wysyłanie i odbieranie błędów](sending-and-receiving-faults.md). Aby zapoznać się z omówieniem obsługi błędów w aplikacjach Windows Communication Foundation (WCF), zobacz [Określanie i obsługa błędów w umowach i usługach](specifying-and-handling-faults-in-contracts-and-services.md).  
+
+Błędy protokołu SOAP umożliwiają przekazywanie informacji o stanie błędu z usługi do klienta i w przypadku dupleksu od klienta do usługi w sposób interoperacyjny. W tym temacie omówiono, kiedy i jak definiować niestandardową zawartość błędów i określić, które operacje mogą je zwrócić. Aby uzyskać więcej informacji na temat sposobu, w jaki usługa lub klient dupleksu może wysyłać te błędy i jak aplikacja klienta lub usługi obsługuje te błędy, zobacz [wysyłanie i otrzymywanie błędów](sending-and-receiving-faults.md). Omówienie obsługi błędów w aplikacjach Windows Communication Foundation (WCF) zawiera temat [określanie i obsługa błędów w kontraktach i usługach](specifying-and-handling-faults-in-contracts-and-services.md).  
   
 ## <a name="overview"></a>Omówienie  
- Zadeklarowane błędy protokołu SOAP to te, w których operacja ma, <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> który określa niestandardowy typ błędu PROTOKOŁU SOAP. Niezadeklarowane błędy protokołu SOAP to te, które nie są określone w umowie dla operacji. W tym temacie pomaga zidentyfikować te warunki błędu i utworzyć kontrakt błędów dla usługi, które klienci mogą używać do prawidłowego obsługi tych warunków błędu, gdy są powiadamiane przez niestandardowe błędy PROTOKOŁU SOAP. Podstawowe zadania są, w kolejności:  
+
+ Zadeklarowane błędy protokołu SOAP to te, w których operacja ma <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> niestandardowy typ błędu SOAP. Niezadeklarowane błędy SOAP to te, które nie są określone w kontrakcie dla operacji. Ten temat ułatwia zidentyfikowanie tych warunków błędów i utworzenie kontraktu o błędach dla usługi, którego klienci mogą używać do prawidłowego obsługi tych warunków błędów podczas powiadamiania o niestandardowych błędach protokołu SOAP. Podstawowe zadania są następujące:  
   
-1. Zdefiniuj warunki błędu, o których powinien wiedzieć klient usługi.  
+1. Zdefiniuj warunki błędów, o których powinien wiedzieć klient usługi.  
   
-2. Zdefiniuj niestandardową zawartość błędów PROTOKOŁU SOAP dla tych warunków błędu.  
+2. Zdefiniuj niestandardową zawartość błędów SOAP dla tych warunków błędu.  
   
-3. Oznacz swoje operacje, tak aby określone błędy protokołu SOAP, które zgłaszają, były udostępniane klientom w programie WSDL.  
+3. Oznacz operacje w taki sposób, aby określone błędy SOAP, które zgłaszają, zostały uwidocznione klientom w języku WSDL.  
   
-### <a name="defining-error-conditions-that-clients-should-know-about"></a>Definiowanie warunków błędu, o których klienci powinni wiedzieć  
- Błędy protokołu SOAP są publicznie opisane komunikaty, które zawierają informacje o błędach dla określonej operacji. Ponieważ są one opisane wraz z innymi komunikatami operacyjnymi w WSDL, klienci wiedzą i w związku z tym oczekują obsługi takich błędów podczas wywoływania operacji. Ale ponieważ usługi WCF są zapisywane w kodzie zarządzanym, decydując, które warunki błędu w kodzie zarządzanym mają być konwertowane na błędy i zwracane klientowi, daje możliwość oddzielenia warunków błędów i błędów w usłudze od błędu formalnego rozmowy z klientem.  
+### <a name="defining-error-conditions-that-clients-should-know-about"></a>Definiowanie warunków błędów, które powinny być znane klientom  
+
+ Błędy protokołu SOAP są publicznie opisanymi komunikatami, które zawierają informacje o błędach dla określonej operacji. Ponieważ są one opisane wraz z innymi komunikatami operacji w języku WSDL, klienci znają i w związku z tym oczekują na obsługę takich błędów podczas wywoływania operacji. Jednak ponieważ usługi WCF są zapisywane w kodzie zarządzanym, decydując o tym, które warunki błędu w kodzie zarządzanym mają być konwertowane na błędy i zwracane do klienta, można oddzielić błędy i usterki w usłudze od formalnej rozmowy z błędami, które są dostępne dla klienta.  
   
- Na przykład w poniższym przykładzie kodu pokazano operację, która przyjmuje dwie liczby całkowite i zwraca inną liczbę całkowitą. Kilka wyjątków można w tym miejscu, więc podczas projektowania umowy błędów, należy określić, które warunki błędu są ważne dla klienta. W takim przypadku usługa powinna <xref:System.DivideByZeroException?displayProperty=nameWithType> wykryć wyjątek.  
+ Na przykład poniższy kod ilustruje operację, która przyjmuje dwie liczby całkowite i zwraca kolejną liczbę całkowitą. W tym miejscu można zgłaszać kilka wyjątków, dlatego podczas projektowania kontraktu dotyczącego błędu należy określić, które warunki błędów są ważne dla klienta. W takim przypadku usługa powinna wykryć <xref:System.DivideByZeroException?displayProperty=nameWithType> wyjątek.  
   
 ```csharp  
 [ServiceContract]  
@@ -56,34 +59,37 @@ Public Class CalculatorService
 End Class
 ```
   
- W poprzednim przykładzie operacja może albo zwrócić niestandardowy błąd PROTOKOŁU SOAP, który jest specyficzny dla dzielenia przez zero, błąd niestandardowy, który jest specyficzny dla operacji matematycznych, ale który zawiera informacje specyficzne dla podziału przez zero, wiele błędów dla kilku różnych lub brak błędu SOAP.  
+ W poprzednim przykładzie operacja może zwrócić niestandardowy błąd protokołu SOAP, który jest specyficzny dla dzielenia przez zero, niestandardową usterkę, która jest specyficzna dla operacji matematycznych, ale zawiera informacje specyficzne dla dzielenia przez zero, wiele błędów dla kilku różnych sytuacji błędów lub Brak błędów protokołu SOAP.  
   
-### <a name="define-the-content-of-error-conditions"></a>Definiowanie zawartości warunków błędu  
- Po zidentyfikowaniu warunku błędu jako warunek, który może z pożytkiem zwrócić niestandardowy błąd PROTOKOŁU SOAP, następnym krokiem jest zdefiniowanie zawartości tego błędu i zapewnienie, że struktura zawartości może być serializowana. Przykład kodu w poprzedniej sekcji pokazuje błąd `Divide` specyficzny dla operacji, ale jeśli `Calculator` istnieją inne operacje w usłudze, a następnie pojedynczy `Divide` niestandardowy błąd PROTOKOŁU SOAP może poinformować klienta o wszystkich warunkach błędu kalkulatora, w tym. Poniższy przykład kodu pokazuje utworzenie niestandardowego `MathFault`błędu PROTOKOŁU SOAP, który może zgłaszać błędy popełniane przy użyciu wszystkich operacji matematycznych, w tym `Divide`. Podczas gdy klasa może określić operację `Operation` (właściwość) i `ProblemType` wartość, która opisuje problem (właściwość), klasa i te właściwości muszą być serializable być przeniesione do klienta w niestandardowym błędem PROTOKOŁU SOAP. W związku <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType> z <xref:System.Runtime.Serialization.DataMemberAttribute?displayProperty=nameWithType> tym i atrybuty są używane do typu i jego właściwości serializable i jak interoperacyjne, jak to możliwe.  
+### <a name="define-the-content-of-error-conditions"></a>Zdefiniuj zawartość warunków błędów  
+
+ Gdy warunek błędu został zidentyfikowany jako taki, który może zwrócić niestandardowy błąd protokołu SOAP, następnym krokiem jest zdefiniowanie zawartości tego błędu i upewnienie się, że struktura zawartości może być serializowana. Przykład kodu w poprzedniej sekcji zawiera błąd specyficzny dla `Divide` operacji, ale jeśli w usłudze istnieją inne operacje `Calculator` , wówczas pojedynczy niestandardowy błąd protokołu SOAP może poinformować klienta o wszystkich warunkach błędów kalkulatora, które zostały `Divide` uwzględnione. Poniższy przykład kodu pokazuje Tworzenie niestandardowego błędu protokołu SOAP, `MathFault` który może raportować błędy wykonywane przy użyciu wszystkich operacji matematycznych, w tym `Divide` . Chociaż Klasa może określać operację ( `Operation` Właściwość) i wartość opisującą problem ( `ProblemType` Właściwość), Klasa i te właściwości muszą być możliwe do serializacji, aby można je było przesłać do klienta w niestandardowym błędzie protokołu SOAP. W związku z <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType> tym <xref:System.Runtime.Serialization.DataMemberAttribute?displayProperty=nameWithType> atrybuty i są używane do serializacji typu i jego właściwości, jak to możliwe.  
   
  [!code-csharp[Faults#2](../../../samples/snippets/csharp/VS_Snippets_CFX/faults/cs/service.cs#2)]
  [!code-vb[Faults#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faults/vb/service.vb#2)]  
   
- Aby uzyskać więcej informacji na temat sposobu zapewnienia serializacji danych, zobacz [Określanie transferu danych w umowach serwisowych](./feature-details/specifying-data-transfer-in-service-contracts.md). Aby uzyskać listę obsługi serializacji, która <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> zapewnia, zobacz [typy obsługiwane przez serializatora kontraktów danych](./feature-details/types-supported-by-the-data-contract-serializer.md).  
+ Aby uzyskać więcej informacji o tym, jak zapewnić możliwość serializacji danych, zobacz [określanie transfer danych w kontraktach usług](./feature-details/specifying-data-transfer-in-service-contracts.md). Aby zapoznać się z listą pomocy technicznej dotyczącej serializacji <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> , zobacz [Typy obsługiwane przez serializator kontraktu danych](./feature-details/types-supported-by-the-data-contract-serializer.md).  
   
-### <a name="mark-operations-to-establish-the-fault-contract"></a>Oznacz operacje w celu ustalenia kontraktu z usterką  
- Po serializable struktury danych, który jest zwracany jako część niestandardowego błędu PROTOKOŁU SOAP jest zdefiniowany, ostatnim krokiem jest oznaczenie umowy operacji jako rzucanie błędu PROTOKOŁU SOAP tego typu. Aby to zrobić, <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> należy użyć atrybutu i przekazać typ niestandardowego typu danych, który został skonstruowany. W poniższym przykładzie kodu <xref:System.ServiceModel.FaultContractAttribute> pokazano, jak `Divide` użyć atrybutu, aby `MathFault`określić, że operacja może zwrócić błąd typu SOAP . Inne operacje oparte na matematyce można `MathFault`teraz również określić, że mogą zwracać .  
+### <a name="mark-operations-to-establish-the-fault-contract"></a>Oznaczanie operacji w celu ustalenia kontraktu dotyczącego usterek  
+
+ Po zdefiniowaniu struktury danych do serializacji, która jest zwracana jako część niestandardowego błędu SOAP, ostatnim krokiem jest oznaczenie kontraktu operacji jako wyrzuca błąd protokołu SOAP tego typu. W tym celu należy użyć <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> atrybutu i przekazać typ utworzonego niestandardowego typu danych. Poniższy przykład kodu pokazuje, jak używać atrybutu, <xref:System.ServiceModel.FaultContractAttribute> Aby określić, że `Divide` operacja może zwrócić błąd protokołu SOAP typu `MathFault` . Inne operacje oparte na zapisie matematycznym mogą teraz również określać, że mogą zwrócić `MathFault` .  
   
  [!code-csharp[Faults#1](../../../samples/snippets/csharp/VS_Snippets_CFX/faults/cs/service.cs#1)]
  [!code-vb[Faults#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faults/vb/service.vb#1)]  
   
- Operacja może określić, że zwraca więcej niż jeden błąd <xref:System.ServiceModel.FaultContractAttribute> niestandardowy, oznaczając tę operację więcej niż jednym atrybutem.  
+ Operacja może określić, że zwraca więcej niż jeden błąd niestandardowy przez oznaczenie tej operacji z więcej niż jednym <xref:System.ServiceModel.FaultContractAttribute> atrybutem.  
   
- Następny krok, aby zaimplementować kontrakt z usterką w implementacji operacji, jest opisany w temacie [Wysyłanie i odbieranie usterek](sending-and-receiving-faults.md).  
+ Następny krok, aby zaimplementować kontrakt błędu w implementacji operacji, został opisany w temacie [wysyłanie i otrzymywanie błędów](sending-and-receiving-faults.md).  
   
-#### <a name="soap-wsdl-and-interoperability-considerations"></a>Zagadnienia dotyczące mydła, WSDL i interoperacyjności  
- W niektórych okolicznościach, zwłaszcza podczas współpracy z innymi platformami, może być ważne, aby kontrolować sposób, w jaki błąd pojawia się w wiadomości SOAP lub sposób, w jaki jest opisany w metadanych WSDL.  
+#### <a name="soap-wsdl-and-interoperability-considerations"></a>Zagadnienia dotyczące protokołu SOAP, WSDL i współdziałania  
+
+ W niektórych sytuacjach, szczególnie w przypadku współdziałania z innymi platformami, może być ważne, aby kontrolować sposób, w jaki błąd pojawia się w komunikacie protokołu SOAP lub sposób opisywania w metadanych WSDL.  
   
- Atrybut <xref:System.ServiceModel.FaultContractAttribute> ma <xref:System.ServiceModel.FaultContractAttribute.Name%2A> właściwość, która umożliwia kontrolę nad nazwą elementu błędu WSDL, który jest generowany w metadanych dla tego błędu.  
+ <xref:System.ServiceModel.FaultContractAttribute>Atrybut ma <xref:System.ServiceModel.FaultContractAttribute.Name%2A> Właściwość, która umożliwia kontrolowanie nazwy elementu błędu WSDL, która jest generowana w metadanych dla tego błędu.  
   
- Zgodnie ze standardem SOAP, usterka `Code`może `Reason`mieć `Action`, , i . Obiekt `Action` jest kontrolowany <xref:System.ServiceModel.FaultContractAttribute.Action%2A> przez obiekt. Właściwość <xref:System.ServiceModel.FaultException.Code%2A> <xref:System.ServiceModel.FaultException.Reason%2A> i właściwość są <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> właściwości klasy, która jest klasą nadrzędną generic <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType>. W `Code` obiekcie <xref:System.ServiceModel.FaultCode.SubCode%2A> znajduje się członek.  
+ Zgodnie ze standardem SOAP, błąd może mieć `Action` , a `Code` i `Reason` . `Action`Jest kontrolowana przez <xref:System.ServiceModel.FaultContractAttribute.Action%2A> Właściwość. <xref:System.ServiceModel.FaultException.Code%2A>Właściwość i <xref:System.ServiceModel.FaultException.Reason%2A> Właściwość są właściwościami <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> klasy, która jest klasą nadrzędną ogólnej <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> . `Code`Właściwość zawiera <xref:System.ServiceModel.FaultCode.SubCode%2A> element członkowski.  
   
- Podczas uzyskiwania dostępu do usług innych niż usługi, które generują błędy, istnieją pewne ograniczenia. WCF obsługuje tylko błędy z typów szczegółów, które opisuje schemat i które są zgodne z kontraktów danych. Na przykład, jak wspomniano powyżej, WCF nie obsługuje błędów, które używają atrybutów XML w ich typach szczegółów lub błędów z więcej niż jednym elementem najwyższego poziomu w sekcji szczegółów.  
+ W przypadku uzyskiwania dostępu do usług, które generują błędy, istnieją pewne ograniczenia. Usługa WCF obsługuje tylko błędy ze szczegółowymi typami, które opisano w schemacie i są zgodne z kontraktami danych. Na przykład, jak wspomniano powyżej, WCF nie obsługuje błędów, które używają atrybutów XML w ich typach szczegółów lub błędy z więcej niż jednym elementem najwyższego poziomu w sekcji szczegółów.  
   
 ## <a name="see-also"></a>Zobacz też
 
@@ -92,7 +98,7 @@ End Class
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
 - [Określanie i obsługa błędów w kontraktach i usługach](specifying-and-handling-faults-in-contracts-and-services.md)
 - [Wysyłanie i odbieranie błędów](sending-and-receiving-faults.md)
-- [Deklarowanie błędów w kontraktach usługi](how-to-declare-faults-in-service-contracts.md)
+- [Instrukcje: Deklarowanie błędów w kontraktach usługi](how-to-declare-faults-in-service-contracts.md)
 - [Omówienie poziomów ochrony](understanding-protection-level.md)
-- [Instrukcje: ustawianie właściwości ProtectionLevel](how-to-set-the-protectionlevel-property.md)
+- [Instrukcje: Ustawianie właściwości ProtectionLevel](how-to-set-the-protectionlevel-property.md)
 - [Określanie transferu danych w kontraktach usług](./feature-details/specifying-data-transfer-in-service-contracts.md)

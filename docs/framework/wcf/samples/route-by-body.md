@@ -2,14 +2,15 @@
 title: Trasa według treści
 ms.date: 03/30/2017
 ms.assetid: 07a6fc3b-c360-42e0-b663-3d0f22cf4502
-ms.openlocfilehash: 146baf806f4922f5e3ddd92a762772786e61d443
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: af88d9938098c9aaa6b4b116c196e3b7f563a1e7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594598"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262700"
 ---
 # <a name="route-by-body"></a>Trasa według treści
+
 Ten przykład pokazuje, jak wdrożyć usługę akceptującą obiekty komunikatów z dowolną akcją SOAP. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md) , który implementuje usługę kalkulatora. Usługa implementuje pojedynczą `Calculate` operację, która akceptuje <xref:System.ServiceModel.Channels.Message> parametr żądania i zwraca <xref:System.ServiceModel.Channels.Message> odpowiedź.  
   
  W tym przykładzie klient jest aplikacją konsolową (. exe), a usługa jest hostowana w usługach IIS.  
@@ -35,9 +36,9 @@ Ten przykład pokazuje, jak wdrożyć usługę akceptującą obiekty komunikató
     }  
 ```  
   
- W przypadku kontraktu usługa wymaga niestandardowego zachowania wysyłania `DispatchByBodyBehavior` , aby umożliwić wysyłanie komunikatów między operacjami. To zachowanie wysyłania inicjuje `DispatchByBodyElementOperationSelector` selektor operacji niestandardowych z tabelą nazw operacji, które są poprzedzone przez QName odpowiednich elementów otoki. `DispatchByBodyElementOperationSelector`sprawdza tag początkowy pierwszego elementu podrzędnego treści i wybiera operację przy użyciu wcześniej wymienionej tabeli.  
+ W przypadku kontraktu usługa wymaga niestandardowego zachowania wysyłania `DispatchByBodyBehavior` , aby umożliwić wysyłanie komunikatów między operacjami. To zachowanie wysyłania inicjuje `DispatchByBodyElementOperationSelector` selektor operacji niestandardowych z tabelą nazw operacji, które są poprzedzone przez QName odpowiednich elementów otoki. `DispatchByBodyElementOperationSelector` sprawdza tag początkowy pierwszego elementu podrzędnego treści i wybiera operację przy użyciu wcześniej wymienionej tabeli.  
   
- Klient korzysta z wygenerowanego automatycznie serwera proxy z poziomu WSDL wyeksportowanego przez usługę za pomocą [narzędzia Svcutil. exe](../servicemodel-metadata-utility-tool-svcutil-exe.md).  
+ Klient korzysta z wygenerowanego automatycznie serwera proxy z poziomu WSDL wyeksportowanego przez usługę przy użyciu narzędzia do obsługi [metadanych ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 ```console  
 svcutil.exe  /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples /uxs http://localhost/servicemodelsamples/service.svc?wsdl /out:generatedProxy.cs  

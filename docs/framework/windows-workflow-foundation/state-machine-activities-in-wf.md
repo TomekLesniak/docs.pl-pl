@@ -1,24 +1,25 @@
 ---
-title: Działań automatu stanów w WF
+title: Działania automatu stanów w WF
 ms.date: 03/30/2017
 ms.assetid: 93312eaf-07e0-4a55-b4f7-4cdbbc4dee2d
-ms.openlocfilehash: 64af2698c878066464e2ca3f32d4522d99999aec
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: dd0bfae1f24ecd9f98c0a2f04265581f880202a7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378052"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261725"
 ---
-# <a name="state-machine-activities-in-wf"></a>Działań automatu stanów w WF
-.NET framework 4.5 zawiera kilka działań dostarczane przez system i projektanci działań tworzenia przepływów pracy automatu stanów.  
+# <a name="state-machine-activities-in-wf"></a>Działania automatu stanów w WF
+
+.NET Framework 4,5 udostępnia kilka działań dostępnych w systemie i projektantów działań do tworzenia przepływów pracy automatu Stanów.  
   
 |||  
 |-|-|  
-|<xref:System.Activities.Statements.StateMachine>|Wykonuje zawarte działania przy użyciu modelu maszyny znanego stanu.|  
-|<xref:System.Activities.Statements.State>|Reprezentuje stan w automacie stanów.|  
-|<xref:System.Activities.Core.Presentation.FinalState>|Reprezentuje kończący stan w automacie stanów. <xref:System.Activities.Core.Presentation.FinalState> Projektant działań jest że w przypadku używane tworzy <xref:System.Activities.Statements.State> we wstępnie skonfigurowanym jako powodujący przerwanie stanu. Aby uzyskać więcej informacji, zobacz [FinalState, Projektant działań](/visualstudio/workflow-designer/finalstate-activity-designer).|  
-|<xref:System.Activities.Statements.Transition>|Reprezentuje przejście między dwoma stanami. Istnieje nie **przybornika** element do <xref:System.Activities.Statements.Transition>; przejścia są tworzone w Projektancie przepływu pracy, przeciągając i upuszczając linię między dwoma stanami lub upuszczając stanu na trójkąty, które są wyświetlane, kiedy jeden stan jest aktywowany zamiast innego . Aby uzyskać więcej informacji, zobacz [Transaction, Projektant działań](/visualstudio/workflow-designer/transition-activity-designer).|  
+|<xref:System.Activities.Statements.StateMachine>|Wykonuje zawarte działania przy użyciu modelu znanego komputera stanu.|  
+|<xref:System.Activities.Statements.State>|Reprezentuje stan na komputerze stanu.|  
+|<xref:System.Activities.Core.Presentation.FinalState>|Reprezentuje stan zakończenia na komputerze stanu. <xref:System.Activities.Core.Presentation.FinalState> jest projektantem działań, który jest używany do tworzenia <xref:System.Activities.Statements.State> wstępnie skonfigurowanego stanu zakończenia. Aby uzyskać więcej informacji, zobacz [FinalState Activity Designer](/visualstudio/workflow-designer/finalstate-activity-designer).|  
+|<xref:System.Activities.Statements.Transition>|Reprezentuje przejście między dwoma stanami. Nie ma elementu **przybornika** <xref:System.Activities.Statements.Transition> ; przejścia są tworzone w Projektancie przepływu pracy przez przeciąganie i upuszczanie linii między dwoma stanami lub przez porzucanie stanu w trójkątach, które są wyświetlane, gdy jeden stan jest aktywowany na innym. Aby uzyskać więcej informacji, zobacz [Projektant działań przejścia](/visualstudio/workflow-designer/transition-activity-designer).|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wprowadzenie — samouczek](getting-started-tutorial.md)

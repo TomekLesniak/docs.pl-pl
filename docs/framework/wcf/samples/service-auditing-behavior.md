@@ -2,14 +2,15 @@
 title: Zachowanie inspekcji usługi
 ms.date: 03/30/2017
 ms.assetid: 59bf0cda-e496-4418-a3a1-2f0f6e85f8ce
-ms.openlocfilehash: bfe13146a7f7cdec648a82a34c34077ec5466809
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ae7ed2059b491a71de9c806e78f1fb784da197fa
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599935"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262570"
 ---
 # <a name="service-auditing-behavior"></a>Zachowanie inspekcji usługi
+
 W tym przykładzie przedstawiono sposób użycia programu w <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> celu włączenia inspekcji zdarzeń zabezpieczeń podczas operacji usługi. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md). Usługa i klient zostały skonfigurowane przy użyciu programu [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) . `mode`Atrybut [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md) został ustawiony na `Message` i `clientCredentialType` został ustawiony na `Windows` . W tym przykładzie klient jest aplikacją konsolową (. exe), a usługa jest hostowana przez Internet Information Services (IIS).  
   
 > [!NOTE]

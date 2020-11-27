@@ -2,14 +2,15 @@
 title: ServiceMetadataBehavior
 ms.date: 03/30/2017
 ms.assetid: 0f194476-72f1-467e-bdce-674306316e64
-ms.openlocfilehash: 1d99af064205447c2f11f6f19258551c1e88d386
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 921a880dad0d77558a70dff8a09f75c25a3cbb8a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956952"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262284"
 ---
 # <a name="servicemetadatabehavior"></a>ServiceMetadataBehavior
+
 ServiceMetadataBehavior  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,52 +27,59 @@ class ServiceMetadataBehavior : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
- Klasa elementu ServiceMetadataBehavior nie definiuje żadnych metod.  
+
+ Klasa ServiceMetadataBehavior nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
- Klasa elementu ServiceMetadataBehavior ma następujące właściwości:  
+
+ Klasa ServiceMetadataBehavior ma następujące właściwości:  
   
 ### <a name="externalmetadatalocation"></a>ExternalMetadataLocation  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Ustawia lokalizację, do której usługa przekierowuje żądania metadanych.  
+ Ustawia lokalizację, w której usługa przekierowuje żądania metadanych.  
   
 ### <a name="httpgetenabled"></a>HttpGetEnabled  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Określa, czy usługi jego WSDL pod adresem w wartości clientauthtrustmode `HttpGetUrl` atrybutu.  
+ Określa, czy usługa publikuje swoje WSDL pod adresem kontrolowanym przez `HttpGetUrl` atrybut.  
   
 ### <a name="httpgeturl"></a>HttpGetUrl  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Ustawia lokalizację, jaką usługa WSDL jest publikowany dla pobierania za pomocą protokołu HTTP.  
+ Określa lokalizację, w której publikowana jest WSDL usługi do pobrania przy użyciu protokołu HTTP.  
   
 ### <a name="httpsgetenabled"></a>HttpsGetEnabled  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Określa, czy usługa jego WSDL za pośrednictwem protokołu HTTPS z adresem w wartości clientauthtrustmode `HttpsGetUrl` atrybutu.  
+ Określa, czy usługa publikuje swoje WSDL za pośrednictwem protokołu HTTPS pod adresem kontrolowanym przez `HttpsGetUrl` atrybut.  
   
 ### <a name="httpsgeturl"></a>HttpsGetUrl  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Ustawia lokalizację, jaką usługa WSDL jest publikowany do pobrania przy użyciu protokołu HTTPS.  
+ Określa lokalizację, w której publikowana jest WSDL usługi do pobrania przy użyciu protokołu HTTPS.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>

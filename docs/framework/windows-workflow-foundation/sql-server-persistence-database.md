@@ -2,14 +2,15 @@
 title: Baza danych stanów trwałych programu SQL Server
 ms.date: 03/30/2017
 ms.assetid: 4e594eec-2a31-4d49-ad31-aca2ecbb1f69
-ms.openlocfilehash: 059fc3695a4da15c82cacdd5360112ca58a7b297
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 536ab2c90dc67e30a8fb7c83f9da5b55d1aab9d1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540248"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261738"
 ---
 # <a name="sql-server-persistence-database"></a>Baza danych stanów trwałych programu SQL Server
+
 Ta sekcja zawiera szczegółowe informacje dotyczące widoków publicznych baz danych obsługiwanych przez magazyn wystąpień przepływu pracy SQL i pokazuje, jak deserializować właściwości danych wystąpienia pierwotnego oraz jak wykonywać zapytania dotyczące nieutrwalonych wystąpień.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
@@ -20,6 +21,6 @@ Ta sekcja zawiera szczegółowe informacje dotyczące widoków publicznych baz d
   
 - [Instrukcje: Zapytanie dotyczące wystąpień nietrwałych](how-to-query-for-non-persisted-instances.md)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Baza danych trwałości SQL Server aplikacji sieci szkieletowej](/previous-versions/appfabric/ee790819(v=azure.10))

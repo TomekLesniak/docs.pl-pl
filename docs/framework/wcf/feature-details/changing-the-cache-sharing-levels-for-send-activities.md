@@ -2,34 +2,37 @@
 title: Zmienianie poziomów współużytkowania pamięci podręcznej dla działań wysyłania
 ms.date: 03/30/2017
 ms.assetid: 03926a64-753d-460e-ac06-2a4ff8e1bbf5
-ms.openlocfilehash: 101aab98a7d34ad45ad29efbe252cff0814ca290
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cbb937ac47c93307db922b28e3df0ea694a77960
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185394"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262051"
 ---
 # <a name="changing-the-cache-sharing-levels-for-send-activities"></a>Zmienianie poziomów współużytkowania pamięci podręcznej dla działań wysyłania
-Rozszerzenie <xref:System.ServiceModel.Activities.SendMessageChannelCache> umożliwia dostosowanie poziomów udostępniania pamięci podręcznej, ustawień pamięci podręcznej fabryki kanałów i ustawień pamięci podręcznej kanału dla <xref:System.ServiceModel.Activities.Send> przepływów pracy, które wysyłają wiadomości do punktów końcowych usługi przy użyciu działań obsługi wiadomości. Te przepływy pracy są zwykle przepływy pracy klienta, ale mogą być również usługi przepływu pracy, które znajdują się w <xref:System.ServiceModel.WorkflowServiceHost>. Pamięć podręczna fabryki <xref:System.ServiceModel.ChannelFactory%601> kanałów zawiera obiekty buforowane. Pamięć podręczna kanału zawiera buforowane kanały.  
+
+<xref:System.ServiceModel.Activities.SendMessageChannelCache>Rozszerzenie umożliwia dostosowanie poziomów udostępniania pamięci podręcznej, ustawień pamięci podręcznej fabryki kanałów oraz ustawień pamięci podręcznej kanału dla przepływów pracy, które wysyłają komunikaty do punktów końcowych usługi przy użyciu <xref:System.ServiceModel.Activities.Send> działań związanych z obsługą komunikatów. Te przepływy pracy są zwykle przepływy pracy klienta, ale mogą być również usługi przepływu pracy, które znajdują się w <xref:System.ServiceModel.WorkflowServiceHost>. Pamięć podręczna fabryki kanałów zawiera buforowane <xref:System.ServiceModel.ChannelFactory%601> obiekty. Pamięć podręczna kanału zawiera buforowane kanały.  
   
 > [!NOTE]
-> Przepływy pracy <xref:System.ServiceModel.Activities.Send> mogą używać działań obsługi wiadomości do wysyłania wiadomości lub parametrów. Środowisko wykonawcze przepływu pracy dodaje fabryki kanałów do <xref:System.ServiceModel.Channels.IRequestChannel> pamięci podręcznej, które tworzą kanały typu podczas używania <xref:System.ServiceModel.Activities.ReceiveReply> działania <xref:System.ServiceModel.Activities.Send> z działaniem, a <xref:System.ServiceModel.Channels.IOutputChannel> gdy po prostu przy użyciu <xref:System.ServiceModel.Activities.Send> działania (nie <xref:System.ServiceModel.Activities.ReceiveReply>).  
+> Przepływy pracy mogą <xref:System.ServiceModel.Activities.Send> wysyłać komunikaty lub parametry za pomocą działań związanych z wiadomościami. Środowisko uruchomieniowe przepływu pracy dodaje fabryki kanałów do pamięci podręcznej, która tworzy kanały typu w <xref:System.ServiceModel.Channels.IRequestChannel> przypadku używania <xref:System.ServiceModel.Activities.ReceiveReply> działania z <xref:System.ServiceModel.Activities.Send> działaniem, a <xref:System.ServiceModel.Channels.IOutputChannel> kiedy tylko używa <xref:System.ServiceModel.Activities.Send> działania (nie <xref:System.ServiceModel.Activities.ReceiveReply> ).  
   
 ## <a name="the-cache-sharing-levels"></a>Poziomy udostępniania pamięci podręcznej  
- Domyślnie w przepływie pracy obsługiwanym przez pamięć podręczną używaną <xref:System.ServiceModel.WorkflowServiceHost> przez <xref:System.ServiceModel.Activities.Send> działania obsługi <xref:System.ServiceModel.WorkflowServiceHost> wiadomości jest współużytkowany przez wszystkie wystąpienia przepływu pracy w (buforowanie na poziomie hosta). Klient przepływu pracy, który nie jest obsługiwany przez <xref:System.ServiceModel.WorkflowServiceHost>, pamięci podręcznej jest dostępna tylko dla wystąpienia przepływu pracy (buforowanie poziomie wystąpienia). Pamięć podręczna jest <xref:System.ServiceModel.Activities.Send> dostępna tylko dla działań, które nie używają punktów końcowych zdefiniowanych w konfiguracji, chyba że jest włączone buforowanie niebezpieczne.  
+
+ Domyślnie, w przepływie pracy hostowanym przez <xref:System.ServiceModel.WorkflowServiceHost> pamięć podręczną używaną przez <xref:System.ServiceModel.Activities.Send> działania obsługi komunikatów jest współużytkowany przez wszystkie wystąpienia przepływu pracy w <xref:System.ServiceModel.WorkflowServiceHost> (buforowanie na poziomie hosta). Klient przepływu pracy, który nie jest obsługiwany przez <xref:System.ServiceModel.WorkflowServiceHost>, pamięci podręcznej jest dostępna tylko dla wystąpienia przepływu pracy (buforowanie poziomie wystąpienia). Pamięć podręczna jest dostępna tylko dla <xref:System.ServiceModel.Activities.Send> działań, które nie korzystają z punktów końcowych zdefiniowanych w konfiguracji, chyba że jest włączone bezpieczne buforowanie.  
   
- Poniżej przedstawiono różne poziomy <xref:System.ServiceModel.Activities.Send> udostępniania pamięci podręcznej dostępne dla działań w przepływie pracy i ich zalecane użycie:  
+ Poniżej przedstawiono różne poziomy udostępniania pamięci podręcznej dostępne dla <xref:System.ServiceModel.Activities.Send> działań w przepływie pracy i ich zalecane użycie:  
   
-- **Poziom hosta:** Na poziomie udostępniania hosta pamięć podręczna jest dostępna tylko dla wystąpień przepływu pracy hostowanych na hoście usługi przepływu pracy. Pamięć podręczna może być również współużytkowana między hostami usługi przepływu pracy w pamięci podręcznej całego procesu.  
+- **Poziom hosta**: na poziomie udostępniania hosta pamięć podręczna jest dostępna tylko dla wystąpień przepływu pracy hostowanych na hoście usługi przepływu pracy. Pamięć podręczna może być również współużytkowana przez hosty usługi przepływu pracy w pamięci podręcznej dla całego procesu.  
   
-- **Poziom wystąpienia:** Na poziomie udostępniania wystąpienia pamięć podręczna jest dostępna dla określonego wystąpienia przepływu pracy przez cały okres jego istnienia, ale pamięć podręczna nie jest dostępna dla innych wystąpień przepływu pracy.  
+- **Poziom wystąpienia**: na poziomie udostępniania wystąpienia pamięć podręczna jest dostępna dla określonego wystąpienia przepływu pracy w całym okresie istnienia, ale pamięć podręczna nie jest dostępna dla innych wystąpień przepływu pracy.  
   
-- **Brak pamięci podręcznej:** Pamięć podręczna jest domyślnie wyłączona, jeśli masz przepływ pracy, który używa punktów końcowych zdefiniowanych w konfiguracji. Zaleca się również, aby zachować pamięć podręczną wyłączoną w tym przypadku, ponieważ włączenie jej może być niezabezpieczone. Na przykład jeśli dla każdego wysyłania wymagana jest inna tożsamość (różne poświadczenia lub użycie personifikacji).  
+- **Brak pamięci podręcznej**: pamięć podręczna jest domyślnie wyłączona, jeśli istnieje przepływ pracy korzystający z punktów końcowych zdefiniowanych w konfiguracji. Zalecane jest również, aby pamięć podręczna była wyłączona w tym przypadku, ponieważ jej włączenie może być niezabezpieczone. Na przykład, jeśli dla każdego wysłania jest wymagana inna tożsamość (różne poświadczenia lub personifikacja).  
   
 ## <a name="changing-the-cache-sharing-level-for-a-client-workflow"></a>Zmiana poziomu udostępniania pamięci podręcznej dla przepływu pracy klienta  
- Aby ustawić udostępnianie pamięci podręcznej w przepływie <xref:System.ServiceModel.Activities.SendMessageChannelCache> pracy klienta, dodaj wystąpienie klasy jako rozszerzenie do żądanego zestawu wystąpień przepływu pracy. Powoduje to udostępnianie pamięci podręcznej we wszystkich wystąpieniach przepływu pracy. Poniższe przykłady kodu pokazują, jak wykonać te kroki.  
+
+ Aby ustawić udostępnianie pamięci podręcznej w przepływie pracy klienta, Dodaj wystąpienie <xref:System.ServiceModel.Activities.SendMessageChannelCache> klasy jako rozszerzenie do żądanego zestawu wystąpień przepływu pracy. Powoduje to udostępnienie pamięci podręcznej we wszystkich wystąpieniach przepływu pracy. Poniższy przykład kodu pokazuje, jak wykonać te kroki.  
   
- Najpierw zadeklaruj <xref:System.ServiceModel.Activities.SendMessageChannelCache>wystąpienie typu .  
+ Najpierw Zadeklaruj wystąpienie typu <xref:System.ServiceModel.Activities.SendMessageChannelCache> .  
   
 ```csharp  
 // Create an instance of SendMessageChannelCache with default cache settings.  
@@ -37,7 +40,7 @@ static SendMessageChannelCache sharedChannelCacheExtension =
     new SendMessageChannelCache();  
 ```  
   
- Następnie dodaj rozszerzenie pamięci podręcznej do każdego wystąpienia przepływu pracy klienta.  
+ Następnie Dodaj rozszerzenie pamięci podręcznej do każdego wystąpienia przepływu pracy klienta.  
   
 ```csharp
 WorkflowApplication clientInstance1 = new WorkflowApplication(new clientWorkflow1());  
@@ -49,10 +52,11 @@ clientInstance1.Extensions.Add(sharedChannelCacheExtension);
 clientInstance2.Extensions.Add(sharedChannelCacheExtension);  
 ```  
   
-## <a name="changing-the-cache-sharing-level-for-a-hosted-workflow-service"></a>Zmiana poziomu udostępniania pamięci podręcznej dla usługi hostowanego przepływu pracy  
- Aby ustawić udostępnianie pamięci podręcznej w obsługiwanej usłudze <xref:System.ServiceModel.Activities.SendMessageChannelCache> przepływu pracy, dodaj wystąpienie klasy jako rozszerzenie do wszystkich hostów usługi przepływu pracy. Powoduje to udostępnianie pamięci podręcznej we wszystkich hostach usługi przepływu pracy. Poniższe przykłady kodu pokazują, aby wykonać te kroki.  
+## <a name="changing-the-cache-sharing-level-for-a-hosted-workflow-service"></a>Zmiana poziomu udostępniania pamięci podręcznej dla hostowanej usługi przepływu pracy  
+
+ Aby ustawić udostępnianie pamięci podręcznej w hostowanej usłudze przepływu pracy, Dodaj wystąpienie <xref:System.ServiceModel.Activities.SendMessageChannelCache> klasy jako rozszerzenie do wszystkich hostów usługi przepływu pracy. Powoduje to udostępnienie pamięci podręcznej na wszystkich hostach usługi przepływu pracy. Poniższy przykład kodu pokazuje, aby wykonać te kroki.  
   
- Najpierw zadeklarować wystąpienie <xref:System.ServiceModel.Activities.SendMessageChannelCache> typu na poziomie klasy.  
+ Najpierw Zadeklaruj wystąpienie typu <xref:System.ServiceModel.Activities.SendMessageChannelCache> na poziomie klasy.  
   
 ```csharp  
 // Create static instance of SendMessageChannelCache with default cache settings.  
@@ -60,7 +64,7 @@ static SendMessageChannelCache sharedChannelCacheExtension = new
     SendMessageChannelCache();  
 ```  
   
- Następnie dodaj statyczne rozszerzenie pamięci podręcznej do każdego hosta usługi przepływu pracy.  
+ Następnie Dodaj rozszerzenie statycznej pamięci podręcznej do każdego hosta usługi przepływu pracy.  
   
 ```csharp  
 WorkflowServiceHost host1 = new WorkflowServiceHost(new serviceWorkflow1(), new Uri(baseAddress1));  
@@ -71,7 +75,7 @@ host1.WorkflowExtensions.Add(sharedChannelCacheExtension);
 host2.WorkflowExtensions.Add(sharedChannelCacheExtension);  
 ```  
   
- Aby ustawić udostępnianie pamięci podręcznej w hostowanej usłudze `Func<SendMessageChannelCache>` przepływu pracy na poziomie wystąpienia, dodaj pełnomocnika jako rozszerzenie do hosta usługi <xref:System.ServiceModel.Activities.SendMessageChannelCache> przepływu pracy i przypisz tego pełnomocnika do kodu, który powoduje utworzenie nowego wystąpienia klasy. Powoduje to inną pamięć podręczną dla każdego wystąpienia przepływu pracy, a nie pojedynczą pamięć podręczną współużytkowaną przez wszystkie wystąpienia przepływu pracy w hoście usługi przepływu pracy. Poniższy przykład kodu pokazuje, jak to osiągnąć za pomocą wyrażenia <xref:System.ServiceModel.Activities.SendMessageChannelCache> lambda, aby bezpośrednio zdefiniować rozszerzenie, które wskazuje delegata.  
+ Aby skonfigurować udostępnianie pamięci podręcznej w hostowanej usłudze przepływu pracy na poziomie wystąpienia, Dodaj `Func<SendMessageChannelCache>` delegata jako rozszerzenie hosta usługi przepływu pracy i przypisz tego delegata do kodu, który tworzy wystąpienie nowego wystąpienia <xref:System.ServiceModel.Activities.SendMessageChannelCache> klasy. Powoduje to inną pamięć podręczną dla każdego pojedynczego wystąpienia przepływu pracy, a nie pojedynczej pamięci podręcznej udostępnionej przez wszystkie wystąpienia przepływu pracy na hoście usługi przepływu pracy. Poniższy przykład kodu pokazuje, jak to osiągnąć za pomocą wyrażenia lambda do bezpośredniego definiowania <xref:System.ServiceModel.Activities.SendMessageChannelCache> rozszerzenia, do którego odwołuje się delegat.  
   
 ```csharp
 serviceHost.WorkflowExtensions.Add(() => new SendMessageChannelCache  
@@ -86,14 +90,15 @@ serviceHost.WorkflowExtensions.Add(() => new SendMessageChannelCache
 ```  
   
 ## <a name="customizing-cache-settings"></a>Dostosowywanie ustawień pamięci podręcznej  
- Można dostosować ustawienia pamięci podręcznej dla pamięci podręcznej fabryki kanałów i pamięci podręcznej kanału. Ustawienia pamięci podręcznej <xref:System.ServiceModel.Activities.ChannelCacheSettings> są zdefiniowane w klasie. Klasa <xref:System.ServiceModel.Activities.SendMessageChannelCache> definiuje domyślne ustawienia pamięci podręcznej pamięci podręcznej fabryki kanałów i pamięci podręcznej kanału w konstruktorze bez parametrów. W poniższej tabeli wymieniono wartości domyślne tych ustawień pamięci podręcznej dla każdego typu pamięci podręcznej.  
+
+ Można dostosować ustawienia pamięci podręcznej dla pamięci podręcznej fabryki kanału i pamięci podręcznej kanału. Ustawienia pamięci podręcznej są zdefiniowane w <xref:System.ServiceModel.Activities.ChannelCacheSettings> klasie. <xref:System.ServiceModel.Activities.SendMessageChannelCache>Klasa definiuje domyślne ustawienia pamięci podręcznej dla fabryki kanałów i pamięć podręczną kanału w konstruktorze bez parametrów. W poniższej tabeli wymieniono wartości domyślne tych ustawień pamięci podręcznej dla każdego typu pamięci podręcznej.  
   
-|Ustawienia|LeaseTimeout (min)|Czas bezczynny (min)|MaxItemsInCache|  
+|Ustawienia|LeaseTimeout (min.)|IdleTimeout (minimum)|MaxItemsInCache|  
 |-|-|-|-|  
-|Domyślna pamięć podręczna fabryki|TimeSpan.MaxValue|2|16|  
-|Domyślna pamięć podręczna kanału|5|2|16|  
+|Domyślna pamięć podręczna fabryki|TimeSpan. MaxValue|2|16|  
+|Wartość domyślna pamięci podręcznej kanału|5|2|16|  
   
- Aby dostosować ustawienia pamięci podręcznej i pamięci <xref:System.ServiceModel.Activities.SendMessageChannelCache> podręcznej kanału, wystąpienia <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> klasy przy użyciu <xref:System.ServiceModel.Activities.ChannelCacheSettings> konstruktora sparametryzowanego i przekazać nowe wystąpienie z wartościami niestandardowymi do każdego z `factorySettings` parametrów i. `channelSettings` Następnie dodaj nowe wystąpienie tej klasy jako rozszerzenie do hosta usługi przepływu pracy lub wystąpienia przepływu pracy. W poniższym przykładzie kodu pokazano, jak wykonać te kroki dla wystąpienia przepływu pracy.  
+ Aby dostosować ustawienia pamięci podręcznej fabryki i pamięci podręcznej kanałów, Utwórz wystąpienie <xref:System.ServiceModel.Activities.SendMessageChannelCache> klasy przy użyciu konstruktora sparametryzowanego <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> i przekaż nowe wystąpienie <xref:System.ServiceModel.Activities.ChannelCacheSettings> z wartościami niestandardowymi do każdego z `factorySettings` `channelSettings` parametrów i. Następnie Dodaj nowe wystąpienie tej klasy jako rozszerzenie do hosta usługi przepływu pracy lub wystąpienia przepływu pracy. Poniższy przykład kodu pokazuje, jak wykonać te kroki dla wystąpienia przepływu pracy.  
   
 ```csharp  
 ChannelCacheSettings factorySettings = new ChannelCacheSettings{  
@@ -112,7 +117,7 @@ SendMessageChannelCache customChannelCacheExtension =
 clientInstance.Extensions.Add(customChannelCacheExtension);  
 ```  
   
- Aby włączyć buforowanie, gdy usługa przepływu pracy ma punkty końcowe <xref:System.ServiceModel.Activities.SendMessageChannelCache> zdefiniowane w konfiguracji, wystąpienia klasy przy użyciu konstruktora <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> sparametryzowanego z parametrem ustawionym `allowUnsafeCaching` na `true`. Następnie dodaj nowe wystąpienie tej klasy jako rozszerzenie do hosta usługi przepływu pracy lub wystąpienia przepływu pracy. W poniższym przykładzie kodu pokazano, jak włączyć buforowanie dla wystąpienia przepływu pracy.  
+ Aby włączyć buforowanie, gdy usługa przepływu pracy ma punkty końcowe zdefiniowane w konfiguracji, Utwórz wystąpienie <xref:System.ServiceModel.Activities.SendMessageChannelCache> klasy przy użyciu konstruktora sparametryzowanego <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> z `allowUnsafeCaching` parametrem ustawionym na `true` . Następnie Dodaj nowe wystąpienie tej klasy jako rozszerzenie do hosta usługi przepływu pracy lub wystąpienia przepływu pracy. Poniższy przykład kodu pokazuje, jak włączyć buforowanie dla wystąpienia przepływu pracy.  
   
 ```csharp  
 SendMessageChannelCache customChannelCacheExtension =
@@ -121,7 +126,7 @@ SendMessageChannelCache customChannelCacheExtension =
 clientInstance.Extensions.Add(customChannelCacheExtension);  
 ```  
   
- Aby całkowicie wyłączyć pamięć podręczną dla fabryk kanałów i kanałów, należy wyłączyć pamięć podręczną fabryki kanałów. W ten sposób wyłącza również pamięć podręczną kanału, ponieważ kanały są własnością odpowiednich fabryk kanałów. Aby wyłączyć pamięć podręczną `factorySettings` fabryki kanału, należy przekazać parametr do <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> konstruktora zainicjowanego do <xref:System.ServiceModel.Activities.ChannelCacheSettings> wystąpienia o <xref:System.ServiceModel.Activities.ChannelCacheSettings.MaxItemsInCache%2A> wartości 0. Poniższy przykład kodu pokazuje to.  
+ Aby całkowicie wyłączyć pamięć podręczną dla fabryk kanałów i kanałów, Wyłącz pamięć podręczną fabryki kanałów. Spowoduje to również wyłączenie pamięci podręcznej kanału, ponieważ kanały są własnością odpowiednich fabryk kanałów. Aby wyłączyć pamięć podręczną fabryki kanałów, Przekaż `factorySettings` parametr do konstruktora, który <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> został zainicjowany do <xref:System.ServiceModel.Activities.ChannelCacheSettings> wystąpienia o <xref:System.ServiceModel.Activities.ChannelCacheSettings.MaxItemsInCache%2A> wartości 0. Poniższy przykład kodu pokazuje to.  
   
 ```csharp  
 // Disable the factory cache. This results in the channel cache to be turned off as well.  
@@ -136,7 +141,7 @@ SendMessageChannelCache customChannelCacheExtension =
 clientInstance.Extensions.Add(customChannelCacheExtension);  
 ```  
   
- Można użyć tylko pamięci podręcznej fabryki kanału i wyłączyć `channelSettings` pamięć <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> podręczną kanału, <xref:System.ServiceModel.Activities.ChannelCacheSettings> przekazując <xref:System.ServiceModel.Activities.ChannelCacheSettings.MaxItemsInCache%2A> parametr do konstruktora zainicjowanego do wystąpienia o wartości 0. Poniższy przykład kodu pokazuje to.  
+ Można wybrać opcję użycia tylko pamięci podręcznej fabryki kanału i wyłączyć pamięć podręczną kanału przez przekazanie `channelSettings` parametru do konstruktora, który <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> został zainicjowany do <xref:System.ServiceModel.Activities.ChannelCacheSettings> wystąpienia o <xref:System.ServiceModel.Activities.ChannelCacheSettings.MaxItemsInCache%2A> wartości 0. Poniższy przykład kodu pokazuje to.  
   
 ```csharp  
 ChannelCacheSettings factorySettings = new ChannelCacheSettings();  
@@ -150,7 +155,7 @@ SendMessageChannelCache customChannelCacheExtension =
 clientInstance.Extensions.Add(customChannelCacheExtension);  
 ```  
   
- W obsługiwanej usłudze przepływu pracy można określić ustawienia pamięci podręcznej i pamięci podręcznej kanału w pliku konfiguracji aplikacji. W tym celu należy dodać zachowanie usługi, które zawiera ustawienia pamięci podręcznej pamięci podręcznej fabryki i kanał i dodać to zachowanie usługi z usługą. W poniższym przykładzie przedstawiono zawartość `MyChannelCacheBehavior` pliku konfiguracyjnego, który zawiera zachowanie usługi z niestandardowymi ustawieniami pamięci podręcznej fabryki i pamięci podręcznej kanału. To zachowanie usługi jest dodawany `behaviorConfiguration` do usługi za pośrednictwem atrybutu.  
+ W hostowanej usłudze przepływu pracy można określić ustawienia pamięci podręcznej i ustawień pamięci podręcznej kanału w pliku konfiguracyjnym aplikacji. W tym celu należy dodać zachowanie usługi, które zawiera ustawienia pamięci podręcznej pamięci podręcznej fabryki i kanał i dodać to zachowanie usługi z usługą. Poniższy przykład pokazuje zawartość pliku konfiguracji, który zawiera `MyChannelCacheBehavior` zachowanie usługi z niestandardową pamięcią podręczną i ustawieniami pamięci podręcznej kanału. To zachowanie usługi jest dodawane do usługi za pomocą `behaviorConfiguration` atrybutu.  
   
 ```xml  
 <configuration>

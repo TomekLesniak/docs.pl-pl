@@ -7,14 +7,15 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 898211ec4504225413769f2f0dbf2f2c70110c14
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b63ce62cd39ef7961db1c0ac86c8cbd6ca871dbd
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556066"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96261894"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co to jest program Windows Communication Foundation
+
 Windows Communication Foundation (WCF) to platforma służąca do tworzenia aplikacji zorientowanych na usługę. Korzystając z programu WCF, można wysyłać dane jako komunikaty asynchroniczne z jednego punktu końcowego usługi do innego. Punkt końcowy usługi może być częścią stale dostępnej usługi hostowanej przez usługi IIS lub może być usługą hostowaną w aplikacji. Punktem końcowym może być klient usługi, która żąda danych z punktu końcowego usługi. Komunikaty mogą być proste jako pojedynczy znak lub słowo wysyłane jako XML lub jako strumień danych binarnych. Oto kilka przykładowych scenariuszy:
 
 - Bezpieczna usługa do przetwarzania transakcji roboczych.
@@ -65,7 +66,7 @@ Program WCF obejmuje następujący zestaw funkcji. Aby uzyskać więcej informac
 
 - **Niezawodne i kolejkowane komunikaty**
 
-     Program WCF obsługuje niezawodną wymianę komunikatów przy użyciu niezawodnych sesji implementowanych za pośrednictwem usługi WS-niezawodny i przy użyciu usługi MSMQ Aby uzyskać więcej informacji na temat obsługi komunikatów niezawodnych i w kolejce w ramach usługi WCF, zobacz [kolejki i sesje niezawodne](./feature-details/queues-and-reliable-sessions.md).
+     Usługa WCF obsługuje niezawodną wymianę komunikatów przy użyciu niezawodnych sesji implementowanych w ramach WS-Reliable komunikatów i przy użyciu usługi MSMQ. Aby uzyskać więcej informacji na temat obsługi komunikatów niezawodnych i w kolejce w ramach usługi WCF, zobacz [kolejki i sesje niezawodne](./feature-details/queues-and-reliable-sessions.md).
 
 - **Komunikaty trwałe**
 
@@ -95,7 +96,7 @@ Microsoft Silverlight to platforma służąca do tworzenia międzyoperacyjnych, 
 
 Funkcje hostingu serwera aplikacji systemu Windows Server AppFabric są przeznaczone specjalnie do wdrażania aplikacji, które używają programu WCF do komunikacji i zarządzania nimi. Funkcje hostingu obejmują rozbudowane narzędzia i opcje konfiguracji zaprojektowane specjalnie dla aplikacji obsługujących WCF.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel>
 - [Podstawowe pojęcia programu Windows Communication Foundation](fundamental-concepts.md)

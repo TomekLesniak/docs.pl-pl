@@ -2,14 +2,15 @@
 title: ServiceDebugBehavior
 ms.date: 03/30/2017
 ms.assetid: a5ec9061-1e95-43fb-b0d9-dbd0a7bc3c44
-ms.openlocfilehash: 2e38eb2c2d42ffc5436562b254a42215ccabbab2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dba4abd74cdddeb2b641feec5902413fe0704b1f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956965"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96262297"
 ---
 # <a name="servicedebugbehavior"></a>ServiceDebugBehavior
+
 ServiceDebugBehavior  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,52 +27,59 @@ class ServiceDebugBehavior : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa ServiceDebugBehavior nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa ServiceDebugBehavior ma następujące właściwości:  
   
 ### <a name="httphelppageenabled"></a>HttpHelpPageEnabled  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Określa, czy usługi jego WSDL pod adresem w wartości clientauthtrustmode `HttpGetUrl` atrybutu.  
+ Określa, czy usługa publikuje swoje WSDL pod adresem kontrolowanym przez `HttpGetUrl` atrybut.  
   
 ### <a name="httphelppageurl"></a>HttpHelpPageUrl  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Ustawia lokalizację, jaką usługa WSDL jest publikowany dla pobierania za pomocą protokołu HTTP.  
+ Określa lokalizację, w której publikowana jest WSDL usługi do pobrania przy użyciu protokołu HTTP.  
   
 ### <a name="httpshelppageenabled"></a>HttpsHelpPageEnabled  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Określa, czy usługa jego WSDL za pośrednictwem protokołu HTTPS z adresem w wartości clientauthtrustmode `HttpsGetUrl` atrybutu.  
+ Określa, czy usługa publikuje swoje WSDL za pośrednictwem protokołu HTTPS pod adresem kontrolowanym przez `HttpsGetUrl` atrybut.  
   
 ### <a name="httpshelppageurl"></a>HttpsHelpPageUrl  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Ustawia lokalizację, jaką usługa WSDL jest publikowany do pobrania przy użyciu protokołu HTTPS.  
+ Określa lokalizację, w której publikowana jest WSDL usługi do pobrania przy użyciu protokołu HTTPS.  
   
 ### <a name="includeexceptiondetailinfaults"></a>IncludeExceptionDetailInFaults  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Określa, czy chcesz uwzględnić informacje o zarządzanym wyjątku w szczegółowych informacji o błędach SOAP zwracanych do klientów na potrzeby debugowania.  
+ Określa, czy informacje o zarządzanych wyjątkach mają być dołączane do szczegółowych informacji o błędach SOAP zwracanych do klientów na potrzeby debugowania.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Description.ServiceDebugBehavior>
