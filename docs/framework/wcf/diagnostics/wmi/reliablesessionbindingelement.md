@@ -2,14 +2,15 @@
 title: ReliableSessionBindingElement
 ms.date: 03/30/2017
 ms.assetid: effda125-b8d3-4de6-8c0e-f59f5ea8f6eb
-ms.openlocfilehash: b0a621da43402777cc620f1876bd968a72bb8c12
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f91e38ab88cd9f93e9bec0e3a6ca65254bc49570
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962919"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273324"
 ---
 # <a name="reliablesessionbindingelement"></a>ReliableSessionBindingElement
+
 ReliableSessionBindingElement  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,73 +30,83 @@ class ReliableSessionBindingElement : BindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa elementu ReliableSessionBindingElement nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa elementu ReliableSessionBindingElement ma następujące właściwości:  
   
 ### <a name="acknowledgementinterval"></a>AcknowledgementInterval  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Interwał czasu miejsca docelowego oczekiwania przed wysłaniem potwierdzenia do źródła wiadomości na niezawodne kanały, które są tworzone przez fabrykę.  
+ Przedział czasu, przez który miejsce docelowe czeka przed wysłaniem potwierdzenia do źródła wiadomości w niezawodnych kanałach, które są tworzone przez fabrykę.  
   
 ### <a name="flowcontrolenabled"></a>FlowControlEnabled  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość logiczna określająca, czy włączone jest sterowanie przepływem.  
+ Wartość logiczna określająca, czy włączono sterowanie przepływem.  
   
-### <a name="inactivitytimeout"></a>Limit czasu nieaktywności  
- Typ danych: Data i godzina  
+### <a name="inactivitytimeout"></a>InactivityTimeout  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Określa maksymalny czas, przez który kanał umożliwi drugiej strony komunikujące się nie na niewysyłanie komunikatów przed spowodowaniem błędu kanału.  
+ Określa maksymalny czas, przez który kanał zezwoli innemu nadawcy na wysyłanie komunikatów przed awarią kanału.  
   
 ### <a name="maxpendingchannels"></a>MaxPendingChannels  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalną liczbę kanałów oczekujących na odbiornik do zaakceptowania.  
+ Maksymalna liczba kanałów oczekujących na akceptację odbiornika.  
   
 ### <a name="maxretrycount"></a>MaxRetryCount  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalną liczbę prób niezawodny kanał retransmitować komunikat, którego nie otrzymano potwierdzenia, wywołując `Send` kanału źródłowego.  
+ Maksymalna liczba prób ponownego wysłania komunikatu przez niezawodny kanał, dla którego nie odebrano potwierdzenia, przez wywołanie `Send` jego podstawowego kanału.  
   
 ### <a name="maxtransferwindowsize"></a>MaxTransferWindowSize  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Rozmiar okna maksymalną niezawodnej sesji.  
+ Maksymalny rozmiar okna transferu dla niezawodnej sesji.  
   
-### <a name="ordered"></a>Uporządkowane  
+### <a name="ordered"></a>Zamówione  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość logiczna określająca, czy komunikaty dotrą do celu w kolejności wysłania.  
+ Wartość logiczna określająca, czy komunikaty są gwarantowane w kolejności, w jakiej zostały wysłane.  
   
-### <a name="reliablemessagingversion"></a>ReliableMessagingVersion  
+### <a name="reliablemessagingversion"></a>ReliableMessagingVersion określająca  
+
  Typ danych: liczba całkowita  
   
  Typ dostępu: tylko do odczytu  
   
- Liczba całkowita, która określa wersję protokołu WS-ReliableMessaging, które są używane w niezawodnej sesji.  
+ Liczba całkowita, która określa wersję protokołu WS-ReliableMessaging użytą w niezawodnej sesji.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>

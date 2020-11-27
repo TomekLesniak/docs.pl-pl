@@ -3,20 +3,22 @@ title: Interfejs API sieci Web programu WCF i platformy ASP.NET
 description: Dowiedz się, czy interfejs API sieci Web WCF lub ASP.NET jest lepiej dostosowany do Twoich potrzeb, porównując główne funkcje poszczególnych technologii.
 ms.date: 03/30/2017
 ms.assetid: 08ceded3-fd9a-4467-9715-c4cbd9c7228e
-ms.openlocfilehash: de8d1905866c860da96983c2f3d52599e3342403
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: b3a905f890b4dfa9f60c906c3a242be60921e5c8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245970"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273597"
 ---
 # <a name="wcf-and-aspnet-web-api"></a>Interfejs API sieci Web programu WCF i platformy ASP.NET
+
 WCF to ujednolicony model programowania firmy Microsoft służący do tworzenia aplikacji zorientowanych na usługę. Umożliwia ona deweloperom tworzenie bezpiecznych, niezawodnych, transakcyjnych rozwiązań, które integrują się między platformami i współdziałają z istniejącymi inwestycjami. [Interfejs API sieci Web ASP.NET](https://www.asp.net/web-api) to struktura, która ułatwia tworzenie usług http, które docierają do szerokiego zakresu klientów, w tym przeglądarek i urządzeń przenośnych. Interfejs API sieci Web ASP.NET to idealna platforma służąca do tworzenia aplikacji RESTful na .NET Framework. W tym temacie przedstawiono wskazówki ułatwiające podjęcie decyzji, która technologia najlepiej spełnia Twoje potrzeby.  
   
 ## <a name="choosing-which-technology-to-use"></a>Wybieranie technologii do użycia  
+
  W poniższej tabeli opisano główne funkcje poszczególnych technologii.  
   
-|WCF|Internetowy interfejs API platformy ASP.NET|  
+|WCF|ASP.NET Web API|  
 |---------|---------------------|  
 |Umożliwia tworzenie usług, które obsługują wiele protokołów transportu (HTTP, TCP, UDP i transporty niestandardowe) i umożliwia przełączanie między nimi.|Tylko HTTP. Model programowania pierwszej klasy dla protokołu HTTP. Jest to bardziej odpowiednie w przypadku dostępu z różnych przeglądarek, urządzeń przenośnych itd.|  
 |Umożliwia tworzenie usług, które obsługują wiele kodowań (text, MTOM i Binary) tego samego typu komunikatu i umożliwia przełączanie między nimi.|Umożliwia tworzenie interfejsów API sieci Web, które obsługują szeroką gamę typów multimediów, w tym XML, JSON itp.|  

@@ -10,14 +10,15 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-ms.openlocfilehash: 84cad85a7a9fc4b420b57543b7f258607be4ab52
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 4edf11315892ed8267bee17d69a70033348eca5c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517051"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272569"
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (Narzędzie generowania kodu)
+
 Narzędzie wiersza polecenia SqlMetal generuje kod i mapowanie dla [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] składnika .NET Framework. Stosując opisane w dalszej części tego tematu opcje, można za pomocą programu SqlMetal wykonać kilka różnych akcji, takich jak:  
   
 - Na podstawie bazy danych — generowanie kodu źródłowego i atrybutów mapowania lub pliku mapowania.  
@@ -40,6 +41,7 @@ sqlmetal [options] [<input file>]
 ```  
   
 ## <a name="options"></a>Opcje  
+
  Aby wyświetlić najbardziej aktualną listę opcji, wpisz `sqlmetal /?` w wierszu polecenia z zainstalowanej lokalizacji.  
   
  **Opcje połączenia**  
@@ -50,7 +52,7 @@ sqlmetal [options] [<input file>]
 |**/Database:***\<name>*|Określa wykaz baz danych na serwerze.|  
 |**/User:***\<name>*|Określa identyfikator logowania użytkownika. Wartość domyślna: Użyj uwierzytelniania systemu Windows.|  
 |**/Password:***\<password>*|Określa hasło logowania. Wartość domyślna: Użyj uwierzytelniania systemu Windows.|  
-|**/Conn:***\<connection string>*|Określa parametry połączenia z bazą danych. Nie można używać z opcjami **/Server**, **/Database**, **/User**i **/Password** .<br /><br /> W parametrach połączenia nie można umieszczać nazwy pliku. Zamiast tego należy określić nazwę pliku w wierszu polecenia jako plik wejściowy. Na przykład poniższy wiersz określa "c:\northwnd.mdf" jako plik wejściowy: **SQLMetal/Code: "c:\Northwind.cs"/Language: CSharp "c:\northwnd.mdf"**.|  
+|**/Conn:***\<connection string>*|Określa parametry połączenia z bazą danych. Nie można używać z opcjami **/Server**, **/Database**, **/User** i **/Password** .<br /><br /> W parametrach połączenia nie można umieszczać nazwy pliku. Zamiast tego należy określić nazwę pliku w wierszu polecenia jako plik wejściowy. Na przykład poniższy wiersz określa "c:\northwnd.mdf" jako plik wejściowy: **SQLMetal/Code: "c:\Northwind.cs"/Language: CSharp "c:\northwnd.mdf"**.|  
 |**/timeout:***\<seconds>*|Określa wartość limitu czasu używaną, gdy program SqlMetal uzyskuje dostęp do bazy danych. Wartość domyślna: 0 (czyli brak limitu czasu).|  
   
  **Opcje wyodrębniania**  
@@ -87,6 +89,7 @@ sqlmetal [options] [<input file>]
 |**\<input file>**|Określa plik. mdf SQL Server Express, plik SQL Server Compact 3,5. sdf lub plik pośredni. dbml.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Działanie programu SqlMetal w rzeczywistości obejmuje wykonanie dwóch kroków:  
   
 - Wyodrębnienie metadanych bazy danych do pliku dbml.  
@@ -110,6 +113,7 @@ sqlmetal [options] [<input file>]
  Aby określić nazwę pliku wejściowego, należy dodać ją do wiersza polecenia jako plik wejściowy. Dołączenie nazwy pliku w parametrach połączenia (przy użyciu opcji **/Conn** ) nie jest obsługiwane.  
   
 ## <a name="examples"></a>Przykłady  
+
  Generuje plik dbml zawierający wyodrębnione metadane SQL:  
   
  **SQLMetal/Server:/Database o identyfikatorze northwind/dbml: meta. dbml**  
@@ -133,7 +137,7 @@ sqlmetal [options] [<input file>]
 > [!NOTE]
 > W przypadku korzystania z opcji **/pluralize** z przykładową bazą danych Northwind należy zwrócić uwagę na następujące zachowanie. Gdy program SqlMetal tworzy nazwy tabel typu wiersz, nazwy tabel mają liczbę pojedynczą. Gdy udostępnia <xref:System.Data.Linq.DataContext> Właściwości tabel, nazwy tabel są w liczbie mnogiej. Przypadkowo nazwy tabel w przykładowej bazie danych Northwind mają już liczbę mnogą. Dlatego też nie widać działania tej części opcji. Popularną praktyką jest nadawanie tabelom w bazie danych nazw w liczbie pojedynczej, ale równie popularną praktyką na platformie .NET jest nadawanie kolekcjom nazw w liczbie mnogiej.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Instrukcje: Generowanie modelu obiektu w języku Visual Basic lub C#](../data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
 - [Generowanie kodu w składniku LINQ to SQL](../data/adonet/sql/linq/code-generation-in-linq-to-sql.md)

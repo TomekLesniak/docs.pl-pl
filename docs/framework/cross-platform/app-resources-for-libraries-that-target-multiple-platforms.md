@@ -11,23 +11,25 @@ helpviewer_keywords:
 - resources, for multiple platforms
 - targeting multiple platforms, resources for
 ms.assetid: 72c76f0b-7255-4576-9261-3587f949669c
-ms.openlocfilehash: e067940b6f31650105ab029e8f4dfc30254e3faa
-ms.sourcegitcommit: 279fb6e8d515df51676528a7424a1df2f0917116
+ms.openlocfilehash: a4fa3f5e5a4b0e88a0c37f84672ab4b611f89f0c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687892"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272923"
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Zasoby aplikacji dla bibliotek przeznaczonych do wielu platform
+
 Można użyć typu projektu [Biblioteka klas przenośnych](portable-class-library.md) .NET Framework, aby upewnić się, że zasoby w bibliotekach klas są dostępne z wielu platform. Ten typ projektu jest dostępny w programie Visual Studio 2012 i jest przeznaczony dla przenośnego podzestawu biblioteki klas .NET Framework. Za pomocą przenośnej biblioteki klas zapewnia dostęp do biblioteki z aplikacji klasycznych, aplikacji Silverlight, aplikacji Windows Phone i aplikacji ze sklepu Windows 8. x.
 
 [!INCLUDE[standard](../../../includes/pcl-to-standard.md)]
 
  Projekt biblioteki klas przenośnych powoduje tylko bardzo ograniczony podzbiór typów w <xref:System.Resources> przestrzeni nazw dostępnych dla aplikacji, ale pozwala na używanie <xref:System.Resources.ResourceManager> klasy do pobierania zasobów. Jeśli jednak tworzysz aplikację przy użyciu programu Visual Studio, należy użyć otoki silnie wpisanej utworzonej przez program Visual Studio zamiast bezpośrednio korzystać z <xref:System.Resources.ResourceManager> klasy.
 
- Aby utworzyć silnie wpisaną otokę w programie Visual Studio, ustaw **modyfikator dostępu** głównego pliku zasobów w projektancie zasobów programu Visual Studio na **publiczny** . Spowoduje to utworzenie pliku [NazwaPlikuZasobów].designer.cs lub [NazwaPlikuZasobów].designer.vb zawierającego silnie typizowaną otokę ResourceManager. Aby uzyskać więcej informacji o używaniu otoki zasobów o jednoznacznie określonym typie, zobacz sekcję "Generowanie klasy zasobów o jednoznacznie określonym typie" w temacie [Resgen.exe (plik zasobów)](../../framework/tools/resgen-exe-resource-file-generator.md) .
+ Aby utworzyć silnie wpisaną otokę w programie Visual Studio, ustaw **modyfikator dostępu** głównego pliku zasobów w projektancie zasobów programu Visual Studio na **publiczny**. Spowoduje to utworzenie pliku [NazwaPlikuZasobów].designer.cs lub [NazwaPlikuZasobów].designer.vb zawierającego silnie typizowaną otokę ResourceManager. Aby uzyskać więcej informacji o używaniu otoki zasobów o jednoznacznie określonym typie, zobacz sekcję "Generowanie klasy zasobów o jednoznacznie określonym typie" w temacie [Resgen.exe (plik zasobów)](../../framework/tools/resgen-exe-resource-file-generator.md) .
 
 ## <a name="resource-manager-in-the-portable-class-library"></a>Menedżer zasobów w bibliotece klas przenośnych
+
  W projekcie biblioteki klas przenośnych cały dostęp do zasobów jest obsługiwany przez <xref:System.Resources.ResourceManager> klasę. Ponieważ typy w <xref:System.Resources> przestrzeni nazw, takie jak <xref:System.Resources.ResourceReader> i <xref:System.Resources.ResourceSet> , nie są dostępne z projektu biblioteki klas przenośnych, nie mogą być używane do uzyskiwania dostępu do zasobów.
 
  Projekt biblioteki klas przenośnych zawiera cztery <xref:System.Resources.ResourceManager> składowe wymienione w poniższej tabeli. Te konstruktory i metody umożliwiają utworzenie wystąpienia <xref:System.Resources.ResourceManager> obiektu i pobranie zasobów ciągu.
@@ -42,6 +44,7 @@ Można użyć typu projektu [Biblioteka klas przenośnych](portable-class-librar
  Wykluczenie innych <xref:System.Resources.ResourceManager> członków z przenośnej biblioteki klas oznacza, że nie można pobrać z pliku zasobów obiektów serializowanych, danych niebędących ciągami ani obrazów. Aby używać zasobów z przenośnej biblioteki klas, należy przechowywać wszystkie dane obiektów w postaci ciągów. Na przykład można przechowywać wartości numeryczne w pliku zasobów, konwertując je na ciągi i można je pobrać, a następnie przekonwertować z powrotem na liczby przy użyciu typu danych liczbowych `Parse` lub `TryParse` metody. Możesz konwertować obrazy lub inne dane binarne na reprezentację ciągu, wywołując <xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> metodę i przywracając je do tablicy bajtów przez wywołanie <xref:System.Convert.FromBase64String%2A?displayProperty=nameWithType> metody.
 
 ## <a name="the-portable-class-library-and-windows-store-apps"></a>Przenośna biblioteka klas i aplikacje ze sklepu Windows
+
  Przenośne biblioteki klas są przechowywane w plikach resx, które następnie są kompilowane do plików. resources i osadzone w zestawie głównym lub w zestawach satelickich w czasie kompilacji. Z drugiej strony aplikacje ze sklepu Windows 8. x wymagają, aby zasoby były przechowywane w plikach. resw, które następnie są kompilowane w jednym pliku indeksu zasobów pakietu (PRI). Jednak pomimo niezgodnych formatów plików Biblioteka klas przenośnych będzie działała w aplikacji ze sklepu Windows 8. x.
 
  Aby korzystać z biblioteki klas z aplikacji ze sklepu Windows 8. x, Dodaj odwołanie do niej w projekcie aplikacji ze sklepu Windows. Program Visual Studio będzie w sposób przezroczysty wyodrębniał zasoby z zestawu do pliku. resw i użyje go do wygenerowania pliku PRI, z którego środowisko wykonawcze systemu Windows mogą wyodrębnić zasoby. W czasie wykonywania środowisko wykonawcze systemu Windows wykonuje kod w przenośnej bibliotece klas, ale pobiera zasoby biblioteki klas przenośnych z pliku PRI.
@@ -49,7 +52,9 @@ Można użyć typu projektu [Biblioteka klas przenośnych](portable-class-librar
  Jeśli projekt biblioteki klas przenośnych zawiera zlokalizowane zasoby, należy użyć modelu Hub i szprych do wdrożenia ich w taki sam sposób jak w przypadku biblioteki w aplikacji klasycznej. Aby użyć głównego pliku zasobów i wszystkich zlokalizowanych plików zasobów w aplikacji ze sklepu Windows 8. x, Dodaj odwołanie do głównego zestawu. W czasie kompilacji program Visual Studio wyodrębnia zasoby z głównego pliku zasobów i plików zasobów zlokalizowanych do oddzielnych plików resw. Następnie kompiluje pliki. resw do pojedynczego pliku PRI, do którego środowisko wykonawcze systemu Windows uzyskuje dostęp w czasie wykonywania.
 
 <a name="NonLoc"></a>
+
 ## <a name="example-non-localized-portable-class-library"></a>Przykład: Przenośna biblioteka klas niezlokalizowanych
+
  Poniższy prosty, Niezlokalizowany, przenośny Biblioteka klas używa zasobów do przechowywania nazw kolumn i określania liczby znaków do zarezerwowania dla danych tabelarycznych. W przykładzie do przechowywania zasobów ciągów wymienionych w poniższej tabeli użyto pliku o nazwie LibResources.resx.
 
 |Nazwa zasobu|Wartość zasobu|
@@ -64,7 +69,7 @@ Można użyć typu projektu [Biblioteka klas przenośnych](portable-class-librar
 |NameLength|25|
 |Tytuł|Baza danych pracowników|
 
- Poniższy kod definiuje `UILibrary` klasę, która używa otoki Menedżer zasobów o nazwie `resources` wygenerowanej przez program Visual Studio, gdy **modyfikator dostępu** dla tego pliku jest zmieniany na **publiczny** . Klasa UILibrary analizuje dane ciągu w razie potrzeby. . Należy zauważyć, że Klasa znajduje się w `MyCompany.Employees` przestrzeni nazw.
+ Poniższy kod definiuje `UILibrary` klasę, która używa otoki Menedżer zasobów o nazwie `resources` wygenerowanej przez program Visual Studio, gdy **modyfikator dostępu** dla tego pliku jest zmieniany na **publiczny**. Klasa UILibrary analizuje dane ciągu w razie potrzeby. . Należy zauważyć, że Klasa znajduje się w `MyCompany.Employees` przestrzeni nazw.
 
  [!code-csharp[Conceptual.Resources.Portable#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portable/cs/uilibrary.cs#1)]
  [!code-vb[Conceptual.Resources.Portable#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portable/vb/uilibrary.vb#1)]
@@ -79,6 +84,7 @@ Można użyć typu projektu [Biblioteka klas przenośnych](portable-class-librar
  [!code-csharp[Conceptual.Resources.PortableMetro#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portablemetro/cs/blankpage.xaml.cs#1)]
 
 ## <a name="example-localized-portable-class-library"></a>Przykład: zlokalizowana Biblioteka klas przenośnych
+
  Następujący zlokalizowany przykład biblioteki klas przenośnych zawiera zasoby dla kultur francuski (Francja) i angielskiego (Stany Zjednoczone). Kultura angielska (Stany Zjednoczone) jest kulturą domyślną aplikacji; jego zasoby są wyświetlane w tabeli w [poprzedniej sekcji](app-resources-for-libraries-that-target-multiple-platforms.md#NonLoc). Plik zasobów dla kultury Francuski (Francja) o nazwie LibResources.fr-FR.resx składa się z zasobów ciągu wymienionych w poniższej tabeli. Kod źródłowy `UILibrary` klasy jest taki sam, jak pokazano w poprzedniej sekcji.
 
 |Nazwa zasobu|Wartość zasobu|
@@ -101,7 +107,7 @@ Można użyć typu projektu [Biblioteka klas przenośnych](portable-class-librar
  [!code-csharp[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portablemetroloc/cs/blankpage.xaml.cs#1)]
  [!code-vb[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portablemetroloc/vb/blankpage.xaml.vb#1)]  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Resources.ResourceManager>
 - [Zasoby w aplikacjach klasycznych](../../framework/resources/index.md)

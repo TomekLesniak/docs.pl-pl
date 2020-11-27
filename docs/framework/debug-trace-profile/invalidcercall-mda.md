@@ -10,19 +10,23 @@ helpviewer_keywords:
 - CER calls
 - managed debugging assistants (MDAs), CER calls
 ms.assetid: c4577410-602e-44e5-9dab-fea7c55bcdfe
-ms.openlocfilehash: dec32a81929d72274757b75cb03d6615d9fa948b
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 6f0d9d8e3059729098975080224999d0c0fac46e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051795"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272660"
 ---
 # <a name="invalidcercall-mda"></a>invalidCERCall MDA
+
 `invalidCERCall`Asystent debugowania zarządzanego (MDA) jest uaktywniany w przypadku wywołania w ramach wykresu ograniczonego wykonawcy (CER) do metody, która nie ma umowy dotyczącej niezawodności lub nadmiernie słabego kontraktu. Słaby kontrakt jest umową, która deklaruje, że najgorszy przypadek uszkodzenia stanu jest większy niż wystąpienie przesłane do wywołania, to oznacza, że <xref:System.AppDomain> lub stan procesu może ulec uszkodzeniu lub jego wynik nie zawsze jest deterministyczny obliczanej po wywołaniu w CER.  
   
 ## <a name="symptoms"></a>Objawy  
+
  Nieoczekiwane wyniki podczas wykonywania kodu w CER. Objawy nie są określone. Mogą to być nieoczekiwane <xref:System.OutOfMemoryException> , a <xref:System.Threading.ThreadAbortException> lub inne wyjątki w wywołaniu metody zawodowej, ponieważ środowisko uruchomieniowe nie przygotowało go wcześniej ani nie chroni go przed <xref:System.Threading.ThreadAbortException> wyjątkami w czasie wykonywania. Większe zagrożenie polega na tym, że każdy wyjątek wynikający z metody w czasie wykonywania może opuścić <xref:System.AppDomain> proces lub w niestabilnym stanie, który jest niezgodny z celem CER. Przyczyną jest to, że jest tworzone CER, aby uniknąć uszkodzenia stanu. Objawy uszkodzenia stanu są specyficzne dla aplikacji, ponieważ definicja spójnego stanu różni się między aplikacjami.  
   
 ## <a name="cause"></a>Przyczyna  
+
  Kod w elemencie CER wywołuje funkcję z opcją nie <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> lub słabej <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> , która nie jest zgodna z uruchomionym programem CER.  
   
  W odniesieniu do składni kontraktu niezawodności słaby kontrakt jest kontraktem, który nie określa <xref:System.Runtime.ConstrainedExecution.Consistency> wartości wyliczenia lub określa <xref:System.Runtime.ConstrainedExecution.Consistency> wartość <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptProcess> , <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptAppDomain> lub <xref:System.Runtime.ConstrainedExecution.Cer.None> . Każdy z tych warunków wskazuje, że wywoływany kod może utrudniać wysiłki innego kodu w CER, aby zachować spójny stan.  CERs dopuszczaj kod, aby traktować błędy w bardzo deterministyczny sposób, utrzymując wewnętrzne nieposiadające znaczące znaczenie dla aplikacji i umożliwiając jej kontynuowanie działania w przypadku błędów przejściowych, takich jak wyjątki braku pamięci.  
@@ -32,12 +36,15 @@ ms.locfileid: "86051795"
  Ponieważ jakakolwiek metoda z nieoczekiwanym lub nieistniejącym kontraktem może zakończyć się niepowodzeniem na wiele nieprzewidywalnych sposobów, środowisko uruchomieniowe nie podejmuje próby usunięcia jakichkolwiek nieprzewidywalnych nieoczekiwanych błędów z metody, które są wprowadzane przez kompilację JIT z opóźnieniem, populacja słownika generycznego lub przerwania wątku, na przykład. Oznacza to, że po aktywowaniu tego MDA wskazuje, że środowisko uruchomieniowe nie uwzględnia wywołanej metody w zdefiniowanym elemencie CER. Wykres wywołań został przerwany w tym węźle, ponieważ kontynuowanie przygotowania tego poddrzewa ułatwi zamaskowanie potencjalnego błędu.  
   
 ## <a name="resolution"></a>Rozwiązanie  
+
  Dodaj prawidłowy kontrakt niezawodności do funkcji lub Unikaj korzystania z tego wywołania funkcji.  
   
 ## <a name="effect-on-the-runtime"></a>Wpływ na środowisko uruchomieniowe  
+
  Efekt wywołania słabego kontraktu z CER może być błędem CER, aby zakończyć jego operacje. Może to prowadzić do uszkodzenia <xref:System.AppDomain> stanu procesu.  
   
 ## <a name="output"></a>Dane wyjściowe  
+
  Poniżej przedstawiono przykładowe dane wyjściowe z tego MDA.  
   
  `Method 'MethodWithCer', while executing within a constrained execution region, makes a call at IL offset 0x000C to 'MethodWithWeakContract', which does not have a sufficiently strong reliability contract and might cause non-deterministic results.`  
@@ -52,7 +59,7 @@ ms.locfileid: "86051795"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
 - <xref:System.Runtime.ConstrainedExecution>

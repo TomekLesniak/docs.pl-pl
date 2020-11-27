@@ -2,15 +2,16 @@
 title: ServiceAppDomain
 ms.date: 03/30/2017
 ms.assetid: f28e5186-a66d-46c1-abe9-b50e07f8cb4f
-ms.openlocfilehash: 05be495dbfe87e7dd14b0cfbb38b30c6f8278e6d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 243c9112dd9caf5c92ef77aa0f45b4b1e71a4e9f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61957076"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273259"
 ---
 # <a name="serviceappdomain"></a>ServiceAppDomain
-Mapuje domenę aplikacji usługi.  
+
+Mapuje usługę do domeny aplikacji.  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -23,22 +24,26 @@ class ServiceAppDomain
 ```  
   
 ## <a name="methods"></a>Metody  
- Klasa ServiceAppDomain nie definiuje żadnych metod.  
+
+ Klasa serviceappdomain nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
- Klasa ServiceAppDomain ma następujące właściwości:  
+
+ Klasa serviceappdomain ma następujące właściwości:  
   
 ### <a name="ref"></a>ref  
- Typ danych: Usługa  
-Kwalifikatory: Key  
+
+ Typ danych: usługa  
+Kwalifikatory: klucz  
   
  Typ dostępu: tylko do odczytu  
   
- Usługa ta domena aplikacji.  
+ Usługa tej domeny aplikacji.  
   
 ### <a name="ref"></a>ref  
+
  Typ danych: AppDomainInfo  
-Kwalifikatory: Key  
+Kwalifikatory: klucz  
   
  Typ dostępu: tylko do odczytu  
   
@@ -46,6 +51,6 @@ Kwalifikatory: Key
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|

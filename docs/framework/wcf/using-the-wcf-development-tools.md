@@ -2,14 +2,15 @@
 title: Używanie narzędzi deweloperskich programu WCF
 ms.date: 03/30/2017
 ms.assetid: 054adb87-c244-4d5a-83d1-0b2b44bd454b
-ms.openlocfilehash: adaad28fee5d27976df4bf20bb54f70aec5c2daf
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 48733d27a72e864760c371e8b90e0af7b74273a0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544625"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273649"
 ---
 # <a name="using-the-wcf-development-tools"></a>Używanie narzędzi deweloperskich programu WCF
+
 W tej sekcji opisano narzędzia deweloperskie programu Visual Studio, które mogą pomóc w opracowaniu WCFservice.  
   
  Szablony programu Visual Studio można używać jako podstaw do szybkiego tworzenia własnej usługi, a następnie do debugowania i testowania usługi przy użyciu usługi WCF — hosta i klienta testowego WCF. Narzędzia te wspólnie zapewniają szybkie i bezproblemowe cykle debugowania i testowania, a także uniemożliwiają konieczność przekazania do modelu hostingu na wczesnym etapie.  
@@ -18,6 +19,7 @@ W tej sekcji opisano narzędzia deweloperskie programu Visual Studio, które mog
  > Począwszy od programu Visual Studio 2017, narzędzia programistyczne WCF nie są instalowane domyślnie. Aby można było korzystać z tych funkcji, należy upewnić się, że składnik Windows Communication Foundation został wybrany w Instalatorze programu Visual Studio.
   
 ## <a name="the-wcf-developer-tools"></a>Narzędzia deweloperskie WCF  
+
  [Szablony programu Visual Studio na potrzeby programu WCF](wcf-vs-templates.md)  
   
  Możesz użyć wstępnie zdefiniowanego projektu programu Visual Studio i szablonów elementów w programie Visual Studio, aby szybko tworzyć usługi WCF i otaczające aplikacje.  
@@ -35,6 +37,7 @@ W tej sekcji opisano narzędzia deweloperskie programu Visual Studio, które mog
  Dane XML przechowywane w Schowku można wkleić do strony kodowej. Klasy zdefiniowane w danych zostaną przekonwertowane na typy kodu.  
   
 ## <a name="using-the-tools-without-administrator-privilege"></a>Korzystanie z narzędzi bez uprawnień administratora  
+
  Aby umożliwić użytkownikom bez uprawnień administratora opracowywanie usług WCF, dla przestrzeni nazw " http://+:8731/Design_Time_Addresses " podczas instalacji programu Visual Studio jest tworzona lista ACL (Access Control List). Lista ACL jest ustawiona na (UI), która obejmuje wszystkich użytkowników interakcyjnych zalogowanych na komputerze. Administratorzy mogą dodawać lub usuwać użytkowników z tej listy kontroli dostępu lub otwierać dodatkowe porty. Ta lista ACL umożliwia szablonom programu WCF lub WF wysyłanie i odbieranie danych w konfiguracji domyślnej. Umożliwia ona również użytkownikom korzystanie z funkcji Autohost usługi WCF (wcfSvcHost.exe) bez udzielania im uprawnień administratora.  
   
  Dostęp można modyfikować za pomocą narzędzia Netsh.exe w systemie Windows Vista w ramach konta administratora z podwyższonym poziomem uprawnień. Poniżej przedstawiono przykład użycia Netsh.exe.  
@@ -43,9 +46,9 @@ W tej sekcji opisano narzędzia deweloperskie programu Visual Studio, które mog
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>  
 ```  
   
- Aby uzyskać więcej informacji na temat Netsh.exe, zobacz [jak używać narzędzia Netsh.exe i przełączników wiersza polecenia](/previous-versions/tn-archive/bb490939(v=technet.10)).  
+ Aby uzyskać więcej informacji na temat Netsh.exe, zobacz [jak używać narzędzia Netsh.exe i Command-Line przełączników](/previous-versions/tn-archive/bb490939(v=technet.10)).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Szablony programu Visual Studio na potrzeby programu WCF](wcf-vs-templates.md)
 - [Host usługi WCF (WcfSvcHost.exe)](wcf-service-host-wcfsvchost-exe.md)

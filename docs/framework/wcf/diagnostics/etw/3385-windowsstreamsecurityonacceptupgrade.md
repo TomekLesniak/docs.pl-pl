@@ -2,27 +2,30 @@
 title: 3385 — WindowsStreamSecurityOnAcceptUpgrade
 ms.date: 03/30/2017
 ms.assetid: 3d17dc6a-befb-49f0-a150-c4875405ce7a
-ms.openlocfilehash: 172de995cffd52b3c05b442f47f9a51fc6d29f74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0dc824d5b61dd697b81c83f9d506d27ecad11d0b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61943250"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272426"
 ---
 # <a name="3385---windowsstreamsecurityonacceptupgrade"></a>3385 — WindowsStreamSecurityOnAcceptUpgrade
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|3385|  
-|słowa kluczowe|Zabezpieczenia|  
+|ID (Identyfikator)|3385|  
+|Słowa kluczowe|Zabezpieczenia|  
 |Poziom|Pełny|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane na zabezpieczenia strumienia Windows akceptuje uaktualnienie zabezpieczeń.  
+
+ To zdarzenie jest emitowane po uaktualnieniu zabezpieczeń systemu Windows Stream.  
   
-## <a name="message"></a>Komunikat  
- Przesyłania strumieniowego zabezpieczeń na akceptowanie uaktualniania systemu Windows.  
+## <a name="message"></a>Wiadomość  
+
+ Zabezpieczenia przesyłania strumieniowego systemu Windows przy akceptowaniu uaktualnienia.  
   
 ## <a name="details"></a>Szczegóły

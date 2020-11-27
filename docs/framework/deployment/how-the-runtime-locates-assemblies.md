@@ -10,12 +10,12 @@ helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
-ms.openlocfilehash: 4cf1e5787fe2e430d20208d8e79b610e9126c67c
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: 1b2ee58ccbd4bdfceb6300c20d5255718982f2e5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96031712"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272530"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Sposoby lokalizowania zestawów przez środowisko uruchomieniowe
 
@@ -135,11 +135,13 @@ Plik konfiguracji zasad wydawcy zastępuje informacje o wersji, które pochodzą
 Plik zasad wydawcy jest używany podczas aktualizowania składnika współużytkowanego i Nowa wersja współużytkowanego składnika powinna być pobierana przez wszystkie aplikacje korzystające z tego składnika. Ustawienia w pliku zasad wydawcy zastępują ustawienia w pliku konfiguracji aplikacji, chyba że plik konfiguracyjny aplikacji wymusza Tryb bezpieczny.
 
 #### <a name="safe-mode"></a>Tryb awaryjny
+
 Pliki zasad wydawcy są zwykle jawnie instalowane w ramach dodatku Service Pack lub aktualizacji programu. W przypadku wystąpienia problemu z uaktualnionym składnikiem udostępnionym można zignorować zastąpień w pliku zasad wydawcy przy użyciu trybu awaryjnego. Tryb awaryjny jest określany przez **\<publisherPolicy apply="yes**&#124;**no"/>** element, który znajduje się tylko w pliku konfiguracji aplikacji. Określa, czy informacje o konfiguracji zasad wydawcy powinny zostać usunięte z procesu powiązania.
 
 Tryb awaryjny można ustawić dla całej aplikacji lub dla wybranych zestawów. Oznacza to, że można wyłączyć zasady dla wszystkich zestawów, które składają się na aplikację, lub włączyć je dla niektórych zestawów, ale nie dla innych. Aby selektywnie zastosować zasady wydawcy do zestawów, które tworzą aplikację, ustaw **\<publisherPolicy apply\=no/>** i określ, które zestawy mają być modyfikowane przy użyciu \<**dependentAssembly**> elementu. Aby zastosować zasady wydawcy do wszystkich zestawów, które tworzą aplikację, ustaw **\<publisherPolicy apply\=no/>** bez zależnych elementów zestawu. Aby uzyskać więcej informacji na temat konfiguracji, zobacz [Konfigurowanie aplikacji przy użyciu plików konfiguracyjnych](../configure-apps/index.md).
 
 ### <a name="machine-configuration-file"></a>Plik konfiguracji komputera
+
 Po trzecie środowisko uruchomieniowe sprawdzi plik konfiguracji maszyny. Ten plik o nazwie Machine.config znajduje się na komputerze lokalnym w podkatalogu config katalogu głównego, w którym zainstalowano środowisko uruchomieniowe. Ten plik może być używany przez administratorów do określania ograniczeń powiązania zestawu, które są lokalne dla tego komputera. Ustawienia w pliku konfiguracji komputera mają pierwszeństwo przed wszystkimi innymi ustawieniami konfiguracji; nie oznacza to jednak, że wszystkie ustawienia konfiguracji należy umieścić w tym pliku. Wersja określona przez plik zasad administratora jest końcowa i nie można jej zastąpić. Zastąpienia określone w pliku Machine.config mają wpływ na wszystkie aplikacje. Aby uzyskać więcej informacji na temat plików konfiguracji, zobacz [Konfigurowanie aplikacji przy użyciu plików konfiguracyjnych](../configure-apps/index.md).
 
 <a name="step2"></a>

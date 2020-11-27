@@ -12,28 +12,35 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), marshaling
 - invalid function pointers
 ms.assetid: 99ae44f1-783e-49a9-9009-24f54bbd0f09
-ms.openlocfilehash: a17427d117c62ba782af3c9549c84623a3013b06
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 8072d35a45cb1e0590aa5533210d0e0f86913164
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051743"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272621"
 ---
 # <a name="invalidfunctionpointerindelegate-mda"></a>invalidFunctionPointerInDelegate MDA
+
 `invalidFunctionPointerInDelegate`Asystent debugowania zarządzanego (MDA) jest uaktywniany po przekazaniu nieprawidłowego wskaźnika funkcji do konstruowania delegata przez wskaźnik funkcji natywnej.  
   
 ## <a name="symptoms"></a>Objawy  
+
  Naruszenia zasad dostępu lub nieoczekiwane uszkodzenie pamięci podczas używania delegata na wskaźniku funkcji.  
   
 ## <a name="cause"></a>Przyczyna  
+
  Określono nieprawidłowy wskaźnik funkcji.  
   
 ## <a name="resolution"></a>Rozwiązanie  
+
  Określ prawidłowy wskaźnik funkcji  
   
 ## <a name="effect-on-the-runtime"></a>Wpływ na środowisko uruchomieniowe  
+
  To zdarzenie MDA nie ma wpływu na środowisko CLR.  
   
 ## <a name="output"></a>Dane wyjściowe  
+
  Nieprawidłowy wskaźnik funkcji.  
   
 ## <a name="configuration"></a>Konfigurowanie  
@@ -46,7 +53,7 @@ ms.locfileid: "86051743"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnozowanie błędów przy użyciu asystentów zarządzanego debugowania](diagnosing-errors-with-managed-debugging-assistants.md)

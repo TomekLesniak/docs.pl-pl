@@ -6,23 +6,24 @@ helpviewer_keywords:
 - security events [.NET Framework]
 - ETW, security events (CLR)
 ms.assetid: 0ed69f73-5c01-4514-bd63-979c6e38d41d
-ms.openlocfilehash: 2fd2d450223cd16a7791b8f6c67afe6bcb954eb3
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 4402bf5690a53ce518077268a3e20a95aeb14e8a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474218"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96272517"
 ---
 # <a name="security-etw-events"></a>Zabezpieczenia zdarzeń ETW
 
 Zdarzenia zabezpieczeń są wywoływane podczas weryfikacji silnej nazwy i weryfikacji kodu Authenticode.  
 
 ## <a name="strongnameverificationstart_v1-and-strongnameverificationstop_v1-events"></a>Zdarzenia StrongNameVerificationStart_V1 i StrongNameVerificationStop_V1  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom. (Aby uzyskać więcej informacji, zobacz [słowa kluczowe i poziomy ETW CLR](clr-etw-keywords-and-levels.md)).  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`SecurityKeyword`(0x400)|Informacyjny (4)|  
+|`SecurityKeyword` (0x400)|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -41,11 +42,12 @@ Zdarzenia zabezpieczeń są wywoływane podczas weryfikacji silnej nazwy i weryf
 |ClrInstanceID|win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
 
 ## <a name="authenticodeverificationstart_v1-and-authenticodeverificationstop_v1-events"></a>Zdarzenia AuthenticodeVerificationStart_V1 i AuthenticodeVerificationStop_V1  
+
  W poniższej tabeli przedstawiono słowo kluczowe i poziom.  
   
 |Słowo kluczowe do podniesienia zdarzenia|Poziom|  
 |-----------------------------------|-----------|  
-|`SecurityKeyword`(0x400)|Informacyjny (4)|  
+|`SecurityKeyword` (0x400)|Informacyjny (4)|  
   
  W poniższej tabeli przedstawiono informacje o zdarzeniu.  
   
@@ -63,6 +65,6 @@ Zdarzenia zabezpieczeń są wywoływane podczas weryfikacji silnej nazwy i weryf
 |ModulePath|win: UnicodeString|Ścieżka modułu.|  
 |ClrInstanceID|win: UInt16|Unikatowy identyfikator wystąpienia CLR lub CoreCLR.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zdarzenia ETW CLR](clr-etw-events.md)
