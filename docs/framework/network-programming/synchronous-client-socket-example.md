@@ -10,14 +10,15 @@ helpviewer_keywords:
 - synchronous client sockets
 - sockets, synchronous client sockets
 ms.assetid: 2c7d5be7-2221-467c-a839-5744ec4d576d
-ms.openlocfilehash: 7455307441045360bc62cee50f13d106df4d005e
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: d2595f3a6cb5e1ced17697def33e35ce8912ea90
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502122"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279249"
 ---
 # <a name="synchronous-client-socket-example"></a>Przykład synchronicznego gniazda klienta
+
 Poniższy przykładowy program tworzy klienta, który nawiązuje połączenie z serwerem. Klient został skompilowany za pomocą gniazda synchronicznego, więc wykonywanie aplikacji klienckiej jest wstrzymane do momentu, gdy serwer zwróci odpowiedź. Aplikacja wysyła ciąg do serwera, a następnie wyświetla ciąg zwracany przez serwer w konsoli programu.  
   
 ```vb  
@@ -136,7 +137,7 @@ public class SynchronousSocketClient {
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykład synchronicznego gniazda serwera](synchronous-server-socket-example.md)
 - [Używanie synchronicznego gniazda klienta](using-a-synchronous-client-socket.md)

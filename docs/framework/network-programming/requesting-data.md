@@ -18,17 +18,19 @@ helpviewer_keywords:
 - receiving data, about receiving data
 - Internet, requesting data
 ms.assetid: df6f1e1d-6f2a-45dd-8141-4a85c3dafe1d
-ms.openlocfilehash: 19350d685a81d56657ca0a117d61b50ae24fab6a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 87ad0144f57bdca0e0235aea30c4ab450cc890f4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502187"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279301"
 ---
 # <a name="requesting-data"></a>Żądanie danych
+
 Tworzenie aplikacji działających w rozproszonym środowisku operacyjnym dzisiejszej sieci Internet wymaga wydajnej, łatwej w użyciu metody do pobierania danych z zasobów wszystkich typów. Protokoły podłączane umożliwiają tworzenie aplikacji korzystających z jednego interfejsu do pobierania danych z wielu protokołów internetowych.  
   
 ## <a name="uploading-and-downloading-data-from-an-internet-server"></a>Przekazywanie i pobieranie danych z serwera internetowego  
+
  W przypadku prostych transakcji żądań i odpowiedzi <xref:System.Net.WebClient> Klasa zapewnia najłatwą metodę przekazywania danych do lub pobierania danych z serwera internetowego. **Klient WebClient** oferuje metody przekazywania i pobierania plików, wysyłania i otrzymywania strumieni oraz wysyłania bufora danych do serwera i otrzymywania odpowiedzi. **Klient WebClient** używa <xref:System.Net.WebRequest> klas i, aby nawiązać <xref:System.Net.WebResponse> rzeczywiste połączenia z zasobem internetowym, tak aby wszystkie zarejestrowane protokoły podłączane były dostępne do użycia.  
   
  Aplikacje klienckie, które muszą wykonywać bardziej złożone transakcje żądania danych z serwerów przy użyciu klasy **WebRequest** i jej obiektów podrzędnych. **Żądanie WebRequest** hermetyzuje szczegóły dotyczące łączenia się z serwerem, wysyłania żądania i otrzymywania odpowiedzi. **WebRequest** to Klasa abstrakcyjna, która definiuje zestaw właściwości i metod, które są dostępne dla wszystkich aplikacji, które korzystają z protokołów podłączanych. Elementy podrzędne **żądania WebRequest**, takie jak <xref:System.Net.HttpWebRequest> , implementują właściwości i metody zdefiniowane przez **WebRequest** w sposób, który jest zgodny z bazowym protokołem.  
@@ -53,8 +55,8 @@ Dim sr As StreamReader
 sr = New StreamReader(resp.GetResponseStream(), Encoding.ASCII)  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Programowanie dla sieci w programie .NET Framework](index.md)
+- [Programowanie dla sieci w .NET Framework](index.md)
 - [Instrukcje: żądanie strony internetowej i pobieranie wyników jako strumienia](how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)
 - [Instrukcje: pobieranie elementu WebResponse specyficznego dla protokołu, który odpowiada elementowi WebRequest](how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md)

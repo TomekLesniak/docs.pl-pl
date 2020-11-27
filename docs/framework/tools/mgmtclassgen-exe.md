@@ -12,14 +12,15 @@ helpviewer_keywords:
 - Mgmtclassgen.exe
 - early-bound managed classes
 ms.assetid: 02ce6699-49b5-4a0b-b0d5-1003c491232e
-ms.openlocfilehash: 89facd4369dad6168e46febd3e34d7f7c235faf0
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 1dea4b0b94053919169abb639ff48ecd3abbd66c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517298"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279158"
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a>Mgmtclassgen.exe (Zarządzanie generatorem silnie typizowanej klasy)
+
 Narzędzie Management Strongly Typed Class Generator umożliwia szybkie generowanie wcześnie powiązanych klas zarządzanych dla określonej klasy Instrumentacji zarządzania Windows (WMI). Wygenerowana klasa upraszcza kod, który trzeba napisać, aby uzyskać dostęp do wystąpienia klasy WMI.  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,7 +36,7 @@ WMIClass [options]
   
 |Opcja|Opis|  
 |------------|-----------------|  
-|**/l**—*Język*  |Określa język, w którym ma zostać wygenerowana wcześnie powiązana klasa zarządzana. Jako argumentu języka można określić **CS** (C#; default), **VB** (Visual Basic), **MC** (C++) lub **js** (JScript).|  
+|**/l**—*Język*  |Określa język, w którym ma zostać wygenerowana wcześnie powiązana klasa zarządzana. Jako argumentu języka można określić **CS** (C#; default), **VB** (Visual Basic),  **MC** (C++) lub **js** (JScript).|  
 |**/m**  *komputer*|Określa komputer, z którym należy nawiązać połączenie (na tym komputerze znajduje się klasa WMI). Wartością domyślną jest komputer lokalny.|  
 |**/n***ścieżka* /n  |Określa ścieżkę do przestrzeni nazw usługi WMI zawierającej odpowiednią klasę WMI. Jeśli ta opcja nie zostanie określona, narzędzie generuje kod dla *WMIClass* w domyślnej przestrzeni nazw **root\cimv2** .|  
 |**/o**  *classnamespace*|Określa przestrzeń nazw platformy .NET, w której ma zostać wygenerowana klasa kodu zarządzanego. Jeśli ta opcja nie zostanie określona, narzędzie wygeneruje przestrzeń nazw, używając przestrzeni nazw usługi WMI i prefiksu schematu. Prefiks schematu jest częścią nazwy klasy poprzedzającą znak podkreślenia. Na przykład dla klasy **Win32_OperatingSystem** w przestrzeni nazw **root\cimv2** narzędzie wygeneruje klasę w **katalogu głównym. CIMV2. Win32**.|  
@@ -45,6 +46,7 @@ WMIClass [options]
 |**/?**|Wyświetla składnię polecenia i opcje narzędzia.|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Mgmtclassgen.exe używa <xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=nameWithType> metody. Dzięki temu można użyć dowolnego niestandardowego dostawcy kodu, aby wygenerować kod w zarządzanych językach innych niż C#, Visual Basic i JScript.  
   
  Należy zauważyć, że wygenerowane klasy są powiązane ze schematem, dla którego są generowane. Jeśli schemat źródłowy ulegnie zmianie, trzeba ponownie wygenerować klasę, jeśli chce się odzwierciedlić zmiany w schemacie.  
@@ -63,7 +65,7 @@ WMIClass [options]
 |CIM_UINT64|**UInt64**|  
 |CIM_REAL32|**Pojedyncze**|  
 |CIM_REAL64|**Double**|  
-|CIM_BOOLEAN|**Wartość logiczna**|  
+|CIM_BOOLEAN|**Boolean**|  
 |CIM_String|**Ciąg**|  
 |CIM_DATETIME|**DateTime** lub **TimeSpan**|  
 |CIM_REFERENCE|**ManagementPath**|  
@@ -78,7 +80,7 @@ WMIClass [options]
   
 - Możliwe jest, że nazwa właściwości lub metody w generowanej klasie będzie słowem kluczowym w docelowym języku programowania. Jeśli tak się zdarzy, narzędzie zmieni nazwę właściwości lub metody w generowanej klasie w celu uniknięcia konfliktu nazw.  
   
-- W usłudze WMI kwalifikatory to modyfikatory zawierające informacje opisujące klasę, wystąpienie, właściwość lub metodę. Usługa WMI używa kwalifikatorów standardowych, takich jak **Odczyt**, **zapis**i **klucz** , aby opisać właściwość w wygenerowanej klasie. Na przykład właściwość, która jest modyfikowana przy użyciu kwalifikatora **odczytu** , jest definiowana tylko przy użyciu metody dostępu **Get** właściwości w wygenerowanej klasie. Ponieważ właściwość oznaczona kwalifikatorem **odczytu** jest przeznaczona tylko do odczytu, metoda dostępu **Set** nie jest zdefiniowana.  
+- W usłudze WMI kwalifikatory to modyfikatory zawierające informacje opisujące klasę, wystąpienie, właściwość lub metodę. Usługa WMI używa kwalifikatorów standardowych, takich jak **Odczyt**, **zapis** i **klucz** , aby opisać właściwość w wygenerowanej klasie. Na przykład właściwość, która jest modyfikowana przy użyciu kwalifikatora **odczytu** , jest definiowana tylko przy użyciu metody dostępu **Get** właściwości w wygenerowanej klasie. Ponieważ właściwość oznaczona kwalifikatorem **odczytu** jest przeznaczona tylko do odczytu, metoda dostępu **Set** nie jest zdefiniowana.  
   
 - Właściwość numeryczna może być modyfikowana przez kwalifikatory **wartości** i **ValueMaps** , aby wskazać, że właściwość można ustawić tylko dla określonych dozwolonych wartości. Wyliczenie jest generowane z tymi **wartościami** i **ValueMaps** , a właściwość jest zamapowana na Wyliczenie.  
   
@@ -93,13 +95,14 @@ WMIClass [options]
  Aby uzyskać więcej informacji na temat usługi WMI, zobacz temat **Instrumentacja zarządzania Windows** w dokumentacji zestawu SDK platformy.  
   
 ## <a name="examples"></a>Przykłady  
- Następujące polecenie generuje klasę zarządzaną w kodzie C# dla klasy WMI **Win32_LogicalDisk** w przestrzeni nazw **root\cimv2** . Narzędzie zapisuje klasę zarządzaną w pliku źródłowym w c:\disk.cs w **katalogu głównym. CIMV2. **Przestrzeń nazw Win32.  
+
+ Następujące polecenie generuje klasę zarządzaną w kodzie C# dla klasy WMI **Win32_LogicalDisk** w przestrzeni nazw **root\cimv2** . Narzędzie zapisuje klasę zarządzaną w pliku źródłowym w c:\disk.cs w **katalogu głównym. CIMV2.** Przestrzeń nazw Win32.  
   
 ```console  
 mgmtclassgen Win32_LogicalDisk /n root\cimv2 /l CS /p c:\disk.cs  
 ```  
   
- W poniższym przykładzie kodu pokazano, w jaki sposób można programowo używać wygenerowanej klasy. Najpierw jest wyliczane wystąpienie klasy i jest drukowana ścieżka. Następnie za pomocą wystąpienia usługi WMI jest tworzone wystąpienie wygenerowanej klasy, które ma zostać zainicjowane. `Process`jest klasą wygenerowaną dla **Win32_Process** i `LogicalDisk` jest klasą wygenerowaną dla **Win32_LogicalDisk** w przestrzeni nazw **root\cimv2** .  
+ W poniższym przykładzie kodu pokazano, w jaki sposób można programowo używać wygenerowanej klasy. Najpierw jest wyliczane wystąpienie klasy i jest drukowana ścieżka. Następnie za pomocą wystąpienia usługi WMI jest tworzone wystąpienie wygenerowanej klasy, które ma zostać zainicjowane. `Process` jest klasą wygenerowaną dla **Win32_Process** i `LogicalDisk` jest klasą wygenerowaną dla **Win32_LogicalDisk** w przestrzeni nazw **root\cimv2** .  
   
 ```vb  
 Imports System  
@@ -149,7 +152,7 @@ public class App
 }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Management>
 - <xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=nameWithType>

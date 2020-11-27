@@ -2,33 +2,36 @@
 title: 212 — ParameterInspectorBeforeCallInvoked
 ms.date: 03/30/2017
 ms.assetid: 063fc8d2-ceac-4c18-8368-de84f2c78035
-ms.openlocfilehash: 02d4a4ed1e96983e132a1943dd39f9f885e5596a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 28c2aca4555d2e4ff498e450deae55ad6a87743c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61781852"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279041"
 ---
 # <a name="212---parameterinspectorbeforecallinvoked"></a>212 — ParameterInspectorBeforeCallInvoked
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|212|  
-|słowa kluczowe|Rozwiązywanie problemów, modelu ServiceModel|  
+|ID (Identyfikator)|212|  
+|Słowa kluczowe|Rozwiązywanie problemów, ServiceModel|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Analytic|  
+|Kanał|Microsoft-Windows-Application Server-Applications/Analytics|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane po modelu usługi zostało wywołane `BeforeCall` metody `ParameterInspector`.  
+
+ To zdarzenie jest emitowane po wywołaniu metody przez model usługi `BeforeCall` `ParameterInspector` .  
   
-## <a name="message"></a>Komunikat  
- Dyspozytor wywoływane "BeforeCall" na ParameterInspector typu "%1".  
+## <a name="message"></a>Wiadomość  
+
+ Dyspozytor wywołał element "BeforeCall" na ParameterInspector typu "%1".  
   
 ## <a name="details"></a>Szczegóły  
   
 |Nazwa elementu danych|Typ elementu danych|Opis|  
 |--------------------|--------------------|-----------------|  
-|TypeName|`xs:string`|Pełna nazwa CLR typu Inspektor wywołana.|  
-|HostReference|`xs:string`|W przypadku usług hostowanych w sieci Web to pole jednoznacznie identyfikuje usługę w hierarchii w sieci Web. Jego format jest zdefiniowany jako "Ścieżka wirtualna aplikacji Nazwa witryny sieci Web&#124;ścieżka wirtualna usługi&#124;ServiceName". Przykład: 'Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'.|  
-|AppDomain|`xs:string`|Ciąg zwracany przez AppDomain.CurrentDomain.FriendlyName.|
+|TypeName|`xs:string`|FullName CLR dla wywoływanego typu inspektora.|  
+|HostReference|`xs:string`|W przypadku usług hostowanych w sieci Web to pole jednoznacznie identyfikuje usługę w hierarchii sieci Web. Jego format jest zdefiniowany jako ścieżka wirtualna aplikacji nazwa witryny sieci Web&#124;wirtualnej ścieżki usługi&#124;ServiceName '. Przykład: "Default Web site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService".|  
+|Wywołując|`xs:string`|Ciąg zwracany przez element AppDomain. CurrentDomain —. FriendlyName.|

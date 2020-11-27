@@ -9,12 +9,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), benefits
 - access control lists [.NET Framework]
 ms.assetid: 8a18e5c2-d41d-49ef-abcb-7c27e2469433
-ms.openlocfilehash: 16cfd9faf02d5b58acad1cc0cf19be61c9814d35
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: e27fdd7def2d234e1e8eb7557e869bf478d68210
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105162"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279314"
 ---
 # <a name="working-with-assemblies-and-the-global-assembly-cache"></a>Praca z zestawami i globalną pamięcią podręczną zestawów
 
@@ -46,6 +46,7 @@ Istnieje kilka powodów, dla których instalowanie zestawu w globalnej pamięci 
  Istnieją też scenariusze, w których nie należy jawnie instalować zestawów w globalnej pamięci podręcznej zestawów. Umieszczenie w tej pamięci jednego z zestawów tworzących aplikację sprawi, że nie będzie już można zreplikować ani zainstalować aplikacji przy użyciu polecenia XCOPY kopiującego katalog aplikacji. W takim przypadku należy również przenieść zestaw do globalnej pamięci podręcznej zestawów.  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
 [Instrukcje: Instalowanie zestawu w globalnej pamięci podręcznej zestawów](install-assembly-into-gac.md)  
 Opis sposobów instalowania zestawu w globalnej pamięci podręcznej zestawów.  
   

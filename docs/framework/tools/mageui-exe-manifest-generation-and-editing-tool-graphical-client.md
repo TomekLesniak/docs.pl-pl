@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-ms.openlocfilehash: 59f2d3dbf09beacb62042b8195bba23f345fba02
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 28a84814d1df96935f7533fa00f0bb50cf84def8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557440"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279184"
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (Narzędzie generowania i edytowania manifestu, klient grafiki)
 
@@ -25,6 +25,7 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 > MageUI.exe nie obsługuje elementu [compatibleFrameworks](/visualstudio/deployment/compatibleframeworks-element-clickonce-deployment) podczas zapisywania manifestu aplikacji, który został już podpisany za pomocą certyfikatu przy użyciu MageUI.exe. Zamiast tego należy użyć [Mage.exe](mage-exe-manifest-generation-and-editing-tool.md).  
   
 ## <a name="uielement-list"></a>Lista elementów UI  
+
  W następującej tabeli wymieniono elementy menu i paski narzędzi, które są dostępne.  
   
 |Polecenie|Menu|Skrót|Opis|  
@@ -46,6 +47,7 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 |**Informacje**|**Pomoc**||Wyświetla informacje o wersji i prawach autorskich dotyczące MageUI.exe.|  
   
 ## <a name="preferences-dialog-box"></a>Okno dialogowe Preferencje  
+
  Okno dialogowe **Preferencje** zawiera następujące elementy.  
   
 |Element interfejsu użytkownika|Opis|  
@@ -55,6 +57,7 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 |Algorytm porządkowania|Określa algorytm, za pomocą którego zostaną wygenerowane skróty zależności. Wartością musi być „sha256RSA” lub „sha1RSA”. Domyślną wartością jest SHA1. Używana zarówno w manifestach aplikacji, jak i wdrażania. Jeśli użytkownik poda certyfikat podczas zapisywania manifestu, używane są algorytmy w certyfikacie do wygenerowania rozkładów zależności.|  
   
 ## <a name="signing-options-dialog-box"></a>Okno dialogowe Opcje podpisywania  
+
  Okno dialogowe **Opcje podpisywania** pojawia się, gdy po raz pierwszy zapisujesz manifest lub licencję zaufania, lub jeśli zmienisz manifest lub licencję zaufania. Pojawia się tylko wtedy, gdy zaznaczono opcję **Zaloguj się przy zapisywaniu** w oknie dialogowym **Preferencje** . Musisz mieć połączenie z Internetem podczas podpisywania manifestu, który określa wartość w polu tekstowym **Identyfikator URI sygnatury czasowej** .  
   
  To okno dialogowe zawiera następujące elementy.  
@@ -71,9 +74,11 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 |**Nie pisz**|Umożliwia zapisanie manifestu bez dodawania podpisu z certyfikatu cyfrowego.|  
   
 ## <a name="tab-and-panel-descriptions"></a>Opisy karta i panelu  
+
  Po otwarciu w programie MageUI.exe dokument pojawia się w obrębie własnej strony karty. Każda karta zawiera zestaw paneli właściwości. Panele zawierają zgrupowane podzbiory danych dokumentu.  
   
 ### <a name="application-manifest-tab"></a>Karta manifest aplikacji  
+
  Na karcie **manifest aplikacji** jest wyświetlana zawartość manifestu aplikacji. Manifest aplikacji opisuje wszystkie pliki dołączone do wdrożenia oraz uprawnienia wymagane do uruchomienia aplikacji na kliencie programu.  
   
  Karta **manifest aplikacji** zawiera następujące karty.  
@@ -87,22 +92,24 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 |**Wymagane uprawnienia**|Określa minimalny zestaw uprawnień wymagany przez aplikację do uruchomienia na kliencie.|  
   
 ### <a name="name-tab"></a>Nazwa — karta  
+
  Karta **Nazwa** jest wyświetlana podczas pierwszej tworzenia lub otwierania manifestu aplikacji. Jednoznacznie identyfikuje wdrożenie i opcjonalnie określa prawidłową platformę docelową.  
   
 |Element interfejsu użytkownika|Opis|  
 |----------------|-----------------|  
-|**Nazwa**|Wymagany. Nazwa manifestu aplikacji. Zwykle taka sama jak nazwa pliku.|  
-|**Wersja**|Wymagany. Numer wersji wdrożenia w postaci *N. n. n. n*. Wymagany jest tylko pierwszy główny numer kompilacji. Na przykład w przypadku wersji 1,0 aplikacji prawidłowe wartości to `1` ,, `1.0` `1.0.0` , i `1.0.0.0` .|  
+|**Nazwa**|Wymagane. Nazwa manifestu aplikacji. Zwykle taka sama jak nazwa pliku.|  
+|**Wersja**|Wymagane. Numer wersji wdrożenia w postaci *N. n. n. n*. Wymagany jest tylko pierwszy główny numer kompilacji. Na przykład w przypadku wersji 1,0 aplikacji prawidłowe wartości to `1` ,, `1.0` `1.0.0` , i `1.0.0.0` .|  
 |**Procesor**|Opcjonalny. Architektura komputera, na którym można uruchomić to wdrożenie. Wartość domyślna to `msil` lub język pośredni firmy Microsoft, który jest domyślnym formatem wszystkich zarządzanych zestawów. Zmień to pole, jeśli wstępnie skompilowano zestawy w aplikacji dla określonej architektury. Aby uzyskać więcej informacji na temat wstępnej kompilacji, zobacz [Ngen.exe (Generator obrazu natywnego)](ngen-exe-native-image-generator.md).|  
 |**Kultura**|Opcjonalny. Dwuczęściowy kod kraju i regionu ISO, w którym działa ta aplikacja. Wartość domyślna to `neutral`.|  
 |**Token klucza publicznego**|Opcjonalny. Klucz publiczny, z którym jest podpisany ten manifest aplikacji. Jeśli jest to nowy lub niepodpisany manifest, to pole będzie wyświetlane jako `Unsigned` .|  
   
 ### <a name="description-tab"></a>Karta opis  
+
  Te informacje są zwykle dostępne w manifeście wdrożenia. Te pola można modyfikować tylko wtedy, gdy na karcie **Opcje aplikacji** jest zaznaczone pole wyboru **Użyj informacji o zaufaniu manifestu aplikacji** .  
   
 |Element interfejsu użytkownika|Opis|  
 |----------------|-----------------|  
-|**Publisher**|Nazwisko osoby lub organizacji odpowiedzialnej za aplikację. Ta wartość jest używana jako nazwa folderu menu Start.|  
+|**Wydawca**|Nazwisko osoby lub organizacji odpowiedzialnej za aplikację. Ta wartość jest używana jako nazwa folderu menu Start.|  
 |**Product**|Pełna nazwa produktu. Jeśli wybrano opcję **Zainstaluj lokalnie** dla **elementu Typ aplikacji** na karcie **Opcje wdrożenia** w manifeście wdrożenia, ta nazwa będzie wyświetlana w linku menu **Start** i w **aplecie Dodaj lub usuń programy** dla tej aplikacji.|  
 |**Lokalizacja obsługi**|Adres URL, z którego klienci mogą uzyskać pomoc i obsługę aplikacji.|  
   
@@ -125,6 +132,7 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 |**Grupa**|Etykieta zestawu opcjonalnych plików. Możesz zastosować etykietę grupy do zestawu plików i użyć interfejsu API na żądanie, aby pobrać partię plików z pojedynczym wywołaniem interfejsu API.|  
   
 ### <a name="permissions-required-tab"></a>Karta wymagane uprawnienia  
+
  Użyj karty **wymagane uprawnienia** , jeśli chcesz udzielić aplikacji więcej dostępu do komputera lokalnego, niż jest on domyślnie przyznany. Aby uzyskać więcej informacji, zobacz [Zabezpieczanie aplikacji ClickOnce](/visualstudio/deployment/securing-clickonce-applications).  
   
 |Element interfejsu użytkownika|Opis|  
@@ -133,6 +141,7 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 |**Szczegóły**|KOD XML utworzony dla manifestu aplikacji reprezentujący zestaw uprawnień. Jeśli nie znasz dobrego formatu XML manifestu aplikacji, nie należy edytować tego kodu XML ręcznie. Aby uzyskać więcej informacji, zobacz [manifest aplikacji ClickOnce](/visualstudio/deployment/clickonce-application-manifest).|  
   
 ### <a name="deployment-manifest-tab"></a>Karta manifest wdrożenia  
+
  Karta **manifest wdrożenia** zawiera następujące karty.  
   
 |Element interfejsu użytkownika|Opis|  
@@ -144,12 +153,13 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 |**Odwołanie do aplikacji**|Określa manifest aplikacji dla tego wdrożenia.|  
   
 ### <a name="name-tab"></a>Nazwa — karta  
+
  Karta **Nazwa** jest wyświetlana podczas pierwszego tworzenia lub otwierania manifestu wdrożenia. Jednoznacznie identyfikuje wdrożenie i opcjonalnie określa prawidłową platformę docelową.  
   
 |Element interfejsu użytkownika|Opis|  
 |----------------|-----------------|  
-|**Nazwa**|Wymagany. Nazwa manifestu wdrożenia. Zwykle taka sama jak nazwa pliku.|  
-|**Wersja**|Wymagany. Numer wersji wdrożenia w postaci *N. n. n. n*. Wymagany jest tylko pierwszy główny numer kompilacji. Na przykład w przypadku wersji 1,0 aplikacji prawidłowe wartości to `1` ,, `1.0` `1.0.0` , i `1.0.0.0` .|  
+|**Nazwa**|Wymagane. Nazwa manifestu wdrożenia. Zwykle taka sama jak nazwa pliku.|  
+|**Wersja**|Wymagane. Numer wersji wdrożenia w postaci *N. n. n. n*. Wymagany jest tylko pierwszy główny numer kompilacji. Na przykład w przypadku wersji 1,0 aplikacji prawidłowe wartości to `1` ,, `1.0` `1.0.0` , i `1.0.0.0` .|  
 |**Procesor**|Opcjonalny. Architektura komputera, na którym można uruchomić to wdrożenie. Wartość domyślna to `msil` lub język pośredni firmy Microsoft — domyślny format wszystkich zarządzanych zestawów. Zmień to pole, jeśli zestawy w aplikacji zostały skompilowane dla określonej architektury.|  
 |**Kultura**|Opcjonalny. Dwuczęściowy kod kraju/regionu ISO, w którym działa ta aplikacja. Wartość domyślna to `neutral`.|  
 |**Token klucza publicznego**|Opcjonalny. Klucz publiczny, z którym został podpisany ten manifest wdrożenia. Jeśli jest to nowy lub niepodpisany manifest, to pole będzie wyświetlane jako `Unsigned` .|  
@@ -158,8 +168,8 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
   
 |Element interfejsu użytkownika|Opis|  
 |----------------|-----------------|  
-|**Publisher**|Wymagany. Nazwisko osoby lub organizacji odpowiedzialnej za aplikację. Ta wartość jest używana jako nazwa folderu menu Start.|  
-|**Product**|Wymagany. Pełna nazwa produktu. Jeśli wybrano opcję **Zainstaluj lokalnie** dla **elementu Typ aplikacji** na karcie **Opcje wdrożenia** , ta nazwa będzie wyświetlana w linku menu **Start** i w **aplecie Dodaj lub usuń programy** dla tej aplikacji.|  
+|**Wydawca**|Wymagane. Nazwisko osoby lub organizacji odpowiedzialnej za aplikację. Ta wartość jest używana jako nazwa folderu menu Start.|  
+|**Product**|Wymagane. Pełna nazwa produktu. Jeśli wybrano opcję **Zainstaluj lokalnie** dla **elementu Typ aplikacji** na karcie **Opcje wdrożenia** , ta nazwa będzie wyświetlana w linku menu **Start** i w **aplecie Dodaj lub usuń programy** dla tej aplikacji.|  
 |**Lokalizacja obsługi**|Opcjonalny. Adres URL, z którego klienci mogą uzyskać pomoc i obsługę aplikacji.|  
   
 ### <a name="deployment-options-tab"></a>Karta opcje wdrożenia  
@@ -169,11 +179,12 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 |**Typ aplikacji**|Opcjonalny. Określa, czy ta aplikacja jest instalowana na komputerze klienckim (**Instalacja lokalna**), działa w trybie online (**tylko w trybie online**), czy też jest aplikacją WPF działającą w przeglądarce (**Aplikacja przeglądarki WPF**). Wartość domyślna to **Instaluj lokalnie**.|  
 |**Lokalizacja początkowa**|Opcjonalny. Adres URL, z którego aplikacja ma zostać faktycznie uruchomiona. Przydatne podczas wdrażania aplikacji z dysku CD, który powinien zostać zaktualizowany z sieci Web.|  
 |**Uwzględnij lokalizację początkową (ProviderURL) w manifeście**|Opcjonalny. Określa adres URL, pod którym technologia ClickOnce będzie szukać aktualizacji aplikacji.|  
-|**Automatycznie uruchamiaj aplikację po zainstalowaniu**|Wymagany. Określa, że aplikacja ClickOnce powinna być uruchamiana natychmiast po początkowej instalacji z adresu URL. Wartość domyślna to pole wyboru jest zaznaczone.|  
-|**Zezwalaj na przekazywanie parametrów adresu URL do aplikacji**|Wymagany. Zezwala na przesyłanie danych parametrów do aplikacji ClickOnce za pomocą ciągu zapytania dołączonego do adresu URL manifestu wdrożenia. Wartość domyślna to pole wyboru jest wyczyszczone.|  
-|**Użyj rozszerzenia pliku. deploy**|Wymagany. Po wybraniu tej opcję wszystkie pliki w manifeście aplikacji muszą mieć rozszerzenie. deploy. Wartość domyślna to pole wyboru jest wyczyszczone.|  
+|**Automatycznie uruchamiaj aplikację po zainstalowaniu**|Wymagane. Określa, że aplikacja ClickOnce powinna być uruchamiana natychmiast po początkowej instalacji z adresu URL. Wartość domyślna to pole wyboru jest zaznaczone.|  
+|**Zezwalaj na przekazywanie parametrów adresu URL do aplikacji**|Wymagane. Zezwala na przesyłanie danych parametrów do aplikacji ClickOnce za pomocą ciągu zapytania dołączonego do adresu URL manifestu wdrożenia. Wartość domyślna to pole wyboru jest wyczyszczone.|  
+|**Użyj rozszerzenia pliku. deploy**|Wymagane. Po wybraniu tej opcję wszystkie pliki w manifeście aplikacji muszą mieć rozszerzenie. deploy. Wartość domyślna to pole wyboru jest wyczyszczone.|  
   
 ### <a name="update-options-tab"></a>Karta Opcje aktualizacji  
+
  Karta **Opcje aktualizacji** zawiera opcje wymienione tutaj, gdy pole wyboru **Typ aplikacji** na karcie **Nazwa** jest ustawione na **Instaluj lokalnie**.  
   
 |Element interfejsu użytkownika|Opis|  
@@ -185,13 +196,14 @@ MageUI.exe obsługuje takie same funkcje jak narzędzie wiersza polecenia Mage.e
 |**Wersja**|Wymagane, jeśli pole wyboru **Określ minimalną wymaganą wersję dla tej aplikacji** jest zaznaczone. Podany numer wersji musi mieć postać *N. n. n*. n. Wymagany jest tylko pierwszy główny numer kompilacji. Na przykład w przypadku wersji 1,0 aplikacji prawidłowe wartości to `1` ,, `1.0` `1.0.0` , i `1.0.0.0` .|  
   
 ### <a name="application-reference-tab"></a>Karta odwołanie do aplikacji  
+
  Karta **odwołanie do aplikacji** zawiera te same pola co karta **Nazwa** opisana wcześniej w tym temacie. Jedynym wyjątkiem jest następujące pole.  
   
 |Element interfejsu użytkownika|Opis|  
 |----------------|-----------------|  
 |**Wybierz manifest**|Umożliwia wybranie manifestu aplikacji. Wszystkie inne pola na tej stronie będą wypełniane po wybraniu manifestu aplikacji.|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Bezpieczeństwo i wdrażanie technologii ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment)
 - [Wskazówki: ręczne wdrażanie aplikacji ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)

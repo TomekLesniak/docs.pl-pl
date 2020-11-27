@@ -6,14 +6,15 @@ helpviewer_keywords:
 - command-line debugger [.NET Framework]
 - MDbg.exe
 ms.assetid: 28a3f509-07e2-4dbe-81df-874c5e969cc4
-ms.openlocfilehash: 1c663474e5084afa1824f0f6b0740ae03a344e92
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 8953db973e231014284ec6585012edc7f3ea11f5
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904224"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279171"
 ---
 # <a name="mdbgexe-net-framework-command-line-debugger"></a>MDbg.exe (Debuger wiersza polecenia w programie .NET Framework)
+
 Debuger wiersza polecenia programu .NET Framework ułatwia dostawcom narzędzi i deweloperom aplikacji znajdowanie i usuwanie błędów w programach, których platformą docelową jest środowisko uruchomieniowe języka wspólnego programu .NET Framework. To narzędzie używa interfejsu API debugowania środowiska uruchomieniowego w celu dostarczania usług debugowania. Za pomocą programu MDbg.exe można debugować tylko kod zarządzany; debugowanie kodu niezarządzanego jest nieobsługiwane.  
   
 To narzędzie jest dostępne za poorednictwem narzędzia NuGet. Aby uzyskać informacje o instalacji, zobacz [MDbg 0.1.0](https://www.nuget.org/packages/MDbg/0.1.0). Aby uruchomić narzędzie, należy użyć konsoli Menedżera pakietów. Więcej informacji o sposobach korzystania z konsoli Menedżera pakietów znajduje się w artykule dotyczącym [konsoli Menedżera pakietów](/nuget/tools/package-manager-console) .
@@ -27,6 +28,7 @@ MDbg [ProgramName[arguments]] [options]
 ```  
   
 ## <a name="commands"></a>Polecenia  
+
  Gdy jesteś w debugerze (wskazanym przez monit **>MDbg** ), wpisz jedno z poleceń opisanych w następnej sekcji:  
   
  **polecenie** [*argumenty*]  
@@ -41,7 +43,7 @@ MDbg [ProgramName[arguments]] [options]
 |**Block**[**ingObjects**]|Wyświetla blokady monitora, które blokują wątki.|  
 |**CA**[**hronę**] [*ExceptionType*]|Powoduje, że debuger przerywa przy wszystkich wyjątkach, a nie tylko przy nieobsłużonych wyjątkach.|  
 |**CL**[**earException**]|Oznacza bieżący wyjątek jako obsłużony, co umożliwia kontynuowanie wykonywania. Jeśli przyczyna wyjątku nie została usunięta, dany wyjątek może wkrótce zostać zgłoszony ponownie.|  
-|**conf**[**IG**] [*wartość opcji*]|Wyświetla wszystkie opcje, które można skonfigurować, i pokazuje sposób wywoływania opcji bez wartości dodatkowych. Jeśli opcja jest określona, ustawia `value` jako bieżącą opcję. Obecnie dostępne są następujące opcje:<br /><br /> -   `extpath`ustawia ścieżkę do wyszukiwania rozszerzeń, gdy `load` polecenie jest używane.<br />-   `extpath+`Dodaje ścieżkę do ładowania rozszerzeń.|  
+|**conf**[**IG**] [*wartość opcji*]|Wyświetla wszystkie opcje, które można skonfigurować, i pokazuje sposób wywoływania opcji bez wartości dodatkowych. Jeśli opcja jest określona, ustawia `value` jako bieżącą opcję. Obecnie dostępne są następujące opcje:<br /><br /> -   `extpath` ustawia ścieżkę do wyszukiwania rozszerzeń, gdy `load` polecenie jest używane.<br />-   `extpath+` Dodaje ścieżkę do ładowania rozszerzeń.|  
 |**del**[**Wysuń**]|Usuwa punkt przerwania.|  
 |**de**[**dłącz**]|Odłącza od debugowanego procesu.|  
 |**d**[**własny**] [*ramki*]|Przenosi aktywną ramkę stosu w dół.|  
@@ -70,13 +72,13 @@ MDbg [ProgramName[arguments]] [options]
 |**Pro**[**cessenum**]|Wyświetla aktywne procesy.|  
 |**p**[**UIT**] [*ExitCode*]|Zamyka powłokę programu MDbg.exe i opcjonalnie określa kod zakończenia procesu.|  
 |**re**[**sume**] [ `*` &#124; [ `~` ]*parametr NumerWątku*]|Wznawia bieżący wątek lub wątek określony przez parametr *parametr NumerWątku* .<br /><br /> Jeśli parametr *parametr NumerWątku* jest określony jako `*` lub, jeśli numer wątku rozpoczyna się od `~` , polecenie ma zastosowanie do wszystkich wątków, z wyjątkiem jednego określonego przez *parametr NumerWątku*.<br /><br /> Wznowienie niewstrzymanego wątku nie przynosi żadnych efektów.|  
-|**r**[**un**] [ `-d` ( `ebug` ) &#124;- `o` ( `ptimize` ) &#124;`-enc` ] [[*path_to_exe*] [*args_to_exe*]]|Zatrzymuje bieżący proces (jeśli istnieje) i uruchamia nowy. Jeśli nie przekazano argumentu pliku wykonywalnego, to polecenie uruchamia program, który został wcześniej wykonany przy użyciu `run` polecenia. Jeśli dostarczono argument pliku wykonywalnego, określony program zostanie uruchomiony z użyciem opcjonalnie dostarczonych argumentów.<br /><br /> Jeśli zdarzenia ładowania klasy, ładowania modułu i uruchamiania wątku są ignorowane (ustawienie domyślne), program zatrzymuje działanie przy pierwszej instrukcji pliku wykonywalnego w wątku głównym.<br /><br /> Można wymusić, aby debuger wykonał kompilację kodu typu JIT (Just-In-Time), używając jednej z następujących trzech flag:<br /><br /> -   `-d`*(* `ebug` *)* wyłącza optymalizacje. Jest to flaga domyślna programu MDbg.exe.<br />-   `-o`*(* `ptimize` *)* wymusza, aby kod był uruchamiany w taki sposób, że nie jest on debugerem, ale również sprawia, że środowisko debugowania jest trudniejsze. Jest to flaga domyślna dla użycia poza debugerem.<br />-   `-enc`Włącza funkcję Edytuj i Kontynuuj, ale wiąże się z wydajnością.|  
+|**r**[**un**] [ `-d` ( `ebug` ) &#124;- `o` ( `ptimize` ) &#124;`-enc` ] [[*path_to_exe*] [*args_to_exe*]]|Zatrzymuje bieżący proces (jeśli istnieje) i uruchamia nowy. Jeśli nie przekazano argumentu pliku wykonywalnego, to polecenie uruchamia program, który został wcześniej wykonany przy użyciu `run` polecenia. Jeśli dostarczono argument pliku wykonywalnego, określony program zostanie uruchomiony z użyciem opcjonalnie dostarczonych argumentów.<br /><br /> Jeśli zdarzenia ładowania klasy, ładowania modułu i uruchamiania wątku są ignorowane (ustawienie domyślne), program zatrzymuje działanie przy pierwszej instrukcji pliku wykonywalnego w wątku głównym.<br /><br /> Można wymusić, aby debuger wykonał kompilację kodu typu JIT (Just-In-Time), używając jednej z następujących trzech flag:<br /><br /> -   `-d`*(* `ebug` *)* wyłącza optymalizacje. Jest to flaga domyślna programu MDbg.exe.<br />-   `-o`*(* `ptimize` *)* wymusza, aby kod był uruchamiany w taki sposób, że nie jest on debugerem, ale również sprawia, że środowisko debugowania jest trudniejsze. Jest to flaga domyślna dla użycia poza debugerem.<br />-   `-enc` Włącza funkcję Edytuj i Kontynuuj, ale wiąże się z wydajnością.|  
 |**Ustaw** *variable* = *wartość* zmiennej|Zmienia wartość dowolnej zmiennej w zakresie.<br /><br /> Można także tworzyć własne zmienne debugera i przypisywać im wartości referencyjne z poziomu aplikacji. Te wartości pełnią funkcję dojść do oryginalnej wartości, nawet jeśli oryginalna wartość znajduje się poza zakresem. Wszystkie zmienne debugera muszą zaczynać się od `$` (na przykład `$var` ). Aby wyczyścić te dojścia, należy ustawić dla nich „nic”, używając następującego polecenia:<br /><br /> `set $var=`|  
 |**Operacja SetIP** [ `-il` ] *number*|Ustawia bieżący wskaźnik instrukcji (IP) w pliku na określonej pozycji. W przypadku określenia `-il` opcji Liczba reprezentuje przesunięcie języka pośredniego firmy Microsoft (MSIL) w metodzie. W przeciwnym wypadku numer reprezentuje numer wiersza źródłowego.|  
 |**SH**[**jak**] [*linie*]|Określa liczbę wierszy do pokazania.|  
 |**s**[**rok**]|Przenosi wykonywanie do następnej funkcji w bieżącym wierszu lub przechodzi do następnego wiersza, jeśli w danym wierszu nie ma funkcji do wykonania.|  
 |**Su**[**wydaj**] [ \* &#124; [~]*parametr NumerWątku*]|Wstrzymuje bieżący wątek lub wątek określony przez parametr *parametr NumerWątku* .  Jeśli *parametr NumerWątku* jest określony jako `*` , polecenie ma zastosowanie do wszystkich wątków. Jeśli numer wątku rozpoczyna się od `~` , polecenie dotyczy wszystkich wątków, z wyjątkiem tych określonych przez *parametr NumerWątku*. Zawieszone wątki są wyłączone z uruchamiania, gdy proces jest uruchamiany za pomocą polecenia **go** lub **Step** . Jeśli nie ma żadnych niezawieszonych wątków w procesie i zostanie wydać polecenie **go** , proces nie będzie kontynuowany. W takim przypadku należy nacisnąć klawisze CTRL-C, aby przerwać działanie procesu.|  
-|**sy**[**mbol**] *CommandName* [*wartośćpolecenia*]|Określa jedno z następujących poleceń:<br /><br /> -   `symbol path`[ `"value"` ] — Wyświetla lub ustawia bieżącą ścieżkę symboli.<br />-   `symbol addpath``"value"`-Dodaje do bieżącej ścieżki symboli.<br />-   `symbol reload`[ `"module"` ] — Ponownie ładuje wszystkie symbole lub symbole dla określonego modułu.<br />-   `symbol list`[ `module` ] — Pokazuje aktualnie załadowane symbole dla wszystkich modułów lub określonego modułu.|  
+|**sy**[**mbol**] *CommandName* [*wartośćpolecenia*]|Określa jedno z następujących poleceń:<br /><br /> -   `symbol path` [ `"value"` ] — Wyświetla lub ustawia bieżącą ścieżkę symboli.<br />-   `symbol addpath``"value"`-Dodaje do bieżącej ścieżki symboli.<br />-   `symbol reload` [ `"module"` ] — Ponownie ładuje wszystkie symbole lub symbole dla określonego modułu.<br />-   `symbol list` [ `module` ] — Pokazuje aktualnie załadowane symbole dla wszystkich modułów lub określonego modułu.|  
 |**t**[**Hread**] [*newThread*] [-*nick pseudonim*`]`|Polecenie thread bez parametrów wyświetla wszystkie zarządzane wątki w bieżącym procesie. Wątki są zazwyczaj identyfikowane za pomocą numerów wątków, ale jeśli wątek ma przypisany pseudonim, jest on wyświetlany zamiast numeru. Możesz użyć parametru, `-nick` Aby przypisać pseudonim do wątku.<br /><br /> -   **wątek** `-nick` *ThreadName* przypisuje pseudonim do aktualnie działającego wątku.<br /><br /> Pseudonimy nie mogą być liczbami. Jeśli bieżący wątek ma już przypisany pseudonim, stary pseudonim jest zastępowany nowym. Jeśli nowy pseudonim jest ciągiem pustym (""), pseudonim dla bieżącego wątku jest usuwany, ale do wątku nie jest przypisywany nowy pseudonim.|  
 |**u**[**p**]|Przenosi aktywną ramkę stosu w górę.|  
 |**uwgc**[**uchwyt**] [*var*] &#124; [*Address*]|Drukuje zmienną śledzoną przez dojście. Dojście można określić przy użyciu nazwy lub adresu.|  
@@ -85,6 +87,7 @@ MDbg [ProgramName[arguments]] [options]
 |**x** [ `-c` *numSymbols*] [*Moduł*[ `!` *wzorzec*]]|Wyświetla funkcje, które pasują `pattern` do modułu.<br /><br /> Jeśli *numSymbols* jest określony, dane wyjściowe są ograniczone do podanej liczby. Jeśli `!` (wskazujące wyrażenie regularne) nie jest określony dla *wzorca*, wyświetlane są wszystkie funkcje. Jeśli nie podano *modułu* , zostaną wyświetlone wszystkie załadowane moduły. Symbole ( *~#* ) mogą służyć do ustawiania punktów przerwania za pomocą polecenia **Break** .|  
   
 ## <a name="remarks"></a>Uwagi  
+
  Kompilowanie aplikacji przeznaczonej do debugowania z użyciem flag specyficznych dla kompilatora może spowodować, że kompilator wygeneruje symbole debugowania. Więcej informacji na temat tych flag znajduje się w dokumentacji kompilatora. Może debugować zoptymalizowane aplikacje, ale niektóre informacje debugowania będą niedostępne. Na przykład nie będzie widocznych wiele zmiennych lokalnych, a wiersze źródłowe będą niedokładne.  
   
  Po skompilowaniu aplikacji wpisz **MDbg** w wierszu polecenia, aby rozpocząć sesję debugowania, jak pokazano w poniższym przykładzie.  

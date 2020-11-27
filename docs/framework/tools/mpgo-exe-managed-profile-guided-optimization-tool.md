@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Ngen.exe
 - Ngen.exe, profilers and native images
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
-ms.openlocfilehash: f8830b13cb64c737525f5399beb244aeb6d9817f
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 328c085035927b3f271a39a0ea3992dde29f5119
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95721897"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96279106"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (narzędzie optymalizacji sterowania zarządzanym profilem)
 
@@ -41,6 +41,7 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
 ```
 
 ## <a name="parameters"></a>Parametry
+
  We wszystkich argumentach programu Mpgo.exe nie jest rozróżniana wielkość liter. Polecenia są poprzedzone kreską.
 
 > [!NOTE]
@@ -65,6 +66,7 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
 |`-RemoveNativeImages`|Czyści z przebiegu, gdzie `–LeaveNativeImages` został określony. Jeśli określisz `-RemoveNativeImages` , Mpgo.exe ignoruje wszelkie argumenty z wyjątkiem `-64bit` i i `–AssemblyList` opuszcza po usunięciu wszystkich obrazów natywnych Instrumentacji.|
 
 ## <a name="remarks"></a>Uwagi
+
  `–AssemblyList` `- AssemblyListFile` W wierszu polecenia można wielokrotnie używać obu tych wartości.
 
  Jeśli nie określisz pełnych ścieżek podczas określania zestawów, Mpgo.exe będzie ich szukać w bieżącym katalogu. Jeśli określona ścieżka jest niepoprawna, Mpgo.exe wyświetla komunikat o błędzie, ale kontynuuje generowanie danych dla innych zestawów. Jeśli określisz zestaw, który nie jest ładowany podczas scenariusza szkoleniowego, żadne dane szkoleniowe nie są generowane dla tego zestawu.
@@ -99,6 +101,7 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
  Ten proces daje pewność, że wszystkie zestawy posiadają dane optymalizacji. Jeśli ewidencjonujesz zaktualizowane zoptymalizowane zestawy (kroki 1 i 2) częściej, wydajności będą spójniejsze w całym procesie tworzenia produktu.
 
 ## <a name="using-mpgoexe-from-visual-studio"></a>Przy użyciu Mpgo.exe z Visual Studio
+
  Mpgo.exe można uruchomić z programu Visual Studio (Zobacz artykuł [How to: Określanie zdarzeń kompilacji (C#)](/visualstudio/ide/how-to-specify-build-events-csharp)) z następującymi ograniczeniami:
 
 - Nie można używać ścieżek w cudzysłowie ze znakami ukośnika na końcu, ponieważ makra Visual Studio również domyślnie używają końcowych ukośników. (Na przykład `–OutDir "C:\Output Folder\"` jest nieprawidłowy). Aby obejść to ograniczenie, można wyjść z końcowym ukośnikiem. (Na przykład użyj `-OutDir "$(OutDir)\"` zamiast tego).
@@ -106,7 +109,9 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
 - Domyślnie program Mpgo.exe nie znajduje się w ścieżce kompilacji programu Visual Studio. Możesz dodać ścieżkę do programu Visual Studio lub podać pełną ścieżkę w wierszu polecenia Mpgo. Możesz użyć albo `–Scenario` `–Import` parametru w zdarzeniu po kompilacji w programie Visual Studio. Typowym procesem jest jednak użycie `–Scenario` jednego czasu z wiersz polecenia dla deweloperów dla programu Visual Studio, a następnie użycie `–Import` go do zaktualizowania zoptymalizowanych zestawów po każdej kompilacji; na przykład:  `"C:\Program Files\Microsoft Visual Studio 11.0\Team Tools\Performance Tools\mpgo.exe" -import "$(OutDir)tmp" -assemblylist "$(TargetPath)" -outdir "$(OutDir)\"` .
 
 <a name="samples"></a>
+
 ## <a name="examples"></a>Przykłady
+
  Następujące polecenie Mpgo.exe z wiersz polecenia dla deweloperów dla programu Visual Studio optymalizuje aplikację podatkową:
 
 ```console
@@ -125,7 +130,7 @@ mpgo –scenario "C:\MyApp\wav2wma.exe –input song1.wav –output song1.wma" �
 mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyTaxUtil2011.dll" -outdir C:\ReOptimized
 ```
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Ngen.exe (Generator obrazu natywnego)](ngen-exe-native-image-generator.md)
 - [Wiersze poleceń](developer-command-prompt-for-vs.md)
