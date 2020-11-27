@@ -2,17 +2,19 @@
 title: 'Transport: Przykład niestandardowych transakcji przeprowadzanych za pośrednictwem protokołu UDP'
 ms.date: 03/30/2017
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
-ms.openlocfilehash: ce1e6f0aedff46aaf58e22d8c23c37b03f8789dd
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1a5b6afd7dc078b0e6e270888973b34a91bfdb9f
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596542"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295668"
 ---
 # <a name="transport-custom-transactions-over-udp-sample"></a>Transport: Przykład niestandardowych transakcji przeprowadzanych za pośrednictwem protokołu UDP
+
 Ten przykład jest oparty na [transportach: przykład UDP](transport-udp.md) w ramach[rozszerzalności transportowej](transport-extensibility.md)Windows Communication Foundation (WCF). Rozszerza on przykład transportu UDP w celu obsługi niestandardowego przepływu transakcji i demonstruje użycie <xref:System.ServiceModel.Channels.TransactionMessageProperty> właściwości.  
   
 ## <a name="code-changes-in-the-udp-transport-sample"></a>Zmiany kodu w próbce transportu UDP  
+
  W celu pokazania przepływu transakcji przykład zmienia kontrakt usługi dla, `ICalculatorContract` Aby wymagać zakresu transakcji dla `CalculatorService.Add()` . W przykładzie dodano również dodatkowy `System.Guid` parametr do kontraktu `Add` operacji. Ten parametr służy do przekazywania identyfikatora transakcji klienta do usługi.  
   
 ```csharp  
@@ -46,7 +48,7 @@ byte[] txmsgBuffer = TransactionMessageBuffer.WriteTransactionMessageBuffer(txPr
 int bytesSent = this.socket.SendTo(txmsgBuffer, 0, txmsgBuffer.Length, SocketFlags.None, this.remoteEndPoint);  
 ```  
   
- `TransactionMessageBuffer.WriteTransactionMessageBuffer`to metoda pomocnika, która zawiera nowe funkcje umożliwiające scalenie tokenu propagacji dla bieżącej transakcji z jednostką komunikatów i umieszczenie go w buforze.  
+ `TransactionMessageBuffer.WriteTransactionMessageBuffer` to metoda pomocnika, która zawiera nowe funkcje umożliwiające scalenie tokenu propagacji dla bieżącej transakcji z jednostką komunikatów i umieszczenie go w buforze.  
   
  W przypadku funkcji niestandardowego transportu przepływów transakcji implementacja klienta musi wiedzieć, jakie operacje usługi wymagają przepływu transakcji i przekazać te informacje do usługi WCF. Powinien być również mechanizm przesyłania transakcji użytkownika do warstwy transportowej. Ten przykład używa "inspektorów komunikatów WCF", aby uzyskać te informacje. W tym miejscu zostanie wykonany Inspektor komunikatów klienta, który jest wywoływany `TransactionFlowInspector` , wykonuje następujące zadania:  
   
@@ -159,7 +161,7 @@ count = listenSocket.EndReceiveFrom(result, ref dummy);
 // read the transaction and message                       TransactionMessageBuffer.ReadTransactionMessageBuffer(buffer, count, out transaction, out msg);  
 ```  
   
- `TransactionMessageBuffer.ReadTransactionMessageBuffer()`to metoda pomocnika, która odwraca proces serializacji wykonywany przez `TransactionMessageBuffer.WriteTransactionMessageBuffer()` .  
+ `TransactionMessageBuffer.ReadTransactionMessageBuffer()` to metoda pomocnika, która odwraca proces serializacji wykonywany przez `TransactionMessageBuffer.WriteTransactionMessageBuffer()` .  
   
  Jeśli transakcja została przepływa w programie, jest ona dołączana do wiadomości w `TransactionMessageProperty` .  
   
@@ -178,7 +180,7 @@ if (transaction != null)
   
 1. Aby skompilować rozwiązanie, postępuj zgodnie z instrukcjami w temacie [Tworzenie przykładów Windows Communication Foundation](building-the-samples.md).  
   
-2. Bieżący przykład powinien być uruchamiany podobnie do [transportu: przykład protokołu UDP](transport-udp.md) . Aby go uruchomić, uruchom usługę przy użyciu programu UdpTestService. exe. W przypadku korzystania z systemu Windows Vista należy uruchomić usługę z podniesionymi uprawnieniami. Aby to zrobić, kliknij prawym przyciskiem myszy plik UdpTestService. exe w Eksploratorze plików, a następnie kliknij polecenie **Uruchom jako administrator**.  
+2. Bieżący przykład powinien być uruchamiany podobnie do [transportu: przykład protokołu UDP](transport-udp.md) . Aby uruchomić usługę, uruchom ją z UdpTestService.exe. W przypadku korzystania z systemu Windows Vista należy uruchomić usługę z podniesionymi uprawnieniami. Aby to zrobić, kliknij prawym przyciskiem myszy UdpTestService.exe w Eksploratorze plików, a następnie kliknij polecenie **Uruchom jako administrator**.  
   
 3. Spowoduje to utworzenie następujących danych wyjściowych.  
   
@@ -188,7 +190,7 @@ if (transaction != null)
     Press <ENTER> to terminate the service and start service from config...  
     ```  
   
-4. W tej chwili można uruchomić klienta programu, uruchamiając program UdpTestClient. exe. Dane wyjściowe generowane przez klienta programu są następujące.  
+4. W tej chwili można uruchomić klienta programu, uruchamiając UdpTestClient.exe. Dane wyjściowe generowane przez klienta programu są następujące.  
   
     ```console
     0  
@@ -231,13 +233,13 @@ if (transaction != null)
   
 8. Uruchomienie klienta w usłudze w ramach usługi daje teraz podobne dane wyjściowe tak jak wcześniej.  
   
-9. Aby ponownie wygenerować kod i konfigurację klienta przy użyciu programu Svcutil. exe, uruchom aplikację usługi, a następnie uruchom następujące polecenie Svcutil. exe z katalogu głównego przykładu.  
+9. Aby ponownie wygenerować kod i konfigurację klienta przy użyciu Svcutil.exe, uruchom aplikację usługi, a następnie uruchom następujące polecenie Svcutil.exe z katalogu głównego przykładu.  
   
     ```console  
     svcutil http://localhost:8000/udpsample/ /reference:UdpTransport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
     ```  
   
-10. Należy pamiętać, że Svcutil. exe nie generuje konfiguracji rozszerzenia powiązania dla `sampleProfileUdpBinding` ; należy dodać ją ręcznie.  
+10. Należy pamiętać, że Svcutil.exe nie generuje konfiguracji rozszerzenia powiązania dla `sampleProfileUdpBinding` ; należy dodać ją ręcznie.  
   
     ```xml  
     <configuration>  

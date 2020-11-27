@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b91cdc7a0d2e4258662155a840500ce21ab35760
-ms.sourcegitcommit: 0802ac583585110022beb6af8ea0b39188b77c43
+ms.openlocfilehash: 2819fb3857fa6d40a2b2e42eeaec2d9c6e50eef0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96032720"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96299356"
 ---
 ### <a name="authorization-addauthorization-overload-moved-to-different-assembly"></a>Autoryzacja: Przeciążenie metody addauthorization przeniesiono do innego zestawu
 
@@ -15,6 +15,7 @@ Nazwy podstawowych `AddAuthorization` metod, które były używane do znajdowani
 3.0
 
 #### <a name="old-behavior"></a>Stare zachowanie
+
 `AddAuthorization` Metody istniały w `Microsoft.AspNetCore.Authorization` .
 
 #### <a name="new-behavior"></a>Nowe zachowanie

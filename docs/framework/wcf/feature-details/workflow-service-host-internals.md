@@ -2,15 +2,16 @@
 title: Elementy wewnętrzne hosta usługi przepływu pracy
 ms.date: 03/30/2017
 ms.assetid: af44596f-bf6a-4149-9f04-08d8e8f45250
-ms.openlocfilehash: 7b47293211ee8143b1ce713c64ff1d5b22161b45
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 23ee0533d5386164dc95cb7fe2c61a626ea3f96e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594884"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295746"
 ---
 # <a name="workflow-service-host-internals"></a>Elementy wewnętrzne hosta usługi przepływu pracy
-<xref:System.ServiceModel.WorkflowServiceHost>dostarcza hosta dla usług przepływu pracy. Jest on odpowiedzialny za nasłuchiwanie przychodzących komunikatów i kierowanie ich do odpowiedniego wystąpienia usługi przepływu pracy, kontroluje wyładowywanie i utrzymywanie bezczynnych przepływów pracy oraz nie tylko. W tym temacie opisano sposób przetwarzania komunikatów przychodzących przez obiekt WorkflowServiceHost.  
+
+<xref:System.ServiceModel.WorkflowServiceHost> dostarcza hosta dla usług przepływu pracy. Jest on odpowiedzialny za nasłuchiwanie przychodzących komunikatów i kierowanie ich do odpowiedniego wystąpienia usługi przepływu pracy, kontroluje wyładowywanie i utrzymywanie bezczynnych przepływów pracy oraz nie tylko. W tym temacie opisano sposób przetwarzania komunikatów przychodzących przez obiekt WorkflowServiceHost.  
   
 ## <a name="workflowservicehost-overview"></a>Omówienie obiektu WorkflowServiceHost  
 
@@ -18,11 +19,12 @@ ms.locfileid: "84594884"
   
  ![Diagram przedstawiający przegląd hosta usługi przepływu pracy.](./media/workflow-service-host-internals/workflow-service-host-high-level-overview.gif)  
   
- Ten diagram pokazuje, że <xref:System.ServiceModel.WorkflowServiceHost> ładuje definicje usługi przepływu pracy z plików. xamlx i ładuje informacje o konfiguracji z pliku konfiguracyjnego. Ładuje również konfigurację śledzenia z profilu śledzenia. <xref:System.ServiceModel.WorkflowServiceHost>uwidacznia punkt końcowy sterowania przepływem pracy, który umożliwia wysyłanie operacji sterowania do wystąpień przepływu pracy.  Aby uzyskać więcej informacji, zobacz [przykład punktu końcowego kontroli przepływu pracy](workflow-control-endpoint.md).  
+ Ten diagram pokazuje, że <xref:System.ServiceModel.WorkflowServiceHost> ładuje definicje usługi przepływu pracy z plików. xamlx i ładuje informacje o konfiguracji z pliku konfiguracyjnego. Ładuje również konfigurację śledzenia z profilu śledzenia. <xref:System.ServiceModel.WorkflowServiceHost> uwidacznia punkt końcowy sterowania przepływem pracy, który umożliwia wysyłanie operacji sterowania do wystąpień przepływu pracy.  Aby uzyskać więcej informacji, zobacz [przykład punktu końcowego kontroli przepływu pracy](workflow-control-endpoint.md).  
   
- <xref:System.ServiceModel.WorkflowServiceHost>udostępnia również punkty końcowe aplikacji, które nasłuchują przychodzących komunikatów aplikacji. Po nadejściu komunikatu przychodzącego jest on wysyłany do odpowiedniego wystąpienia usługi przepływu pracy (jeśli jest aktualnie załadowana). W razie konieczności zostanie utworzone nowe wystąpienie przepływu pracy. Lub jeśli istniejące wystąpienie zostało utrwalone, jest ładowane z magazynu trwałości.  
+ <xref:System.ServiceModel.WorkflowServiceHost> udostępnia również punkty końcowe aplikacji, które nasłuchują przychodzących komunikatów aplikacji. Po nadejściu komunikatu przychodzącego jest on wysyłany do odpowiedniego wystąpienia usługi przepływu pracy (jeśli jest aktualnie załadowana). W razie konieczności zostanie utworzone nowe wystąpienie przepływu pracy. Lub jeśli istniejące wystąpienie zostało utrwalone, jest ładowane z magazynu trwałości.  
   
 ## <a name="workflowservicehost-details"></a>Szczegóły obiektu WorkflowServiceHost  
+
  Na poniższym diagramie przedstawiono sposób <xref:System.ServiceModel.WorkflowServiceHost> obsługi komunikatów na nieco bardziej szczegółowy:  
   
  ![Diagram przedstawiający przepływ komunikatów hosta usługi przepływu pracy.](./media/workflow-service-host-internals/workflow-service-host-message-flow.gif)  
@@ -33,7 +35,7 @@ ms.locfileid: "84594884"
   
  ![Diagram pokazujący przepływ, gdy jest wywoływany obiekt WorkflowServiceHost. Open.](./media/workflow-service-host-internals/workflow-service-host-open.gif)  
   
- Przepływ pracy jest ładowany z XAML i tworzone jest drzewo aktywności. <xref:System.ServiceModel.WorkflowServiceHost>przegląda drzewo aktywności i tworzy Opis usługi. Konfiguracja została zastosowana do hosta. Na koniec Host rozpocznie nasłuchiwanie komunikatów przychodzących.  
+ Przepływ pracy jest ładowany z XAML i tworzone jest drzewo aktywności. <xref:System.ServiceModel.WorkflowServiceHost> przegląda drzewo aktywności i tworzy Opis usługi. Konfiguracja została zastosowana do hosta. Na koniec Host rozpocznie nasłuchiwanie komunikatów przychodzących.  
   
  Na poniższej ilustracji pokazano, co się stało, <xref:System.ServiceModel.WorkflowServiceHost> gdy odbierze komunikat powiązany dla działania Receive, które ma ustawioną CanCreateInstance `true` :  
   

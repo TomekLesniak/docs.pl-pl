@@ -2,14 +2,15 @@
 title: ServiceBehaviorAttribute
 ms.date: 03/30/2017
 ms.assetid: 5faa266f-587f-4e03-828d-1c7dd5acfe65
-ms.openlocfilehash: b6221e93f10b87a368bd594932a8c36ae14df8f3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e3716d42d479bcbdfd900b4fd2e335576a71574b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61957017"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96295603"
 ---
 # <a name="servicebehaviorattribute"></a>ServiceBehaviorAttribute
+
 ServiceBehaviorAttribute  
   
 ## <a name="syntax"></a>Składnia  
@@ -36,25 +37,30 @@ class ServiceBehaviorAttribute : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa ServiceBehaviorAttribute nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa ServiceBehaviorAttribute ma następujące właściwości:  
   
 ### <a name="automaticsessionshutdown"></a>AutomaticSessionShutdown  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wskazuje, czy należy automatycznie Zamknij sesję, gdy klient zamyka sesję danych wyjściowych.  
+ Wskazuje, czy sesja ma być automatycznie zamykana, gdy klient zamknie sesję wyjściową.  
   
-### <a name="concurrencymode"></a>Właściwość ConcurrencyMode  
+### <a name="concurrencymode"></a>Obsługują  
+
  Typ danych: ciąg  
 Typ dostępu: tylko do odczytu  
   
  Wskazuje, czy usługa obsługuje jeden wątek, wiele wątków lub wywołania współużytkowane.  
   
 ### <a name="configurationname"></a>ConfigurationName  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -62,20 +68,23 @@ Typ dostępu: tylko do odczytu
  Nazwa konfiguracji usługi.  
   
 ### <a name="ignoreextensiondataobject"></a>IgnoreExtensionDataObject  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Określa, czy wysyłać dane serializacji nieznany podczas transmisji.  
+ Określa, czy wysyłać nieznane dane serializacji do sieci.  
   
 ### <a name="includeexceptiondetailinfaults"></a>IncludeExceptionDetailInFaults  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Określa, czy chcesz uwzględnić informacje o zarządzanym wyjątku w szczegółowych informacji o błędach SOAP zwracanych do klientów na potrzeby debugowania.  
+ Określa, czy informacje o zarządzanych wyjątkach mają być dołączane do szczegółowych informacji o błędach SOAP zwracanych do klientów na potrzeby debugowania.  
   
-### <a name="instancecontextmode"></a>InstanceContextMode  
+### <a name="instancecontextmode"></a>Tryb InstanceContextmode  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -83,13 +92,15 @@ Typ dostępu: tylko do odczytu
  Określa, kiedy tworzony jest nowy obiekt usługi.  
   
 ### <a name="maxitemsinobjectgraph"></a>MaxItemsInObjectGraph  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalną liczbę elementów dozwoloną w Zserializowany obiekt.  
+ Maksymalna liczba elementów dozwolona w serializowanym obiekcie.  
   
 ### <a name="name"></a>Nazwa  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -97,27 +108,31 @@ Typ dostępu: tylko do odczytu
  Atrybut nazwy usługi w języku WSDL.  
   
 ### <a name="namespace"></a>Przestrzeń nazw  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Docelowy obszar nazw usługi w języku WSDL.  
+ Docelowa przestrzeń nazw usługi w języku WSDL.  
   
-### <a name="releaseserviceinstanceontransactioncomplete"></a>ReleaseServiceInstanceOnTransactionComplete  
+### <a name="releaseserviceinstanceontransactioncomplete"></a>Ustawion  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Określa, czy obiekt usługi zostanie odtworzony po zakończeniu bieżącej transakcji.  
+ Określa, czy obiekt usługi jest odtwarzany po zakończeniu bieżącej transakcji.  
   
 ### <a name="transactionautocompleteonsessionclose"></a>TransactionAutoCompleteOnSessionClose  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Określa, czy oczekujące transakcje są wykonywane po zamknięciu bieżącej sesji.  
+ Określa, czy oczekujące transakcje są kończone podczas zamykania bieżącej sesji.  
   
 ### <a name="transactionisolationlevel"></a>TransactionIsolationLevel  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -125,20 +140,23 @@ Typ dostępu: tylko do odczytu
  Określa poziom izolacji transakcji.  
   
 ### <a name="transactiontimeout"></a>TransactionTimeout  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Okres, w którym należy wykonać transakcję.  
+ Okres, w którym transakcja musi zostać zakończona.  
   
 ### <a name="usesynchronizationcontext"></a>UseSynchronizationContext  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Określa, czy umożliwia wybieranie wykonywanie wątków w bieżącym kontekście synchronizacji.  
+ Określa, czy używać bieżącego kontekstu synchronizacji do wybierania wykonywania wątku.  
   
 ### <a name="validatemustunderstand"></a>ValidateMustUnderstand  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
@@ -147,10 +165,10 @@ Typ dostępu: tylko do odczytu
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.ServiceBehaviorAttribute>
