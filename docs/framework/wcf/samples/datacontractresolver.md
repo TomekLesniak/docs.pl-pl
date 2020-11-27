@@ -2,17 +2,19 @@
 title: DataContractResolver
 ms.date: 03/30/2017
 ms.assetid: 6c200c02-bc14-4b8d-bbab-9da31185b805
-ms.openlocfilehash: c2a2afaa450e9abe17b62f6be07a2dc41459ca20
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6c04a055a5ce87ac285d05b086c22b900bc92145
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600026"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253651"
 ---
 # <a name="datacontractresolver"></a>DataContractResolver
+
 Ten przykład pokazuje, jak procesy serializacji i deserializacji można dostosować za pomocą <xref:System.Runtime.Serialization.DataContractResolver> klasy. Ten przykład pokazuje, jak używać obiektu DataContractResolver do mapowania typów CLR do i z reprezentacji xsi: Type podczas serializacji i deserializacji.
 
 ## <a name="sample-details"></a>Przykładowe szczegóły
+
  Przykład definiuje następujące typy CLR.
 
 ```csharp

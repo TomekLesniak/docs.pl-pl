@@ -1,15 +1,16 @@
 ---
-title: 'Instrukcje: Tworzenie usługi zwracającej dowolne dane za pomocą modelu programowania protokołu HTTP sieci Web w programie WCF'
+title: 'Instrukcje: tworzenie usługi zwracającej dowolne dane za pomocą modelu programowania internetowego protokołu HTTP w programie WCF'
 ms.date: 03/30/2017
 ms.assetid: 0283955a-b4ae-458d-ad9e-6fbb6f529e3d
-ms.openlocfilehash: 9753fbc9b333cb7e89ddc8dff030cb1f62ede23b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4ed3e5269be5b636b348ff0efe44c49dae5335e2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600364"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253898"
 ---
-# <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a>Instrukcje: Tworzenie usługi zwracającej dowolne dane za pomocą modelu programowania protokołu HTTP sieci Web w programie WCF
+# <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a>Instrukcje: tworzenie usługi zwracającej dowolne dane za pomocą modelu programowania internetowego protokołu HTTP w programie WCF
+
 Czasami deweloperzy muszą mieć pełną kontrolę nad sposobem zwracania danych z operacji usługi. Dzieje się tak w przypadku, gdy operacja usługi musi zwrócić dane w formacie nieobsługiwanym przez WCF. W tym temacie omówiono korzystanie z modelu programowania HTTP sieci WEB w programie WCF w celu utworzenia takiej usługi. Ta usługa ma jedną operację zwracającą strumień.  
   
 ### <a name="to-implement-the-service-contract"></a>Aby zaimplementować kontrakt usługi  
@@ -51,7 +52,7 @@ Czasami deweloperzy muszą mieć pełną kontrolę nad sposobem zwracania danych
     }
     ```  
   
-     Zwróć uwagę na sekundę do ostatniego wiersza kodu:`WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  
+     Zwróć uwagę na sekundę do ostatniego wiersza kodu: `WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  
   
      Spowoduje to ustawienie nagłówka typu zawartości `"image/jpeg"` . Mimo że ten przykład pokazuje, jak zwrócić plik. jpg, można go zmodyfikować w taki sposób, aby zwracał dowolny wymagany typ danych w dowolnym formacie. Operacja musi pobierać lub generować dane, a następnie zapisywać je w strumieniu.  
   
@@ -108,6 +109,7 @@ Czasami deweloperzy muszą mieć pełną kontrolę nad sposobem zwracania danych
 2. Otwórz program Internet Explorer i wpisz `http://localhost:8000/Service/GetImage?width=50&height=40` żółty prostokąt z niebieską ukośną linią w środku.  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej znajduje się kompletna lista kodu dla tego tematu.  
   
 ```csharp  
@@ -173,7 +175,7 @@ namespace RawImageService
   
 ## <a name="compiling-the-code"></a>Kompilowanie kodu  
   
-- Podczas kompilowania przykładowego odwołania do kodu system. ServiceModel. dll i system. ServiceModel. Web. dll.  
+- Podczas kompilowania przykładowego odwołania do kodu System.ServiceModel.dll i System.ServiceModel.Web.dll.  
   
 ## <a name="see-also"></a>Zobacz też
 

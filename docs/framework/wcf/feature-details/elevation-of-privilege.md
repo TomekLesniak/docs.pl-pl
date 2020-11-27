@@ -1,26 +1,29 @@
 ---
-title: Podniesienie uprawnień
+title: Elevation of Privilege (podniesienie uprawnień)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - elevation of privilege [WCF]
 - security [WCF], elevation of privilege
 ms.assetid: 146e1c66-2a76-4ed3-98a5-fd77851a06d9
-ms.openlocfilehash: 823b41f86080d4802f76fe69865279a7c3506238
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9c62e11eedaa3fa194522695a33bccf210d390df
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597413"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254223"
 ---
-# <a name="elevation-of-privilege"></a>Podniesienie uprawnień
+# <a name="elevation-of-privilege"></a>Elevation of Privilege (podniesienie uprawnień)
+
 *Podniesienie* uprawnień w wyniku udzielenia uprawnień autoryzacji osoby atakującej poza wstępnie udzielonym. Na przykład osoba atakująca z zestawem uprawnień "tylko do odczytu" w dowolnej postaci podnosi poziom w taki sposób, aby obejmował "Odczyt i zapis".  
   
 ## <a name="trusted-sts-should-sign-saml-token-claims"></a>Zaufane usługi STS powinny podpisywać oświadczenia tokenów SAML  
+
  Token potwierdzeń zabezpieczeń (SAML) jest ogólnym tokenem XML, który jest domyślnym typem dla wystawionych tokenów. Token SAML może być skonstruowany przez usługę tokenu zabezpieczającego (STS), którą usługa sieci Web jest zaufana w typowej wymianie. Tokeny SAML zawierają oświadczenia w instrukcjach. Osoba atakująca może skopiować oświadczenia z prawidłowego tokenu, utworzyć nowy token SAML i podpisać go innym wystawcą. Celem jest określenie, czy serwer sprawdza poprawność wystawców i, jeśli nie, użyje luki w celu skonstruowania tokenów SAML, które zezwalają na uprawnienia poza tymi, które są przeznaczone dla zaufanej usługi STS.  
   
- <xref:System.IdentityModel.Tokens.SamlAssertion>Klasa weryfikuje podpis cyfrowy zawarty w tokenie SAML i domyślnie <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> wymaga podpisania tokenów SAML przy użyciu certyfikatu X. 509, który jest prawidłowy, gdy <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> Klasa jest ustawiona na <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust> . `ChainTrust`sam tryb jest niewystarczający, aby określić, czy Wystawca tokenu SAML jest zaufany. Usługi, które wymagają bardziej szczegółowego modelu zaufania, mogą użyć zasad autoryzacji i wymuszania do sprawdzenia wystawcy zestawów roszczeń utworzonych przez uwierzytelnianie wystawionego tokenu lub użyć ustawień weryfikacji X. 509 w <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> celu ograniczenia zestawu dozwolonych certyfikatów podpisywania. Aby uzyskać więcej informacji, zobacz [Zarządzanie oświadczeniami i autoryzacją za pomocą modelu tożsamości](managing-claims-and-authorization-with-the-identity-model.md) oraz [Federacji i wystawionych tokenów](federation-and-issued-tokens.md).  
+ <xref:System.IdentityModel.Tokens.SamlAssertion>Klasa weryfikuje podpis cyfrowy zawarty w tokenie SAML i domyślnie <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> wymaga podpisania tokenów SAML przy użyciu certyfikatu X. 509, który jest prawidłowy, gdy <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> Klasa jest ustawiona na <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust> . `ChainTrust` sam tryb jest niewystarczający, aby określić, czy Wystawca tokenu SAML jest zaufany. Usługi, które wymagają bardziej szczegółowego modelu zaufania, mogą użyć zasad autoryzacji i wymuszania do sprawdzenia wystawcy zestawów roszczeń utworzonych przez uwierzytelnianie wystawionego tokenu lub użyć ustawień weryfikacji X. 509 w <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> celu ograniczenia zestawu dozwolonych certyfikatów podpisywania. Aby uzyskać więcej informacji, zobacz [Zarządzanie oświadczeniami i autoryzacją za pomocą modelu tożsamości](managing-claims-and-authorization-with-the-identity-model.md) oraz [Federacji i wystawionych tokenów](federation-and-issued-tokens.md).  
   
 ## <a name="switching-identity-without-a-security-context"></a>Przełączanie tożsamości bez kontekstu zabezpieczeń  
+
  Poniższe zasady dotyczą tylko programu WinFX.  
   
  W przypadku ustanowienia połączenia między klientem a serwerem tożsamość klienta nie zmienia się, z wyjątkiem sytuacji, gdy jest otwarty klient WCF, jeśli spełnione są wszystkie następujące warunki:  
@@ -38,6 +41,7 @@ ms.locfileid: "84597413"
  Jeśli chcesz mieć deterministyczne zachowanie podczas korzystania z uwierzytelniania systemu Windows razem z personifikacją, musisz jawnie ustawić poświadczenia systemu Windows lub ustanowić kontekst zabezpieczeń z usługą. W tym celu należy użyć sesji zabezpieczeń wiadomości lub sesji zabezpieczeń transportu. Na przykład transport net. TCP może zapewnić sesję zabezpieczeń transportu. Ponadto podczas wywoływania usługi należy używać tylko synchronicznej wersji operacji klienta. W przypadku ustanowienia kontekstu zabezpieczeń wiadomości nie powinno być konieczne pozostawienie połączenia z usługą dłużej niż skonfigurowany okres odnawiania sesji, ponieważ tożsamość może być również zmieniana podczas procesu odnawiania sesji.  
   
 ### <a name="credentials-capture"></a>Przechwytywanie poświadczeń  
+
  Poniższe zasady dotyczą .NET Framework 3,5 i kolejnych wersji.  
   
  Poświadczenia używane przez klienta lub usługę są oparte na bieżącym wątku kontekstu. Poświadczenia są uzyskiwane, gdy `Open` wywoływana jest metoda (lub `BeginOpen` , dla wywołań asynchronicznych) klienta lub usługi. Dla <xref:System.ServiceModel.ServiceHost> <xref:System.ServiceModel.ClientBase%601> klas i, `Open` `BeginOpen` metody i dziedziczą z <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> <xref:System.ServiceModel.Channels.CommunicationObject.BeginOpen%2A> metod i <xref:System.ServiceModel.Channels.CommunicationObject> klasy.  
@@ -46,6 +50,7 @@ ms.locfileid: "84597413"
 > W przypadku korzystania z `BeginOpen` metody przechwycone poświadczenia nie mogą być poświadczeniami procesu wywołującego metodę.  
   
 ## <a name="token-caches-allow-replay-using-obsolete-data"></a>Pamięć podręczna tokenów zezwala na powtarzanie przy użyciu przestarzałych danych  
+
  Usługa WCF korzysta z funkcji urzędu zabezpieczeń lokalnych (LSA) `LogonUser` do uwierzytelniania użytkowników według nazwy użytkownika i hasła. Ponieważ funkcja logowania jest kosztowną operacją, WCF pozwala na buforowanie tokenów reprezentujących użytkowników uwierzytelnionych w celu zwiększenia wydajności. Mechanizm buforowania zapisuje wyniki `LogonUser` dla kolejnych użycia. Ten mechanizm jest domyślnie wyłączony; Aby ją włączyć, należy ustawić <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A> Właściwość na `true` lub użyć `cacheLogonTokens` atrybutu [\<userNameAuthentication>](../../configure-apps/file-schema/wcf/usernameauthentication.md) .  
   
  Można ustawić czas wygaśnięcia (TTL) dla buforowanych tokenów przez ustawienie <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> właściwości na <xref:System.TimeSpan> lub użyć `cachedLogonTokenLifetime` atrybutu `userNameAuthentication` elementu; wartość domyślna to 15 minut. Należy pamiętać, że gdy token jest buforowany, każdy klient, który przedstawia taką samą nazwę użytkownika i hasło, może używać tokenu, nawet jeśli konto użytkownika zostanie usunięte z systemu Windows lub zmieniono jego hasło. Do momentu wygaśnięcia czasu wygaśnięcia i usunięcia tokenu z pamięci podręcznej program WCF zezwoli użytkownikowi (prawdopodobnie złośliwemu) na uwierzytelnienie.  
@@ -53,6 +58,7 @@ ms.locfileid: "84597413"
  Aby wyeliminować ten problem: Zmniejsz okno ataków, ustawiając `cachedLogonTokenLifetime` wartość na najkrótszy czas na potrzeby użytkowników.  
   
 ## <a name="issued-token-authorization-expiration-reset-to-large-value"></a>Autoryzacja wystawionego tokenu: Resetowanie czasu wygaśnięcia do wartości dużej  
+
  W pewnych warunkach <xref:System.IdentityModel.Policy.AuthorizationContext.ExpirationTime%2A> Właściwość <xref:System.IdentityModel.Policy.AuthorizationContext> może być ustawiona na nieoczekiwaną większą wartość ( <xref:System.DateTime.MaxValue> wartość pola minus jeden dzień lub 20 grudnia 9999).  
   
  Dzieje się tak w przypadku użycia <xref:System.ServiceModel.WSFederationHttpBinding> i dowolnego powiązania dostarczonego przez system, które ma wystawiony token jako typ poświadczeń klienta.  
@@ -70,6 +76,7 @@ ms.locfileid: "84597413"
  Aby temu zapobiec, zasady autoryzacji muszą sprawdzać akcję i czas wygaśnięcia poszczególnych zasad autoryzacji.  
   
 ## <a name="the-service-uses-a-different-certificate-than-the-client-intended"></a>Usługa używa innego certyfikatu niż zamierzony klient  
+
  W pewnych warunkach klient może cyfrowo podpisać komunikat przy użyciu certyfikatu X. 509, a usługa pobiera inny certyfikat niż przewidziany.  
   
  Może się to zdarzyć w następujących okolicznościach:  
@@ -85,8 +92,8 @@ ms.locfileid: "84597413"
 ## <a name="see-also"></a>Zobacz też
 
 - [Zagadnienia dotyczące zabezpieczeń](security-considerations-in-wcf.md)
-- [Ujawnianie informacji](information-disclosure.md)
-- [Odmowa usługi](denial-of-service.md)
+- [Information Disclosure (ujawnienie informacji)](information-disclosure.md)
+- [Denial of Service (odmowa usługi)](denial-of-service.md)
 - [Ataki oparte na metodzie powtórzeń](replay-attacks.md)
-- [Manipulowanie](tampering.md)
+- [Tampering (manipulowanie)](tampering.md)
 - [Nieobsługiwane scenariusze](unsupported-scenarios.md)

@@ -3,19 +3,21 @@ title: Sesje, tworzenie wystąpień i współbieżność
 description: Dowiedz się więcej na temat sesji, tworzenia wystąpień i współbieżności, sposobu ich używania oraz interakcji między nimi w WFC.
 ms.date: 03/30/2017
 ms.assetid: 50797a3b-7678-44ed-8138-49ac1602f35b
-ms.openlocfilehash: 41eef5a962c702eebd6b9a34607b542ec6bbd97b
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 7335d1c4d4ddf5247fc42c70cdc5e8ae33be7292
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246548"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254210"
 ---
 # <a name="sessions-instancing-and-concurrency"></a>Sesje, tworzenie wystąpień i współbieżność
+
 *Sesja* jest korelacją wszystkich komunikatów wysyłanych między dwoma punktami końcowymi. Tworzenie *wystąpień* odnosi się do kontrolowania okresu istnienia obiektów usługi zdefiniowanej przez użytkownika i powiązanych z nimi <xref:System.ServiceModel.InstanceContext> obiektów. *Współbieżność* to termin nadawany kontroli nad liczbą wątków wykonywanych w <xref:System.ServiceModel.InstanceContext> tym samym czasie.  
   
  W tym temacie opisano te ustawienia, sposób ich używania oraz różne interakcje między nimi.  
   
 ## <a name="sessions"></a>Sesje  
+
  Gdy kontrakt usługi ustawia <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> Właściwość na <xref:System.ServiceModel.SessionMode.Required?displayProperty=nameWithType> , ten kontrakt mówi, że wszystkie wywołania (czyli podstawowe wymiany komunikatów, które obsługują wywołania) muszą być częścią tej samej konwersacji. Jeśli kontrakt Określa, że zezwala na sesje, ale go nie wymaga, klienci mogą łączyć się i ustanawiać sesję. Jeśli sesja zostanie zakończona, a wiadomość jest wysyłana za pośrednictwem tego samego kanału opartego na sesji, zgłaszany jest wyjątek.  
   
  Sesje WCF mają następujące główne funkcje koncepcyjne:  
@@ -39,6 +41,7 @@ ms.locfileid: "85246548"
  Aplikacje klienckie i aplikacje usług współpracują z sesjami na różne sposoby. Aplikacje klienckie inicjują sesje, a następnie odbierają i przetwarzają komunikaty wysyłane w ramach sesji. Aplikacje usług mogą używać sesji jako punktu rozszerzalności, aby dodać dodatkowe zachowanie. Jest to realizowane przez pracę bezpośrednio z <xref:System.ServiceModel.InstanceContext> lub implementacją niestandardowego dostawcy kontekstu wystąpienia.  
   
 ## <a name="instancing"></a>Tworzenie wystąpienia  
+
  Zachowanie tworzenia wystąpienia (ustawiane przy użyciu <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> Właściwości) kontroluje, w jaki sposób <xref:System.ServiceModel.InstanceContext> jest tworzony w odpowiedzi na komunikaty przychodzące. Domyślnie każda z nich <xref:System.ServiceModel.InstanceContext> jest skojarzona z jednym obiektem zdefiniowanym przez użytkownika, więc (w domyślnym przypadku) ustawienie <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> Właściwości również kontroluje tworzenie obiektów usługi zdefiniowane przez użytkownika. <xref:System.ServiceModel.InstanceContextMode>Wyliczenie definiuje tryby wystąpienia.  
   
  Dostępne są następujące tryby wystąpienia:  
@@ -61,7 +64,8 @@ public class CalculatorService : ICalculatorInstance
   
  A podczas gdy <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> Właściwość kontroluje, jak często <xref:System.ServiceModel.InstanceContext> jest wydawana, <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> a <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A?displayProperty=nameWithType> właściwości i kontroluje, kiedy obiekt usługi jest wydawany.  
   
-### <a name="well-known-singleton-services"></a>Dobrze znane usługi pojedyncze  
+### <a name="well-known-singleton-services"></a>Well-Known pojedynczych usług  
+
  Jedna odmiana obiektów usługi pojedynczego wystąpienia jest czasami przydatna: można utworzyć obiekt usługi samodzielnie i utworzyć hosta usługi za pomocą tego obiektu. W tym celu należy również ustawić <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> Właściwość na <xref:System.ServiceModel.InstanceContextMode.Single> lub wyjątek jest zgłaszany podczas otwierania hosta usługi.  
   
  Użyj <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29> konstruktora, aby utworzyć taką usługę. Jest to alternatywa dla wdrożenia niestandardowego, <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> gdy chcesz podać konkretne wystąpienie obiektu do użycia przez pojedynczą usługę. Można użyć tego przeciążenia, gdy typ implementacji usługi jest trudny do skonstruowania (na przykład, jeśli nie implementuje konstruktora publicznego bez parametrów).  
@@ -69,9 +73,11 @@ public class CalculatorService : ICalculatorInstance
  Należy pamiętać, że gdy obiekt jest dostarczany do tego konstruktora, niektóre funkcje związane z zachowaniem wystąpienia Windows Communication Foundation (WCF) działają inaczej. Na przykład wywoływanie nie <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> ma wpływu na wystąpienie pojedynczego obiektu. Podobnie wszystkie inne mechanizmy zwalniania wystąpień są ignorowane. <xref:System.ServiceModel.ServiceHost>Zawsze zachowuje się tak, jakby <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> Właściwość została ustawiona na <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> dla wszystkich operacji.  
   
 ### <a name="sharing-instancecontext-objects"></a>Udostępnianie obiektów InstanceContext  
+
  Można również kontrolować, które kanały sesji lub wywołania są skojarzone z tym <xref:System.ServiceModel.InstanceContext> obiektem przez wykonanie tego skojarzenia samodzielnie.  
   
 ## <a name="concurrency"></a>Współbieżność  
+
  Współbieżność to kontrola liczby wątków aktywnych w <xref:System.ServiceModel.InstanceContext> dowolnym momencie. Jest to kontrolowane przy użyciu <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A?displayProperty=nameWithType> z <xref:System.ServiceModel.ConcurrencyMode> wyliczeniem.  
   
  Dostępne są następujące trzy tryby współbieżności:  
@@ -98,6 +104,7 @@ public class CalculatorService : ICalculatorConcurrency
 ```  
   
 ## <a name="sessions-interact-with-instancecontext-settings"></a>Sesje współpracują z ustawieniami InstanceContext  
+
  Sesje i <xref:System.ServiceModel.InstanceContext> współdziałanie w zależności od kombinacji wartości <xref:System.ServiceModel.SessionMode> wyliczenia w kontrakcie i <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> Właściwości implementacji usługi, która kontroluje skojarzenie między kanałami i określonymi obiektami usługi.  
   
  W poniższej tabeli przedstawiono wynik przychodzącego kanału obsługującego sesje lub nieobsługujący sesji, które podano kombinację wartości <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> właściwości i <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> właściwości.  
@@ -111,7 +118,7 @@ public class CalculatorService : ICalculatorConcurrency
 ## <a name="see-also"></a>Zobacz też
 
 - [Korzystanie z sesji](../using-sessions.md)
-- [Instrukcje: tworzenie usługi wymagającej użycia sesji](how-to-create-a-service-that-requires-sessions.md)
+- [Instrukcje: tworzenie usługi, która wymaga użycia sesji](how-to-create-a-service-that-requires-sessions.md)
 - [Instrukcje: tworzenie wystąpienia usługi kontroli](how-to-control-service-instancing.md)
 - [Współbieżność](../samples/concurrency.md)
 - [Tworzenie wystąpienia](../samples/instancing.md)

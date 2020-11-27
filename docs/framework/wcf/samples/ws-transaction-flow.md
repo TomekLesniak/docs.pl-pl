@@ -4,15 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Transactions
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
-ms.openlocfilehash: 1fbde53289c147d8ea273b9c86e65cbb8e262b30
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7fd4968bbe4e1a3dafbfc35cc0617cef7083d291
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596413"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96252403"
 ---
 # <a name="ws-transaction-flow"></a>Przepływ transakcji WS
-Ten przykład ilustruje użycie transakcji skoordynowanej przez klienta oraz opcji klienta i serwera dla przepływu transakcji przy użyciu protokołu transakcji WS-lub OleTransactions. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md) implementującej usługę kalkulatora, ale operacje są przypisywane do zademonstrowania użycia `TransactionFlowAttribute` z wyliczeniem **parametru TransactionFlowOption** , aby określić, jaki przepływ transakcji jest włączony. W ramach przetworzonej transakcji dziennik żądanych operacji jest zapisywana w bazie danych i utrzymuje się do momentu ukończenia transakcji skoordynowanej klienta — Jeśli transakcja klienta nie zostanie ukończona, transakcja usługi sieci Web gwarantuje, że odpowiednie aktualizacje bazy danych nie zostaną zatwierdzone.  
+
+Ten przykład ilustruje użycie transakcji skoordynowanej przez klienta oraz opcji klienta i serwera dla przepływu transakcji przy użyciu WS-Atomic transakcji lub protokołu OleTransactions. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md) implementującej usługę kalkulatora, ale operacje są przypisywane do zademonstrowania użycia `TransactionFlowAttribute` z wyliczeniem **parametru TransactionFlowOption** , aby określić, jaki przepływ transakcji jest włączony. W ramach przetworzonej transakcji dziennik żądanych operacji jest zapisywana w bazie danych i utrzymuje się do momentu ukończenia transakcji skoordynowanej klienta — Jeśli transakcja klienta nie zostanie ukończona, transakcja usługi sieci Web gwarantuje, że odpowiednie aktualizacje bazy danych nie zostaną zatwierdzone.  
   
 > [!NOTE]
 > Procedura instalacji i instrukcje dotyczące kompilacji dla tego przykładu znajdują się na końcu tego tematu.  
@@ -225,14 +226,14 @@ Press <ENTER> to terminate the service.
   
 1. Aby skompilować wersję rozwiązania w języku C# lub Visual Basic .NET, postępuj zgodnie z instrukcjami w temacie [Tworzenie przykładów Windows Communication Foundation](building-the-samples.md)  
   
-2. Upewnij się, że masz zainstalowaną wersję SQL Server Express lub SQL Server i że parametry połączenia zostały prawidłowo ustawione w pliku konfiguracyjnym aplikacji usługi. Aby uruchomić przykład bez korzystania z bazy danych, ustaw `usingSql` wartość w pliku konfiguracyjnym aplikacji usługi na`false`  
+2. Upewnij się, że masz zainstalowaną wersję SQL Server Express lub SQL Server i że parametry połączenia zostały prawidłowo ustawione w pliku konfiguracyjnym aplikacji usługi. Aby uruchomić przykład bez korzystania z bazy danych, ustaw `usingSql` wartość w pliku konfiguracyjnym aplikacji usługi na `false`  
   
 3. Aby uruchomić przykład w konfiguracji na jednym lub wielu komputerach, postępuj zgodnie z instrukcjami w temacie [Uruchamianie przykładów Windows Communication Foundation](running-the-samples.md).  
   
     > [!NOTE]
-    > W przypadku konfiguracji między maszynami Włącz Distributed Transaction Coordinator przy użyciu poniższych instrukcji i użyj narzędzia WsatConfig. exe z Windows SDK, aby włączyć obsługę transakcji WCF w sieci. Aby uzyskać informacje na temat konfigurowania programu WsatConfig. exe, zobacz [Konfigurowanie obsługi transakcji WS-AT](../feature-details/configuring-ws-atomic-transaction-support.md).  
+    > W przypadku konfiguracji między maszynami Włącz Distributed Transaction Coordinator przy użyciu poniższych instrukcji i użyj narzędzia WsatConfig.exe z Windows SDK, aby włączyć obsługę transakcji WCF w sieci. Informacje dotyczące konfigurowania WsatConfig.exe można znaleźć w temacie [Configuring WS-Atomic Transaction Support](../feature-details/configuring-ws-atomic-transaction-support.md).  
   
- Bez względu na to, czy uruchamiasz przykład na tym samym komputerze, czy na różnych komputerach, należy skonfigurować usługę Microsoft Distributed Transaction Coordinator (MSDTC) w celu włączenia przepływu transakcji sieci i użyć narzędzia WsatConfig. exe, aby włączyć obsługę sieci transakcji WCF.  
+ Niezależnie od tego, czy uruchamiasz przykład na tym samym komputerze, czy na różnych komputerach, musisz skonfigurować usługę Microsoft Distributed Transaction Coordinator (MSDTC), aby włączyć przepływ transakcji sieciowych i użyć narzędzia WsatConfig.exe, aby włączyć obsługę sieci transakcji WCF.  
   
 ### <a name="to-configure-the-microsoft-distributed-transaction-coordinator-msdtc-to-support-running-the-sample"></a>Aby skonfigurować Distributed Transaction Coordinator firmy Microsoft (MSDTC) do obsługi uruchamiania przykładu  
   

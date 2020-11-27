@@ -8,14 +8,15 @@ helpviewer_keywords:
 - accessing embedded objects
 - embedded objects, UI Automation
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
-ms.openlocfilehash: 0a06fb72b280fc61faeb12f6f2c3a05d957ec7b9
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 9d348b130ef26dfd27b27ecd93755919615afb68
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87163562"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96252468"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern i obiekty osadzone — omówienie
+
 > [!NOTE]
 > Ta dokumentacja jest przeznaczona dla .NET Framework deweloperów, którzy chcą korzystać z zarządzanych [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klas zdefiniowanych w <xref:System.Windows.Automation> przestrzeni nazw. Aby uzyskać najnowsze informacje na temat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , zobacz [interfejs API usługi Windows Automation: Automatyzacja interfejsu użytkownika](/windows/win32/winauto/entry-uiauto-win32).  
   
@@ -24,7 +25,9 @@ ms.locfileid: "87163562"
  W [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] obiekcie osadzonym jest dowolnym elementem, który ma nietekstowe granice, na przykład typ obrazu, hiperłącza, tabeli lub dokumentu, taki jak arkusz kalkulacyjny programu Microsoft Excel lub plik Microsoft Windows Media. Różni się to od standardowej definicji, w której element jest tworzony w jednej aplikacji, osadzony lub połączony w innej. Czy obiekt może być edytowany w oryginalnej aplikacji jest nieistotny w kontekście [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .  
   
 <a name="Embedded_Objects_and_the_UI_Automation_Tree"></a>
+
 ## <a name="embedded-objects-and-the-ui-automation-tree"></a>Obiekty osadzone i drzewo automatyzacji interfejsu użytkownika  
+
  Obiekty osadzone są traktowane jako pojedyncze elementy w widoku kontroli [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] drzewa. Są one widoczne jako elementy podrzędne kontenera tekstu, dzięki czemu można uzyskać do nich dostęp za pomocą tego samego modelu co inne kontrolki w [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .  
   
  ![Osadzona tabela z obrazem w kontenerze tekstu](./media/uia-textpattern-embedded-objects-overview-example1.png "UIA_TextPattern_Embedded_Objects_Overview_Example1")  
@@ -34,7 +37,9 @@ Przykład kontenera tekstowego z osadzonymi obiektami tabeli, obrazu i hiperłą
 Przykład widoku zawartości dla części poprzedniego kontenera tekstu  
   
 <a name="Expose_Embedded_Objects_Using_TextPattern_and"></a>
+
 ## <a name="expose-embedded-objects-using-textpattern-and-textpatternrange"></a>Uwidacznianie obiektów osadzonych przy użyciu TextPattern i TextPatternRange  
+
  Używane w połączeniu z <xref:System.Windows.Automation.TextPattern> klasą wzorca kontroli i <xref:System.Windows.Automation.Text.TextPatternRange> klasy uwidaczniają metody i właściwości, które ułatwiają nawigację i wykonywanie zapytań dotyczących osadzonych obiektów.  
   
  Zawartość tekstowa (lub tekst wewnętrzny) kontenera tekstu i osadzonego obiektu, takiego jak hiperłącze lub komórka tabeli, jest udostępniana jako pojedynczy, ciągły strumień tekstowy w widoku kontrolki i widok zawartości [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] drzewa; granice obiektów są ignorowane. Jeśli klient automatyzacji interfejsu użytkownika Pobiera tekst służący do przeszukiwania, interpretacji lub analizy w jakiś sposób, zakres tekstu należy sprawdzać pod kątem specjalnych przypadków, takich jak tabela z zawartością tekstową lub innymi osadzonymi obiektami. Można to osiągnąć, wywołując <xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A> do uzyskania <xref:System.Windows.Automation.AutomationElement> dla każdego osadzonego obiektu, a następnie wywołując <xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> do uzyskania zakresu tekstu dla każdego elementu. Jest to wykonywane cyklicznie, dopóki cała zawartość tekstowa nie zostanie pobrana.  
@@ -56,14 +61,16 @@ Przykładowy strumień tekstowy z obiektami osadzonymi i zakresem ich zakresu
 Przykłady sposobu, w jaki zakres tekstu jest dostosowywany dla operacji Move () i ExpandToEnclosingUnit ()  
   
 <a name="Common_Scenarios"></a>
+
 ## <a name="common-scenarios"></a>Typowe scenariusze  
+
  W poniższych sekcjach znajdują się przykłady najczęstszych scenariuszy obejmujących obiekty osadzone.  
   
  Legenda dla przedstawionych przykładów:  
   
- { =<xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start>  
+ { = <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start>  
   
- } =<xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End>  
+ } = <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End>  
   
 ### <a name="hyperlink"></a>Hyperlink  
 
@@ -76,7 +83,7 @@ Przykłady sposobu, w jaki zakres tekstu jest dostosowywany dla operacji Move ()
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Zwraca ciąg `The URL https://www.microsoft.com is embedded in text` .|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Zwraca wewnętrzna <xref:System.Windows.Automation.AutomationElement> , która zawiera zakres tekstu, w tym przypadku, <xref:System.Windows.Automation.AutomationElement> która reprezentuje dostawcę tekstu.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>|Zwraca <xref:System.Windows.Automation.AutomationElement> reprezentującą kontrolkę Hyperlink.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>gdzie <xref:System.Windows.Automation.AutomationElement> jest obiekt zwracany przez poprzednią `GetChildren` metodę.|Zwraca zakres, który reprezentuje `https://www.microsoft.com` .|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> gdzie <xref:System.Windows.Automation.AutomationElement> jest obiekt zwracany przez poprzednią `GetChildren` metodę.|Zwraca zakres, który reprezentuje `https://www.microsoft.com` .|  
   
  **Przykład 2 — zakres tekstu, który częściowo obejmuje osadzone Hiperłącze tekstowe**  
   
@@ -96,10 +103,12 @@ Przykłady sposobu, w jaki zakres tekstu jest dostosowywany dla operacji Move ()
 |-------------------|------------|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Zwraca ciąg "adres URL".|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Zwraca wewnętrzna <xref:System.Windows.Automation.AutomationElement> , która zawiera zakres tekstu, w tym przypadku, <xref:System.Windows.Automation.AutomationElement> która reprezentuje dostawcę tekstu.|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.Move%2A>z parametrami (TextUnit. Word, 1).|Przenosi zakres tekstu do "http", ponieważ tekst hiperlinku składa się z pojedynczych wyrazów. W takim przypadku hiperlink nie jest traktowany jako pojedynczy obiekt.<br /><br /> Adres URL {[http]} jest osadzony w tekście.|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> z parametrami (TextUnit. Word, 1).|Przenosi zakres tekstu do "http", ponieważ tekst hiperlinku składa się z pojedynczych wyrazów. W takim przypadku hiperlink nie jest traktowany jako pojedynczy obiekt.<br /><br /> Adres URL {[http]} jest osadzony w tekście.|  
   
 <a name="Image"></a>
-### <a name="image"></a>Image (Obraz)  
+
+### <a name="image"></a>Obraz  
+
  **Przykład 1 — zakres tekstu, który zawiera osadzony obraz**  
   
  { ![Osadzony obraz](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample") obrazu jest osadzony w tekście}.  
@@ -109,7 +118,7 @@ Przykłady sposobu, w jaki zakres tekstu jest dostosowywany dla operacji Move ()
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Zwraca ciąg "element jest osadzony w tekście". W strumieniu tekstowym nie można oczekiwać żadnego tekstu ALTERNATYWNEgo skojarzonego z obrazem.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Zwraca wewnętrzna <xref:System.Windows.Automation.AutomationElement> , która zawiera zakres tekstu, w tym przypadku, <xref:System.Windows.Automation.AutomationElement> która reprezentuje dostawcę tekstu.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>|Zwraca <xref:System.Windows.Automation.AutomationElement> reprezentującą kontrolkę obrazu.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>gdzie <xref:System.Windows.Automation.AutomationElement> jest obiekt zwracany przez poprzednią <xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A> metodę.|Zwraca zakres degeneracji reprezentujący "![przykład obrazu osadzonego](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")".|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> gdzie <xref:System.Windows.Automation.AutomationElement> jest obiekt zwracany przez poprzednią <xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A> metodę.|Zwraca zakres degeneracji reprezentujący "![przykład obrazu osadzonego](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")".|  
   
  **Przykład 2 — zakres tekstu, który częściowo obejmuje zawartość kontenera tekstu. Kontener tekstu ma osadzony obraz, który nie jest częścią zakresu tekstu.**  
   
@@ -119,9 +128,10 @@ Przykłady sposobu, w jaki zakres tekstu jest dostosowywany dla operacji Move ()
 |-------------------|------------|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Zwraca ciąg "obraz".|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Zwraca wewnętrzna <xref:System.Windows.Automation.AutomationElement> , która zawiera zakres tekstu, w tym przypadku, <xref:System.Windows.Automation.AutomationElement> która reprezentuje dostawcę tekstu.|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.Move%2A>z parametrami (TextUnit. Word, 1).|Przenosi zakres tekstu do "is". Ze względu na to, że tylko tekstowe obiekty osadzone są uważane za część strumienia tekstu, obraz w tym przykładzie nie ma wpływu na przeniesienie ani jego wartość zwracaną (1 w tym przypadku).|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> z parametrami (TextUnit. Word, 1).|Przenosi zakres tekstu do "is". Ze względu na to, że tylko tekstowe obiekty osadzone są uważane za część strumienia tekstu, obraz w tym przykładzie nie ma wpływu na przeniesienie ani jego wartość zwracaną (1 w tym przypadku).|  
   
 <a name="Table"></a>
+
 ### <a name="table"></a>Tabela  
   
 ### <a name="table-used-for-examples"></a>Tabela używana do przykładów  
@@ -129,27 +139,27 @@ Przykłady sposobu, w jaki zakres tekstu jest dostosowywany dla operacji Move ()
 |Komórka z obrazem|Komórka z tekstem|  
 |---------------------|--------------------|  
 |![Przykład osadzonego obrazu](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")|X|  
-|![Przykład obrazu osadzonego 2](./media/uia-textpattern-embedded-objects-overview-imageexample2.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample2")|Y|  
+|![Przykład obrazu osadzonego 2](./media/uia-textpattern-embedded-objects-overview-imageexample2.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample2")|T|  
 |![Przykład osadzonego obrazu 3](./media/uia-textpattern-embedded-objects-overview-imageexample3.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample3")<br /><br /> Obraz Z|Z|  
   
  **Przykład 1 — pobieranie kontenera tekstu z zawartości komórki.**  
   
 |Wywołana metoda|Wynik|  
 |-------------------|------------|  
-|<xref:System.Windows.Automation.GridPattern.GetItem%2A>z parametrami (0, 0)|Zwraca <xref:System.Windows.Automation.AutomationElement> reprezentowanie zawartości komórki tabeli. w tym przypadku element jest formantem tekstowym.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>gdzie <xref:System.Windows.Automation.AutomationElement> jest obiekt zwracany przez poprzednią `GetItem` metodę.|Zwraca zakres, który rozciąga się na ![przykład obrazu osadzonego](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")obrazu.|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>dla obiektu zwróconego przez poprzednią `RangeFromChild` metodę.|Zwraca wartość <xref:System.Windows.Automation.AutomationElement> reprezentującą komórkę tabeli. w tym przypadku element jest formantem tekstowym, który obsługuje TableItemPattern.|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>dla obiektu zwróconego przez poprzednią `GetEnclosingElement` metodę.|Zwraca wartość <xref:System.Windows.Automation.AutomationElement> reprezentującą tabelę.|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>dla obiektu zwróconego przez poprzednią `GetEnclosingElement` metodę.|Zwraca wartość <xref:System.Windows.Automation.AutomationElement> reprezentującą sam dostawcę tekstu.|  
+|<xref:System.Windows.Automation.GridPattern.GetItem%2A> z parametrami (0, 0)|Zwraca <xref:System.Windows.Automation.AutomationElement> reprezentowanie zawartości komórki tabeli. w tym przypadku element jest formantem tekstowym.|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> gdzie <xref:System.Windows.Automation.AutomationElement> jest obiekt zwracany przez poprzednią `GetItem` metodę.|Zwraca zakres, który rozciąga się na ![przykład obrazu osadzonego](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")obrazu.|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> dla obiektu zwróconego przez poprzednią `RangeFromChild` metodę.|Zwraca wartość <xref:System.Windows.Automation.AutomationElement> reprezentującą komórkę tabeli. w tym przypadku element jest formantem tekstowym, który obsługuje TableItemPattern.|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> dla obiektu zwróconego przez poprzednią `GetEnclosingElement` metodę.|Zwraca wartość <xref:System.Windows.Automation.AutomationElement> reprezentującą tabelę.|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A> dla obiektu zwróconego przez poprzednią `GetEnclosingElement` metodę.|Zwraca wartość <xref:System.Windows.Automation.AutomationElement> reprezentującą sam dostawcę tekstu.|  
   
  **Przykład 2 — pobieranie zawartości tekstowej komórki.**  
   
 |Wywołana metoda|Wynik|  
 |-------------------|------------|  
-|<xref:System.Windows.Automation.GridPattern.GetItem%2A>z parametrami (1, 1).|Zwraca <xref:System.Windows.Automation.AutomationElement> reprezentowanie zawartości komórki tabeli. w tym przypadku element jest formantem tekstowym.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>gdzie <xref:System.Windows.Automation.AutomationElement> jest obiekt zwracany przez poprzednią `GetItem` metodę.|Zwraca wartość "Y".|  
+|<xref:System.Windows.Automation.GridPattern.GetItem%2A> z parametrami (1, 1).|Zwraca <xref:System.Windows.Automation.AutomationElement> reprezentowanie zawartości komórki tabeli. w tym przypadku element jest formantem tekstowym.|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> gdzie <xref:System.Windows.Automation.AutomationElement> jest obiekt zwracany przez poprzednią `GetItem` metodę.|Zwraca wartość "Y".|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Windows.Automation.TextPattern>
 - <xref:System.Windows.Automation.Text.TextPatternRange>

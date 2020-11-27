@@ -2,14 +2,15 @@
 title: Program Hello World z usługą routingu
 ms.date: 03/30/2017
 ms.assetid: 0f4b0d5b-6522-4ad5-9f3a-baa78316d7d1
-ms.openlocfilehash: 63cfb32a5f5d0cae7635d39d5df594a5bb07e411
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 3d91634d72481427f04e958f6dc2734829b6158b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554791"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253859"
 ---
 # <a name="hello-world-with-the-routing-service"></a>Program Hello World z usługą routingu
+
 Ten przykład pokazuje usługę routingu Windows Communication Foundation (WCF). Usługa routingu to składnik WCF, który ułatwia dołączanie routera opartego na zawartości w aplikacji. Ten przykład dostosowuje standardowy przykład kalkulatora WCF do komunikowania się przy użyciu usługi routingu. W tym przykładzie klient kalkulatora jest skonfigurowany do wysyłania komunikatów do punktu końcowego uwidocznionego przez router. Usługa routingu jest skonfigurowana do akceptowania wszystkich wysyłanych do nich komunikatów i przekazywania ich do punktu końcowego, który odpowiada usłudze Kalkulator. W ten sposób komunikaty wysyłane z klienta są odbierane przez router i ponownie kierowane do rzeczywistej usługi kalkulatora. Komunikaty z usługi kalkulatora są odsyłane do routera, co z kolei przekazuje je do klienta kalkulatora.
 
 ### <a name="to-use-this-sample"></a>Aby użyć tego przykładu
@@ -40,12 +41,15 @@ Ten przykład pokazuje usługę routingu Windows Communication Foundation (WCF).
     ```
 
 ## <a name="configurable-via-code-or-appconfig"></a>Konfigurowalne za pośrednictwem kodu lub App.Config
+
  Przykładowe statki skonfigurowane do używania pliku App.config do definiowania zachowania routera. Możesz również zmienić nazwę pliku App.config na coś innego, tak aby nie została rozpoznana, i usunąć komentarz wywołania metody do ConfigureRouterViaCode (). Każda metoda powoduje takie samo zachowanie z routera.
 
 ### <a name="scenario"></a>Scenariusz
+
  Ten przykład pokazuje router działający jako podstawowa pompa komunikatów. Usługa routingu działa jako przezroczysty węzeł serwera proxy skonfigurowany do przekazywania wiadomości bezpośrednio do wstępnie skonfigurowanego zestawu docelowych punktów końcowych.
 
 ### <a name="real-world-scenario"></a>Real World — scenariusz
+
  Firma Contoso chce zwiększyć elastyczność w zakresie nazewnictwa, określania adresów, konfiguracji i bezpieczeństwa usług. W tym celu należy umieścić podstawową pompę komunikatów przed swoimi usługami, aby działała jako publiczny punkt końcowy. Dzięki temu można umieścić dodatkowe zabezpieczenia przed rzeczywistymi usługami i ułatwić wdrożenie skalowalnych rozwiązań lub przechowywanie wersji usług w późniejszym czasie.
 
 > [!IMPORTANT]
@@ -57,6 +61,6 @@ Ten przykład pokazuje usługę routingu Windows Communication Foundation (WCF).
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\RoutingServices\HelloRoutingService`  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przykłady hostingu i trwałości usługi AppFabric](/previous-versions/appfabric/ff383418(v=azure.10))

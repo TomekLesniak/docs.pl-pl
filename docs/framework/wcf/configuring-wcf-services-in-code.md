@@ -3,17 +3,19 @@ title: Konfigurowanie usług WCF w kodzie
 description: Dowiedz się, w jaki sposób można skonfigurować usługi WCF przy użyciu kodu zamiast plików konfiguracji zarówno dla usług hostowanych samodzielnych, jak i internetowych.
 ms.date: 03/30/2017
 ms.assetid: 193c725d-134f-4d31-a8f8-4e575233bff6
-ms.openlocfilehash: 975eafea5a153287f5ccc71b9aa342c12391004e
-ms.sourcegitcommit: d8020797a6657d0fbbdff362b80300815f682f94
+ms.openlocfilehash: 0ba59856d94168c7f18319c09c9b00f26ecdff5c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95689982"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253313"
 ---
 # <a name="configuring-wcf-services-in-code"></a>Konfigurowanie usług WCF w kodzie
+
 Windows Communication Foundation (WCF) umożliwia deweloperom Konfigurowanie usług przy użyciu plików konfiguracyjnych lub kodu.  Pliki konfiguracji są przydatne, gdy usługa musi zostać skonfigurowana po wdrożeniu. W przypadku korzystania z plików konfiguracji Specjalista IT musi tylko zaktualizować plik konfiguracji, nie jest wymagana ponowna kompilacja. Pliki konfiguracji mogą jednak być skomplikowane i trudne do utrzymania. Nie ma obsługi debugowania plików konfiguracji i elementów konfiguracji, do których odwołują się nazwy, co sprawia, że pliki konfiguracji tworzenia są podatne na błędy i trudne. Funkcja WCF umożliwia również Konfigurowanie usług w kodzie. We wcześniejszych wersjach programu WCF (4,0 i starszych) Konfigurowanie usług w kodzie było łatwe w scenariuszach samoobsługowych, <xref:System.ServiceModel.ServiceHost> Klasa może skonfigurować punkty końcowe i zachowania przed wywołaniem ServiceHost. Open. Jednak w scenariuszach hostowanych w sieci Web nie masz bezpośredniego dostępu do <xref:System.ServiceModel.ServiceHost> klasy. Aby skonfigurować usługę hostowaną w sieci Web, należy utworzyć utworzoną przez siebie `System.ServiceModel.ServiceHostFactory` <xref:System.ServiceModel.Activation.ServiceHostFactory> i wykonać dowolną wymaganą konfigurację. Począwszy od .NET Framework 4,5, WCF oferuje łatwiejszy sposób konfigurowania zarówno samodzielnych, jak i hostowanych usług w sieci Web w kodzie.
 
 ## <a name="the-configure-method"></a>Metoda Configure
+
  Po prostu Zdefiniuj publiczną metodę statyczną o nazwie `Configure` z następującym podpisem w klasie implementacji usługi:
 
 ```csharp
@@ -94,7 +96,7 @@ public class Service1 : IService1
 > [!IMPORTANT]
 > Należy zauważyć, że <xref:System.ServiceModel.ServiceConfiguration.LoadFromConfiguration%2A> ignoruje <`host`> ustawień w `service` tagu <> <`system.serviceModel`>. W <`host`> jest informacje o konfiguracji hosta, a nie konfiguracji usługi i są ładowane przed wykonaniem metody Configure.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Konfigurowanie usług za pomocą plików konfiguracji](configuring-services-using-configuration-files.md)
 - [Konfigurowanie zachowań klienta](configuring-client-behaviors.md)

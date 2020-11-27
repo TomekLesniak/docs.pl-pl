@@ -2,12 +2,12 @@
 title: Kompilowanie przykładów programu Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 2899e7a5-9cb2-4e8d-b8d2-f31391549198
-ms.openlocfilehash: 3366f62edd9f1bfec00f0374365cce48ca901163
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: ee1c8101e31464fa203341d53137525433782c18
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609346"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253841"
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a>Kompilowanie przykładów programu Windows Communication Foundation
 
@@ -37,15 +37,19 @@ Przykłady Windows Communication Foundation (WCF) można skompilować przy użyc
 > Należy ustawić listy ACL w%systemdrive%\Inetpub\Wwwroot, aby przyznać uprawnienia do modyfikowania na koncie, w ramach którego jest uruchomiony. W przeciwnym razie niektóre zdarzenia post nie powiodą się. Alternatywnie można pozostawić listy kontroli dostępu i uruchomić wiersz polecenia zestawu SDK lub program Visual Studio jako administrator. Niektóre akcje programu Visual Studio (takie jak dołączenie debugera do procesu roboczego ASP.NET) wymagają również uprawnień administracyjnych.
 
 ## <a name="setup-batch-files-and-scripts"></a>Konfigurowanie plików i skryptów wsadowych
+
  Setup.exe i Cleanup.exe plików wsadowych i skryptów należy uruchamiać z wiersz polecenia dla deweloperów dla programu Visual Studio. Kilka konfiguracji i oczyszczania plików wykonuje zadania, które wymagają uprawnień administracyjnych i powinny być uruchamiane z uprawnieniami administratora.
 
 ## <a name="important-security-information-about-metadata-endpoints"></a>Ważne informacje o zabezpieczeniach punktów końcowych metadanych
+
  Aby zapobiec przypadkowemu ujawnieniu potencjalnie poufnych metadanych usługi, konfiguracja domyślna dla usług Windows Communication Foundation (WCF) wyłącza Publikowanie metadanych. To zachowanie jest zabezpieczone domyślnie, ale oznacza to, że nie można użyć narzędzia do importowania metadanych (takiego jak Svcutil.exe) do wygenerowania kodu klienta wymaganego do wywołania usługi, chyba że zachowanie publikowania metadanych usługi jest jawnie włączone w konfiguracji. Aby ułatwić eksperymentowanie z przykładami, prawie wszystkie przykłady uwidaczniają niezabezpieczony punkt końcowy publikowania metadanych. Takie punkty końcowe są potencjalnie dostępne dla anonimowych użytkowników nieuwierzytelnionych i należy zachować ostrożność przed wdrożeniem takich punktów końcowych, aby upewnić się, że można publicznie odzamknąć metadane usługi. Aby uzyskać więcej informacji na temat publikowania metadanych usługi, zobacz przykład [zachowania publikowania metadanych](metadata-publishing-behavior.md) . Zapoznaj się z przykładem [niestandardowego bezpiecznego punktu końcowego metadanych](custom-secure-metadata-endpoint.md) w celu uzyskania przykładowego zabezpieczenia punktu końcowego metadanych.
 
 ## <a name="exception-handling"></a>Obsługa wyjątków
+
  Ogólnie mówiąc, te próbki nie obejmują obsługi wyjątków, aby zachować kod skoncentrowany na temacie przykładu. Aby uzyskać więcej informacji na temat obsługi wyjątków, zobacz przykład [oczekiwanych wyjątków](expected-exceptions.md) .
 
 ## <a name="regenerating-clients-and-configuration-with-svcutil"></a>Ponowne generowanie klientów i konfiguracji za pomocą Svcutil
+
  Aby wygenerować kod i konfigurację klienta większości przykładów, można użyć [Narzędzia do przesyłania metadanych modelu ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) . Niektóre przykłady wymagają ręcznej edycji konfiguracji. Jeśli na przykład użyjesz Svcutil.exe, aby ponownie wygenerować konfigurację dla przykładu, który używa poświadczeń certyfikatu klienta, musisz ręcznie określić wcześniej skonfigurowane poświadczenia. Niektóre przykłady używają określonych opcji Svcutil.exe, aby wpływać na wygenerowany kod, te opcje są określone w określonych przykładowych tematach.
 
 ### <a name="to-regenerate-the-client-and-configuration-files"></a>Aby ponownie wygenerować pliki klienta i konfiguracji
@@ -81,7 +85,7 @@ Przykłady Windows Communication Foundation (WCF) można skompilować przy użyc
     > [!NOTE]
     > Aby pominąć generowanie konfiguracji klienta, Dodaj opcję **/noconfig** .
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Uruchamianie przykładów programu Windows Communication Foundation](running-the-samples.md)
 - [Narzędzie do obsługi metadanych elementu ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)

@@ -6,19 +6,21 @@ helpviewer_keywords:
 - security [WCF]
 - Windows Communication Foundation, security
 ms.assetid: 7ea87fcb-dcfb-4a4a-8b03-6b954575d45b
-ms.openlocfilehash: 9498358dd480487afcd3b746d14266e486c62d71
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b92f1ad8bb00e9df8daf55da4d7a808420d909cf
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546318"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254002"
 ---
 # <a name="windows-communication-foundation-security"></a>Zabezpieczenia programu WCF (Windows Communication Foundation)
+
 W tematach w tej sekcji opisano funkcje zabezpieczeń Windows Communication Foundation (WCF) i sposoby ich używania w celu zabezpieczania komunikatów.  
   
  Aby uzyskać więcej informacji na temat systemu Windows Server AppFabric i zabezpieczeń, zobacz [model zabezpieczeń dla systemu Windows Server AppFabric](/previous-versions/appfabric/ee677202(v=azure.10)) .  
   
 ## <a name="in-this-section"></a>W tej sekcji  
+
  [Przegląd zabezpieczeń](security-overview.md)  
  Opisuje funkcje zabezpieczeń w programie WCF.  
   
@@ -55,12 +57,14 @@ W tematach w tej sekcji opisano funkcje zabezpieczeń Windows Communication Foun
  [Wytyczne dotyczące zabezpieczeń i najlepsze rozwiązania](security-guidance-and-best-practices.md)  
  Wskazówki dotyczące tworzenia bezpiecznych aplikacji WCF.  
   
-## <a name="reference"></a>Tematy pomocy  
+## <a name="reference"></a>Dokumentacja  
+
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Security>  
   
 ## <a name="related-sections"></a>Sekcje pokrewne  
+
  [Szczegóły funkcji WCF](index.md)  
   
  [Podstawy programowania przy użyciu programu WCF](../basic-wcf-programming.md)  
@@ -69,6 +73,6 @@ W tematach w tej sekcji opisano funkcje zabezpieczeń Windows Communication Foun
   
  [Omówienie pojęć](../conceptual-overview.md)  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Konfigurowanie własnej aplikacji](../diagnostics/configuring-your-application.md)

@@ -8,17 +8,19 @@ dev_langs:
 helpviewer_keywords:
 - request cache policies
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
-ms.openlocfilehash: 248cbdd0921564898c5d3459cffa304793e85584
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: cbb8f2eaf618cb9faaca1375d829478a645962a7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502434"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253417"
 ---
 # <a name="how-to-set-cache-policy-for-a-request"></a>Instrukcje: ustawianie zasad pamięci podręcznej dla żądania
+
 W poniższym przykładzie pokazano, jak ustawić zasady pamięci podręcznej dla żądania. Przykładowe dane wejściowe to identyfikator URI, taki jak `http://www.contoso.com/` .  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu tworzy zasady pamięci podręcznej, które umożliwiają użycie żądanego zasobu z pamięci podręcznej, jeśli nie było w pamięci podręcznej dłużej niż jeden dzień. Przykład wyświetla komunikat wskazujący, czy zasób został użyty z pamięci podręcznej, na przykład,, `"The response was retrieved from the cache : False."` a następnie wyświetla zasób. Żądanie może być spełnione przez dowolną pamięć podręczną między klientem i serwerem.  
   
 ```csharp  
@@ -106,10 +108,10 @@ Namespace Examples.System.Net.Cache
 End Namespace  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zarządzanie pamięcią podręczną dla aplikacji sieciowych](cache-management-for-network-applications.md)
 - [Zasady pamięci podręcznej](cache-policy.md)
 - [Zasady pamięci podręcznej oparte na lokalizacji](location-based-cache-policies.md)
 - [Zasady pamięci podręcznej oparte na czasie](time-based-cache-policies.md)
-- [\<requestCaching>— Element (Ustawienia sieci)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+- [\<requestCaching> — Element (Ustawienia sieci)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)

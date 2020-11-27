@@ -2,29 +2,31 @@
 title: Błędy walidacji zabezpieczeń i uwierzytelniania
 ms.date: 03/30/2017
 ms.assetid: 0d4e3666-dfc6-421c-baf8-9479c22f7050
-ms.openlocfilehash: 0f061e1e12321dbe8034d7619830f71717ca9d1f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3bcc6111f322a3bd8169567e8f436871eb19f879
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664977"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253053"
 ---
 # <a name="security-validation-and-authentication-failures"></a>Błędy walidacji zabezpieczeń i uwierzytelniania
-Nazwa komputera: Błędy walidacji zabezpieczeń i uwierzytelniania  
+
+Nazwa licznika: Błędy walidacji zabezpieczeń i uwierzytelniania  
   
 ## <a name="description"></a>Opis  
- Ten licznik jest zwiększany, gdy komunikat zostanie odrzucony, ze względu na problem z zabezpieczeniami nie pasuje do żadnego licznika "Zabezpieczenia połączeń nie masz praw". Takie problemy obejmują:  
+
+ Ten licznik jest zwiększany za każdym razem, gdy komunikat zostanie odrzucony z powodu problemu z zabezpieczeniami, którego nie dotyczy licznik "wywołania zabezpieczeń bez autoryzacji". Takie problemy obejmują:  
   
-- Nie można odczytać tokenu klienta z komunikatu.  
+- Nie można odczytać z komunikatu tokenu klienta.  
   
-- Token klienta nie powiodło się uwierzytelnianie (na przykład nieprawidłowe hasło).  
+- Uwierzytelnianie tokenu klienta nie powiodło się (na przykład złe hasło).  
   
-- Weryfikacja podpisu nie powiodła się (na przykład wiadomości zostały zmodyfikowane).  
+- Weryfikacja podpisu nie powiodła się (na przykład komunikat został naruszony).  
   
-- Komunikat jest duplikatem z poprzedniej wersji, która może się zdarzyć podczas ataku powtarzania.  
+- Komunikat jest duplikatem z poprzedniego, który może wystąpić podczas ataku metodą powtórzeń.  
   
 - Wystąpił błąd odszyfrowywania.  
   
-- Niektóre wymagane elementy (na przykład brak sygnatur czasowych lub zaszyfrowanych danych, blokowanie) brakuje wiadomości.  
+- W komunikacie brakuje niektórych wymaganych elementów (na przykład braku sygnatury czasowej lub zaszyfrowanego bloku danych).  
   
-- Wystąpił błąd podczas uzgadniania TLSNEGO/SPNEGO.
+- Wystąpiły błędy podczas uzgadniania TLSNEGO/SPNEGO.

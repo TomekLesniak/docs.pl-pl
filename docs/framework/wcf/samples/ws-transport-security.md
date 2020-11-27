@@ -2,14 +2,15 @@
 title: Zabezpieczenia transportu WS
 ms.date: 03/30/2017
 ms.assetid: 33a20358-5e1b-458a-a6a9-15753bc7b99b
-ms.openlocfilehash: d0f357ddcfc355bac8eeb86d57641add0013a052
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 64059a5a09d49f83c9abda5b2f3d1601acf41a3e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596400"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96252416"
 ---
 # <a name="ws-transport-security"></a>Zabezpieczenia transportu WS
+
 Ten przykład ilustruje użycie zabezpieczeń transportu SSL z <xref:System.ServiceModel.WSHttpBinding> powiązaniem. Domyślnie `wsHttpBinding` powiązanie zapewnia komunikację http. W przypadku skonfigurowania zabezpieczeń transportu powiązanie obsługuje komunikację HTTPS. Ten przykład jest oparty na [wprowadzenie](getting-started-sample.md) , który implementuje usługę kalkulatora. `wsHttpBinding`Jest określona i skonfigurowana w plikach konfiguracji aplikacji dla klienta i usługi.  
   
 > [!NOTE]
@@ -49,9 +50,9 @@ Ten przykład ilustruje użycie zabezpieczeń transportu SSL z <xref:System.Serv
   </system.serviceModel>  
 ```  
   
- Określony adres używa `https://` schematu. Konfiguracja powiązania ustawia tryb zabezpieczenia na `Transport` . Ten sam tryb zabezpieczeń musi być określony w pliku Web. config usługi.  
+ Określony adres używa `https://` schematu. Konfiguracja powiązania ustawia tryb zabezpieczenia na `Transport` . Ten sam tryb zabezpieczeń musi być określony w pliku Web.config usługi.  
   
- Ponieważ certyfikat używany w tym przykładzie jest certyfikatem testowym utworzonym za pomocą Makecert. exe, podczas próby uzyskania dostępu do adresu https:, takiego jak, z przeglądarki, pojawia się Alert zabezpieczeń `https://localhost/servicemodelsamples/service.svc` . Aby umożliwić klientowi Windows Communication Foundation (WCF) współpracujący z certyfikatem testowym, do klienta został dodany dodatkowy kod, aby pominąć alert zabezpieczeń. Ten kod i Klasa towarzysząca nie są wymagane w przypadku korzystania z certyfikatów produkcyjnych.  
+ Ponieważ certyfikat używany w tym przykładzie jest certyfikatem testowym utworzonym przy użyciu Makecert.exe, po próbie uzyskania dostępu do adresu https:, takiego jak, z przeglądarki jest wyświetlany alert zabezpieczeń `https://localhost/servicemodelsamples/service.svc` . Aby umożliwić klientowi Windows Communication Foundation (WCF) współpracujący z certyfikatem testowym, do klienta został dodany dodatkowy kod, aby pominąć alert zabezpieczeń. Ten kod i Klasa towarzysząca nie są wymagane w przypadku korzystania z certyfikatów produkcyjnych.  
 
 ```csharp
 // This code is required only for test certificates like those created by Makecert.exe.  

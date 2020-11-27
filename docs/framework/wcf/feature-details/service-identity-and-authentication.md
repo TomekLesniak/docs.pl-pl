@@ -8,14 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-ms.openlocfilehash: ae217b4a2c3432321c7ef2e663922a87b82acbea
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: f1c1d41f3d2ebc4482fa7e5f28fcbefe88bb9a02
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246574"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253911"
 ---
 # <a name="service-identity-and-authentication"></a>Uwierzytelnianie i tożsamość usług
+
 *Tożsamość punktu końcowego* usługi jest wartością wygenerowaną na podstawie Web Services Description Language usługi (WSDL). Ta wartość propagowana do dowolnego klienta jest używana do uwierzytelniania usługi. Po zainicjowaniu przez klienta komunikacji z punktem końcowym, gdy usługa uwierzytelnia się na kliencie, klient porównuje wartość tożsamości punktu końcowego z rzeczywistą wartością zwróconą przez proces uwierzytelniania punktu końcowego. Jeśli są one zgodne, klient ma pewność, że skontaktował się z oczekiwanym punktem końcowym usługi. Ta funkcja działa jako ochrona przed *phishingiem* , uniemożliwiając przekierowywanie klienta do punktu końcowego hostowanego przez złośliwą usługę.  
   
  Aby zapoznać się z przykładową aplikacją, która demonstruje ustawienie tożsamości, zobacz [przykład Identity Service](../samples/service-identity-sample.md). Aby uzyskać więcej informacji o punktach końcowych i adresach punktów końcowych, zobacz temat [addresss](endpoint-addresses.md).  
@@ -39,6 +40,7 @@ ms.locfileid: "85246574"
 > Metadane zawierają oczekiwaną tożsamość usługi, dlatego zaleca się uwidocznienie metadanych usługi za pośrednictwem bezpiecznych metod, na przykład przez utworzenie punktu końcowego HTTPS dla usługi. Aby uzyskać więcej informacji, zobacz [jak: Zabezpieczanie punktów końcowych metadanych](how-to-secure-metadata-endpoints.md).  
   
 ## <a name="identity-types"></a>Typy tożsamości  
+
  Usługa może udostępnić sześć typów tożsamości. Każdy typ tożsamości odpowiada elementowi, który może znajdować się wewnątrz `<identity>` elementu w konfiguracji. Używany typ zależy od scenariusza i wymagań dotyczących zabezpieczeń usługi. W poniższej tabeli opisano każdy typ tożsamości.  
   
 |Typ tożsamości|Opis|Typowy scenariusz|  
@@ -51,28 +53,34 @@ ms.locfileid: "85246574"
 |Główna nazwa usługi (SPN). Wartość domyślna, gdy `ClientCredentialType` jest ustawiona na system Windows, a proces usługi jest uruchomiony w ramach jednego z kont systemu — LocalService, LocalSystem lub NetworkService.|Ten element określa nazwę SPN skojarzoną z kontem usługi. Zapoznaj się z sekcją protokołu i tożsamości protokołu Kerberos w celu [przesłaniania tożsamości usługi na potrzeby uwierzytelniania](../extending/overriding-the-identity-of-a-service-for-authentication.md).|Gwarantuje to, że nazwa SPN i określone konto systemu Windows skojarzone z nazwą SPN zidentyfikuje usługę.<br /><br /> Za pomocą narzędzia Setspn.exe można skojarzyć konto komputera z kontem użytkownika usługi.<br /><br /> To ustawienie wykorzystuje zabezpieczenia protokołu Kerberos systemu Windows, jeśli usługa jest uruchomiona w ramach jednego z kont systemu lub konta domeny, które ma skojarzoną z nim nazwę SPN, a komputer jest członkiem domeny w środowisku Active Directoryowym.|  
   
 ## <a name="specifying-identity-at-the-service"></a>Określanie tożsamości w usłudze  
+
  Zazwyczaj nie trzeba ustawiać tożsamości w usłudze, ponieważ wybór typu poświadczeń klienta określa typ tożsamości uwidocznionej w metadanych usługi. Aby uzyskać więcej informacji na temat przesłonięcia lub określenia tożsamości usługi, zobacz [Przesłanianie tożsamości usługi na potrzeby uwierzytelniania](../extending/overriding-the-identity-of-a-service-for-authentication.md).  
   
 ## <a name="using-the-identity-element-in-configuration"></a>Używanie \<identity> elementu w konfiguracji  
+
  Jeśli zmienisz typ poświadczeń klienta w powiązaniu poprzednio pokazanym do `Certificate,` , wygenerowany kod WSDL zawiera certyfikat X. 509 z serializowanym algorytmem Base64 dla wartości tożsamości, jak pokazano w poniższym kodzie. Jest to wartość domyślna dla wszystkich typów poświadczeń klienta innych niż Windows.  
 
  Można zmienić wartość domyślnej tożsamości usługi lub zmienić typ tożsamości za pomocą `<identity>` elementu w konfiguracji lub przez ustawienie tożsamości w kodzie. Poniższy kod konfiguracji ustawia tożsamość systemu nazw domen (DNS) z wartością `contoso.com` .  
 
 ## <a name="setting-identity-programmatically"></a>Programowo Ustawianie tożsamości  
+
  Usługa nie musi jawnie określać tożsamości, ponieważ funkcja WCF automatycznie ją określa. Jednak funkcja WCF umożliwia określenie tożsamości w punkcie końcowym, jeśli jest to wymagane. Poniższy kod dodaje nowy punkt końcowy usługi z określoną tożsamością DNS.  
   
  [!code-csharp[C_Identity#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#5)]
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  
   
 ## <a name="specifying-identity-at-the-client"></a>Określanie tożsamości na kliencie  
+
  W czasie projektowania deweloper klienta zwykle używa [Narzędzia do przesyłania metadanych programu ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) do generowania konfiguracji klienta. Wygenerowany plik konfiguracji (przeznaczony do użycia przez klienta) zawiera tożsamość serwera. Na przykład poniższy kod jest generowany na podstawie usługi, która określa tożsamość DNS, jak pokazano w powyższym przykładzie. Zwróć uwagę, że wartość tożsamości punktu końcowego klienta jest zgodna z wartością usługi. W takim przypadku, gdy klient otrzymuje poświadczenia systemu Windows (Kerberos) dla usługi, oczekuje wartości `contoso.com` .  
 
  Jeśli zamiast systemu Windows, usługa określa certyfikat jako typ poświadczeń klienta, oczekiwana jest wartość właściwości DNS certyfikatu `contoso.com` . (Lub jeśli właściwość DNS ma wartość `null` , nazwa podmiotu certyfikatu musi być `contoso.com` .)  
   
 #### <a name="using-a-specific-value-for-identity"></a>Używanie określonej wartości tożsamości  
+
  Następujący plik konfiguracji klienta pokazuje, w jaki sposób tożsamość usługi powinna być określoną wartością. W poniższym przykładzie klient może komunikować się z dwoma punktami końcowymi. Pierwszy jest identyfikowany za pomocą odcisku palca certyfikatu, a drugi z kluczem RSA certyfikatu. Oznacza to, że certyfikat zawierający tylko parę klucz publiczny/prywatny, ale nie został wystawiony przez zaufany urząd.  
 
 ## <a name="identity-checking-at-run-time"></a>Sprawdzanie tożsamości w czasie wykonywania  
+
  W czasie projektowania deweloper klienta Określa tożsamość serwera za pomocą metadanych. W czasie wykonywania Sprawdzanie tożsamości jest przeprowadzane przed wywołaniem punktów końcowych w usłudze.  
   
  Wartość tożsamości jest powiązana z typem uwierzytelniania określonym przez metadane; Innymi słowy, typ poświadczeń używanych przez usługę.  
@@ -98,20 +106,21 @@ ms.locfileid: "85246574"
  Określanie tożsamości programowo (przy użyciu <xref:System.ServiceModel.EndpointAddress.Identity%2A> Właściwości) jest opcjonalne. Jeśli tożsamość nie zostanie określona, a typ poświadczeń klienta to Windows, wartość domyślna to SPN z wartością ustawioną na część nazwy hosta adresu punktu końcowego usługi poprzedzoną prefiksem "host/". Jeśli tożsamość nie zostanie określona, a typ poświadczeń klienta to certyfikat, wartość domyślna to `Certificate` . Dotyczy to zarówno zabezpieczeń komunikatów, jak i na poziomie transportu.  
   
 ## <a name="identity-and-custom-bindings"></a>Tożsamość i powiązania niestandardowe  
+
  Ponieważ tożsamość usługi zależy od używanego typu powiązania, upewnij się, że podczas tworzenia niestandardowego powiązania jest dostępna odpowiednia tożsamość. Na przykład, w poniższym przykładzie kodu, uwidoczniona tożsamość nie jest zgodna z typem zabezpieczeń, ponieważ tożsamość powiązania Bootstrap bezpiecznego konwersacji nie jest zgodna z tożsamością dla powiązania w punkcie końcowym. Powiązanie bezpiecznej konwersacji ustawia tożsamość DNS, podczas gdy <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement> ustawia tożsamość UPN lub SPN.  
   
  [!code-csharp[C_Identity#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#8)]
  [!code-vb[C_Identity#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#8)]  
   
- Aby uzyskać więcej informacji o tym, jak prawidłowo układać elementy powiązań dla niestandardowego powiązania, zobacz [Tworzenie powiązań zdefiniowanych przez użytkownika](../extending/creating-user-defined-bindings.md). Aby uzyskać więcej informacji na temat tworzenia niestandardowego powiązania z programem <xref:System.ServiceModel.Channels.SecurityBindingElement> , zobacz [How to: Create a elementu SecurityBindingElement for a Authentication Mode dla określonego trybu uwierzytelniania](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
+ Aby uzyskać więcej informacji o tym, jak prawidłowo układać elementy powiązań dla niestandardowego powiązania, zobacz [Tworzenie powiązań User-Defined](../extending/creating-user-defined-bindings.md). Aby uzyskać więcej informacji na temat tworzenia niestandardowego powiązania z programem <xref:System.ServiceModel.Channels.SecurityBindingElement> , zobacz [How to: Create a elementu SecurityBindingElement for a Authentication Mode dla określonego trybu uwierzytelniania](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Instrukcje: tworzenie niestandardowego powiązania za pomocą elementu SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
-- [Instrukcje: Tworzenie elementu SecurityBindingElement dla określonego trybu uwierzytelniania](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
+- [Instrukcje: tworzenie niestandardowego wiązania za pomocą elementu SecurityBindingElement](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Instrukcje: tworzenie elementu SecurityBindingElement dla określonego trybu uwierzytelniania](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
 - [Instrukcje: tworzenie niestandardowego weryfikatora tożsamości klienta](../extending/how-to-create-a-custom-client-identity-verifier.md)
 - [Wybieranie typu poświadczeń](selecting-a-credential-type.md)
 - [Praca z certyfikatami](working-with-certificates.md)
 - [Narzędzie do obsługi metadanych elementu ServiceModel (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)
-- [Tworzenie powiązań zdefiniowanych przez użytkownika](../extending/creating-user-defined-bindings.md)
+- [Tworzenie wiązań zdefiniowanych przez użytkownika](../extending/creating-user-defined-bindings.md)
 - [Instrukcje: pobieranie odcisku palca certyfikatu](how-to-retrieve-the-thumbprint-of-a-certificate.md)

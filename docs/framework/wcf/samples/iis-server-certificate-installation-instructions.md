@@ -2,24 +2,27 @@
 title: Instrukcje instalacji certyfikatu serwera Internetowych usług informacyjnych
 ms.date: 03/30/2017
 ms.assetid: 11281490-d2ac-4324-8f33-e7714611a34b
-ms.openlocfilehash: 301a10c615a13a42e1a6e1b89d2724476ca4fbae
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 597af9873b4a5c042aec817ac0d26a86bac9ea82
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594663"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253794"
 ---
 # <a name="internet-information-services-iis-server-certificate-installation-instructions"></a>Instrukcje instalacji certyfikatu serwera Internetowych usług informacyjnych
+
 Aby uruchomić przykłady, które bezpiecznie komunikują się z Internet Information Services (IIS), należy utworzyć i zainstalować certyfikat serwera.  
   
 ## <a name="step-1-creating-certificates"></a>Krok 1. Tworzenie certyfikatów  
- Aby utworzyć certyfikat dla komputera, Otwórz wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora i uruchom setup. bat, który jest dołączony do każdego z przykładów, które używają bezpiecznej komunikacji z usługami IIS. Upewnij się, że ścieżka zawiera folder zawierający Makecert. exe przed uruchomieniem tego pliku wsadowego. Następujące polecenie służy do tworzenia certyfikatu w Setup. bat.  
+
+ Aby utworzyć certyfikat dla komputera, Otwórz wiersz polecenia dla deweloperów dla programu Visual Studio z uprawnieniami administratora i uruchom Setup.bat, które są zawarte w poszczególnych przykładach, które używają bezpiecznej komunikacji z usługami IIS. Upewnij się, że ścieżka zawiera folder zawierający Makecert.exe przed uruchomieniem tego pliku wsadowego. Następujące polecenie służy do tworzenia certyfikatu w Setup.bat.  
   
 ```console  
 makecert -sr LocalMachine -ss My -n CN=ServiceModelSamples-HTTPS-Server -sky exchange -sk ServiceModelSamples-HTTPS-Key  
 ```  
   
 ## <a name="step-2-installing-certificates"></a>Krok 2. Instalowanie certyfikatów  
+
  Kroki wymagane do zainstalowania właśnie utworzonych certyfikatów zależą od używanej wersji usług IIS.  
   
 #### <a name="to-install-iis-on-iis-51-windows-xp-and-iis-60-windows-server-2003"></a>Aby zainstalować usługi IIS w usługach IIS 5,1 (Windows XP) i IIS 6,0 (Windows Server 2003)  
@@ -38,16 +41,16 @@ makecert -sr LocalMachine -ss My -n CN=ServiceModelSamples-HTTPS-Server -sky exc
   
 6. Przetestuj dostęp do usługi w przeglądarce przy użyciu adresu HTTPS `https://localhost/servicemodelsamples/service.svc` .  
   
-#### <a name="if-ssl-was-previously-configured-by-using-httpcfgexe"></a>Jeśli protokół SSL został wcześniej skonfigurowany przy użyciu programu HttpCfg. exe  
+#### <a name="if-ssl-was-previously-configured-by-using-httpcfgexe"></a>Jeśli protokół SSL został wcześniej skonfigurowany przy użyciu Httpcfg.exe  
   
-1. Użyj Makecert. exe (lub uruchom plik Setup. bat), aby utworzyć certyfikat serwera.  
+1. Użyj Makecert.exe (lub Uruchom Setup.bat), aby utworzyć certyfikat serwera.  
   
 2. Uruchom Menedżera usług IIS i Zainstaluj certyfikat zgodnie z poprzednimi krokami.  
   
 3. Dodaj następujący wiersz kodu do programu klienckiego.  
   
 > [!IMPORTANT]
-> Ten kod jest wymagany tylko w przypadku certyfikatów testowych, takich jak te utworzone przez Makecert. exe. Nie jest to zalecane w przypadku kodu produkcyjnego.  
+> Ten kod jest wymagany tylko w przypadku certyfikatów testowych, takich jak te utworzone przez Makecert.exe. Nie jest to zalecane w przypadku kodu produkcyjnego.  
   
 ```csharp  
 PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");  

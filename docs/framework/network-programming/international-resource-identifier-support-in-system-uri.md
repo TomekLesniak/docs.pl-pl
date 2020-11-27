@@ -2,18 +2,20 @@
 title: Obsługa identyfikatorów zasobów międzynarodowych w System.Uri
 ms.date: 03/30/2017
 ms.assetid: b5e994c3-3535-4aff-8e1b-b69be22e9a22
-ms.openlocfilehash: f78fff250aae177b5f0360e77a1c41a2f2bb0527
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a3670c40a7a78e2ac8b521a4cb95477381848f36
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "64647336"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96253365"
 ---
 # <a name="international-resource-identifier-support-in-systemuri"></a>Obsługa identyfikatorów zasobów międzynarodowych w System.Uri
-Klasa <xref:System.Uri?displayProperty=nameWithType> została rozszerzona o obsługę międzynarodowych identyfikatorów zasobów (IRI) i internationalized Domain Names (IDN). Te ulepszenia są dostępne w .NET Framework 3.5, 3.0 SP1 i 2.0 SP1.  
+
+<xref:System.Uri?displayProperty=nameWithType>Klasa została rozszerzona o obsługę międzynarodowych identyfikatorów zasobów (IRI) i międzynarodowych nazw domen (IDN). Te ulepszenia są dostępne w .NET Framework 3,5, 3,0 SP1 i 2,0 SP1.  
   
 ## <a name="iri-and-idn-support"></a>Obsługa IRI i IDN  
- Adresy sieci Web są zazwyczaj wyrażane przy użyciu jednolitych identyfikatorów zasobów (URI), które składają się z bardzo ograniczonego zestawu znaków:  
+
+ Adresy sieci Web są zwykle wyrażone przy użyciu jednolitych identyfikatorów zasobów (URI), które składają się z bardzo ograniczonego zestawu znaków:  
   
 - Wielkie i małe litery ASCII z alfabetu angielskiego.  
   
@@ -21,27 +23,27 @@ Klasa <xref:System.Uri?displayProperty=nameWithType> została rozszerzona o obs�
   
 - Niewielka liczba innych symboli ASCII.  
   
- Specyfikacje URI są udokumentowane w RFC 2396 i RFC 3986 opublikowane przez Internet Engineering Task Force (IETF).  
+ Specyfikacje identyfikatorów URI są udokumentowane w RFC 2396 i RFC 3986 opublikowane przez Internet Engineering Task Force (IETF).  
   
- Wraz z rozwojem Internetu rośnie potrzeba identyfikacji zasobów przy użyciu języków innych niż angielski. Identyfikatory, które ułatwiają tę potrzebę i zezwalają na znaki inne niż ASCII (znaki w zestawie znaków Unicode/ISO 10646) są znane jako międzynarodowe identyfikatory zasobów (IRC). Specyfikacje iRC są udokumentowane w RFC 3987 opublikowanym przez IETF. Korzystanie z funkcji IRC umożliwia adres URL zawierający znaki Unicode.  
+ W przypadku wzrostu Internetu istnieje coraz większa potrzeba zidentyfikowania zasobów w językach innych niż angielski. Identyfikatory, które ułatwiają tę potrzebę i dopuszczają znaki inne niż ASCII (znaki w zestawie znaków Unicode/ISO 10646) są znane jako międzynarodowe identyfikatory zasobów (IRIs). Specyfikacje dla tęczówki są udokumentowane w dokumencie RFC 3987 opublikowanym przez IETF. Użycie tęczówki pozwala na używanie znaków Unicode w adresie URL.  
   
- Istniejąca <xref:System.Uri?displayProperty=nameWithType> klasa została rozszerzona, aby zapewnić obsługę IRI na podstawie RFC 3987. Obecni użytkownicy nie zobaczą żadnych zmian w zachowaniu programu .NET Framework 2.0, chyba że w szczególności włączą IRI. Zapewnia to zgodność aplikacji z wcześniejszymi wersjami programu .NET Framework.  
+ Istniejąca <xref:System.Uri?displayProperty=nameWithType> Klasa została rozszerzona w celu zapewnienia pomocy technicznej IRI na podstawie RFC 3987. Bieżący użytkownicy nie będą widzieć żadnych zmian w zachowaniu .NET Framework 2,0, o ile nie włączą one IRI. Zapewnia to zgodność aplikacji z wcześniejszymi wersjami .NET Framework.  
   
- Aplikacja może określić, czy do nazw domen ma być stosowana analizowanie internationalized Domain Name (IDN) i czy należy stosować reguły analizowania IRI. Można to zrobić w pliku machine.config lub w pliku app.config.  
+ Aplikacja może określić, czy należy zastosować analizę międzynarodowej nazwy domeny (IDN), która została zastosowana do nazw domen i czy mają być stosowane reguły analizy IRI. Można to zrobić w machine.config lub w pliku app.config.  
   
- Włączenie nazwy IDN spowoduje przekonwertowanie wszystkich etykiet Unicode w nazwie domeny na ich odpowiedniki Punycode. Nazwy punycode zawierają tylko znaki ASCII i zawsze zaczynają się od prefiksu xn-- Powodem tego jest obsługa istniejących serwerów DNS w Internecie, ponieważ większość serwerów DNS obsługuje tylko znaki ASCII (patrz RFC 3940).  
+ Włączenie IDN spowoduje przekonwertowanie wszystkich etykiet Unicode w nazwie domeny na ich odpowiedniki formacie Punycode. Nazwy formacie Punycode zawierają tylko znaki ASCII i zawsze zaczynają się od Xn--prefix. Przyczyną tego problemu jest obsługa istniejących serwerów DNS w Internecie, ponieważ większość serwerów DNS obsługuje tylko znaki ASCII (patrz dokument RFC 3940).  
   
- Włączenie IRI i IDN wpływa na <xref:System.Uri.DnsSafeHost%2A?displayProperty=nameWithType> wartość właściwości. Włączenie IRI i IDN może również <xref:System.Uri.Equals%2A?displayProperty=nameWithType>zmienić <xref:System.Uri.GetComponents%2A?displayProperty=nameWithType>zachowanie <xref:System.Uri.IsWellFormedOriginalString%2A> , <xref:System.Uri.OriginalString%2A?displayProperty=nameWithType>, i metody.  
+ Włączenie IRI i IDN wpływa na wartość <xref:System.Uri.DnsSafeHost%2A?displayProperty=nameWithType> właściwości. Włączenie IRI i IDN może również zmienić zachowanie <xref:System.Uri.Equals%2A?displayProperty=nameWithType> <xref:System.Uri.OriginalString%2A?displayProperty=nameWithType> metod,, <xref:System.Uri.GetComponents%2A?displayProperty=nameWithType> i <xref:System.Uri.IsWellFormedOriginalString%2A> .  
   
- Klasa <xref:System.GenericUriParser?displayProperty=nameWithType> została również rozszerzona, aby umożliwić tworzenie konfigurowalny parser, który obsługuje IRI i IDN. Zachowanie <xref:System.GenericUriParser?displayProperty=nameWithType> obiektu jest określony przez przekazywanie bitowej kombinacji wartości <xref:System.GenericUriParserOptions?displayProperty=nameWithType> dostępnych w wyliczeniu do konstruktora. <xref:System.GenericUriParser?displayProperty=nameWithType> Typ <xref:System.GenericUriParserOptions.IriParsing?displayProperty=nameWithType> wskazuje, że analizator obsługuje reguły analizowania określone w RFC 3987 dla międzynarodowych identyfikatorów zasobów (IRI). To, czy IRI jest rzeczywiście używane, zależy od tego, czy IRI jest włączone.  
+ <xref:System.GenericUriParser?displayProperty=nameWithType>Klasa została również rozszerzona o możliwość tworzenia dostosowywalnego analizatora, który obsługuje IRI i IDN. Zachowanie <xref:System.GenericUriParser?displayProperty=nameWithType> obiektu jest określone przez przekazanie bitowej kombinacji wartości dostępnych w <xref:System.GenericUriParserOptions?displayProperty=nameWithType> wyliczeniu do <xref:System.GenericUriParser?displayProperty=nameWithType> konstruktora. <xref:System.GenericUriParserOptions.IriParsing?displayProperty=nameWithType>Typ wskazuje, że analizator obsługuje reguły analizy określone w RFC 3987 dla międzynarodowych identyfikatorów zasobów (IRI). Czy IRI jest rzeczywiście używany, zależy od tego, czy IRI jest włączona.  
   
- Typ <xref:System.GenericUriParserOptions.Idn?displayProperty=nameWithType> wskazuje, że analizator obsługuje analizowanie internationalized Domain Name (IDN) nazw hostów.The type indicates the parser supports Internationalized Domain Name (IDN) parsing (IDN) of host names. To, czy IDN jest faktycznie używane, zależy od tego, czy jest włączona funkcja IDN.  
+ <xref:System.GenericUriParserOptions.Idn?displayProperty=nameWithType>Typ wskazuje, że analizator obsługuje międzynarodowy (IDN) analizowanie nazw hostów. Czy IDN jest rzeczywiście używany, zależy od tego, czy IDN jest włączona.  
   
- Włączenie analizy IRI spowoduje normalizację i sprawdzanie znaków zgodnie z najnowszymi regułami IRI w RFC 3987. Wartość domyślna jest dla analizy IRI, aby wyłączyć, więc normalizacji i sprawdzania znaków są wykonywane zgodnie z RFC 2396 i RFC 3986.  
+ Włączenie analizy IRI spowoduje normalizację i sprawdzanie znaków zgodnie z najnowszymi regułami IRI w dokumencie RFC 3987. Wartość domyślna to IRI analiza, która ma zostać wyłączona, aby znormalizować i sprawdzanie znaków zostało wykonane zgodnie ze standardem RFC 2396 i RFC 3986.  
   
- Przetwarzanie IRI i IDN w <xref:System.Uri?displayProperty=nameWithType> klasie można <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> <xref:System.Configuration.IdnElement?displayProperty=nameWithType> również kontrolować przy użyciu klas ustawień konfiguracji i. Ustawienie <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> włącza lub wyłącza przetwarzanie <xref:System.Uri?displayProperty=nameWithType> IRI w klasie. Ustawienie <xref:System.Configuration.IdnElement?displayProperty=nameWithType> włącza lub wyłącza przetwarzanie IDN w <xref:System.Uri> klasie. Ustawienie <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> również pośrednio kontroluje IDN. Przetwarzanie IRI musi być włączone, aby przetwarzanie IDN było możliwe. Jeśli przetwarzanie IRI jest wyłączone, przetwarzanie IDN zostanie ustawione na ustawienie domyślne, w którym zachowanie programu .NET Framework 2.0 jest używane do zgodności, a nazwy IDN nie są używane.  
+ Przetwarzanie IRI i IDN w <xref:System.Uri?displayProperty=nameWithType> klasie można również kontrolować przy użyciu <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> <xref:System.Configuration.IdnElement?displayProperty=nameWithType> klas ustawień konfiguracji i. <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType>Ustawienie włącza lub wyłącza Przetwarzanie IRI w <xref:System.Uri?displayProperty=nameWithType> klasie. <xref:System.Configuration.IdnElement?displayProperty=nameWithType>Ustawienie włącza lub wyłącza przetwarzanie IDN w <xref:System.Uri> klasie. <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType>Ustawienie powoduje także pośrednio kontrolę IDN. Aby przetwarzanie IDN było możliwe, należy włączyć przetwarzanie IRI. Jeśli przetwarzanie IRI jest wyłączone, przetwarzanie IDN zostanie ustawione na ustawienie domyślne, w którym zachowanie .NET Framework 2,0 jest używane w przypadku zgodności i nazwy IDN nie są używane.  
   
- Ustawienie konfiguracji dla <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> <xref:System.Configuration.IdnElement?displayProperty=nameWithType> klas konfiguracji i zostaną odczytane raz podczas konstruowania pierwszej <xref:System.Uri?displayProperty=nameWithType> klasy. Zmiany ustawień konfiguracji po tym czasie są ignorowane.  
+ Ustawienia konfiguracji <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> klas i są <xref:System.Configuration.IdnElement?displayProperty=nameWithType> odczytywane raz podczas <xref:System.Uri?displayProperty=nameWithType> konstruowania pierwszej klasy. Zmiany ustawień konfiguracji po upływie tego czasu zostaną zignorowane.  
   
 ## <a name="see-also"></a>Zobacz też
 

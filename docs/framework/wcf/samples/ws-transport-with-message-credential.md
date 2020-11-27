@@ -2,14 +2,15 @@
 title: Transport WS z poświadczeniami komunikatu
 ms.date: 03/30/2017
 ms.assetid: 0d092f3a-b309-439b-920b-66d8f46a0e3c
-ms.openlocfilehash: 0082a9df5c112b66315236aad91bc891b80d27c7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 673eb864bd21a2092f30a9f3ad6f6e6c368eea00
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596387"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96252312"
 ---
 # <a name="ws-transport-with-message-credential"></a>Transport WS z poświadczeniami komunikatu
+
 Ten przykład ilustruje użycie zabezpieczeń transportu SSL w połączeniu z poświadczeniami klienta, które są przeprowadzane w komunikacie. Ten przykład używa `wsHttpBinding` powiązania.  
   
  Domyślnie `wsHttpBinding` powiązanie zapewnia komunikację http. W przypadku skonfigurowania zabezpieczeń transportu powiązanie obsługuje komunikację HTTPS. Protokół HTTPS zapewnia poufność i ochronę integralności komunikatów przesyłanych przez sieć. Jednak zestaw mechanizmów uwierzytelniania, których można użyć do uwierzytelniania klienta w usłudze, jest ograniczony do tego, co obsługuje transport HTTPS. Windows Communication Foundation (WCF) oferuje `TransportWithMessageCredential` tryb zabezpieczeń, który jest przeznaczony do pokonania tego ograniczenia. W przypadku skonfigurowania tego trybu zabezpieczeń zabezpieczenia transportu są używane w celu zapewnienia poufności i integralności przesyłanych komunikatów oraz do przeprowadzania uwierzytelniania usługi. Uwierzytelnianie klienta jest jednak wykonywane przez umieszczenie poświadczenia klienta bezpośrednio w komunikacie. Dzięki temu można używać dowolnego typu poświadczeń, który jest obsługiwany przez tryb zabezpieczeń wiadomości na potrzeby uwierzytelniania klienta, zachowując korzyści z używania trybu zabezpieczeń transportu.  
@@ -59,9 +60,9 @@ public string GetCallerIdentity()
 </system.serviceModel>  
 ```  
   
- Określony adres używa `https://` schematu. Konfiguracja powiązania ustawia tryb zabezpieczenia na `TransportWithMessageCredential` . Ten sam tryb zabezpieczeń musi być określony w pliku Web. config usługi.  
+ Określony adres używa `https://` schematu. Konfiguracja powiązania ustawia tryb zabezpieczenia na `TransportWithMessageCredential` . Ten sam tryb zabezpieczeń musi być określony w pliku Web.config usługi.  
   
- Ponieważ certyfikat używany w tym przykładzie jest certyfikatem testowym utworzonym za pomocą Makecert. exe, podczas próby uzyskania dostępu do adresu https:, takiego jak, z przeglądarki, pojawia się Alert zabezpieczeń `https://localhost/servicemodelsamples/service.svc` . Aby umożliwić klientowi WCF współpracuję z certyfikatem testowym, do klienta został dodany dodatkowy kod, aby pominąć alert zabezpieczeń. Ten kod i Klasa towarzysząca nie są wymagane w przypadku korzystania z certyfikatów produkcyjnych.  
+ Ponieważ certyfikat używany w tym przykładzie jest certyfikatem testowym utworzonym przy użyciu Makecert.exe, po próbie uzyskania dostępu do adresu https:, takiego jak, z przeglądarki jest wyświetlany alert zabezpieczeń  `https://localhost/servicemodelsamples/service.svc` . Aby umożliwić klientowi WCF współpracuję z certyfikatem testowym, do klienta został dodany dodatkowy kod, aby pominąć alert zabezpieczeń. Ten kod i Klasa towarzysząca nie są wymagane w przypadku korzystania z certyfikatów produkcyjnych.  
 
 ```csharp
 // WARNING: This code is only needed for test certificates such as those created by makecert. It is

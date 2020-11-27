@@ -5,19 +5,21 @@ helpviewer_keywords:
 - distributed application security [WCF]
 - security [WCF], transfer
 ms.assetid: 53928a10-e474-46d0-ab90-5f98f8d7b668
-ms.openlocfilehash: 70718b5dfbd54693d2734a58c3da17806137ad2f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 80878857145c7a4e09106b6e1c4cb9ad68b7680a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557544"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96254249"
 ---
 # <a name="distributed-application-security"></a>Rozproszone zabezpieczenia aplikacji
+
 Zabezpieczenia Windows Communication Foundation (WCF) są podzielone na trzy główne obszary funkcjonalne: zabezpieczenia transferu, kontrola dostępu i inspekcja. Zabezpieczenia transferu zapewniają integralność, poufność i uwierzytelnianie. Zabezpieczenia transferu są zapewniane przez jedną z następujących czynności: zabezpieczenia transportu, zabezpieczenia komunikatów lub `TransportWithMessageCredential` .  
   
  Aby zapoznać się z omówieniem zabezpieczeń komunikatów WCF, zobacz [Omówienie zabezpieczeń](security-overview.md). Aby uzyskać więcej informacji na temat pozostałych dwóch elementów zabezpieczeń WCF, zobacz [autoryzacja](authorization-in-wcf.md) i [Inspekcja](auditing-security-events.md).  
   
 ## <a name="transfer-security-scenarios"></a>Przenieś scenariusze zabezpieczeń  
+
  Typowe scenariusze wykorzystujące zabezpieczenia transferu WCF obejmują następujące elementy:  
   
 - Bezpieczny transfer przy użyciu systemu Windows. Klient i usługa WCF są wdrażane w domenie systemu Windows (lub w lesie systemu Windows). Komunikaty zawierają dane osobowe, dlatego wymagania obejmują wzajemne uwierzytelnianie klienta i usługi, integralność komunikatów i poufność komunikatów. Ponadto należy sprawdzić, czy dana transakcja wystąpiła, na przykład, odbiorca wiadomości powinien zarejestrować informacje o podpisie.  
@@ -27,6 +29,7 @@ Zabezpieczenia Windows Communication Foundation (WCF) są podzielone na trzy gł
 - Bezpieczny transfer przy użyciu certyfikatów. Aby pracować nad publicznym Internetem, należy opracować klienta i usługę programu WCF. Klient i usługa mają certyfikaty, których można użyć do zabezpieczenia komunikatów. Klient i usługa używają Internetu do komunikowania się ze sobą i wykonywania transakcji wysokiej wartości, które wymagają integralności komunikatów, poufności i wzajemnego uwierzytelniania.  
   
 ## <a name="integrity-confidentiality-and-authentication"></a>Integralność, poufność i uwierzytelnianie  
+
  Trzy funkcje — integralność, poufność i uwierzytelnianie — są razem nazywane zabezpieczeniami transferu. Zabezpieczenia transferu udostępniają funkcje, które pomagają w ograniczeniu zagrożeń do aplikacji rozproszonej. W poniższej tabeli krótko opisano trzy funkcje, które składają się na zabezpieczenia transferu.  
   
 |Funkcja|Opis|  
@@ -36,6 +39,7 @@ Zabezpieczenia Windows Communication Foundation (WCF) są podzielone na trzy gł
 |Authentication|*Uwierzytelnianie* jest weryfikacją tożsamości, której dotyczy żądanie. Na przykład w przypadku korzystania z konta bankowego konieczne jest, aby tylko rzeczywisty właściciel konta mógł wycofać fundusze. Uwierzytelnianie może być zapewniane przez różne sposoby. Jedną z typowych metod jest system użytkownika/hasła. Drugi to użycie certyfikatu X. 509, który jest dostarczany przez inną firmę.|  
   
 ## <a name="security-modes"></a>Tryby zabezpieczeń  
+
  Funkcja WCF ma kilka trybów zabezpieczeń transferu, które opisano w poniższej tabeli.  
   
 |Tryb|Opis|  
@@ -47,6 +51,7 @@ Zabezpieczenia Windows Communication Foundation (WCF) są podzielone na trzy gł
 |Oba|Wykonuje ochronę i uwierzytelnianie na obu poziomach. Ten tryb jest dostępny tylko w [\<netMsmqBinding>](../../configure-apps/file-schema/wcf/netmsmqbinding.md) elemencie.|  
   
 ## <a name="credentials-and-transfer-security"></a>Poświadczenia i zabezpieczenia transferu  
+
  *Poświadczenie* to dane, które są prezentowane w celu ustalenia tożsamości lub możliwości. Przedstawienie poświadczeń obejmuje przedstawienie danych i potwierdzenie posiadania danych. Usługa WCF obsługuje różne typy poświadczeń zarówno na poziomie zabezpieczeń transportu, jak i komunikatów. Możesz określić typ poświadczenia dla powiązania WCF.  
   
  W wielu krajach lub regionach licencja sterownika jest przykładem poświadczenia. Licencja zawiera dane reprezentujące tożsamość i możliwości. Zawiera dowód posiadania w postaci obrazu posiadacza. Licencja jest wystawiana przez zaufany urząd, zazwyczaj dział licencjonowania dla instytucji rządowych. Licencja jest zapieczętowana i może zawierać hologram, co oznacza, że nie została naruszona ani sfałszowana.  
@@ -60,6 +65,7 @@ Zabezpieczenia Windows Communication Foundation (WCF) są podzielone na trzy gł
  Aby uzyskać więcej informacji na temat programowania zabezpieczeń transferu i określania poświadczeń, zobacz [powiązania i zabezpieczenia](bindings-and-security.md) i [zachowania zabezpieczeń](security-behaviors-in-wcf.md).  
   
 ### <a name="transport-client-credential-types"></a>Typy poświadczeń klienta transportu  
+
  W poniższej tabeli przedstawiono możliwe wartości używane podczas tworzenia aplikacji, która korzysta z zabezpieczeń transferu. Możesz użyć tych wartości w ustawieniach kodu lub powiązania.  
   
 |Ustawienie|Opis|  
@@ -72,6 +78,7 @@ Zabezpieczenia Windows Communication Foundation (WCF) są podzielone na trzy gł
 |Certyfikat|Wykonuje uwierzytelnianie klienta przy użyciu certyfikatu, zazwyczaj X. 509.|  
   
 ### <a name="message-client-credential-types"></a>Typy poświadczeń klienta wiadomości  
+
  W poniższej tabeli przedstawiono możliwe wartości używane podczas tworzenia aplikacji, która korzysta z zabezpieczeń komunikatów. Możesz użyć tych wartości w ustawieniach kodu lub powiązania.  
   
 |Ustawienie|Opis|  
@@ -83,6 +90,7 @@ Zabezpieczenia Windows Communication Foundation (WCF) są podzielone na trzy gł
 |CardSpace|Zezwala usłudze na wymaganie uwierzytelniania klienta przy użyciu programu CardSpace.|  
   
 ### <a name="programming-credentials"></a>Poświadczenia programowania  
+
  Dla każdego z typów poświadczeń klienta model programowania WCF pozwala określić wartości poświadczeń i walidacji poświadczeń przy użyciu zachowań usługi i zachowań kanału.  
   
  Zabezpieczenia WCF mają dwa typy poświadczeń: zachowania poświadczeń usługi i zachowania poświadczeń kanału. Zachowania poświadczeń w programie WCF określają rzeczywiste dane, czyli poświadczenia używane do spełnienia wymagań dotyczących zabezpieczeń wyrażonych przez powiązania. W programie WCF Klasa klienta to składnik czasu wykonywania, który konwertuje między wywołaniem i komunikatami operacji. Wszyscy klienci dziedziczą z <xref:System.ServiceModel.ClientBase%601> klasy. <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>Właściwość klasy bazowej pozwala określić różne wartości poświadczeń klienta.  
@@ -90,11 +98,12 @@ Zabezpieczenia Windows Communication Foundation (WCF) są podzielone na trzy gł
  W programie WCF zachowania usługi są atrybutami stosowanymi do klasy implementującej kontrakt usługi (interfejs) do programowego sterowania usługą. <xref:System.ServiceModel.Description.ServiceCredentials>Klasa umożliwia określenie certyfikatów dla poświadczeń usługi i ustawień weryfikacji klienta dla różnych typów poświadczeń klienta.  
   
 ### <a name="negotiation-model-for-message-security"></a>Model negocjacji dla zabezpieczeń komunikatów  
+
  Tryb zabezpieczeń wiadomości umożliwia przeprowadzenie zabezpieczenia transferu w taki sposób, aby poświadczenia usługi zostały skonfigurowane na kliencie poza pasmem. Na przykład jeśli używasz certyfikatu przechowywanego w magazynie certyfikatów systemu Windows, musisz użyć narzędzia, takiego jak przystawka programu Microsoft Management Console (MMC).  
   
  Tryb zabezpieczeń wiadomości umożliwia również przeprowadzenie zabezpieczenia transferu, dzięki czemu poświadczenia usługi są wymieniane z klientem w ramach początkowej negocjacji. Aby włączyć negocjowanie, ustaw <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> Właściwość na `true` .  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Przegląd tworzenia punktów końcowych](../endpoint-creation-overview.md)
 - [Wiązania dostarczane przez system](../system-provided-bindings.md)
