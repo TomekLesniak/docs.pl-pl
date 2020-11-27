@@ -2,17 +2,19 @@
 title: Śledzenie przepływu pracy
 ms.date: 03/30/2017
 ms.assetid: 18737989-0502-4367-b5f6-617ebfb77c96
-ms.openlocfilehash: fc27be295cbf0a83b65ff03e36f2aeffeda12db9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b5a8f650edfdade4a18999c5e7af38ca72112122
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557505"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273883"
 ---
 # <a name="workflow-tracing"></a>Śledzenie przepływu pracy
+
 Śledzenie przepływu pracy umożliwia przechwytywanie informacji diagnostycznych przy użyciu detektorów śledzenia .NET Framework. Śledzenie można włączyć, jeśli problem zostanie wykryty w aplikacji, a następnie ponownie wyłączony po rozwiązaniu problemu. Istnieją dwa sposoby włączania śledzenia debugowania dla przepływów pracy. Można go skonfigurować przy użyciu podglądu śledzenia zdarzeń lub użyć <xref:System.Diagnostics> do wysyłania zdarzeń śledzenia do pliku.  
   
 ## <a name="enabling-debug-tracing-in-etw"></a>Włączanie śledzenia debugowania w ETW  
+
  Aby włączyć śledzenie przy użyciu funkcji ETW, Włącz kanał debugowania w Podgląd zdarzeń:  
   
 1. Przejdź do węzła dzienniki analityczne i debugowania w Podgląd zdarzeń.  
@@ -41,6 +43,7 @@ ms.locfileid: "90557505"
 > Jeśli używasz profilu klienta .NET Framework 4, musisz najpierw zarejestrować manifest ETW, uruchamiając następujące polecenie w katalogu .NET Framework 4: `ServiceModelReg.exe –i –c:etw`  
   
 ## <a name="enabling-debug-tracing-using-systemdiagnostics"></a>Włączanie śledzenia debugowania przy użyciu System. Diagnostics  
+
  Te odbiorniki można skonfigurować w pliku App.config aplikacji przepływu pracy lub Web.config dla usługi przepływu pracy. W tym przykładzie <xref:System.Diagnostics.TextWriterTraceListener> jest skonfigurowany do zapisywania informacji o śledzeniu do pliku MyTraceLog.txt w bieżącym katalogu.  
   
 ```xml  
@@ -69,7 +72,7 @@ ms.locfileid: "90557505"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Monitorowanie aplikacji sieci szkieletowej systemu Windows Server](/previous-versions/appfabric/ee677251(v=azure.10))
 - [Monitorowanie aplikacji przy użyciu sieci szkieletowej aplikacji](/previous-versions/appfabric/ee677276(v=azure.10))

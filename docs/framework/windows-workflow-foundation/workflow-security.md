@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
-ms.openlocfilehash: d2d8556b1ed2ac0a2b030a88d6bfc0ad48ed6f5c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6253a0d76d8b1db938e789f19d2cdd5abba9b700
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557518"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273896"
 ---
 # <a name="workflow-security"></a>Zabezpieczenia przepływu pracy
+
 Funkcja Windows Workflow Foundation (WF) jest zintegrowana z kilkoma różnymi technologiami, takimi jak Microsoft SQL Server i Windows Communication Foundation (WCF). Korzystanie z tych technologii może spowodować problemy z zabezpieczeniami w przepływie pracy, jeśli zostało wykonane nieprawidłowo.
 
 ## <a name="persistence-security-concerns"></a>Problemy z bezpieczeństwem trwałości
@@ -45,6 +46,7 @@ Funkcja Windows Workflow Foundation (WF) jest zintegrowana z kilkoma różnymi t
 - ServiceSecurityContext dla wiadomości przychodzącej jest również dostępny w ramach przepływu pracy przez dostęp do elementu OperationContext.
 
 ## <a name="wf-security-pack-ctp"></a>WF Security Pack CTP
+
  Microsoft WF Security Pack (CTP) 1 to zestaw działań i ich wdrożenia na podstawie [Windows Workflow Foundation](index.md) w [.NET Framework 4](/previous-versions/dotnet/netframework-4.0/w0x726c2(v=vs.100)) (WF 4) i [Windows Identity Foundation (WIF)](/previous-versions/dotnet/framework/security/index). Pakiet Microsoft WF Security Pack CTP 1 zawiera zarówno działania, jak i ich projektantów, które ilustrują, jak łatwo włączyć różne scenariusze związane z zabezpieczeniami korzystające z przepływu pracy, w tym:
 
 1. Personifikowanie tożsamości klienta w przepływie pracy
@@ -53,6 +55,6 @@ Funkcja Windows Workflow Foundation (WF) jest zintegrowana z kilkoma różnymi t
 
 3. Komunikaty uwierzytelnione przy użyciu funkcji ClientCredentials określonych w przepływie pracy, takie jak nazwa użytkownika/hasło lub token pobrany z usługi tokenu zabezpieczającego (STS)
 
-4. Przepływanie tokenu zabezpieczeń klienta do usługi zaplecza (delegowanie oparte na oświadczeniach) przy użyciu usługi WS-Trust ActAs
+4. Przepływanie tokenu zabezpieczeń klienta do usługi zaplecza (delegowanie oparte na oświadczeniach) przy użyciu WS-Trust ActAs
 
 Aby uzyskać więcej informacji i pobrać pakiet zabezpieczeń programu WF CTP, zobacz: [WF Security Pack CTP](https://archive.codeplex.com/?p=wf)

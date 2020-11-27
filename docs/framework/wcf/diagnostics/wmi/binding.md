@@ -2,15 +2,16 @@
 title: Binding2
 ms.date: 03/30/2017
 ms.assetid: 09511c6c-5749-4bb0-874e-0f0be36bfe04
-ms.openlocfilehash: a040cc6e12833d2c737eb14c591300e5873ddce7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b72bd3903b7139c4adf2a8bd0ced6c34e7285640
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61964083"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96274299"
 ---
 # <a name="binding"></a>Wiązanie
-WMI powiązania  
+
+Powiązanie usługi WMI  
   
 ## <a name="syntax"></a>Składnia  
   
@@ -29,26 +30,31 @@ class Binding
 ```  
   
 ## <a name="methods"></a>Metody  
- Klasa powiązania nie definiuje żadnych metod.  
+
+ Klasa Binding nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa powiązania ma następujące właściwości.  
   
-### <a name="bindingelements"></a>Elementy BindingElements  
- Typ danych: Tablica BindingElement  
+### <a name="bindingelements"></a>BindingElements  
+
+ Typ danych: tablica BindingElement  
   
  Typ dostępu: tylko do odczytu  
   
- Kolekcja elementów powiązań implementowanych przez powiązanie.  
+ Kolekcja elementów powiązania implementowanych przez powiązanie.  
   
-### <a name="closetimeout"></a>closeTimeout  
- Typ danych: Data i godzina  
+### <a name="closetimeout"></a>CloseTimeout  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Przedział czasu przewidzianego na zakończenie operacji zamknięcia.  
+ Przedział czasu podanego na zakończenie operacji zamknięcia.  
   
 ### <a name="name"></a>Nazwa  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -56,6 +62,7 @@ class Binding
  Nazwa powiązania.  
   
 ### <a name="namespace"></a>Przestrzeń nazw  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -63,39 +70,43 @@ class Binding
  Przestrzeń nazw XML powiązania.  
   
 ### <a name="opentimeout"></a>OpenTimeout  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Przedział czasu przewidzianego na zakończenie operacji Otwórz.  
+ Przedział czasu podanego na zakończenie operacji otwarcia.  
   
 ### <a name="receivetimeout"></a>ReceiveTimeout  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Przedział czasu przewidzianego na ukończenie operacji odbierania.  
+ Przedział czasu podanego na zakończenie operacji odbioru.  
   
 ### <a name="scheme"></a>Schemat  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Schemat transportu identyfikatora URI jest używany przez fabryki kanału i odbiornika, które są tworzone przez wiązanie.  
+ Schemat transportu URI używany przez fabryki kanałów i odbiorników, które są tworzone przez powiązanie.  
   
-### <a name="sendtimeout"></a>SendTimeout  
- Typ danych: Data i godzina  
+### <a name="sendtimeout"></a>Właściwości SendTimeout  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Przedział czasu przewidzianego na ukończenie operacji wysyłania.  
+ Interwał przeznaczony na zakończenie operacji wysyłania.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.Binding>

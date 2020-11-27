@@ -2,14 +2,15 @@
 title: ServiceTimeoutsBehavior
 ms.date: 03/30/2017
 ms.assetid: 4412525d-a3cc-4eae-b3e8-a50ce766d09d
-ms.openlocfilehash: 58e872f2b15776d65bccdcc47c353ce566cd9d2f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 867219130fc853f3ba2c1c2f807b1651f6480f13
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956731"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96273974"
 ---
 # <a name="servicetimeoutsbehavior"></a>ServiceTimeoutsBehavior
+
 ServiceTimeoutsBehavior  
   
 ## <a name="syntax"></a>Składnia  
@@ -22,24 +23,27 @@ class ServiceTimeoutsBehavior : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa ServiceTimeoutsBehavior nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa ServiceTimeoutsBehavior ma następującą właściwość:  
   
 ### <a name="transactiontimeout"></a>TransactionTimeout  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Okres, w którym należy wykonać transakcję.  
+ Okres, w którym transakcja musi zostać zakończona.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Configuration.ServiceTimeoutsElement>

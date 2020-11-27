@@ -2,14 +2,15 @@
 title: SymmetricSecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: b2e182b6-c041-4d80-a926-6058068d9f79
-ms.openlocfilehash: f6effd533a205d0e8fd1421119e325f06b340dd1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c618b5b41790b04a84b4c50fe47baa2c0cb05ab2
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956718"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96274104"
 ---
 # <a name="symmetricsecuritybindingelement"></a>SymmetricSecurityBindingElement
+
 SymmetricSecurityBindingElement  
   
 ## <a name="syntax"></a>Składnia  
@@ -23,31 +24,35 @@ class SymmetricSecurityBindingElement : SecurityBindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
- Klasa element SymmetricSecurityBindingElement nie definiuje żadnych metod.  
+
+ Klasa SymmetricSecurityBindingElement nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
- Klasa element SymmetricSecurityBindingElement ma następujące właściwości:  
+
+ Klasa SymmetricSecurityBindingElement ma następujące właściwości:  
   
 ### <a name="messageprotectionorder"></a>MessageProtectionOrder  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Kolejność komunikatów szyfrowania i podpisywania dla tego powiązania.  
+ Kolejność szyfrowania i podpisywania wiadomości dla tego powiązania.  
   
 ### <a name="requiresignatureconfirmation"></a>RequireSignatureConfirmation  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Czy wiązanie wymaga potwierdzenia podpisu.  
+ Czy powiązanie wymaga potwierdzenia podpisu.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>

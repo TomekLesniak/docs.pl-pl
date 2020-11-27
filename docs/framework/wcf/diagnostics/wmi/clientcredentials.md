@@ -2,14 +2,15 @@
 title: ClientCredentials
 ms.date: 03/30/2017
 ms.assetid: 41dffd6b-8f14-4fed-aefb-2a1bb168efb3
-ms.openlocfilehash: c3adc675bb6c1e9011459a88fd7dc8e8cf63a880
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c63e1b3de464b306f46e2f0935b1208d7262925a
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963981"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96274195"
 ---
 # <a name="clientcredentials"></a>ClientCredentials
+
 ClientCredentials  
   
 ## <a name="syntax"></a>Składnia  
@@ -29,73 +30,83 @@ class ClientCredentials : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa ClientCredentials nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa ClientCredentials ma następujące właściwości:  
   
-### <a name="clientcertificate"></a>ClientCertificate  
+### <a name="clientcertificate"></a>Kolekcja  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Certyfikat X.509, klient używa do uwierzytelnienia w usłudze.  
+ Certyfikat X. 509, którego klient używa do uwierzytelniania w usłudze.  
   
 ### <a name="httpdigest"></a>HttpDigest  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Bieżące poświadczenie Http Digest.  
+ Bieżące poświadczenie HTTP digest.  
   
 ### <a name="issuedtoken"></a>IssuedToken  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Adres punktu końcowego i powiązania używanego do kontaktowania się z usługi tokenu zabezpieczeń lokalnych.  
+ Adres punktu końcowego i powiązanie używane do kontaktowania się z usługą tokenu zabezpieczeń lokalnych.  
   
-### <a name="peer"></a>Elementu równorzędnego  
+### <a name="peer"></a>Element równorzędny  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Poświadczenia używane przez węzeł równorzędny uwierzytelnienie na innych węzłach w sieci.  
+ Poświadczenia używane przez węzeł równorzędny do samodzielnego uwierzytelnienia w innych węzłach w sieci.  
   
 ### <a name="servicecertificate"></a>ServiceCertificate  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Certyfikat X.509 dla usługi.  
+ Certyfikat X. 509 usługi.  
   
 ### <a name="supportinteractive"></a>SupportInteractive  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość logiczna określająca, czy poświadczenia obsługuje interakcyjne negocjacji.  
+ Wartość logiczna określająca, czy poświadczenie obsługuje interaktywne negocjowanie.  
   
-### <a name="username"></a>UserName  
+### <a name="username"></a>Nazwa użytkownika  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Nazwa użytkownika i hasło, którego klient używa do samodzielnego uwierzytelnienia usługi.  
+ Nazwa użytkownika i hasło, których klient używa do samodzielnego uwierzytelnienia w usłudze.  
   
 ### <a name="windows"></a>Windows  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Windows poświadczeń używa klienta do samodzielnego uwierzytelnienia usługi.  
+ Poświadczenia systemu Windows, których klient używa do samodzielnego uwierzytelnienia w usłudze.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Description.ClientCredentials>

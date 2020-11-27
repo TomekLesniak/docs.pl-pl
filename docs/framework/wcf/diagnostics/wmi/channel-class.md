@@ -2,14 +2,15 @@
 title: Klasa kanału
 ms.date: 03/30/2017
 ms.assetid: d9fae2ca-209c-4341-a0f5-6b79d1a67776
-ms.openlocfilehash: f60a3946617b0994db1ba9e9ddf43be863be81f9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a920636e7df9609b12834366b1488c80122f9fca
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61964090"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96274234"
 ---
 # <a name="channel-class"></a>Klasa kanału
+
 Kanał  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,40 +27,47 @@ class Channel
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa kanału nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa kanału ma następujące właściwości.  
   
-### <a name="localaddress"></a>LocalAddress  
+### <a name="localaddress"></a>Localaddress wynosi  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Lokalny punkt końcowy dla kanału.  
+ Lokalny punkt końcowy kanału.  
   
 ### <a name="ref"></a>ref  
- Typ danych: Punkt końcowy  
+
+ Typ danych: punkt końcowy  
   
  Typ dostępu: tylko do odczytu  
   
- Łączy się z odwołaniem do punktu końcowego kanału.  
+ Odwołanie do punktu końcowego, z którym łączy się kanał.  
   
 ### <a name="remoteaddress"></a>RemoteAddress  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Zdalny adres skojarzony z kanałem.  
+ Adres zdalny skojarzony z kanałem.  
   
 ### <a name="sessionid"></a>SessionId  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Identyfikator bieżącej sesji, jeśli istnieje.  
+ Identyfikator bieżącej sesji (jeśli istnieje).  
   
 ### <a name="type"></a>Typ  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -68,10 +76,10 @@ class Channel
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.ChannelBase>
