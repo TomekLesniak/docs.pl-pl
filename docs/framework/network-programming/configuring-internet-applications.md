@@ -22,14 +22,15 @@ helpviewer_keywords:
 - network resources, configuring Internet applications
 - Internet, default proxy
 ms.assetid: bb707c72-eed2-4a82-8800-c9e68df2fd4f
-ms.openlocfilehash: 760a4ac7cec9abeabfc372c3be5bd3860a6fb03a
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 796752ebf6e3cc5c3dac2a20213934f35d31b392
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502642"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287465"
 ---
 # <a name="configuring-internet-applications"></a>Konfigurowanie aplikacji internetowych
+
 Element konfiguracji [ \<system.Net> element (Ustawienia sieci)](../configure-apps/file-schema/network/system-net-element-network-settings.md) zawiera informacje o konfiguracji sieci dla aplikacji. Za pomocą elementu [ \<system.Net> (ustawień sieciowych)](../configure-apps/file-schema/network/system-net-element-network-settings.md) można ustawić serwery proxy, ustawić parametry zarządzania połączeniami i dołączyć niestandardowe moduły uwierzytelniania i żądania w aplikacji.  
   
  Element [ \<defaultProxy> (Ustawienia sieci)](../configure-apps/file-schema/network/defaultproxy-element-network-settings.md) definiuje serwer proxy zwracany przez `GlobalProxySelection` klasę. Wszystkie <xref:System.Net.HttpWebRequest> właściwości, które nie mają przypisanej <xref:System.Net.HttpWebRequest.Proxy%2A> do określonej wartości, używają domyślnego serwera proxy. Oprócz ustawiania adresu serwera proxy można utworzyć listę adresów serwerów, które nie będą używać serwera proxy, i można wskazać, że serwer proxy nie powinien być używany dla adresów lokalnych.  
@@ -98,8 +99,8 @@ Element konfiguracji [ \<system.Net> element (Ustawienia sieci)](../configure-ap
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
-- [Programowanie dla sieci w programie .NET Framework](index.md)
-- [Schemat ustawień sieci](../configure-apps/file-schema/network/index.md)
-- [\<system.Net>— Element (Ustawienia sieci)](../configure-apps/file-schema/network/system-net-element-network-settings.md)
+- [Programowanie dla sieci w .NET Framework](index.md)
+- [Schemat ustawień sieciowych](../configure-apps/file-schema/network/index.md)
+- [\<system.Net> — Element (Ustawienia sieci)](../configure-apps/file-schema/network/system-net-element-network-settings.md)

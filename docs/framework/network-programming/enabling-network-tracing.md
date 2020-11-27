@@ -12,14 +12,15 @@ helpviewer_keywords:
 - logs, trace
 - destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
-ms.openlocfilehash: 4ad0b23fc93ddcdc11cebcc556d12148df5e8ae2
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 246a975ead3cb9c1acb4fe0512dfa91d1b8a00c0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502603"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96287426"
 ---
 # <a name="enabling-network-tracing"></a>Włączanie śledzenia sieci
+
 Śledzenie sieci zapewnia dostęp do informacji o wywołaniach metod i ruchu sieciowym generowanym przez zarządzaną aplikację. Aby włączyć śledzenie sieci w aplikacji, należy wykonać następujące zadania:  
   
 - Kompiluj swój kod z włączonym śledzeniem. Zobacz [jak: Kompiluj warunkowo, śledząc i Debug](../debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md) , aby uzyskać więcej informacji na temat przełączników kompilatora wymaganych do włączenia śledzenia.  
@@ -30,7 +31,7 @@ ms.locfileid: "84502603"
   
  Najpopularniejsze miejsca docelowe śledzenia, nazywane również odbiornikami śledzenia, to domyślny odbiornik i plik dziennika.  
   
- Śledzenie używa domyślnego odbiornika, jeśli nie zostanie określony odbiornik śledzenia. Możesz wyświetlić komunikaty wysyłane do domyślnego odbiornika, wykonując kod w debugerze obsługującym kod zarządzany, taki jak debuger CLR dostarczany z zestawem SDK .NET Framework, lub DBwin32. exe dostarczony z Windows SDK. Przy użyciu debugera CLR komunikaty śledzenia pojawiają się w oknie **danych wyjściowych** .  
+ Śledzenie używa domyślnego odbiornika, jeśli nie zostanie określony odbiornik śledzenia. Możesz wyświetlić komunikaty wysyłane do domyślnego odbiornika, wykonując kod w debugerze obsługującym kod zarządzany, taki jak debuger CLR dostarczany z zestawem SDK .NET Framework, lub DBwin32.exe dostarczony z Windows SDKem. Przy użyciu debugera CLR komunikaty śledzenia pojawiają się w oknie **danych wyjściowych** .  
   
  Jeśli wolisz używać pliku do odbierania śladów, możesz określić plik dziennika za pomocą ustawień konfiguracji, jak pokazano w poniższym przykładzie. (Ogólne omówienie plików konfiguracji można znaleźć w temacie [pliki konfiguracyjne](../configure-apps/index.md)).  
   
@@ -46,8 +47,8 @@ ms.locfileid: "84502603"
 </system.diagnostics>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Interpretowanie śledzenia sieci](interpreting-network-tracing.md)
 - [Śledzenie sieci w .NET Framework](network-tracing.md)
-- [Śledzenie i instrumentacja aplikacji](../debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Śledzenie i instrumentowanie aplikacji](../debug-trace-profile/tracing-and-instrumenting-applications.md)
