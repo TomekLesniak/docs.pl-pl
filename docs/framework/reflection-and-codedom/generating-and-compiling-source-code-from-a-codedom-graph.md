@@ -27,17 +27,19 @@ helpviewer_keywords:
 - compiling source code, multiple languages
 - CodeDOM, graphs
 ms.assetid: 6c864c8e-6dd3-4a65-ace0-36879d9a9c42
-ms.openlocfilehash: 3aad7b2ff047a2d9ad12c23d16773e482a395c10
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: aec7d6b44e63558ae70bc0eb41f94e55c8a6c325
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551200"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266340"
 ---
 # <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>Generowanie i kompilowanie kodu źródłowego z wykresu CodeDOM
+
 <xref:System.CodeDom.Compiler>Przestrzeń nazw udostępnia interfejsy do generowania kodu źródłowego z grafów obiektów CodeDOM i do zarządzania kompilacją z obsługiwanymi kompilatorami. Dostawca kodu może utworzyć kod źródłowy w określonym języku programowania zgodnie z wykresem CodeDOM. Klasa, która pochodzi od, <xref:System.CodeDom.Compiler.CodeDomProvider> zazwyczaj dostarcza metody do generowania i kompilowania kodu dla języka obsługiwanego przez dostawcę.  
   
 ## <a name="using-a-codedom-code-provider-to-generate-source-code"></a>Generowanie kodu źródłowego przy użyciu dostawcy kodu CodeDOM  
+
  Aby wygenerować kod źródłowy w określonym języku, potrzebny jest wykres CodeDOM, który reprezentuje strukturę kodu źródłowego do wygenerowania.  
   
  Poniższy przykład pokazuje, jak utworzyć wystąpienie obiektu <xref:Microsoft.CSharp.CSharpCodeProvider> :  
@@ -53,6 +55,7 @@ ms.locfileid: "90551200"
  [!code-vb[CodeDomExample#22](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source3.vb#22)]  
   
 ## <a name="using-a-codedom-code-provider-to-compile-assemblies"></a>Używanie dostawcy kodu CodeDOM do kompilowania zestawów  
+
  **Wywoływanie kompilacji**  
   
  Aby skompilować zestaw przy użyciu dostawcy CodeDom, musisz mieć kod źródłowy do skompilowania w języku, dla którego masz kompilator, lub wykres CodeDOM, który może zostać wygenerowany przez kod źródłowy do skompilowania.  
@@ -65,7 +68,7 @@ ms.locfileid: "90551200"
   
  Możesz określić nazwę pliku dla zestawu wyjściowego we <xref:System.CodeDom.Compiler.CompilerParameters.OutputAssembly%2A> właściwości **CompilerParameters**. W przeciwnym razie zostanie użyta domyślna nazwa pliku wyjściowego.  
   
- Domyślnie nowy **CompilerParameters** jest inicjowany z <xref:System.CodeDom.Compiler.CompilerParameters.GenerateExecutable%2A> właściwością ustawioną na **wartość false**. W przypadku kompilowania programu wykonywalnego należy ustawić **wartość true**dla właściwości **GenerateExecutable** . Gdy **GenerateExecutable** ma wartość **false**, kompilator wygeneruje bibliotekę klas.  
+ Domyślnie nowy **CompilerParameters** jest inicjowany z <xref:System.CodeDom.Compiler.CompilerParameters.GenerateExecutable%2A> właściwością ustawioną na **wartość false**. W przypadku kompilowania programu wykonywalnego należy ustawić **wartość true** dla właściwości **GenerateExecutable** . Gdy **GenerateExecutable** ma wartość **false**, kompilator wygeneruje bibliotekę klas.  
   
  Jeśli kompilujesz plik wykonywalny z wykresu CodeDOM, <xref:System.CodeDom.CodeEntryPointMethod> musi on być zdefiniowany w grafie. Jeśli istnieje wiele punktów wejścia kodu, może być konieczne ustawienie <xref:System.CodeDom.Compiler.CompilerParameters.MainClass%2A> właściwości **CompilerParameters** na nazwę klasy, która definiuje punkt wejścia do użycia.  
   
@@ -90,9 +93,10 @@ ms.locfileid: "90551200"
  [!code-vb[CodeDomExample#23](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomExample/VB/source3.vb#23)]  
   
 ## <a name="languages-with-initial-support"></a>Języki z zapoczątkową pomocą techniczną  
+
  .NET Framework zapewnia kompilatory kodu i generatory kodu dla następujących języków: C#, Visual Basic, C++ i JScript. Obsługę CodeDOM można rozszerzyć do innych języków przez implementację generatorów kodu specyficznych dla języka i kompilatorów kodu.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.CodeDom>
 - <xref:System.CodeDom.Compiler>

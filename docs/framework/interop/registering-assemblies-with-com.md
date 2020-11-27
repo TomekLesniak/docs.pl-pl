@@ -8,24 +8,25 @@ helpviewer_keywords:
 - interoperation with unmanaged code, registering assemblies
 - registering assemblies
 ms.assetid: 87925795-a3ae-4833-b138-125413478551
-ms.openlocfilehash: 0adae4db393c4c01620ea896c4451c3279272fca
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 525e3724aec82a74f5b0339296808b41f30d0ddc
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559281"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266379"
 ---
 # <a name="registering-assemblies-with-com"></a>Rejestrowanie zestawów do użycia z modelem COM
+
 Możesz uruchomić narzędzie wiersza polecenia o nazwie [Narzędzie rejestracji zestawu (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) , aby zarejestrować lub wyrejestrować zestaw do użycia z modelem com. Regasm.exe dodaje informacje o klasie do rejestru systemowego, aby klienci COM mogli używać klasy .NET Framework w niewidoczny sposób. <xref:System.Runtime.InteropServices.RegistrationServices>Klasa zapewnia równoważne funkcje.  
   
  Składnik zarządzany musi być zarejestrowany w rejestrze systemu Windows, aby można go było aktywować z poziomu klienta COM. W poniższej tabeli przedstawiono klucze, które Regasm.exe zwykle dodawane do rejestru systemu Windows. (000000 wskazuje rzeczywistą wartość identyfikatora GUID).  
   
 |GUID|Opis|Klucz rejestru|  
 |----------|-----------------|------------------|  
-|Identyfikator|Identyfikator klasy|HKEY_CLASSES_ROOT \CLSID \\ {000... 500000|  
-|IID|Identyfikator interfejsu|HKEY_CLASSES_ROOT \Interface \\ {000... 500000|  
-|IDENTYFIKATORA LIBID|Identyfikator biblioteki|HKEY_CLASSES_ROOT \TypeLib \\ {000... 500000|  
-|ProgID|Identyfikator programistyczny|HKEY_CLASSES_ROOT \ 000... 500000|  
+|Identyfikator|Identyfikator klasy|HKEY_CLASSES_ROOT\CLSID\\ {000... 500000|  
+|IID|Identyfikator interfejsu|HKEY_CLASSES_ROOT\Interface\\ {000... 500000|  
+|IDENTYFIKATORA LIBID|Identyfikator biblioteki|HKEY_CLASSES_ROOT\TypeLib\\ {000... 500000|  
+|ProgID|Identyfikator programistyczny|HKEY_CLASSES_ROOT\000…000|  
   
  W HKCR\CLSID \\ {0000... 0000} — wartość domyślna to identyfikator ProgID klasy i dodano dwie nowe nazwane wartości, klasy i zestawu. Środowisko uruchomieniowe odczytuje wartość zestawu z rejestru i przekazuje je do programu rozpoznawania zestawu środowiska uruchomieniowego. Program rozpoznawania zestawu próbuje zlokalizować zestaw na podstawie informacji o zestawie, takich jak nazwa i numer wersji. Aby program rozpoznawania zestawu mógł zlokalizować zestaw, zestaw musi znajdować się w jednej z następujących lokalizacji:  
   
@@ -38,11 +39,12 @@ Możesz uruchomić narzędzie wiersza polecenia o nazwie [Narzędzie rejestracji
  Regasm.exe również tworzy klucz InProcServer32 w HKCR\CLSID \\ {0000... 0000}. Wartość domyślna dla klucza jest ustawiana na nazwę biblioteki DLL, która inicjuje środowisko uruchomieniowe języka wspólnego (Mscoree.dll).  
   
 ## <a name="examining-registry-entries"></a>Badanie wpisów rejestru  
+
  Współdziałanie modelu COM zapewnia standardową implementację fabryki klasy w celu utworzenia wystąpienia dowolnej klasy .NET Framework. Klienci mogą wywoływać **DllGetClassObject** na ZARZĄDZANEJ bibliotece DLL, aby uzyskać fabrykę klasy i tworzyć obiekty, podobnie jak w przypadku każdego innego składnika com.  
   
  `InprocServer32`Odwołanie do Mscoree.dll pojawia się zamiast tradycyjnej biblioteki typów com, aby wskazać, że środowisko uruchomieniowe języka wspólnego tworzy obiekt zarządzany.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Udostępnianie składników .NET Framework modelowi COM](exposing-dotnet-components-to-com.md)
 - [Instrukcje: Odwołania do typów .NET z modelu COM](how-to-reference-net-types-from-com.md)

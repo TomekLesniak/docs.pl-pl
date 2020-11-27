@@ -2,17 +2,19 @@
 title: Integracja elementu System.Web.Routing
 ms.date: 03/30/2017
 ms.assetid: 31fe2a4f-5c47-4e5d-8ee1-84c524609d41
-ms.openlocfilehash: 6e67aa4a790edeb367b099d4a94f465f1e7b9bcc
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bb820f535a69a24e05b7374bcf97539ae2b87aef
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554778"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266431"
 ---
 # <a name="systemwebrouting-integration"></a>Integracja elementu System.Web.Routing
+
 W przypadku hostowania usługi Windows Communication Foundation (WCF) w usłudze Internet Information Service (IIS) Umieść plik. svc w katalogu wirtualnym. Ten plik SVC określa fabrykę hosta usługi, która ma być używana, a także klasy implementującej usługę. Podczas wykonywania żądań do usługi należy określić plik SVC w identyfikatorze URI, na przykład: `http://contoso.com/EmployeeServce.svc` . Dla programistów piszące usługi REST ten typ URI nie jest optymalny. Identyfikatory URI usług REST określają konkretny zasób i zwykle nie mają żadnych rozszerzeń. <xref:System.Web.Routing>Funkcja integracji umożliwia Hostowanie usługi REST WCF, która reaguje na identyfikatory URI bez rozszerzenia. Aby uzyskać więcej informacji na temat routingu, zobacz [ASP.NET routing](/previous-versions/aspnet/cc668201(v=vs.100)).  
   
 ## <a name="using-systemwebrouting-integration"></a>Korzystanie z integracji system. Web. Routing  
+
  Aby użyć <xref:System.Web.Routing> funkcji integracji, należy użyć klasy w <xref:System.ServiceModel.Activation.ServiceRoute> celu utworzenia jednej lub więcej tras i dodania ich do <xref:System.Web.Routing.RouteTable> pliku Global. asax. Te trasy określają względne identyfikatory URI, z którymi usługa reaguje. W przykładzie poniżej pokazano, jak to zrobić.  
   
 ```aspx-csharp  
@@ -69,7 +71,7 @@ W przypadku hostowania usługi Windows Communication Foundation (WCF) w usłudze
     }  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Model programowania protokołu HTTP sieci Web w programie WCF](wcf-web-http-programming-model.md)
 - [Routing ASP.NET](/previous-versions/aspnet/cc668201(v=vs.100))

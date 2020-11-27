@@ -3,19 +3,21 @@ title: Konfiguracja klienta
 description: Dowiedz się, jak za pomocą konfiguracji klienta WCF określić adres, powiązanie, zachowanie i kontrakt dla punktu końcowego, który jest używany do nawiązywania połączenia z usługą.
 ms.date: 03/30/2017
 ms.assetid: 5da5bd3b-65d9-43b7-91b9-cc9e989b1350
-ms.openlocfilehash: c3e3d4904bad39e951e8ba69013ac95894130489
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: af9101be0067311fb1a3c0e6e575f186e8ccf161
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245378"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96265976"
 ---
 # <a name="client-configuration"></a>Konfiguracja klienta
+
 Za pomocą konfiguracji klienta Windows Communication Foundation (WCF) można określić adres, powiązanie, zachowanie i kontrakt, czyli właściwości "ABC" punktu końcowego klienta używanego przez klientów do łączenia się z punktami końcowymi usługi. [\<client>](../../configure-apps/file-schema/wcf/client.md)Element ma element, [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-of-client.md) którego atrybuty są używane do konfigurowania punktu końcowego ABCs. Te atrybuty zostały omówione w sekcji [Konfigurowanie punktów końcowych](#configuring-endpoints) .  
   
  [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-of-client.md)Element zawiera również [\<metadata>](../../configure-apps/file-schema/wcf/metadata.md) element, który jest używany do określania ustawień importowania i eksportowania metadanych, [\<headers>](../../configure-apps/file-schema/wcf/headers.md) element, który zawiera kolekcję niestandardowych nagłówków adresów i [\<identity>](../../configure-apps/file-schema/wcf/identity.md) element, który umożliwia uwierzytelnianie punktu końcowego przez inne punkty końcowe wymieniające z nim wiadomości. [\<headers>](../../configure-apps/file-schema/wcf/headers.md)Elementy i są [\<identity>](../../configure-apps/file-schema/wcf/identity.md) częścią <xref:System.ServiceModel.EndpointAddress> i zostały omówione w artykule dotyczącej [adresów](endpoint-addresses.md) . Linki do tematów, które wyjaśniają korzystanie z rozszerzeń metadanych, znajdują się w sekcji [Konfigurowanie metadanych](#configuring-metadata) .  
   
 ## <a name="configuring-endpoints"></a>Konfigurowanie punktów końcowych  
+
  Konfiguracja klienta została zaprojektowana tak, aby umożliwić klientowi określenie co najmniej jednego punktu końcowego, z każdą nazwą, adresem i umową, przy czym każdy odwołuje się do [\<bindings>](../../configure-apps/file-schema/wcf/bindings.md) [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) elementów i w konfiguracji klienta, aby można było użyć ich do skonfigurowania tego punktu końcowego. Plik konfiguracji klienta powinien mieć nazwę "App.config", ponieważ jest to nazwa, której oczekuje środowisko uruchomieniowe WCF. Poniższy przykład przedstawia plik konfiguracji klienta.  
   
 ```xml  
@@ -92,9 +94,10 @@ Za pomocą konfiguracji klienta Windows Communication Foundation (WCF) można ok
  Ten `contract` atrybut określa, który kontrakt jest ujawniany przez punkt końcowy. Ta wartość jest mapowana na <xref:System.ServiceModel.ServiceContractAttribute.ConfigurationName%2A> <xref:System.ServiceModel.ServiceContractAttribute> . Wartość domyślna to pełna nazwa typu klasy implementującej usługę.  
   
 ### <a name="configuring-metadata"></a>Konfigurowanie metadanych  
+
  [\<metadata>](../../configure-apps/file-schema/wcf/metadata.md)Element służy do określania ustawień używanych do rejestrowania rozszerzeń importu metadanych. Aby uzyskać więcej informacji na temat rozszerzania systemu metadanych, zobacz [Rozszerzanie systemu metadanych](../extending/extending-the-metadata-system.md).  
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Punkty końcowe: Adresy, powiązania i kontrakty](endpoints-addresses-bindings-and-contracts.md)
+- [Punkty końcowe: adresy, wiązania i kontrakty](endpoints-addresses-bindings-and-contracts.md)
 - [Konfigurowanie zachowań klienta](../configuring-client-behaviors.md)

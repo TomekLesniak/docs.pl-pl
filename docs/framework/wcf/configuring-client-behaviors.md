@@ -6,19 +6,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: df5b32fa-e73b-4e8e-b66f-357c748e0173
-ms.openlocfilehash: 4b83862221cf249455478c3ade159a3101062f3e
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 34cbb9e31933debb5120eb30956c3a5f0be065ed
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245443"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266717"
 ---
 # <a name="configuring-client-behaviors"></a>Konfigurowanie zachowań klienta
+
 Windows Communication Foundation (WCF) konfiguruje zachowania na dwa sposoby: w odniesieniu do konfiguracji zachowania — które są zdefiniowane w `<behavior>` sekcji pliku konfiguracyjnego aplikacji klienckiej — lub programowo w aplikacji wywołującej. W tym temacie opisano oba podejścia.  
   
  W przypadku korzystania z pliku konfiguracji, konfiguracja zachowania jest nazwaną kolekcją ustawień konfiguracji. Nazwa każdej konfiguracji zachowania musi być unikatowa. Ten ciąg jest używany w `behaviorConfiguration` atrybucie konfiguracji punktu końcowego w celu połączenia punktu końcowego z zachowaniem.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy kod konfiguracji definiuje zachowanie o nazwie `myBehavior` . Punkt końcowy klienta odwołuje się do tego zachowania w `behaviorConfiguration` atrybucie.  
   
 ```xml  
@@ -44,9 +46,11 @@ Windows Communication Foundation (WCF) konfiguruje zachowania na dwa sposoby: w 
 ```  
   
 ## <a name="using-behaviors-programmatically"></a>Programistyczne używanie zachowań  
+
  Można również programowo skonfigurować lub wstawić zachowania, lokalizując odpowiednią `Behaviors` Właściwość w obiekcie klienta Windows Communication Foundation (WCF) lub w obiekcie fabryki kanału klienta przed otwarciem klienta.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu pokazuje, jak programowo wstawić zachowanie, uzyskując dostęp do <xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A> właściwości <xref:System.ServiceModel.Description.ServiceEndpoint> zwracanej z <xref:System.ServiceModel.ChannelFactory.Endpoint%2A> Właściwości przed utworzeniem obiektu kanału.  
   
  [!code-csharp[ChannelFactoryBehaviors#10](../../../samples/snippets/csharp/VS_Snippets_CFX/channelfactorybehaviors/cs/client.cs#10)]
