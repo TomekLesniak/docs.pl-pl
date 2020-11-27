@@ -2,14 +2,15 @@
 title: MsmqBindingElementBase
 ms.date: 03/30/2017
 ms.assetid: 210d41ab-a2a4-4d7a-afd2-0916c08a4015
-ms.openlocfilehash: 1df4b32feda246a536183a42ac11b113bc4bb259
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 48d26bfa9074fd605e3545579f0bdc2744dfc7d8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963439"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267862"
 ---
 # <a name="msmqbindingelementbase"></a>MsmqBindingElementBase
+
 MsmqBindingElementBase  
   
 ## <a name="syntax"></a>Składnia  
@@ -32,33 +33,39 @@ class MsmqBindingElementBase : TransportBindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa MsmqBindingElementBase nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa MsmqBindingElementBase ma następujące właściwości:  
   
 ### <a name="customdeadletterqueue"></a>CustomDeadLetterQueue  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Identyfikator URI, który zawiera lokalizację kolejki utraconych wiadomości dla każdej aplikacji, gdzie umieszcza komunikaty wygasły lub mają niepowodzeniem transferu lub dostarczania.  
+ Identyfikator URI, który zawiera lokalizację kolejki utraconych wiadomości dla każdej aplikacji, miejsce, w której znajdują się komunikaty, które wygasły lub które nie zostały przekazane.  
   
 ### <a name="deadletterqueue"></a>DeadLetterQueue  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość wyliczenia, który wskazuje na typ używanej kolejki utraconych wiadomości.  
+ Wartość wyliczenia wskazująca typ używanej kolejki utraconych wiadomości.  
   
-### <a name="durable"></a>trwałe  
+### <a name="durable"></a>Trwałość  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość, która wskazuje, czy komunikaty przetwarzane przez to powiązanie są trwałe lub zmienne.  
+ Wartość wskazująca, czy komunikaty przetwarzane przez to powiązanie są trwałe czy nietrwałe.  
   
-### <a name="exactlyonce"></a>exactlyOnce  
+### <a name="exactlyonce"></a>ExactlyOnce  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
@@ -66,48 +73,55 @@ class MsmqBindingElementBase : TransportBindingElement
  Wartość logiczna wskazująca, czy komunikaty przetwarzane przez to powiązanie są odbierane dokładnie raz.  
   
 ### <a name="maxretrycycles"></a>MaxRetryCycles  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalna liczba ponownych prób cyklów próby dostarczenia komunikatów do aplikacji odbierającej.  
+ Maksymalna liczba ponownych prób dostarczenia komunikatów do aplikacji odbiorczej.  
   
-### <a name="receiveerrorhandling"></a>receiveErrorHandling  
+### <a name="receiveerrorhandling"></a>ReceiveErrorHandling  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Ustawienia obsługi Zarządzanie skażonymi komunikatami.  
+ Ustawienia obsługi skażonych komunikatów.  
   
 ### <a name="receiveretrycount"></a>ReceiveRetryCount  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalna liczba natychmiastowego ponawiania próby w wiadomości, które są odczytywane z kolejki aplikacji.  
+ Maksymalna liczba natychmiastowych ponownych prób w komunikacie odczytywanym z kolejki aplikacji.  
   
 ### <a name="retrycycledelay"></a>RetryCycleDelay  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość wskazująca czas opóźnienia między cykle przy próbie dostarczenia komunikatu, którego nie można dostarczyć natychmiast.  
+ Wartość wskazująca czas opóźnienia między kolejnymi próbami dostarczenia komunikatu, którego nie można było dostarczyć natychmiast.  
   
 ### <a name="timetolive"></a>TimeToLive  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Przedział czasu, która wskazuje, jak długo komunikaty przetwarzane przez to powiązanie mogą znajdować się w kolejce, zanim wygasną.  
+ Przedział czasu, który wskazuje, jak długo komunikaty przetwarzane przez to powiązanie mogą znajdować się w kolejce przed ich wygaśnięciem.  
   
 ### <a name="usemsmqtracing"></a>UseMsmqTracing  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość logiczna, która wskazuje, czy komunikaty przetwarzane przez to powiązanie powinny być śledzone.  
+ Wartość logiczna wskazująca, czy komunikaty przetwarzane przez to powiązanie powinny być śledzone.  
   
 ### <a name="usesourcejournal"></a>UseSourceJournal  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
@@ -116,11 +130,11 @@ class MsmqBindingElementBase : TransportBindingElement
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.NetMsmqBinding>
 - <xref:System.ServiceModel.MsmqBindingBase>

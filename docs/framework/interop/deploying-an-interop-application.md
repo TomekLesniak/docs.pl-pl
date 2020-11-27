@@ -15,14 +15,15 @@ helpviewer_keywords:
 - signed assemblies
 - COM interop, exposing COM components
 ms.assetid: ea8a403e-ae03-4faa-9d9b-02179ec72992
-ms.openlocfilehash: 190b10ede4bc0037836d44332408d7752108346c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2a8c94ac482bc16cb373fc694c4610ad42e8f631
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555071"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267094"
 ---
 # <a name="deploying-an-interop-application"></a>Wdrażanie aplikacji międzyoperacyjnych
+
 Aplikacja międzyoperacyjna zwykle zawiera zestaw klienta .NET, co najmniej jeden zestaw międzyoperacyjny reprezentujący różne biblioteki typów COM oraz co najmniej jeden zarejestrowany składnik COM. Program Visual Studio i Windows SDK udostępniają narzędzia do importowania i konwersji biblioteki typów na zestaw międzyoperacyjny, jak opisano w [importowania biblioteki typów jako zestawu](importing-a-type-library-as-an-assembly.md). Istnieją dwa sposoby wdrożenia aplikacji międzyoperacyjnego:  
   
 - Korzystając z osadzonych typów międzyoperacyjnych: począwszy od .NET Framework 4, można wydać kompilatorowi, aby osadzi informacje o typie z zestawu międzyoperacyjnego do pliku wykonywalnego. Kompilator osadza tylko informacje o typie używane przez aplikację. Nie trzeba wdrażać zestawu międzyoperacyjnego przy użyciu aplikacji. Jest to zalecana technika.  
@@ -32,9 +33,11 @@ Aplikacja międzyoperacyjna zwykle zawiera zestaw klienta .NET, co najmniej jede
  W przypadku korzystania z osadzonych typów międzyoperacyjnych wdrożenie jest proste i proste. Nie ma żadnych specjalnych, które należy wykonać. W dalszej części tego artykułu opisano scenariusze wdrażania zestawów międzyoperacyjnych w aplikacji.  
   
 ## <a name="deploying-interop-assemblies"></a>Wdrażanie zestawów międzyoperacyjnych  
+
  Zestawy mogą mieć silne nazwy. Zestaw o silnej nazwie zawiera klucz publiczny wydawcy, który zapewnia unikatową tożsamość. Zestawy, które są tworzone przez [importera biblioteki typów (Tlbimp.exe)](../tools/tlbimp-exe-type-library-importer.md) , mogą być podpisane przez wydawcę przy użyciu opcji **/KeyFile** . Można zainstalować podpisane zestawy w globalnej pamięci podręcznej zestawów. Zestawy bez znaku muszą być zainstalowane na komputerze użytkownika jako prywatne zespoły.  
   
 ### <a name="private-assemblies"></a>Zestawy prywatne  
+
  Aby zainstalować zestaw, który ma być używany prywatnie, należy zainstalować zarówno plik wykonywalny aplikacji, jak i zestaw międzyoperacyjny zawierający zaimportowane typy COM w tej samej strukturze katalogów. Na poniższej ilustracji przedstawiono niepodpisany zestaw międzyoperacyjny, który ma być używany prywatnie przez Client1.exe i Client2.exe, które znajdują się w oddzielnych katalogach aplikacji. Zestaw międzyoperacyjny, który jest nazywany LOANLib.dll w tym przykładzie, jest instalowany dwa razy.  
   
  ![Struktura katalogów i rejestr systemu Windows](./media/deploying-an-interop-application/com-private-deployment.gif "Struktura katalogów i wpisy rejestru dla prywatnego wdrożenia")  
@@ -42,9 +45,10 @@ Aplikacja międzyoperacyjna zwykle zawiera zestaw klienta .NET, co najmniej jede
  Wszystkie składniki COM skojarzone z aplikacją muszą być zainstalowane w rejestrze systemu Windows. Jeśli Client1.exe i Client2.exe na ilustracji są zainstalowane na różnych komputerach, należy zarejestrować składniki COM na obu komputerach.  
   
 ### <a name="shared-assemblies"></a>Zestawy udostępnione  
+
  Zestawy, które są współużytkowane przez wiele aplikacji, powinny być zainstalowane w scentralizowanym repozytorium o nazwie globalna pamięć podręczna zestawów. Klienci platformy .NET mogą uzyskać dostęp do tej samej kopii zestawu międzyoperacyjnego, który jest podpisany i zainstalowany w globalnej pamięci podręcznej zestawów. Aby uzyskać więcej informacji na temat tworzenia i używania podstawowych zestawów międzyoperacyjnych, zobacz [podstawowe zestawy międzyoperacyjności](/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Udostępnianie składników COM programowi.NET Framework](exposing-com-components.md)
 - [Importowanie biblioteki typów jako zestawu](importing-a-type-library-as-an-assembly.md)

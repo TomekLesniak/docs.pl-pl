@@ -1,5 +1,5 @@
 ---
-title: 'Instrukcje: Korzystanie z zabezpieczeń transportu i poświadczeń komunikatów'
+title: 'Instrukcje: korzystanie z zabezpieczeń transportu i poświadczeń komunikatów'
 description: Dowiedz się, jak zaimplementować zabezpieczenia transportu z poświadczeniami komunikatów, które oferują najlepsze tryby zabezpieczeń transportu i komunikatów w programie WCF.
 ms.date: 03/30/2017
 dev_langs:
@@ -8,14 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - TransportWithMessageCredentials
 ms.assetid: 6cc35346-c37a-4859-b82b-946c0ba6e68f
-ms.openlocfilehash: f632a4389eafc155cedcae94707c9418b6696f2c
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: dbf04572e19d0dfc2508b3f8c3295ffae78ca0f4
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246652"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268316"
 ---
-# <a name="how-to-use-transport-security-and-message-credentials"></a>Instrukcje: Korzystanie z zabezpieczeń transportu i poświadczeń komunikatów
+# <a name="how-to-use-transport-security-and-message-credentials"></a>Instrukcje: korzystanie z zabezpieczeń transportu i poświadczeń komunikatów
+
 Zabezpieczanie usługi przy użyciu poświadczeń transportowych i komunikatów jest zgodne z najlepszymi trybami zabezpieczeń transportu i komunikatów w programie Windows Communication Foundation (WCF). W obszarze suma zabezpieczenia warstwy transport zapewnia integralność i poufność, natomiast zabezpieczenia warstwy komunikatów zapewniają wiele poświadczeń, które nie są możliwe przy użyciu ścisłych mechanizmów zabezpieczeń transportu. W tym temacie przedstawiono podstawowe kroki wdrażania transportu za pomocą poświadczeń przy użyciu <xref:System.ServiceModel.WSHttpBinding> powiązań i <xref:System.ServiceModel.NetTcpBinding> . Aby uzyskać więcej informacji na temat ustawiania trybu zabezpieczeń, zobacz [How to: Set a Security Mode](../how-to-set-the-security-mode.md).  
   
  Podczas ustawiania trybu zabezpieczeń na `TransportWithMessageCredential` , transport określa rzeczywisty mechanizm, który zapewnia zabezpieczenia na poziomie transportu. W przypadku protokołu HTTP mechanizm jest SSL (SSL) za pośrednictwem protokołu HTTP (HTTPS); w przypadku protokołu TCP jest to protokół SSL za pośrednictwem protokołu TCP lub Windows.  
@@ -163,6 +164,6 @@ Zabezpieczanie usługi przy użyciu poświadczeń transportowych i komunikatów 
   
 ## <a name="see-also"></a>Zobacz też
 
-- [Instrukcje: ustawianie trybu zabezpieczeń](../how-to-set-the-security-mode.md)
+- [Instrukcje: Ustawianie trybu zabezpieczeń](../how-to-set-the-security-mode.md)
 - [Zabezpieczanie usług](../securing-services.md)
 - [Zabezpieczanie usług i klientów](securing-services-and-clients.md)

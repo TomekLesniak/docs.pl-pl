@@ -2,17 +2,19 @@
 title: Formatowanie HTTP sieci Web w programie WCF
 ms.date: 03/30/2017
 ms.assetid: e2414896-5463-41cd-b0a6-026a713eac2c
-ms.openlocfilehash: 011ff4f2e667268fac1aa2d82c0a2c4ffefc8dde
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e9346cd1bb3798ad0beac5e9e28a8536007d897b
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585561"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266912"
 ---
 # <a name="wcf-web-http-formatting"></a>Formatowanie HTTP sieci Web w programie WCF
+
 Model programowania HTTP sieci Web w programie WCF umożliwia dynamiczne określenie najlepszego formatu dla operacji usługi w celu zwrócenia odpowiedzi w programie. Obsługiwane są dwie metody określania odpowiedniego formatu: automatyczne i jawne.  
   
 ## <a name="automatic-formatting"></a>Automatyczne formatowanie  
+
  Po włączeniu automatyczne formatowanie wybiera najlepszy format, w którym ma zostać zwrócona odpowiedź. Określa najlepszy format, sprawdzając następujące elementy:  
   
 1. Typy nośników w nagłówku akceptowania komunikatu żądania.  
@@ -91,6 +93,7 @@ try
 ```  
   
 ## <a name="explicit-formatting"></a>Jawne formatowanie  
+
  Jak nazywa się, w przypadku jawnego formatowania deweloper określa najlepszy format do użycia w kodzie operacji. Jeśli najlepszym formatem jest XML lub JSON, deweloper ustawia <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> jedną <xref:System.ServiceModel.Web.WebMessageFormat.Xml> lub <xref:System.ServiceModel.Web.WebMessageFormat.Json> . Jeśli <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> Właściwość nie jest jawnie ustawiona, zostanie użyty domyślny format operacji.  
   
  Poniższy przykład sprawdza, czy format ciągu zapytania ma być używany. Jeśli została określona, ustawia format operacji przy użyciu <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> .  

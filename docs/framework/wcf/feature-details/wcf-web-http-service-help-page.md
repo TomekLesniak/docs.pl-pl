@@ -2,15 +2,16 @@
 title: Usługa HTTP w sieci Web dla programu WCF — strona pomocy
 ms.date: 03/30/2017
 ms.assetid: 63c7c695-44b6-4f31-bb9c-00f2763f525e
-ms.openlocfilehash: ef42457dea8bfe12a3e5054c5eacdf5a2964fdc7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: fe6b22c6ebd637d3aa2bcd3744cb6b73e71c9482
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600169"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266938"
 ---
 # <a name="wcf-web-http-service-help-page"></a>Usługa HTTP w sieci Web dla programu WCF — strona pomocy
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]udostępnia automatyczną stronę pomocy dla usług HTTP sieci WEB WCF. Ta strona pomocy zawiera opis każdej operacji, formaty żądań i odpowiedzi oraz schematy. Ta funkcja jest domyślnie wyłączona. Gdy użytkownik przejdzie do usługi HTTP sieci WEB programu WCF i dołącza "/Help" na końcu adresu URL, na przykład `http://localhost:8000/Customers/Help` zostanie wyświetlona strona pomocy, taka jak następująca.  
+
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] udostępnia automatyczną stronę pomocy dla usług HTTP sieci WEB WCF. Ta strona pomocy zawiera opis każdej operacji, formaty żądań i odpowiedzi oraz schematy. Ta funkcja jest domyślnie wyłączona. Gdy użytkownik przejdzie do usługi HTTP sieci WEB programu WCF i dołącza "/Help" na końcu adresu URL, na przykład `http://localhost:8000/Customers/Help` zostanie wyświetlona strona pomocy, taka jak następująca.  
   
  ![Przeglądarka z otwartą stroną pomocy REST WCF.](./media/wcf-web-http-service-help-page/windows-communication-foundation-rest-help-page.gif)  
   
@@ -19,6 +20,7 @@ ms.locfileid: "84600169"
  ![Przeglądarka z informacjami na stronie pomocy usługi WCF REST dla otwartej metody getcustomerss.](./media/wcf-web-http-service-help-page/windows-communication-foundation-rest-help-page-detail.gif)  
   
 ## <a name="using-the-wcf-web-http-help-page"></a>Korzystanie ze strony pomocy protokołu HTTP w sieci Web WCF  
+
  Na stronie pomocy protokołu HTTP w sieci WEB WCF jest wyświetlany Krótki opis każdej operacji, która została określona przy użyciu <xref:System.ComponentModel.DescriptionAttribute> . Ten atrybut Pobiera ciąg zawierający krótki opis operacji, do której jest stosowany. Na przykład poniższy kod pokazuje, jak użyć, <xref:System.ComponentModel.DescriptionAttribute> Aby podać Krótki opis.  
   
 ```csharp
@@ -59,6 +61,7 @@ using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http:/
  Strona pomocy to XHTML w oparciu o znacznik, który identyfikuje różne części strony. Dzięki temu klienci mogą programistycznie uzyskiwać dostęp do strony przy użyciu <xref:System.Xml.Linq.XElement> lub innych interfejsów API XLinq.  
   
 ## <a name="schemas-used-in-the-wcf-web-http-service-help-page"></a>Schematy używane na stronie pomocy usługi HTTP sieci Web WCF  
+
  Poniższe schematy są używane na stronie pomocy usługi HTTP sieci Web WCF.  
   
 ```xml  

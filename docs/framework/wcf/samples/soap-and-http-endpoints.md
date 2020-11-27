@@ -2,25 +2,28 @@
 title: Punkty końcowe protokołów SOAP i HTTP
 ms.date: 03/30/2017
 ms.assetid: e3c8be75-9dda-4afa-89b6-a82cb3b73cf8
-ms.openlocfilehash: fee1df86026716941f65dccca15d437ae917770b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9e7ce32a0f5a2f37294db57659e2b30b364bef24
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600948"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268264"
 ---
 # <a name="soap-and-http-endpoints"></a>Punkty końcowe protokołów SOAP i HTTP
+
 Ten przykład pokazuje, jak wdrożyć usługę opartą na protokole RPC i udostępnić ją w formacie protokołu SOAP oraz formacie "zwykły stary kod XML" (POX) przy użyciu modelu programowania sieci Web WCF. Zapoznaj się z przykładem [podstawowej usługi http](basic-http-service.md) , aby uzyskać więcej informacji na temat powiązania HTTP dla usługi. Ten przykład koncentruje się na szczegółach odnoszących się do ujawnienia tej samej usługi za pośrednictwem protokołów SOAP i HTTP przy użyciu różnych powiązań.  
   
 ## <a name="demonstrates"></a>Demonstracje  
+
  Uwidacznianie usługi RPC za pośrednictwem protokołu SOAP i protokołu HTTP przy użyciu programu WCF.  
   
-## <a name="discussion"></a>Dyskusji  
+## <a name="discussion"></a>Dyskusja  
+
  Ten przykład składa się z dwóch składników: projektu aplikacji sieci Web (usługi), który zawiera usługę WCF i aplikację konsoli (klienta), która wywołuje operacje usługi przy użyciu powiązań protokołu SOAP i HTTP.  
   
  Usługa WCF ujawnia dwie operacje — `GetData` i `PutData` — które Echo ciąg, który został przesłany jako dane wejściowe. Do operacji usługi są Dodawaj adnotacje <xref:System.ServiceModel.Web.WebGetAttribute> i <xref:System.ServiceModel.Web.WebInvokeAttribute> . Te atrybuty kontrolują projekcję HTTP tych operacji. Ponadto są one opatrzone adnotacjami <xref:System.ServiceModel.OperationContractAttribute> , co umożliwia ich uwidocznienie za pośrednictwem powiązań protokołu SOAP. `PutData`Metoda usługi zgłasza, że jest <xref:System.ServiceModel.Web.WebFaultException> wysyłana za pośrednictwem protokołu HTTP przy użyciu kodu stanu HTTP i jest wysyłana za pośrednictwem protokołu SOAP jako błąd protokołu SOAP.  
   
- Plik Web. config konfiguruje usługę WCF z trzema punktami końcowymi:  
+ Plik Web.config konfiguruje usługę WCF z trzema punktami końcowymi:  
   
 - Punkt końcowy/Service.svc/Mex, który uwidacznia metadane usługi dla dostępu przez klientów opartych na protokole SOAP.  
   

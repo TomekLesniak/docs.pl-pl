@@ -2,14 +2,15 @@
 title: Operation — klasa
 ms.date: 03/30/2017
 ms.assetid: b19d1496-ef06-4d0c-b2ae-e728ec00cca0
-ms.openlocfilehash: 9696a7f026e54afacb5ccbfa8703a2ba617a9f3d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6b47d933dc84813532398830c92c95210208a709
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963114"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269161"
 ---
 # <a name="operation-class"></a>Operation — klasa
+
 Operacja  
   
 ## <a name="syntax"></a>Składnia  
@@ -33,12 +34,15 @@ class Operation
 ```  
   
 ## <a name="methods"></a>Metody  
- Klasa Operation nie definiuje żadnych metod.  
+
+ Klasa operacji nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
- Klasa Operation ma następujące właściwości:  
+
+ Klasa operacji ma następujące właściwości:  
   
 ### <a name="action"></a>Akcja  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -46,34 +50,39 @@ class Operation
  Akcja WS-Addressing komunikatu żądania.  
   
 ### <a name="asyncpattern"></a>AsyncPattern  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wskazuje, że operacja jest wykonywane asynchronicznie za pomocą `Begin`[/ zamykającego nawiasy kątowe] i `End`pary — metoda [nawiasy otwarte i zamknięte] w kontrakcie usługi.  
+ Wskazuje, że operacja jest zaimplementowana asynchronicznie za pomocą `Begin` pary metod [Open/Close Angle] i `End` [nawias ostry "Open/Close] w kontrakcie usługi.  
   
 ### <a name="behaviors"></a>Zachowania  
- Typ danych: Zachowanie tablicy  
+
+ Typ danych: tablica zachowań  
   
  Typ dostępu: tylko do odczytu  
   
  Zachowania skojarzone z tą operacją.  
   
 ### <a name="iscallback"></a>IsCallback  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość true, gdy operacja jest operacji wywołania zwrotnego.  
+ Wartość true, gdy operacja jest operacją wywołania zwrotnego.  
   
-### <a name="isinitiating"></a>IsInitiating  
+### <a name="isinitiating"></a>Operację IsInitiating  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wskazuje, czy metoda implementuje operację, która może zainicjować sesję na serwerze.  
+ Wskazuje, czy metoda implementuje operację, która może inicjować sesję na serwerze.  
   
 ### <a name="isoneway"></a>IsOneWay  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
@@ -81,6 +90,7 @@ class Operation
  Wskazuje, czy operacja zwraca komunikat odpowiedzi.  
   
 ### <a name="isterminating"></a>IsTerminating  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
@@ -88,6 +98,7 @@ class Operation
  Wskazuje, czy operacja zwraca komunikat odpowiedzi.  
   
 ### <a name="methodsignature"></a>MethodSignature  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -95,6 +106,7 @@ class Operation
  Podpis metody operacji.  
   
 ### <a name="name"></a>Nazwa  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -102,20 +114,23 @@ class Operation
  Nazwa operacji.  
   
 ### <a name="parametertypes"></a>ParameterTypes  
+
  Typ danych: tablica ciągów  
   
  Typ dostępu: tylko do odczytu  
   
  Typy parametrów operacji.  
   
-### <a name="replyaction"></a>Parametr ReplyAction  
+### <a name="replyaction"></a>ReplyAction  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość Akcja SOAP komunikat odpowiedzi operacji.  
+ Wartość akcji protokołu SOAP dla komunikatu odpowiedzi operacji.  
   
-### <a name="returntype"></a>ReturnType  
+### <a name="returntype"></a>Atrybuty  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
@@ -124,10 +139,10 @@ class Operation
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Description.OperationDescription>

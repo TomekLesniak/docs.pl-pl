@@ -1,5 +1,5 @@
 ---
-title: 'Instrukcje: Tworzenie tokenu niestandardowego'
+title: 'Instrukcje: tworzenie tokenu niestandardowego'
 description: Dowiedz się, jak utworzyć niestandardowy token zabezpieczający w programie WCF przy użyciu klasy SecurityToken oraz jak zintegrować go z dostawcą tokenów zabezpieczających i wystawcą uwierzytelnienia.
 ms.date: 03/30/2017
 dev_langs:
@@ -11,14 +11,15 @@ helpviewer_keywords:
 - WSSecurityTokenSerializer class
 - SecurityToken class
 ms.assetid: 6d892973-1558-4115-a9e1-696777776125
-ms.openlocfilehash: a95d663c2669186fcb3eb1fb2f0c426ade945f1c
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: e0d80fe2433d894ef1f9e110e9090701dc305d8e
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247536"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266756"
 ---
-# <a name="how-to-create-a-custom-token"></a>Instrukcje: Tworzenie tokenu niestandardowego
+# <a name="how-to-create-a-custom-token"></a>Instrukcje: tworzenie tokenu niestandardowego
+
 W tym temacie pokazano, jak utworzyć niestandardowy token zabezpieczający przy użyciu <xref:System.IdentityModel.Tokens.SecurityToken> klasy oraz jak zintegrować go z niestandardowym dostawcą tokenu zabezpieczeń i wystawcą uwierzytelnienia. Aby zapoznać się z kompletnym przykładem kodu, zapoznaj się z przykładem [niestandardowego tokenu](../samples/custom-token.md) .  
   
  *Token zabezpieczający* jest zasadniczo elementem XML, który jest używany przez strukturę zabezpieczeń Windows Communication Foundation (WCF) do reprezentowania oświadczeń dotyczących nadawcy w komunikacie protokołu SOAP. Zabezpieczenia WCF udostępniają różne tokeny dla trybów uwierzytelniania dostępnych w systemie. Przykłady obejmują token zabezpieczający certyfikat X. 509 reprezentowany przez klasę <xref:System.IdentityModel.Tokens.X509SecurityToken> lub token zabezpieczający nazwy użytkownika reprezentowany przez <xref:System.IdentityModel.Tokens.UserNameSecurityToken> klasę.  
@@ -32,6 +33,7 @@ W tym temacie pokazano, jak utworzyć niestandardowy token zabezpieczający przy
  Zapoznaj się z <xref:System.IdentityModel.Tokens> przestrzenią nazw, aby poznać więcej klas, które reprezentują tokeny zabezpieczające.  
   
 ## <a name="procedures"></a>Procedury  
+
  Aplikacja kliencka musi być dostępna ze sposobem, aby określić informacje dotyczące karty kredytowej dla infrastruktury zabezpieczeń. Te informacje są udostępniane aplikacji przez niestandardową klasę poświadczeń klienta. Pierwszym krokiem jest utworzenie klasy do reprezentowania informacji o karcie kredytowej dla niestandardowych poświadczeń klienta.  
   
 #### <a name="to-create-a-class-that-represents-credit-card-information-inside-client-credentials"></a>Aby utworzyć klasę reprezentującą informacje o karcie kredytowej w poświadczeniach klienta  
@@ -163,5 +165,5 @@ W tym temacie pokazano, jak utworzyć niestandardowy token zabezpieczający przy
 - <xref:System.ServiceModel.Description.ServiceCredentials>
 - <xref:System.ServiceModel.Channels.SecurityBindingElement>
 - [Przewodnik: tworzenie niestandardowego klienta i poświadczeń usługi](walkthrough-creating-custom-client-and-service-credentials.md)
-- [Instrukcje: Tworzenie niestandardowego wystawcy uwierzytelniania tokenu zabezpieczeń](how-to-create-a-custom-security-token-authenticator.md)
+- [Instrukcje: tworzenie niestandardowego wystawcy uwierzytelniania tokenu zabezpieczeń](how-to-create-a-custom-security-token-authenticator.md)
 - [Instrukcje: tworzenie niestandardowego dostawcy tokenów zabezpieczeń](how-to-create-a-custom-security-token-provider.md)

@@ -2,14 +2,15 @@
 title: PeerSecuritySettings
 ms.date: 03/30/2017
 ms.assetid: 24ae0d35-f3a3-419b-afd6-686e22aae27b
-ms.openlocfilehash: 1c33e1ce710fea3b1698a6dab47a199e40388f5a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2de417e4a4f5c6197551c1408da6907e2fa7c635
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963010"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269005"
 ---
 # <a name="peersecuritysettings"></a>PeerSecuritySettings
+
 PeerSecuritySettings  
   
 ## <a name="syntax"></a>Składnia  
@@ -23,19 +24,23 @@ class PeerSecuritySettings
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa PeerSecuritySettings nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa PeerSecuritySettings ma następujące właściwości:  
   
 ### <a name="mode"></a>Tryb  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Czy komunikatu i zabezpieczenia na poziomie transportu używanych przez punkty końcowe skonfigurowane dla tego wiązania.  
+ Określa, czy zabezpieczenia na poziomie komunikatów i transportu są używane przez punkt końcowy skonfigurowany dla powiązania.  
   
 ### <a name="transport"></a>Transport  
+
  Typ danych: PeerTransportSecuritySettings  
   
  Typ dostępu: tylko do odczytu  
@@ -44,10 +49,10 @@ class PeerSecuritySettings
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.PeerSecuritySettings>

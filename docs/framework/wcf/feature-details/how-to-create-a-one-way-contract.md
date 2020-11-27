@@ -1,21 +1,22 @@
 ---
-title: 'Instrukcje: Tworzenie kontraktu jednokierunkowego'
+title: 'Instrukcje: tworzenie kontraktu jednokierunkowego'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 85084cd9-31cc-4e95-b667-42ef01336622
-ms.openlocfilehash: 42c056c9b56ed1245290cd66833cc6565f517b66
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7f0285ba4824ac842b3644d0834782139fd90657
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593454"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268693"
 ---
-# <a name="how-to-create-a-one-way-contract"></a>Instrukcje: Tworzenie kontraktu jednokierunkowego
+# <a name="how-to-create-a-one-way-contract"></a>Instrukcje: tworzenie kontraktu jednokierunkowego
+
 W tym temacie przedstawiono podstawowe kroki tworzenia metod, które korzystają z kontraktu jednokierunkowego. Takie metody wywołują operacje w usłudze Windows Communication Foundation (WCF) z klienta, ale nie oczekują odpowiedzi. Tego typu kontraktu można użyć na przykład w celu opublikowania powiadomień dla wielu subskrybentów. Kontrakty jednokierunkowe można także używać podczas tworzenia dwukierunkowego kontraktu, który umożliwia klientom i serwerom komunikowanie się ze sobą niezależnie, tak aby można było inicjować wywołania do drugiego. Może to umożliwić, w szczególności serwerowi wykonywanie wywołań jednokierunkowych do klienta, które klient może traktować jako zdarzenia. Aby uzyskać szczegółowe informacje na temat określania metod jednokierunkowych, zobacz <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> Właściwość i <xref:System.ServiceModel.OperationContractAttribute> klasę.  
   
- Aby uzyskać więcej informacji na temat tworzenia aplikacji klienckiej dla kontraktu dupleksowego, zobacz [jak: dostęp do usług za pomocą kontraktów jednokierunkowych i odpowiedzi na żądanie](how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md). Aby zapoznać się z przykładem roboczym, zobacz przykład [jednokierunkowe](../samples/one-way.md) .  
+ Aby uzyskać więcej informacji na temat tworzenia aplikacji klienckiej dla kontraktu dupleksowego, zobacz [How to: Access Services with One-Way i Request-Reply kontrakts](how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md). Aby zapoznać się z przykładem roboczym, zobacz przykład [jednokierunkowe](../samples/one-way.md) .  
   
 ### <a name="to-create-a-one-way-contract"></a>Aby utworzyć kontrakt jednokierunkowy  
   
@@ -26,6 +27,7 @@ W tym temacie przedstawiono podstawowe kroki tworzenia metod, które korzystają
 3. Wyznaczanie operacji, które nie mogą zawierać danych wyjściowych (brak wartości zwracanej ani parametrów out lub ref) jako jednokierunkowe przez ustawienie <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> właściwości na `true` . Należy zauważyć, że operacje, które przenoszą <xref:System.ServiceModel.OperationContractAttribute> klasę, domyślnie spełniają kontrakt żądanie-odpowiedź, ponieważ <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> Właściwość jest `false` domyślnie. Dlatego musisz jawnie określić wartość właściwości Attribute, `true` Jeśli chcesz, aby kontrakt jednokierunkowy dla metody został określony.  
   
 ## <a name="example"></a>Przykład  
+
  Poniższy przykład kodu definiuje kontrakt dla usługi, która zawiera kilka jednokierunkowych metod. Wszystkie metody mają jednokierunkowe kontrakty, z wyjątkiem `Equals` , które są domyślne do żądania-odpowiedzi i zwracają wynik.  
   
  [!code-csharp[S_Service_Session#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_service_session/cs/service.cs#1)]

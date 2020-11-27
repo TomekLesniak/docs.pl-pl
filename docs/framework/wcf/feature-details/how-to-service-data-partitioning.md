@@ -2,14 +2,15 @@
 title: 'Instrukcje: Partycjonowanie danych usługi'
 ms.date: 03/30/2017
 ms.assetid: 1ccff72e-d76b-4e36-93a2-e51f7b32dc83
-ms.openlocfilehash: 3b2f86ee6a4dea25fb5c972d4cecb1b9ed411b29
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7bb5eb6bda8bb2be3dfaaa88eb4b5ad787f47aa7
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601195"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268927"
 ---
 # <a name="how-to-service-data-partitioning"></a>Instrukcje: Partycjonowanie danych usługi
+
 W tym temacie przedstawiono podstawowe kroki wymagane do dzielenia komunikatów między wiele wystąpień tej samej usługi docelowej. Partycjonowanie danych usługi jest zwykle używane, gdy konieczne jest skalowanie usługi w celu zapewnienia lepszej jakości usług lub w przypadku konieczności obsługi żądań od różnych klientów w określony sposób. Na przykład komunikaty z klientów o wysokiej wartości lub "Gold" mogą wymagać przetworzenia na wyższym priorytecie niż komunikaty od standardowego klienta.  
   
  W tym przykładzie komunikaty są kierowane do jednego z dwóch wystąpień usługi regularCalc. Oba wystąpienia usługi są identyczne; Jednak usługa reprezentowana przez punkt końcowy calculator1 przetwarza wiadomości odebrane od klientów o dużej wartości, punkt końcowy kalkulatora 2 przetwarza komunikaty od innych klientów  
@@ -99,6 +100,7 @@ W tym temacie przedstawiono podstawowe kroki wymagane do dzielenia komunikatów 
     ```  
   
 ## <a name="example"></a>Przykład  
+
  Poniżej znajduje się kompletna lista plików konfiguracyjnych.  
   
 ```xml  

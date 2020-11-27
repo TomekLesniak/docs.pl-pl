@@ -11,20 +11,23 @@ helpviewer_keywords:
 - data buffering problems
 - streamWriterBufferedDataLost MDA
 ms.assetid: 6e5c07be-bc5b-437a-8398-8779e23126ab
-ms.openlocfilehash: 0c10ea6bb9dc0aaafa2ac1798696579af7592895
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 23a8146bfa5acc08000e689917abb844c5540fec
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803485"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267081"
 ---
 # <a name="streamwriterbuffereddatalost-mda"></a>streamWriterBufferedDataLost MDA
+
 `streamWriterBufferedDataLost`Asystent debugowania zarządzanego (MDA) jest uaktywniany, gdy <xref:System.IO.StreamWriter> jest zapisywana w, ale <xref:System.IO.StreamWriter.Flush%2A> <xref:System.IO.StreamWriter.Close%2A> Metoda lub nie jest następnie wywoływana przed zniszczeniem wystąpienia elementu <xref:System.IO.StreamWriter> . Po włączeniu tego MDA środowisko uruchomieniowe określa, czy wszystkie dane buforowane nadal istnieją w <xref:System.IO.StreamWriter> . Jeśli istnieją dane buforowane, zdarzenie MDA zostanie aktywowane. Wywoływanie <xref:System.GC.Collect%2A> <xref:System.GC.WaitForPendingFinalizers%2A> metod i może zmusić finalizatory do uruchomienia. Finalizatory będą działać w sposób pozornie dowolnie dowolną liczbę razy, a nawet w przypadku zakończenia procesu. Jawne uruchamianie finalizatorów z włączonym zdarzeniem MDA pomoże bardziej niezawodne odtwarzanie tego typu problemu.  
   
 ## <a name="symptoms"></a>Objawy  
+
  A nie <xref:System.IO.StreamWriter> zapisuje ostatnich 1 – 4 KB danych do pliku.  
   
 ## <a name="cause"></a>Przyczyna  
+
  <xref:System.IO.StreamWriter>Dane buforów wewnętrznie, które wymagają, <xref:System.IO.StreamWriter.Close%2A> <xref:System.IO.StreamWriter.Flush%2A> Aby Metoda lub wywoływana w celu zapisu danych buforowanych w źródłowym magazynie danych. Jeśli <xref:System.IO.StreamWriter.Close%2A> lub <xref:System.IO.StreamWriter.Flush%2A> nie jest odpowiednio wywoływana, dane buforowane w <xref:System.IO.StreamWriter> wystąpieniu mogą nie być zapisywane zgodnie z oczekiwaniami.  
   
  Poniżej przedstawiono przykładowy kod, który ma być przechwytywany przez to zdarzenie MDA.  
@@ -47,6 +50,7 @@ GC.WaitForPendingFinalizers();
 ```  
   
 ## <a name="resolution"></a>Rozwiązanie  
+
  Upewnij się, że jest wywoływana <xref:System.IO.StreamWriter.Close%2A> lub <xref:System.IO.StreamWriter.Flush%2A> w przypadku <xref:System.IO.StreamWriter> przed zamknięciem aplikacji lub dowolnego bloku kodu, który ma wystąpienie elementu <xref:System.IO.StreamWriter> . Jednym z najlepszych mechanizmów do osiągnięcia tego jest utworzenie wystąpienia z `using` blokiem C# ( `Using` w Visual Basic), które zapewni <xref:System.IO.StreamWriter.Dispose%2A> wywołanie metody dla składnika zapisywania, co spowoduje, że wystąpienie jest prawidłowo zamknięte.  
   
 ```csharp
@@ -88,9 +92,11 @@ static WriteToFile()
 ```  
   
 ## <a name="effect-on-the-runtime"></a>Wpływ na środowisko uruchomieniowe  
+
  To zdarzenie MDA nie ma wpływu na środowisko uruchomieniowe.  
   
 ## <a name="output"></a>Dane wyjściowe  
+
  Komunikat informujący o tym, że wystąpiło naruszenie.  
   
 ## <a name="configuration"></a>Konfigurowanie  
@@ -103,7 +109,7 @@ static WriteToFile()
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.IO.StreamWriter>
 - [Diagnozowanie błędów przy użyciu asystentów zarządzanego debugowania](diagnosing-errors-with-managed-debugging-assistants.md)

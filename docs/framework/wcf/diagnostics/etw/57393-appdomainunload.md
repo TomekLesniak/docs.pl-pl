@@ -2,27 +2,30 @@
 title: 57393 — AppDomainUnload
 ms.date: 03/30/2017
 ms.assetid: e8f45002-025e-4c93-b7b1-a09d631dbb1d
-ms.openlocfilehash: 8508d449f8afe601230cdd04578b1376fd792f8d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8b662cfc4563e815b879ae49cbf815f4a78dc9d0
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61767339"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267263"
 ---
 # <a name="57393---appdomainunload"></a>57393 — AppDomainUnload
+
 ## <a name="properties"></a>Właściwości  
   
 |||  
 |-|-|  
-|Identyfikator|57393|  
-|słowa kluczowe|Infrastruktura|  
+|ID (Identyfikator)|57393|  
+|Słowa kluczowe|Infrastruktura|  
 |Poziom|Informacje|  
-|Kanał|Microsoft-Windows-Application Server-Applications/Debug|  
+|Kanał|Microsoft-Windows-Application Server — aplikacje/debugowanie|  
   
 ## <a name="description"></a>Opis  
- To zdarzenie jest emitowane na zwalnianie obiektu AppDomain.  
+
+ To zdarzenie jest emitowane podczas zwalniania elementu AppDomain.  
   
-## <a name="message"></a>Komunikat  
- Zwalnianie obiektu AppDomain. AppDomain.FriendlyName %1, ProcessName %2, ProcessId %3.  
+## <a name="message"></a>Wiadomość  
+
+ Zwalnianie elementu AppDomain. Element AppDomain. FriendlyName %1, ProcessName %2, identyfikator procesu %3.  
   
 ## <a name="details"></a>Szczegóły

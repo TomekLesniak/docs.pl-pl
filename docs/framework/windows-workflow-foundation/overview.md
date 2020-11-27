@@ -3,17 +3,19 @@ title: Omówienie programu Windows Workflow
 description: W tym artykule opisano przepływy pracy programu Workflow Foundation, które są modelami opisującymi procesy w świecie rzeczywistym.
 ms.date: 03/30/2017
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-ms.openlocfilehash: c54e405c5fff013f994f98cbf84fcce4d17d9d4e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f966aa2b62a743358d4c1ad18f237f988924014d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558103"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268680"
 ---
 # <a name="windows-workflow-overview"></a>Omówienie programu Windows Workflow
+
 Przepływ pracy to zbiór jednostek elementów o nazwie *działania* , które są przechowywane jako model, który opisuje proces rzeczywisty. Przepływy pracy umożliwiają opisywanie kolejności wykonywania i zależności zależnych od elementów pracy krótko-lub długotrwałej. Ta praca przechodzi przez model od początku do końca, a działania mogą być wykonywane przez osoby lub funkcje systemowe.  
   
 ## <a name="workflow-run-time-engine"></a>Aparat czasu wykonywania przepływu pracy  
+
  Każde uruchomione wystąpienie przepływu pracy jest tworzone i utrzymywane przez przetwarzany przez proces aparat czasu wykonywania, który współdziała z procesem hosta za pomocą jednego z następujących elementów:  
   
 - A <xref:System.Activities.WorkflowInvoker> , który wywołuje przepływ pracy jako metodę.  
@@ -30,6 +32,7 @@ Przepływ pracy to zbiór jednostek elementów o nazwie *działania* , które s�
 Składniki przepływu pracy w procesie hosta  
   
 ## <a name="interaction-between-workflow-components"></a>Interakcja między składnikami przepływu pracy  
+
  Na poniższym diagramie pokazano, jak składniki przepływu pracy współdziałają ze sobą.  
   
  ![Diagram przedstawiający sposób działania składników przepływu pracy.](./media/overview/workflow-component-interatction.gif)  
@@ -42,6 +45,6 @@ Składniki przepływu pracy w procesie hosta
   
 - Działanie niestandardowe, które pochodzi od <xref:System.Activities.CodeActivity> klasy abstrakcyjnej. <xref:System.Activities.CodeActivity>Może uzyskać dostęp do funkcji czasu wykonywania (takich jak śledzenie i właściwości) przy użyciu <xref:System.Activities.CodeActivityContext> , który jest dostępny jako parametr <xref:System.Activities.CodeActivity.Execute%2A> metody. Aby uzyskać więcej informacji na temat tych funkcji w czasie wykonywania, zobacz [śledzenie przepływu pracy i](workflow-tracking-and-tracing.md) [właściwości wykonywania przepływu pracy](workflow-execution-properties.md).  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [BizTalk Server 2006 czy WF? Wybieranie odpowiedniego narzędzia przepływu pracy dla projektu](/previous-versions/dotnet/articles/cc303238(v=msdn.10))

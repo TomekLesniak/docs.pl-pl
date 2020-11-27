@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: d74c7b8d80f02283cd681ed0118257ed926bdc83
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 20b9f34595f8586eb5162715eb6b0df171f132a1
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555253"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266847"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Pisanie dużych i sprawnie działających aplikacji platformy .NET Framework
 
@@ -19,6 +19,7 @@ Ten artykuł zawiera wskazówki dotyczące poprawy wydajności dużych .NET Fram
 .NET Framework jest wysoce wydajny w przypadku kompilowania aplikacji. Zaawansowane i bezpieczne języki oraz bogate kolekcje bibliotek sprawiają, że tworzenie aplikacji jest wysoce rozwijającemu. Jednak dzięki doskonałej produktywności spoczywa odpowiedzialność. Należy używać wszystkich możliwości .NET Framework, ale należy przygotować się do dostrajania wydajności kodu, jeśli jest to konieczne.
   
 ## <a name="why-the-new-compiler-performance-applies-to-your-app"></a>Dlaczego Nowa wydajność kompilatora ma zastosowanie do aplikacji  
+
  Zespół .NET Compiler Platform ("Roslyn") odpisał kompilatory języka C# i Visual Basic w kodzie zarządzanym w celu udostępnienia nowych interfejsów API do modelowania i analizowania kodu, tworzenia narzędzi i włączania znacznie bogatszych rozwiązań obsługujących kod w programie Visual Studio. Przepisanie kompilatorów i Tworzenie środowiska programu Visual Studio na nowych kompilatorach ujawniło przydatny wgląd w dane dotyczące wydajności, które mają zastosowanie do dowolnej dużej aplikacji .NET Framework lub dowolnej aplikacji, która przetwarza dużą ilość danych. Nie musisz wiedzieć o kompilatorach, aby skorzystać z szczegółowych informacji i przykładów z kompilatora języka C#.
   
  Program Visual Studio korzysta z interfejsów API kompilatora do kompilowania wszystkich funkcji IntelliSense, które są miłość przez użytkowników, takich jak kolorowanie identyfikatorów i słów kluczowych, listy uzupełniania składni, zygzaki dla błędów, wskazówki dotyczące parametrów, problemy z kodem i akcje związane z kodem. Program Visual Studio udostępnia tę pomoc podczas wpisywania i zmieniania kodu przez deweloperów, a program Visual Studio musi przestać odpowiadać, gdy kompilator ciągle modeluje deweloperów kodu.
@@ -28,30 +29,37 @@ Ten artykuł zawiera wskazówki dotyczące poprawy wydajności dużych .NET Fram
  Aby uzyskać więcej informacji na temat kompilatorów Roslyn, zobacz [zestaw SDK .NET compiler platform](../../csharp/roslyn-sdk/index.md).
   
 ## <a name="just-the-facts"></a>Tylko fakty  
+
  Te fakty należy wziąć pod uwagę podczas dostrajania wydajności i tworzenia odpowiedzi .NET Framework aplikacji.
   
 ### <a name="fact-1-dont-prematurely-optimize"></a>Fakt 1: nie należy przedwcześnie optymalizować  
+
  Pisanie kodu, który jest bardziej skomplikowany niż musi być związane z konserwacją, debugowaniem i polerowaniem. Doświadczeni programiści mają intuicyjny opanujesz sposobu rozwiązywania problemów z kodowaniem i pisania bardziej wydajnego kodu. Jednak czasami w sposób przedwcześnie optymalizuje swój kod. Na przykład korzystają one z tabeli skrótów, gdy prosta tablica wystarcza, lub użyj skomplikowanej pamięci podręcznej, która może wyciekać pamięć, a nie po prostu reobliczaniu wartości. Nawet jeśli jesteś programistą, należy przetestować wydajność i analizować kod, gdy znajdziesz problemy.
   
 ### <a name="fact-2-if-youre-not-measuring-youre-guessing"></a>Fakt 2. Jeśli nie mierzy się, nastąpi odgadnięcie  
+
  Profile i pomiary nie znajdują się. Profile pokazują, czy procesor CPU jest w pełni załadowany, czy też jest blokowany na dyskach we/wy. Profile informują o rodzaju i ilości pamięci, która jest przydzielana, oraz o tym, czy procesor CPU poświęca dużo czasu na [wyrzucanie elementów bezużytecznych](../../standard/garbage-collection/index.md) (GC).
   
  Należy ustawić cele wydajnościowe najważniejszych środowisk klienta lub scenariuszy w aplikacji oraz testy zapisu w celu mierzenia wydajności. Zbadaj nieudane testy, stosując metodę naukową: Użyj profilów, aby Ci pomóc, hypothesize się, co może być problemem, i przetestuj hipotezę przy użyciu eksperymentu lub zmiany kodu. Ustalaj bazowe pomiary wydajności w czasie z regularnym testowaniem, dzięki czemu można izolować zmiany powodujące wydajność regresji. Dzięki podejściu wydajności w rygorystyczny sposób można uniknąć marnowania czasu z niepotrzebnymi aktualizacjami kodu.
   
 ### <a name="fact-3-good-tools-make-all-the-difference"></a>Fakt 3: dobre narzędzia sprawiają, że wszystkie różnice  
+
  Dobre narzędzia pozwalają szybko przechodzić do największych problemów z wydajnością (procesor CPU, pamięć lub dysk) i pomóc w znalezieniu kodu, który powoduje te wąskie gardła. Firma Microsoft dostarcza różnorodne narzędzia do oceny wydajności, takie jak [program Visual Studio profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling) i [Narzędzia PerfView](https://www.microsoft.com/download/details.aspx?id=28567).
   
  Narzędzia PerfView to bezpłatne i wszechstronne narzędzie, które ułatwia skoncentrowanie się na szczegółowych problemach, takich jak we/wy dysku, zdarzenia GC i pamięć. Można przechwytywać zdarzenia [śledzenia zdarzeń dotyczące wydajności dla systemu Windows](../wcf/samples/etw-tracing.md) (ETW) i łatwo przeglądać dla każdej aplikacji, na jeden proces, na stos i informacje o wątkach. Narzędzia PerfView pokazuje, jak dużo i jakiego rodzaju pamięci przydziela aplikacja oraz które funkcje lub stosy wywołań przyczyniają się do przydzielenia pamięci. Aby uzyskać szczegółowe informacje, zobacz temat rozbudowane tematy pomocy, pokazy i filmy wideo dołączone do narzędzia (na przykład [samouczki narzędzia PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial) w witrynie Channel 9).
   
 ### <a name="fact-4-its-all-about-allocations"></a>Fakt 4: wszystkie przydziały  
+
  Możesz zastanowić się nad tworzeniem aplikacji, która odpowiada .NET Framework wszystkim algorytmom, na przykład przy użyciu szybkiego sortowania zamiast sortowania bąbelkowego, ale nie jest to przypadek. Największym czynnikiem podczas tworzenia aplikacji, która odpowiada, jest przydzielanie pamięci, zwłaszcza gdy aplikacja jest bardzo duża lub przetwarza duże ilości danych.
   
  Prawie wszystkie prace do tworzenia odpowiedzi na środowisko IDE dzięki nowym interfejsom API kompilatora, które mają na celu uniknięcie alokacji i zarządzania strategiami buforowania. Ślady narzędzia PerfView pokazują, że wydajność nowych kompilatorów C# i Visual Basic jest rzadko związana z procesorem CPU. Kompilatory mogą być powiązane we/wy w przypadku odczytywania setek tysięcy lub milionów wierszy kodu, odczytywania metadanych lub emitowania wygenerowanego kodu. Opóźnienia wątku interfejsu użytkownika są niemal wszystkie ze względu na wyrzucanie elementów bezużytecznych. .NET Framework GC jest wysoce dostrojony do wydajności i wykonuje wiele zadań jednocześnie podczas wykonywania kodu aplikacji. Jednak pojedyncze alokacje mogą wyzwalać kosztowną kolekcję [Gen2](../../standard/garbage-collection/fundamentals.md) , zatrzymując wszystkie wątki.
   
 ## <a name="common-allocations-and-examples"></a>Typowe alokacje i przykłady  
+
  W przykładowych wyrażeniach w tej sekcji znajdują się ukryte przydziały, które są wyświetlane jako małe. Jeśli jednak duża aplikacja wykonuje wyrażenia wystarczająco długo, może to spowodować setki megabajtów, nawet gigabajtów przydziałów. Na przykład testy jednominutowe, które symulują wpisywanie przez dewelopera w edytorze przydzieloną gigabajty pamięci i doprowadziły do skoncentrowania się zespołu wydajności w przypadku wpisywania scenariuszy.
   
 ### <a name="boxing"></a>Boxing  
+
  [Opakowanie](../../csharp/programming-guide/types/boxing-and-unboxing.md) występuje, gdy typy wartości, które zwykle znajdują się na stosie lub w strukturach danych, są zawijane w obiekcie. Oznacza to, że przydzielasz obiekt do przechowywania danych, a następnie zwracasz wskaźnik do obiektu. .NET Framework czasami pola wartości ze względu na podpis metody lub typu lokalizacji magazynu. Otoka typu wartości w obiekcie powoduje alokację pamięci. Wiele operacji pakowania może współtworzyć megabajty lub gigabajty alokacji dla aplikacji, co oznacza, że aplikacja spowoduje więcej operacje odzyskiwania pamięci. .NET Framework i kompilatory języka unikają pakowania, gdy jest to możliwe, ale czasami zdarza się, gdy jest to konieczne.
   
  Aby zobaczyć opakowanie w narzędzia PerfView, Otwórz ślad i sprawdź stosy alokacji sterty GC pod nazwą procesu aplikacji (Pamiętaj, narzędzia PerfView raporty dotyczące wszystkich procesów). Jeśli widzisz typy takie jak <xref:System.Int32?displayProperty=nameWithType> i <xref:System.Char?displayProperty=nameWithType> w obszarze alokacje, nastąpi wypakowywanie typów wartości. Wybranie jednego z tych typów spowoduje wyświetlenie stosów i funkcji, w których są one opakowane.
@@ -132,6 +140,7 @@ public class BoxingExample
  Zachowaj pierwszy fakt wydajności (to oznacza, że nie jest przedwcześnie zoptymalizowany) i nie rozpoczynaj ponownego zapisywania całego kodu w ten sposób. Zapoznaj się z tymi kosztami opakowania, ale Zmień kod tylko po przeprowadzeniu profilowania aplikacji i znalezieniu aktywnych miejsc.
   
 ### <a name="strings"></a>Ciągi  
+
  Manipulowanie ciągami to niektóre największe culprits dla przydziałów i często są one wyświetlane w narzędzia PerfView w pierwszych pięciu alokacjach. Programy używają ciągów do serializacji, JSON i interfejsów API REST. Można używać ciągów jako stałych programistycznych do współdziałania z systemami, gdy nie można używać typów wyliczeniowych. Gdy profilowanie pokazuje, że ciągi mają wysoce wpływ na wydajność, należy poszukać wywołań <xref:System.String> metod, takich jak,,,, <xref:System.String.Format%2A> <xref:System.String.Concat%2A> <xref:System.String.Split%2A> <xref:System.String.Join%2A> <xref:System.String.Substring%2A> i tak dalej. Użycie usługi <xref:System.Text.StringBuilder> pozwala uniknąć ponoszenia kosztów tworzenia jednego ciągu z wielu kawałków, ale nawet przydzielenie <xref:System.Text.StringBuilder> obiektu może stać się wąskim gardłem, który trzeba zarządzać.
   
  **Przykład 3: operacje na ciągach**  
@@ -278,7 +287,8 @@ private static string GetStringAndReleaseBuilder(StringBuilder sb)
  Ta prosta strategia buforowania jest zgodna z dobrym projektem pamięci podręcznej, ponieważ ma limit rozmiaru. Jednak więcej kodu jest teraz niż w oryginalnym, co oznacza więcej kosztów konserwacji. Strategię buforowania należy zastosować tylko wtedy, gdy znaleziono problem z wydajnością, a narzędzia PerfView wykazało, że <xref:System.Text.StringBuilder> Alokacje są istotnym współautorem.
   
 ### <a name="linq-and-lambdas"></a>LINQ i lambda  
-W połączeniu z wyrażeniami lambda jest przykładem funkcji produktywności (LINQ, Language-Integrated Query). Jednak jego użycie może mieć znaczny wpływ na wydajność w miarę upływu czasu i może być konieczne ponowne napisanie kodu.
+
+Funkcja Language-Integrated Query (LINQ), w połączeniu z wyrażeniami lambda, stanowi przykład funkcji produktywności. Jednak jego użycie może mieć znaczny wpływ na wydajność w miarę upływu czasu i może być konieczne ponowne napisanie kodu.
   
  **Przykład 5: lambdas, List \<T> i IEnumerable\<T>**  
   
@@ -439,6 +449,7 @@ class Compilation { /*...*/
  Ten kod zmienia typ `cachedResult` do i korzysta z `Task<SyntaxTree>` `async` funkcji pomocnika, która zawiera oryginalny kod z `GetSyntaxTreeAsync()` . `GetSyntaxTreeAsync()` teraz używa [operatora łączenia wartości null](../../csharp/language-reference/operators/null-coalescing-operator.md) do zwrócenia, `cachedResult` Jeśli nie ma wartości null. Jeśli `cachedResult` ma wartość null, `GetSyntaxTreeAsync()` wywołuje `GetSyntaxTreeUncachedAsync()` i buforuje wynik. Zwróć uwagę, że `GetSyntaxTreeAsync()` nie oczekujemy, że wywołanie `GetSyntaxTreeUncachedAsync()` jako kod normalnie będzie się powtarzać. Nie przy użyciu oczekiwania oznacza, że gdy `GetSyntaxTreeUncachedAsync()` zwraca swój <xref:System.Threading.Tasks.Task> obiekt, `GetSyntaxTreeAsync()` natychmiast zwraca <xref:System.Threading.Tasks.Task> . Teraz buforowany wynik to a <xref:System.Threading.Tasks.Task> , więc nie ma żadnych alokacji, aby zwrócić zbuforowany wynik.
   
 ### <a name="additional-considerations"></a>Dodatkowe zagadnienia  
+
  Poniżej przedstawiono kilka dodatkowych kwestii dotyczących potencjalnych problemów z dużymi aplikacjami lub aplikacjami, które przetwarzają wiele danych.
   
  **Słowniki**  
@@ -463,7 +474,7 @@ class Compilation { /*...*/
   
 - Wszystkie przydziały — w przypadku, gdy zespół platform kompilator poświęca większość czasu na zwiększenie wydajności nowych kompilatorów.
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Wideo przedstawiające prezentację tego tematu](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B333)
 - [Początkujący Przewodnik dotyczący profilowania wydajności](/visualstudio/profiling/beginners-guide-to-performance-profiling)

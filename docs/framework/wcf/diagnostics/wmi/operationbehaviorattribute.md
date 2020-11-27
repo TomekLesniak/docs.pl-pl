@@ -2,14 +2,15 @@
 title: OperationBehaviorAttribute
 ms.date: 03/30/2017
 ms.assetid: 8c9b0755-9e83-411f-bdcb-61a586022797
-ms.openlocfilehash: 79601308c66abe43dd5a7f72bd2a05b9d2346c2b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 76cc619aed4ba2b944a8d11dc454a40368a4068c
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963049"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269083"
 ---
 # <a name="operationbehaviorattribute"></a>OperationBehaviorAttribute
+
 OperationBehaviorAttribute  
   
 ## <a name="syntax"></a>Składnia  
@@ -26,40 +27,47 @@ class OperationBehaviorAttribute : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
- Gdy klasa nie definiuje żadnych metod.  
+
+ Klasa OperationBehaviorAttribute będący nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
- Gdy klasa ma następujące właściwości:  
+
+ Klasa OperationBehaviorAttribute będący ma następujące właściwości:  
   
 ### <a name="autodisposeparameters"></a>AutoDisposeParameters  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Stan funkcji automatycznego usuwania dla parametrów.  
+ Stan funkcji autodispose dla parametrów.  
   
 ### <a name="impersonation"></a>Personifikacja  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Wskazuje poziom personifikacji obiekt wywołujący, który obsługuje operację.  
+ Wskazuje poziom personifikacji wywołującego obsługiwany przez operację.  
   
 ### <a name="releaseinstancemode"></a>ReleaseInstanceMode  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Wskazuje, że w trakcie wywołania operacji odtworzenie obiektu.  
+ Wskazuje, kiedy w trakcie wywołania operacji w celu odtworzenia obiektu.  
   
-### <a name="transactionautocomplete"></a>TransactionAutoComplete  
+### <a name="transactionautocomplete"></a>Wartość  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wskazuje, czy można zatwierdzić bieżącej transakcji automatycznie, jeśli wystąpi żaden nieobsługiwany wyjątek.  
+ Wskazuje, czy bieżąca transakcja ma być automatycznie przekazywana, jeśli nie wystąpią żadne Nieobsłużone wyjątki.  
   
-### <a name="transactionscoperequired"></a>TransactionScopeRequired  
+### <a name="transactionscoperequired"></a>Ustawione  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
@@ -68,10 +76,10 @@ class OperationBehaviorAttribute : Behavior
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.OperationBehaviorAttribute>

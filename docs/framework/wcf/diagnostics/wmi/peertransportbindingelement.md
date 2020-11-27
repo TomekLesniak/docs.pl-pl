@@ -2,14 +2,15 @@
 title: PeerTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: 40bf6be2-8087-4cb3-a66c-408d53eb9269
-ms.openlocfilehash: ba9031dad96f12c7c48b03f1da4af1b3adc6dd4f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ae6a3448896cb206bce8867daf7104c3e484ecc8
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962966"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96269018"
 ---
 # <a name="peertransportbindingelement"></a>PeerTransportBindingElement
+
 PeerTransportBindingElement  
   
 ## <a name="syntax"></a>Składnia  
@@ -24,38 +25,43 @@ class PeerTransportBindingElement : TransportBindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa PeerTransportBindingElement nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa PeerTransportBindingElement ma następujące właściwości:  
   
 ### <a name="listenipaddress"></a>ListenIPAddress  
+
  Typ danych: ciąg  
   
  Typ dostępu: tylko do odczytu  
   
- Adres IP, na którym węzeł równorzędny będzie nasłuchiwać pod kątem komunikatów.  
+ Adres IP, na którym węzeł równorzędny nasłuchuje komunikatów.  
   
 ### <a name="port"></a>Port  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Port interfejsu sieciowego, na którym znajduje się ten kanał wiadomości w komunikacji równorzędnej procesy powiązania.  
+ Port interfejsu sieciowego, na którym to powiązanie przetwarza wiadomości kanału równorzędnego.  
   
 ### <a name="security"></a>Zabezpieczenia  
+
  Typ danych: PeerSecuritySettings  
   
  Typ dostępu: tylko do odczytu  
   
- Ustawienia zabezpieczeń transport elementu równorzędnego.  
+ Ustawienia zabezpieczeń transportu elementów równorzędnych.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.PeerTransportBindingElement>

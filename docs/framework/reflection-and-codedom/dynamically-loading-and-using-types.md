@@ -13,14 +13,15 @@ helpviewer_keywords:
 - implicit late binding
 - reflection, dynamically using types
 ms.assetid: db985bec-5942-40ec-b13a-771ae98623dc
-ms.openlocfilehash: 39a4a9a2ff77cb900db7f39a55dc17a5b8c62cf3
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: be9991a4df866f65aabe063be3cc2b374f4d124d
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475089"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96266795"
 ---
 # <a name="dynamically-loading-and-using-types"></a>Dynamiczne ładowanie i używanie typów
+
 Odbicie zapewnia infrastrukturę używaną przez kompilatory języka do implementowania niejawnego późnego wiązania. Powiązanie jest procesem lokalizowania deklaracji (czyli implementacji), która odnosi się do jednoznacznie określonego typu. Gdy ten proces wystąpi w czasie wykonywania, a nie w czasie kompilacji, jest nazywany późnym wiązaniem. Visual Basic umożliwia użycie niejawnego późnego wiązania w kodzie. Kompilator Visual Basic wywołuje metodę pomocnika, która używa odbicia w celu uzyskania typu obiektu. Argumenty przekazane do metody pomocnika powodują wywołanie odpowiedniej metody w czasie wykonywania. Te argumenty są wystąpieniem (obiektem), na którym należy wywołać metodę, nazwę wywołanej metody (ciąg) i argumenty przekazane do wywołanej metody (tablicę obiektów).  
   
  W poniższym przykładzie kompilator Visual Basic używa odbicia niejawnie do wywołania metody w obiekcie, którego typ nie jest znany w czasie kompilacji. Klasa **HelloWorld** ma metodę **PrintHello** , która drukuje "Hello World" połączone z tekstem, który jest przesyłany do metody **PrintHello** . Metoda **PrintHello** wywołana w tym przykładzie jest w rzeczywistości a <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType> ; kod Visual Basic umożliwia wywoływanie metody **PrintHello** , tak jakby typ obiektu (helloObj) był znany w czasie kompilacji (wczesne wiązanie), a nie w czasie wykonywania (późne wiązanie).  
@@ -40,6 +41,7 @@ End Module
 ```  
   
 ## <a name="custom-binding"></a>Wiązanie niestandardowe  
+
  Oprócz użycia niejawnie przez kompilatory dla późnego wiązania, odbicie może być używane jawnie w kodzie do osiągnięcia późnego wiązania.  
   
  [Środowisko uruchomieniowe języka wspólnego](../../standard/clr.md) obsługuje wiele języków programowania, a reguły powiązań tych języków różnią się. W przypadku wczesnej ograniczonej wielkości generatory kodu mogą całkowicie kontrolować to powiązanie. Jednak w późnym łączeniu poprzez odbicie powiązanie musi być kontrolowane przez dostosowane powiązanie. <xref:System.Reflection.Binder>Klasa zawiera niestandardową kontrolkę wyboru elementu członkowskiego i wywołania.  
@@ -53,6 +55,7 @@ End Module
  [!code-vb[Conceptual.Types.Dynamic#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.dynamic/vb/source1.vb#1)]  
   
 ### <a name="invokemember-and-createinstance"></a>InvokeMember i CreateInstance  
+
  Służy <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType> do wywoływania elementu członkowskiego typu. Metody **CreateInstance** różnych klas, takie jak <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> i <xref:System.Reflection.Assembly.CreateInstance%2A?displayProperty=nameWithType> , są wyspecjalizowanymi formami **InvokeMember** , które tworzą nowe wystąpienia określonego typu. Klasa **spinacza** jest używana na potrzeby rozpoznawania przeciążenia i przekształcania argumentów w tych metodach.  
   
  Poniższy przykład pokazuje trzy możliwe kombinacje przekształcenia argumentów (konwersja typu) i wybór elementu członkowskiego. W przypadku 1 nie jest wymagana Konwersja argumentów ani wybór elementu członkowskiego. W przypadku 2 wymagany jest tylko wybór elementu członkowskiego. W przypadku 3 jest wymagana tylko wymuszone przekształcenie argumentu.  
@@ -73,7 +76,7 @@ End Module
   
  Jeśli istnieje więcej niż jeden element członkowski w dostępnym zestawie, wszystkie te metody są przesyłane do **BindToMethod**, co wybiera odpowiednią metodę i zwraca ją. W przypadku 2 przykładowego kodu istnieją dwie metody o nazwie **PrintValue**. Odpowiednia metoda jest wybierana przez wywołanie do **BindToMethod**.  
   
- <xref:System.Reflection.Binder.ChangeType%2A>wykonuje przekształcenie argumentu (konwersja typu), które konwertuje rzeczywiste argumenty na typ argumentów formalnych wybranej metody. **ChangeType** jest wywoływana dla każdego argumentu, nawet jeśli typy pasują dokładnie.  
+ <xref:System.Reflection.Binder.ChangeType%2A> wykonuje przekształcenie argumentu (konwersja typu), które konwertuje rzeczywiste argumenty na typ argumentów formalnych wybranej metody. **ChangeType** jest wywoływana dla każdego argumentu, nawet jeśli typy pasują dokładnie.  
   
  W przypadku 3 przykładu kodu rzeczywisty argument typu **String** o wartości "5,5" jest przenoszona do metody z formalnym argumentem typu **Double**. Aby wywołanie zakończyło się pomyślnie, wartość ciągu "5,5" musi być konwertowana na wartość typu Double. **ChangeType** wykonuje tę konwersję.  
   
@@ -95,9 +98,9 @@ End Module
 |Pojedyncze|Double|  
 |Typ niereferencyjny|Typ odwołania|  
   
- <xref:System.Type>Klasa ma metody **Get** , które używają parametrów typu **spinacza** do rozpoznawania odwołań do określonego elementu członkowskiego. <xref:System.Type.GetConstructor%2A?displayProperty=nameWithType>, <xref:System.Type.GetMethod%2A?displayProperty=nameWithType> i <xref:System.Type.GetProperty%2A?displayProperty=nameWithType> Wyszukiwanie określonego elementu członkowskiego bieżącego typu przez podanie informacji o sygnaturze dla tego elementu członkowskiego. <xref:System.Reflection.Binder.SelectMethod%2A?displayProperty=nameWithType>i <xref:System.Reflection.Binder.SelectProperty%2A?displayProperty=nameWithType> są wywoływane z powrotem w celu wybrania informacji o podpisie odpowiednich metod.  
+ <xref:System.Type>Klasa ma metody **Get** , które używają parametrów typu **spinacza** do rozpoznawania odwołań do określonego elementu członkowskiego. <xref:System.Type.GetConstructor%2A?displayProperty=nameWithType>, <xref:System.Type.GetMethod%2A?displayProperty=nameWithType> i <xref:System.Type.GetProperty%2A?displayProperty=nameWithType> Wyszukiwanie określonego elementu członkowskiego bieżącego typu przez podanie informacji o sygnaturze dla tego elementu członkowskiego. <xref:System.Reflection.Binder.SelectMethod%2A?displayProperty=nameWithType> i <xref:System.Reflection.Binder.SelectProperty%2A?displayProperty=nameWithType> są wywoływane z powrotem w celu wybrania informacji o podpisie odpowiednich metod.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>
 - <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>

@@ -12,19 +12,20 @@ helpviewer_keywords:
 - COM interop, HRESULTs
 - COM interop, exceptions
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
-ms.openlocfilehash: a1a43d7ce3fbc678cc9aa047c5110ac8615ea27e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ea5d920ccfa8a91c9fdc9d95c6165c8dfb52c6ff
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554146"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267042"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>Instrukcje: Mapowanie wyników HRESULT i wyjątków
+
 Metody COM zgłaszają błędy, zwracając wartości HRESULT; metody .NET raportują je przez wyrzucanie wyjątków. Środowisko uruchomieniowe obsługuje przejście między nimi. Każda Klasa wyjątków w .NET Framework jest mapowana na wartość HRESULT.  
   
  Klasy wyjątków zdefiniowane przez użytkownika mogą określać wszelkie wartości HRESULT są odpowiednie. Te klasy wyjątków mogą dynamicznie zmieniać wynik HRESULT, który ma zostać zwrócony, gdy wyjątek jest generowany przez ustawienie pola **HRESULT** dla obiektu Exception. Dodatkowe informacje o wyjątku są udostępniane klientowi za pomocą interfejsu **IErrorInfo** , który jest implementowany w obiekcie .NET w procesie niezarządzanym.  
   
- W przypadku utworzenia klasy rozszerzającej **System. Exception**należy ustawić pole HRESULT podczas konstruowania. W przeciwnym razie Klasa bazowa przypisuje wartość HRESULT. Można mapować nowe klasy wyjątków do istniejącego HRESULT, dostarczając wartość w konstruktorze wyjątku.  
+ W przypadku utworzenia klasy rozszerzającej **System. Exception** należy ustawić pole HRESULT podczas konstruowania. W przeciwnym razie Klasa bazowa przypisuje wartość HRESULT. Można mapować nowe klasy wyjątków do istniejącego HRESULT, dostarczając wartość w konstruktorze wyjątku.  
   
  Należy pamiętać, że środowisko uruchomieniowe czasami zignoruje `HRESULT` w przypadkach, gdy istnieje `IErrorInfo` w wątku.  Takie zachowanie może wystąpić w przypadkach, gdy `HRESULT` i i `IErrorInfo` nie reprezentują tego samego błędu.  
   
@@ -139,9 +140,9 @@ CMyClass::MethodThatThrows
 |**Ślad stosu**|Ślad stosu.|  
 |**TargetSite**|Nazwa metody, która zwróciła błąd HRESULT.|  
   
- Pola wyjątków, takie jak **Message**, **Source**i **ślad stosu** , nie są dostępne dla **StackOverflowException**.  
+ Pola wyjątków, takie jak **Message**, **Source** i **ślad stosu** , nie są dostępne dla **StackOverflowException**.  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Zaawansowana współdziałanie COM](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
 - [Wyjątki](../../standard/exceptions/index.md)

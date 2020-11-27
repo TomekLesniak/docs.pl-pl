@@ -2,14 +2,15 @@
 title: LocalServiceSecuritySettings
 ms.date: 03/30/2017
 ms.assetid: 490aa0e5-5242-4f8d-b505-5ec6287633b4
-ms.openlocfilehash: 15304630eb8a14e01d4815ddddc84cd32796fdcf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eecf2b0bf459fd14236c550e393149553183b3ac
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963452"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267926"
 ---
 # <a name="localservicesecuritysettings"></a>LocalServiceSecuritySettings
+
 LocalServiceSecuritySettings  
   
 ## <a name="syntax"></a>Składnia  
@@ -35,33 +36,39 @@ class LocalServiceSecuritySettings
 ```  
   
 ## <a name="methods"></a>Metody  
+
  Klasa LocalServiceSecuritySettings nie definiuje żadnych metod.  
   
 ## <a name="properties"></a>Właściwości  
+
  Klasa LocalServiceSecuritySettings ma następujące właściwości:  
   
-### <a name="detectreplays"></a>DetectReplays  
+### <a name="detectreplays"></a>Włączonej opcji DetectReplays  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość logiczna, która określa, czy ataki metodą kanał są wykrywane i automatycznie uwzględnione.  
+ Wartość logiczna określająca, czy ataki powtarzające się na kanał są wykrywane i rozwiązywane automatycznie.  
   
-### <a name="inactivitytimeout"></a>Limit czasu nieaktywności  
- Typ danych: Data i godzina  
+### <a name="inactivitytimeout"></a>InactivityTimeout  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalna liczba oczekujących sesji bezpieczeństwa, obsługiwanych przez usługę.  
+ Maksymalna liczba oczekujących sesji bezpieczeństwa obsługiwanych przez usługę.  
   
 ### <a name="issuedcookielifetime"></a>IssuedCookieLifetime  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Element TimeSpan określający czas istnienia nadawany wszystkie nowe pliki cookie zabezpieczeń.  
+ Obiekt TimeSpan określający okres istnienia wystawiony dla wszystkich nowych plików cookie zabezpieczeń.  
   
 ### <a name="maxcachedcookies"></a>MaxCachedCookies  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
@@ -69,81 +76,91 @@ class LocalServiceSecuritySettings
  Maksymalna liczba plików cookie, które mogą być buforowane.  
   
 ### <a name="maxclockskew"></a>MaxClockSkew  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Element TimeSpan określający maksymalną różnicę czasu między zegarami systemowymi dwóch uczestników komunikacji.  
+ Obiekt TimeSpan określający maksymalną różnicę czasu między zegarami systemowymi dwóch osób komunikujących się.  
   
 ### <a name="maxpendingsessions"></a>MaxPendingSessions  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Maksymalna liczba oczekujących połączeń z usługą.  
+ Maksymalna liczba oczekujących połączeń w usłudze.  
   
 ### <a name="maxstatefulnegotiations"></a>MaxStatefulNegotiations  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
- Liczba negocjacji zabezpieczeń, które mogą być wykonywane jednocześnie.  
+ Liczba negocjacji zabezpieczeń, które mogą być jednocześnie aktywne.  
   
 ### <a name="negotiationtimeout"></a>NegotiationTimeout  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Element TimeSpan określa maksymalny czas do przeprowadzenia w fazie negocjowanie zabezpieczeń między serwerem a klientem.  
+ Obiekt TimeSpan, który określa maksymalny czas trwania fazy negocjowania zabezpieczeń między serwerem a klientem.  
   
 ### <a name="reconnecttransportonfailure"></a>ReconnectTransportOnFailure  
+
  Typ danych: wartość logiczna  
   
  Typ dostępu: tylko do odczytu  
   
- Wartość logiczna określająca, czy połączenia za pomocą usługi WS-Reliable messaging próbę ponownego połączenia po błędach transportu.  
+ Wartość logiczna określająca, czy połączenia przy użyciu funkcji WS-Reliable Messaging próbują ponownie nawiązać połączenie po wystąpieniu błędów transportu.  
   
 ### <a name="replaycachesize"></a>ReplayCacheSize  
+
  Typ danych: sint32  
   
  Typ dostępu: tylko do odczytu  
   
  Liczba buforowanych identyfikatorów jednorazowych używanych do wykrywania powtórzeń.  
   
-### <a name="replaywindow"></a>Elementy ReplayWindow  
- Typ danych: Data i godzina  
+### <a name="replaywindow"></a>ReplayWindow  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Przedział czasu, który określa czas, w której poszczególne komunikatów są poprawni.  
+ Obiekt TimeSpan określający czas, w którym identyfikatorów jednorazowych poszczególnych komunikatów są prawidłowe.  
   
 ### <a name="sessionkeyrenewalinterval"></a>SessionKeyRenewalInterval  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Przedział czasu, który określa czas, po upływie którego inicjator odnawia klucz sesji zabezpieczeń.  
+ Obiekt TimeSpan, który określa czas, po którym inicjator odnawia klucz dla sesji zabezpieczeń.  
   
 ### <a name="sessionkeyrolloverinterval"></a>SessionKeyRolloverInterval  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Przedział czasu, który określa przedział czasu poprzedniego klucza sesji jest prawidłowa w wiadomościach przychodzących podczas odnawiania klucza.  
+ Obiekt TimeSpan, który określa przedział czasu, w którym poprzedni klucz sesji jest ważny w przypadku komunikatów przychodzących podczas odnawiania klucza.  
   
 ### <a name="timestampvalidityduration"></a>TimestampValidityDuration  
- Typ danych: Data i godzina  
+
+ Typ danych: DateTime  
   
  Typ dostępu: tylko do odczytu  
   
- Przedział czasu, który określa czas, w którym sygnatura czasowa jest poprawna.  
+ Obiekt TimeSpan określający czas, w którym sygnatura czasowa jest prawidłowa.  
   
 ## <a name="requirements"></a>Wymagania  
   
-|MOF|Zadeklarowana w Servicemodel.mof.|  
+|PLIK|Zadeklarowany w ServiceModel. mof.|  
 |---------|-----------------------------------|  
 |Przestrzeń nazw|Zdefiniowane w root\ServiceModel|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>

@@ -12,17 +12,19 @@ helpviewer_keywords:
 - profiling applications
 - Performance Console
 ms.assetid: ccd68284-f3a8-47b8-bc3f-92e5fe3a1640
-ms.openlocfilehash: fc88cc5c7c7655cf03573bae3935498a05496cc2
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 5d1542c7f6afa2d683240d6d5cca837b961eb3be
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803589"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267107"
 ---
 # <a name="runtime-profiling"></a>Profilowanie środowiska uruchomieniowego
+
 Profilowanie to metoda zbierania danych wydajności w dowolnym scenariuszu opracowywania i wdrażania. Ta sekcja jest przeznaczony dla deweloperów i administratorów systemu, którzy chcą zbierać informacje o wydajności aplikacji.  
   
 ## <a name="tracking-performance-using-the-performance-monitor-perfmonexe"></a>Śledzenie wydajności przy użyciu Monitora wydajności (Perfmon.exe)  
+
  Monitor wydajności jest najłatwiejszym narzędziem służącym do profilowania aplikacji .NET Framework. Monitor wydajności graficzny przedstawia dane znajdujące się w .NET Framework licznikach wydajności, które są instalowane przy użyciu środowiska uruchomieniowego języka wspólnego i Windows SDK. Te liczniki mogą służyć do monitorowania wszystkiego od zarządzania pamięcią do wydajności kompilatora just-in-Time (JIT). Poinformują o zasobach używanych przez aplikację, które są pośrednią miarą wydajności aplikacji. Użyj tych liczników, aby zrozumieć, w jaki sposób aplikacja działa wewnętrznie.  
   
 #### <a name="to-run-perfmonexe-on-windows-vista-and-later-versions"></a>Aby uruchomić Perfmon.exe w systemie Windows Vista i jego nowszych wersjach  
@@ -45,7 +47,7 @@ Profilowanie to metoda zbierania danych wydajności w dowolnym scenariuszu oprac
   
      W polu listy **wystąpienia wybranego obiektu** kliknij nazwę aplikacji, aby monitorować licznik wydajności dla tej aplikacji.  
   
-     Aby rozróżnić wiele wersji środowiska uruchomieniowego lub aby odróżnić wiele aplikacji o tej samej nazwie, należy również zmodyfikować klucz rejestru. Aby uzyskać więcej informacji, zobacz [liczniki wydajności i wewnątrzprocesowe aplikacje](performance-counters-and-in-process-side-by-side-applications.md)równoległe.  
+     Aby rozróżnić wiele wersji środowiska uruchomieniowego lub aby odróżnić wiele aplikacji o tej samej nazwie, należy również zmodyfikować klucz rejestru. Aby uzyskać więcej informacji, zobacz [liczniki wydajności i In-Process aplikacje równoległe](performance-counters-and-in-process-side-by-side-applications.md).  
   
 > [!NOTE]
 > Gdy podczas działania konsoli wydajności są instalowane nowe liczniki wydajności, Zatrzymaj i ponownie uruchom konsolę wydajności, aby wyświetlić nowe liczniki.  
@@ -56,6 +58,7 @@ Profilowanie to metoda zbierania danych wydajności w dowolnym scenariuszu oprac
 > W systemach, w których zainstalowano .NET Framework 4, Monitor wydajności może nie wyświetlać danych dla liczników wydajności w niektórych kategoriach, takich jak **dane środowiska .NET CLR** i **sieci CLR platformy .NET**, dla aplikacji, które zostały opracowane przy użyciu .NET Framework 1,1. W takim przypadku można skonfigurować Monitor wydajności do wyświetlania tych danych przez dodanie [\<forcePerformanceCounterUniqueSharedMemoryReads>](../configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md) elementu do pliku konfiguracji aplikacji.  
   
 ## <a name="reading-and-creating-performance-counters-programmatically"></a>Programowe odczytywanie i tworzenie liczników wydajności  
+
  .NET Framework zawiera klasy, których można użyć, aby programowo uzyskać dostęp do tych samych informacji o wydajności, które są dostępne w konsoli wydajności. Można również użyć tych klas do tworzenia niestandardowych liczników wydajności. W poniższej tabeli opisano niektóre klasy monitorowania wydajności, które są dostępne w .NET Framework.  
   
 |Klasa|Opis|  
@@ -65,6 +68,6 @@ Profilowanie to metoda zbierania danych wydajności w dowolnym scenariuszu oprac
 |<xref:System.Diagnostics.PerformanceCounterInstaller?displayProperty=nameWithType>|Określa Instalatora `PerformanceCounter` składnika.|  
 |<xref:System.Diagnostics.PerformanceCounterType?displayProperty=nameWithType>|Określa formułę, w której ma zostać obliczona `NextValue` Metoda `PerformanceCounter` .|  
   
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Liczniki wydajności](performance-counters.md)

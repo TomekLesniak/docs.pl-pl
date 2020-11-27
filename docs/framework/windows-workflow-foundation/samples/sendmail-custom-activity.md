@@ -2,14 +2,15 @@
 title: Niestandardowe działanie SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-ms.openlocfilehash: 4dca15bfd3798b9282960663bea827f9323a1266
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f518beebe336080853e4dec3bca6f8539bbec304
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90547743"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96267594"
 ---
 # <a name="sendmail-custom-activity"></a>Niestandardowe działanie SendMail
+
 Ten przykład pokazuje, jak utworzyć niestandardowe działanie, które wynika z programu <xref:System.Activities.AsyncCodeActivity> w celu wysłania wiadomości e-mail przy użyciu protokołu SMTP do użycia w aplikacji przepływu pracy. Działanie niestandardowe <xref:System.Net.Mail.SmtpClient> umożliwia wysyłanie wiadomości e-mail asynchronicznie i wysyłanie wiadomości z uwierzytelnianiem przy użyciu funkcji programu. Zapewnia również pewne funkcje użytkownika końcowego, takie jak tryb testu, Zastępowanie tokenu, szablony plików i ścieżka do usuwania testów.  
   
  Poniższa tabela zawiera szczegółowe informacje o argumentach `SendMail` działania.  
@@ -34,6 +35,7 @@ Ten przykład pokazuje, jak utworzyć niestandardowe działanie, które wynika z
 |TestDropPath|Ciąg|Gdy ta właściwość jest ustawiona, wszystkie wiadomości e-mail są również zapisywane w określonym pliku.<br /><br /> Ta właściwość jest przeznaczona do użycia podczas testowania lub debugowania przepływów pracy, aby upewnić się, że format i zawartość wychodzących wiadomości e-mail są odpowiednie.|  
   
 ## <a name="solution-contents"></a>Zawartość rozwiązania  
+
  Rozwiązanie zawiera dwa projekty.  
   
 |Projekt|Opis|Ważne pliki|  
@@ -42,9 +44,11 @@ Ten przykład pokazuje, jak utworzyć niestandardowe działanie, które wynika z
 |SendMailTestClient|Klient do testowania działania SendMail.  Ten projekt przedstawia dwa sposoby wywoływania działania SendMail: deklaratywnie i programistyczne.|1. Sequence1. XAML: przepływ pracy, który wywołuje działanie SendMail.<br />2. Program.cs: wywołuje Sequence1, a także programowo tworzy przepływ pracy, który używa SendMail.|  
   
 ## <a name="further-configuration-of-the-sendmail-activity"></a>Dodatkowa konfiguracja działania SendMail  
+
  Chociaż nie są wyświetlane w przykładzie, użytkownicy mogą wykonać dodatkowe czynności konfiguracyjne działania SendMail. W następnych trzech sekcjach pokazano, jak to zrobić.  
   
 ### <a name="sending-an-email-using-tokens-specified-in-the-body"></a>Wysyłanie wiadomości e-mail przy użyciu tokenów określonych w treści  
+
  W tym fragmencie kodu pokazano, jak można wysyłać wiadomości e-mail z tokenami w treści. Zwróć uwagę na to, jak tokeny są udostępniane we właściwości treść. Wartości tych tokenów są udostępniane właściwości tokens.  
   
 ```csharp  
@@ -67,6 +71,7 @@ new SendMail
 ```  
   
 ### <a name="sending-an-email-using-a-template"></a>Wysyłanie wiadomości e-mail przy użyciu szablonu  
+
  W tym fragmencie kodu pokazano, jak wysłać wiadomość e-mail przy użyciu tokenów szablonu w treści. Należy zauważyć, że podczas ustawiania `BodyTemplateFilePath` właściwości nie musimy podawać wartości właściwości Body (zawartość pliku szablonu zostanie skopiowana do treści).  
   
 ```csharp  
@@ -84,6 +89,7 @@ new SendMail
 ```  
   
 ### <a name="sending-mails-in-testing-mode"></a>Wysyłanie wiadomości w trybie testowania  
+
  W tym fragmencie kodu pokazano, jak ustawić dwie właściwości testowania: według ustawienia `TestMailTo` dla wszystkich wiadomości będą wysyłane do `john.doe@contoso.con` (bez względu na wartości do, DW, UDW). Ustawienie TestDropPath wszystkie wychodzące wiadomości e-mail zostanie również zarejestrowane w podanej ścieżce. Te właściwości można ustawiać niezależnie (nie są powiązane).  
   
 ```csharp  
@@ -103,6 +109,7 @@ new SendMail
 ```  
   
 ## <a name="set-up-instructions"></a>Instrukcje dotyczące konfiguracji  
+
  Dla tego przykładu wymagany jest dostęp do serwera SMTP.  
   
  Aby uzyskać więcej informacji na temat konfigurowania serwera SMTP, zobacz poniższe linki.  

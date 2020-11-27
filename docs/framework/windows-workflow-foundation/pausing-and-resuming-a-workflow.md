@@ -2,18 +2,20 @@
 title: Wstrzymywanie i wznawianie przepływu pracy
 ms.date: 03/30/2017
 ms.assetid: 11f38339-79c7-4295-b610-24a7223bbf6d
-ms.openlocfilehash: dc6bdfe7cc10837fb8721ab12490d244d5ec1ca0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e8d1806c6d2c8e72b4e3a8b18bff669fcd0e0538
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79142969"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96268543"
 ---
 # <a name="pausing-and-resuming-a-workflow"></a>Wstrzymywanie i wznawianie przepływu pracy
-Przepływy pracy będą wstrzymywać i wznawiać <xref:System.Activities.Statements.Delay>w odpowiedzi na zakładki i blokowanie działań, takich jak , ale przepływ pracy może być również jawnie wstrzymany, zwolniony i wznowiony przy użyciu trwałości.  
+
+Przepływy pracy zostaną wstrzymane i wznowione w odpowiedzi na zakładki i zablokowane działania, takie jak <xref:System.Activities.Statements.Delay> , ale przepływ pracy można również jawnie wstrzymywać, zwalniać i wznawiać przy użyciu trwałości.  
   
 ## <a name="pausing-a-workflow"></a>Wstrzymywanie przepływu pracy  
- Aby wstrzymać przepływ <xref:System.Activities.WorkflowApplication.Unload%2A>pracy, użyj programu .  Ta metoda żąda, aby przepływ pracy utrwalić i zwolnić i będzie <xref:System.TimeoutException> zgłosić, jeśli przepływ pracy nie zwalnia w ciągu 30 sekund.  
+
+ Aby wstrzymać przepływ pracy, użyj <xref:System.Activities.WorkflowApplication.Unload%2A> .  Ta metoda żąda, aby przepływ pracy trwał i został zwolniony, a <xref:System.TimeoutException> Jeśli przepływ pracy nie zostanie zwolniony w ciągu 30 sekund.  
   
 ```csharp  
 try  
@@ -28,7 +30,8 @@ catch (TimeoutException e)
 ```  
   
 ## <a name="resuming-a-workflow"></a>Wznawianie przepływu pracy  
- Aby wznowić wcześniej wstrzymany i zwolniony <xref:System.Activities.WorkflowApplication.Load%2A>przepływ pracy, użyj programu . Ta metoda ładuje przepływ pracy z magazynu trwałości do pamięci.  
+
+ Aby wznowić poprzednio wstrzymany i niezaładowany przepływ pracy, użyj <xref:System.Activities.WorkflowApplication.Load%2A> . Ta metoda ładuje przepływ pracy z magazynu trwałości do pamięci.  
   
 ```csharp  
 WorkflowApplication application = new WorkflowApplication(activity);  
@@ -37,7 +40,8 @@ application.Load(id);
 ```  
   
 ## <a name="example"></a>Przykład  
- Poniższy przykład kodu pokazuje, jak wstrzymać i wznowić przepływ pracy przy użyciu trwałości.  
+
+ Poniższy przykład kodu demonstruje, jak wstrzymywać i wznawiać przepływ pracy przy użyciu trwałości.  
   
 ```csharp  
 static string bkName = "bkName";  
