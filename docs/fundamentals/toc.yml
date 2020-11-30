@@ -384,6 +384,8 @@ items:
             href: ../core/diagnostics/index.md
           - name: Debugery zarządzane
             href: ../core/diagnostics/managed-debuggers.md
+          - name: Zrzuty
+            href: ../core/diagnostics/dumps.md
           - name: Debugowanie zrzutów systemu Linux
             href: ../core/diagnostics/debug-linux-dumps.md
           - name: EventCounters
@@ -445,7 +447,7 @@ items:
           - name: Omówienie
             href: code-analysis/overview.md
             displayName: 'code analysis, analyzers'
-          - name: Konfiguracja
+          - name: Konfigurowanie
             items:
               - name: Opcje ogólne
                 href: code-analysis/configuration-options.md
