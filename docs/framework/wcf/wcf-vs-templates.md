@@ -6,7 +6,7 @@ ms.openlocfilehash: a3aa7e3ee57759ef54ddaa898fe036c4e3caa33e
 ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 11/29/2020
 ms.locfileid: "96279704"
 ---
 # <a name="wcf-visual-studio-templates"></a>Szablony programu Visual Studio na potrzeby programu WCF

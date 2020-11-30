@@ -4,10 +4,10 @@ description: Zapoznaj się z zadaniami niezbędnymi do opracowania i wdrożenia 
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
 ms.openlocfilehash: 5d9a0b80cc75baec2325b778cee7daa68531f2d5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 11/29/2020
 ms.locfileid: "90557570"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Wdrażanie usługi WCF hostowanej przez Internetowe usługi informacyjne
@@ -28,7 +28,7 @@ Szczegółowy przewodnik dotyczący tworzenia usługi WCF hostowanej przez usłu
 
 ## <a name="ensure-that-iis-aspnet-and-wcf-are-correctly-installed-and-registered"></a>Upewnij się, że usługi IIS, ASP.NET i WCF są poprawnie zainstalowane i zarejestrowane
 
-Do poprawnego działania usług WCF hostowanych przez usługi IIS należy zainstalować usługi WCF, IIS i ASP.NET. Procedury instalacji WCF (w ramach .NET Framework), ASP.NET i IIS różnią się w zależności od używanego systemu operacyjnego. Aby uzyskać więcej informacji na temat instalowania programu WCF i .NET Framework, zobacz [instalowanie .NET Framework dla deweloperów](../../install/guide-for-developers.md). Aby zainstalować usługi IIS w systemie Windows 10, Otwórz aplet **programy i funkcje** w **Panelu sterowania** , a następnie wybierz opcję **Włącz lub wyłącz funkcje systemu Windows**. W obszarze **funkcje systemu Windows**wybierz pozycję **Internet Information Services** a następnie wybierz przycisk **OK**.
+Do poprawnego działania usług WCF hostowanych przez usługi IIS należy zainstalować usługi WCF, IIS i ASP.NET. Procedury instalacji WCF (w ramach .NET Framework), ASP.NET i IIS różnią się w zależności od używanego systemu operacyjnego. Aby uzyskać więcej informacji na temat instalowania programu WCF i .NET Framework, zobacz [instalowanie .NET Framework dla deweloperów](../../install/guide-for-developers.md). Aby zainstalować usługi IIS w systemie Windows 10, Otwórz aplet **programy i funkcje** w **Panelu sterowania** , a następnie wybierz opcję **Włącz lub wyłącz funkcje systemu Windows**. W obszarze **funkcje systemu Windows** wybierz pozycję **Internet Information Services** a następnie wybierz przycisk **OK**.
 
 ![Funkcje systemu Windows z wyróżnionymi usługami IIS](./media/windows-features-iis.png)
 
@@ -82,7 +82,7 @@ Hostowane w usługach IIS usługi WCF przechowują konfigurację w pliku Web.con
 
 - Aplikacje obsługujące usługi WCF spoza usług IIS mogą kontrolować adres podstawowy usług, które są hosty przez przekazanie zestawu identyfikatorów URI adresów bazowych do <xref:System.ServiceModel.ServiceHost> konstruktora lub przez udostępnienie [\<host>](../../configure-apps/file-schema/wcf/host.md) elementu w konfiguracji usługi. Usługi hostowane w usługach IIS nie mają możliwości kontrolowania adresu podstawowego; adres podstawowy usługi hostowanej przez usługi IIS jest adresem pliku SVC.
 
-### <a name="endpoint-addresses-for-iis-hosted-services"></a>Adresy punktów końcowych dla usług hostowanych przez usługi IIS
+### <a name="endpoint-addresses-for-iis-hosted-services"></a>Adresy punktów końcowych dla usług IIS-Hosted Services
 
 W przypadku hostowania w usługach IIS adresy punktów końcowych są zawsze uznawane za odnoszące się do adresu pliku SVC, który reprezentuje usługę. Na przykład jeśli adres podstawowy usługi WCF ma `http://localhost/Application1/MyService.svc` następującą konfigurację punktu końcowego:
 
@@ -110,7 +110,7 @@ Usługi WCF hostowane przez usługi IIS mogą korzystać z zabezpieczeń transpo
 
 Na przykład punkt końcowy programu WCF skonfigurowany do korzystania z uwierzytelniania szyfrowanego protokołu HTTP musi znajdować się w katalogu wirtualnym usług IIS, który jest również skonfigurowany do zezwalania na uwierzytelnianie szyfrowane protokołu HTTP. Niedopasowane kombinacje ustawień usług IIS i ustawień punktu końcowego WCF powodują wystąpienie błędu podczas aktywacji usługi.
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Hostowanie przez Internetowe usługi informacyjne](hosting-in-internet-information-services.md)
 - [Najlepsze rozwiązania dotyczące hostowania Internetowych usług informacyjnych](internet-information-services-hosting-best-practices.md)

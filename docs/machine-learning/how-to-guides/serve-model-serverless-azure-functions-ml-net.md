@@ -6,10 +6,10 @@ author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
 ms.openlocfilehash: 74a7a5b941596ba9fffc62ef87a01763937d88c0
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 11/29/2020
 ms.locfileid: "91608780"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Wdrażanie modelu w usłudze Azure Functions
@@ -36,7 +36,7 @@ Ten przykład jest **wyzwalaczem http języka C# Azure Functions aplikacji** , k
 1. W oknie dialogowym **Nowy projekt** Otwórz listę rozwijaną nad opcjami projektu i wybierz pozycję **Azure Functions v2 (.NET Core)**. Następnie wybierz projekt **wyzwalacza http** , a następnie wybierz przycisk **OK** .
 1. Utwórz katalog o nazwie *MLModels* w projekcie, aby zapisać model:
 
-    W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Dodaj**  >  **Nowy folder**. Wpisz "MLModels" i naciśnij klawisz ENTER.
+    W **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt i wybierz polecenie **Dodaj**  >  **Nowy folder**. Wpisz "MLModels" i naciśnij klawisz ENTER.
 
 1. Zainstaluj **pakiet NuGet Microsoft.ml** w wersji **1.3.1**:
 
@@ -57,13 +57,13 @@ Ten przykład jest **wyzwalaczem http języka C# Azure Functions aplikacji** , k
 ## <a name="add-pre-trained-model-to-project"></a>Dodaj wstępnie szkolony model do projektu
 
 1. Skopiuj wstępnie utworzony model do folderu *MLModels* .
-1. W Eksplorator rozwiązań kliknij prawym przyciskiem myszy wstępnie utworzony plik modelu i wybierz polecenie **Właściwości**. W obszarze **Zaawansowane**Zmień wartość opcji **Kopiuj do katalogu wyjściowego** na Kopiuj, **jeśli nowszy**.
+1. W Eksplorator rozwiązań kliknij prawym przyciskiem myszy wstępnie utworzony plik modelu i wybierz polecenie **Właściwości**. W obszarze **Zaawansowane** Zmień wartość opcji **Kopiuj do katalogu wyjściowego** na Kopiuj, **jeśli nowszy**.
 
 ## <a name="create-azure-function-to-analyze-sentiment"></a>Utwórz funkcję platformy Azure, aby analizować tonacji
 
 Utwórz klasę do przewidywania tonacji. Dodaj nową klasę do projektu:
 
-1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy projekt, a następnie wybierz polecenie **Dodaj**  >  **nowy element**.
+1. W **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt, a następnie wybierz polecenie **Dodaj**  >  **nowy element**.
 
 1. W oknie dialogowym **Dodaj nowy element** wybierz pozycję **Funkcja platformy Azure** i zmień wartość pola **Nazwa** na *AnalyzeSentiment.cs*. Następnie wybierz przycisk **Dodaj** .
 
@@ -115,7 +115,7 @@ Aby wykonać pojedyncze prognozowanie, należy utworzyć [`PredictionEngine`](xr
 
 Poniższy link zawiera więcej informacji, jeśli chcesz dowiedzieć się więcej o [iniekcji zależności](https://en.wikipedia.org/wiki/Dependency_injection).
 
-1. W **Eksplorator rozwiązań**kliknij prawym przyciskiem myszy projekt, a następnie wybierz polecenie **Dodaj**  >  **nowy element**.
+1. W **Eksplorator rozwiązań** kliknij prawym przyciskiem myszy projekt, a następnie wybierz polecenie **Dodaj**  >  **nowy element**.
 1. W oknie dialogowym **Dodaj nowy element** wybierz pozycję **Klasa** i zmień wartość pola **Nazwa** na *Startup.cs*. Następnie wybierz przycisk **Dodaj** .
 1. Dodaj następujące instrukcje using na początku *Startup.cs*:
 

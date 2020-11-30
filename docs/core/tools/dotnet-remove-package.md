@@ -1,21 +1,21 @@
 ---
-title: dotnet usunąć pakiet, polecenie
-description: Polecenie dotnet remove package zapewnia wygodną opcję usunięcia odwołania do pakietu NuGet do projektu.
+title: polecenie usunięcia pakietu dotnet
+description: Polecenie Narzędzia dotnet Remove Package udostępnia wygodną opcję usunięcia odwołania do pakietu NuGet do projektu.
 ms.date: 02/14/2020
 ms.openlocfilehash: fc74ac1364a0ed027b83dab270d382f238dc00e5
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 11/29/2020
 ms.locfileid: "81463456"
 ---
 # <a name="dotnet-remove-package"></a>dotnet remove package
 
-**Ten artykuł dotyczy:** ✔️ .NET Core 2.x SDK i nowszych wersjach
+**Ten artykuł ma zastosowanie do:** ✔️ .NET Core 2. x SDK i nowszych wersji
 
 ## <a name="name"></a>Nazwa
 
-`dotnet remove package`- Usuwa odwołanie do pakietu z pliku projektu.
+`dotnet remove package` -Usuwa odwołanie do pakietu z pliku projektu.
 
 ## <a name="synopsis"></a>Streszczenie
 
@@ -27,13 +27,13 @@ dotnet remove package -h|--help
 
 ## <a name="description"></a>Opis
 
-Polecenie `dotnet remove package` zapewnia wygodną opcję, aby usunąć odwołanie do pakietu NuGet z projektu.
+`dotnet remove package`Polecenie udostępnia wygodną opcję usunięcia odwołania do pakietu NuGet z projektu.
 
 ## <a name="arguments"></a>Argumenty
 
 `PROJECT`
 
-Określa plik projektu. Jeśli nie zostanie określony, polecenie przeszukuje bieżący katalog dla jednego.
+Określa plik projektu. Jeśli nie zostanie określony, polecenie przeszukuje bieżący katalog.
 
 `PACKAGE_NAME`
 

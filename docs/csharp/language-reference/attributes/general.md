@@ -1,100 +1,100 @@
 ---
-title: 'Atrybuty zastrzeżone języka C#: Warunkowe, Przestarzałe, AtrybutUsage'
+title: 'Atrybuty zastrzeżone języka C#: warunkowe, przestarzałe, AttributeUsage'
 ms.date: 04/09/2020
-description: Te atrybuty są interpretowane przez kompilator w celu wpłyć na kod wygenerowany przez kompilator
+description: Te atrybuty są interpretowane przez kompilator, aby wpływać na kod wygenerowany przez kompilator
 ms.openlocfilehash: c6d697dd08233ffc88900949998047137ee170a9
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 11/29/2020
 ms.locfileid: "82021760"
 ---
-# <a name="reserved-attributes-conditionalattribute-obsoleteattribute-attributeusageattribute"></a>Atrybuty zastrzeżone: Atrybut warunkowyattribute, Przestarzały atrybut, AtrybutUsageAttribute
+# <a name="reserved-attributes-conditionalattribute-obsoleteattribute-attributeusageattribute"></a>Atrybuty zastrzeżone: ConditionalAttribute, ObsoleteAttribute, AttributeUsageAttribute
 
-Te atrybuty mogą być stosowane do elementów w kodzie. Dodają one znaczenie semantyczne do tych elementów. Kompilator używa tych znaczeń semantycznych, aby zmienić jego dane wyjściowe i zgłosić możliwe błędy przez deweloperów przy użyciu kodu.
+Te atrybuty mogą być stosowane do elementów w kodzie. Dodają semantykę znaczenia do tych elementów. Kompilator wykorzystuje te semantyki do zmiany danych wyjściowych i zgłaszania ewentualnych pomyłek przez deweloperów korzystających z kodu.
 
 ## <a name="conditional-attribute"></a>Atrybut `Conditional`
 
-Atrybut `Conditional` sprawia, że wykonanie metody zależy od identyfikatora przetwarzania wstępnego. Atrybut `Conditional` jest aliasem <xref:System.Diagnostics.ConditionalAttribute>dla , i może być stosowany do metody lub klasy atrybutu.
+Ten `Conditional` atrybut wykonuje metodę zależną od identyfikatora przetwarzania wstępnego. `Conditional`Atrybut jest alias dla <xref:System.Diagnostics.ConditionalAttribute> i może być zastosowany do metody lub klasy atrybutu.
 
-W poniższym `Conditional` przykładzie jest stosowany do metody, aby włączyć lub wyłączyć wyświetlanie informacji diagnostycznych specyficznych dla programu:
+W poniższym przykładzie `Conditional` zastosowano metodę, aby włączyć lub wyłączyć wyświetlanie informacji diagnostycznych specyficznych dla programu:
 
 :::code language="csharp" source="snippets/trace.cs" interactive="try-dotnet" :::
 
-Jeśli `TRACE_ON` identyfikator nie jest zdefiniowany, dane wyjściowe śledzenia nie są wyświetlane. Poznaj się w interaktywnym oknie.
+Jeśli `TRACE_ON` Identyfikator nie jest zdefiniowany, dane wyjściowe śledzenia nie są wyświetlane. Eksploruj samodzielnie w oknie interaktywnym.
 
-Atrybut `Conditional` jest często używany `DEBUG` z identyfikatorem, aby włączyć śledzenie i rejestrowanie funkcji dla kompilacji debugowania, ale nie w kompilacjach wersji, jak pokazano w poniższym przykładzie:
+Ten `Conditional` atrybut jest często używany z `DEBUG` identyfikatorem, aby włączyć funkcje śledzenia i rejestrowania dla kompilacji debugowania, ale nie w kompilacjach wydania, jak pokazano w następującym przykładzie:
 
 :::code language="csharp" source="snippets/ConditionalExamples.cs" id="SnippetConditional" :::
 
-Gdy wywoływana jest metoda oznaczona warunkowo, obecność lub brak określonego symbolu przetwarzania wstępnego określa, czy wywołanie zostało uwzględnione, czy pominięte. Jeśli symbol jest zdefiniowany, wywołanie jest włączone; w przeciwnym razie wywołanie zostanie pominięte. Metoda warunkowa musi być metodą w deklaracji klasy lub `void` struktury i musi mieć typ zwracany. Używanie `Conditional` jest czystsze, bardziej eleganckie i mniej `#if…#endif` podatne na błędy niż załączanie metod wewnątrz bloków.
+Gdy wywoływana jest metoda oznaczona warunkowo, obecność lub brak określonego symbolu przetwarzania wstępnego określa, czy wywołanie jest dołączone czy pominięte. Jeśli symbol jest zdefiniowany, wywołanie jest dołączone; w przeciwnym razie wywołanie zostanie pominięte. Metoda warunkowa musi być metodą w deklaracji klasy lub struktury i musi mieć `void` Typ zwracany. Korzystanie z programu `Conditional` to Oczyszczarka, bardziej elegancki i mniej podatne na błędy niż zawarte w `#if…#endif` blokach.
 
-Jeśli metoda ma `Conditional` wiele atrybutów, wywołanie metody jest uwzględniane, jeśli w jednym lub więcej symboli warunkowych jest zdefiniowany (symbole są logicznie połączone ze sobą za pomocą operatora OR). W poniższym przykładzie obecność `A` albo `B` powoduje wywołanie metody:
+Jeśli metoda ma wiele `Conditional` atrybutów, wywołanie metody jest dołączane, jeśli co najmniej jeden symbol warunkowy jest zdefiniowany (symbole są logicznie połączone ze sobą przy użyciu operatora OR). W poniższym przykładzie, obecność `A` lub `B` wynik wywołania metody:
 
 :::code language="csharp" source="snippets/ConditionalExamples.cs" id="SnippetMultipleConditions" :::
 
 ### <a name="using-conditional-with-attribute-classes"></a>Używanie `Conditional` z klasami atrybutów
 
-Atrybut `Conditional` można również zastosować do definicji klasy atrybutu. W poniższym przykładzie atrybut `Documentation` niestandardowy doda informacje do `DEBUG` metadanych tylko wtedy, gdy jest zdefiniowany.
+Ten `Conditional` atrybut może być również stosowany do definicji klasy atrybutu. W poniższym przykładzie atrybut niestandardowy `Documentation` będzie dodawać tylko informacje do metadanych, jeśli `DEBUG` jest zdefiniowany.
 
 :::code language="csharp" source="snippets/ConditionalExamples.cs" id="SnippetConditionalConditionalAttribute" :::
 
 ## <a name="obsolete-attribute"></a>Atrybut `Obsolete`
 
-Atrybut `Obsolete` oznacza element kodu jako nie jest już zalecane do użycia. Użycie jednostki oznaczonej jako przestarzałe generuje ostrzeżenie lub błąd. Atrybut `Obsolete` jest atrybutem jednorazowego użytku i może być stosowany do dowolnej jednostki, która zezwala na atrybuty. `Obsolete`jest aliasem <xref:System.ObsoleteAttribute>dla .
+Ten `Obsolete` atrybut oznacza element kodu, który nie jest już zalecany do użycia. Użycie jednostki oznaczonej jako przestarzałe powoduje wygenerowanie ostrzeżenia lub błędu. Ten `Obsolete` atrybut jest atrybutem jednokrotnego użycia i może być stosowany do każdej jednostki, która zezwala na atrybuty. `Obsolete` jest aliasem dla <xref:System.ObsoleteAttribute> .
 
-W poniższym `Obsolete` przykładzie atrybut jest `A` stosowany do `B.OldMethod`klasy i metody . Ponieważ drugi argument konstruktora atrybutów `B.OldMethod` stosowane `true`do jest ustawiona na , ta metoda `A` spowoduje błąd kompilatora, natomiast przy użyciu klasy po prostu wywoła ostrzeżenie. Wywołanie `B.NewMethod`, jednak nie generuje żadnego ostrzeżenia lub błędu. Na przykład podczas korzystania z poprzednich definicji, następujący kod generuje dwa ostrzeżenia i jeden błąd:
+W poniższym przykładzie `Obsolete` atrybut jest stosowany do klasy `A` i metody `B.OldMethod` . Ponieważ drugi argument konstruktora atrybutu stosowany do `B.OldMethod` jest ustawiony na `true` , ta metoda spowoduje błąd kompilatora, podczas gdy użycie klasy `A` spowoduje po prostu wygenerowanie ostrzeżenia. Jednak wywoływanie `B.NewMethod` nie powoduje żadnych ostrzeżeń ani błędów. Na przykład jeśli używasz go z poprzednimi definicjami, poniższy kod generuje dwie ostrzeżenia i jeden błąd:
 
 :::code language="csharp" source="snippets/ObsoleteExample.cs" interactive="try-dotnet" :::
 
-Ciąg podany jako pierwszy argument do konstruktora atrybutów będą wyświetlane jako część ostrzeżenia lub błędu. Generowane są `A` dwa ostrzeżenia dla klasy: jeden dla deklaracji odwołania do klasy i jeden dla konstruktora klasy. Atrybut `Obsolete` może służyć bez argumentów, ale oprócz wyjaśnienia, co należy użyć zamiast tego jest zalecane.
+Ciąg dostarczony jako pierwszy argument konstruktora atrybutu będzie wyświetlany jako część ostrzeżenia lub błędu. Generowane są dwa ostrzeżenia dla klasy `A` : jeden dla deklaracji klasy Reference i jeden dla konstruktora klasy. Ten `Obsolete` atrybut może być używany bez argumentów, ale wraz z wyjaśnieniem, co należy użyć zamiast tego jest zalecane.
 
 ## <a name="attributeusage-attribute"></a>Atrybut `AttributeUsage`
 
-Atrybut `AttributeUsage` określa, jak można użyć niestandardowej klasy atrybutu. <xref:System.AttributeUsageAttribute>jest atrybutem stosowanym do definicji atrybutów niestandardowych. Atrybut `AttributeUsage` umożliwia sterowanie:
+Ten `AttributeUsage` atrybut określa, w jaki sposób można używać klasy atrybutów niestandardowych. <xref:System.AttributeUsageAttribute> jest atrybutem stosowanym do definicji atrybutów niestandardowych. Ten `AttributeUsage` atrybut umożliwia kontrolowanie:
 
-- Do którego atrybutu elementów programu można zastosować. Jeśli nie ograniczysz jego użycia, atrybut może zostać zastosowany do dowolnego z następujących elementów programu:
+- Do których elementów programu można zastosować atrybut. O ile nie zostanie to ograniczone, atrybut może być stosowany do dowolnego z następujących elementów programu:
   - zestaw
   - moduł
   - pole
   - event
   - method
-  - Param
+  - param
   - property
   - return
-  - type
+  - typ
 - Czy atrybut może być stosowany do pojedynczego elementu programu wiele razy.
 - Czy atrybuty są dziedziczone przez klasy pochodne.
 
-Ustawienia domyślne wyglądają jak w poniższym przykładzie, gdy są wyraźnie stosowane:
+Ustawienia domyślne wyglądają jak w poniższym przykładzie, jeśli zostały zastosowane jawnie:
 
 :::code language="csharp" source="snippets/NewAttribute.cs" id="SnippetUsageFirst" :::
 
-W tym przykładzie `NewAttribute` klasy można zastosować do dowolnego obsługiwanego elementu programu. Ale może być stosowany tylko raz do każdej jednostki. Atrybut jest dziedziczony przez klasy pochodne po zastosowaniu do klasy podstawowej.
+W tym przykładzie `NewAttribute` Klasa może zostać zastosowana do dowolnego obsługiwanego elementu programu. Można go jednak zastosować tylko raz do każdej jednostki. Atrybut jest dziedziczony przez klasy pochodne w przypadku zastosowania do klasy bazowej.
 
-Argumenty <xref:System.AttributeUsageAttribute.AllowMultiple> <xref:System.AttributeUsageAttribute.Inherited> i są opcjonalne, więc następujący kod ma ten sam efekt:
+<xref:System.AttributeUsageAttribute.AllowMultiple>Argumenty i <xref:System.AttributeUsageAttribute.Inherited> są opcjonalne, więc Poniższy kod ma ten sam skutek:
 
 :::code language="csharp" source="snippets/NewAttribute.cs" id="SnippetUsageSecond" :::
 
-Pierwszy <xref:System.AttributeUsageAttribute> argument musi być co najmniej <xref:System.AttributeTargets> jeden element wyliczenia. Wiele typów docelowych można połączyć z operatorem OR, jak pokazano w poniższym przykładzie:
+Pierwszy <xref:System.AttributeUsageAttribute> argument musi być co najmniej jednym elementem <xref:System.AttributeTargets> wyliczenia. Z operatorem OR można łączyć wiele typów docelowych, podobnie jak w poniższym przykładzie:
 
 :::code language="csharp" source="snippets/NewPropertyOrFieldAttribute.cs" id="SnippetDefinePropertyAttribute" :::
 
-Począwszy od języka C# 7.3, atrybuty mogą być stosowane do właściwości lub pola zapasowego dla właściwości automatycznie zaimplementowane. Atrybut ma zastosowanie do właściwości, chyba `field` że określisz specyfikator atrybutu. Oba są pokazane w poniższym przykładzie:
+Począwszy od języka C# 7,3, atrybuty mogą być stosowane do właściwości lub pola zapasowego dla właściwości, która jest implementowana. Ten atrybut ma zastosowanie do właściwości, chyba że określisz `field` specyfikator dla atrybutu. Oba są przedstawione w następującym przykładzie:
 
 :::code language="csharp" source="snippets/NewPropertyOrFieldAttribute.cs" id="SnippetUsePropertyAttribute" :::
 
-Jeśli <xref:System.AttributeUsageAttribute.AllowMultiple> argument `true`jest , wynikowy atrybut może być stosowany więcej niż jeden raz do pojedynczej jednostki, jak pokazano w poniższym przykładzie:
+Jeśli <xref:System.AttributeUsageAttribute.AllowMultiple> argument ma wartość `true` , wynikowy atrybut może zostać zastosowany więcej niż raz do pojedynczej jednostki, jak pokazano w następującym przykładzie:
 
 :::code language="csharp" source="snippets/MultiUseAttribute.cs" id="SnippetMultiUse" :::
 
-W takim `MultiUseAttribute` przypadku można zastosować wielokrotnie, `AllowMultiple` ponieważ `true`jest ustawiona na . Oba formaty wyświetlane do stosowania wielu atrybutów są prawidłowe.
+W tym przypadku `MultiUseAttribute` może być stosowana wielokrotnie, ponieważ `AllowMultiple` jest ustawiona na `true` . Oba formaty wyświetlane na potrzeby stosowania wielu atrybutów są prawidłowe.
 
-Jeśli <xref:System.AttributeUsageAttribute.Inherited> `false`tak , atrybut nie jest dziedziczony przez klasy pochodzące z przypisanej klasy. Przykład:
+Jeśli <xref:System.AttributeUsageAttribute.Inherited> jest `false` , atrybut nie jest dziedziczony przez klasy pochodne od klasy z atrybutami. Przykład:
 
 :::code language="csharp" source="snippets/NonInheritedAttribute.cs" id="SnippetNonInherited" :::
 
-W tym `NonInheritedAttribute` przypadku nie jest `DClass` stosowany do za pośrednictwem dziedziczenia.
+W tym przypadku `NonInheritedAttribute` nie jest on stosowany do `DClass` dziedziczenia.
 
 ## <a name="see-also"></a>Zobacz też
 

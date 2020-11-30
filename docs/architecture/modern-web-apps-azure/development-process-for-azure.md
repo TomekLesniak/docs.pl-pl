@@ -5,10 +5,10 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
 ms.openlocfilehash: 8907c63f8dcd57ec22c3c196cbb1db52d91a3b5f
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2020
+ms.lasthandoff: 11/29/2020
 ms.locfileid: "91169040"
 ---
 # <a name="development-process-for-azure"></a>Proces programistyczny dla platformy Azure
@@ -16,7 +16,7 @@ ms.locfileid: "91169040"
 > _"Dzięki chmurze użytkownicy indywidualni i małe firmy mogą przyciągnąć swoje palce i natychmiast skonfigurować usługi klasy korporacyjnej"._  
 > _-Roy posta Stephan_
 
-## <a name="vision"></a>Wizja
+## <a name="vision"></a>Obraz
 
 > *Opracowuj dobrze zaprojektowane aplikacje ASP .NET Core w odpowiedni sposób, korzystając z programu Visual Studio lub interfejsu wiersza polecenia dotnet i Visual Studio Code lub dowolnego edytora.*
 
@@ -34,7 +34,7 @@ Bez względu na to, czy wolisz pełną i wydajną platformę IDE, czy też Edyto
 
 [Pobieranie zestawu .NET Core SDK](https://dotnet.microsoft.com/download)
 
-[Pobierz Visual Studio Code](https://code.visualstudio.com/download)
+[Pobierz program Visual Studio Code](https://code.visualstudio.com/download)
 
 ## <a name="development-workflow-for-azure-hosted-aspnet-core-apps"></a>Przepływ pracy deweloperskiej dla aplikacji ASP.NET Core hostowanych przez platformę Azure
 

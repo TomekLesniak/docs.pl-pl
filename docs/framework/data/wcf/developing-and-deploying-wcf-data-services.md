@@ -8,10 +8,10 @@ helpviewer_keywords:
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
 ms.openlocfilehash: 484505406701b52a2b80b95b718a23a2156aa22c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.sourcegitcommit: bc293b14af795e0e999e3304dd40c0222cf2ffe4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2020
+ms.lasthandoff: 11/29/2020
 ms.locfileid: "90556092"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Opracowywanie i wdrażanie Usługi danych programu WCF
@@ -98,7 +98,7 @@ Usługa danych programu WCF zapewnia elastyczność, jeśli chodzi o wybór proc
 
     - [Instrukcje: Tworzenie pakietu wdrożeniowego sieci Web w programie Visual Studio](/previous-versions/aspnet/dd465323(v=vs.110))
 
-    - [Instrukcje: wdrażanie projektu sieci Web przy użyciu jednego kliknięcia przycisku Publikuj w programie Visual Studio](/previous-versions/aspnet/dd465337(v=vs.110))
+    - [Instrukcje: wdrażanie projektu sieci Web przy użyciu One-Click publikowania w programie Visual Studio](/previous-versions/aspnet/dd465337(v=vs.110))
 
   - **Technologie wdrażania dla witryn sieci Web ASP.NET**
 
@@ -125,7 +125,7 @@ Podczas wdrażania usługi danych należy wziąć pod uwagę następujące kwest
 
 - Ponieważ Usługi danych programu WCF zawiera podstawową implementację programu WCF, można użyć programu Windows Server AppFabric do monitorowania usługi danych wdrożonej w usługach IIS uruchomionych w systemie Windows Server. Aby uzyskać więcej informacji o używaniu programu Windows Server AppFabric do monitorowania usługi danych, zobacz [śledzenie po stronie śledzenia usługi danych programu WCF z systemem Windows Server AppFabric](/archive/blogs/rjacobs/tracking-wcf-data-services-with-windows-server-appfabric).
 
-## <a name="see-also"></a>Zobacz także
+## <a name="see-also"></a>Zobacz też
 
 - [Hosting usługi danych](hosting-the-data-service-wcf-data-services.md)
 - [Zabezpieczanie usług danych WCF](securing-wcf-data-services.md)
