@@ -117,5 +117,5 @@ landingContent:
       url: language-reference/operators/index.md
     - text: Konfigurowanie wersji języka
       url: language-reference/configure-language-version.md
-    - text: specyfikacja języka C#
+    - text: Specyfikacja języka C#
       url: ../../_csharplang/spec/introduction.md
